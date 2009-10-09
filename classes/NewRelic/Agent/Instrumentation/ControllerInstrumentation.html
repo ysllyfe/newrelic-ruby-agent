@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: NewRelic::Agent::Instrumentation::ControllerInstrumentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">NewRelic::Agent::Instrumentation::ControllerInstrumentation</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/new_relic/agent/instrumentation/controller_instrumentation_rb.html">
+                lib/new_relic/agent/instrumentation/controller_instrumentation.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000126">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="ControllerInstrumentation/ClassMethods.html" class="link">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="#M000126" class="method-signature">
+          <span class="method-name">perform_action_with_newrelic_trace</span><span class="method-args">(*args) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Yield to the given block with <a href="../../../NewRelic.html">NewRelic</a>
+tracing. Used by default instrumentation on controller actions in Rails and
+Merb. But it can also be used in custom instrumentation of controller
+methods and background tasks.
+</p>
+<p>
+Here&#8216;s a more verbose version of the example shown in
+ClassMethods#add_method_tracer using this method instead of
+add_method_tracer.
+</p>
+<p>
+Below is a controller with an =invoke_operation= action which dispatches to
+more specific operation methods based on a parameter (very dangerous,
+btw!). With this instrumentation, the =invoke_operation= action is ignored
+but the operation methods show up in RPM as if they were first class
+controller actions
+</p>
+<pre>
+  MyController &lt; ActionController::Base
+    include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+    # dispatch the given op to the method given by the service parameter.
+    def invoke_operation
+      op = params['operation']
+      path = &quot;#{self.class.underscore}/#{op}&quot;
+      perform_action_with_newrelic_trace(:path =&gt; path) do
+        send op, params['message']
+      end
+    end
+    # Ignore the invoker to avoid double counting
+    newrelic_ignore :only =&gt; 'invoke_operation'
+  end
+</pre>
+<p>
+By passing a block in combination with specific arguments, you can invoke
+this directly to capture high level information in several contexts:
+</p>
+<ul>
+<li>Pass <tt>:category =&gt; :web_transaction</tt> and <tt>:path =&gt;
+actionpath</tt> to treat the block as if it were a controller action,
+invoked inside a real action. <em>actionpath</em> is the class underscore
+name followed by &#8217;/&#8217; and the name of the method, and is used as
+the metric name.
+
+</li>
+</ul>
+<p>
+When invoked directly, pass in a block to measure with some combination of
+options:
+</p>
+<ul>
+<li><tt>:category =&gt; :web_transaction</tt> indicates that this is a
+controller action and will appear with all the other actions. This is the
+default.
+
+</li>
+<li><tt>:category =&gt; :task</tt> indicates that this is a background task and
+will show up in RPM with other background tasks instead of in the
+controllers list
+
+</li>
+<li><tt>:name =&gt; action_name</tt> is used to specify the action name used as
+part of the metric name
+
+</li>
+<li><tt>:force =&gt; true</tt> indicates you should capture all metrics even if
+the newrelic_ignore directive was specified
+
+</li>
+</ul>
+<p>
+If a single argument is passed in, it is treated as a metric path. This
+form is deprecated.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000126-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 218</span>
+218:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+219:       <span class="ruby-identifier">agent</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>
+220:       <span class="ruby-identifier">stats_engine</span> = <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>
+221:       
+222:       <span class="ruby-comment cmt"># Skip instrumentation based on the value of 'do_not_trace' and if </span>
+223:       <span class="ruby-comment cmt"># we aren't calling directly with a block.</span>
+224:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">is_filtered?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">newrelic_read_attr</span>(<span class="ruby-value str">'do_not_trace'</span>))
+225:         <span class="ruby-comment cmt"># Tell the dispatcher instrumentation that we ignored this action and it shouldn't</span>
+226:         <span class="ruby-comment cmt"># be counted for the overall HTTP operations measurement.</span>
+227:         <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_ignore_controller</span>] = <span class="ruby-keyword kw">true</span>
+228:         <span class="ruby-comment cmt"># Also ignore all instrumentation in the call sequence</span>
+229:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> <span class="ruby-keyword kw">do</span>
+230:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">perform_action_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+231:         <span class="ruby-keyword kw">end</span>
+232:       <span class="ruby-keyword kw">end</span>
+233:       
+234:       <span class="ruby-comment cmt"># reset this in case we came through a code path where the top level controller is ignored</span>
+235:       <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_ignore_controller</span>] = <span class="ruby-keyword kw">nil</span>
+236:       <span class="ruby-identifier">apdex_start</span> = (<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:started_on</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_dispatcher_start</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>).<span class="ruby-identifier">to_f</span>
+237:       <span class="ruby-identifier">force</span> = <span class="ruby-keyword kw">false</span>      
+238:       <span class="ruby-identifier">category</span> = <span class="ruby-value str">'Controller'</span>
+239:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">any?</span>
+240:         <span class="ruby-comment cmt"># FIXME whk should not use underscore, but formatters expect that format, not class name :(</span>
+241:         <span class="ruby-identifier">metric_path_of_class</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:underscore</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">underscore</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>
+242:         <span class="ruby-identifier">options</span> =  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+243:         <span class="ruby-identifier">category</span> =
+244:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:category</span>]
+245:             <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:web_transaction</span>, <span class="ruby-identifier">:controller</span>, <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'Controller'</span>
+246:             <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:task</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'Task'</span>
+247:             <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:category</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>
+248:           <span class="ruby-keyword kw">end</span>
+249:         <span class="ruby-comment cmt"># To be consistent with the ActionController::Base#controller_path used in rails to determine the</span>
+250:         <span class="ruby-comment cmt"># metric path, we drop the controller off the end of the path if there is one.</span>
+251:         <span class="ruby-identifier">metric_path_of_class</span>.<span class="ruby-identifier">gsub!</span> <span class="ruby-regexp re">/_controller$/</span>,<span class="ruby-value str">''</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">category</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Controller'</span>
+252:         <span class="ruby-identifier">action</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'unknown'</span>
+253:         <span class="ruby-identifier">force</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:force</span>]
+254:         <span class="ruby-identifier">path</span> = <span class="ruby-identifier">metric_path_of_class</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">action</span>
+255:       <span class="ruby-keyword kw">else</span>
+256:         <span class="ruby-identifier">path</span> = <span class="ruby-identifier">newrelic_metric_path</span>
+257:       <span class="ruby-keyword kw">end</span>
+258:       <span class="ruby-identifier">metric_name</span> = <span class="ruby-identifier">category</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span> 
+259:       <span class="ruby-identifier">start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
+260:       <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">ensure_worker_thread_started</span>
+261:       
+262:       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">trace_execution_scoped</span> [<span class="ruby-identifier">metric_name</span>, <span class="ruby-value str">&quot;Controller&quot;</span>], <span class="ruby-identifier">:force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">force</span> <span class="ruby-keyword kw">do</span> 
+263:         <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">transaction_name</span> = <span class="ruby-identifier">metric_name</span>
+264:         <span class="ruby-identifier">available_params</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:params</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">params</span> <span class="ruby-operator">:</span> {} 
+265:         <span class="ruby-identifier">local_params</span> = (<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:filter_parameters</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">filter_parameters</span>(<span class="ruby-identifier">available_params</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">available_params</span>
+266:         <span class="ruby-identifier">available_request</span> = (<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:request</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">request</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+267:         <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">available_request</span>, <span class="ruby-identifier">local_params</span>)
+268:         
+269:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">newrelic_record_cpu_burn?</span>
+270:           <span class="ruby-identifier">t</span> = <span class="ruby-identifier">newrelic_cpu_time</span>
+271:         <span class="ruby-keyword kw">end</span>
+272:         
+273:         <span class="ruby-identifier">failed</span> = <span class="ruby-keyword kw">false</span>
+274:         
+275:         <span class="ruby-keyword kw">begin</span>
+276:           <span class="ruby-comment cmt"># run the action</span>
+277:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+278:             <span class="ruby-keyword kw">yield</span>
+279:           <span class="ruby-keyword kw">else</span>
+280:             <span class="ruby-identifier">perform_action_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+281:           <span class="ruby-keyword kw">end</span>
+282:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+283:           <span class="ruby-identifier">failed</span> = <span class="ruby-keyword kw">true</span>
+284:           <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+285:         <span class="ruby-keyword kw">ensure</span>
+286:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+287:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">newrelic_record_cpu_burn?</span>
+288:               <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">newrelic_cpu_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">t</span>
+289:               <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Metrics</span><span class="ruby-operator">::</span><span class="ruby-constant">USER_TIME</span>).<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">cpu_burn</span>)
+290:               <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_burn</span>)
+291:             <span class="ruby-keyword kw">end</span>
+292:             <span class="ruby-comment cmt"># do the apdex bucketing</span>
+293:             <span class="ruby-comment cmt">#</span>
+294:             <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">is_filtered?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">newrelic_read_attr</span>(<span class="ruby-value str">'ignore_apdex'</span>))
+295:               <span class="ruby-identifier">ending</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
+296:               <span class="ruby-comment cmt"># this uses the start of the dispatcher or the mongrel</span>
+297:               <span class="ruby-comment cmt"># thread: causes apdex to show too little capacity</span>
+298:               <span class="ruby-identifier">apdex_overall</span>(<span class="ruby-identifier">apdex_start</span>, <span class="ruby-identifier">ending</span>, <span class="ruby-identifier">failed</span>)
+299:               <span class="ruby-comment cmt"># this uses the start time of the controller action:</span>
+300:               <span class="ruby-comment cmt"># does not include capacity problems since those aren't</span>
+301:               <span class="ruby-comment cmt"># per controller</span>
+302:               <span class="ruby-identifier">apdex_controller</span>(<span class="ruby-identifier">start</span>, <span class="ruby-identifier">ending</span>, <span class="ruby-identifier">failed</span>, <span class="ruby-identifier">path</span>)
+303:             <span class="ruby-keyword kw">end</span>
+304:           <span class="ruby-keyword kw">end</span>
+305:         <span class="ruby-keyword kw">end</span>
+306:       <span class="ruby-keyword kw">end</span>
+307:     <span class="ruby-keyword kw">ensure</span>
+308:       <span class="ruby-comment cmt"># clear out the name of the traced transaction under all circumstances</span>
+309:       <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">transaction_name</span> = <span class="ruby-keyword kw">nil</span>
+310:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
