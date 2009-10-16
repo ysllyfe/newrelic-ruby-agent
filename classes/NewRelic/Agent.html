@@ -67,6 +67,18 @@
                 lib/new_relic/agent/method_tracer.rb
                 </a>
         <br />
+                <a href="../../files/lib/new_relic/agent/stats_engine/metric_stats_rb.html">
+                lib/new_relic/agent/stats_engine/metric_stats.rb
+                </a>
+        <br />
+                <a href="../../files/lib/new_relic/agent/stats_engine/samplers_rb.html">
+                lib/new_relic/agent/stats_engine/samplers.rb
+                </a>
+        <br />
+                <a href="../../files/lib/new_relic/agent/stats_engine/transactions_rb.html">
+                lib/new_relic/agent/stats_engine/transactions.rb
+                </a>
+        <br />
                 <a href="../../files/lib/new_relic/agent/stats_engine_rb.html">
                 lib/new_relic/agent/stats_engine.rb
                 </a>
@@ -100,7 +112,7 @@
       <p>
 The main API module for the <a href="Agent.html">Agent</a>. Methods are
 delegated to a singleton <a href="Agent.html">NewRelic::Agent::Agent</a> or
-the Shim when the <a href="Agent.html#M000075">agent</a> is not enabled.
+the Shim when the <a href="Agent.html#M000076">agent</a> is not enabled.
 </p>
 
     </div>
@@ -112,22 +124,22 @@ the Shim when the <a href="Agent.html#M000075">agent</a> is not enabled.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000089">add_custom_parameters</a>&nbsp;&nbsp;
-      <a href="#M000090">add_request_parameters</a>&nbsp;&nbsp;
-      <a href="#M000075">agent</a>&nbsp;&nbsp;
-      <a href="#M000076">agent=</a>&nbsp;&nbsp;
-      <a href="#M000085">disable_all_tracing</a>&nbsp;&nbsp;
-      <a href="#M000083">disable_sql_recording</a>&nbsp;&nbsp;
-      <a href="#M000084">disable_transaction_tracing</a>&nbsp;&nbsp;
-      <a href="#M000078">get_stats</a>&nbsp;&nbsp;
-      <a href="#M000079">get_stats_no_scope</a>&nbsp;&nbsp;
-      <a href="#M000087">ignore_error_filter</a>&nbsp;&nbsp;
-      <a href="#M000077">instance</a>&nbsp;&nbsp;
-      <a href="#M000086">is_execution_traced?</a>&nbsp;&nbsp;
-      <a href="#M000080">manual_start</a>&nbsp;&nbsp;
-      <a href="#M000088">notice_error</a>&nbsp;&nbsp;
-      <a href="#M000082">set_sql_obfuscator</a>&nbsp;&nbsp;
-      <a href="#M000081">shutdown</a>&nbsp;&nbsp;
+      <a href="#M000090">add_custom_parameters</a>&nbsp;&nbsp;
+      <a href="#M000091">add_request_parameters</a>&nbsp;&nbsp;
+      <a href="#M000076">agent</a>&nbsp;&nbsp;
+      <a href="#M000077">agent=</a>&nbsp;&nbsp;
+      <a href="#M000086">disable_all_tracing</a>&nbsp;&nbsp;
+      <a href="#M000084">disable_sql_recording</a>&nbsp;&nbsp;
+      <a href="#M000085">disable_transaction_tracing</a>&nbsp;&nbsp;
+      <a href="#M000079">get_stats</a>&nbsp;&nbsp;
+      <a href="#M000080">get_stats_no_scope</a>&nbsp;&nbsp;
+      <a href="#M000088">ignore_error_filter</a>&nbsp;&nbsp;
+      <a href="#M000078">instance</a>&nbsp;&nbsp;
+      <a href="#M000087">is_execution_traced?</a>&nbsp;&nbsp;
+      <a href="#M000081">manual_start</a>&nbsp;&nbsp;
+      <a href="#M000089">notice_error</a>&nbsp;&nbsp;
+      <a href="#M000083">set_sql_obfuscator</a>&nbsp;&nbsp;
+      <a href="#M000082">shutdown</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -173,11 +185,11 @@ Class <a href="Agent/WorkerLoop.html" class="link">NewRelic::Agent::WorkerLoop</
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000089" class="method-detail">
-        <a name="M000089"></a>
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
 
         <div class="method-heading">
-          <a href="#M000089" class="method-signature">
+          <a href="#M000090" class="method-signature">
           <span class="method-name">add_custom_parameters</span><span class="method-args">(params)</span>
           </a>
         </div>
@@ -187,8 +199,8 @@ Class <a href="Agent/WorkerLoop.html" class="link">NewRelic::Agent::WorkerLoop</
 Add parameters to the current transaction trace on the call stack.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000089-source">
+            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000090-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 262</span>
 262:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">params</span>)
@@ -199,8 +211,8 @@ Add parameters to the current transaction trace on the call stack.
         </div>
       </div>
 
-      <div id="method-M000090" class="method-detail">
-        <a name="M000090"></a>
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
 
         <div class="method-heading">
           <span class="method-name">add_request_parameters</span><span class="method-args">(params)</span>
@@ -208,16 +220,16 @@ Add parameters to the current transaction trace on the call stack.
       
         <div class="method-description">
           <p>
-Alias for <a href="Agent.html#M000089">add_custom_parameters</a>
+Alias for <a href="Agent.html#M000090">add_custom_parameters</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000075" class="method-detail">
-        <a name="M000075"></a>
+      <div id="method-M000076" class="method-detail">
+        <a name="M000076"></a>
 
         <div class="method-heading">
-          <a href="#M000075" class="method-signature">
+          <a href="#M000076" class="method-signature">
           <span class="method-name">agent</span><span class="method-args">()</span>
           </a>
         </div>
@@ -225,11 +237,11 @@ Alias for <a href="Agent.html#M000089">add_custom_parameters</a>
         <div class="method-description">
           <p>
 The singleton <a href="Agent.html">Agent</a> <a
-href="Agent.html#M000077">instance</a>.
+href="Agent.html#M000078">instance</a>.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000075-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000075-source">
+            onclick="toggleCode('M000076-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000076-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 122</span>
 122:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">agent</span>
@@ -241,19 +253,19 @@ href="Agent.html#M000077">instance</a>.
         </div>
       </div>
 
-      <div id="method-M000076" class="method-detail">
-        <a name="M000076"></a>
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
 
         <div class="method-heading">
-          <a href="#M000076" class="method-signature">
+          <a href="#M000077" class="method-signature">
           <span class="method-name">agent=</span><span class="method-args">(new_instance)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000076-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000076-source">
+            onclick="toggleCode('M000077-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000077-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 127</span>
 127:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">agent=</span> <span class="ruby-identifier">new_instance</span>
@@ -264,11 +276,11 @@ href="Agent.html#M000077">instance</a>.
         </div>
       </div>
 
-      <div id="method-M000085" class="method-detail">
-        <a name="M000085"></a>
+      <div id="method-M000086" class="method-detail">
+        <a name="M000086"></a>
 
         <div class="method-heading">
-          <a href="#M000085" class="method-signature">
+          <a href="#M000086" class="method-signature">
           <span class="method-name">disable_all_tracing</span><span class="method-args">() {|| ...}</span>
           </a>
         </div>
@@ -281,8 +293,8 @@ entry point and turn on tracing again after leaving that block. This uses
 the thread local <tt>newrelic_untrace</tt>
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000085-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000085-source">
+            onclick="toggleCode('M000086-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000086-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 227</span>
 227:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable_all_tracing</span>
@@ -296,11 +308,11 @@ the thread local <tt>newrelic_untrace</tt>
         </div>
       </div>
 
-      <div id="method-M000083" class="method-detail">
-        <a name="M000083"></a>
+      <div id="method-M000084" class="method-detail">
+        <a name="M000084"></a>
 
         <div class="method-heading">
-          <a href="#M000083" class="method-signature">
+          <a href="#M000084" class="method-signature">
           <span class="method-name">disable_sql_recording</span><span class="method-args">() {|| ...}</span>
           </a>
         </div>
@@ -319,8 +331,8 @@ usage:
   end
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000083-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000083-source">
+            onclick="toggleCode('M000084-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000084-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 203</span>
 203:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable_sql_recording</span>
@@ -336,11 +348,11 @@ usage:
         </div>
       </div>
 
-      <div id="method-M000084" class="method-detail">
-        <a name="M000084"></a>
+      <div id="method-M000085" class="method-detail">
+        <a name="M000085"></a>
 
         <div class="method-heading">
-          <a href="#M000084" class="method-signature">
+          <a href="#M000085" class="method-signature">
           <span class="method-name">disable_transaction_tracing</span><span class="method-args">() {|| ...}</span>
           </a>
         </div>
@@ -348,11 +360,11 @@ usage:
         <div class="method-description">
           <p>
 This method disables the recording of transaction traces in the given
-block. See also <a href="Agent.html#M000085">disable_all_tracing</a>
+block. See also <a href="Agent.html#M000086">disable_all_tracing</a>
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000084-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000084-source">
+            onclick="toggleCode('M000085-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000085-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 214</span>
 214:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable_transaction_tracing</span>
@@ -368,11 +380,11 @@ block. See also <a href="Agent.html#M000085">disable_all_tracing</a>
         </div>
       </div>
 
-      <div id="method-M000078" class="method-detail">
-        <a name="M000078"></a>
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
 
         <div class="method-heading">
-          <a href="#M000078" class="method-signature">
+          <a href="#M000079" class="method-signature">
           <span class="method-name">get_stats</span><span class="method-args">(metric_name, use_scope=false)</span>
           </a>
         </div>
@@ -391,8 +403,8 @@ Return a <a href="Stats.html">NewRelic::Stats</a> that accepts data via
 calls to add_data_point(value).
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000078-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000078-source">
+            onclick="toggleCode('M000079-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000079-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 141</span>
 141:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">use_scope</span>=<span class="ruby-keyword kw">false</span>)
@@ -403,19 +415,19 @@ calls to add_data_point(value).
         </div>
       </div>
 
-      <div id="method-M000079" class="method-detail">
-        <a name="M000079"></a>
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
 
         <div class="method-heading">
-          <a href="#M000079" class="method-signature">
+          <a href="#M000080" class="method-signature">
           <span class="method-name">get_stats_no_scope</span><span class="method-args">(metric_name)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000079-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000079-source">
+            onclick="toggleCode('M000080-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000080-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 145</span>
 145:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">metric_name</span>)
@@ -426,11 +438,11 @@ calls to add_data_point(value).
         </div>
       </div>
 
-      <div id="method-M000087" class="method-detail">
-        <a name="M000087"></a>
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
 
         <div class="method-heading">
-          <a href="#M000087" class="method-signature">
+          <a href="#M000088" class="method-signature">
           <span class="method-name">ignore_error_filter</span><span class="method-args">(&amp;block)</span>
           </a>
         </div>
@@ -445,8 +457,8 @@ exception) or nil to ignore this exception.
 The block is yielded to with the exception to filter.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000087-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000087-source">
+            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000088-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 245</span>
 245:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_error_filter</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
@@ -457,8 +469,8 @@ The block is yielded to with the exception to filter.
         </div>
       </div>
 
-      <div id="method-M000077" class="method-detail">
-        <a name="M000077"></a>
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
 
         <div class="method-heading">
           <span class="method-name">instance</span><span class="method-args">()</span>
@@ -466,16 +478,16 @@ The block is yielded to with the exception to filter.
       
         <div class="method-description">
           <p>
-Alias for <a href="Agent.html#M000075">agent</a>
+Alias for <a href="Agent.html#M000076">agent</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000086" class="method-detail">
-        <a name="M000086"></a>
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
 
         <div class="method-heading">
-          <a href="#M000086" class="method-signature">
+          <a href="#M000087" class="method-signature">
           <span class="method-name">is_execution_traced?</span><span class="method-args">()</span>
           </a>
         </div>
@@ -485,8 +497,8 @@ Alias for <a href="Agent.html#M000075">agent</a>
 Check to see if we are capturing metrics currently on this thread.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000086-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000086-source">
+            onclick="toggleCode('M000087-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000087-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 235</span>
 235:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_execution_traced?</span>
@@ -497,11 +509,11 @@ Check to see if we are capturing metrics currently on this thread.
         </div>
       </div>
 
-      <div id="method-M000080" class="method-detail">
-        <a name="M000080"></a>
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
 
         <div class="method-heading">
-          <a href="#M000080" class="method-signature">
+          <a href="#M000081" class="method-signature">
           <span class="method-name">manual_start</span><span class="method-args">(options={})</span>
           </a>
         </div>
@@ -526,8 +538,8 @@ newrelic.yml section to use (ie, RAILS_ENV) can be overridden with an :env
 argument.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000080-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000080-source">
+            onclick="toggleCode('M000081-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000081-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 163</span>
 163:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manual_start</span>(<span class="ruby-identifier">options</span>={})
@@ -541,11 +553,11 @@ argument.
         </div>
       </div>
 
-      <div id="method-M000088" class="method-detail">
-        <a name="M000088"></a>
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
 
         <div class="method-heading">
-          <a href="#M000088" class="method-signature">
+          <a href="#M000089" class="method-signature">
           <span class="method-name">notice_error</span><span class="method-args">(exception, extra_params = {})</span>
           </a>
         </div>
@@ -553,7 +565,7 @@ argument.
         <div class="method-description">
           <p>
 Record the given error in RPM. It will be passed through the <a
-href="Agent.html#M000087">ignore_error_filter</a> if there is one.
+href="Agent.html#M000088">ignore_error_filter</a> if there is one.
 </p>
 <ul>
 <li><tt>exception</tt> is the exception which will be recorded
@@ -565,8 +577,8 @@ exception in RPM.
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000088-source">
+            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000089-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 256</span>
 256:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">extra_params</span> = {})
@@ -577,11 +589,11 @@ exception in RPM.
         </div>
       </div>
 
-      <div id="method-M000082" class="method-detail">
-        <a name="M000082"></a>
+      <div id="method-M000083" class="method-detail">
+        <a name="M000083"></a>
 
         <div class="method-heading">
-          <a href="#M000082" class="method-signature">
+          <a href="#M000083" class="method-signature">
           <span class="method-name">set_sql_obfuscator</span><span class="method-args">(type = :replace, &amp;block)</span>
           </a>
         </div>
@@ -605,8 +617,8 @@ Example:
    end
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000082-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000082-source">
+            onclick="toggleCode('M000083-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000083-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 189</span>
 189:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_sql_obfuscator</span>(<span class="ruby-identifier">type</span> = <span class="ruby-identifier">:replace</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
@@ -617,23 +629,23 @@ Example:
         </div>
       </div>
 
-      <div id="method-M000081" class="method-detail">
-        <a name="M000081"></a>
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
 
         <div class="method-heading">
-          <a href="#M000081" class="method-signature">
+          <a href="#M000082" class="method-signature">
           <span class="method-name">shutdown</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Shutdown the <a href="Agent.html#M000075">agent</a>. Call this before
+Shutdown the <a href="Agent.html#M000076">agent</a>. Call this before
 exiting. Sends any queued data and kills the background thread.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000081-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000081-source">
+            onclick="toggleCode('M000082-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000082-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent.rb, line 172</span>
 172:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shutdown</span>

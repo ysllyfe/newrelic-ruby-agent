@@ -80,9 +80,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000129">add_transaction_tracer</a>&nbsp;&nbsp;
-      <a href="#M000127">newrelic_ignore</a>&nbsp;&nbsp;
-      <a href="#M000128">newrelic_ignore_apdex</a>&nbsp;&nbsp;
+      <a href="#M000131">add_transaction_tracer</a>&nbsp;&nbsp;
+      <a href="#M000129">newrelic_ignore</a>&nbsp;&nbsp;
+      <a href="#M000130">newrelic_ignore_apdex</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -104,11 +104,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000129" class="method-detail">
-        <a name="M000129"></a>
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
 
         <div class="method-heading">
-          <a href="#M000129" class="method-signature">
+          <a href="#M000131" class="method-signature">
           <span class="method-name">add_transaction_tracer</span><span class="method-args">(method, options={})</span>
           </a>
         </div>
@@ -134,10 +134,6 @@ Example for background job:
   end
 </pre>
 <p>
-Note: This method is still experimental. Only the web transaction type is
-supported, and that is the default.
-</p>
-<p>
 Here&#8216;s an example of a controller that uses a dispatcher action to
 invoke operations which you want treated as top level actions, so they
 aren&#8216;t all lumped into the invoker action.
@@ -159,55 +155,36 @@ aren&#8216;t all lumped into the invoker action.
   end
 </pre>
 <p>
-All options are optional
+See <a
+href="../ControllerInstrumentation.html#M000127">NewRelic::Agent::Instrumentation::ControllerInstrumentation#perform_action_with_newrelic_trace</a>
+for the full list of available options.
 </p>
-<ul>
-<li><tt>:name =&gt; action_name</tt> is used to specify the action name used as
-part of the metric name. Default is the method name.
-
-</li>
-<li><tt>:category =&gt; :web_transaction</tt> indicates that this is a
-controller action and will appear with all the other actions. This is the
-default.
-
-</li>
-<li><tt>:category =&gt; :task</tt> indicates that this is a background task and
-will show up in RPM with other background tasks instead of in the
-controllers list.
-
-</li>
-<li><tt>:force =&gt; true</tt> indicates you should capture all metrics even if
-the <tt><a href="ClassMethods.html#M000127">newrelic_ignore</a></tt>
-directive was specified at a higher level.
-
-</li>
-</ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000129-source">
+            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000131-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 131</span>
-131:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_transaction_tracer</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
-132:         <span class="ruby-comment cmt"># The metric path:</span>
-133:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>
-134:         <span class="ruby-identifier">options_arg</span> = []
-135:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-136:           <span class="ruby-identifier">options_arg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[:#{key} =&gt; &quot;#{value}&quot;]</span>
-137:         <span class="ruby-keyword kw">end</span>
-138:         <span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;def \#{method.to_s}_with_newrelic_transaction_trace(*args, &amp;block)\nNewRelic::Agent::Instrumentation::DispatcherInstrumentation.newrelic_dispatcher_start\nperform_action_with_newrelic_trace(\#{options_arg.join(',')}) do\n\#{method.to_s}_without_newrelic_transaction_trace(*args, &amp;block)\nend\nensure\nNewRelic::Agent::Instrumentation::DispatcherInstrumentation.newrelic_dispatcher_finish\nend\n&quot;</span>
-139:         <span class="ruby-identifier">alias_method</span> <span class="ruby-node">&quot;#{method.to_s}_without_newrelic_transaction_trace&quot;</span>, <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>
-140:         <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-node">&quot;#{method.to_s}_with_newrelic_transaction_trace&quot;</span>
-141:       <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 118</span>
+118:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_transaction_tracer</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
+119:         <span class="ruby-comment cmt"># The metric path:</span>
+120:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>
+121:         <span class="ruby-identifier">options_arg</span> = []
+122:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+123:           <span class="ruby-identifier">options_arg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[:#{key} =&gt; &quot;#{value}&quot;]</span>
+124:         <span class="ruby-keyword kw">end</span>
+125:         <span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;def \#{method.to_s}_with_newrelic_transaction_trace(*args, &amp;block)\nNewRelic::Agent::Instrumentation::DispatcherInstrumentation.newrelic_dispatcher_start\nperform_action_with_newrelic_trace(\#{options_arg.join(',')}) do\n\#{method.to_s}_without_newrelic_transaction_trace(*args, &amp;block)\nend\nensure\nNewRelic::Agent::Instrumentation::DispatcherInstrumentation.newrelic_dispatcher_finish\nend\n&quot;</span>
+126:         <span class="ruby-identifier">alias_method</span> <span class="ruby-node">&quot;#{method.to_s}_without_newrelic_transaction_trace&quot;</span>, <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>
+127:         <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-node">&quot;#{method.to_s}_with_newrelic_transaction_trace&quot;</span>
+128:       <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000127" class="method-detail">
-        <a name="M000127"></a>
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
 
         <div class="method-heading">
-          <a href="#M000127" class="method-signature">
+          <a href="#M000129" class="method-signature">
           <span class="method-name">newrelic_ignore</span><span class="method-args">(specifiers={})</span>
           </a>
         </div>
@@ -219,8 +196,8 @@ this controller. Specify the actions as hash options using :except and
 :only. If no actions are specified, all actions are ignored.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000127-source">
+            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000129-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 50</span>
 50:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_ignore</span>(<span class="ruby-identifier">specifiers</span>={})
@@ -231,11 +208,11 @@ this controller. Specify the actions as hash options using :except and
         </div>
       </div>
 
-      <div id="method-M000128" class="method-detail">
-        <a name="M000128"></a>
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
 
         <div class="method-heading">
-          <a href="#M000128" class="method-signature">
+          <a href="#M000130" class="method-signature">
           <span class="method-name">newrelic_ignore_apdex</span><span class="method-args">(specifiers={})</span>
           </a>
         </div>
@@ -246,11 +223,11 @@ Have <a href="../../../../NewRelic.html">NewRelic</a> omit apdex
 measurements on the given actions. Typically used for actions that are not
 user facing or that skew your overall apdex measurement. Accepts :except
 and :only options, as with <a
-href="ClassMethods.html#M000127">newrelic_ignore</a>.
+href="ClassMethods.html#M000129">newrelic_ignore</a>.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000128-source">
+            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000130-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 56</span>
 56:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_ignore_apdex</span>(<span class="ruby-identifier">specifiers</span>={})

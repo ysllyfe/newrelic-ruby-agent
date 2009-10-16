@@ -67,6 +67,10 @@
                 lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb
                 </a>
         <br />
+                <a href="../../../files/lib/new_relic/agent/instrumentation/sinatra_rb.html">
+                lib/new_relic/agent/instrumentation/sinatra.rb
+                </a>
+        <br />
             </td>
         </tr>
 
@@ -82,10 +86,18 @@
 
     <div id="description">
       <p>
-We have to patch the mongrel dispatcher live since the classes aren&#8216;t
-defined when our instrumentation loads To use this module, you need to
-monkey patch a method newrelic_response_code which will return the response
-status code when the dispatcher finishes.
+<a href="../../NewRelic.html">NewRelic</a> instrumentation for controllers
+</p>
+<p>
+This instrumentation is applied to the action controller by default if the
+agent is actively collecting statistics. It will collect statistics for the
+given action.
+</p>
+<p>
+In cases where you don&#8216;t want to instrument the top level action, but
+instead have other methods which are dispatched to by your action, and you
+want to treat these as distinct actions, then what you need to do is use
+perform_action_with_newrelic_trace
 </p>
 
     </div>
@@ -103,6 +115,7 @@ status code when the dispatcher finishes.
 
       <div id="includes-list">
         <span class="include-name"><a href="Instrumentation/ActiveRecordInstrumentation.html">::NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a></span>
+        <span class="include-name"><a href="Instrumentation/SinatraInstrumentation.html">NewRelic::Agent::Instrumentation::SinatraInstrumentation</a></span>
       </div>
     </div>
 
@@ -114,10 +127,29 @@ status code when the dispatcher finishes.
       Module <a href="Instrumentation/ActiveRecordInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a><br />
 Module <a href="Instrumentation/ControllerInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a><br />
 Module <a href="Instrumentation/DispatcherInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::DispatcherInstrumentation</a><br />
+Module <a href="Instrumentation/SinatraInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::SinatraInstrumentation</a><br />
 
     </div>
 
 
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">route_eval</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">route_eval_without_newrelic</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">route_eval_with_newrelic</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">route_eval</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
 
 
       
