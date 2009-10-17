@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Oct 15 16:38:00 -0700 2009</td>
+      <td>Fri Oct 16 18:38:19 -0700 2009</td>
     </tr>
     </table>
   </div>
@@ -71,18 +71,13 @@
     <div id="description">
       <p>
 <a href="../../../../../classes/NewRelic.html">NewRelic</a> instrumentation
-for controllers
+for Sinatra applications. Sinatra actions will appear in the UI similar to
+controller actions, and have breakdown charts and transaction traces.
 </p>
 <p>
-This instrumentation is applied to the action controller by default if the
-agent is actively collecting statistics. It will collect statistics for the
-given action.
-</p>
-<p>
-In cases where you don&#8216;t want to instrument the top level action, but
-instead have other methods which are dispatched to by your action, and you
-want to treat these as distinct actions, then what you need to do is use
-perform_action_with_newrelic_trace
+The actions in the UI will correspond to the pattern expression used to
+match them. HTTP operations are not distinguished. Multiple matches will
+all be tracked as separate actions.
 </p>
 
     </div>
