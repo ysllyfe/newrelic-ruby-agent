@@ -83,9 +83,9 @@
 Metric parsing logic mixin. Given a metric name (attribute called
 &quot;name&quot;), provide a set of accessors that enable inspection of the
 metric. A metric has 2 or more <a
-href="MetricParser.html#M000338">segments</a>, each separated by the
+href="MetricParser.html#M000342">segments</a>, each separated by the
 &#8217;/&#8217; character. The metric&#8216;s <a
-href="MetricParser.html#M000337">category</a> is specified by its first
+href="MetricParser.html#M000341">category</a> is specified by its first
 segment. Following are the set of categories currently supported by <a
 href="../NewRelic.html">NewRelic</a>&#8216;s default metric set:
 </p>
@@ -113,7 +113,7 @@ href="../NewRelic.html">NewRelic</a>&#8216;s default metric set:
 </li>
 </ul>
 <p>
-Based on the <a href="MetricParser.html#M000337">category</a> of the
+Based on the <a href="MetricParser.html#M000341">category</a> of the
 metric, specific parsing logic is defined in the source files countained in
 the &quot;metric_parsers&quot; sub directory local to this file.
 </p>
@@ -127,26 +127,26 @@ the &quot;metric_parsers&quot; sub directory local to this file.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000336">base_metric_name</a>&nbsp;&nbsp;
-      <a href="#M000345">call_rate_suffix</a>&nbsp;&nbsp;
-      <a href="#M000337">category</a>&nbsp;&nbsp;
-      <a href="#M000333">developer_name</a>&nbsp;&nbsp;
-      <a href="#M000328">for_metric_named</a>&nbsp;&nbsp;
-      <a href="#M000344">last_segment</a>&nbsp;&nbsp;
-      <a href="#M000335">legend_name</a>&nbsp;&nbsp;
-      <a href="#M000330">method_missing</a>&nbsp;&nbsp;
-      <a href="#M000347">new</a>&nbsp;&nbsp;
-      <a href="#M000329">parse</a>&nbsp;&nbsp;
-      <a href="#M000332">pie_chart_label</a>&nbsp;&nbsp;
-      <a href="#M000339">segment_0</a>&nbsp;&nbsp;
-      <a href="#M000340">segment_1</a>&nbsp;&nbsp;
-      <a href="#M000341">segment_2</a>&nbsp;&nbsp;
-      <a href="#M000342">segment_3</a>&nbsp;&nbsp;
-      <a href="#M000343">segment_4</a>&nbsp;&nbsp;
-      <a href="#M000338">segments</a>&nbsp;&nbsp;
-      <a href="#M000331">short_name</a>&nbsp;&nbsp;
-      <a href="#M000334">tooltip_name</a>&nbsp;&nbsp;
-      <a href="#M000346">url</a>&nbsp;&nbsp;
+      <a href="#M000340">base_metric_name</a>&nbsp;&nbsp;
+      <a href="#M000349">call_rate_suffix</a>&nbsp;&nbsp;
+      <a href="#M000341">category</a>&nbsp;&nbsp;
+      <a href="#M000337">developer_name</a>&nbsp;&nbsp;
+      <a href="#M000332">for_metric_named</a>&nbsp;&nbsp;
+      <a href="#M000348">last_segment</a>&nbsp;&nbsp;
+      <a href="#M000339">legend_name</a>&nbsp;&nbsp;
+      <a href="#M000334">method_missing</a>&nbsp;&nbsp;
+      <a href="#M000351">new</a>&nbsp;&nbsp;
+      <a href="#M000333">parse</a>&nbsp;&nbsp;
+      <a href="#M000336">pie_chart_label</a>&nbsp;&nbsp;
+      <a href="#M000343">segment_0</a>&nbsp;&nbsp;
+      <a href="#M000344">segment_1</a>&nbsp;&nbsp;
+      <a href="#M000345">segment_2</a>&nbsp;&nbsp;
+      <a href="#M000346">segment_3</a>&nbsp;&nbsp;
+      <a href="#M000347">segment_4</a>&nbsp;&nbsp;
+      <a href="#M000342">segments</a>&nbsp;&nbsp;
+      <a href="#M000335">short_name</a>&nbsp;&nbsp;
+      <a href="#M000338">tooltip_name</a>&nbsp;&nbsp;
+      <a href="#M000350">url</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -194,11 +194,11 @@ the &quot;metric_parsers&quot; sub directory local to this file.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000328" class="method-detail">
-        <a name="M000328"></a>
+      <div id="method-M000332" class="method-detail">
+        <a name="M000332"></a>
 
         <div class="method-heading">
-          <a href="#M000328" class="method-signature">
+          <a href="#M000332" class="method-signature">
           <span class="method-name">for_metric_named</span><span class="method-args">(s)</span>
           </a>
         </div>
@@ -208,8 +208,8 @@ the &quot;metric_parsers&quot; sub directory local to this file.
 return a string that is parsable via the Metric parser APIs
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000328-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000328-source">
+            onclick="toggleCode('M000332-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000332-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 28</span>
 28:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">for_metric_named</span>(<span class="ruby-identifier">s</span>)
@@ -225,19 +225,19 @@ return a string that is parsable via the Metric parser APIs
         </div>
       </div>
 
-      <div id="method-M000347" class="method-detail">
-        <a name="M000347"></a>
+      <div id="method-M000351" class="method-detail">
+        <a name="M000351"></a>
 
         <div class="method-heading">
-          <a href="#M000347" class="method-signature">
+          <a href="#M000351" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(name)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000347-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000347-source">
+            onclick="toggleCode('M000351-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000351-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 111</span>
 111:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
@@ -248,19 +248,19 @@ return a string that is parsable via the Metric parser APIs
         </div>
       </div>
 
-      <div id="method-M000329" class="method-detail">
-        <a name="M000329"></a>
+      <div id="method-M000333" class="method-detail">
+        <a name="M000333"></a>
 
         <div class="method-heading">
-          <a href="#M000329" class="method-signature">
+          <a href="#M000333" class="method-signature">
           <span class="method-name">parse</span><span class="method-args">(s)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000329-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000329-source">
+            onclick="toggleCode('M000333-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000333-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 37</span>
 37:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">s</span>)
@@ -273,11 +273,11 @@ return a string that is parsable via the Metric parser APIs
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000336" class="method-detail">
-        <a name="M000336"></a>
+      <div id="method-M000340" class="method-detail">
+        <a name="M000340"></a>
 
         <div class="method-heading">
-          <a href="#M000336" class="method-signature">
+          <a href="#M000340" class="method-signature">
           <span class="method-name">base_metric_name</span><span class="method-args">()</span>
           </a>
         </div>
@@ -288,8 +288,8 @@ Return the name of another metric if the current metric is really add-on
 data for another metric.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000336-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000336-source">
+            onclick="toggleCode('M000340-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000340-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 76</span>
 76:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">base_metric_name</span>
@@ -300,11 +300,11 @@ data for another metric.
         </div>
       </div>
 
-      <div id="method-M000345" class="method-detail">
-        <a name="M000345"></a>
+      <div id="method-M000349" class="method-detail">
+        <a name="M000349"></a>
 
         <div class="method-heading">
-          <a href="#M000345" class="method-signature">
+          <a href="#M000349" class="method-signature">
           <span class="method-name">call_rate_suffix</span><span class="method-args">()</span>
           </a>
         </div>
@@ -316,8 +316,8 @@ cpm but things like controller actions will override to use something like
 &#8216;rpm&#8217; for requests per minute
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000345-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000345-source">
+            onclick="toggleCode('M000349-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000349-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 103</span>
 103:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_rate_suffix</span>
@@ -328,19 +328,19 @@ cpm but things like controller actions will override to use something like
         </div>
       </div>
 
-      <div id="method-M000337" class="method-detail">
-        <a name="M000337"></a>
+      <div id="method-M000341" class="method-detail">
+        <a name="M000341"></a>
 
         <div class="method-heading">
-          <a href="#M000337" class="method-signature">
+          <a href="#M000341" class="method-signature">
           <span class="method-name">category</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000337-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000337-source">
+            onclick="toggleCode('M000341-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000341-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 80</span>
 80:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">category</span>
@@ -351,19 +351,19 @@ cpm but things like controller actions will override to use something like
         </div>
       </div>
 
-      <div id="method-M000333" class="method-detail">
-        <a name="M000333"></a>
+      <div id="method-M000337" class="method-detail">
+        <a name="M000337"></a>
 
         <div class="method-heading">
-          <a href="#M000333" class="method-signature">
+          <a href="#M000337" class="method-signature">
           <span class="method-name">developer_name</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000333-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000333-source">
+            onclick="toggleCode('M000337-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000337-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 61</span>
 61:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">developer_name</span>
@@ -374,19 +374,19 @@ cpm but things like controller actions will override to use something like
         </div>
       </div>
 
-      <div id="method-M000344" class="method-detail">
-        <a name="M000344"></a>
+      <div id="method-M000348" class="method-detail">
+        <a name="M000348"></a>
 
         <div class="method-heading">
-          <a href="#M000344" class="method-signature">
+          <a href="#M000348" class="method-signature">
           <span class="method-name">last_segment</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000344-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000344-source">
+            onclick="toggleCode('M000348-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000348-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 98</span>
 98:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last_segment</span>; <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span>; <span class="ruby-keyword kw">end</span>
@@ -395,11 +395,11 @@ cpm but things like controller actions will override to use something like
         </div>
       </div>
 
-      <div id="method-M000335" class="method-detail">
-        <a name="M000335"></a>
+      <div id="method-M000339" class="method-detail">
+        <a name="M000339"></a>
 
         <div class="method-heading">
-          <a href="#M000335" class="method-signature">
+          <a href="#M000339" class="method-signature">
           <span class="method-name">legend_name</span><span class="method-args">()</span>
           </a>
         </div>
@@ -409,8 +409,8 @@ cpm but things like controller actions will override to use something like
 A short name for legends in the graphs
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000335-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000335-source">
+            onclick="toggleCode('M000339-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000339-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 70</span>
 70:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">legend_name</span>
@@ -421,19 +421,19 @@ A short name for legends in the graphs
         </div>
       </div>
 
-      <div id="method-M000330" class="method-detail">
-        <a name="M000330"></a>
+      <div id="method-M000334" class="method-detail">
+        <a name="M000334"></a>
 
         <div class="method-heading">
-          <a href="#M000330" class="method-signature">
+          <a href="#M000334" class="method-signature">
           <span class="method-name">method_missing</span><span class="method-args">(method_name, *args)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000330-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000330-source">
+            onclick="toggleCode('M000334-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000334-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 41</span>
 41:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -445,19 +445,19 @@ A short name for legends in the graphs
         </div>
       </div>
 
-      <div id="method-M000332" class="method-detail">
-        <a name="M000332"></a>
+      <div id="method-M000336" class="method-detail">
+        <a name="M000336"></a>
 
         <div class="method-heading">
-          <a href="#M000332" class="method-signature">
+          <a href="#M000336" class="method-signature">
           <span class="method-name">pie_chart_label</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000332-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000332-source">
+            onclick="toggleCode('M000336-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000336-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 57</span>
 57:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pie_chart_label</span>
@@ -468,11 +468,11 @@ A short name for legends in the graphs
         </div>
       </div>
 
-      <div id="method-M000339" class="method-detail">
-        <a name="M000339"></a>
+      <div id="method-M000343" class="method-detail">
+        <a name="M000343"></a>
 
         <div class="method-heading">
-          <a href="#M000339" class="method-signature">
+          <a href="#M000343" class="method-signature">
           <span class="method-name">segment_0</span><span class="method-args">()</span>
           </a>
         </div>
@@ -483,8 +483,8 @@ A short name for legends in the graphs
 in the metric name for label construction as a zero-arg accessor ++
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000339-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000339-source">
+            onclick="toggleCode('M000343-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000343-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 93</span>
 93:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_0</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">0</span>]; <span class="ruby-keyword kw">end</span>
@@ -493,19 +493,19 @@ in the metric name for label construction as a zero-arg accessor ++
         </div>
       </div>
 
-      <div id="method-M000340" class="method-detail">
-        <a name="M000340"></a>
+      <div id="method-M000344" class="method-detail">
+        <a name="M000344"></a>
 
         <div class="method-heading">
-          <a href="#M000340" class="method-signature">
+          <a href="#M000344" class="method-signature">
           <span class="method-name">segment_1</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000340-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000340-source">
+            onclick="toggleCode('M000344-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000344-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 94</span>
 94:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_1</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span>]; <span class="ruby-keyword kw">end</span>
@@ -514,22 +514,64 @@ in the metric name for label construction as a zero-arg accessor ++
         </div>
       </div>
 
-      <div id="method-M000341" class="method-detail">
-        <a name="M000341"></a>
+      <div id="method-M000345" class="method-detail">
+        <a name="M000345"></a>
 
         <div class="method-heading">
-          <a href="#M000341" class="method-signature">
+          <a href="#M000345" class="method-signature">
           <span class="method-name">segment_2</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000341-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000341-source">
+            onclick="toggleCode('M000345-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000345-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 95</span>
 95:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_2</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">2</span>]; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000346" class="method-detail">
+        <a name="M000346"></a>
+
+        <div class="method-heading">
+          <a href="#M000346" class="method-signature">
+          <span class="method-name">segment_3</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000346-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000346-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 96</span>
+96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_3</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">3</span>]; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000347" class="method-detail">
+        <a name="M000347"></a>
+
+        <div class="method-heading">
+          <a href="#M000347" class="method-signature">
+          <span class="method-name">segment_4</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000347-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000347-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 97</span>
+97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_4</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">4</span>]; <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -540,7 +582,7 @@ in the metric name for label construction as a zero-arg accessor ++
 
         <div class="method-heading">
           <a href="#M000342" class="method-signature">
-          <span class="method-name">segment_3</span><span class="method-args">()</span>
+          <span class="method-name">segments</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -548,48 +590,6 @@ in the metric name for label construction as a zero-arg accessor ++
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000342-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000342-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 96</span>
-96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_3</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">3</span>]; <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000343" class="method-detail">
-        <a name="M000343"></a>
-
-        <div class="method-heading">
-          <a href="#M000343" class="method-signature">
-          <span class="method-name">segment_4</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000343-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000343-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 97</span>
-97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segment_4</span>; <span class="ruby-identifier">segments</span>[<span class="ruby-value">4</span>]; <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000338" class="method-detail">
-        <a name="M000338"></a>
-
-        <div class="method-heading">
-          <a href="#M000338" class="method-signature">
-          <span class="method-name">segments</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000338-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000338-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 84</span>
 84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">segments</span>
@@ -601,11 +601,11 @@ in the metric name for label construction as a zero-arg accessor ++
         </div>
       </div>
 
-      <div id="method-M000331" class="method-detail">
-        <a name="M000331"></a>
+      <div id="method-M000335" class="method-detail">
+        <a name="M000335"></a>
 
         <div class="method-heading">
-          <a href="#M000331" class="method-signature">
+          <a href="#M000335" class="method-signature">
           <span class="method-name">short_name</span><span class="method-args">()</span>
           </a>
         </div>
@@ -613,12 +613,12 @@ in the metric name for label construction as a zero-arg accessor ++
         <div class="method-description">
           <p>
 The short name for the metric is defined as all of the <a
-href="MetricParser.html#M000338">segments</a> of the metric name except for
+href="MetricParser.html#M000342">segments</a> of the metric name except for
 its first (its domain).
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000331-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000331-source">
+            onclick="toggleCode('M000335-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000335-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 47</span>
 47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">short_name</span>
@@ -635,19 +635,19 @@ its first (its domain).
         </div>
       </div>
 
-      <div id="method-M000334" class="method-detail">
-        <a name="M000334"></a>
+      <div id="method-M000338" class="method-detail">
+        <a name="M000338"></a>
 
         <div class="method-heading">
-          <a href="#M000334" class="method-signature">
+          <a href="#M000338" class="method-signature">
           <span class="method-name">tooltip_name</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000334-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000334-source">
+            onclick="toggleCode('M000338-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000338-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 65</span>
 65:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tooltip_name</span>
@@ -658,19 +658,19 @@ its first (its domain).
         </div>
       </div>
 
-      <div id="method-M000346" class="method-detail">
-        <a name="M000346"></a>
+      <div id="method-M000350" class="method-detail">
+        <a name="M000350"></a>
 
         <div class="method-heading">
-          <a href="#M000346" class="method-signature">
+          <a href="#M000350" class="method-signature">
           <span class="method-name">url</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000346-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000346-source">
+            onclick="toggleCode('M000350-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000350-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/metric_parser.rb, line 107</span>
 107:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url</span>
