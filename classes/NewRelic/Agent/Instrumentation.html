@@ -90,16 +90,10 @@
 
     <div id="description">
       <p>
-<a href="../../NewRelic.html">NewRelic</a> instrumentation for <a
-href="Instrumentation/Sinatra.html">Sinatra</a> applications. <a
-href="Instrumentation/Sinatra.html">Sinatra</a> actions will appear in the
-UI similar to controller actions, and have breakdown charts and transaction
-traces.
-</p>
-<p>
-The actions in the UI will correspond to the pattern expression used to
-match them. HTTP operations are not distinguished. Multiple matches will
-all be tracked as separate actions.
+We have to patch the mongrel dispatcher live since the classes aren&#8216;t
+defined when our instrumentation loads To use this module, you need to
+monkey patch a method newrelic_response_code which will return the response
+status code when the dispatcher finishes.
 </p>
 
     </div>
