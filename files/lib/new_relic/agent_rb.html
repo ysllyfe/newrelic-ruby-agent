@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Wed Oct 07 16:22:37 -0700 2009</td>
+      <td>Sat Oct 17 21:57:13 -0700 2009</td>
     </tr>
     </table>
   </div>
@@ -76,10 +76,11 @@ running in production. For more information on RPM please visit <a
 href="http://www.newrelic.com">www.newrelic.com</a>.
 </p>
 <p>
-The New Relic Agent can be installed in Ruby applications to gather runtime
-performance metrics, traces, and errors for display in a Developer Mode UI
-(mapped to /newrelic in your application server) or for monitoring and
-analysis at <a href="http://rpm.newrelic.com">rpm.newrelic.com</a>.
+The New Relic Agent can be installed in Rails applications to gather
+runtime performance metrics, traces, and errors for display in a Developer
+Mode UI (mapped to /newrelic in your application server) or for monitoring
+and analysis at <a href="http://rpm.newrelic.com">rpm.newrelic.com</a> with
+just about any Ruby application.
 </p>
 <p>
 For detailed information on configuring or customizing the RPM Agent please
@@ -106,6 +107,10 @@ For merb, do
 in the Merb config/init.rb
 </p>
 <p>
+For Sinatra, just require the <tt>newrelic_rpm</tt> gem and it will
+automatically detect Sinatra and instrument all the handlers.
+</p>
+<p>
 For other frameworks, or to manage the agent manually, invoke
 NewRelic::Agent#manual_start directly.
 </p>
@@ -115,6 +120,11 @@ All agent configuration is done in the +newrelic.yml+ file. This file is by
 default read from the <tt>config</tt> directory of the application root and
 is subsequently searched for in the application root directory, and then in
 a +~/.newrelic+ directory
+</p>
+<h2>Using with Rack/Metal</h2>
+<p>
+To instrument middlewares, refer to the docs in <a
+href="../../../classes/NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>.
 </p>
 <h2>Agent APIs</h2>
 <p>

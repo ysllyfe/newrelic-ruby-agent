@@ -72,6 +72,45 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <h2><a href="../Instrumentation.html">Instrumentation</a> for <a href="Rack.html">Rack</a></h2>
+<p>
+New Relic will instrument a <a href="Rack.html#M000133">call</a> method as
+if it were a controller action, collecting transaction traces and errors.
+The middleware will be identified only by it&#8216;s class, so if you want
+to instrument multiple actions in a middleware, you need to use
+NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods#add_transaction_tracer
+</p>
+<p>
+Example:
+</p>
+<pre>
+  require 'new_relic/agent/instrumentation/rack'
+  class Middleware
+    def call(env)
+      ...
+    end
+    # Do the include after the call method is defined:
+    include NewRelic::Agent::Instrumentation::Rack
+  end
+</pre>
+<h2>Instrumenting Metal</h2>
+<p>
+If you are using Metal, be sure and extend the your Metal class with the <a
+href="Rack.html">Rack</a> instrumentation:
+</p>
+<pre>
+  require 'new_relic/agent/instrumentation/rack'
+  class MetalApp
+    def self.call(env)
+      ...
+    end
+    # Do the include after the call method is defined:
+    extend NewRelic::Agent::Instrumentation::Rack
+  end
+</pre>
+
+    </div>
 
 
    </div>
@@ -163,37 +202,16 @@ Alias for <a href="Rack.html#M000132">call_with_newrelic</a>
         </div>
       
         <div class="method-description">
-          <h2><a href="../Instrumentation.html">Instrumentation</a> for <a href="Rack.html">Rack</a> ==</h2>
-<p>
-New Relic will instrument a <a href="Rack.html#M000133">call</a> method as
-if it were a controller action, collecting transaction traces and errors.
-The middleware will be identified only by it&#8216;s class, so if you want
-to instrument multiple actions in a middleware, you need to use
-NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods#add_transaction_tracer
-</p>
-<p>
-Example:
-</p>
-<pre>
-  require 'new_relic/agent/instrumentation/rack'
-  class Middleware
-    def call(env)
-      ...
-    end
-    # Do the include after the call method is defined:
-    include NewRelic::Agent::Instrumentation::Rack
-  end
-</pre>
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000132-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 26</span>
-26:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_with_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-27:           <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:rack</span>) <span class="ruby-keyword kw">do</span>
-28:             <span class="ruby-identifier">call_without_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-29:           <span class="ruby-keyword kw">end</span>
-30:         <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 41</span>
+41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_with_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+42:           <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:rack</span>) <span class="ruby-keyword kw">do</span>
+43:             <span class="ruby-identifier">call_without_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+44:           <span class="ruby-keyword kw">end</span>
+45:         <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
