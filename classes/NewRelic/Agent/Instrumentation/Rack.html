@@ -109,6 +109,21 @@ href="Rack.html">Rack</a> instrumentation:
     extend NewRelic::Agent::Instrumentation::Rack
   end
 </pre>
+<h2>Overriding the metric name</h2>
+<p>
+By default the middleware is identified only by its class, but if you want
+to be more specific and pass in name, then omit including the <a
+href="Rack.html">Rack</a> instrumentation and instead follow this example:
+</p>
+<pre>
+  require 'new_relic/agent/instrumentation/controller_instrumentation'
+  class Middleware
+    def call(env)
+      ...
+    end
+    add_transaction_tracer :call, :category =&gt; :rack, :name =&gt; 'my app'
+  end
+</pre>
 
     </div>
 
@@ -206,12 +221,12 @@ Alias for <a href="Rack.html#M000128">call_with_newrelic</a>
             onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000128-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 41</span>
-41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_with_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-42:           <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:rack</span>) <span class="ruby-keyword kw">do</span>
-43:             <span class="ruby-identifier">call_without_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-44:           <span class="ruby-keyword kw">end</span>
-45:         <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 54</span>
+54:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_with_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+55:           <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:rack</span>) <span class="ruby-keyword kw">do</span>
+56:             <span class="ruby-identifier">call_without_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+57:           <span class="ruby-keyword kw">end</span>
+58:         <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
