@@ -72,6 +72,21 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <h2><a href="../../../NewRelic.html">NewRelic</a> instrumentation for controllers</h2>
+<p>
+This instrumentation is applied to the action controller by default if the
+agent is actively collecting statistics. It will collect statistics for the
+given action.
+</p>
+<p>
+In cases where you don&#8216;t want to instrument the top level action, but
+instead have other methods which are dispatched to by your action, and you
+want to treat these as distinct actions, then what you need to do is use <a
+href="ControllerInstrumentation.html#M000123">perform_action_with_newrelic_trace</a>
+</p>
+
+    </div>
 
 
    </div>
@@ -80,8 +95,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000128">is_filtered?</a>&nbsp;&nbsp;
-      <a href="#M000127">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
+      <a href="#M000124">is_filtered?</a>&nbsp;&nbsp;
+      <a href="#M000123">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -109,11 +124,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000127" class="method-detail">
-        <a name="M000127"></a>
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
 
         <div class="method-heading">
-          <a href="#M000127" class="method-signature">
+          <a href="#M000123" class="method-signature">
           <span class="method-name">perform_action_with_newrelic_trace</span><span class="method-args">(*args) {|| ...}</span>
           </a>
         </div>
@@ -210,8 +225,8 @@ If a single argument is passed in, it is treated as a metric path. This
 form is deprecated.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000127-source">
+            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000123-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 216</span>
 216:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -246,14 +261,14 @@ form is deprecated.
 245:             <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:uri</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'Controller'</span> <span class="ruby-comment cmt">#'WebTransaction/Uri'</span>
 246:             <span class="ruby-comment cmt"># for internal use only</span>
 247:             <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:sinatra</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'Controller/Sinatra'</span> <span class="ruby-comment cmt">#'WebTransaction/Uri'</span>
-248:             <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:category</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>
+248:           <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:category</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>
 249:           <span class="ruby-keyword kw">end</span>
 250:           <span class="ruby-comment cmt"># To be consistent with the ActionController::Base#controller_path used in rails to determine the</span>
 251:           <span class="ruby-comment cmt"># metric path, we drop the controller off the end of the path if there is one.</span>
 252:           <span class="ruby-identifier">action</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> 
 253:           <span class="ruby-identifier">force</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:force</span>]
 254:           <span class="ruby-identifier">metric_class</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:class_name</span>] <span class="ruby-operator">||</span> (<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>)
-255: 
+255:           
 256:           <span class="ruby-identifier">path</span> = <span class="ruby-identifier">metric_class</span>
 257:           <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> (<span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">action</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">action</span>
 258:         <span class="ruby-keyword kw">end</span>
@@ -320,11 +335,11 @@ form is deprecated.
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000128" class="method-detail">
-        <a name="M000128"></a>
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
 
         <div class="method-heading">
-          <a href="#M000128" class="method-signature">
+          <a href="#M000124" class="method-signature">
           <span class="method-name">is_filtered?</span><span class="method-args">(key)</span>
           </a>
         </div>
@@ -334,8 +349,8 @@ form is deprecated.
 Filter out
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000128-source">
+            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000124-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 347</span>
 347:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_filtered?</span>(<span class="ruby-identifier">key</span>)

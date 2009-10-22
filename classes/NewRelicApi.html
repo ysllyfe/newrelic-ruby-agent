@@ -83,7 +83,7 @@ Can also be used as a script using script/runner
 </p>
 <p>
 Authentication is handled using your agent license key or HTTP Basic
-Authentication. To <a href="NewRelicApi.html#M000475">authenticate</a>
+Authentication. To <a href="NewRelicApi.html#M000472">authenticate</a>
 using your license key your newrelic.yml configuration file must be in your
 application config directory and contain your license key. The New Relic
 account associated with the license key must allow api access. Log into
@@ -92,7 +92,7 @@ page and check the &quot;Make my account data accessible&quot; checkbox.
 </p>
 <p>
 Basic authentication uses your site credentials to <a
-href="NewRelicApi.html#M000475">authenticate</a>.
+href="NewRelicApi.html#M000472">authenticate</a>.
 </p>
 <pre>
   # To authenticate using basic authentication, make this call with your username and password:
@@ -126,8 +126,8 @@ of the agent by copying it into your application.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000475">authenticate</a>&nbsp;&nbsp;
-      <a href="#M000476">reset!</a>&nbsp;&nbsp;
+      <a href="#M000472">authenticate</a>&nbsp;&nbsp;
+      <a href="#M000473">reset!</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -198,11 +198,11 @@ Class <a href="NewRelicApi/User.html" class="link">NewRelicApi::User</a><br />
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000475" class="method-detail">
-        <a name="M000475"></a>
+      <div id="method-M000472" class="method-detail">
+        <a name="M000472"></a>
 
         <div class="method-heading">
-          <a href="#M000475" class="method-signature">
+          <a href="#M000472" class="method-signature">
           <span class="method-name">authenticate</span><span class="method-args">(email, password)</span>
           </a>
         </div>
@@ -213,8 +213,8 @@ Sets up basic authentication credentials for all the resources. This is not
 necessary if you are using agent license key authentication.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000475-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000475-source">
+            onclick="toggleCode('M000472-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000472-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 78</span>
 78:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">email</span>, <span class="ruby-identifier">password</span>)
@@ -226,11 +226,11 @@ necessary if you are using agent license key authentication.
         </div>
       </div>
 
-      <div id="method-M000476" class="method-detail">
-        <a name="M000476"></a>
+      <div id="method-M000473" class="method-detail">
+        <a name="M000473"></a>
 
         <div class="method-heading">
-          <a href="#M000476" class="method-signature">
+          <a href="#M000473" class="method-signature">
           <span class="method-name">reset!</span><span class="method-args">()</span>
           </a>
         </div>
@@ -242,8 +242,8 @@ overridding the newrelic.yml settings using the ssl, host or port
 accessors.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000476-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000476-source">
+            onclick="toggleCode('M000473-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000473-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 85</span>
 85:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset!</span>

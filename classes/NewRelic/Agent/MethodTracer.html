@@ -88,13 +88,12 @@ class Module.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000125">add_method_tracer</a>&nbsp;&nbsp;
-      <a href="#M000126">remove_method_tracer</a>&nbsp;&nbsp;
-      <a href="#M000124">trace_execution_scoped</a>&nbsp;&nbsp;
-      <a href="#M000121">trace_execution_unscoped</a>&nbsp;&nbsp;
-      <a href="#M000120">trace_method_execution</a>&nbsp;&nbsp;
-      <a href="#M000123">trace_method_execution_no_scope</a>&nbsp;&nbsp;
-      <a href="#M000122">trace_method_execution_with_scope</a>&nbsp;&nbsp;
+      <a href="#M000121">add_method_tracer</a>&nbsp;&nbsp;
+      <a href="#M000122">remove_method_tracer</a>&nbsp;&nbsp;
+      <a href="#M000120">trace_execution_scoped</a>&nbsp;&nbsp;
+      <a href="#M000117">trace_execution_unscoped</a>&nbsp;&nbsp;
+      <a href="#M000119">trace_method_execution_no_scope</a>&nbsp;&nbsp;
+      <a href="#M000118">trace_method_execution_with_scope</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -129,11 +128,11 @@ class Module.
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000125" class="method-detail">
-        <a name="M000125"></a>
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
 
         <div class="method-heading">
-          <a href="#M000125" class="method-signature">
+          <a href="#M000121" class="method-signature">
           <span class="method-name">add_method_tracer</span><span class="method-args">(method_name, metric_name_code=nil, options = {})</span>
           </a>
         </div>
@@ -180,7 +179,7 @@ inserted into the tracer before and after the call.
 </li>
 <li><tt>:force = true</tt> will ensure the metric is captured even if called
 inside an untraced execution call. (See <a
-href="../Agent.html#M000086">NewRelic::Agent#disable_all_tracing</a>)
+href="../Agent.html#M000083">NewRelic::Agent#disable_all_tracing</a>)
 
 </li>
 </ul>
@@ -202,8 +201,8 @@ If not provided, the metric name will be
 <tt>Custom/ClassName/method_name</tt>.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000125-source">
+            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000121-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 163</span>
 163:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_method_tracer</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {})
@@ -268,11 +267,11 @@ If not provided, the metric name will be
         </div>
       </div>
 
-      <div id="method-M000126" class="method-detail">
-        <a name="M000126"></a>
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
 
         <div class="method-heading">
-          <a href="#M000126" class="method-signature">
+          <a href="#M000122" class="method-signature">
           <span class="method-name">remove_method_tracer</span><span class="method-args">(method_name, metric_name_code)</span>
           </a>
         </div>
@@ -284,8 +283,8 @@ reverse-order from when they were added, or else other tracers that were
 added to the same method may get removed as well.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000126-source">
+            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000122-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 254</span>
 254:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_method_tracer</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>)
@@ -303,11 +302,11 @@ added to the same method may get removed as well.
         </div>
       </div>
 
-      <div id="method-M000124" class="method-detail">
-        <a name="M000124"></a>
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
 
         <div class="method-heading">
-          <a href="#M000124" class="method-signature">
+          <a href="#M000120" class="method-signature">
           <span class="method-name">trace_execution_scoped</span><span class="method-args">(metric_names, options={}) {|unless NewRelic::Agent.is_execution_traced? || options[:force]| ...}</span>
           </a>
         </div>
@@ -315,7 +314,7 @@ added to the same method may get removed as well.
         <div class="method-description">
           <p>
 Trace a given block with stats and keep track of the caller. See <a
-href="MethodTracer.html#M000125">add_method_tracer</a> for a description of
+href="MethodTracer.html#M000121">add_method_tracer</a> for a description of
 the arguments. <tt>metric_names</tt> is either a single name or an array of
 metric names. If more than one metric is passed, the
 <tt>produce_metric</tt> option only applies to the first. The others are
@@ -327,8 +326,8 @@ metric under additional categories, but generally this *should never ever
 be done*. Most of the time you can aggregate on the server.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000124-source">
+            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000120-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 65</span>
  65:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
@@ -389,11 +388,11 @@ be done*. Most of the time you can aggregate on the server.
         </div>
       </div>
 
-      <div id="method-M000121" class="method-detail">
-        <a name="M000121"></a>
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
 
         <div class="method-heading">
-          <a href="#M000121" class="method-signature">
+          <a href="#M000117" class="method-signature">
           <span class="method-name">trace_execution_unscoped</span><span class="method-args">(metric_names, options={}) {|unless NewRelic::Agent.is_execution_traced?| ...}</span>
           </a>
         </div>
@@ -404,7 +403,7 @@ Trace a given block with stats assigned to the given metric_name. It does
 not provide scoped measurements, meaning whatever is being traced will not
 &#8216;blame the Controller&#8217;&#8212;that is to say appear in the
 breakdown chart. This is code is inlined in <a
-href="MethodTracer.html#M000125">add_method_tracer</a>.
+href="MethodTracer.html#M000121">add_method_tracer</a>.
 </p>
 <ul>
 <li><tt>metric_names</tt> is a single name or an array of names of metrics
@@ -412,13 +411,13 @@ href="MethodTracer.html#M000125">add_method_tracer</a>.
 </li>
 <li><tt>:force =&gt; true</tt> will force the metric to be captured even when
 tracing is disabled with <a
-href="../Agent.html#M000086">NewRelic::Agent#disable_all_tracing</a>
+href="../Agent.html#M000083">NewRelic::Agent#disable_all_tracing</a>
 
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000121-source">
+            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000117-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 27</span>
 27:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_unscoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
@@ -441,41 +440,8 @@ href="../Agent.html#M000086">NewRelic::Agent#disable_all_tracing</a>
         </div>
       </div>
 
-      <div id="method-M000120" class="method-detail">
-        <a name="M000120"></a>
-
-        <div class="method-heading">
-          <a href="#M000120" class="method-signature">
-          <span class="method-name">trace_method_execution</span><span class="method-args">(metric_names, push_scope, produce_metric, deduct_call_time_from_parent, &amp;block)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Deprecated: original method preserved for API backward compatibility. Use
-either <a href="MethodTracer.html#M000124">trace_execution_scoped</a> or <a
-href="MethodTracer.html#M000121">trace_execution_unscoped</a>
-</p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000120-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 10</span>
-10:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_method_execution</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">push_scope</span>, <span class="ruby-identifier">produce_metric</span>, <span class="ruby-identifier">deduct_call_time_from_parent</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) 
-11:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">push_scope</span>
-12:         <span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">:metric</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">produce_metric</span>, 
-13:                                                     <span class="ruby-identifier">:deduct_call_time_from_parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">deduct_call_time_from_parent</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-14:       <span class="ruby-keyword kw">else</span>
-15:         <span class="ruby-identifier">trace_execution_unscoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-16:       <span class="ruby-keyword kw">end</span>
-17:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000123" class="method-detail">
-        <a name="M000123"></a>
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
 
         <div class="method-heading">
           <span class="method-name">trace_method_execution_no_scope</span><span class="method-args">(metric_names, options={})</span>
@@ -483,16 +449,16 @@ href="MethodTracer.html#M000121">trace_execution_unscoped</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="MethodTracer.html#M000121">trace_execution_unscoped</a>
+Alias for <a href="MethodTracer.html#M000117">trace_execution_unscoped</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000122" class="method-detail">
-        <a name="M000122"></a>
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
 
         <div class="method-heading">
-          <a href="#M000122" class="method-signature">
+          <a href="#M000118" class="method-signature">
           <span class="method-name">trace_method_execution_with_scope</span><span class="method-args">(metric_names, produce_metric, deduct_call_time_from_parent, scoped_metric_only=false)</span>
           </a>
         </div>
@@ -500,15 +466,15 @@ Alias for <a href="MethodTracer.html#M000121">trace_execution_unscoped</a>
         <div class="method-description">
           <p>
 Deprecated. Use <a
-href="MethodTracer.html#M000124">trace_execution_scoped</a>, a version with
+href="MethodTracer.html#M000120">trace_execution_scoped</a>, a version with
 an options hash.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000122-source">
+            onclick="toggleCode('M000118-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000118-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 46</span>
-46:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_method_execution_with_scope</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">produce_metric</span>, <span class="ruby-identifier">deduct_call_time_from_parent</span>, <span class="ruby-identifier">scoped_metric_only</span>=<span class="ruby-keyword kw">false</span>);
+46:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_method_execution_with_scope</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">produce_metric</span>, <span class="ruby-identifier">deduct_call_time_from_parent</span>, <span class="ruby-identifier">scoped_metric_only</span>=<span class="ruby-keyword kw">false</span>) <span class="ruby-comment cmt">#:nodoc</span>
 47:       <span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metric_names</span>, 
 48:                              <span class="ruby-identifier">:metric</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">produce_metric</span>, 
 49:                              <span class="ruby-identifier">:deduct_call_time_from_parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">deduct_call_time_from_parent</span>, 

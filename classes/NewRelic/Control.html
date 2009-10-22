@@ -83,8 +83,8 @@
 The <a href="Control.html">Control</a> is a singleton responsible for the
 startup and initialization sequence. The initializer uses a <a
 href="LocalEnvironment.html">LocalEnvironment</a> to detect the <a
-href="Control.html#M000378">framework</a> and instantiates the <a
-href="Control.html#M000378">framework</a> specific subclass.
+href="Control.html#M000375">framework</a> and instantiates the <a
+href="Control.html#M000375">framework</a> specific subclass.
 </p>
 <p>
 The <a href="Control.html">Control</a> also implements some of the public
@@ -100,49 +100,50 @@ API for the agent.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000366">[]</a>&nbsp;&nbsp;
-      <a href="#M000368">[]=</a>&nbsp;&nbsp;
-      <a href="#M000376">agent_enabled?</a>&nbsp;&nbsp;
-      <a href="#M000371">apdex_t</a>&nbsp;&nbsp;
-      <a href="#M000385">api_server</a>&nbsp;&nbsp;
-      <a href="#M000377">app</a>&nbsp;&nbsp;
-      <a href="#M000381">app_names</a>&nbsp;&nbsp;
-      <a href="#M000370">append_environment_info</a>&nbsp;&nbsp;
-      <a href="#M000395">append_environment_info</a>&nbsp;&nbsp;
-      <a href="#M000373">capture_params</a>&nbsp;&nbsp;
-      <a href="#M000400">config_file</a>&nbsp;&nbsp;
-      <a href="#M000396">convert_to_ip_address</a>&nbsp;&nbsp;
-      <a href="#M000375">developer_mode?</a>&nbsp;&nbsp;
-      <a href="#M000380">dispatcher</a>&nbsp;&nbsp;
-      <a href="#M000379">dispatcher_instance_id</a>&nbsp;&nbsp;
-      <a href="#M000369">fetch</a>&nbsp;&nbsp;
-      <a href="#M000378">framework</a>&nbsp;&nbsp;
-      <a href="#M000388">http_connection</a>&nbsp;&nbsp;
-      <a href="#M000364">init_plugin</a>&nbsp;&nbsp;
-      <a href="#M000393">install_instrumentation</a>&nbsp;&nbsp;
-      <a href="#M000392">install_shim</a>&nbsp;&nbsp;
-      <a href="#M000363">instance</a>&nbsp;&nbsp;
-      <a href="#M000372">license_key</a>&nbsp;&nbsp;
-      <a href="#M000394">load_samplers</a>&nbsp;&nbsp;
-      <a href="#M000390">log</a>&nbsp;&nbsp;
-      <a href="#M000391">log!</a>&nbsp;&nbsp;
-      <a href="#M000401">log_path</a>&nbsp;&nbsp;
-      <a href="#M000397">merge_defaults</a>&nbsp;&nbsp;
-      <a href="#M000374">monitor_mode?</a>&nbsp;&nbsp;
-      <a href="#M000403">new</a>&nbsp;&nbsp;
-      <a href="#M000402">new_instance</a>&nbsp;&nbsp;
-      <a href="#M000404">newrelic_root</a>&nbsp;&nbsp;
-      <a href="#M000405">newrelic_root</a>&nbsp;&nbsp;
-      <a href="#M000386">proxy_server</a>&nbsp;&nbsp;
-      <a href="#M000384">server</a>&nbsp;&nbsp;
-      <a href="#M000387">server_from_host</a>&nbsp;&nbsp;
-      <a href="#M000367">settings</a>&nbsp;&nbsp;
-      <a href="#M000398">setup_log</a>&nbsp;&nbsp;
-      <a href="#M000365">start_agent</a>&nbsp;&nbsp;
-      <a href="#M000389">to_s</a>&nbsp;&nbsp;
-      <a href="#M000399">to_stdout</a>&nbsp;&nbsp;
-      <a href="#M000382">use_ssl?</a>&nbsp;&nbsp;
-      <a href="#M000383">verify_certificate?</a>&nbsp;&nbsp;
+      <a href="#M000362">[]</a>&nbsp;&nbsp;
+      <a href="#M000364">[]=</a>&nbsp;&nbsp;
+      <a href="#M000373">agent_enabled?</a>&nbsp;&nbsp;
+      <a href="#M000367">apdex_t</a>&nbsp;&nbsp;
+      <a href="#M000382">api_server</a>&nbsp;&nbsp;
+      <a href="#M000374">app</a>&nbsp;&nbsp;
+      <a href="#M000378">app_names</a>&nbsp;&nbsp;
+      <a href="#M000392">append_environment_info</a>&nbsp;&nbsp;
+      <a href="#M000366">append_environment_info</a>&nbsp;&nbsp;
+      <a href="#M000369">capture_params</a>&nbsp;&nbsp;
+      <a href="#M000397">config_file</a>&nbsp;&nbsp;
+      <a href="#M000393">convert_to_ip_address</a>&nbsp;&nbsp;
+      <a href="#M000371">developer_mode?</a>&nbsp;&nbsp;
+      <a href="#M000377">dispatcher</a>&nbsp;&nbsp;
+      <a href="#M000376">dispatcher_instance_id</a>&nbsp;&nbsp;
+      <a href="#M000365">fetch</a>&nbsp;&nbsp;
+      <a href="#M000375">framework</a>&nbsp;&nbsp;
+      <a href="#M000385">http_connection</a>&nbsp;&nbsp;
+      <a href="#M000360">init_plugin</a>&nbsp;&nbsp;
+      <a href="#M000390">install_instrumentation</a>&nbsp;&nbsp;
+      <a href="#M000389">install_shim</a>&nbsp;&nbsp;
+      <a href="#M000359">instance</a>&nbsp;&nbsp;
+      <a href="#M000368">license_key</a>&nbsp;&nbsp;
+      <a href="#M000391">load_samplers</a>&nbsp;&nbsp;
+      <a href="#M000387">log</a>&nbsp;&nbsp;
+      <a href="#M000388">log!</a>&nbsp;&nbsp;
+      <a href="#M000398">log_path</a>&nbsp;&nbsp;
+      <a href="#M000394">merge_defaults</a>&nbsp;&nbsp;
+      <a href="#M000370">monitor_mode?</a>&nbsp;&nbsp;
+      <a href="#M000400">new</a>&nbsp;&nbsp;
+      <a href="#M000399">new_instance</a>&nbsp;&nbsp;
+      <a href="#M000401">newrelic_root</a>&nbsp;&nbsp;
+      <a href="#M000402">newrelic_root</a>&nbsp;&nbsp;
+      <a href="#M000383">proxy_server</a>&nbsp;&nbsp;
+      <a href="#M000381">server</a>&nbsp;&nbsp;
+      <a href="#M000384">server_from_host</a>&nbsp;&nbsp;
+      <a href="#M000363">settings</a>&nbsp;&nbsp;
+      <a href="#M000395">setup_log</a>&nbsp;&nbsp;
+      <a href="#M000361">start_agent</a>&nbsp;&nbsp;
+      <a href="#M000386">to_s</a>&nbsp;&nbsp;
+      <a href="#M000396">to_stdout</a>&nbsp;&nbsp;
+      <a href="#M000379">use_ssl?</a>&nbsp;&nbsp;
+      <a href="#M000372">use_textmate?</a>&nbsp;&nbsp;
+      <a href="#M000380">verify_certificate?</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -167,10 +168,10 @@ API for the agent.
           <td class="context-item-value">&nbsp;[W]&nbsp;</td>
           <td class="context-item-desc">
 The env is the setting used to identify which section of the newrelic.yml
-to load. This defaults to a <a href="Control.html#M000378">framework</a>
+to load. This defaults to a <a href="Control.html#M000375">framework</a>
 specific value, such as ENV[&#8216;RAILS_ENV&#8217;] but can be overridden
 as long as you set it before calling <a
-href="Control.html#M000364">init_plugin</a>
+href="Control.html#M000360">init_plugin</a>
 
 </td>
         </tr>
@@ -194,11 +195,11 @@ href="Control.html#M000364">init_plugin</a>
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000363" class="method-detail">
-        <a name="M000363"></a>
+      <div id="method-M000359" class="method-detail">
+        <a name="M000359"></a>
 
         <div class="method-heading">
-          <a href="#M000363" class="method-signature">
+          <a href="#M000359" class="method-signature">
           <span class="method-name">instance</span><span class="method-args">()</span>
           </a>
         </div>
@@ -208,8 +209,8 @@ href="Control.html#M000364">init_plugin</a>
 Access the <a href="Control.html">Control</a> singleton, lazy initialized
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000363-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000363-source">
+            onclick="toggleCode('M000359-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000359-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 36</span>
 36:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance</span>
@@ -220,39 +221,39 @@ Access the <a href="Control.html">Control</a> singleton, lazy initialized
         </div>
       </div>
 
-      <div id="method-M000403" class="method-detail">
-        <a name="M000403"></a>
+      <div id="method-M000400" class="method-detail">
+        <a name="M000400"></a>
 
         <div class="method-heading">
-          <a href="#M000403" class="method-signature">
+          <a href="#M000400" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(local_env)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000403-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000403-source">
+            onclick="toggleCode('M000400-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000400-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 405</span>
-405:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">local_env</span>
-406:       <span class="ruby-ivar">@local_env</span> = <span class="ruby-identifier">local_env</span>
-407:       <span class="ruby-identifier">newrelic_file</span> = <span class="ruby-identifier">config_file</span>
-408:       <span class="ruby-comment cmt"># Next two are for populating the newrelic.yml via erb binding, necessary</span>
-409:       <span class="ruby-comment cmt"># when using the default newrelic.yml file</span>
-410:       <span class="ruby-identifier">generated_for_user</span> = <span class="ruby-value str">''</span>
-411:       <span class="ruby-identifier">license_key</span>=<span class="ruby-value str">''</span>
-412:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">config_file</span>)
-413:         <span class="ruby-identifier">log!</span> <span class="ruby-node">&quot;Cannot find newrelic.yml file at #{config_file}.&quot;</span>
-414:         <span class="ruby-ivar">@yaml</span> = {}
-415:       <span class="ruby-keyword kw">else</span>
-416:         <span class="ruby-ivar">@yaml</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">config_file</span>)).<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binding</span>))
-417:       <span class="ruby-keyword kw">end</span>
-418:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ScriptError</span>, <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-419:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
-420:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
-421:       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Error reading newrelic.yml file: #{e}&quot;</span>
-422:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 409</span>
+409:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">local_env</span>
+410:       <span class="ruby-ivar">@local_env</span> = <span class="ruby-identifier">local_env</span>
+411:       <span class="ruby-identifier">newrelic_file</span> = <span class="ruby-identifier">config_file</span>
+412:       <span class="ruby-comment cmt"># Next two are for populating the newrelic.yml via erb binding, necessary</span>
+413:       <span class="ruby-comment cmt"># when using the default newrelic.yml file</span>
+414:       <span class="ruby-identifier">generated_for_user</span> = <span class="ruby-value str">''</span>
+415:       <span class="ruby-identifier">license_key</span>=<span class="ruby-value str">''</span>
+416:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">config_file</span>)
+417:         <span class="ruby-identifier">log!</span> <span class="ruby-node">&quot;Cannot find newrelic.yml file at #{config_file}.&quot;</span>
+418:         <span class="ruby-ivar">@yaml</span> = {}
+419:       <span class="ruby-keyword kw">else</span>
+420:         <span class="ruby-ivar">@yaml</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">config_file</span>)).<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binding</span>))
+421:       <span class="ruby-keyword kw">end</span>
+422:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ScriptError</span>, <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+423:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+424:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+425:       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Error reading newrelic.yml file: #{e}&quot;</span>
+426:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -260,11 +261,11 @@ Access the <a href="Control.html">Control</a> singleton, lazy initialized
 
       <h3 class="section-bar">Protected Class methods</h3>
 
-      <div id="method-M000402" class="method-detail">
-        <a name="M000402"></a>
+      <div id="method-M000399" class="method-detail">
+        <a name="M000399"></a>
 
         <div class="method-heading">
-          <a href="#M000402" class="method-signature">
+          <a href="#M000399" class="method-signature">
           <span class="method-name">new_instance</span><span class="method-args">()</span>
           </a>
         </div>
@@ -274,30 +275,30 @@ Access the <a href="Control.html">Control</a> singleton, lazy initialized
 Create the concrete class for environment specific behavior:
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000402-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000402-source">
+            onclick="toggleCode('M000399-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000399-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 394</span>
-394:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new_instance</span>
-395:       <span class="ruby-ivar">@local_env</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">LocalEnvironment</span>.<span class="ruby-identifier">new</span>
-396:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span>
-397:         <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">&quot;test&quot;</span>, <span class="ruby-value str">&quot;config&quot;</span>, <span class="ruby-value str">&quot;test_control.rb&quot;</span>)
-398:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Test</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@local_env</span>
-399:       <span class="ruby-keyword kw">else</span>
-400:         <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;new_relic/control/#{@local_env.framework}.rb&quot;</span>
-401:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>).<span class="ruby-identifier">new</span> <span class="ruby-ivar">@local_env</span>
-402:       <span class="ruby-keyword kw">end</span>
-403:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 398</span>
+398:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new_instance</span>
+399:       <span class="ruby-ivar">@local_env</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">LocalEnvironment</span>.<span class="ruby-identifier">new</span>
+400:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span>
+401:         <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">&quot;test&quot;</span>, <span class="ruby-value str">&quot;config&quot;</span>, <span class="ruby-value str">&quot;test_control.rb&quot;</span>)
+402:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Test</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@local_env</span>
+403:       <span class="ruby-keyword kw">else</span>
+404:         <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;new_relic/control/#{@local_env.framework}.rb&quot;</span>
+405:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>).<span class="ruby-identifier">new</span> <span class="ruby-ivar">@local_env</span>
+406:       <span class="ruby-keyword kw">end</span>
+407:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000404" class="method-detail">
-        <a name="M000404"></a>
+      <div id="method-M000401" class="method-detail">
+        <a name="M000401"></a>
 
         <div class="method-heading">
-          <a href="#M000404" class="method-signature">
+          <a href="#M000401" class="method-signature">
           <span class="method-name">newrelic_root</span><span class="method-args">()</span>
           </a>
         </div>
@@ -307,13 +308,13 @@ Create the concrete class for environment specific behavior:
 The root directory for the plugin or gem
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000404-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000404-source">
+            onclick="toggleCode('M000401-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000401-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 425</span>
-425:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">newrelic_root</span>
-426:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>),<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;..&quot;</span>))
-427:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 429</span>
+429:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">newrelic_root</span>
+430:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>),<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;..&quot;</span>))
+431:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -321,19 +322,19 @@ The root directory for the plugin or gem
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000366" class="method-detail">
-        <a name="M000366"></a>
+      <div id="method-M000362" class="method-detail">
+        <a name="M000362"></a>
 
         <div class="method-heading">
-          <a href="#M000366" class="method-signature">
+          <a href="#M000362" class="method-signature">
           <span class="method-name">[]</span><span class="method-args">(key)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000366-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000366-source">
+            onclick="toggleCode('M000362-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000362-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 97</span>
 97:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
@@ -344,19 +345,19 @@ The root directory for the plugin or gem
         </div>
       </div>
 
-      <div id="method-M000368" class="method-detail">
-        <a name="M000368"></a>
+      <div id="method-M000364" class="method-detail">
+        <a name="M000364"></a>
 
         <div class="method-heading">
-          <a href="#M000368" class="method-signature">
+          <a href="#M000364" class="method-signature">
           <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000368-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000368-source">
+            onclick="toggleCode('M000364-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000364-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 118</span>
 118:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
@@ -367,11 +368,11 @@ The root directory for the plugin or gem
         </div>
       </div>
 
-      <div id="method-M000376" class="method-detail">
-        <a name="M000376"></a>
+      <div id="method-M000373" class="method-detail">
+        <a name="M000373"></a>
 
         <div class="method-heading">
-          <a href="#M000376" class="method-signature">
+          <a href="#M000373" class="method-signature">
           <span class="method-name">agent_enabled?</span><span class="method-args">()</span>
           </a>
         </div>
@@ -379,36 +380,36 @@ The root directory for the plugin or gem
         <div class="method-description">
           <p>
 True if dev mode or monitor mode are enabled, and we are running inside a
-valid <a href="Control.html#M000380">dispatcher</a> like mongrel or
+valid <a href="Control.html#M000377">dispatcher</a> like mongrel or
 passenger. Can be overridden by NEWRELIC_ENABLE env variable,
 monitor_daemons config option when true, or agent_enabled config option
 when true or false.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000376-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000376-source">
+            onclick="toggleCode('M000373-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000373-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 157</span>
-157:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">agent_enabled?</span>
-158:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developer_mode?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">monitor_mode?</span>
-159:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'auto'</span>
-160:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_ENABLE'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/false|off|no/i</span> 
-161:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'monitor_daemons'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span>
-162:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_ENABLE'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span>
-163:       <span class="ruby-comment cmt"># When in 'auto' mode the agent is enabled if there is a known</span>
-164:       <span class="ruby-comment cmt"># dispatcher running</span>
-165:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
-166:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 161</span>
+161:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">agent_enabled?</span>
+162:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developer_mode?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">monitor_mode?</span>
+163:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'auto'</span>
+164:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_ENABLE'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/false|off|no/i</span> 
+165:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'monitor_daemons'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span>
+166:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_ENABLE'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span>
+167:       <span class="ruby-comment cmt"># When in 'auto' mode the agent is enabled if there is a known</span>
+168:       <span class="ruby-comment cmt"># dispatcher running</span>
+169:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+170:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000371" class="method-detail">
-        <a name="M000371"></a>
+      <div id="method-M000367" class="method-detail">
+        <a name="M000367"></a>
 
         <div class="method-heading">
-          <a href="#M000371" class="method-signature">
+          <a href="#M000367" class="method-signature">
           <span class="method-name">apdex_t</span><span class="method-args">()</span>
           </a>
         </div>
@@ -418,8 +419,8 @@ when true or false.
 <a href="Agent.html">Agent</a> config conveniences
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000371-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000371-source">
+            onclick="toggleCode('M000367-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000367-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 135</span>
 135:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apdex_t</span>
@@ -431,85 +432,85 @@ when true or false.
         </div>
       </div>
 
-      <div id="method-M000385" class="method-detail">
-        <a name="M000385"></a>
+      <div id="method-M000382" class="method-detail">
+        <a name="M000382"></a>
 
         <div class="method-heading">
-          <a href="#M000385" class="method-signature">
+          <a href="#M000382" class="method-signature">
           <span class="method-name">api_server</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000385-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000385-source">
+            onclick="toggleCode('M000382-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000382-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 196</span>
-196:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_server</span>
-197:       <span class="ruby-identifier">api_host</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'api_host'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'rpm.newrelic.com'</span> 
-198:       <span class="ruby-ivar">@api_server</span> <span class="ruby-operator">||=</span> 
-199:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span> \
-200:           <span class="ruby-identifier">api_host</span>, 
-201:           (<span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'api_port'</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-value">443</span> <span class="ruby-operator">:</span> <span class="ruby-value">80</span>)).<span class="ruby-identifier">to_i</span>, 
-202:           <span class="ruby-keyword kw">nil</span>
-203:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 200</span>
+200:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_server</span>
+201:       <span class="ruby-identifier">api_host</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'api_host'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'rpm.newrelic.com'</span> 
+202:       <span class="ruby-ivar">@api_server</span> <span class="ruby-operator">||=</span> 
+203:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span> \
+204:           <span class="ruby-identifier">api_host</span>, 
+205:           (<span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'api_port'</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-value">443</span> <span class="ruby-operator">:</span> <span class="ruby-value">80</span>)).<span class="ruby-identifier">to_i</span>, 
+206:           <span class="ruby-keyword kw">nil</span>
+207:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000377" class="method-detail">
-        <a name="M000377"></a>
+      <div id="method-M000374" class="method-detail">
+        <a name="M000374"></a>
 
         <div class="method-heading">
-          <a href="#M000377" class="method-signature">
+          <a href="#M000374" class="method-signature">
           <span class="method-name">app</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000377-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000377-source">
+            onclick="toggleCode('M000374-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000374-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 168</span>
-168:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">app</span>
-169:       <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span>
-170:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 172</span>
+172:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">app</span>
+173:       <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span>
+174:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000381" class="method-detail">
-        <a name="M000381"></a>
+      <div id="method-M000378" class="method-detail">
+        <a name="M000378"></a>
 
         <div class="method-heading">
-          <a href="#M000381" class="method-signature">
+          <a href="#M000378" class="method-signature">
           <span class="method-name">app_names</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000381-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000381-source">
+            onclick="toggleCode('M000378-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000378-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 179</span>
-179:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">app_names</span>
-180:       <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'app_name'</span>] <span class="ruby-operator">?</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'app_name'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">';'</span>) <span class="ruby-operator">:</span> []
-181:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 183</span>
+183:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">app_names</span>
+184:       <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'app_name'</span>] <span class="ruby-operator">?</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'app_name'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">';'</span>) <span class="ruby-operator">:</span> []
+185:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000370" class="method-detail">
-        <a name="M000370"></a>
+      <div id="method-M000366" class="method-detail">
+        <a name="M000366"></a>
 
         <div class="method-heading">
-          <a href="#M000370" class="method-signature">
+          <a href="#M000366" class="method-signature">
           <span class="method-name">append_environment_info</span><span class="method-args">(name, value)</span>
           </a>
         </div>
@@ -518,11 +519,11 @@ when true or false.
           <p>
 Add your own environment value to track for change detection. The name and
 value should be stable and not vary across <a
-href="Control.html#M000377">app</a> processes on the same host.
+href="Control.html#M000374">app</a> processes on the same host.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000370-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000370-source">
+            onclick="toggleCode('M000366-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000366-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 128</span>
 128:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
@@ -533,19 +534,19 @@ href="Control.html#M000377">app</a> processes on the same host.
         </div>
       </div>
 
-      <div id="method-M000373" class="method-detail">
-        <a name="M000373"></a>
+      <div id="method-M000369" class="method-detail">
+        <a name="M000369"></a>
 
         <div class="method-heading">
-          <a href="#M000373" class="method-signature">
+          <a href="#M000369" class="method-signature">
           <span class="method-name">capture_params</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000373-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000373-source">
+            onclick="toggleCode('M000369-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000369-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 142</span>
 142:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">capture_params</span>
@@ -556,11 +557,11 @@ href="Control.html#M000377">app</a> processes on the same host.
         </div>
       </div>
 
-      <div id="method-M000375" class="method-detail">
-        <a name="M000375"></a>
+      <div id="method-M000371" class="method-detail">
+        <a name="M000371"></a>
 
         <div class="method-heading">
-          <a href="#M000375" class="method-signature">
+          <a href="#M000371" class="method-signature">
           <span class="method-name">developer_mode?</span><span class="method-args">()</span>
           </a>
         </div>
@@ -570,77 +571,77 @@ href="Control.html#M000377">app</a> processes on the same host.
 True if we are capturing data and displaying in /newrelic
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000375-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000375-source">
+            onclick="toggleCode('M000371-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000371-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 150</span>
 150:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">developer_mode?</span>
-151:       <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'developer'</span>, <span class="ruby-keyword kw">nil</span>)
+151:       <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'developer'</span>)
 152:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000380" class="method-detail">
-        <a name="M000380"></a>
+      <div id="method-M000377" class="method-detail">
+        <a name="M000377"></a>
 
         <div class="method-heading">
-          <a href="#M000380" class="method-signature">
+          <a href="#M000377" class="method-signature">
           <span class="method-name">dispatcher</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000380-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000380-source">
+            onclick="toggleCode('M000377-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000377-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 176</span>
-176:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher</span>
-177:       <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'dispatcher'</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span>
-178:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 180</span>
+180:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher</span>
+181:       <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'dispatcher'</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span>
+182:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000379" class="method-detail">
-        <a name="M000379"></a>
+      <div id="method-M000376" class="method-detail">
+        <a name="M000376"></a>
 
         <div class="method-heading">
-          <a href="#M000379" class="method-signature">
+          <a href="#M000376" class="method-signature">
           <span class="method-name">dispatcher_instance_id</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000379-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000379-source">
+            onclick="toggleCode('M000376-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000376-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 173</span>
-173:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_instance_id</span>
-174:       <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'dispatcher_instance_id'</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
-175:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 177</span>
+177:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_instance_id</span>
+178:       <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'dispatcher_instance_id'</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
+179:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000369" class="method-detail">
-        <a name="M000369"></a>
+      <div id="method-M000365" class="method-detail">
+        <a name="M000365"></a>
 
         <div class="method-heading">
-          <a href="#M000369" class="method-signature">
+          <a href="#M000365" class="method-signature">
           <span class="method-name">fetch</span><span class="method-args">(key, default=nil)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000369-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000369-source">
+            onclick="toggleCode('M000365-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000365-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 122</span>
 122:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">default</span>=<span class="ruby-keyword kw">nil</span>)
@@ -651,8 +652,8 @@ True if we are capturing data and displaying in /newrelic
         </div>
       </div>
 
-      <div id="method-M000378" class="method-detail">
-        <a name="M000378"></a>
+      <div id="method-M000375" class="method-detail">
+        <a name="M000375"></a>
 
         <div class="method-heading">
           <span class="method-name">framework</span><span class="method-args">()</span>
@@ -660,16 +661,16 @@ True if we are capturing data and displaying in /newrelic
       
         <div class="method-description">
           <p>
-Alias for <a href="Control.html#M000377">app</a>
+Alias for <a href="Control.html#M000374">app</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000388" class="method-detail">
-        <a name="M000388"></a>
+      <div id="method-M000385" class="method-detail">
+        <a name="M000385"></a>
 
         <div class="method-heading">
-          <a href="#M000388" class="method-signature">
+          <a href="#M000385" class="method-signature">
           <span class="method-name">http_connection</span><span class="method-args">(host = nil)</span>
           </a>
         </div>
@@ -678,7 +679,7 @@ Alias for <a href="Control.html#M000377">app</a>
           <p>
 Return the Net::HTTP with proxy configuration given the
 NewRelic::Control::Server object. Default is the collector but for api
-calls you need to pass <a href="Control.html#M000385">api_server</a>
+calls you need to pass <a href="Control.html#M000382">api_server</a>
 </p>
 <p>
 Experimental support for SSL verification: swap &#8216;VERIFY_NONE&#8217;
@@ -687,37 +688,37 @@ uncomment the &#8216;http.ca_file&#8217; line and it will use the included
 certificate.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000388-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000388-source">
+            onclick="toggleCode('M000385-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000385-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 224</span>
-224:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">http_connection</span>(<span class="ruby-identifier">host</span> = <span class="ruby-keyword kw">nil</span>)
-225:       <span class="ruby-identifier">host</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">server</span>
-226:       <span class="ruby-comment cmt"># Proxy returns regular HTTP if @proxy_host is nil (the default)</span>
-227:       <span class="ruby-identifier">http_class</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Proxy</span>(<span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">port</span>, 
-228:                                     <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">user</span>, <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">password</span>)
-229:       <span class="ruby-identifier">http</span> = <span class="ruby-identifier">http_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>.<span class="ruby-identifier">ip</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">host</span>.<span class="ruby-identifier">port</span>)
-230:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_ssl?</span>
-231:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">use_ssl</span> = <span class="ruby-keyword kw">true</span>
-232:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verify_certificate?</span>
-233:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_PEER</span>
-234:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">ca_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">'..'</span>, <span class="ruby-value str">'..'</span>, <span class="ruby-value str">'cert'</span>, <span class="ruby-value str">'cacert.pem'</span>)
-235:         <span class="ruby-keyword kw">else</span>
-236:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_NONE</span>
-237:         <span class="ruby-keyword kw">end</span>
-238:       <span class="ruby-keyword kw">end</span>
-239:       <span class="ruby-identifier">http</span>
-240:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 228</span>
+228:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">http_connection</span>(<span class="ruby-identifier">host</span> = <span class="ruby-keyword kw">nil</span>)
+229:       <span class="ruby-identifier">host</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">server</span>
+230:       <span class="ruby-comment cmt"># Proxy returns regular HTTP if @proxy_host is nil (the default)</span>
+231:       <span class="ruby-identifier">http_class</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Proxy</span>(<span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">port</span>, 
+232:                                     <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">user</span>, <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">password</span>)
+233:       <span class="ruby-identifier">http</span> = <span class="ruby-identifier">http_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>.<span class="ruby-identifier">ip</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">host</span>.<span class="ruby-identifier">port</span>)
+234:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_ssl?</span>
+235:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">use_ssl</span> = <span class="ruby-keyword kw">true</span>
+236:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verify_certificate?</span>
+237:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_PEER</span>
+238:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">ca_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">'..'</span>, <span class="ruby-value str">'..'</span>, <span class="ruby-value str">'cert'</span>, <span class="ruby-value str">'cacert.pem'</span>)
+239:         <span class="ruby-keyword kw">else</span>
+240:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_NONE</span>
+241:         <span class="ruby-keyword kw">end</span>
+242:       <span class="ruby-keyword kw">end</span>
+243:       <span class="ruby-identifier">http</span>
+244:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000364" class="method-detail">
-        <a name="M000364"></a>
+      <div id="method-M000360" class="method-detail">
+        <a name="M000360"></a>
 
         <div class="method-heading">
-          <a href="#M000364" class="method-signature">
+          <a href="#M000360" class="method-signature">
           <span class="method-name">init_plugin</span><span class="method-args">(options={})</span>
           </a>
         </div>
@@ -725,7 +726,7 @@ certificate.
         <div class="method-description">
           <p>
 Initialize the plugin/gem and start the agent. This does the necessary
-configuration based on the <a href="Control.html#M000378">framework</a>
+configuration based on the <a href="Control.html#M000375">framework</a>
 environment and determines whether or not to start the agent. If the agent
 is not going to be started then it loads the agent shim which has stubs for
 all the external api.
@@ -742,7 +743,7 @@ real agent and start it.
 </p>
 <p>
 What determines whether the agent is launched is the result of calling <a
-href="Control.html#M000376">agent_enabled?</a> This will indicate whether
+href="Control.html#M000373">agent_enabled?</a> This will indicate whether
 the instrumentation should/will be installed. If we&#8216;re in a mode
 where tracers are not installed then we should not start the agent.
 </p>
@@ -751,8 +752,8 @@ Subclasses are not allowed to override, but must implement init_config({})
 which is called at most once.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000364-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000364-source">
+            onclick="toggleCode('M000360-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000360-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 59</span>
 59:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_plugin</span>(<span class="ruby-identifier">options</span>={})
@@ -791,56 +792,56 @@ which is called at most once.
         </div>
       </div>
 
-      <div id="method-M000393" class="method-detail">
-        <a name="M000393"></a>
+      <div id="method-M000390" class="method-detail">
+        <a name="M000390"></a>
 
         <div class="method-heading">
-          <a href="#M000393" class="method-signature">
+          <a href="#M000390" class="method-signature">
           <span class="method-name">install_instrumentation</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000393-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000393-source">
+            onclick="toggleCode('M000390-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000390-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 273</span>
-273:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_instrumentation</span>
-274:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@instrumented</span>
-275:       
-276:       <span class="ruby-ivar">@instrumented</span> = <span class="ruby-keyword kw">true</span>
-277:       
-278:       <span class="ruby-comment cmt"># Instrumentation for the key code points inside rails for monitoring by NewRelic.</span>
-279:       <span class="ruby-comment cmt"># note this file is loaded only if the newrelic agent is enabled (through config/newrelic.yml)</span>
-280:       <span class="ruby-identifier">instrumentation_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">'agent'</span>,<span class="ruby-value str">'instrumentation'</span>)
-281:       <span class="ruby-identifier">instrumentation_files</span> = [ ] <span class="ruby-operator">&lt;&lt;</span>
-282:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">instrumentation_path</span>, <span class="ruby-value str">'*.rb'</span>) <span class="ruby-operator">&lt;&lt;</span>
-283:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">instrumentation_path</span>, <span class="ruby-identifier">app</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">'*.rb'</span>)
-284:       <span class="ruby-identifier">instrumentation_files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">pattern</span> <span class="ruby-operator">|</span>
-285:         <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
-286:           <span class="ruby-keyword kw">begin</span>
-287:             <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Processing instrumentation file '#{file}'&quot;</span>
-288:             <span class="ruby-identifier">require</span> <span class="ruby-identifier">file</span>
-289:           <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-290:             <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Error loading instrumentation file '#{file}': #{e}&quot;</span>
-291:             <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
-292:           <span class="ruby-keyword kw">end</span>
-293:         <span class="ruby-keyword kw">end</span>
-294:       <span class="ruby-keyword kw">end</span>
-295:       
-296:       <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;Finished instrumentation&quot;</span>
-297:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 277</span>
+277:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_instrumentation</span>
+278:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@instrumented</span>
+279:       
+280:       <span class="ruby-ivar">@instrumented</span> = <span class="ruby-keyword kw">true</span>
+281:       
+282:       <span class="ruby-comment cmt"># Instrumentation for the key code points inside rails for monitoring by NewRelic.</span>
+283:       <span class="ruby-comment cmt"># note this file is loaded only if the newrelic agent is enabled (through config/newrelic.yml)</span>
+284:       <span class="ruby-identifier">instrumentation_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">'agent'</span>,<span class="ruby-value str">'instrumentation'</span>)
+285:       <span class="ruby-identifier">instrumentation_files</span> = [ ] <span class="ruby-operator">&lt;&lt;</span>
+286:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">instrumentation_path</span>, <span class="ruby-value str">'*.rb'</span>) <span class="ruby-operator">&lt;&lt;</span>
+287:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">instrumentation_path</span>, <span class="ruby-identifier">app</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">'*.rb'</span>)
+288:       <span class="ruby-identifier">instrumentation_files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">pattern</span> <span class="ruby-operator">|</span>
+289:         <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+290:           <span class="ruby-keyword kw">begin</span>
+291:             <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Processing instrumentation file '#{file}'&quot;</span>
+292:             <span class="ruby-identifier">require</span> <span class="ruby-identifier">file</span>
+293:           <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+294:             <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Error loading instrumentation file '#{file}': #{e}&quot;</span>
+295:             <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+296:           <span class="ruby-keyword kw">end</span>
+297:         <span class="ruby-keyword kw">end</span>
+298:       <span class="ruby-keyword kw">end</span>
+299:       
+300:       <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;Finished instrumentation&quot;</span>
+301:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000392" class="method-detail">
-        <a name="M000392"></a>
+      <div id="method-M000389" class="method-detail">
+        <a name="M000389"></a>
 
         <div class="method-heading">
-          <a href="#M000392" class="method-signature">
+          <a href="#M000389" class="method-signature">
           <span class="method-name">install_shim</span><span class="method-args">()</span>
           </a>
         </div>
@@ -848,37 +849,37 @@ which is called at most once.
         <div class="method-description">
           <p>
 Install stubs to the proper location so the <a
-href="Control.html#M000377">app</a> code will not fail if the agent is not
+href="Control.html#M000374">app</a> code will not fail if the agent is not
 running.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000392-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000392-source">
+            onclick="toggleCode('M000389-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000389-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 267</span>
-267:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_shim</span>
-268:       <span class="ruby-comment cmt"># Once we install instrumentation, you can't undo that by installing the shim.</span>
-269:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Cannot install the Agent shim after instrumentation has already been installed!&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@instrumented</span>
-270:       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">agent</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ShimAgent</span>.<span class="ruby-identifier">instance</span>
-271:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 271</span>
+271:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_shim</span>
+272:       <span class="ruby-comment cmt"># Once we install instrumentation, you can't undo that by installing the shim.</span>
+273:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Cannot install the Agent shim after instrumentation has already been installed!&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@instrumented</span>
+274:       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">agent</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ShimAgent</span>.<span class="ruby-identifier">instance</span>
+275:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000372" class="method-detail">
-        <a name="M000372"></a>
+      <div id="method-M000368" class="method-detail">
+        <a name="M000368"></a>
 
         <div class="method-heading">
-          <a href="#M000372" class="method-signature">
+          <a href="#M000368" class="method-signature">
           <span class="method-name">license_key</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000372-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000372-source">
+            onclick="toggleCode('M000368-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000368-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 139</span>
 139:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">license_key</span>
@@ -889,170 +890,35 @@ running.
         </div>
       </div>
 
-      <div id="method-M000394" class="method-detail">
-        <a name="M000394"></a>
+      <div id="method-M000391" class="method-detail">
+        <a name="M000391"></a>
 
         <div class="method-heading">
-          <a href="#M000394" class="method-signature">
+          <a href="#M000391" class="method-signature">
           <span class="method-name">load_samplers</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000394-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000394-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 299</span>
-299:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_samplers</span>
-300:       <span class="ruby-identifier">agent</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>
-301:       <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">add_sampler</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">MongrelSampler</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">mongrel</span>
-302:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">CpuSampler</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
-303:         <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">add_harvest_sampler</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">CpuSampler</span>.<span class="ruby-identifier">new</span>
-304:       <span class="ruby-keyword kw">end</span>
-305:       <span class="ruby-keyword kw">begin</span>
-306:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">MemorySampler</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
-307:           <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">add_sampler</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">MemorySampler</span>.<span class="ruby-identifier">new</span>
-308:         <span class="ruby-keyword kw">end</span>
-309:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-310:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Cannot add memory sampling: #{e}&quot;</span>
-311:       <span class="ruby-keyword kw">end</span>
-312:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000390" class="method-detail">
-        <a name="M000390"></a>
-
-        <div class="method-heading">
-          <a href="#M000390" class="method-signature">
-          <span class="method-name">log</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000390-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000390-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 245</span>
-245:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
-246:       <span class="ruby-comment cmt"># If we try to get a log before one has been set up, return a stdout log</span>
-247:       <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@log</span>
-248:         <span class="ruby-identifier">l</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
-249:         <span class="ruby-identifier">l</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
-250:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">l</span>
-251:       <span class="ruby-keyword kw">end</span>
-252:       <span class="ruby-ivar">@log</span>
-253:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000391" class="method-detail">
-        <a name="M000391"></a>
-
-        <div class="method-heading">
-          <a href="#M000391" class="method-signature">
-          <span class="method-name">log!</span><span class="method-args">(msg, level=:info)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-send the given message to STDOUT so that it shows up in the console. This
-should be used for important informational messages at boot. The <a
-href="Control.html#M000399">to_stdout</a> may be implemented differently by
-different config subclasses. This will NOT print anything if tracers are
-not enabled
-</p>
-          <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000391-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000391-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 259</span>
-259:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log!</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">level</span>=<span class="ruby-identifier">:info</span>)
-260:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@settings</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">agent_enabled?</span>
-261:       <span class="ruby-identifier">to_stdout</span> <span class="ruby-identifier">msg</span>
-262:       <span class="ruby-identifier">log</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">level</span>, <span class="ruby-identifier">msg</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@log</span>
-263:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000374" class="method-detail">
-        <a name="M000374"></a>
-
-        <div class="method-heading">
-          <a href="#M000374" class="method-signature">
-          <span class="method-name">monitor_mode?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-True if we are sending data to the <a
-href="Control.html#M000384">server</a>, monitoring production
-</p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000374-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000374-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 146</span>
-146:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">monitor_mode?</span>
-147:       <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'enabled'</span>, <span class="ruby-keyword kw">nil</span>)
-148:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000386" class="method-detail">
-        <a name="M000386"></a>
-
-        <div class="method-heading">
-          <a href="#M000386" class="method-signature">
-          <span class="method-name">proxy_server</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000386-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000386-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 205</span>
-205:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proxy_server</span>
-206:       <span class="ruby-ivar">@proxy_server</span> <span class="ruby-operator">||=</span>
-207:          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyServer</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_host'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_port'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_user'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_pass'</span>] 
-208:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000384" class="method-detail">
-        <a name="M000384"></a>
-
-        <div class="method-heading">
-          <a href="#M000384" class="method-signature">
-          <span class="method-name">server</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000384-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000384-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 192</span>
-192:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">server</span>
-193:       <span class="ruby-ivar">@remote_server</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">server_from_host</span>(<span class="ruby-keyword kw">nil</span>)  
-194:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 303</span>
+303:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_samplers</span>
+304:       <span class="ruby-identifier">agent</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>
+305:       <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">add_sampler</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">MongrelSampler</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">mongrel</span>
+306:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">CpuSampler</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
+307:         <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">add_harvest_sampler</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">CpuSampler</span>.<span class="ruby-identifier">new</span>
+308:       <span class="ruby-keyword kw">end</span>
+309:       <span class="ruby-keyword kw">begin</span>
+310:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">MemorySampler</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
+311:           <span class="ruby-identifier">agent</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">add_sampler</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Samplers</span><span class="ruby-operator">::</span><span class="ruby-constant">MemorySampler</span>.<span class="ruby-identifier">new</span>
+312:         <span class="ruby-keyword kw">end</span>
+313:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+314:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Cannot add memory sampling: #{e}&quot;</span>
+315:       <span class="ruby-keyword kw">end</span>
+316:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -1063,7 +929,7 @@ href="Control.html#M000384">server</a>, monitoring production
 
         <div class="method-heading">
           <a href="#M000387" class="method-signature">
-          <span class="method-name">server_from_host</span><span class="method-args">(hostname=nil)</span>
+          <span class="method-name">log</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -1072,31 +938,166 @@ href="Control.html#M000384">server</a>, monitoring production
             onclick="toggleCode('M000387-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000387-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 210</span>
-210:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">server_from_host</span>(<span class="ruby-identifier">hostname</span>=<span class="ruby-keyword kw">nil</span>)
-211:       <span class="ruby-identifier">host</span> = <span class="ruby-identifier">hostname</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'host'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'collector.newrelic.com'</span>
-212:       
-213:       <span class="ruby-comment cmt"># if the host is not an IP address, turn it into one</span>
-214:       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">host</span>, (<span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-value">443</span> <span class="ruby-operator">:</span> <span class="ruby-value">80</span>)).<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">convert_to_ip_address</span>(<span class="ruby-identifier">host</span>) 
-215:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 249</span>
+249:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
+250:       <span class="ruby-comment cmt"># If we try to get a log before one has been set up, return a stdout log</span>
+251:       <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@log</span>
+252:         <span class="ruby-identifier">l</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+253:         <span class="ruby-identifier">l</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+254:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">l</span>
+255:       <span class="ruby-keyword kw">end</span>
+256:       <span class="ruby-ivar">@log</span>
+257:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000367" class="method-detail">
-        <a name="M000367"></a>
+      <div id="method-M000388" class="method-detail">
+        <a name="M000388"></a>
 
         <div class="method-heading">
-          <a href="#M000367" class="method-signature">
+          <a href="#M000388" class="method-signature">
+          <span class="method-name">log!</span><span class="method-args">(msg, level=:info)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+send the given message to STDOUT so that it shows up in the console. This
+should be used for important informational messages at boot. The <a
+href="Control.html#M000396">to_stdout</a> may be implemented differently by
+different config subclasses. This will NOT print anything if tracers are
+not enabled
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000388-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000388-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 263</span>
+263:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log!</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">level</span>=<span class="ruby-identifier">:info</span>)
+264:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@settings</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">agent_enabled?</span>
+265:       <span class="ruby-identifier">to_stdout</span> <span class="ruby-identifier">msg</span>
+266:       <span class="ruby-identifier">log</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">level</span>, <span class="ruby-identifier">msg</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@log</span>
+267:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000370" class="method-detail">
+        <a name="M000370"></a>
+
+        <div class="method-heading">
+          <a href="#M000370" class="method-signature">
+          <span class="method-name">monitor_mode?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+True if we are sending data to the <a
+href="Control.html#M000381">server</a>, monitoring production
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000370-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000370-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 146</span>
+146:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">monitor_mode?</span>
+147:       <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'enabled'</span>)
+148:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000383" class="method-detail">
+        <a name="M000383"></a>
+
+        <div class="method-heading">
+          <a href="#M000383" class="method-signature">
+          <span class="method-name">proxy_server</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000383-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000383-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 209</span>
+209:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proxy_server</span>
+210:       <span class="ruby-ivar">@proxy_server</span> <span class="ruby-operator">||=</span>
+211:          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyServer</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_host'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_port'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_user'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_pass'</span>] 
+212:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000381" class="method-detail">
+        <a name="M000381"></a>
+
+        <div class="method-heading">
+          <a href="#M000381" class="method-signature">
+          <span class="method-name">server</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000381-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000381-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 196</span>
+196:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">server</span>
+197:       <span class="ruby-ivar">@remote_server</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">server_from_host</span>(<span class="ruby-keyword kw">nil</span>)  
+198:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000384" class="method-detail">
+        <a name="M000384"></a>
+
+        <div class="method-heading">
+          <a href="#M000384" class="method-signature">
+          <span class="method-name">server_from_host</span><span class="method-args">(hostname=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000384-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000384-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 214</span>
+214:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">server_from_host</span>(<span class="ruby-identifier">hostname</span>=<span class="ruby-keyword kw">nil</span>)
+215:       <span class="ruby-identifier">host</span> = <span class="ruby-identifier">hostname</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'host'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'collector.newrelic.com'</span>
+216:       
+217:       <span class="ruby-comment cmt"># if the host is not an IP address, turn it into one</span>
+218:       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">host</span>, (<span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-value">443</span> <span class="ruby-operator">:</span> <span class="ruby-value">80</span>)).<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">convert_to_ip_address</span>(<span class="ruby-identifier">host</span>) 
+219:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000363" class="method-detail">
+        <a name="M000363"></a>
+
+        <div class="method-heading">
+          <a href="#M000363" class="method-signature">
           <span class="method-name">settings</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000367-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000367-source">
+            onclick="toggleCode('M000363-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000363-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 101</span>
 101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">settings</span>
@@ -1120,11 +1121,11 @@ href="Control.html#M000384">server</a>, monitoring production
         </div>
       </div>
 
-      <div id="method-M000365" class="method-detail">
-        <a name="M000365"></a>
+      <div id="method-M000361" class="method-detail">
+        <a name="M000361"></a>
 
         <div class="method-heading">
-          <a href="#M000365" class="method-signature">
+          <a href="#M000361" class="method-signature">
           <span class="method-name">start_agent</span><span class="method-args">()</span>
           </a>
         </div>
@@ -1135,8 +1136,8 @@ Install the real agent into the <a href="Agent.html">Agent</a> module, and
 issue the start command.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000365-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000365-source">
+            onclick="toggleCode('M000361-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000361-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 92</span>
 92:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_agent</span>
@@ -1148,71 +1149,97 @@ issue the start command.
         </div>
       </div>
 
-      <div id="method-M000389" class="method-detail">
-        <a name="M000389"></a>
+      <div id="method-M000386" class="method-detail">
+        <a name="M000386"></a>
 
         <div class="method-heading">
-          <a href="#M000389" class="method-signature">
+          <a href="#M000386" class="method-signature">
           <span class="method-name">to_s</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000389-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000389-source">
+            onclick="toggleCode('M000386-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000386-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 241</span>
-241:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-242:       <span class="ruby-node">&quot;Control[#{self.app}]&quot;</span>
-243:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 245</span>
+245:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+246:       <span class="ruby-node">&quot;Control[#{self.app}]&quot;</span>
+247:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000382" class="method-detail">
-        <a name="M000382"></a>
+      <div id="method-M000379" class="method-detail">
+        <a name="M000379"></a>
 
         <div class="method-heading">
-          <a href="#M000382" class="method-signature">
+          <a href="#M000379" class="method-signature">
           <span class="method-name">use_ssl?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000382-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000382-source">
+            onclick="toggleCode('M000379-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000379-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 183</span>
-183:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">use_ssl?</span>
-184:       <span class="ruby-ivar">@use_ssl</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'ssl'</span>, <span class="ruby-keyword kw">false</span>)
-185:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 187</span>
+187:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">use_ssl?</span>
+188:       <span class="ruby-ivar">@use_ssl</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'ssl'</span>, <span class="ruby-keyword kw">false</span>)
+189:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000383" class="method-detail">
-        <a name="M000383"></a>
+      <div id="method-M000372" class="method-detail">
+        <a name="M000372"></a>
 
         <div class="method-heading">
-          <a href="#M000383" class="method-signature">
+          <a href="#M000372" class="method-signature">
+          <span class="method-name">use_textmate?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+True if we should view files in textmate
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000372-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000372-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 154</span>
+154:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">use_textmate?</span>
+155:       <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'textmate'</span>)
+156:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000380" class="method-detail">
+        <a name="M000380"></a>
+
+        <div class="method-heading">
+          <a href="#M000380" class="method-signature">
           <span class="method-name">verify_certificate?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000383-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000383-source">
+            onclick="toggleCode('M000380-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000380-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 187</span>
-187:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verify_certificate?</span>
-188:       <span class="ruby-comment cmt">#this can only be on when SSL is enabled</span>
-189:       <span class="ruby-ivar">@verify_certificate</span> <span class="ruby-operator">||=</span> ( <span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'verify_certificate'</span>, <span class="ruby-keyword kw">false</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>)
-190:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 191</span>
+191:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verify_certificate?</span>
+192:       <span class="ruby-comment cmt">#this can only be on when SSL is enabled</span>
+193:       <span class="ruby-ivar">@verify_certificate</span> <span class="ruby-operator">||=</span> ( <span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'verify_certificate'</span>, <span class="ruby-keyword kw">false</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>)
+194:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -1220,60 +1247,60 @@ issue the start command.
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000395" class="method-detail">
-        <a name="M000395"></a>
+      <div id="method-M000392" class="method-detail">
+        <a name="M000392"></a>
 
         <div class="method-heading">
-          <a href="#M000395" class="method-signature">
+          <a href="#M000392" class="method-signature">
           <span class="method-name">append_environment_info</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Append <a href="Control.html#M000378">framework</a> specific environment
-information for uploading to the <a href="Control.html#M000384">server</a>
+Append <a href="Control.html#M000375">framework</a> specific environment
+information for uploading to the <a href="Control.html#M000381">server</a>
 for change detection. Override in subclasses
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000395-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000395-source">
+            onclick="toggleCode('M000392-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000392-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 318</span>
-318:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>; <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 322</span>
+322:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>; <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000400" class="method-detail">
-        <a name="M000400"></a>
+      <div id="method-M000397" class="method-detail">
+        <a name="M000397"></a>
 
         <div class="method-heading">
-          <a href="#M000400" class="method-signature">
+          <a href="#M000397" class="method-signature">
           <span class="method-name">config_file</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000400-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000400-source">
+            onclick="toggleCode('M000397-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000397-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 381</span>
-381:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
-382:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>))
-383:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 385</span>
+385:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
+386:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>))
+387:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000396" class="method-detail">
-        <a name="M000396"></a>
+      <div id="method-M000393" class="method-detail">
+        <a name="M000393"></a>
 
         <div class="method-heading">
-          <a href="#M000396" class="method-signature">
+          <a href="#M000393" class="method-signature">
           <span class="method-name">convert_to_ip_address</span><span class="method-args">(host)</span>
           </a>
         </div>
@@ -1286,109 +1313,27 @@ nil if we can&#8216;t find the host ip address and don&#8216;t have a good
 default.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000396-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000396-source">
+            onclick="toggleCode('M000393-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000393-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 324</span>
-324:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_to_ip_address</span>(<span class="ruby-identifier">host</span>)
-325:       <span class="ruby-comment cmt"># here we leave it as a host name since the cert verification</span>
-326:       <span class="ruby-comment cmt"># needs it in host form</span>
-327:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">host</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verify_certificate?</span>
-328:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;localhost&quot;</span>
-329:       <span class="ruby-comment cmt"># Fall back to known ip address in the common case</span>
-330:       <span class="ruby-identifier">ip_address</span> = <span class="ruby-value str">'65.74.177.195'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'collector.newrelic.com'</span>
-331:       <span class="ruby-keyword kw">begin</span>
-332:         <span class="ruby-identifier">ip_address</span> = <span class="ruby-constant">Resolv</span>.<span class="ruby-identifier">getaddress</span>(<span class="ruby-identifier">host</span>)
-333:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Resolved #{host} to #{ip_address}&quot;</span>
-334:       <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-335:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;DNS Error caching IP address: #{e}&quot;</span>
-336:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n   &quot;</span>)
-337:         <span class="ruby-identifier">ip_address</span> = <span class="ruby-constant">IPSocket</span><span class="ruby-operator">::</span><span class="ruby-identifier">getaddress</span> <span class="ruby-identifier">host</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-identifier">ip_address</span>
-338:       <span class="ruby-keyword kw">end</span>
-339:       <span class="ruby-identifier">ip_address</span>
-340:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000401" class="method-detail">
-        <a name="M000401"></a>
-
-        <div class="method-heading">
-          <a href="#M000401" class="method-signature">
-          <span class="method-name">log_path</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000401-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000401-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 385</span>
-385:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_path</span>
-386:       <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">'log'</span>)
-387:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">path</span>
-388:         <span class="ruby-identifier">path</span> = <span class="ruby-value str">'.'</span>
-389:       <span class="ruby-keyword kw">end</span>
-390:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>)
-391:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000397" class="method-detail">
-        <a name="M000397"></a>
-
-        <div class="method-heading">
-          <a href="#M000397" class="method-signature">
-          <span class="method-name">merge_defaults</span><span class="method-args">(settings_hash)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000397-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000397-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 342</span>
-342:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_defaults</span>(<span class="ruby-identifier">settings_hash</span>)
-343:       <span class="ruby-identifier">s</span> = {
-344:         <span class="ruby-value str">'host'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'collector.newrelic.com'</span>,
-345:         <span class="ruby-value str">'ssl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
-346:         <span class="ruby-value str">'log_level'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'info'</span>,
-347:         <span class="ruby-value str">'apdex_t'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1.0</span>
-348:       }
-349:       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">settings_hash</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">settings_hash</span>
-350:       <span class="ruby-comment cmt"># monitor_daemons replaced with agent_enabled</span>
-351:       <span class="ruby-identifier">s</span>[<span class="ruby-value str">'agent_enabled'</span>] = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">'monitor_daemons'</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">'monitor_daemons'</span>)
-352:       <span class="ruby-identifier">s</span>
-353:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000405" class="method-detail">
-        <a name="M000405"></a>
-
-        <div class="method-heading">
-          <a href="#M000405" class="method-signature">
-          <span class="method-name">newrelic_root</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000405-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000405-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 428</span>
-428:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_root</span>
-429:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">newrelic_root</span>
-430:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 328</span>
+328:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_to_ip_address</span>(<span class="ruby-identifier">host</span>)
+329:       <span class="ruby-comment cmt"># here we leave it as a host name since the cert verification</span>
+330:       <span class="ruby-comment cmt"># needs it in host form</span>
+331:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">host</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verify_certificate?</span>
+332:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;localhost&quot;</span>
+333:       <span class="ruby-comment cmt"># Fall back to known ip address in the common case</span>
+334:       <span class="ruby-identifier">ip_address</span> = <span class="ruby-value str">'65.74.177.195'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'collector.newrelic.com'</span>
+335:       <span class="ruby-keyword kw">begin</span>
+336:         <span class="ruby-identifier">ip_address</span> = <span class="ruby-constant">Resolv</span>.<span class="ruby-identifier">getaddress</span>(<span class="ruby-identifier">host</span>)
+337:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Resolved #{host} to #{ip_address}&quot;</span>
+338:       <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+339:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;DNS Error caching IP address: #{e}&quot;</span>
+340:         <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n   &quot;</span>)
+341:         <span class="ruby-identifier">ip_address</span> = <span class="ruby-constant">IPSocket</span><span class="ruby-operator">::</span><span class="ruby-identifier">getaddress</span> <span class="ruby-identifier">host</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-identifier">ip_address</span>
+342:       <span class="ruby-keyword kw">end</span>
+343:       <span class="ruby-identifier">ip_address</span>
+344:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -1399,6 +1344,88 @@ default.
 
         <div class="method-heading">
           <a href="#M000398" class="method-signature">
+          <span class="method-name">log_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000398-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000398-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 389</span>
+389:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_path</span>
+390:       <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">'log'</span>)
+391:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">path</span>
+392:         <span class="ruby-identifier">path</span> = <span class="ruby-value str">'.'</span>
+393:       <span class="ruby-keyword kw">end</span>
+394:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>)
+395:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000394" class="method-detail">
+        <a name="M000394"></a>
+
+        <div class="method-heading">
+          <a href="#M000394" class="method-signature">
+          <span class="method-name">merge_defaults</span><span class="method-args">(settings_hash)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000394-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000394-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 346</span>
+346:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_defaults</span>(<span class="ruby-identifier">settings_hash</span>)
+347:       <span class="ruby-identifier">s</span> = {
+348:         <span class="ruby-value str">'host'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'collector.newrelic.com'</span>,
+349:         <span class="ruby-value str">'ssl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+350:         <span class="ruby-value str">'log_level'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'info'</span>,
+351:         <span class="ruby-value str">'apdex_t'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1.0</span>
+352:       }
+353:       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">settings_hash</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">settings_hash</span>
+354:       <span class="ruby-comment cmt"># monitor_daemons replaced with agent_enabled</span>
+355:       <span class="ruby-identifier">s</span>[<span class="ruby-value str">'agent_enabled'</span>] = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">'monitor_daemons'</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">'monitor_daemons'</span>)
+356:       <span class="ruby-identifier">s</span>
+357:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000402" class="method-detail">
+        <a name="M000402"></a>
+
+        <div class="method-heading">
+          <a href="#M000402" class="method-signature">
+          <span class="method-name">newrelic_root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000402-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000402-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 432</span>
+432:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_root</span>
+433:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">newrelic_root</span>
+434:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000395" class="method-detail">
+        <a name="M000395"></a>
+
+        <div class="method-heading">
+          <a href="#M000395" class="method-signature">
           <span class="method-name">setup_log</span><span class="method-args">()</span>
           </a>
         </div>
@@ -1409,54 +1436,54 @@ default.
 be called multiple times.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000398-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000398-source">
+            onclick="toggleCode('M000395-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000395-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 355</span>
-355:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup_log</span>
-356:       <span class="ruby-ivar">@log_file</span> = <span class="ruby-node">&quot;#{log_path}/newrelic_agent.log&quot;</span>
-357:       <span class="ruby-ivar">@log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@log_file</span>
-358:       
-359:       <span class="ruby-comment cmt"># change the format just for our logger</span>
-360:       
-361:       <span class="ruby-keyword kw">def</span> <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">format_message</span>(<span class="ruby-identifier">severity</span>, <span class="ruby-identifier">timestamp</span>, <span class="ruby-identifier">progname</span>, <span class="ruby-identifier">msg</span>)
-362:         <span class="ruby-node">&quot;[#{timestamp.strftime(&quot;%m/%d/%y %H:%M:%S %z&quot;)} #{Socket.gethostname} (#{$$})] #{severity} : #{msg}\n&quot;</span> 
-363:       <span class="ruby-keyword kw">end</span>
-364:     
-365:       <span class="ruby-comment cmt"># set the log level as specified in the config file</span>
-366:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">&quot;log_level&quot;</span>,<span class="ruby-value str">&quot;info&quot;</span>).<span class="ruby-identifier">downcase</span>
-367:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;debug&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
-368:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;info&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
-369:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;warn&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
-370:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;error&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>
-371:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;fatal&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
-372:       <span class="ruby-keyword kw">else</span> <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
-373:       <span class="ruby-keyword kw">end</span>
-374:       <span class="ruby-ivar">@log</span>
-375:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 359</span>
+359:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup_log</span>
+360:       <span class="ruby-ivar">@log_file</span> = <span class="ruby-node">&quot;#{log_path}/newrelic_agent.log&quot;</span>
+361:       <span class="ruby-ivar">@log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@log_file</span>
+362:       
+363:       <span class="ruby-comment cmt"># change the format just for our logger</span>
+364:       
+365:       <span class="ruby-keyword kw">def</span> <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">format_message</span>(<span class="ruby-identifier">severity</span>, <span class="ruby-identifier">timestamp</span>, <span class="ruby-identifier">progname</span>, <span class="ruby-identifier">msg</span>)
+366:         <span class="ruby-node">&quot;[#{timestamp.strftime(&quot;%m/%d/%y %H:%M:%S %z&quot;)} #{Socket.gethostname} (#{$$})] #{severity} : #{msg}\n&quot;</span> 
+367:       <span class="ruby-keyword kw">end</span>
+368:     
+369:       <span class="ruby-comment cmt"># set the log level as specified in the config file</span>
+370:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">&quot;log_level&quot;</span>,<span class="ruby-value str">&quot;info&quot;</span>).<span class="ruby-identifier">downcase</span>
+371:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;debug&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+372:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;info&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+373:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;warn&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+374:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;error&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>
+375:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;fatal&quot;</span>; <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
+376:       <span class="ruby-keyword kw">else</span> <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+377:       <span class="ruby-keyword kw">end</span>
+378:       <span class="ruby-ivar">@log</span>
+379:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000399" class="method-detail">
-        <a name="M000399"></a>
+      <div id="method-M000396" class="method-detail">
+        <a name="M000396"></a>
 
         <div class="method-heading">
-          <a href="#M000399" class="method-signature">
+          <a href="#M000396" class="method-signature">
           <span class="method-name">to_stdout</span><span class="method-args">(msg)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000399-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000399-source">
+            onclick="toggleCode('M000396-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000396-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 377</span>
-377:     <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">to_stdout</span><span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
-378:       <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;** [NewRelic] &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">msg</span> 
-379:     <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/new_relic/control.rb, line 381</span>
+381:     <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">to_stdout</span><span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
+382:       <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;** [NewRelic] &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">msg</span> 
+383:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
