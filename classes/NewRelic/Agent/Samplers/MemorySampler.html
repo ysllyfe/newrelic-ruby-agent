@@ -88,12 +88,12 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000089">new</a>&nbsp;&nbsp;
-      <a href="#M000091">platform</a>&nbsp;&nbsp;
-      <a href="#M000092">platform</a>&nbsp;&nbsp;
-      <a href="#M000094">poll</a>&nbsp;&nbsp;
-      <a href="#M000093">stats</a>&nbsp;&nbsp;
-      <a href="#M000090">supported_on_this_platform?</a>&nbsp;&nbsp;
+      <a href="#M000123">new</a>&nbsp;&nbsp;
+      <a href="#M000125">platform</a>&nbsp;&nbsp;
+      <a href="#M000126">platform</a>&nbsp;&nbsp;
+      <a href="#M000128">poll</a>&nbsp;&nbsp;
+      <a href="#M000127">stats</a>&nbsp;&nbsp;
+      <a href="#M000124">supported_on_this_platform?</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -137,26 +137,26 @@ Class <a href="MemorySampler/ShellPS.html" class="link">NewRelic::Agent::Sampler
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000089" class="method-detail">
-        <a name="M000089"></a>
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
 
         <div class="method-heading">
-          <a href="#M000089" class="method-signature">
+          <a href="#M000123" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000089-source">
+            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000123-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 6</span>
  6:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
  7:       <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">memory</span>
  8:       
  9:       <span class="ruby-comment cmt"># macos, linux, solaris</span>
-10:       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Java</span>
+10:       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">JRuby</span>
 11:         <span class="ruby-ivar">@sampler</span> = <span class="ruby-constant">JavaHeapSampler</span>.<span class="ruby-identifier">new</span>
 12:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">platform</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/linux/</span>
 13:         <span class="ruby-ivar">@sampler</span> = <span class="ruby-constant">ProcStatus</span>.<span class="ruby-identifier">new</span>
@@ -184,19 +184,19 @@ Class <a href="MemorySampler/ShellPS.html" class="link">NewRelic::Agent::Sampler
         </div>
       </div>
 
-      <div id="method-M000091" class="method-detail">
-        <a name="M000091"></a>
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
 
         <div class="method-heading">
-          <a href="#M000091" class="method-signature">
+          <a href="#M000125" class="method-signature">
           <span class="method-name">platform</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000091-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000091-source">
+            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000125-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 37</span>
 37:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">platform</span>
@@ -211,19 +211,19 @@ Class <a href="MemorySampler/ShellPS.html" class="link">NewRelic::Agent::Sampler
         </div>
       </div>
 
-      <div id="method-M000090" class="method-detail">
-        <a name="M000090"></a>
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
 
         <div class="method-heading">
-          <a href="#M000090" class="method-signature">
+          <a href="#M000124" class="method-signature">
           <span class="method-name">supported_on_this_platform?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000090-source">
+            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000124-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 33</span>
 33:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
@@ -236,19 +236,19 @@ Class <a href="MemorySampler/ShellPS.html" class="link">NewRelic::Agent::Sampler
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000092" class="method-detail">
-        <a name="M000092"></a>
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
 
         <div class="method-heading">
-          <a href="#M000092" class="method-signature">
+          <a href="#M000126" class="method-signature">
           <span class="method-name">platform</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000092-source">
+            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000126-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 44</span>
 44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">platform</span>
@@ -259,19 +259,19 @@ Class <a href="MemorySampler/ShellPS.html" class="link">NewRelic::Agent::Sampler
         </div>
       </div>
 
-      <div id="method-M000094" class="method-detail">
-        <a name="M000094"></a>
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
 
         <div class="method-heading">
-          <a href="#M000094" class="method-signature">
+          <a href="#M000128" class="method-signature">
           <span class="method-name">poll</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000094-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000094-source">
+            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000128-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 51</span>
 51:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
@@ -284,19 +284,19 @@ Class <a href="MemorySampler/ShellPS.html" class="link">NewRelic::Agent::Sampler
         </div>
       </div>
 
-      <div id="method-M000093" class="method-detail">
-        <a name="M000093"></a>
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
 
         <div class="method-heading">
-          <a href="#M000093" class="method-signature">
+          <a href="#M000127" class="method-signature">
           <span class="method-name">stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000093-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000093-source">
+            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000127-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 48</span>
 48:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>

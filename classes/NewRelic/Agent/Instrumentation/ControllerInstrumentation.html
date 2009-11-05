@@ -83,7 +83,7 @@ given action.
 In cases where you don&#8216;t want to instrument the top level action, but
 instead have other methods which are dispatched to by your action, and you
 want to treat these as distinct actions, then what you need to do is use <a
-href="ControllerInstrumentation.html#M000123">perform_action_with_newrelic_trace</a>
+href="ControllerInstrumentation.html#M000157">perform_action_with_newrelic_trace</a>
 </p>
 
     </div>
@@ -95,8 +95,8 @@ href="ControllerInstrumentation.html#M000123">perform_action_with_newrelic_trace
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000124">is_filtered?</a>&nbsp;&nbsp;
-      <a href="#M000123">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
+      <a href="#M000158">is_filtered?</a>&nbsp;&nbsp;
+      <a href="#M000157">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -124,11 +124,11 @@ href="ControllerInstrumentation.html#M000123">perform_action_with_newrelic_trace
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000123" class="method-detail">
-        <a name="M000123"></a>
+      <div id="method-M000157" class="method-detail">
+        <a name="M000157"></a>
 
         <div class="method-heading">
-          <a href="#M000123" class="method-signature">
+          <a href="#M000157" class="method-signature">
           <span class="method-name">perform_action_with_newrelic_trace</span><span class="method-args">(*args) {|| ...}</span>
           </a>
         </div>
@@ -142,7 +142,7 @@ methods and background tasks.
 </p>
 <p>
 Here&#8216;s a more verbose version of the example shown in <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000127">ClassMethods#add_transaction_tracer</a></tt>
+href="ControllerInstrumentation/ClassMethods.html#M000161">ClassMethods#add_transaction_tracer</a></tt>
 using this method instead of add_transaction_tracer.
 </p>
 <p>
@@ -225,8 +225,8 @@ If a single argument is passed in, it is treated as a metric path. This
 form is deprecated.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000123-source">
+            onclick="toggleCode('M000157-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000157-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 216</span>
 216:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -335,11 +335,11 @@ form is deprecated.
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000124" class="method-detail">
-        <a name="M000124"></a>
+      <div id="method-M000158" class="method-detail">
+        <a name="M000158"></a>
 
         <div class="method-heading">
-          <a href="#M000124" class="method-signature">
+          <a href="#M000158" class="method-signature">
           <span class="method-name">is_filtered?</span><span class="method-args">(key)</span>
           </a>
         </div>
@@ -349,8 +349,8 @@ form is deprecated.
 Filter out
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000124-source">
+            onclick="toggleCode('M000158-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000158-source">
 <pre>
      <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 347</span>
 347:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_filtered?</span>(<span class="ruby-identifier">key</span>)
