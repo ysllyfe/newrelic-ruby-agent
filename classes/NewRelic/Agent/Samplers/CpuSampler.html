@@ -88,13 +88,13 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000116">new</a>&nbsp;&nbsp;
-      <a href="#M000122">poll</a>&nbsp;&nbsp;
-      <a href="#M000121">supported_on_this_platform?</a>&nbsp;&nbsp;
-      <a href="#M000118">system_util_stats</a>&nbsp;&nbsp;
-      <a href="#M000120">systemtime_stats</a>&nbsp;&nbsp;
-      <a href="#M000117">user_util_stats</a>&nbsp;&nbsp;
-      <a href="#M000119">usertime_stats</a>&nbsp;&nbsp;
+      <a href="#M000124">new</a>&nbsp;&nbsp;
+      <a href="#M000130">poll</a>&nbsp;&nbsp;
+      <a href="#M000129">supported_on_this_platform?</a>&nbsp;&nbsp;
+      <a href="#M000126">system_util_stats</a>&nbsp;&nbsp;
+      <a href="#M000128">systemtime_stats</a>&nbsp;&nbsp;
+      <a href="#M000125">user_util_stats</a>&nbsp;&nbsp;
+      <a href="#M000127">usertime_stats</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -129,48 +129,48 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000116" class="method-detail">
-        <a name="M000116"></a>
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
 
         <div class="method-heading">
-          <a href="#M000116" class="method-signature">
+          <a href="#M000124" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000116-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000116-source">
+            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000124-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 4</span>
-4:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-5:       <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">cpu</span>
-6:       <span class="ruby-identifier">poll</span>
-7:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 4</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+      <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">cpu</span>
+      <span class="ruby-identifier">poll</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000121" class="method-detail">
-        <a name="M000121"></a>
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
 
         <div class="method-heading">
-          <a href="#M000121" class="method-signature">
+          <a href="#M000129" class="method-signature">
           <span class="method-name">supported_on_this_platform?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000121-source">
+            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000129-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 21</span>
-21:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
-22:       <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Java</span>)
-23:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 22</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
+      <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">JRuby</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -178,135 +178,135 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000122" class="method-detail">
-        <a name="M000122"></a>
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
 
         <div class="method-heading">
-          <a href="#M000122" class="method-signature">
+          <a href="#M000130" class="method-signature">
           <span class="method-name">poll</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000122-source">
+            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000130-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 25</span>
-25:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
-26:       <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-27:       <span class="ruby-identifier">t</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">times</span>
-28:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_time</span>
-29:         <span class="ruby-identifier">elapsed</span> = <span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_time</span>
-30:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">elapsed</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># Causing some kind of math underflow</span>
-31:         <span class="ruby-identifier">num_processors</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">processors</span> <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
-32:         <span class="ruby-identifier">usertime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_utime</span>
-33:         <span class="ruby-identifier">systemtime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_stime</span>
-34: 
-35:         <span class="ruby-identifier">systemtime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">systemtime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
-36:         <span class="ruby-identifier">usertime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">usertime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
-37:         
-38:         <span class="ruby-comment cmt"># Calculate the true utilization by taking cpu times and dividing by</span>
-39:         <span class="ruby-comment cmt"># elapsed time X num_processors.</span>
-40:         <span class="ruby-identifier">user_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
-41:         <span class="ruby-identifier">system_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
-42:       <span class="ruby-keyword kw">end</span>
-43:       <span class="ruby-ivar">@last_utime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span>
-44:       <span class="ruby-ivar">@last_stime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span>
-45:       <span class="ruby-ivar">@last_time</span> = <span class="ruby-identifier">now</span>
-46:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 26</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
+      <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+      <span class="ruby-identifier">t</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">times</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_time</span>
+        <span class="ruby-identifier">elapsed</span> = <span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_time</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">elapsed</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># Causing some kind of math underflow</span>
+        <span class="ruby-identifier">num_processors</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">processors</span> <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">usertime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_utime</span>
+        <span class="ruby-identifier">systemtime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_stime</span>
+
+        <span class="ruby-identifier">systemtime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">systemtime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">usertime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">usertime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+        
+        <span class="ruby-comment cmt"># Calculate the true utilization by taking cpu times and dividing by</span>
+        <span class="ruby-comment cmt"># elapsed time X num_processors.</span>
+        <span class="ruby-identifier">user_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
+        <span class="ruby-identifier">system_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@last_utime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span>
+      <span class="ruby-ivar">@last_stime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span>
+      <span class="ruby-ivar">@last_time</span> = <span class="ruby-identifier">now</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000118" class="method-detail">
-        <a name="M000118"></a>
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
 
         <div class="method-heading">
-          <a href="#M000118" class="method-signature">
+          <a href="#M000126" class="method-signature">
           <span class="method-name">system_util_stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000118-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000118-source">
+            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000126-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 11</span>
-11:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">system_util_stats</span>
-12:       <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System/Utilization&quot;</span>)
-13:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 12</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">system_util_stats</span>
+      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System/Utilization&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000120" class="method-detail">
-        <a name="M000120"></a>
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
 
         <div class="method-heading">
-          <a href="#M000120" class="method-signature">
+          <a href="#M000128" class="method-signature">
           <span class="method-name">systemtime_stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000120-source">
+            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000128-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 17</span>
-17:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">systemtime_stats</span>
-18:       <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System Time&quot;</span>)
-19:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 18</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">systemtime_stats</span>
+      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System Time&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000117" class="method-detail">
-        <a name="M000117"></a>
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
 
         <div class="method-heading">
-          <a href="#M000117" class="method-signature">
+          <a href="#M000125" class="method-signature">
           <span class="method-name">user_util_stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000117-source">
+            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000125-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 8</span>
- 8:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_util_stats</span>
- 9:       <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User/Utilization&quot;</span>)
-10:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 9</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_util_stats</span>
+      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User/Utilization&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000119" class="method-detail">
-        <a name="M000119"></a>
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
 
         <div class="method-heading">
-          <a href="#M000119" class="method-signature">
+          <a href="#M000127" class="method-signature">
           <span class="method-name">usertime_stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000119-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000119-source">
+            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000127-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 14</span>
-14:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">usertime_stats</span>
-15:       <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User Time&quot;</span>)
-16:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 15</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">usertime_stats</span>
+      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User Time&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

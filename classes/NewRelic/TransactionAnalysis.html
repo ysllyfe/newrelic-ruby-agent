@@ -87,10 +87,10 @@ that enable performance analysis in the user interface.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000259">breakdown_data</a>&nbsp;&nbsp;
-      <a href="#M000257">database_time</a>&nbsp;&nbsp;
-      <a href="#M000258">render_time</a>&nbsp;&nbsp;
-      <a href="#M000260">sql_segments</a>&nbsp;&nbsp;
+      <a href="#M000299">breakdown_data</a>&nbsp;&nbsp;
+      <a href="#M000297">database_time</a>&nbsp;&nbsp;
+      <a href="#M000298">render_time</a>&nbsp;&nbsp;
+      <a href="#M000300">sql_segments</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -118,11 +118,11 @@ that enable performance analysis in the user interface.
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000259" class="method-detail">
-        <a name="M000259"></a>
+      <div id="method-M000299" class="method-detail">
+        <a name="M000299"></a>
 
         <div class="method-heading">
-          <a href="#M000259" class="method-signature">
+          <a href="#M000299" class="method-signature">
           <span class="method-name">breakdown_data</span><span class="method-args">(limit = nil)</span>
           </a>
         </div>
@@ -135,101 +135,101 @@ href="TransactionAnalysis/SegmentSummary.html">SegmentSummary</a> objects.
 If a limit is specified, then limit the data set to the top n
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000259-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000259-source">
+            onclick="toggleCode('M000299-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000299-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 58</span>
-58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">breakdown_data</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword kw">nil</span>)
-59:     <span class="ruby-identifier">metric_hash</span> = {}
-60:     <span class="ruby-identifier">each_segment</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
-61:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">segment</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">root_segment</span>
-62:         <span class="ruby-identifier">metric_name</span> = <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>
-63:         <span class="ruby-identifier">metric_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">SegmentSummary</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-keyword kw">self</span>)
-64:         <span class="ruby-identifier">metric_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
-65:       <span class="ruby-keyword kw">end</span>
-66:     <span class="ruby-keyword kw">end</span>
-67:     
-68:     <span class="ruby-identifier">data</span> = <span class="ruby-identifier">metric_hash</span>.<span class="ruby-identifier">values</span>
-69:     
-70:     <span class="ruby-identifier">data</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">|</span>
-71:       <span class="ruby-identifier">y</span>.<span class="ruby-identifier">exclusive_time</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">exclusive_time</span>
-72:     <span class="ruby-keyword kw">end</span>
-73:     
-74:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">limit</span>
-75:       <span class="ruby-identifier">data</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">limit</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
-76:     <span class="ruby-keyword kw">end</span>
-77: 
-78:     <span class="ruby-comment cmt"># add one last segment for the remaining time if any</span>
-79:     <span class="ruby-identifier">remainder</span> = <span class="ruby-identifier">duration</span>
-80:     <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
-81:       <span class="ruby-identifier">remainder</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exclusive_time</span>
-82:     <span class="ruby-keyword kw">end</span>
-83:     
-84:     <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">remainder</span><span class="ruby-operator">*</span><span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-85:       <span class="ruby-identifier">remainder_summary</span> = <span class="ruby-constant">SegmentSummary</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'Remainder'</span>, <span class="ruby-keyword kw">self</span>)
-86:       <span class="ruby-identifier">remainder_summary</span>.<span class="ruby-identifier">total_time</span> = <span class="ruby-identifier">remainder_summary</span>.<span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">remainder</span>
-87:       <span class="ruby-identifier">remainder_summary</span>.<span class="ruby-identifier">call_count</span> = <span class="ruby-value">1</span>
-88:       <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">remainder_summary</span>
-89:     <span class="ruby-keyword kw">end</span>
-90:       
-91:     <span class="ruby-identifier">data</span>
-92:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 58</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">breakdown_data</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">metric_hash</span> = {}
+    <span class="ruby-identifier">each_segment</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">segment</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">root_segment</span>
+        <span class="ruby-identifier">metric_name</span> = <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>
+        <span class="ruby-identifier">metric_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">SegmentSummary</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-keyword kw">self</span>)
+        <span class="ruby-identifier">metric_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">metric_hash</span>.<span class="ruby-identifier">values</span>
+    
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">y</span>.<span class="ruby-identifier">exclusive_time</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">exclusive_time</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">limit</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">limit</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># add one last segment for the remaining time if any</span>
+    <span class="ruby-identifier">remainder</span> = <span class="ruby-identifier">duration</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">remainder</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exclusive_time</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">remainder</span><span class="ruby-operator">*</span><span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">remainder_summary</span> = <span class="ruby-constant">SegmentSummary</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'Remainder'</span>, <span class="ruby-keyword kw">self</span>)
+      <span class="ruby-identifier">remainder_summary</span>.<span class="ruby-identifier">total_time</span> = <span class="ruby-identifier">remainder_summary</span>.<span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">remainder</span>
+      <span class="ruby-identifier">remainder_summary</span>.<span class="ruby-identifier">call_count</span> = <span class="ruby-value">1</span>
+      <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">remainder_summary</span>
+    <span class="ruby-keyword kw">end</span>
+      
+    <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000257" class="method-detail">
-        <a name="M000257"></a>
+      <div id="method-M000297" class="method-detail">
+        <a name="M000297"></a>
 
         <div class="method-heading">
-          <a href="#M000257" class="method-signature">
+          <a href="#M000297" class="method-signature">
           <span class="method-name">database_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000257-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000257-source">
+            onclick="toggleCode('M000297-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000297-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 3</span>
-3:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">database_time</span>
-4:     <span class="ruby-identifier">time_percentage</span>(<span class="ruby-regexp re">/^Database\/.*/</span>)
-5:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 3</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">database_time</span>
+    <span class="ruby-identifier">time_percentage</span>(<span class="ruby-regexp re">/^Database\/.*/</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000258" class="method-detail">
-        <a name="M000258"></a>
+      <div id="method-M000298" class="method-detail">
+        <a name="M000298"></a>
 
         <div class="method-heading">
-          <a href="#M000258" class="method-signature">
+          <a href="#M000298" class="method-signature">
           <span class="method-name">render_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000258-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000258-source">
+            onclick="toggleCode('M000298-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000298-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 7</span>
-7:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_time</span>
-8:     <span class="ruby-identifier">time_percentage</span>(<span class="ruby-regexp re">/^View\/.*/</span>)
-9:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_time</span>
+    <span class="ruby-identifier">time_percentage</span>(<span class="ruby-regexp re">/^View\/.*/</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000260" class="method-detail">
-        <a name="M000260"></a>
+      <div id="method-M000300" class="method-detail">
+        <a name="M000300"></a>
 
         <div class="method-heading">
-          <a href="#M000260" class="method-signature">
+          <a href="#M000300" class="method-signature">
           <span class="method-name">sql_segments</span><span class="method-args">()</span>
           </a>
         </div>
@@ -240,22 +240,22 @@ return an array of sql statements executed by this transaction each element
 in the array contains [sql, parent_segment_metric_name, duration]
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000260-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000260-source">
+            onclick="toggleCode('M000300-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000300-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 96</span>
- 96:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_segments</span>
- 97:     <span class="ruby-identifier">segments</span> = []
- 98:     <span class="ruby-identifier">each_segment</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
- 99:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:sql</span>]
-100:         <span class="ruby-identifier">segments</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
-101:       <span class="ruby-keyword kw">end</span>
-102:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:sql_obfuscated</span>]
-103:         <span class="ruby-identifier">segments</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
-104:       <span class="ruby-keyword kw">end</span>
-105:     <span class="ruby-keyword kw">end</span>
-106:     <span class="ruby-identifier">segments</span>
-107:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 96</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_segments</span>
+    <span class="ruby-identifier">segments</span> = []
+    <span class="ruby-identifier">each_segment</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:sql</span>]
+        <span class="ruby-identifier">segments</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:sql_obfuscated</span>]
+        <span class="ruby-identifier">segments</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">segments</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

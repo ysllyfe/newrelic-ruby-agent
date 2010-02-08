@@ -88,8 +88,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000418">add_segments</a>&nbsp;&nbsp;
-      <a href="#M000417">new</a>&nbsp;&nbsp;
+      <a href="#M000469">add_segments</a>&nbsp;&nbsp;
+      <a href="#M000468">new</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,28 +111,28 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000417" class="method-detail">
-        <a name="M000417"></a>
+      <div id="method-M000468" class="method-detail">
+        <a name="M000468"></a>
 
         <div class="method-heading">
-          <a href="#M000417" class="method-signature">
+          <a href="#M000468" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(segment)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000417-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000417-source">
+            onclick="toggleCode('M000468-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000468-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 254</span>
-254:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">segment</span>)
-255:         <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">entry_timestamp</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>, <span class="ruby-keyword kw">nil</span>
-256:         
-257:         <span class="ruby-identifier">add_segments</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">called_segments</span>
-258:         
-259:         <span class="ruby-identifier">end_trace</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exit_timestamp</span>
-260:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 293</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">segment</span>)
+        <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">entry_timestamp</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>, <span class="ruby-keyword kw">nil</span>
+        
+        <span class="ruby-identifier">add_segments</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">called_segments</span>
+        
+        <span class="ruby-identifier">end_trace</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exit_timestamp</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -140,26 +140,26 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000418" class="method-detail">
-        <a name="M000418"></a>
+      <div id="method-M000469" class="method-detail">
+        <a name="M000469"></a>
 
         <div class="method-heading">
-          <a href="#M000418" class="method-signature">
+          <a href="#M000469" class="method-signature">
           <span class="method-name">add_segments</span><span class="method-args">(segments)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000418-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000418-source">
+            onclick="toggleCode('M000469-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000469-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 262</span>
-262:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_segments</span>(<span class="ruby-identifier">segments</span>)
-263:         <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
-264:           <span class="ruby-constant">SummarySegment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">segment</span>)
-265:         <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_called_segment</span>(<span class="ruby-identifier">segment</span>)}
-266:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 301</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_segments</span>(<span class="ruby-identifier">segments</span>)
+        <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">SummarySegment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">segment</span>)
+        <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_called_segment</span>(<span class="ruby-identifier">segment</span>)}
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

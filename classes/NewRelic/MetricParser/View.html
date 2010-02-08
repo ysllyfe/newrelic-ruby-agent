@@ -88,16 +88,16 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000097">action_name</a>&nbsp;&nbsp;
-      <a href="#M000096">controller_name</a>&nbsp;&nbsp;
-      <a href="#M000098">developer_name</a>&nbsp;&nbsp;
-      <a href="#M000092">is_compiler?</a>&nbsp;&nbsp;
-      <a href="#M000091">is_render?</a>&nbsp;&nbsp;
-      <a href="#M000090">is_view?</a>&nbsp;&nbsp;
-      <a href="#M000093">pie_chart_label</a>&nbsp;&nbsp;
-      <a href="#M000095">short_name</a>&nbsp;&nbsp;
-      <a href="#M000094">template_label</a>&nbsp;&nbsp;
-      <a href="#M000099">url</a>&nbsp;&nbsp;
+      <a href="#M000098">action_name</a>&nbsp;&nbsp;
+      <a href="#M000097">controller_name</a>&nbsp;&nbsp;
+      <a href="#M000099">developer_name</a>&nbsp;&nbsp;
+      <a href="#M000093">is_compiler?</a>&nbsp;&nbsp;
+      <a href="#M000092">is_render?</a>&nbsp;&nbsp;
+      <a href="#M000091">is_view?</a>&nbsp;&nbsp;
+      <a href="#M000094">pie_chart_label</a>&nbsp;&nbsp;
+      <a href="#M000096">short_name</a>&nbsp;&nbsp;
+      <a href="#M000095">template_label</a>&nbsp;&nbsp;
+      <a href="#M000100">url</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -119,59 +119,12 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000097" class="method-detail">
-        <a name="M000097"></a>
-
-        <div class="method-heading">
-          <a href="#M000097" class="method-signature">
-          <span class="method-name">action_name</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000097-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000097-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 43</span>
-43:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">action_name</span>
-44:     <span class="ruby-comment cmt"># Strip the extension</span>
-45:     <span class="ruby-identifier">segments</span>[<span class="ruby-value">-2</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\..*$/</span>, <span class="ruby-value str">&quot;&quot;</span>)
-46:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000096" class="method-detail">
-        <a name="M000096"></a>
-
-        <div class="method-heading">
-          <a href="#M000096" class="method-signature">
-          <span class="method-name">controller_name</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000096-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000096-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 39</span>
-39:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">controller_name</span>
-40:     <span class="ruby-identifier">template_label</span>
-41:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000098" class="method-detail">
         <a name="M000098"></a>
 
         <div class="method-heading">
           <a href="#M000098" class="method-signature">
-          <span class="method-name">developer_name</span><span class="method-args">()</span>
+          <span class="method-name">action_name</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -180,164 +133,34 @@
             onclick="toggleCode('M000098-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000098-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 48</span>
-48:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">developer_name</span>
-49:     <span class="ruby-identifier">template_label</span>
-50:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 43</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">action_name</span>
+    <span class="ruby-comment cmt"># Strip the extension</span>
+    <span class="ruby-identifier">segments</span>[<span class="ruby-value">-2</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\..*$/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000092" class="method-detail">
-        <a name="M000092"></a>
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
 
         <div class="method-heading">
-          <a href="#M000092" class="method-signature">
-          <span class="method-name">is_compiler?</span><span class="method-args">()</span>
+          <a href="#M000097" class="method-signature">
+          <span class="method-name">controller_name</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000092-source">
+            onclick="toggleCode('M000097-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000097-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 7</span>
-7:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_compiler?</span>
-8:     <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;Compile&quot;</span>
-9:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000091" class="method-detail">
-        <a name="M000091"></a>
-
-        <div class="method-heading">
-          <a href="#M000091" class="method-signature">
-          <span class="method-name">is_render?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000091-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000091-source">
-<pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 4</span>
-4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_render?</span>
-5:     <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;Rendering&quot;</span>
-6:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000090" class="method-detail">
-        <a name="M000090"></a>
-
-        <div class="method-heading">
-          <a href="#M000090" class="method-signature">
-          <span class="method-name">is_view?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000090-source">
-<pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 2</span>
-2:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_view?</span>; <span class="ruby-keyword kw">true</span>; <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000093" class="method-detail">
-        <a name="M000093"></a>
-
-        <div class="method-heading">
-          <a href="#M000093" class="method-signature">
-          <span class="method-name">pie_chart_label</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000093-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000093-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 10</span>
-10:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pie_chart_label</span>
-11:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span>
-12:       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Rendering&quot;</span>
-13:         <span class="ruby-node">&quot;#{file_name(segments[-2])} Template&quot;</span>
-14:       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Partial&quot;</span>
-15:         <span class="ruby-node">&quot;#{file_name(segments[-2])} Partial&quot;</span>
-16:       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;.rhtml Processing&quot;</span>
-17:         <span class="ruby-value str">&quot;ERB compilation&quot;</span>
-18:       <span class="ruby-keyword kw">else</span> 
-19:         <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
-20:     <span class="ruby-keyword kw">end</span>
-21:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000095" class="method-detail">
-        <a name="M000095"></a>
-
-        <div class="method-heading">
-          <a href="#M000095" class="method-signature">
-          <span class="method-name">short_name</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000095-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000095-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 35</span>
-35:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">short_name</span>
-36:     <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)
-37:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000094" class="method-detail">
-        <a name="M000094"></a>
-
-        <div class="method-heading">
-          <a href="#M000094" class="method-signature">
-          <span class="method-name">template_label</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000094-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000094-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 22</span>
-22:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">template_label</span>
-23:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span>
-24:       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Rendering&quot;</span>
-25:         <span class="ruby-node">&quot;#{file_name(segments[1..-2].join(NewRelic::MetricParser::SEPARATOR))} Template&quot;</span>
-26:       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Partial&quot;</span>
-27:         <span class="ruby-node">&quot;#{file_name(segments[1..-2].join(NewRelic::MetricParser::SEPARATOR))} Partial&quot;</span>
-28:       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;.rhtml Processing&quot;</span>
-29:         <span class="ruby-value str">&quot;ERB compilation&quot;</span>
-30:       <span class="ruby-keyword kw">else</span> 
-31:         <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;/&quot;</span>)
-32:     <span class="ruby-keyword kw">end</span>
-33:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 39</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">controller_name</span>
+    <span class="ruby-identifier">template_label</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -348,7 +171,7 @@
 
         <div class="method-heading">
           <a href="#M000099" class="method-signature">
-          <span class="method-name">url</span><span class="method-args">()</span>
+          <span class="method-name">developer_name</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -357,10 +180,187 @@
             onclick="toggleCode('M000099-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000099-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 52</span>
-52:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url</span>
-53:     <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file_name</span>(<span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">'/'</span>))
-54:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 48</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">developer_name</span>
+    <span class="ruby-identifier">template_label</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
+
+        <div class="method-heading">
+          <a href="#M000093" class="method-signature">
+          <span class="method-name">is_compiler?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000093-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000093-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_compiler?</span>
+    <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;Compile&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+          <a href="#M000092" class="method-signature">
+          <span class="method-name">is_render?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000092-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 4</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_render?</span>
+    <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;Rendering&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
+
+        <div class="method-heading">
+          <a href="#M000091" class="method-signature">
+          <span class="method-name">is_view?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000091-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000091-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 2</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_view?</span>; <span class="ruby-keyword kw">true</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
+
+        <div class="method-heading">
+          <a href="#M000094" class="method-signature">
+          <span class="method-name">pie_chart_label</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000094-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000094-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pie_chart_label</span>
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Rendering&quot;</span>
+        <span class="ruby-node">&quot;#{file_name(segments[-2])} Template&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Partial&quot;</span>
+        <span class="ruby-node">&quot;#{file_name(segments[-2])} Partial&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;.rhtml Processing&quot;</span>
+        <span class="ruby-value str">&quot;ERB compilation&quot;</span>
+      <span class="ruby-keyword kw">else</span> 
+        <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
+
+        <div class="method-heading">
+          <a href="#M000096" class="method-signature">
+          <span class="method-name">short_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000096-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000096-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 35</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">short_name</span>
+    <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
+
+        <div class="method-heading">
+          <a href="#M000095" class="method-signature">
+          <span class="method-name">template_label</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000095-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000095-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">template_label</span>
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Rendering&quot;</span>
+        <span class="ruby-node">&quot;#{file_name(segments[1..-2].join(NewRelic::MetricParser::SEPARATOR))} Template&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;Partial&quot;</span>
+        <span class="ruby-node">&quot;#{file_name(segments[1..-2].join(NewRelic::MetricParser::SEPARATOR))} Partial&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;.rhtml Processing&quot;</span>
+        <span class="ruby-value str">&quot;ERB compilation&quot;</span>
+      <span class="ruby-keyword kw">else</span> 
+        <span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;/&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
+
+        <div class="method-heading">
+          <a href="#M000100" class="method-signature">
+          <span class="method-name">url</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000100-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000100-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_parser/view.rb, line 52</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url</span>
+    <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file_name</span>(<span class="ruby-identifier">segments</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">'/'</span>))
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

@@ -94,10 +94,10 @@ Statistics used to track the performance of traced methods
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000342">increment_count</a>&nbsp;&nbsp;
-      <a href="#M000339">record_data_point</a>&nbsp;&nbsp;
-      <a href="#M000341">record_multiple_data_points</a>&nbsp;&nbsp;
-      <a href="#M000340">trace_call</a>&nbsp;&nbsp;
+      <a href="#M000384">increment_count</a>&nbsp;&nbsp;
+      <a href="#M000381">record_data_point</a>&nbsp;&nbsp;
+      <a href="#M000383">record_multiple_data_points</a>&nbsp;&nbsp;
+      <a href="#M000382">trace_call</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -132,34 +132,34 @@ Statistics used to track the performance of traced methods
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000342" class="method-detail">
-        <a name="M000342"></a>
+      <div id="method-M000384" class="method-detail">
+        <a name="M000384"></a>
 
         <div class="method-heading">
-          <a href="#M000342" class="method-signature">
+          <a href="#M000384" class="method-signature">
           <span class="method-name">increment_count</span><span class="method-args">(value = 1)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000342-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000342-source">
+            onclick="toggleCode('M000384-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000384-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 336</span>
-336:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment_count</span>(<span class="ruby-identifier">value</span> = <span class="ruby-value">1</span>)
-337:       <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">value</span>
-338:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 335</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment_count</span>(<span class="ruby-identifier">value</span> = <span class="ruby-value">1</span>)
+      <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000339" class="method-detail">
-        <a name="M000339"></a>
+      <div id="method-M000381" class="method-detail">
+        <a name="M000381"></a>
 
         <div class="method-heading">
-          <a href="#M000339" class="method-signature">
+          <a href="#M000381" class="method-signature">
           <span class="method-name">record_data_point</span><span class="method-args">(value, exclusive_time = value)</span>
           </a>
         </div>
@@ -171,58 +171,58 @@ aggregate all data points collected over a specified period and upload its
 data to the <a href="../NewRelic.html">NewRelic</a> server
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000339-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000339-source">
+            onclick="toggleCode('M000381-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000381-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 311</span>
-311:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">value</span>)
-312:       <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-313:       <span class="ruby-ivar">@total_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">value</span>
-314:       <span class="ruby-ivar">@min_call_time</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@min_call_time</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-315:       <span class="ruby-ivar">@max_call_time</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@max_call_time</span>
-316:       <span class="ruby-ivar">@total_exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">exclusive_time</span>
-317: 
-318:       <span class="ruby-ivar">@sum_of_squares</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">value</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">value</span>)
-319:       <span class="ruby-keyword kw">self</span>
-320:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 310</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">value</span>)
+      <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-ivar">@total_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-ivar">@min_call_time</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@min_call_time</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-ivar">@max_call_time</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@max_call_time</span>
+      <span class="ruby-ivar">@total_exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">exclusive_time</span>
+
+      <span class="ruby-ivar">@sum_of_squares</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">value</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000341" class="method-detail">
-        <a name="M000341"></a>
+      <div id="method-M000383" class="method-detail">
+        <a name="M000383"></a>
 
         <div class="method-heading">
-          <a href="#M000341" class="method-signature">
+          <a href="#M000383" class="method-signature">
           <span class="method-name">record_multiple_data_points</span><span class="method-args">(total_value, count=1)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000341-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000341-source">
+            onclick="toggleCode('M000383-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000383-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 324</span>
-324:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
-325:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">total_value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-326:       <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">count</span>
-327:       <span class="ruby-ivar">@total_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">total_value</span>
-328:       <span class="ruby-identifier">avg_val</span> = <span class="ruby-identifier">total_value</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">count</span>
-329:       <span class="ruby-ivar">@min_call_time</span> = <span class="ruby-identifier">avg_val</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">avg_val</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@min_call_time</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">count</span>
-330:       <span class="ruby-ivar">@max_call_time</span> = <span class="ruby-identifier">avg_val</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">avg_val</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@max_call_time</span>
-331:       <span class="ruby-ivar">@total_exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">total_value</span>
-332:       <span class="ruby-ivar">@sum_of_squares</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">avg_val</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">avg_val</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">count</span>
-333:       <span class="ruby-keyword kw">self</span>
-334:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 323</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">total_value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">count</span>
+      <span class="ruby-ivar">@total_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">total_value</span>
+      <span class="ruby-identifier">avg_val</span> = <span class="ruby-identifier">total_value</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">count</span>
+      <span class="ruby-ivar">@min_call_time</span> = <span class="ruby-identifier">avg_val</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">avg_val</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@min_call_time</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">count</span>
+      <span class="ruby-ivar">@max_call_time</span> = <span class="ruby-identifier">avg_val</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">avg_val</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@max_call_time</span>
+      <span class="ruby-ivar">@total_exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">total_value</span>
+      <span class="ruby-ivar">@sum_of_squares</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">avg_val</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">avg_val</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">count</span>
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000340" class="method-detail">
-        <a name="M000340"></a>
+      <div id="method-M000382" class="method-detail">
+        <a name="M000382"></a>
 
         <div class="method-heading">
           <span class="method-name">trace_call</span><span class="method-args">(value, exclusive_time = value)</span>
@@ -230,7 +230,7 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
       
         <div class="method-description">
           <p>
-Alias for <a href="MethodTraceStats.html#M000339">record_data_point</a>
+Alias for <a href="MethodTraceStats.html#M000381">record_data_point</a>
 </p>
         </div>
       </div>

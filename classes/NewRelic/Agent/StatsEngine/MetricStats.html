@@ -80,15 +80,16 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000195">clear_stats</a>&nbsp;&nbsp;
-      <a href="#M000192">get_custom_stats</a>&nbsp;&nbsp;
-      <a href="#M000193">get_stats</a>&nbsp;&nbsp;
-      <a href="#M000191">get_stats_no_scope</a>&nbsp;&nbsp;
-      <a href="#M000194">harvest_timeslice_data</a>&nbsp;&nbsp;
-      <a href="#M000189">lookup_stat</a>&nbsp;&nbsp;
-      <a href="#M000190">metrics</a>&nbsp;&nbsp;
-      <a href="#M000196">reset_stats</a>&nbsp;&nbsp;
-      <a href="#M000197">stats_hash</a>&nbsp;&nbsp;
+      <a href="#M000228">clear_stats</a>&nbsp;&nbsp;
+      <a href="#M000224">get_custom_stats</a>&nbsp;&nbsp;
+      <a href="#M000225">get_stats</a>&nbsp;&nbsp;
+      <a href="#M000223">get_stats_no_scope</a>&nbsp;&nbsp;
+      <a href="#M000227">harvest_timeslice_data</a>&nbsp;&nbsp;
+      <a href="#M000221">lookup_stat</a>&nbsp;&nbsp;
+      <a href="#M000226">lookup_stats</a>&nbsp;&nbsp;
+      <a href="#M000222">metrics</a>&nbsp;&nbsp;
+      <a href="#M000229">reset_stats</a>&nbsp;&nbsp;
+      <a href="#M000230">stats_hash</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -110,11 +111,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000195" class="method-detail">
-        <a name="M000195"></a>
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
 
         <div class="method-heading">
-          <a href="#M000195" class="method-signature">
+          <a href="#M000228" class="method-signature">
           <span class="method-name">clear_stats</span><span class="method-args">()</span>
           </a>
         </div>
@@ -124,24 +125,24 @@
 Remove all stats. For test code only.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000195-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000195-source">
+            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000228-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 96</span>
-96:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_stats</span> 
-97:         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">clear</span>
-98:         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">DispatcherInstrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">reset</span>
-99:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 101</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_stats</span> 
+        <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">clear</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">reset</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000192" class="method-detail">
-        <a name="M000192"></a>
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
 
         <div class="method-heading">
-          <a href="#M000192" class="method-signature">
+          <a href="#M000224" class="method-signature">
           <span class="method-name">get_custom_stats</span><span class="method-args">(metric_name, stat_class)</span>
           </a>
         </div>
@@ -151,23 +152,23 @@ Remove all stats. For test code only.
 This version allows a caller to pass a stat class to use
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000192-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000192-source">
+            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000224-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 20</span>
-20:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">stat_class</span>)
-21:         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">stat_class</span>.<span class="ruby-identifier">new</span>
-22:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 20</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">stat_class</span>)
+        <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">stat_class</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000193" class="method-detail">
-        <a name="M000193"></a>
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
 
         <div class="method-heading">
-          <a href="#M000193" class="method-signature">
+          <a href="#M000225" class="method-signature">
           <span class="method-name">get_stats</span><span class="method-args">(metric_name, use_scope = true, scoped_metric_only = false)</span>
           </a>
         </div>
@@ -175,64 +176,64 @@ This version allows a caller to pass a stat class to use
         <div class="method-description">
           <p>
 If use_scope is true, two chained <a
-href="MetricStats.html#M000190">metrics</a> are created, one with scope and
+href="MetricStats.html#M000222">metrics</a> are created, one with scope and
 one without If scoped_metric_only is true, only a scoped metric is created
-(used by rendering <a href="MetricStats.html#M000190">metrics</a> which by
+(used by rendering <a href="MetricStats.html#M000222">metrics</a> which by
 definition are per controller only)
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000193-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000193-source">
+            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000225-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 26</span>
-26:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">use_scope</span> = <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">scoped_metric_only</span> = <span class="ruby-keyword kw">false</span>)
-27:         
-28:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scoped_metric_only</span>
-29:           <span class="ruby-identifier">spec</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">transaction_name</span>
-30:           <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">spec</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
-31:         <span class="ruby-keyword kw">else</span>  
-32:           <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
-33:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_scope</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">transaction_name</span>
-34:             <span class="ruby-identifier">spec</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">transaction_name</span>
-35:             <span class="ruby-identifier">scoped_stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">spec</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ScopedMethodTraceStats</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">stats</span>) 
-36:             <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">scoped_stats</span>
-37:           <span class="ruby-keyword kw">end</span>
-38:         <span class="ruby-keyword kw">end</span>
-39:         <span class="ruby-identifier">stats</span>
-40:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 26</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">use_scope</span> = <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">scoped_metric_only</span> = <span class="ruby-keyword kw">false</span>)
+        
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scoped_metric_only</span>
+          <span class="ruby-identifier">spec</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span>
+          <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">spec</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
+        <span class="ruby-keyword kw">else</span>  
+          <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_scope</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">scope_name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">scope_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">metric_name</span> 
+            <span class="ruby-identifier">spec</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span>
+            <span class="ruby-identifier">scoped_stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">spec</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ScopedMethodTraceStats</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">stats</span>) 
+            <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">scoped_stats</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">stats</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000191" class="method-detail">
-        <a name="M000191"></a>
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
 
         <div class="method-heading">
-          <a href="#M000191" class="method-signature">
+          <a href="#M000223" class="method-signature">
           <span class="method-name">get_stats_no_scope</span><span class="method-args">(metric_name)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000191-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000191-source">
+            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000223-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 14</span>
-14:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">metric_name</span>)
-15:         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
-16:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 14</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">metric_name</span>)
+        <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000194" class="method-detail">
-        <a name="M000194"></a>
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
 
         <div class="method-heading">
-          <a href="#M000194" class="method-signature">
+          <a href="#M000227" class="method-signature">
           <span class="method-name">harvest_timeslice_data</span><span class="method-args">(previous_timeslice_data, metric_ids)</span>
           </a>
         </div>
@@ -240,7 +241,7 @@ definition are per controller only)
         <div class="method-description">
           <p>
 Harvest the timeslice data. First recombine current statss with any
-previously unsent <a href="MetricStats.html#M000190">metrics</a>, clear out
+previously unsent <a href="MetricStats.html#M000222">metrics</a>, clear out
 stats cache, and return the current stats.
 </p>
 <hr size="1"></hr><p>
@@ -249,63 +250,64 @@ will revisit later to see if we can make this more robust without
 sacrificing efficiency. +++
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000194-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000194-source">
+            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000227-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 51</span>
-51:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_timeslice_data</span>(<span class="ruby-identifier">previous_timeslice_data</span>, <span class="ruby-identifier">metric_ids</span>)
-52:         <span class="ruby-identifier">timeslice_data</span> = {}
-53:         <span class="ruby-identifier">poll</span> <span class="ruby-identifier">harvest_samplers</span>
-54:         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">metric_spec</span> <span class="ruby-operator">|</span>
-55:           
-56:           
-57:           <span class="ruby-comment cmt"># get a copy of the stats collected since the last harvest, and clear</span>
-58:           <span class="ruby-comment cmt"># the stats inside our hash table for the next time slice.</span>
-59:           <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_spec</span>]
-60:           
-61:           <span class="ruby-comment cmt"># we have an optimization for unscoped metrics</span>
-62:           <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>)
-63:             <span class="ruby-identifier">metric_spec</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">metric_spec</span>
-64:           <span class="ruby-keyword kw">end</span>
-65:           
-66:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">nil?</span> 
-67:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Nil stats for #{metric_spec.name} (#{metric_spec.scope})&quot;</span>
-68:           <span class="ruby-keyword kw">end</span>
-69:           
-70:           <span class="ruby-identifier">stats_copy</span> = <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">clone</span>
-71:           <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">reset</span>
-72:           
-73:           <span class="ruby-comment cmt"># if the previous timeslice data has not been reported (due to an error of some sort)</span>
-74:           <span class="ruby-comment cmt"># then we need to merge this timeslice with the previously accumulated - but not sent</span>
-75:           <span class="ruby-comment cmt"># data</span>
-76:           <span class="ruby-identifier">previous_metric_data</span> = <span class="ruby-identifier">previous_timeslice_data</span>[<span class="ruby-identifier">metric_spec</span>]
-77:           <span class="ruby-identifier">stats_copy</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">previous_metric_data</span>.<span class="ruby-identifier">stats</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">previous_metric_data</span>.<span class="ruby-identifier">nil?</span>
-78:           <span class="ruby-identifier">stats_copy</span>.<span class="ruby-identifier">round!</span>
-79:           
-80:           <span class="ruby-comment cmt"># don't bother collecting and reporting stats that have zero-values for this timeslice.</span>
-81:           <span class="ruby-comment cmt"># significant performance boost and storage savings.</span>
-82:           <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">stats_copy</span>.<span class="ruby-identifier">is_reset?</span>
-83:             
-84:             <span class="ruby-identifier">metric_spec_for_transport</span> = (<span class="ruby-identifier">metric_ids</span>[<span class="ruby-identifier">metric_spec</span>].<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">metric_spec</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
-85:             
-86:             <span class="ruby-identifier">metric_data</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricData</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_spec_for_transport</span>, <span class="ruby-identifier">stats_copy</span>, <span class="ruby-identifier">metric_ids</span>[<span class="ruby-identifier">metric_spec</span>])
-87:             
-88:             <span class="ruby-identifier">timeslice_data</span>[<span class="ruby-identifier">metric_spec</span>] = <span class="ruby-identifier">metric_data</span>
-89:           <span class="ruby-keyword kw">end</span>
-90:         <span class="ruby-keyword kw">end</span>
-91:         
-92:         <span class="ruby-identifier">timeslice_data</span>
-93:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 55</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_timeslice_data</span>(<span class="ruby-identifier">previous_timeslice_data</span>, <span class="ruby-identifier">metric_ids</span>)
+        <span class="ruby-identifier">timeslice_data</span> = {}
+        <span class="ruby-identifier">poll</span> <span class="ruby-identifier">harvest_samplers</span>
+        <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">metric_spec</span> <span class="ruby-operator">|</span>
+          
+          
+          <span class="ruby-comment cmt"># get a copy of the stats collected since the last harvest, and clear</span>
+          <span class="ruby-comment cmt"># the stats inside our hash table for the next time slice.</span>
+          <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_spec</span>]
+          
+          <span class="ruby-comment cmt"># we have an optimization for unscoped metrics</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>)
+            <span class="ruby-identifier">metric_spec</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">metric_spec</span>
+          <span class="ruby-keyword kw">end</span>
+          
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">nil?</span> 
+            <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Nil stats for #{metric_spec.name} (#{metric_spec.scope})&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          
+          <span class="ruby-identifier">stats_copy</span> = <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">clone</span>
+          <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">reset</span>
+          
+          <span class="ruby-comment cmt"># if the previous timeslice data has not been reported (due to an error of some sort)</span>
+          <span class="ruby-comment cmt"># then we need to merge this timeslice with the previously accumulated - but not sent</span>
+          <span class="ruby-comment cmt"># data</span>
+          <span class="ruby-identifier">previous_metric_data</span> = <span class="ruby-identifier">previous_timeslice_data</span>[<span class="ruby-identifier">metric_spec</span>]
+          <span class="ruby-identifier">stats_copy</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">previous_metric_data</span>.<span class="ruby-identifier">stats</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">previous_metric_data</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">stats_copy</span>.<span class="ruby-identifier">round!</span>
+          
+          <span class="ruby-comment cmt"># don't bother collecting and reporting stats that have zero-values for this timeslice.</span>
+          <span class="ruby-comment cmt"># significant performance boost and storage savings.</span>
+          <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">stats_copy</span>.<span class="ruby-identifier">is_reset?</span>
+
+            <span class="ruby-identifier">id</span> = <span class="ruby-identifier">metric_ids</span>[<span class="ruby-identifier">metric_spec</span>]
+            <span class="ruby-identifier">metric_spec_for_transport</span> = <span class="ruby-identifier">id</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">metric_spec</span> 
+            
+            <span class="ruby-identifier">metric_data</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricData</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_spec_for_transport</span>, <span class="ruby-identifier">stats_copy</span>, <span class="ruby-identifier">id</span>)
+            
+            <span class="ruby-identifier">timeslice_data</span>[<span class="ruby-identifier">metric_spec</span>] = <span class="ruby-identifier">metric_data</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-identifier">timeslice_data</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000189" class="method-detail">
-        <a name="M000189"></a>
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
 
         <div class="method-heading">
-          <a href="#M000189" class="method-signature">
+          <a href="#M000221" class="method-signature">
           <span class="method-name">lookup_stat</span><span class="method-args">(metric_name)</span>
           </a>
         </div>
@@ -316,46 +318,70 @@ The stats hash hashes either a metric name for an unscoped metric, or a
 metric_spec for a scoped metric value.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000189-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000189-source">
+            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000221-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 6</span>
-6:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stat</span>(<span class="ruby-identifier">metric_name</span>)
-7:         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>]
-8:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 6</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stat</span>(<span class="ruby-identifier">metric_name</span>)
+        <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>]
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000190" class="method-detail">
-        <a name="M000190"></a>
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
 
         <div class="method-heading">
-          <a href="#M000190" class="method-signature">
+          <a href="#M000226" class="method-signature">
+          <span class="method-name">lookup_stats</span><span class="method-args">(metric_name, scope_name = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000226-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 42</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span> = <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">stats_hash</span>[<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span>)] <span class="ruby-operator">||</span>
+        <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>]
+      <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
+
+        <div class="method-heading">
+          <a href="#M000222" class="method-signature">
           <span class="method-name">metrics</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000190-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000190-source">
+            onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000222-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 10</span>
-10:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metrics</span>
-11:         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:to_s</span>)
-12:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 10</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metrics</span>
+        <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:to_s</span>)
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000196" class="method-detail">
-        <a name="M000196"></a>
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
 
         <div class="method-heading">
-          <a href="#M000196" class="method-signature">
+          <a href="#M000229" class="method-signature">
           <span class="method-name">reset_stats</span><span class="method-args">()</span>
           </a>
         </div>
@@ -365,36 +391,36 @@ metric_spec for a scoped metric value.
 Reset each of the stats, such as when a new passenger instance starts up.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000196-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000196-source">
+            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000229-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 102</span>
-102:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_stats</span> 
-103:         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">reset</span> }
-104:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 107</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_stats</span> 
+        <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">reset</span> }
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000197" class="method-detail">
-        <a name="M000197"></a>
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
 
         <div class="method-heading">
-          <a href="#M000197" class="method-signature">
+          <a href="#M000230" class="method-signature">
           <span class="method-name">stats_hash</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000197-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000197-source">
+            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000230-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 106</span>
-106:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats_hash</span>
-107:         <span class="ruby-ivar">@stats_hash</span> <span class="ruby-operator">||=</span> {}
-108:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 111</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats_hash</span>
+        <span class="ruby-ivar">@stats_hash</span> <span class="ruby-operator">||=</span> {}
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

@@ -97,17 +97,18 @@ environment values, etc.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000278">append_environment_info</a>&nbsp;&nbsp;
-      <a href="#M000276">draw_with_newrelic_map</a>&nbsp;&nbsp;
-      <a href="#M000269">env</a>&nbsp;&nbsp;
-      <a href="#M000272">init_config</a>&nbsp;&nbsp;
-      <a href="#M000273">install_developer_mode</a>&nbsp;&nbsp;
-      <a href="#M000275">install_devmode_route</a>&nbsp;&nbsp;
-      <a href="#M000279">install_shim</a>&nbsp;&nbsp;
-      <a href="#M000271">log_path</a>&nbsp;&nbsp;
-      <a href="#M000277">rails_vendor_root</a>&nbsp;&nbsp;
-      <a href="#M000274">rails_version</a>&nbsp;&nbsp;
-      <a href="#M000270">root</a>&nbsp;&nbsp;
+      <a href="#M000319">append_environment_info</a>&nbsp;&nbsp;
+      <a href="#M000317">draw_with_newrelic_map</a>&nbsp;&nbsp;
+      <a href="#M000309">env</a>&nbsp;&nbsp;
+      <a href="#M000312">init_config</a>&nbsp;&nbsp;
+      <a href="#M000313">install_developer_mode</a>&nbsp;&nbsp;
+      <a href="#M000316">install_devmode_route</a>&nbsp;&nbsp;
+      <a href="#M000320">install_shim</a>&nbsp;&nbsp;
+      <a href="#M000311">log_path</a>&nbsp;&nbsp;
+      <a href="#M000318">rails_vendor_root</a>&nbsp;&nbsp;
+      <a href="#M000315">rails_version</a>&nbsp;&nbsp;
+      <a href="#M000310">root</a>&nbsp;&nbsp;
+      <a href="#M000314">to_stdout</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -129,34 +130,34 @@ environment values, etc.
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000269" class="method-detail">
-        <a name="M000269"></a>
+      <div id="method-M000309" class="method-detail">
+        <a name="M000309"></a>
 
         <div class="method-heading">
-          <a href="#M000269" class="method-signature">
+          <a href="#M000309" class="method-signature">
           <span class="method-name">env</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000269-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000269-source">
+            onclick="toggleCode('M000309-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000309-source">
 <pre>
-   <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 6</span>
-6:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
-7:     <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RAILS_ENV</span>.<span class="ruby-identifier">dup</span>
-8:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 6</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
+    <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RAILS_ENV</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000272" class="method-detail">
-        <a name="M000272"></a>
+      <div id="method-M000312" class="method-detail">
+        <a name="M000312"></a>
 
         <div class="method-heading">
-          <a href="#M000272" class="method-signature">
+          <a href="#M000312" class="method-signature">
           <span class="method-name">init_config</span><span class="method-args">(options={})</span>
           </a>
         </div>
@@ -168,153 +169,186 @@ config was only available to the init.rb, so it had to be passed on from
 there.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000272-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000272-source">
+            onclick="toggleCode('M000312-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000312-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 21</span>
-21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>={})
-22:     <span class="ruby-identifier">rails_config</span>=<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:config</span>]
-23:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">agent_enabled?</span>
-24:       <span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;New Relic Agent not running&quot;</span>
-25:     <span class="ruby-keyword kw">else</span>
-26:       <span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;Starting the New Relic Agent&quot;</span>
-27:       <span class="ruby-identifier">install_developer_mode</span> <span class="ruby-identifier">rails_config</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">developer_mode?</span>
-28:     <span class="ruby-keyword kw">end</span>
-29:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 21</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>={})
+    <span class="ruby-identifier">rails_config</span>=<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:config</span>]
+    <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">agent_enabled?</span>
+      <span class="ruby-comment cmt"># Might not be running if it does not think mongrel, thin, passenger, etc</span>
+      <span class="ruby-comment cmt"># is running, if it things it's a rake task, or if the agent_enabled is false.</span>
+      <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;New Relic Agent not running.&quot;</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;Starting the New Relic Agent.&quot;</span>
+      <span class="ruby-identifier">install_developer_mode</span> <span class="ruby-identifier">rails_config</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">developer_mode?</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000273" class="method-detail">
-        <a name="M000273"></a>
+      <div id="method-M000313" class="method-detail">
+        <a name="M000313"></a>
 
         <div class="method-heading">
-          <a href="#M000273" class="method-signature">
+          <a href="#M000313" class="method-signature">
           <span class="method-name">install_developer_mode</span><span class="method-args">(rails_config)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000273-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000273-source">
+            onclick="toggleCode('M000313-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000313-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 31</span>
-31:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_developer_mode</span>(<span class="ruby-identifier">rails_config</span>)
-32:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@installed</span>
-33:     <span class="ruby-ivar">@installed</span> = <span class="ruby-keyword kw">true</span>
-34:     <span class="ruby-identifier">controller_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">'ui'</span>, <span class="ruby-value str">'controllers'</span>))
-35:     <span class="ruby-identifier">helper_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">'ui'</span>, <span class="ruby-value str">'helpers'</span>))
-36:     
-37:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependencies</span>
-38:       <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{helper_path}/*.rb&quot;</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">f</span> }
-39:       <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{controller_path}/*.rb&quot;</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">f</span> }
-40:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span>
-41:       <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">controller_path</span>
-42:       <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">helper_path</span>
-43:     <span class="ruby-keyword kw">else</span>
-44:       <span class="ruby-identifier">to_stdout</span> <span class="ruby-node">&quot;ERROR: Rails version #{Rails::VERSION::STRING} too old for developer mode to work.&quot;</span>
-45:       <span class="ruby-keyword kw">return</span>
-46:     <span class="ruby-keyword kw">end</span>
-47:     <span class="ruby-identifier">install_devmode_route</span>
-48:     
-49:     <span class="ruby-comment cmt"># If we have the config object then add the controller path to the list.</span>
-50:     <span class="ruby-comment cmt"># Otherwise we have to assume the controller paths have already been</span>
-51:     <span class="ruby-comment cmt"># set and we can just append newrelic.</span>
-52:     
-53:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rails_config</span>
-54:       <span class="ruby-identifier">rails_config</span>.<span class="ruby-identifier">controller_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">controller_path</span>
-55:     <span class="ruby-keyword kw">else</span>
-56:       <span class="ruby-identifier">current_paths</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span>
-57:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_paths</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">current_paths</span>.<span class="ruby-identifier">empty?</span>
-58:         <span class="ruby-identifier">to_stdout</span> <span class="ruby-value str">&quot;WARNING: Unable to modify the routes in this version of Rails.  Developer mode not available.&quot;</span>
-59:       <span class="ruby-keyword kw">end</span>
-60:       <span class="ruby-identifier">current_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">controller_path</span>
-61:     <span class="ruby-keyword kw">end</span>
-62:     
-63:     <span class="ruby-comment cmt">#ActionController::Routing::Routes.reload! unless NewRelic::Control.instance['skip_developer_route']</span>
-64:     
-65:     <span class="ruby-comment cmt"># inform user that the dev edition is available if we are running inside</span>
-66:     <span class="ruby-comment cmt"># a webserver process</span>
-67:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
-68:       <span class="ruby-identifier">port</span> = <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\d+/</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;:#{local_env.dispatcher_instance_id}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;:port&quot;</span> 
-69:       <span class="ruby-identifier">to_stdout</span> <span class="ruby-value str">&quot;NewRelic Agent Developer Mode enabled.&quot;</span>
-70:       <span class="ruby-identifier">to_stdout</span> <span class="ruby-node">&quot;To view performance information, go to http://localhost#{port}/newrelic&quot;</span>
-71:     <span class="ruby-keyword kw">end</span>
-72:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_developer_mode</span>(<span class="ruby-identifier">rails_config</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@installed</span>
+    <span class="ruby-ivar">@installed</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-identifier">controller_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">'ui'</span>, <span class="ruby-value str">'controllers'</span>))
+    <span class="ruby-identifier">helper_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">'ui'</span>, <span class="ruby-value str">'helpers'</span>))
+    
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependencies</span>
+      <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{helper_path}/*.rb&quot;</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">f</span> }
+      <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{controller_path}/*.rb&quot;</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">f</span> }
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span>
+      <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">controller_path</span>
+      <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">helper_path</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">to_stdout</span> <span class="ruby-node">&quot;ERROR: Rails version #{::Rails::VERSION::STRING} too old for developer mode to work.&quot;</span>
+      <span class="ruby-keyword kw">return</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">install_devmode_route</span>
+    
+    <span class="ruby-comment cmt"># If we have the config object then add the controller path to the list.</span>
+    <span class="ruby-comment cmt"># Otherwise we have to assume the controller paths have already been</span>
+    <span class="ruby-comment cmt"># set and we can just append newrelic.</span>
+    
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rails_config</span>
+      <span class="ruby-identifier">rails_config</span>.<span class="ruby-identifier">controller_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">controller_path</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">current_paths</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_paths</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">current_paths</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">to_stdout</span> <span class="ruby-value str">&quot;WARNING: Unable to modify the routes in this version of Rails.  Developer mode not available.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">current_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">controller_path</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">message</span>)
+      <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword kw">end</span>
+        
+    <span class="ruby-comment cmt">#ActionController::Routing::Routes.reload! unless NewRelic::Control.instance['skip_developer_route']</span>
+    
+    <span class="ruby-comment cmt"># inform user that the dev edition is available if we are running inside</span>
+    <span class="ruby-comment cmt"># a webserver process</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
+      <span class="ruby-identifier">port</span> = <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\d+/</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;:#{local_env.dispatcher_instance_id}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;:port&quot;</span> 
+      <span class="ruby-identifier">to_stdout</span> <span class="ruby-value str">&quot;NewRelic Agent Developer Mode enabled.&quot;</span>
+      <span class="ruby-identifier">to_stdout</span> <span class="ruby-node">&quot;To view performance information, go to http://localhost#{port}/newrelic&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000271" class="method-detail">
-        <a name="M000271"></a>
+      <div id="method-M000311" class="method-detail">
+        <a name="M000311"></a>
 
         <div class="method-heading">
-          <a href="#M000271" class="method-signature">
+          <a href="#M000311" class="method-signature">
           <span class="method-name">log_path</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000271-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000271-source">
+            onclick="toggleCode('M000311-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000311-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 13</span>
-13:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_path</span>
-14:     <span class="ruby-identifier">path</span> = <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
-15:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-ivar">@log</span>.<span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">filename</span>) 
-16:     <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-node">&quot;#{root}/log&quot;</span>
-17:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>)
-18:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 13</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_path</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-ivar">@log</span>.<span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">filename</span>) 
+    <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-node">&quot;#{root}/log&quot;</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000274" class="method-detail">
-        <a name="M000274"></a>
+      <div id="method-M000315" class="method-detail">
+        <a name="M000315"></a>
 
         <div class="method-heading">
-          <a href="#M000274" class="method-signature">
+          <a href="#M000315" class="method-signature">
           <span class="method-name">rails_version</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000274-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000274-source">
+            onclick="toggleCode('M000315-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000315-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 74</span>
-74:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_version</span>
-75:     <span class="ruby-ivar">@rails_version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING</span>)
-76:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 82</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_version</span>
+    <span class="ruby-ivar">@rails_version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000270" class="method-detail">
-        <a name="M000270"></a>
+      <div id="method-M000310" class="method-detail">
+        <a name="M000310"></a>
 
         <div class="method-heading">
-          <a href="#M000270" class="method-signature">
+          <a href="#M000310" class="method-signature">
           <span class="method-name">root</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000270-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000270-source">
+            onclick="toggleCode('M000310-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000310-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 9</span>
- 9:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
-10:     <span class="ruby-constant">RAILS_ROOT</span>
-11:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
+    <span class="ruby-constant">RAILS_ROOT</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000314" class="method-detail">
+        <a name="M000314"></a>
+
+        <div class="method-heading">
+          <a href="#M000314" class="method-signature">
+          <span class="method-name">to_stdout</span><span class="method-args">(message)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000314-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000314-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 65</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">message</span>)
+      <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -322,11 +356,11 @@ there.
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000278" class="method-detail">
-        <a name="M000278"></a>
+      <div id="method-M000319" class="method-detail">
+        <a name="M000319"></a>
 
         <div class="method-heading">
-          <a href="#M000278" class="method-signature">
+          <a href="#M000319" class="method-signature">
           <span class="method-name">append_environment_info</span><span class="method-args">()</span>
           </a>
         </div>
@@ -337,157 +371,157 @@ Collect the Rails::Info into an associative array as well as the list of
 plugins
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000278-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000278-source">
+            onclick="toggleCode('M000319-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000319-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 105</span>
-105:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>
-106:     <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails version'</span>){ <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING</span> }
-107:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rails_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'2.2.0'</span>)
-108:       <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails threadsafe'</span>) <span class="ruby-keyword kw">do</span>
-109:         <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">allow_concurrency</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
-110:       <span class="ruby-keyword kw">end</span>
-111:     <span class="ruby-keyword kw">end</span>
-112:     <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails Env'</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] }
-113:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rails_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'2.1.0'</span>)
-114:       <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_gem_list</span> <span class="ruby-keyword kw">do</span>
-115:         <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">gems</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">gem</span> <span class="ruby-operator">|</span>
-116:           <span class="ruby-identifier">version</span> = (<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:version</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">version</span>) <span class="ruby-operator">||</span>
-117:            (<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">specification</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:version</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">specification</span>.<span class="ruby-identifier">version</span>)
-118:           <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">version</span> <span class="ruby-value">? </span><span class="ruby-node">&quot;(#{version})&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>)
-119:         <span class="ruby-keyword kw">end</span>
-120:       <span class="ruby-keyword kw">end</span>
-121:       <span class="ruby-comment cmt"># The plugins is configured manually.  If it's nil, it loads everything non-deterministically</span>
-122:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>
-123:         <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_plugin_list</span> { <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span> }
-124:       <span class="ruby-keyword kw">else</span>
-125:         <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugin_paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
-126:           <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_plugin_list</span> { <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'*'</span>)].<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">p</span> }.<span class="ruby-identifier">compact</span> }
-127:         <span class="ruby-keyword kw">end</span>
-128:       <span class="ruby-keyword kw">end</span>
-129:     <span class="ruby-keyword kw">else</span>
-130:       <span class="ruby-comment cmt"># Rails prior to 2.1, can't get the gems.  Find plugins in the default location</span>
-131:       <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_plugin_list</span> <span class="ruby-keyword kw">do</span>
-132:         <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>, <span class="ruby-value str">'vendor'</span>, <span class="ruby-value str">'plugins'</span>, <span class="ruby-value str">'*'</span>)].<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">p</span> }.<span class="ruby-identifier">compact</span>
-133:       <span class="ruby-keyword kw">end</span>
-134:     <span class="ruby-keyword kw">end</span>
-135:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 113</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>
+    <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails version'</span>){ <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING</span> }
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rails_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'2.2.0'</span>)
+      <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails threadsafe'</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">allow_concurrency</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails Env'</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] }
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rails_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'2.1.0'</span>)
+      <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_gem_list</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">gems</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">gem</span> <span class="ruby-operator">|</span>
+          <span class="ruby-identifier">version</span> = (<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:version</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">version</span>) <span class="ruby-operator">||</span>
+           (<span class="ruby-identifier">gem</span>.<span class="ruby-identifier">specification</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:version</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">specification</span>.<span class="ruby-identifier">version</span>)
+          <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">version</span> <span class="ruby-value">? </span><span class="ruby-node">&quot;(#{version})&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-comment cmt"># The plugins is configured manually.  If it's nil, it loads everything non-deterministically</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>
+        <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_plugin_list</span> { <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugin_paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_plugin_list</span> { <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'*'</span>)].<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">p</span> }.<span class="ruby-identifier">compact</span> }
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-comment cmt"># Rails prior to 2.1, can't get the gems.  Find plugins in the default location</span>
+      <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_plugin_list</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>, <span class="ruby-value str">'vendor'</span>, <span class="ruby-value str">'plugins'</span>, <span class="ruby-value str">'*'</span>)].<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">p</span> }.<span class="ruby-identifier">compact</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000276" class="method-detail">
-        <a name="M000276"></a>
+      <div id="method-M000317" class="method-detail">
+        <a name="M000317"></a>
 
         <div class="method-heading">
-          <a href="#M000276" class="method-signature">
+          <a href="#M000317" class="method-signature">
           <span class="method-name">draw_with_newrelic_map</span><span class="method-args">() {|map| ...}</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000276-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000276-source">
+            onclick="toggleCode('M000317-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000317-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 87</span>
-87:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw_with_newrelic_map</span>
-88:         <span class="ruby-identifier">draw_without_newrelic_map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">map</span> <span class="ruby-operator">|</span>
-89:           <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>[<span class="ruby-value str">'skip_developer_route'</span>]
-90:             <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_developer'</span>, <span class="ruby-value str">'/newrelic/:action/:id'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span> 
-91:             <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_file'</span>, <span class="ruby-value str">'/newrelic/file/*file'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span>, <span class="ruby-identifier">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">'file'</span>
-92:           <span class="ruby-keyword kw">end</span>
-93:           <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">map</span>        
-94:         <span class="ruby-keyword kw">end</span>
-95:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 95</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw_with_newrelic_map</span>
+        <span class="ruby-identifier">draw_without_newrelic_map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">map</span> <span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>[<span class="ruby-value str">'skip_developer_route'</span>]
+            <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_developer'</span>, <span class="ruby-value str">'/newrelic/:action/:id'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span> 
+            <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_file'</span>, <span class="ruby-value str">'/newrelic/file/*file'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span>, <span class="ruby-identifier">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">'file'</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">map</span>        
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000275" class="method-detail">
-        <a name="M000275"></a>
+      <div id="method-M000316" class="method-detail">
+        <a name="M000316"></a>
 
         <div class="method-heading">
-          <a href="#M000275" class="method-signature">
+          <a href="#M000316" class="method-signature">
           <span class="method-name">install_devmode_route</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000275-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000275-source">
+            onclick="toggleCode('M000316-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000316-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 80</span>
-80:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_devmode_route</span>
-81:     <span class="ruby-comment cmt"># This is a monkey patch to inject the developer tool route into the</span>
-82:     <span class="ruby-comment cmt"># parent app without requiring users to modify their routes. Of course this </span>
-83:     <span class="ruby-comment cmt"># has the effect of adding a route indiscriminately which is frowned upon by </span>
-84:     <span class="ruby-comment cmt"># some: http://www.ruby-forum.com/topic/126316#563328</span>
-85:     <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">RouteSet</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
-86:       <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">'draw_with_newrelic_map'</span>
-87:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw_with_newrelic_map</span>
-88:         <span class="ruby-identifier">draw_without_newrelic_map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">map</span> <span class="ruby-operator">|</span>
-89:           <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>[<span class="ruby-value str">'skip_developer_route'</span>]
-90:             <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_developer'</span>, <span class="ruby-value str">'/newrelic/:action/:id'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span> 
-91:             <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_file'</span>, <span class="ruby-value str">'/newrelic/file/*file'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span>, <span class="ruby-identifier">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">'file'</span>
-92:           <span class="ruby-keyword kw">end</span>
-93:           <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">map</span>        
-94:         <span class="ruby-keyword kw">end</span>
-95:       <span class="ruby-keyword kw">end</span>
-96:       <span class="ruby-identifier">alias_method_chain</span> <span class="ruby-identifier">:draw</span>, <span class="ruby-identifier">:newrelic_map</span>
-97:     <span class="ruby-keyword kw">end</span>
-98:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 88</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_devmode_route</span>
+    <span class="ruby-comment cmt"># This is a monkey patch to inject the developer tool route into the</span>
+    <span class="ruby-comment cmt"># parent app without requiring users to modify their routes. Of course this </span>
+    <span class="ruby-comment cmt"># has the effect of adding a route indiscriminately which is frowned upon by </span>
+    <span class="ruby-comment cmt"># some: http://www.ruby-forum.com/topic/126316#563328</span>
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">RouteSet</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">'draw_with_newrelic_map'</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw_with_newrelic_map</span>
+        <span class="ruby-identifier">draw_without_newrelic_map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">map</span> <span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>[<span class="ruby-value str">'skip_developer_route'</span>]
+            <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_developer'</span>, <span class="ruby-value str">'/newrelic/:action/:id'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span> 
+            <span class="ruby-identifier">map</span>.<span class="ruby-identifier">named_route</span> <span class="ruby-value str">'newrelic_file'</span>, <span class="ruby-value str">'/newrelic/file/*file'</span>, <span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'newrelic'</span>, <span class="ruby-identifier">:action=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">'file'</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">map</span>        
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">alias_method_chain</span> <span class="ruby-identifier">:draw</span>, <span class="ruby-identifier">:newrelic_map</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000279" class="method-detail">
-        <a name="M000279"></a>
+      <div id="method-M000320" class="method-detail">
+        <a name="M000320"></a>
 
         <div class="method-heading">
-          <a href="#M000279" class="method-signature">
+          <a href="#M000320" class="method-signature">
           <span class="method-name">install_shim</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000279-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000279-source">
+            onclick="toggleCode('M000320-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000320-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 137</span>
-137:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_shim</span>
-138:     <span class="ruby-keyword kw">super</span>
-139:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'new_relic/agent/instrumentation/controller_instrumentation'</span>
-140:     <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:include</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">ControllerInstrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
-141:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 145</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_shim</span>
+    <span class="ruby-keyword kw">super</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-value str">'new_relic/agent/instrumentation/controller_instrumentation'</span>
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:include</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">ControllerInstrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000277" class="method-detail">
-        <a name="M000277"></a>
+      <div id="method-M000318" class="method-detail">
+        <a name="M000318"></a>
 
         <div class="method-heading">
-          <a href="#M000277" class="method-signature">
+          <a href="#M000318" class="method-signature">
           <span class="method-name">rails_vendor_root</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000277-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000277-source">
+            onclick="toggleCode('M000318-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000318-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 100</span>
-100:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_vendor_root</span>
-101:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">'vendor'</span>,<span class="ruby-value str">'rails'</span>)
-102:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/rails.rb, line 108</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_vendor_root</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">'vendor'</span>,<span class="ruby-value str">'rails'</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

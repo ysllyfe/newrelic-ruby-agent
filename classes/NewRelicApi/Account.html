@@ -107,11 +107,7 @@ Find Accounts
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000476">add_user</a>&nbsp;&nbsp;
-      <a href="#M000475">application_health</a>&nbsp;&nbsp;
-      <a href="#M000479">change_primary_admin</a>&nbsp;&nbsp;
-      <a href="#M000477">change_subscription</a>&nbsp;&nbsp;
-      <a href="#M000478">remove_user</a>&nbsp;&nbsp;
+      <a href="#M000529">application_health</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -125,7 +121,8 @@ Find Accounts
     <div id="class-list">
       <h3 class="section-bar">Classes and Modules</h3>
 
-      Class <a href="Account/AccountView.html" class="link">NewRelicApi::Account::AccountView</a><br />
+      Class <a href="Account/AccountUsage.html" class="link">NewRelicApi::Account::AccountUsage</a><br />
+Class <a href="Account/AccountView.html" class="link">NewRelicApi::Account::AccountView</a><br />
 
     </div>
 
@@ -139,11 +136,11 @@ Find Accounts
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000475" class="method-detail">
-        <a name="M000475"></a>
+      <div id="method-M000529" class="method-detail">
+        <a name="M000529"></a>
 
         <div class="method-heading">
-          <a href="#M000475" class="method-signature">
+          <a href="#M000529" class="method-signature">
           <span class="method-name">application_health</span><span class="method-args">(type = :first)</span>
           </a>
         </div>
@@ -154,155 +151,13 @@ Returns an account including all of its applications and the threshold
 values for each application.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000475-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000475-source">
+            onclick="toggleCode('M000529-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000529-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 237</span>
-237:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">application_health</span>(<span class="ruby-identifier">type</span> = <span class="ruby-identifier">:first</span>)
-238:       <span class="ruby-identifier">find</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">:params</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:application_health</span>})
-239:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="section-bar">Public Instance methods</h3>
-
-      <div id="method-M000476" class="method-detail">
-        <a name="M000476"></a>
-
-        <div class="method-heading">
-          <a href="#M000476" class="method-signature">
-          <span class="method-name">add_user</span><span class="method-args">(user_params, is_admin = false)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Add a user to an account.
-</p>
-<table>
-<tr><td valign="top"><tt>user_params</tt>:</td><td><a href="User.html">User</a> parameters as a hash consisting of the
-following: email, first_name, password, password_confirmation If a user
-record already exists for this email, the name and password fields are
-ignored.
-
-</td></tr>
-<tr><td valign="top"><tt>is_admin</tt>:</td><td>Set administrative privileges for this user.
-
-</td></tr>
-</table>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000476-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000476-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 247</span>
-247:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_user</span>(<span class="ruby-identifier">user_params</span>, <span class="ruby-identifier">is_admin</span> = <span class="ruby-keyword kw">false</span>)
-248:       <span class="ruby-identifier">account_id</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>
-249:       <span class="ruby-identifier">account_view</span> = <span class="ruby-constant">NewRelicApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Account</span><span class="ruby-operator">::</span><span class="ruby-constant">AccountView</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">:account_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account_id</span>, <span class="ruby-identifier">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_params</span>, <span class="ruby-identifier">:is_admin</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">is_admin</span>)
-250:       <span class="ruby-identifier">account_views</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">account_view</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">account_view</span>.<span class="ruby-identifier">valid?</span>
-251:       <span class="ruby-identifier">account_view</span>
-252:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000479" class="method-detail">
-        <a name="M000479"></a>
-
-        <div class="method-heading">
-          <a href="#M000479" class="method-signature">
-          <span class="method-name">change_primary_admin</span><span class="method-args">(email)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Change the primary admin for an account. The administrator must be a user
-that is already associated with the account
-</p>
-<table>
-<tr><td valign="top"><tt>email</tt>:</td><td>Email address of the new administrator
-
-</td></tr>
-</table>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000479-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000479-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 273</span>
-273:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change_primary_admin</span>(<span class="ruby-identifier">email</span>)
-274:       <span class="ruby-identifier">put</span>(<span class="ruby-identifier">:update_primary_admin</span>, <span class="ruby-identifier">:email</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">email</span>)
-275:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000477" class="method-detail">
-        <a name="M000477"></a>
-
-        <div class="method-heading">
-          <a href="#M000477" class="method-signature">
-          <span class="method-name">change_subscription</span><span class="method-args">(sub_params)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Change the subscription for an account
-</p>
-<table>
-<tr><td valign="top"><tt>product_id</tt>:</td><td>ID or name of product (e.g. Lite) (required).
-
-</td></tr>
-<tr><td valign="top"><tt>number_of_hosts</tt>:</td><td>Number of hosts. This is required for fixed host products. For utility
-based products, this is set to the maximum number of hosts allowed to
-connect.
-
-</td></tr>
-</table>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000477-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000477-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 259</span>
-259:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change_subscription</span>(<span class="ruby-identifier">sub_params</span>)
-260:       <span class="ruby-constant">NewRelicApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Subscription</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">sub_params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:account_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>))
-261:     <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000478" class="method-detail">
-        <a name="M000478"></a>
-
-        <div class="method-heading">
-          <a href="#M000478" class="method-signature">
-          <span class="method-name">remove_user</span><span class="method-args">(email)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Remove a user&#8216;s access from an account.
-</p>
-<table>
-<tr><td valign="top"><tt>email</tt>:</td><td><a href="User.html">User</a>&#8216;s email address.
-
-</td></tr>
-</table>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000478-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000478-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 265</span>
-265:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_user</span>(<span class="ruby-identifier">email</span>)
-266:       <span class="ruby-identifier">view</span> = <span class="ruby-constant">NewRelicApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Account</span><span class="ruby-operator">::</span><span class="ruby-constant">AccountView</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">:one</span>, <span class="ruby-identifier">:params</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">:account_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">:email</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">email</span>})
-267:       <span class="ruby-identifier">view</span>.<span class="ruby-identifier">destroy</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">view</span>
-268:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic_api.rb, line 237</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">application_health</span>(<span class="ruby-identifier">type</span> = <span class="ruby-identifier">:first</span>)
+      <span class="ruby-identifier">find</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">:params</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:application_health</span>})
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

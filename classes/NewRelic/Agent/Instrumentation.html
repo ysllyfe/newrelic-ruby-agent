@@ -63,10 +63,6 @@
                 lib/new_relic/agent/instrumentation/controller_instrumentation.rb
                 </a>
         <br />
-                <a href="../../../files/lib/new_relic/agent/instrumentation/dispatcher_instrumentation_rb.html">
-                lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb
-                </a>
-        <br />
                 <a href="../../../files/lib/new_relic/agent/instrumentation/rack_rb.html">
                 lib/new_relic/agent/instrumentation/rack.rb
                 </a>
@@ -88,15 +84,6 @@
 
   <div id="contextContent">
 
-    <div id="description">
-      <p>
-We have to patch the mongrel dispatcher live since the classes aren&#8216;t
-defined when our instrumentation loads To use this module, you need to
-monkey patch a method newrelic_response_code which will return the response
-status code when the dispatcher finishes.
-</p>
-
-    </div>
 
 
    </div>
@@ -122,9 +109,10 @@ status code when the dispatcher finishes.
 
       Module <a href="Instrumentation/ActiveRecordInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a><br />
 Module <a href="Instrumentation/ControllerInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a><br />
-Module <a href="Instrumentation/DispatcherInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::DispatcherInstrumentation</a><br />
+Module <a href="Instrumentation/DelayedJobInstrumentation.html" class="link">NewRelic::Agent::Instrumentation::DelayedJobInstrumentation</a><br />
 Module <a href="Instrumentation/Rack.html" class="link">NewRelic::Agent::Instrumentation::Rack</a><br />
 Module <a href="Instrumentation/Sinatra.html" class="link">NewRelic::Agent::Instrumentation::Sinatra</a><br />
+Class <a href="Instrumentation/MetricFrame.html" class="link">NewRelic::Agent::Instrumentation::MetricFrame</a><br />
 
     </div>
 

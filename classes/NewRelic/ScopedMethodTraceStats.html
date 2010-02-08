@@ -88,10 +88,10 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000294">new</a>&nbsp;&nbsp;
-      <a href="#M000296">record_multiple_data_points</a>&nbsp;&nbsp;
-      <a href="#M000295">trace_call</a>&nbsp;&nbsp;
-      <a href="#M000297">unscoped_stats</a>&nbsp;&nbsp;
+      <a href="#M000335">new</a>&nbsp;&nbsp;
+      <a href="#M000337">record_multiple_data_points</a>&nbsp;&nbsp;
+      <a href="#M000336">trace_call</a>&nbsp;&nbsp;
+      <a href="#M000338">unscoped_stats</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -113,25 +113,25 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000294" class="method-detail">
-        <a name="M000294"></a>
+      <div id="method-M000335" class="method-detail">
+        <a name="M000335"></a>
 
         <div class="method-heading">
-          <a href="#M000294" class="method-signature">
+          <a href="#M000335" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(unscoped_stats)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000294-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000294-source">
+            onclick="toggleCode('M000335-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000335-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 343</span>
-343:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">unscoped_stats</span>)
-344:       <span class="ruby-keyword kw">super</span>()
-345:       <span class="ruby-ivar">@unscoped_stats</span> = <span class="ruby-identifier">unscoped_stats</span>
-346:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 342</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">unscoped_stats</span>)
+      <span class="ruby-keyword kw">super</span>()
+      <span class="ruby-ivar">@unscoped_stats</span> = <span class="ruby-identifier">unscoped_stats</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -139,72 +139,72 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000296" class="method-detail">
-        <a name="M000296"></a>
+      <div id="method-M000337" class="method-detail">
+        <a name="M000337"></a>
 
         <div class="method-heading">
-          <a href="#M000296" class="method-signature">
+          <a href="#M000337" class="method-signature">
           <span class="method-name">record_multiple_data_points</span><span class="method-args">(total_value, count=1)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000296-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000296-source">
+            onclick="toggleCode('M000337-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000337-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 351</span>
-351:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
-352:       <span class="ruby-ivar">@unscoped_stats</span>.<span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>)
-353:       <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>
-354:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 350</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
+      <span class="ruby-ivar">@unscoped_stats</span>.<span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>)
+      <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000295" class="method-detail">
-        <a name="M000295"></a>
+      <div id="method-M000336" class="method-detail">
+        <a name="M000336"></a>
 
         <div class="method-heading">
-          <a href="#M000295" class="method-signature">
+          <a href="#M000336" class="method-signature">
           <span class="method-name">trace_call</span><span class="method-args">(call_time, exclusive_time = call_time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000295-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000295-source">
+            onclick="toggleCode('M000336-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000336-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 347</span>
-347:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_call</span>(<span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">call_time</span>)
-348:       <span class="ruby-ivar">@unscoped_stats</span>.<span class="ruby-identifier">trace_call</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
-349:       <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
-350:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 346</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_call</span>(<span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">call_time</span>)
+      <span class="ruby-ivar">@unscoped_stats</span>.<span class="ruby-identifier">trace_call</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
+      <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000297" class="method-detail">
-        <a name="M000297"></a>
+      <div id="method-M000338" class="method-detail">
+        <a name="M000338"></a>
 
         <div class="method-heading">
-          <a href="#M000297" class="method-signature">
+          <a href="#M000338" class="method-signature">
           <span class="method-name">unscoped_stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000297-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000297-source">
+            onclick="toggleCode('M000338-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000338-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 355</span>
-355:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unscoped_stats</span>
-356:       <span class="ruby-ivar">@unscoped_stats</span>
-357:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 354</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unscoped_stats</span>
+      <span class="ruby-ivar">@unscoped_stats</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

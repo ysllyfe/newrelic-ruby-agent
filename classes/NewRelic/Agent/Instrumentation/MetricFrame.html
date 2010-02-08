@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: NewRelic::Agent::Instrumentation::MetricFrame</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">NewRelic::Agent::Instrumentation::MetricFrame</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/new_relic/agent/instrumentation/metric_frame_rb.html">
+                lib/new_relic/agent/instrumentation/metric_frame.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A struct holding the information required to measure a controller action.
+This is put on the thread local. Handles the issue of re-entrancy, or
+nested action calls.
+</p>
+<p>
+This class is not part of the public API. Avoid making calls on it
+directly.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000175">abort_transaction!</a>&nbsp;&nbsp;
+      <a href="#M000176">abort_transaction!</a>&nbsp;&nbsp;
+      <a href="#M000183">add_custom_parameters</a>&nbsp;&nbsp;
+      <a href="#M000190">add_custom_parameters</a>&nbsp;&nbsp;
+      <a href="#M000178">category</a>&nbsp;&nbsp;
+      <a href="#M000171">current</a>&nbsp;&nbsp;
+      <a href="#M000184">custom_parameters</a>&nbsp;&nbsp;
+      <a href="#M000189">custom_parameters</a>&nbsp;&nbsp;
+      <a href="#M000172">database_metric_name</a>&nbsp;&nbsp;
+      <a href="#M000186">metric_name</a>&nbsp;&nbsp;
+      <a href="#M000173">new</a>&nbsp;&nbsp;
+      <a href="#M000182">notice_error</a>&nbsp;&nbsp;
+      <a href="#M000181">notice_error</a>&nbsp;&nbsp;
+      <a href="#M000179">path</a>&nbsp;&nbsp;
+      <a href="#M000180">pop</a>&nbsp;&nbsp;
+      <a href="#M000174">push</a>&nbsp;&nbsp;
+      <a href="#M000185">record_apdex</a>&nbsp;&nbsp;
+      <a href="#M000187">recorded_metrics</a>&nbsp;&nbsp;
+      <a href="#M000177">start_transaction</a>&nbsp;&nbsp;
+      <a href="#M000188">with_database_metric_name</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">apdex_start</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">available_request</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">database_metric_name</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">depth</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">exception</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">filtered_params</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">force_flag</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">jruby_cpu_start</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">process_cpu_start</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">start</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000175" class="method-detail">
+        <a name="M000175"></a>
+
+        <div class="method-heading">
+          <a href="#M000175" class="method-signature">
+          <span class="method-name">abort_transaction!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Indicate that you don&#8216;t want to keep the currently saved transaction
+information
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000175-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000175-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 54</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">abort_transaction!</span>
+    <span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_transaction!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000183" class="method-detail">
+        <a name="M000183"></a>
+
+        <div class="method-heading">
+          <a href="#M000183" class="method-signature">
+          <span class="method-name">add_custom_parameters</span><span class="method-args">(p)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add context parameters to the metric frame. This information will be passed
+in to errors and transaction traces. Keys and Values should be strings,
+numbers or date/times.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000183-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000183-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 126</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>)
+    <span class="ruby-identifier">current</span>.<span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000171" class="method-detail">
+        <a name="M000171"></a>
+
+        <div class="method-heading">
+          <a href="#M000171" class="method-signature">
+          <span class="method-name">current</span><span class="method-args">(create_if_empty=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the currently active metric frame, or nil. Call with <tt>true</tt>
+to create a <a href="MetricFrame.html#M000173">new</a> metric frame if one
+is not already on the thread.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000171-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000171-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">current</span>(<span class="ruby-identifier">create_if_empty</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">create_if_empty</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000184" class="method-detail">
+        <a name="M000184"></a>
+
+        <div class="method-heading">
+          <a href="#M000184" class="method-signature">
+          <span class="method-name">custom_parameters</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000184-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000184-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 130</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">custom_parameters</span>
+    (<span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">custom_parameters</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">custom_parameters</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000172" class="method-detail">
+        <a name="M000172"></a>
+
+        <div class="method-heading">
+          <a href="#M000172" class="method-signature">
+          <span class="method-name">database_metric_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the name of the model currently assigned to database measurements,
+overriding the default.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000172-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000172-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 20</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">database_metric_name</span>
+    <span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">database_metric_name</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000173" class="method-detail">
+        <a name="M000173"></a>
+
+        <div class="method-heading">
+          <a href="#M000173" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000173-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000173-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 38</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+    <span class="ruby-ivar">@start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-ivar">@path_stack</span> = [] <span class="ruby-comment cmt"># stack of [controller, path] elements</span>
+    <span class="ruby-ivar">@jruby_cpu_start</span> = <span class="ruby-identifier">jruby_cpu_time</span>
+    <span class="ruby-ivar">@process_cpu_start</span> = <span class="ruby-identifier">process_cpu</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000181" class="method-detail">
+        <a name="M000181"></a>
+
+        <div class="method-heading">
+          <a href="#M000181" class="method-signature">
+          <span class="method-name">notice_error</span><span class="method-args">(e, custom_params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If we have an active metric frame, notice the error and increment the error
+metric.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000181-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000181-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 109</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">custom_params</span>={})
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
+      <span class="ruby-identifier">current</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">custom_params</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">error_collector</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">custom_params</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000176" class="method-detail">
+        <a name="M000176"></a>
+
+        <div class="method-heading">
+          <a href="#M000176" class="method-signature">
+          <span class="method-name">abort_transaction!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Call this to ensure that the <a href="MetricFrame.html#M000171">current</a>
+transaction is not saved
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000176-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000176-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 59</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">abort_transaction!</span>
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">ignore_transaction</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="#M000190" class="method-signature">
+          <span class="method-name">add_custom_parameters</span><span class="method-args">(p)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000190-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000190-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 188</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>)
+    <span class="ruby-identifier">custom_parameters</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">p</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000178" class="method-detail">
+        <a name="M000178"></a>
+
+        <div class="method-heading">
+          <a href="#M000178" class="method-signature">
+          <span class="method-name">category</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000178-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000178-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 72</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">category</span>
+    <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span>  
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000189" class="method-detail">
+        <a name="M000189"></a>
+
+        <div class="method-heading">
+          <a href="#M000189" class="method-signature">
+          <span class="method-name">custom_parameters</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000189-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000189-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 184</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">custom_parameters</span>
+    <span class="ruby-ivar">@custom_parameters</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000186" class="method-detail">
+        <a name="M000186"></a>
+
+        <div class="method-heading">
+          <a href="#M000186" class="method-signature">
+          <span class="method-name">metric_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000186-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000186-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 143</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_name</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">category</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span> 
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000182" class="method-detail">
+        <a name="M000182"></a>
+
+        <div class="method-heading">
+          <a href="#M000182" class="method-signature">
+          <span class="method-name">notice_error</span><span class="method-args">(e, custom_params={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000182-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000182-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 117</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">custom_params</span>={})
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">error_collector</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">filtered_params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">custom_params</span>))
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">exception</span> = <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000179" class="method-detail">
+        <a name="M000179"></a>
+
+        <div class="method-heading">
+          <a href="#M000179" class="method-signature">
+          <span class="method-name">path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000179-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000179-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 76</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000180" class="method-detail">
+        <a name="M000180"></a>
+
+        <div class="method-heading">
+          <a href="#M000180" class="method-signature">
+          <span class="method-name">pop</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Unwind one stack level. It knows if it&#8216;s back at the outermost caller
+and does the appropriate wrapup of the context.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000180-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000180-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 82</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop</span>
+    <span class="ruby-identifier">category</span>, <span class="ruby-identifier">path</span> = <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">category</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Underflow in metric frames: #{caller.join(&quot;\n   &quot;)}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+        <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@process_cpu_start</span>
+          <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">process_cpu</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@process_cpu_start</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@jruby_cpu_start</span>
+          <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">jruby_cpu_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@jruby_cpu_start</span>
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Metrics</span><span class="ruby-operator">::</span><span class="ruby-constant">USER_TIME</span>).<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">cpu_burn</span>)
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_burn</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cpu_burn</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">histogram</span>.<span class="ruby-identifier">process</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">recording_web_transaction?</span>(<span class="ruby-identifier">category</span>)
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_scope_empty</span>      
+      <span class="ruby-keyword kw">end</span>      
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">end_transaction</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>] = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># path stack not empty</span>
+      <span class="ruby-comment cmt"># change the transaction name back to whatever was on the stack.  </span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">scope_name</span> = <span class="ruby-identifier">metric_name</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000174" class="method-detail">
+        <a name="M000174"></a>
+
+        <div class="method-heading">
+          <a href="#M000174" class="method-signature">
+          <span class="method-name">push</span><span class="method-args">(category, path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Indicate that we are entering a measured controller action or task. Make
+sure you unwind every <a href="MetricFrame.html#M000174">push</a> with a <a
+href="MetricFrame.html#M000180">pop</a> call.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000174-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000174-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 47</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">category</span>, <span class="ruby-identifier">path</span>)
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_first_scope_push</span>(<span class="ruby-identifier">start</span>)
+    <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">push</span> [<span class="ruby-identifier">category</span>, <span class="ruby-identifier">path</span>]
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000185" class="method-detail">
+        <a name="M000185"></a>
+
+        <div class="method-heading">
+          <a href="#M000185" class="method-signature">
+          <span class="method-name">record_apdex</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000185-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000185-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 134</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_apdex</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">recording_web_transaction?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+    <span class="ruby-identifier">ending</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">summary_stat</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-value str">&quot;Apdex&quot;</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ApdexStats</span>)
+    <span class="ruby-identifier">controller_stat</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-node">&quot;Apdex/#{path}&quot;</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ApdexStats</span>)
+    <span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">summary_stat</span>, <span class="ruby-identifier">ending</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">apdex_start</span>, <span class="ruby-identifier">exception</span>)
+    <span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">controller_stat</span>, <span class="ruby-identifier">ending</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>, <span class="ruby-identifier">exception</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000187" class="method-detail">
+        <a name="M000187"></a>
+
+        <div class="method-heading">
+          <a href="#M000187" class="method-signature">
+          <span class="method-name">recorded_metrics</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the array of metrics to record for the <a
+href="MetricFrame.html#M000171">current</a> metric frame.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000187-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000187-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 149</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recorded_metrics</span>
+    <span class="ruby-identifier">metrics</span> = [ <span class="ruby-identifier">metric_name</span> ]
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">recording_web_transaction?</span>
+        <span class="ruby-identifier">metrics</span> <span class="ruby-operator">+=</span> [<span class="ruby-value str">&quot;Controller&quot;</span>, <span class="ruby-value str">&quot;HttpDispatcher&quot;</span>]
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">metrics</span> <span class="ruby-operator">+=</span> [<span class="ruby-node">&quot;#{category}/all&quot;</span>, <span class="ruby-value str">&quot;OtherTransaction/all&quot;</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">metrics</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000177" class="method-detail">
+        <a name="M000177"></a>
+
+        <div class="method-heading">
+          <a href="#M000177" class="method-signature">
+          <span class="method-name">start_transaction</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This needs to be called after entering the call to trace the controller
+action, otherwise the controller action blames itself. It gets reset in the
+normal <a href="MetricFrame.html#M000180">pop</a> call.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000177-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000177-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 64</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">start_transaction</span> <span class="ruby-identifier">metric_name</span>
+    <span class="ruby-comment cmt"># Only push the transaction context info once, on entry:</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">available_request</span>, <span class="ruby-identifier">filtered_params</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000188" class="method-detail">
+        <a name="M000188"></a>
+
+        <div class="method-heading">
+          <a href="#M000188" class="method-signature">
+          <span class="method-name">with_database_metric_name</span><span class="method-args">(model, method) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Yield to a block that is run with a database metric name context. This
+means the Database instrumentation will use this for the metric name if it
+does not otherwise know about a model. This is re-entrant.
+</p>
+<ul>
+<li><tt>model</tt> is the DB model class
+
+</li>
+<li><tt>method</tt> is the name of the finder method or other method to
+identify the operation with.
+
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000188-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000188-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 168</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_database_metric_name</span>(<span class="ruby-identifier">model</span>, <span class="ruby-identifier">method</span>)
+    <span class="ruby-identifier">previous</span> = <span class="ruby-ivar">@database_metric_name</span>
+    <span class="ruby-identifier">model_name</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">model</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Class</span>
+      <span class="ruby-identifier">model</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+      <span class="ruby-identifier">model</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@database_metric_name</span> = <span class="ruby-node">&quot;ActiveRecord/#{model_name}/#{method}&quot;</span>
+    <span class="ruby-keyword kw">yield</span>
+  <span class="ruby-keyword kw">ensure</span>  
+    <span class="ruby-ivar">@database_metric_name</span>=<span class="ruby-identifier">previous</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

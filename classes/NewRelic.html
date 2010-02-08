@@ -63,6 +63,10 @@
                 lib/new_relic/agent/instrumentation/rack.rb
                 </a>
         <br />
+                <a href="../files/lib/new_relic/agent/samplers/object_sampler_rb.html">
+                lib/new_relic/agent/samplers/object_sampler.rb
+                </a>
+        <br />
                 <a href="../files/lib/new_relic/agent_rb.html">
                 lib/new_relic/agent.rb
                 </a>
@@ -161,15 +165,15 @@ automatically detect Sinatra and instrument all the handlers.
 </p>
 <p>
 For other frameworks, or to manage the agent manually, invoke <a
-href="NewRelic/Agent.html#M000102">NewRelic::Agent#manual_start</a>
+href="NewRelic/Agent.html#M000103">NewRelic::Agent#manual_start</a>
 directly.
 </p>
 <h2>Configuring the <a href="NewRelic/Agent.html">Agent</a></h2>
 <p>
-All agent configuration is done in the +newrelic.yml+ file. This file is by
-default read from the <tt>config</tt> directory of the application root and
-is subsequently searched for in the application root directory, and then in
-a +~/.newrelic+ directory
+All agent configuration is done in the <tt>newrelic.yml</tt> file. This
+file is by default read from the <tt>config</tt> directory of the
+application root and is subsequently searched for in the application root
+directory, and then in a <tt>~/.newrelic</tt> directory
 </p>
 <h2>Using with <a href="NewRelic/Rack.html">Rack</a>/Metal</h2>
 <p>

@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Jul 23 23:17:58 -0700 2009</td>
+      <td>Thu Jan 21 13:04:48 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -68,6 +68,21 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+A Sampler is used to capture meaningful metrics in a background thread
+periodically. They will either be invoked once a minute just before the
+data is sent to the agent (default) or every 10 seconds, when
+use_harvest_sampler? returns false.
+</p>
+<p>
+Samplers can be added to New Relic by subclassing <a
+href="../../../../classes/NewRelic/Agent/Sampler.html">NewRelic::Agent::Sampler</a>.
+Instances are created when the agent is enabled and installed. Subclasses
+are registered for instantiation automatically.
+</p>
+
+    </div>
 
 
    </div>

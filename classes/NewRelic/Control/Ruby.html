@@ -97,11 +97,11 @@ RUBY_ENV or RAILS_ENV.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000282">config_file</a>&nbsp;&nbsp;
-      <a href="#M000280">env</a>&nbsp;&nbsp;
-      <a href="#M000284">init_config</a>&nbsp;&nbsp;
-      <a href="#M000281">root</a>&nbsp;&nbsp;
-      <a href="#M000283">to_stdout</a>&nbsp;&nbsp;
+      <a href="#M000323">config_file</a>&nbsp;&nbsp;
+      <a href="#M000321">env</a>&nbsp;&nbsp;
+      <a href="#M000325">init_config</a>&nbsp;&nbsp;
+      <a href="#M000322">root</a>&nbsp;&nbsp;
+      <a href="#M000324">to_stdout</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -123,11 +123,11 @@ RUBY_ENV or RAILS_ENV.
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000282" class="method-detail">
-        <a name="M000282"></a>
+      <div id="method-M000323" class="method-detail">
+        <a name="M000323"></a>
 
         <div class="method-heading">
-          <a href="#M000282" class="method-signature">
+          <a href="#M000323" class="method-signature">
           <span class="method-name">config_file</span><span class="method-args">()</span>
           </a>
         </div>
@@ -137,113 +137,115 @@ RUBY_ENV or RAILS_ENV.
 Check a sequence of file locations for newrelic.yml
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000282-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000282-source">
+            onclick="toggleCode('M000323-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000323-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 15</span>
-15:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
-16:     <span class="ruby-identifier">files</span> = []
-17:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
-18:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
-19:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>], <span class="ruby-value str">&quot;.newrelic&quot;</span>, <span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
-20:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>], <span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
-21:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;NRCONFIG&quot;</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;NRCONFIG&quot;</span>]
-22:     <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">|</span>
-23:       <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">file</span>
-24:     <span class="ruby-keyword kw">end</span>
-25:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">files</span>.<span class="ruby-identifier">first</span>)
-26:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 15</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
+    <span class="ruby-identifier">files</span> = []
+    <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+    <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>]
+      <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>], <span class="ruby-value str">&quot;.newrelic&quot;</span>, <span class="ruby-value str">&quot;newrelic.yml&quot;</span>) 
+      <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>], <span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;NRCONFIG&quot;</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;NRCONFIG&quot;</span>]
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">file</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">files</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000280" class="method-detail">
-        <a name="M000280"></a>
+      <div id="method-M000321" class="method-detail">
+        <a name="M000321"></a>
 
         <div class="method-heading">
-          <a href="#M000280" class="method-signature">
+          <a href="#M000321" class="method-signature">
           <span class="method-name">env</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000280-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000280-source">
+            onclick="toggleCode('M000321-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000321-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 8</span>
- 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
- 9:     <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RUBY_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'development'</span>
-10:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
+    <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RUBY_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'development'</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000284" class="method-detail">
-        <a name="M000284"></a>
+      <div id="method-M000325" class="method-detail">
+        <a name="M000325"></a>
 
         <div class="method-heading">
-          <a href="#M000284" class="method-signature">
+          <a href="#M000325" class="method-signature">
           <span class="method-name">init_config</span><span class="method-args">(options={})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000284-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000284-source">
+            onclick="toggleCode('M000325-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000325-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 31</span>
-31:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>={})
-32:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000281" class="method-detail">
-        <a name="M000281"></a>
+      <div id="method-M000322" class="method-detail">
+        <a name="M000322"></a>
 
         <div class="method-heading">
-          <a href="#M000281" class="method-signature">
+          <a href="#M000322" class="method-signature">
           <span class="method-name">root</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000281-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000281-source">
+            onclick="toggleCode('M000322-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000322-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 11</span>
-11:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
-12:     <span class="ruby-ivar">@root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'APP_ROOT'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Dir</span>[<span class="ruby-value str">'.'</span>]
-13:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
+    <span class="ruby-ivar">@root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'APP_ROOT'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Dir</span>[<span class="ruby-value str">'.'</span>]
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000283" class="method-detail">
-        <a name="M000283"></a>
+      <div id="method-M000324" class="method-detail">
+        <a name="M000324"></a>
 
         <div class="method-heading">
-          <a href="#M000283" class="method-signature">
+          <a href="#M000324" class="method-signature">
           <span class="method-name">to_stdout</span><span class="method-args">(msg)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000283-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000283-source">
+            onclick="toggleCode('M000324-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000324-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 27</span>
-27:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
-28:     <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
-29:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 29</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
+    <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

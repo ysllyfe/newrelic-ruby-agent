@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Oct 22 09:43:33 -0700 2009</td>
+      <td>Thu Feb 04 17:54:45 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -116,10 +116,10 @@ NewRelic::Agent#manual_start directly.
 </p>
 <h2>Configuring the Agent</h2>
 <p>
-All agent configuration is done in the +newrelic.yml+ file. This file is by
-default read from the <tt>config</tt> directory of the application root and
-is subsequently searched for in the application root directory, and then in
-a +~/.newrelic+ directory
+All agent configuration is done in the <tt>newrelic.yml</tt> file. This
+file is by default read from the <tt>config</tt> directory of the
+application root and is subsequently searched for in the application root
+directory, and then in a <tt>~/.newrelic</tt> directory
 </p>
 <h2>Using with Rack/Metal</h2>
 <p>
@@ -141,6 +141,8 @@ href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
       new_relic/version&nbsp;&nbsp;
       new_relic/local_environment&nbsp;&nbsp;
       new_relic/stats&nbsp;&nbsp;
+      new_relic/delayed_job_injection&nbsp;&nbsp;
+      new_relic/metrics&nbsp;&nbsp;
       new_relic/metric_spec&nbsp;&nbsp;
       new_relic/metric_data&nbsp;&nbsp;
       new_relic/metric_parser&nbsp;&nbsp;
@@ -157,12 +159,13 @@ href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
       new_relic/agent/collection_helper&nbsp;&nbsp;
       new_relic/agent/transaction_sampler&nbsp;&nbsp;
       new_relic/agent/error_collector&nbsp;&nbsp;
+      new_relic/agent/busy_calculator&nbsp;&nbsp;
       new_relic/agent/sampler&nbsp;&nbsp;
       new_relic/agent/samplers/cpu_sampler&nbsp;&nbsp;
       new_relic/agent/samplers/memory_sampler&nbsp;&nbsp;
       new_relic/agent/samplers/mongrel_sampler&nbsp;&nbsp;
+      new_relic/agent/samplers/object_sampler&nbsp;&nbsp;
       set&nbsp;&nbsp;
-      sync&nbsp;&nbsp;
       thread&nbsp;&nbsp;
       resolv&nbsp;&nbsp;
       timeout&nbsp;&nbsp;

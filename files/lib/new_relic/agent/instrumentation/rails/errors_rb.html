@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Tue Aug 18 17:34:13 -0700 2009</td>
+      <td>Thu Jan 28 13:06:50 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -76,8 +76,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000008">newrelic_notice_error</a>&nbsp;&nbsp;
-      <a href="#M000009">rescue_action_with_newrelic_trace</a>&nbsp;&nbsp;
+      <a href="#M000007">newrelic_notice_error</a>&nbsp;&nbsp;
+      <a href="#M000008">rescue_action_with_newrelic_trace</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -99,11 +99,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000008" class="method-detail">
-        <a name="M000008"></a>
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
 
         <div class="method-heading">
-          <a href="#M000008" class="method-signature">
+          <a href="#M000007" class="method-signature">
           <span class="method-name">newrelic_notice_error</span><span class="method-args">(exception, custom_params = {})</span>
           </a>
         </div>
@@ -116,40 +116,37 @@ replaced that global method with NewRelic::Agent#notice_error. Use that one
 outside of controller actions.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000008-source">
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 8</span>
- 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">custom_params</span> = {})
- 9:     <span class="ruby-identifier">filtered_params</span> = (<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:filter_parameters</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">filter_parameters</span>(<span class="ruby-identifier">params</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>
-10:     <span class="ruby-identifier">filtered_params</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">custom_params</span>)
-11:     <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">agent</span>.<span class="ruby-identifier">error_collector</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">request</span>, <span class="ruby-identifier">newrelic_metric_path</span>, <span class="ruby-identifier">filtered_params</span>)
-12:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">custom_params</span> = {})
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">custom_params</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000009" class="method-detail">
-        <a name="M000009"></a>
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
 
         <div class="method-heading">
-          <a href="#M000009" class="method-signature">
+          <a href="#M000008" class="method-signature">
           <span class="method-name">rescue_action_with_newrelic_trace</span><span class="method-args">(exception)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000009-source">
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 14</span>
-14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rescue_action_with_newrelic_trace</span>(<span class="ruby-identifier">exception</span>)
-15:     <span class="ruby-identifier">newrelic_notice_error</span> <span class="ruby-identifier">exception</span>
-16:     
-17:     <span class="ruby-identifier">rescue_action_without_newrelic_trace</span> <span class="ruby-identifier">exception</span>
-18:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rescue_action_with_newrelic_trace</span>(<span class="ruby-identifier">exception</span>)
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>
+    <span class="ruby-identifier">rescue_action_without_newrelic_trace</span> <span class="ruby-identifier">exception</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

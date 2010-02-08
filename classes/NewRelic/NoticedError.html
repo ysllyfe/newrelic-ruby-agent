@@ -80,9 +80,7 @@
 
     <div id="description">
       <p>
-this class encapsulates an error that was noticed by RPM in a managed app.
-Unfortunately it was put in the agent in the global namespace early on and
-for backward compatibility it needs to remain here.
+This class encapsulates an error that was noticed by RPM in a managed app.
 </p>
 
     </div>
@@ -94,7 +92,7 @@ for backward compatibility it needs to remain here.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000460">new</a>&nbsp;&nbsp;
+      <a href="#M000513">new</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -149,39 +147,39 @@ for backward compatibility it needs to remain here.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000460" class="method-detail">
-        <a name="M000460"></a>
+      <div id="method-M000513" class="method-detail">
+        <a name="M000513"></a>
 
         <div class="method-heading">
-          <a href="#M000460" class="method-signature">
-          <span class="method-name">new</span><span class="method-args">(path, data, exception)</span>
+          <a href="#M000513" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(path, data, exception, timestamp = Time.now)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000460-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000460-source">
+            onclick="toggleCode('M000513-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000513-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/noticed_error.rb, line 7</span>
- 7:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">exception</span>)
- 8:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>
- 9:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">params</span> = <span class="ruby-identifier">data</span>
-10:     
-11:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">exception_class</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>
-12:     
-13:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value str">'original_exception'</span>)
-14:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">original_exception</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>
-15:     <span class="ruby-keyword kw">else</span>
-16:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>
-17:     <span class="ruby-keyword kw">end</span>
-18:     
-19:     <span class="ruby-comment cmt"># clamp long messages to 4k so that we don't send a lot of</span>
-20:     <span class="ruby-comment cmt"># overhead across the wire</span>
-21:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">4096</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">4096</span>
-22: 
-23:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-24:   <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/noticed_error.rb, line 5</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">timestamp</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">params</span> = <span class="ruby-identifier">data</span>
+    
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">exception_class</span> = <span class="ruby-identifier">exception</span> <span class="ruby-value">? </span><span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'&lt;no exception&gt;'</span>
+    
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value str">'original_exception'</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">original_exception</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span> = (<span class="ruby-identifier">exception</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'&lt;no message&gt;'</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-comment cmt"># clamp long messages to 4k so that we don't send a lot of</span>
+    <span class="ruby-comment cmt"># overhead across the wire</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">4095</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">4096</span>
+
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">timestamp</span>
+  <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

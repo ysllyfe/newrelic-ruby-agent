@@ -88,8 +88,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000132">get_memory</a>&nbsp;&nbsp;
-      <a href="#M000133">to_s</a>&nbsp;&nbsp;
+      <a href="#M000148">get_memory</a>&nbsp;&nbsp;
+      <a href="#M000149">to_s</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,48 +111,48 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000132" class="method-detail">
-        <a name="M000132"></a>
+      <div id="method-M000148" class="method-detail">
+        <a name="M000148"></a>
 
         <div class="method-heading">
-          <a href="#M000132" class="method-signature">
+          <a href="#M000148" class="method-signature">
           <span class="method-name">get_memory</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000132-source">
+            onclick="toggleCode('M000148-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000148-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 82</span>
-82:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_memory</span>
-83:         <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Can't sample Java heap unless running in JRuby&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Java</span>
-84:         <span class="ruby-identifier">java</span>.<span class="ruby-identifier">lang</span>.<span class="ruby-constant">Runtime</span>.<span class="ruby-identifier">getRuntime</span>.<span class="ruby-identifier">totalMemory</span> <span class="ruby-operator">/</span> (<span class="ruby-value">1024</span> <span class="ruby-operator">*</span> <span class="ruby-value">1024</span>).<span class="ruby-identifier">to_f</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
-85:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 86</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_memory</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Can't sample Java heap unless running in JRuby&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">JRuby</span>
+        <span class="ruby-identifier">java</span>.<span class="ruby-identifier">lang</span>.<span class="ruby-constant">Runtime</span>.<span class="ruby-identifier">getRuntime</span>.<span class="ruby-identifier">totalMemory</span> <span class="ruby-operator">/</span> (<span class="ruby-value">1024</span> <span class="ruby-operator">*</span> <span class="ruby-value">1024</span>).<span class="ruby-identifier">to_f</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000133" class="method-detail">
-        <a name="M000133"></a>
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
 
         <div class="method-heading">
-          <a href="#M000133" class="method-signature">
+          <a href="#M000149" class="method-signature">
           <span class="method-name">to_s</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000133-source">
+            onclick="toggleCode('M000149-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000149-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 86</span>
-86:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-87:         <span class="ruby-value str">&quot;JRuby Java heap sampler&quot;</span>
-88:       <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 90</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+        <span class="ruby-value str">&quot;JRuby Java heap sampler&quot;</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

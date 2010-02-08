@@ -93,13 +93,13 @@ metric_name
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000262">&lt;&lt;</a>&nbsp;&nbsp;
-      <a href="#M000264">average_exclusive_time</a>&nbsp;&nbsp;
-      <a href="#M000263">average_time</a>&nbsp;&nbsp;
-      <a href="#M000267">developer_name</a>&nbsp;&nbsp;
-      <a href="#M000265">exclusive_time_percentage</a>&nbsp;&nbsp;
-      <a href="#M000261">new</a>&nbsp;&nbsp;
-      <a href="#M000266">total_time_percentage</a>&nbsp;&nbsp;
+      <a href="#M000302">&lt;&lt;</a>&nbsp;&nbsp;
+      <a href="#M000304">average_exclusive_time</a>&nbsp;&nbsp;
+      <a href="#M000303">average_time</a>&nbsp;&nbsp;
+      <a href="#M000307">developer_name</a>&nbsp;&nbsp;
+      <a href="#M000305">exclusive_time_percentage</a>&nbsp;&nbsp;
+      <a href="#M000301">new</a>&nbsp;&nbsp;
+      <a href="#M000306">total_time_percentage</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -149,26 +149,26 @@ metric_name
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000261" class="method-detail">
-        <a name="M000261"></a>
+      <div id="method-M000301" class="method-detail">
+        <a name="M000301"></a>
 
         <div class="method-heading">
-          <a href="#M000261" class="method-signature">
+          <a href="#M000301" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(metric_name, sample)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000261-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000261-source">
+            onclick="toggleCode('M000301-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000301-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 15</span>
-15:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">sample</span>)
-16:       <span class="ruby-ivar">@metric_name</span> = <span class="ruby-identifier">metric_name</span>
-17:       <span class="ruby-ivar">@total_time</span>, <span class="ruby-ivar">@exclusive_time</span>, <span class="ruby-ivar">@call_count</span> = <span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>
-18:       <span class="ruby-ivar">@sample</span> = <span class="ruby-identifier">sample</span>
-19:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 15</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">sample</span>)
+      <span class="ruby-ivar">@metric_name</span> = <span class="ruby-identifier">metric_name</span>
+      <span class="ruby-ivar">@total_time</span>, <span class="ruby-ivar">@exclusive_time</span>, <span class="ruby-ivar">@call_count</span> = <span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>
+      <span class="ruby-ivar">@sample</span> = <span class="ruby-identifier">sample</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -176,148 +176,148 @@ metric_name
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000262" class="method-detail">
-        <a name="M000262"></a>
+      <div id="method-M000302" class="method-detail">
+        <a name="M000302"></a>
 
         <div class="method-heading">
-          <a href="#M000262" class="method-signature">
+          <a href="#M000302" class="method-signature">
           <span class="method-name">&lt;&lt;</span><span class="method-args">(segment)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000262-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000262-source">
+            onclick="toggleCode('M000302-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000302-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 21</span>
-21:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">segment</span>)
-22:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>
-23:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Metric Name Mismatch: #{segment.metric_name} != #{metric_name}&quot;</span> 
-24:       <span class="ruby-keyword kw">end</span>
-25:       
-26:       <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">duration</span>
-27:       <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exclusive_duration</span>
-28:       <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-29:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">segment</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Metric Name Mismatch: #{segment.metric_name} != #{metric_name}&quot;</span> 
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">duration</span>
+      <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exclusive_duration</span>
+      <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000264" class="method-detail">
-        <a name="M000264"></a>
+      <div id="method-M000304" class="method-detail">
+        <a name="M000304"></a>
 
         <div class="method-heading">
-          <a href="#M000264" class="method-signature">
+          <a href="#M000304" class="method-signature">
           <span class="method-name">average_exclusive_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000264-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000264-source">
+            onclick="toggleCode('M000304-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000304-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 35</span>
-35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_exclusive_time</span>
-36:       <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@call_count</span>
-37:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 35</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_exclusive_time</span>
+      <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@call_count</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000263" class="method-detail">
-        <a name="M000263"></a>
+      <div id="method-M000303" class="method-detail">
+        <a name="M000303"></a>
 
         <div class="method-heading">
-          <a href="#M000263" class="method-signature">
+          <a href="#M000303" class="method-signature">
           <span class="method-name">average_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000263-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000263-source">
+            onclick="toggleCode('M000303-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000303-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 31</span>
-31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_time</span>
-32:       <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@call_count</span>
-33:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 31</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_time</span>
+      <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@call_count</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000267" class="method-detail">
-        <a name="M000267"></a>
+      <div id="method-M000307" class="method-detail">
+        <a name="M000307"></a>
 
         <div class="method-heading">
-          <a href="#M000267" class="method-signature">
+          <a href="#M000307" class="method-signature">
           <span class="method-name">developer_name</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000267-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000267-source">
+            onclick="toggleCode('M000307-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000307-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 49</span>
-49:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">developer_name</span>
-50:       <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@metric_name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@metric_name</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Remainder'</span>
-51:       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@metric_name</span>).<span class="ruby-identifier">developer_name</span>
-52:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 49</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">developer_name</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@metric_name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@metric_name</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Remainder'</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@metric_name</span>).<span class="ruby-identifier">developer_name</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000265" class="method-detail">
-        <a name="M000265"></a>
+      <div id="method-M000305" class="method-detail">
+        <a name="M000305"></a>
 
         <div class="method-heading">
-          <a href="#M000265" class="method-signature">
+          <a href="#M000305" class="method-signature">
           <span class="method-name">exclusive_time_percentage</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000265-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000265-source">
+            onclick="toggleCode('M000305-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000305-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 39</span>
-39:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exclusive_time_percentage</span>
-40:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-41:       <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span>
-42:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 39</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exclusive_time_percentage</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@exclusive_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000266" class="method-detail">
-        <a name="M000266"></a>
+      <div id="method-M000306" class="method-detail">
+        <a name="M000306"></a>
 
         <div class="method-heading">
-          <a href="#M000266" class="method-signature">
+          <a href="#M000306" class="method-signature">
           <span class="method-name">total_time_percentage</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000266-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000266-source">
+            onclick="toggleCode('M000306-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000306-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 44</span>
-44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">total_time_percentage</span>
-45:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-46:       <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span>
-47:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 44</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">total_time_percentage</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@total_time</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">duration</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

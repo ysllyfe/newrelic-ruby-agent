@@ -86,14 +86,14 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000444">eql?</a>&nbsp;&nbsp;
-      <a href="#M000448">hash</a>&nbsp;&nbsp;
-      <a href="#M000446">metric_spec</a>&nbsp;&nbsp;
-      <a href="#M000447">metric_spec=</a>&nbsp;&nbsp;
-      <a href="#M000443">new</a>&nbsp;&nbsp;
-      <a href="#M000445">original_spec</a>&nbsp;&nbsp;
-      <a href="#M000449">to_json</a>&nbsp;&nbsp;
-      <a href="#M000450">to_s</a>&nbsp;&nbsp;
+      <a href="#M000497">eql?</a>&nbsp;&nbsp;
+      <a href="#M000501">hash</a>&nbsp;&nbsp;
+      <a href="#M000499">metric_spec</a>&nbsp;&nbsp;
+      <a href="#M000500">metric_spec=</a>&nbsp;&nbsp;
+      <a href="#M000496">new</a>&nbsp;&nbsp;
+      <a href="#M000498">original_spec</a>&nbsp;&nbsp;
+      <a href="#M000502">to_json</a>&nbsp;&nbsp;
+      <a href="#M000503">to_s</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -138,26 +138,26 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000443" class="method-detail">
-        <a name="M000443"></a>
+      <div id="method-M000496" class="method-detail">
+        <a name="M000496"></a>
 
         <div class="method-heading">
-          <a href="#M000443" class="method-signature">
+          <a href="#M000496" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(metric_spec, stats, metric_id)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000443-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000443-source">
+            onclick="toggleCode('M000496-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000496-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 7</span>
- 7:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">metric_spec</span>, <span class="ruby-identifier">stats</span>, <span class="ruby-identifier">metric_id</span>)
- 8:       <span class="ruby-ivar">@metric_spec</span> = <span class="ruby-identifier">metric_spec</span>
- 9:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats</span>
-10:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">metric_id</span> = <span class="ruby-identifier">metric_id</span>
-11:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 7</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">metric_spec</span>, <span class="ruby-identifier">stats</span>, <span class="ruby-identifier">metric_id</span>)
+      <span class="ruby-ivar">@metric_spec</span> = <span class="ruby-identifier">metric_spec</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">metric_id</span> = <span class="ruby-identifier">metric_id</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -165,127 +165,127 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000444" class="method-detail">
-        <a name="M000444"></a>
+      <div id="method-M000497" class="method-detail">
+        <a name="M000497"></a>
 
         <div class="method-heading">
-          <a href="#M000444" class="method-signature">
+          <a href="#M000497" class="method-signature">
           <span class="method-name">eql?</span><span class="method-args">(o)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000444-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000444-source">
+            onclick="toggleCode('M000497-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000497-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 13</span>
-13:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
-14:      (<span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">metric_spec</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">stats</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">stats</span>)
-15:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 13</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
+     (<span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">metric_spec</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">stats</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">stats</span>)
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000448" class="method-detail">
-        <a name="M000448"></a>
+      <div id="method-M000501" class="method-detail">
+        <a name="M000501"></a>
 
         <div class="method-heading">
-          <a href="#M000448" class="method-signature">
+          <a href="#M000501" class="method-signature">
           <span class="method-name">hash</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000448-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000448-source">
+            onclick="toggleCode('M000501-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000501-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 28</span>
-28:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash</span>
-29:       <span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">hash</span>
-30:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 28</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash</span>
+      <span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">hash</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000446" class="method-detail">
-        <a name="M000446"></a>
+      <div id="method-M000499" class="method-detail">
+        <a name="M000499"></a>
 
         <div class="method-heading">
-          <a href="#M000446" class="method-signature">
+          <a href="#M000499" class="method-signature">
           <span class="method-name">metric_spec</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000446-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000446-source">
+            onclick="toggleCode('M000499-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000499-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 20</span>
-20:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_spec</span>
-21:       <span class="ruby-ivar">@metric_spec</span>
-22:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 20</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_spec</span>
+      <span class="ruby-ivar">@metric_spec</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000447" class="method-detail">
-        <a name="M000447"></a>
+      <div id="method-M000500" class="method-detail">
+        <a name="M000500"></a>
 
         <div class="method-heading">
-          <a href="#M000447" class="method-signature">
+          <a href="#M000500" class="method-signature">
           <span class="method-name">metric_spec=</span><span class="method-args">(new_spec)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000447-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000447-source">
+            onclick="toggleCode('M000500-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000500-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 23</span>
-23:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_spec=</span> <span class="ruby-identifier">new_spec</span>
-24:       <span class="ruby-ivar">@original_spec</span> = <span class="ruby-ivar">@metric_spec</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@metric_spec</span>
-25:       <span class="ruby-ivar">@metric_spec</span> = <span class="ruby-identifier">new_spec</span>
-26:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 23</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_spec=</span> <span class="ruby-identifier">new_spec</span>
+      <span class="ruby-ivar">@original_spec</span> = <span class="ruby-ivar">@metric_spec</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@metric_spec</span>
+      <span class="ruby-ivar">@metric_spec</span> = <span class="ruby-identifier">new_spec</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000445" class="method-detail">
-        <a name="M000445"></a>
+      <div id="method-M000498" class="method-detail">
+        <a name="M000498"></a>
 
         <div class="method-heading">
-          <a href="#M000445" class="method-signature">
+          <a href="#M000498" class="method-signature">
           <span class="method-name">original_spec</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000445-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000445-source">
+            onclick="toggleCode('M000498-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000498-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 17</span>
-17:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">original_spec</span>
-18:       <span class="ruby-ivar">@original_spec</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@metric_spec</span>
-19:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 17</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">original_spec</span>
+      <span class="ruby-ivar">@original_spec</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@metric_spec</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000449" class="method-detail">
-        <a name="M000449"></a>
+      <div id="method-M000502" class="method-detail">
+        <a name="M000502"></a>
 
         <div class="method-heading">
-          <a href="#M000449" class="method-signature">
+          <a href="#M000502" class="method-signature">
           <span class="method-name">to_json</span><span class="method-args">(*a)</span>
           </a>
         </div>
@@ -296,37 +296,37 @@ Serialize with all attributes, but if the metric id is not nil, then
 don&#8216;t send the metric spec
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000449-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000449-source">
+            onclick="toggleCode('M000502-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000502-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 33</span>
-33:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
-34:        <span class="ruby-node">%Q[{&quot;metric_spec&quot;:#{metric_id ? 'null' : metric_spec.to_json},&quot;stats&quot;:{&quot;total_exclusive_time&quot;:#{stats.total_exclusive_time},&quot;min_call_time&quot;:#{stats.min_call_time},&quot;call_count&quot;:#{stats.call_count},&quot;sum_of_squares&quot;:#{stats.sum_of_squares},&quot;total_call_time&quot;:#{stats.total_call_time},&quot;max_call_time&quot;:#{stats.max_call_time}},&quot;metric_id&quot;:#{metric_id ? metric_id : 'null'}}]</span>
-35:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 33</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
+       <span class="ruby-node">%Q[{&quot;metric_spec&quot;:#{metric_id ? 'null' : metric_spec.to_json},&quot;stats&quot;:{&quot;total_exclusive_time&quot;:#{stats.total_exclusive_time},&quot;min_call_time&quot;:#{stats.min_call_time},&quot;call_count&quot;:#{stats.call_count},&quot;sum_of_squares&quot;:#{stats.sum_of_squares},&quot;total_call_time&quot;:#{stats.total_call_time},&quot;max_call_time&quot;:#{stats.max_call_time}},&quot;metric_id&quot;:#{metric_id ? metric_id : 'null'}}]</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000450" class="method-detail">
-        <a name="M000450"></a>
+      <div id="method-M000503" class="method-detail">
+        <a name="M000503"></a>
 
         <div class="method-heading">
-          <a href="#M000450" class="method-signature">
+          <a href="#M000503" class="method-signature">
           <span class="method-name">to_s</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000450-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000450-source">
+            onclick="toggleCode('M000503-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000503-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 37</span>
-37:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-38:       <span class="ruby-node">&quot;#{metric_spec.name}(#{metric_spec.scope}): #{stats}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_spec</span>
-39:       <span class="ruby-node">&quot;#{metric_id}: #{stats}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">nil?</span>
-40:     <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 37</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+      <span class="ruby-node">&quot;#{metric_spec.name}(#{metric_spec.scope}): #{stats}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_spec</span>
+      <span class="ruby-node">&quot;#{metric_id}: #{stats}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
