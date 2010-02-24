@@ -86,32 +86,31 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000486">[]</a>&nbsp;&nbsp;
-      <a href="#M000485">[]=</a>&nbsp;&nbsp;
+      <a href="#M000485">[]</a>&nbsp;&nbsp;
+      <a href="#M000484">[]=</a>&nbsp;&nbsp;
       <a href="#M000472">add_called_segment</a>&nbsp;&nbsp;
       <a href="#M000479">called_segments</a>&nbsp;&nbsp;
-      <a href="#M000493">called_segments=</a>&nbsp;&nbsp;
-      <a href="#M000483">count_segments</a>&nbsp;&nbsp;
-      <a href="#M000481">duration</a>&nbsp;&nbsp;
-      <a href="#M000488">each_segment</a>&nbsp;&nbsp;
+      <a href="#M000492">called_segments=</a>&nbsp;&nbsp;
+      <a href="#M000482">count_segments</a>&nbsp;&nbsp;
+      <a href="#M000480">duration</a>&nbsp;&nbsp;
+      <a href="#M000487">each_segment</a>&nbsp;&nbsp;
       <a href="#M000471">end_trace</a>&nbsp;&nbsp;
-      <a href="#M000482">exclusive_duration</a>&nbsp;&nbsp;
-      <a href="#M000490">explain_sql</a>&nbsp;&nbsp;
-      <a href="#M000489">find_segment</a>&nbsp;&nbsp;
-      <a href="#M000480">freeze</a>&nbsp;&nbsp;
+      <a href="#M000481">exclusive_duration</a>&nbsp;&nbsp;
+      <a href="#M000489">explain_sql</a>&nbsp;&nbsp;
+      <a href="#M000488">find_segment</a>&nbsp;&nbsp;
       <a href="#M000475">from_json</a>&nbsp;&nbsp;
-      <a href="#M000491">handle_exception_in_explain</a>&nbsp;&nbsp;
+      <a href="#M000490">handle_exception_in_explain</a>&nbsp;&nbsp;
       <a href="#M000470">new</a>&nbsp;&nbsp;
-      <a href="#M000492">obfuscated_sql</a>&nbsp;&nbsp;
-      <a href="#M000487">params</a>&nbsp;&nbsp;
-      <a href="#M000495">params=</a>&nbsp;&nbsp;
-      <a href="#M000494">parent_segment=</a>&nbsp;&nbsp;
+      <a href="#M000491">obfuscated_sql</a>&nbsp;&nbsp;
+      <a href="#M000486">params</a>&nbsp;&nbsp;
+      <a href="#M000494">params=</a>&nbsp;&nbsp;
+      <a href="#M000493">parent_segment=</a>&nbsp;&nbsp;
       <a href="#M000476">path_string</a>&nbsp;&nbsp;
       <a href="#M000478">to_debug_str</a>&nbsp;&nbsp;
       <a href="#M000474">to_json</a>&nbsp;&nbsp;
       <a href="#M000473">to_s</a>&nbsp;&nbsp;
       <a href="#M000477">to_s_compact</a>&nbsp;&nbsp;
-      <a href="#M000484">truncate</a>&nbsp;&nbsp;
+      <a href="#M000483">truncate</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -245,35 +244,12 @@ will have a timestamp.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000486" class="method-detail">
-        <a name="M000486"></a>
-
-        <div class="method-heading">
-          <a href="#M000486" class="method-signature">
-          <span class="method-name">[]</span><span class="method-args">(key)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000486-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000486-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 189</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
-        <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>]
-      <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000485" class="method-detail">
         <a name="M000485"></a>
 
         <div class="method-heading">
           <a href="#M000485" class="method-signature">
-          <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
+          <span class="method-name">[]</span><span class="method-args">(key)</span>
           </a>
         </div>
       
@@ -282,7 +258,30 @@ will have a timestamp.
             onclick="toggleCode('M000485-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000485-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 183</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 179</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>]
+      <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000484" class="method-detail">
+        <a name="M000484"></a>
+
+        <div class="method-heading">
+          <a href="#M000484" class="method-signature">
+          <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000484-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000484-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 173</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
         <span class="ruby-comment cmt"># only create a parameters field if a parameter is set; this will save</span>
         <span class="ruby-comment cmt"># bandwidth etc as most segments have no parameters</span>
@@ -341,21 +340,21 @@ will have a timestamp.
         </div>
       </div>
 
-      <div id="method-M000493" class="method-detail">
-        <a name="M000493"></a>
+      <div id="method-M000492" class="method-detail">
+        <a name="M000492"></a>
 
         <div class="method-heading">
-          <a href="#M000493" class="method-signature">
+          <a href="#M000492" class="method-signature">
           <span class="method-name">called_segments=</span><span class="method-args">(segments)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000493-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000493-source">
+            onclick="toggleCode('M000492-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000492-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 273</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 263</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">called_segments=</span>(<span class="ruby-identifier">segments</span>)
         <span class="ruby-ivar">@called_segments</span> = <span class="ruby-identifier">segments</span>
       <span class="ruby-keyword kw">end</span>
@@ -364,21 +363,21 @@ will have a timestamp.
         </div>
       </div>
 
-      <div id="method-M000483" class="method-detail">
-        <a name="M000483"></a>
+      <div id="method-M000482" class="method-detail">
+        <a name="M000482"></a>
 
         <div class="method-heading">
-          <a href="#M000483" class="method-signature">
+          <a href="#M000482" class="method-signature">
           <span class="method-name">count_segments</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000483-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000483-source">
+            onclick="toggleCode('M000482-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000482-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 161</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 151</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">count_segments</span>
         <span class="ruby-identifier">count</span> = <span class="ruby-value">1</span>
         <span class="ruby-ivar">@called_segments</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">seg</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">count</span>  <span class="ruby-operator">+=</span> <span class="ruby-identifier">seg</span>.<span class="ruby-identifier">count_segments</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@called_segments</span>
@@ -389,25 +388,25 @@ will have a timestamp.
         </div>
       </div>
 
-      <div id="method-M000481" class="method-detail">
-        <a name="M000481"></a>
+      <div id="method-M000480" class="method-detail">
+        <a name="M000480"></a>
 
         <div class="method-heading">
-          <a href="#M000481" class="method-signature">
+          <a href="#M000480" class="method-signature">
           <span class="method-name">duration</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-return the total <a href="Segment.html#M000481">duration</a> of this
+return the total <a href="Segment.html#M000480">duration</a> of this
 segment
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000481-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000481-source">
+            onclick="toggleCode('M000480-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000480-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 145</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 135</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">duration</span>
         (<span class="ruby-ivar">@exit_timestamp</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@entry_timestamp</span>).<span class="ruby-identifier">to_f</span>
       <span class="ruby-keyword kw">end</span>
@@ -416,11 +415,11 @@ segment
         </div>
       </div>
 
-      <div id="method-M000488" class="method-detail">
-        <a name="M000488"></a>
+      <div id="method-M000487" class="method-detail">
+        <a name="M000487"></a>
 
         <div class="method-heading">
-          <a href="#M000488" class="method-signature">
+          <a href="#M000487" class="method-signature">
           <span class="method-name">each_segment</span><span class="method-args">(&amp;block)</span>
           </a>
         </div>
@@ -430,10 +429,10 @@ segment
 call the provided block for this segment and each of the called segments
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000488-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000488-source">
+            onclick="toggleCode('M000487-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000487-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 199</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 189</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each_segment</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
         <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">self</span>
         
@@ -471,25 +470,25 @@ call the provided block for this segment and each of the called segments
         </div>
       </div>
 
-      <div id="method-M000482" class="method-detail">
-        <a name="M000482"></a>
+      <div id="method-M000481" class="method-detail">
+        <a name="M000481"></a>
 
         <div class="method-heading">
-          <a href="#M000482" class="method-signature">
+          <a href="#M000481" class="method-signature">
           <span class="method-name">exclusive_duration</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-return the <a href="Segment.html#M000481">duration</a> of this segment
+return the <a href="Segment.html#M000480">duration</a> of this segment
 without including the time in the called segments
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000482-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000482-source">
+            onclick="toggleCode('M000481-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000481-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 151</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 141</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exclusive_duration</span>
         <span class="ruby-identifier">d</span> = <span class="ruby-identifier">duration</span>
         
@@ -505,11 +504,11 @@ without including the time in the called segments
         </div>
       </div>
 
-      <div id="method-M000490" class="method-detail">
-        <a name="M000490"></a>
+      <div id="method-M000489" class="method-detail">
+        <a name="M000489"></a>
 
         <div class="method-heading">
-          <a href="#M000490" class="method-signature">
+          <a href="#M000489" class="method-signature">
           <span class="method-name">explain_sql</span><span class="method-args">()</span>
           </a>
         </div>
@@ -525,10 +524,10 @@ threshold (e.g. 500ms) and only within the slowest transaction in a report
 period, selected for shipment to RPM
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000490-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000490-source">
+            onclick="toggleCode('M000489-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000489-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 224</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 214</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">explain_sql</span>        
         <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:sql</span>]
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:connection_config</span>]
@@ -572,21 +571,21 @@ period, selected for shipment to RPM
         </div>
       </div>
 
-      <div id="method-M000489" class="method-detail">
-        <a name="M000489"></a>
+      <div id="method-M000488" class="method-detail">
+        <a name="M000488"></a>
 
         <div class="method-heading">
-          <a href="#M000489" class="method-signature">
+          <a href="#M000488" class="method-signature">
           <span class="method-name">find_segment</span><span class="method-args">(id)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000489-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000489-source">
+            onclick="toggleCode('M000488-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000488-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 209</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 199</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_segment</span>(<span class="ruby-identifier">id</span>)
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@segment_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">id</span>
         <span class="ruby-identifier">called_segments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
@@ -600,50 +599,21 @@ period, selected for shipment to RPM
         </div>
       </div>
 
-      <div id="method-M000480" class="method-detail">
-        <a name="M000480"></a>
+      <div id="method-M000490" class="method-detail">
+        <a name="M000490"></a>
 
         <div class="method-heading">
-          <a href="#M000480" class="method-signature">
-          <span class="method-name">freeze</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000480-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000480-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 134</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">freeze</span>
-        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">freeze</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@called_segments</span>
-          <span class="ruby-ivar">@called_segments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
-            <span class="ruby-identifier">s</span>.<span class="ruby-identifier">freeze</span>
-          <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">super</span>
-      <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000491" class="method-detail">
-        <a name="M000491"></a>
-
-        <div class="method-heading">
-          <a href="#M000491" class="method-signature">
+          <a href="#M000490" class="method-signature">
           <span class="method-name">handle_exception_in_explain</span><span class="method-args">(e)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000491-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000491-source">
+            onclick="toggleCode('M000490-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000490-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 263</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 253</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handle_exception_in_explain</span>(<span class="ruby-identifier">e</span>)
         <span class="ruby-identifier">x</span> = <span class="ruby-value">1</span> <span class="ruby-comment cmt"># this is here so that code coverage knows we've entered this block</span>
         <span class="ruby-comment cmt"># swallow failed attempts to run an explain.  One example of a failure is the</span>
@@ -655,21 +625,21 @@ period, selected for shipment to RPM
         </div>
       </div>
 
-      <div id="method-M000492" class="method-detail">
-        <a name="M000492"></a>
+      <div id="method-M000491" class="method-detail">
+        <a name="M000491"></a>
 
         <div class="method-heading">
-          <a href="#M000492" class="method-signature">
+          <a href="#M000491" class="method-signature">
           <span class="method-name">obfuscated_sql</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000492-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000492-source">
+            onclick="toggleCode('M000491-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000491-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 269</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 259</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">obfuscated_sql</span>
         <span class="ruby-constant">TransactionSample</span>.<span class="ruby-identifier">obfuscate_sql</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:sql</span>])
       <span class="ruby-keyword kw">end</span>
@@ -678,21 +648,21 @@ period, selected for shipment to RPM
         </div>
       </div>
 
-      <div id="method-M000487" class="method-detail">
-        <a name="M000487"></a>
+      <div id="method-M000486" class="method-detail">
+        <a name="M000486"></a>
 
         <div class="method-heading">
-          <a href="#M000487" class="method-signature">
+          <a href="#M000486" class="method-signature">
           <span class="method-name">params</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000487-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000487-source">
+            onclick="toggleCode('M000486-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000486-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 193</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 183</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">params</span>
         <span class="ruby-ivar">@params</span> <span class="ruby-operator">||=</span> {}
       <span class="ruby-keyword kw">end</span>
@@ -848,25 +818,25 @@ period, selected for shipment to RPM
         </div>
       </div>
 
-      <div id="method-M000484" class="method-detail">
-        <a name="M000484"></a>
+      <div id="method-M000483" class="method-detail">
+        <a name="M000483"></a>
 
         <div class="method-heading">
-          <a href="#M000484" class="method-signature">
+          <a href="#M000483" class="method-signature">
           <span class="method-name">truncate</span><span class="method-args">(max)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Walk through the tree and <a href="Segment.html#M000484">truncate</a> the
+Walk through the tree and <a href="Segment.html#M000483">truncate</a> the
 segments
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000484-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000484-source">
+            onclick="toggleCode('M000483-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000483-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 167</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 157</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">max</span>)
         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">max</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@called_segments</span>
         <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
@@ -889,35 +859,12 @@ segments
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000495" class="method-detail">
-        <a name="M000495"></a>
-
-        <div class="method-heading">
-          <a href="#M000495" class="method-signature">
-          <span class="method-name">params=</span><span class="method-args">(p)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000495-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000495-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 281</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">params=</span>(<span class="ruby-identifier">p</span>)
-          <span class="ruby-ivar">@params</span> = <span class="ruby-identifier">p</span>
-        <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000494" class="method-detail">
         <a name="M000494"></a>
 
         <div class="method-heading">
           <a href="#M000494" class="method-signature">
-          <span class="method-name">parent_segment=</span><span class="method-args">(s)</span>
+          <span class="method-name">params=</span><span class="method-args">(p)</span>
           </a>
         </div>
       
@@ -926,7 +873,30 @@ segments
             onclick="toggleCode('M000494-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000494-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 278</span>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 271</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">params=</span>(<span class="ruby-identifier">p</span>)
+          <span class="ruby-ivar">@params</span> = <span class="ruby-identifier">p</span>
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000493" class="method-detail">
+        <a name="M000493"></a>
+
+        <div class="method-heading">
+          <a href="#M000493" class="method-signature">
+          <span class="method-name">parent_segment=</span><span class="method-args">(s)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000493-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000493-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 268</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parent_segment=</span>(<span class="ruby-identifier">s</span>)
           <span class="ruby-ivar">@parent_segment</span> = <span class="ruby-identifier">s</span>
         <span class="ruby-keyword kw">end</span>

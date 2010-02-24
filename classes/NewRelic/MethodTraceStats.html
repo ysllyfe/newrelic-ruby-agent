@@ -94,10 +94,10 @@ Statistics used to track the performance of traced methods
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000384">increment_count</a>&nbsp;&nbsp;
-      <a href="#M000381">record_data_point</a>&nbsp;&nbsp;
-      <a href="#M000383">record_multiple_data_points</a>&nbsp;&nbsp;
-      <a href="#M000382">trace_call</a>&nbsp;&nbsp;
+      <a href="#M000385">increment_count</a>&nbsp;&nbsp;
+      <a href="#M000382">record_data_point</a>&nbsp;&nbsp;
+      <a href="#M000384">record_multiple_data_points</a>&nbsp;&nbsp;
+      <a href="#M000383">trace_call</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -132,19 +132,19 @@ Statistics used to track the performance of traced methods
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000384" class="method-detail">
-        <a name="M000384"></a>
+      <div id="method-M000385" class="method-detail">
+        <a name="M000385"></a>
 
         <div class="method-heading">
-          <a href="#M000384" class="method-signature">
+          <a href="#M000385" class="method-signature">
           <span class="method-name">increment_count</span><span class="method-args">(value = 1)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000384-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000384-source">
+            onclick="toggleCode('M000385-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000385-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 335</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment_count</span>(<span class="ruby-identifier">value</span> = <span class="ruby-value">1</span>)
@@ -155,11 +155,11 @@ Statistics used to track the performance of traced methods
         </div>
       </div>
 
-      <div id="method-M000381" class="method-detail">
-        <a name="M000381"></a>
+      <div id="method-M000382" class="method-detail">
+        <a name="M000382"></a>
 
         <div class="method-heading">
-          <a href="#M000381" class="method-signature">
+          <a href="#M000382" class="method-signature">
           <span class="method-name">record_data_point</span><span class="method-args">(value, exclusive_time = value)</span>
           </a>
         </div>
@@ -171,8 +171,8 @@ aggregate all data points collected over a specified period and upload its
 data to the <a href="../NewRelic.html">NewRelic</a> server
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000381-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000381-source">
+            onclick="toggleCode('M000382-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000382-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 310</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">value</span>)
@@ -190,19 +190,19 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
         </div>
       </div>
 
-      <div id="method-M000383" class="method-detail">
-        <a name="M000383"></a>
+      <div id="method-M000384" class="method-detail">
+        <a name="M000384"></a>
 
         <div class="method-heading">
-          <a href="#M000383" class="method-signature">
+          <a href="#M000384" class="method-signature">
           <span class="method-name">record_multiple_data_points</span><span class="method-args">(total_value, count=1)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000383-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000383-source">
+            onclick="toggleCode('M000384-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000384-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 323</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
@@ -221,8 +221,8 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
         </div>
       </div>
 
-      <div id="method-M000382" class="method-detail">
-        <a name="M000382"></a>
+      <div id="method-M000383" class="method-detail">
+        <a name="M000383"></a>
 
         <div class="method-heading">
           <span class="method-name">trace_call</span><span class="method-args">(value, exclusive_time = value)</span>
@@ -230,7 +230,7 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
       
         <div class="method-description">
           <p>
-Alias for <a href="MethodTraceStats.html#M000381">record_data_point</a>
+Alias for <a href="MethodTraceStats.html#M000382">record_data_point</a>
 </p>
         </div>
       </div>

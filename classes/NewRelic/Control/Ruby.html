@@ -176,7 +176,7 @@ Check a sequence of file locations for newrelic.yml
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/control/ruby.rb, line 8</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
-    <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RUBY_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'development'</span>
+    <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RUBY_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RACK_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'development'</span>
   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

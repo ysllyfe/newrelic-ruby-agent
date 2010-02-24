@@ -128,7 +128,7 @@ Remove all stats. For test code only.
             onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000228-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 101</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 102</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_stats</span> 
         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">clear</span>
         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">reset</span>
@@ -155,7 +155,7 @@ This version allows a caller to pass a stat class to use
             onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000224-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 20</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 21</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">stat_class</span>)
         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">stat_class</span>.<span class="ruby-identifier">new</span>
       <span class="ruby-keyword kw">end</span>
@@ -185,7 +185,7 @@ definition are per controller only)
             onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000225-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 26</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 27</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">use_scope</span> = <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">scoped_metric_only</span> = <span class="ruby-keyword kw">false</span>)
         
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scoped_metric_only</span>
@@ -220,7 +220,7 @@ definition are per controller only)
             onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000223-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 14</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 15</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">metric_name</span>)
         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span> 
       <span class="ruby-keyword kw">end</span>
@@ -253,7 +253,7 @@ sacrificing efficiency. +++
             onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000227-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 55</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 56</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_timeslice_data</span>(<span class="ruby-identifier">previous_timeslice_data</span>, <span class="ruby-identifier">metric_ids</span>)
         <span class="ruby-identifier">timeslice_data</span> = {}
         <span class="ruby-identifier">poll</span> <span class="ruby-identifier">harvest_samplers</span>
@@ -321,7 +321,7 @@ metric_spec for a scoped metric value.
             onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000221-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 6</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 7</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stat</span>(<span class="ruby-identifier">metric_name</span>)
         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>]
       <span class="ruby-keyword kw">end</span>
@@ -344,7 +344,7 @@ metric_spec for a scoped metric value.
             onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000226-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 42</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 43</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span> = <span class="ruby-keyword kw">nil</span>)
         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span>)] <span class="ruby-operator">||</span>
         <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>]
@@ -368,7 +368,7 @@ metric_spec for a scoped metric value.
             onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000222-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 10</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 11</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metrics</span>
         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:to_s</span>)
       <span class="ruby-keyword kw">end</span>
@@ -394,7 +394,7 @@ Reset each of the stats, such as when a new passenger instance starts up.
             onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000229-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 107</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 108</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_stats</span> 
         <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">reset</span> }
       <span class="ruby-keyword kw">end</span>
@@ -417,7 +417,7 @@ Reset each of the stats, such as when a new passenger instance starts up.
             onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000230-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 111</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 112</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats_hash</span>
         <span class="ruby-ivar">@stats_hash</span> <span class="ruby-operator">||=</span> {}
       <span class="ruby-keyword kw">end</span>

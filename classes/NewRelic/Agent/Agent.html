@@ -219,7 +219,7 @@ Should only be called by <a href="../Control.html">NewRelic::Control</a>
             onclick="toggleCode('M000232-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000232-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 33</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 34</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance</span>
       <span class="ruby-ivar">@instance</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-keyword kw">end</span>
@@ -282,7 +282,7 @@ Should only be called by <a href="../Control.html">NewRelic::Control</a>
             onclick="toggleCode('M000239-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000239-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 98</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 99</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_transaction</span>
       <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">end_transaction</span>
     <span class="ruby-keyword kw">end</span>
@@ -309,7 +309,7 @@ passenger where processes are forked and the agent is dormant
             onclick="toggleCode('M000234-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000234-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 45</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 46</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ensure_worker_thread_started</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">agent_enabled?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">monitor_mode?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@invalid_license</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">running?</span>
@@ -340,7 +340,7 @@ passenger where processes are forked and the agent is dormant
             onclick="toggleCode('M000245-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000245-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 137</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 138</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>
     <span class="ruby-keyword kw">end</span>
@@ -367,7 +367,7 @@ href="Agent.html#M000233">NewRelic::Agent.manual_start</a>
             onclick="toggleCode('M000233-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000233-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 37</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 38</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manual_start</span>(<span class="ruby-identifier">ignored</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">also_ignored</span>=<span class="ruby-keyword kw">nil</span>)
       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;This method no longer supported.  Instead use the class method NewRelic::Agent.manual_start&quot;</span>
     <span class="ruby-keyword kw">end</span>
@@ -394,7 +394,7 @@ what it was before we pushed the current flag.
             onclick="toggleCode('M000243-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000243-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 121</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 122</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_trace_execution_flag</span>
       <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_untraced</span>].<span class="ruby-identifier">pop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_untraced</span>]
     <span class="ruby-keyword kw">end</span>
@@ -420,7 +420,7 @@ Push flag indicating whether we should be tracing in this thread.
             onclick="toggleCode('M000242-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000242-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 115</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 116</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push_trace_execution_flag</span>(<span class="ruby-identifier">should_trace</span>=<span class="ruby-keyword kw">false</span>)
       (<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_untraced</span>] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">should_trace</span> 
     <span class="ruby-keyword kw">end</span>
@@ -447,7 +447,7 @@ we are connected
             onclick="toggleCode('M000235-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000235-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 59</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 60</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">running?</span>
       <span class="ruby-identifier">control</span>.<span class="ruby-identifier">agent_enabled?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">monitor_mode?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@task_loop</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@task_loop</span>.<span class="ruby-identifier">pid</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$$</span>
     <span class="ruby-keyword kw">end</span>
@@ -470,7 +470,7 @@ we are connected
             onclick="toggleCode('M000240-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000240-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 102</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 103</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_record_sql</span>(<span class="ruby-identifier">should_record</span>)
       <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_sql</span>]
       <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_sql</span>] = <span class="ruby-identifier">should_record</span>
@@ -495,7 +495,7 @@ we are connected
             onclick="toggleCode('M000241-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000241-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 108</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 109</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_record_tt</span>(<span class="ruby-identifier">should_record</span>)
       <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_tt</span>]
       <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_tt</span>] = <span class="ruby-identifier">should_record</span>
@@ -520,7 +520,7 @@ we are connected
             onclick="toggleCode('M000244-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000244-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 125</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 126</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_sql_obfuscator</span>(<span class="ruby-identifier">type</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:before</span>
         <span class="ruby-ivar">@obfuscator</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ChainedCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">block</span>, <span class="ruby-ivar">@obfuscator</span>)
@@ -554,7 +554,7 @@ Attempt a graceful <a href="Agent.html#M000237">shutdown</a> of the agent.
             onclick="toggleCode('M000237-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000237-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 69</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 70</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shutdown</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">started?</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@task_loop</span>
@@ -604,7 +604,7 @@ applicable.
             onclick="toggleCode('M000246-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000246-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 145</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 146</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">started?</span>
         <span class="ruby-identifier">control</span>.<span class="ruby-identifier">log!</span> <span class="ruby-value str">&quot;Agent Started Already!&quot;</span>, <span class="ruby-identifier">:error</span>
@@ -691,7 +691,7 @@ applicable.
             onclick="toggleCode('M000238-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000238-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 94</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 95</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>
       <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">start_transaction</span>
     <span class="ruby-keyword kw">end</span>
@@ -718,7 +718,7 @@ href="Agent.html#M000246">start</a>&#8216;
             onclick="toggleCode('M000236-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000236-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 64</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 65</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">started?</span>
       <span class="ruby-ivar">@started</span>
     <span class="ruby-keyword kw">end</span>

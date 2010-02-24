@@ -558,7 +558,7 @@ the stack to the top level.
 
         <div class="method-heading">
           <a href="#M000284" class="method-signature">
-          <span class="method-name">notice_transaction</span><span class="method-args">(path, request=nil, params={})</span>
+          <span class="method-name">notice_transaction</span><span class="method-args">(path, uri=nil, params={})</span>
           </a>
         </div>
       
@@ -568,8 +568,8 @@ the stack to the top level.
           <div class="method-source-code" id="M000284-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 112</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">params</span>={})
-      <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>, <span class="ruby-identifier">params</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">disabled</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">builder</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">params</span>={})
+      <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">disabled</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">builder</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

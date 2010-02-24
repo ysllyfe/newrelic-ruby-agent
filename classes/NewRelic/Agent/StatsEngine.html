@@ -153,12 +153,12 @@ Class <a href="StatsEngine/ScopeStackElement.html" class="link">NewRelic::Agent:
             onclick="toggleCode('M000207-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000207-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine.rb, line 11</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-      <span class="ruby-comment cmt"># Makes the unit tests happy</span>
-      <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_stack</span>] = <span class="ruby-keyword kw">nil</span>
-      <span class="ruby-identifier">spawn_sampler_thread</span>
-    <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine.rb, line 12</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-comment cmt"># Makes the unit tests happy</span>
+        <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_stack</span>] = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-identifier">spawn_sampler_thread</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -180,10 +180,10 @@ Class <a href="StatsEngine/ScopeStackElement.html" class="link">NewRelic::Agent:
             onclick="toggleCode('M000208-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000208-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine.rb, line 17</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>
-    <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine.rb, line 18</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

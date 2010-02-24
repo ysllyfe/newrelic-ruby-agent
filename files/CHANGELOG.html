@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Oct 29 17:01:25 -0700 2009</td>
+      <td>Fri Feb 19 15:59:52 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -70,11 +70,70 @@
 
     <div id="description">
       <p>
-v2.10.1
+v2.10.5
 </p>
 <pre>
+  * Fix bug in delayed_job instrumentation occurring when there was no DJ log
+</pre>
+<p>
+v2.10.4
+</p>
+<pre>
+  * Fix incompatibility with Capistrano 2.5.16
+  * Strip down URLs reported in transactions and errors to path only
+</pre>
+<p>
+v2.10.3
+</p>
+<pre>
+  * optimization to reduce overhead: move background samplers into foreground thread
+  * change default config file to ignore RoutingErrors
+  * moved the background task instrumentation into a separate tab in the RPM UI
+  * allow override of the RPM application name via NEWRELIC_APP_NAME environment variable
+  * revised Delayed::Job instrumentation so no manual_start is required
+  * send buffered data on shutdown
+  * expanded support for queue length and queue time
+  * remove calls to starts_with to fix Sinatra and non-rails deployments
+  * fix problem with apdex scores recording too low in some circumstances
+  * switch to jeweler for gem building
+  * minor fixes, test improvements, doc and rakefile improvements
+  * fix incompatibility with Hoptoad where Hoptoad was not getting errors handled by New Relic
+  * many other optimizations, bug fixes and documentation improvements
+</pre>
+<p>
+v2.10.2.
+</p>
+<pre>
+  * beta release of 2.10
+  * fix bugs with Sinatra app instrumentation
+  * minor doc updates
+</pre>
+<p>
+v2.10.1.
+</p>
+<pre>
+  * alpha release of 2.10
+  * rack support, including metal; ignores 404s; requires a module inclusion (see docs)
+  * sinatra support, displays actions named by the URI pattern matched
+  * add API method to abort transaction recording for in-flight transactions
+  * remove account management calls from newrelic_api.rb
+  * truncating extremely large transaction traces for efficiency
+  * fix error reporting in recipes; add newrelic_rails_env option to recipes to
+    override the rails env used to pull the app_name out of newrelic.yml
+  * added TorqueBox recognition (thanks Bob McWhirter)
+  * renamed config settings: enabled =&gt; monitor_mode; developer =&gt; developer_mode;
+    old names will still work in newrelic.yml
+  * instrumentation for DelayedJob (thanks Travis Tilley)
+  * added config switches to turn off certain instrumentation when you aren't
+    interested in the metrics, to save on overhead--see newrelic.yml for details.
+  * add profiling support to dev mode; very experimental!
+  * add 'multi_threaded' config option to indicate when the app is running
+    multi-threaded, so we can disable some instrumentation
+  * fix test failures in JRuby, REE
+  * improve Net::HTTP instrumentation so its more efficient and distinguishes calls
+    between web and non-web transactions.
+  * database instrumentation notices all database commands in addition to the core commands
   * add support for textmate to dev mode
-  * preliminary sinatra support, displays actions named by the URI pattern matched
   * added add_transaction_tracer method to support instrumenting methods as
     if they were web transactions; this will facilitate better visibility of background
     tasks and eventually things like rack, metal and Sinatra
@@ -86,11 +145,13 @@ v2.10.1
   * added # of GC calls to GC instrumentation
   * renamed the dispatcher metric
   * refactored stats_engine code for readability
+  * optimization: reduce wakeup times for harvest thread
 </pre>
 <p>
-v2.10.0
+v2.10.0.
 </p>
 <pre>
+  * alpha release of 2.10
   * support unicorn
   * instrumentation of GC for REE and MRE with GC patch
   * support agent restarting when changes are made to the account
@@ -109,19 +170,29 @@ v2.10.0
   * for non-rails daemons, look at APP_ROOT and NRCONFIG env vars for custom locations
 </pre>
 <p>
-v2.9.6
+v2.9.9.
 </p>
 <pre>
-  * added support for validating agents in the cloud.
+  * Disable at_exit handler for Unicorn which sometimes caused the
+    agent to stop reporting immediately.
 </pre>
 <p>
-v2.9.5
+v2.9.8.
+</p>
+<pre>
+  * add instrumentation for Net::HTTP calls, to show up as &quot;External&quot;
+  * added support for validating agents in the cloud.
+  * recognize Unicorn dispatcher
+  * add NewRelic module definitions to ActiveRecord instrumentation
+</pre>
+<p>
+v2.9.5.
 </p>
 <pre>
   * Snow Leopard memory fix
 </pre>
 <p>
-v2.9.4
+v2.9.4.
 </p>
 <pre>
   * clamp size of data sent to server
@@ -234,7 +305,7 @@ v2.8.10.
   * minor tweak to environment gathering for gem mode
 </pre>
 <p>
-v2.8.9
+v2.8.9.
 </p>
 <pre>
   * fix problem finding the newrelic controller in dev mode
@@ -245,7 +316,7 @@ v2.8.9
     warning message
 </pre>
 <p>
-v2.8.8
+v2.8.8.
 </p>
 <pre>
   * fix error with jruby on windows
@@ -254,7 +325,7 @@ v2.8.8
     for now
 </pre>
 <p>
-v2.8.7
+v2.8.7.
 </p>
 <pre>
   * fix for ssl connection hanging problems
@@ -263,7 +334,7 @@ v2.8.7
   * put back webrick support
 </pre>
 <p>
-v2.8.6
+v2.8.6.
 </p>
 <pre>
   * fix for capture_params when using file uploads in controller actions
@@ -271,7 +342,7 @@ v2.8.6
     blocking applications
 </pre>
 <p>
-v2.8.5
+v2.8.5.
 </p>
 <pre>
   * fix reference to CommandError which was breaking some cap scripts
@@ -283,14 +354,14 @@ v2.8.5
   * fix problem in devmode displaying sql with embedded urls
 </pre>
 <p>
-v2.8.4
+v2.8.4.
 </p>
 <pre>
   * fix bug in capistrano recipe causing cap commands to fail with error
     about not finding Version class
 </pre>
 <p>
-v2.8.3
+v2.8.3.
 </p>
 <pre>
   * refactor unit tests so they will run in a generic rails environment
@@ -300,7 +371,7 @@ v2.8.3
   * fixed newrelic_helper.rb 1.9 incompatibility
 </pre>
 <p>
-v2.8.2
+v2.8.2.
 </p>
 <pre>
   * fix Ruby 1.9 syntax compatibility errors
@@ -308,7 +379,7 @@ v2.8.2
   * fix agent output on script and rake task execution
 </pre>
 <p>
-v2.8.1
+v2.8.1.
 </p>
 <pre>
   * Convert the deployment information upload script to an executable and
@@ -319,7 +390,7 @@ v2.8.1
   * Fix thin incompatibility in developer mode
 </pre>
 <p>
-v2.8.0
+v2.8.0.
 </p>
 <pre>
   * add beta of api in new_relic_api.rb
@@ -336,7 +407,7 @@ v2.8.0
   * fix IgnoreSilentlyException message
 </pre>
 <p>
-v2.7.4
+v2.7.4.
 </p>
 <pre>
   * fix error when trying to serialize some kinds of Enumerable objects
@@ -344,25 +415,25 @@ v2.7.4
   * added app_name to app mapping
 </pre>
 <p>
-v2.7.3
+v2.7.3.
 </p>
 <pre>
   * fix compatibility issue with 1.8.5 causing error with Dir.glob
 </pre>
 <p>
-v2.7.2
+v2.7.2.
 </p>
 <pre>
   * fix problem with passenger edge not being a detected environment
 </pre>
 <p>
-v2.7.1
+v2.7.1.
 </p>
 <pre>
   * fix problem with skipped dispatcher instrumentation
 </pre>
 <p>
-v2.7.0
+v2.7.0.
 </p>
 <pre>
   * Repackage to support both plugin and Gem installation
@@ -376,32 +447,32 @@ v2.7.0
   * bugfixes
 </pre>
 <p>
-v2.5.3
+v2.5.3.
 </p>
 <pre>
   * fix error in transaction tracing causing traces not to show up
 </pre>
 <p>
-v2.5.2
+v2.5.2.
 </p>
 <pre>
   * fixes for postgres explain plan support
 </pre>
 <p>
-v2.5.1
+v2.5.1.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.5.0
+v2.5.0.
 </p>
 <pre>
   * add agent support for rpm 1.1 features
   * Fix regression error with thin support
 </pre>
 <p>
-v2.4.3
+v2.4.3.
 </p>
 <pre>
   * added 'newrelic_ignore' controller class method with :except and :only options for finer grained control
@@ -409,80 +480,80 @@ v2.4.3
   * bugfixes
 </pre>
 <p>
-v2.4.2
+v2.4.2.
 </p>
 <pre>
   * error reporting in early access
 </pre>
 <p>
-v2.4.1
+v2.4.1.
 </p>
 <pre>
   * bugfix: initializing developer mode
 </pre>
 <p>
-v2.4.0
+v2.4.0.
 </p>
 <pre>
   * Beta support for LiteSpeed and Passenger
 </pre>
 <p>
-v2.3.7
+v2.3.7.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.3.6
+v2.3.6.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.3.5
+v2.3.5.
 </p>
 <pre>
   * bugfixes: pie chart data, rails 1.1 compability
 </pre>
 <p>
-v2.3.4
+v2.3.4.
 </p>
 <pre>
   * bugfix
 </pre>
 <p>
-v2.3.3
+v2.3.3.
 </p>
 <pre>
   * bugfix for non-mysql databases
 </pre>
 <p>
-v2.3.2
+v2.3.2.
 </p>
 <pre>
   * bugfixes
   * Add enhancement for Transaction Traces early access feature
 </pre>
 <p>
-v2.3.1
+v2.3.1.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.3.0
+v2.3.0.
 </p>
 <pre>
   + Add support for Transaction Traces early access feature
 </pre>
 <p>
-v2.2.2
+v2.2.2.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.2.1
+v2.2.1.
 </p>
 <pre>
   + Add rails 2.1 support for Developer Mode
@@ -493,43 +564,43 @@ v2.2.1
   * Support JRuby environments
 </pre>
 <p>
-v2.1.6
+v2.1.6.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.1.5
+v2.1.5.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.1.4
+v2.1.4.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.1.3
+v2.1.3.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.1.2
+v2.1.2.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.1.1
+v2.1.1.
 </p>
 <pre>
   * bugfixes
 </pre>
 <p>
-v2.1.0
+v2.1.0.
 </p>
 <pre>
   * release for private beta

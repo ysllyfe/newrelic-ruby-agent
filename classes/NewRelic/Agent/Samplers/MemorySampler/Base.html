@@ -86,8 +86,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000150">can_run?</a>&nbsp;&nbsp;
-      <a href="#M000151">get_sample</a>&nbsp;&nbsp;
+      <a href="#M000146">can_run?</a>&nbsp;&nbsp;
+      <a href="#M000147">get_sample</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -109,21 +109,21 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000150" class="method-detail">
-        <a name="M000150"></a>
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
 
         <div class="method-heading">
-          <a href="#M000150" class="method-signature">
+          <a href="#M000146" class="method-signature">
           <span class="method-name">can_run?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000150-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000150-source">
+            onclick="toggleCode('M000146-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000146-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 60</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 59</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">can_run?</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@broken</span>
         <span class="ruby-identifier">m</span> = <span class="ruby-identifier">get_memory</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
@@ -134,21 +134,21 @@
         </div>
       </div>
 
-      <div id="method-M000151" class="method-detail">
-        <a name="M000151"></a>
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
 
         <div class="method-heading">
-          <a href="#M000151" class="method-signature">
+          <a href="#M000147" class="method-signature">
           <span class="method-name">get_sample</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000151-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000151-source">
+            onclick="toggleCode('M000147-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000147-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 65</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 64</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_sample</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@broken</span>
         <span class="ruby-keyword kw">begin</span>

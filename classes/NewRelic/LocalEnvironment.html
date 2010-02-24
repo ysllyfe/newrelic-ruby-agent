@@ -88,7 +88,7 @@ responsible for determining three things:
 
 </li>
 <li>Dispatcher - A supported dispatcher, or nil (:<a
-href="LocalEnvironment.html#M000521">mongrel</a>, :thin, :passenger,
+href="LocalEnvironment.html#M000520">mongrel</a>, :thin, :passenger,
 :webrick, etc)
 
 </li>
@@ -99,7 +99,7 @@ each other
 </ul>
 <p>
 If the environment can&#8216;t be determined, it will be set to nil and <a
-href="LocalEnvironment.html#M000518">dispatcher_instance_id</a> will have
+href="LocalEnvironment.html#M000517">dispatcher_instance_id</a> will have
 nil.
 </p>
 <p>
@@ -117,17 +117,17 @@ href="Control.html">NewRelic::Control</a> singleton).
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000515">append_environment_value</a>&nbsp;&nbsp;
-      <a href="#M000516">append_gem_list</a>&nbsp;&nbsp;
-      <a href="#M000517">append_plugin_list</a>&nbsp;&nbsp;
-      <a href="#M000523">delayed_worker=</a>&nbsp;&nbsp;
-      <a href="#M000518">dispatcher_instance_id</a>&nbsp;&nbsp;
-      <a href="#M000519">gather_environment_info</a>&nbsp;&nbsp;
-      <a href="#M000521">mongrel</a>&nbsp;&nbsp;
-      <a href="#M000514">new</a>&nbsp;&nbsp;
-      <a href="#M000520">snapshot</a>&nbsp;&nbsp;
-      <a href="#M000524">to_s</a>&nbsp;&nbsp;
-      <a href="#M000522">unicorn</a>&nbsp;&nbsp;
+      <a href="#M000514">append_environment_value</a>&nbsp;&nbsp;
+      <a href="#M000515">append_gem_list</a>&nbsp;&nbsp;
+      <a href="#M000516">append_plugin_list</a>&nbsp;&nbsp;
+      <a href="#M000522">delayed_worker=</a>&nbsp;&nbsp;
+      <a href="#M000517">dispatcher_instance_id</a>&nbsp;&nbsp;
+      <a href="#M000518">gather_environment_info</a>&nbsp;&nbsp;
+      <a href="#M000520">mongrel</a>&nbsp;&nbsp;
+      <a href="#M000513">new</a>&nbsp;&nbsp;
+      <a href="#M000519">snapshot</a>&nbsp;&nbsp;
+      <a href="#M000523">to_s</a>&nbsp;&nbsp;
+      <a href="#M000521">unicorn</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -195,19 +195,19 @@ href="Control.html">NewRelic::Control</a> singleton).
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000514" class="method-detail">
-        <a name="M000514"></a>
+      <div id="method-M000513" class="method-detail">
+        <a name="M000513"></a>
 
         <div class="method-heading">
-          <a href="#M000514" class="method-signature">
+          <a href="#M000513" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000514-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000514-source">
+            onclick="toggleCode('M000513-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000513-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 25</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
@@ -225,11 +225,11 @@ href="Control.html">NewRelic::Control</a> singleton).
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000515" class="method-detail">
-        <a name="M000515"></a>
+      <div id="method-M000514" class="method-detail">
+        <a name="M000514"></a>
 
         <div class="method-heading">
-          <a href="#M000515" class="method-signature">
+          <a href="#M000514" class="method-signature">
           <span class="method-name">append_environment_value</span><span class="method-args">(name, value = nil) {|if block_given?| ...}</span>
           </a>
         </div>
@@ -241,8 +241,8 @@ either a value or a block. Block is called to get the value and any raised
 errors are silently ignored.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000515-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000515-source">
+            onclick="toggleCode('M000514-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000514-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 38</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_value</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>
@@ -257,19 +257,19 @@ errors are silently ignored.
         </div>
       </div>
 
-      <div id="method-M000516" class="method-detail">
-        <a name="M000516"></a>
+      <div id="method-M000515" class="method-detail">
+        <a name="M000515"></a>
 
         <div class="method-heading">
-          <a href="#M000516" class="method-signature">
+          <a href="#M000515" class="method-signature">
           <span class="method-name">append_gem_list</span><span class="method-args">() {|| ...}</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000516-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000516-source">
+            onclick="toggleCode('M000515-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000515-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 46</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_gem_list</span>
@@ -283,19 +283,19 @@ errors are silently ignored.
         </div>
       </div>
 
-      <div id="method-M000517" class="method-detail">
-        <a name="M000517"></a>
+      <div id="method-M000516" class="method-detail">
+        <a name="M000516"></a>
 
         <div class="method-heading">
-          <a href="#M000517" class="method-signature">
+          <a href="#M000516" class="method-signature">
           <span class="method-name">append_plugin_list</span><span class="method-args">() {|| ...}</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000517-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000517-source">
+            onclick="toggleCode('M000516-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000516-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 53</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_plugin_list</span>
@@ -309,11 +309,11 @@ errors are silently ignored.
         </div>
       </div>
 
-      <div id="method-M000523" class="method-detail">
-        <a name="M000523"></a>
+      <div id="method-M000522" class="method-detail">
+        <a name="M000522"></a>
 
         <div class="method-heading">
-          <a href="#M000523" class="method-signature">
+          <a href="#M000522" class="method-signature">
           <span class="method-name">delayed_worker=</span><span class="method-args">(worker)</span>
           </a>
         </div>
@@ -324,8 +324,8 @@ Obsolete method for DelayedJob instrumentation support, which is now in the
 rpm_contrib gem.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000523-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000523-source">
+            onclick="toggleCode('M000522-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000522-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 149</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delayed_worker=</span>(<span class="ruby-identifier">worker</span>)
@@ -336,19 +336,19 @@ rpm_contrib gem.
         </div>
       </div>
 
-      <div id="method-M000518" class="method-detail">
-        <a name="M000518"></a>
+      <div id="method-M000517" class="method-detail">
+        <a name="M000517"></a>
 
         <div class="method-heading">
-          <a href="#M000518" class="method-signature">
+          <a href="#M000517" class="method-signature">
           <span class="method-name">dispatcher_instance_id</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000518-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000518-source">
+            onclick="toggleCode('M000517-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000517-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 60</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_instance_id</span>
@@ -364,11 +364,11 @@ rpm_contrib gem.
         </div>
       </div>
 
-      <div id="method-M000519" class="method-detail">
-        <a name="M000519"></a>
+      <div id="method-M000518" class="method-detail">
+        <a name="M000518"></a>
 
         <div class="method-heading">
-          <a href="#M000519" class="method-signature">
+          <a href="#M000518" class="method-signature">
           <span class="method-name">gather_environment_info</span><span class="method-args">()</span>
           </a>
         </div>
@@ -379,8 +379,8 @@ Collect base statistics about the environment and record them for
 comparison and change detection.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000519-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000519-source">
+            onclick="toggleCode('M000518-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000518-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 71</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_environment_info</span>
@@ -437,19 +437,19 @@ comparison and change detection.
         </div>
       </div>
 
-      <div id="method-M000521" class="method-detail">
-        <a name="M000521"></a>
+      <div id="method-M000520" class="method-detail">
+        <a name="M000520"></a>
 
         <div class="method-heading">
-          <a href="#M000521" class="method-signature">
+          <a href="#M000520" class="method-signature">
           <span class="method-name">mongrel</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000521-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000521-source">
+            onclick="toggleCode('M000520-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000520-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 129</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mongrel</span>
@@ -466,23 +466,23 @@ comparison and change detection.
         </div>
       </div>
 
-      <div id="method-M000520" class="method-detail">
-        <a name="M000520"></a>
+      <div id="method-M000519" class="method-detail">
+        <a name="M000519"></a>
 
         <div class="method-heading">
-          <a href="#M000520" class="method-signature">
+          <a href="#M000519" class="method-signature">
           <span class="method-name">snapshot</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Take a <a href="LocalEnvironment.html#M000520">snapshot</a> of the
+Take a <a href="LocalEnvironment.html#M000519">snapshot</a> of the
 environment information for this application Returns an associative array
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000520-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000520-source">
+            onclick="toggleCode('M000519-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000519-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 122</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">snapshot</span>
@@ -496,19 +496,19 @@ environment information for this application Returns an associative array
         </div>
       </div>
 
-      <div id="method-M000524" class="method-detail">
-        <a name="M000524"></a>
+      <div id="method-M000523" class="method-detail">
+        <a name="M000523"></a>
 
         <div class="method-heading">
-          <a href="#M000524" class="method-signature">
+          <a href="#M000523" class="method-signature">
           <span class="method-name">to_s</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000524-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000524-source">
+            onclick="toggleCode('M000523-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000523-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 307</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
@@ -523,19 +523,19 @@ environment information for this application Returns an associative array
         </div>
       </div>
 
-      <div id="method-M000522" class="method-detail">
-        <a name="M000522"></a>
+      <div id="method-M000521" class="method-detail">
+        <a name="M000521"></a>
 
         <div class="method-heading">
-          <a href="#M000522" class="method-signature">
+          <a href="#M000521" class="method-signature">
           <span class="method-name">unicorn</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000522-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000522-source">
+            onclick="toggleCode('M000521-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000521-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 139</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unicorn</span>

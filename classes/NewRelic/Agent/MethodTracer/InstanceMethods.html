@@ -144,7 +144,7 @@ be done*. Most of the time you can aggregate on the server.
             onclick="toggleCode('M000194-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000194-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 105</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 106</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
         
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:force</span>]
@@ -233,7 +233,7 @@ href="../../Agent.html#M000110">NewRelic::Agent#disable_all_tracing</a>
             onclick="toggleCode('M000192-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000192-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 67</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 68</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_unscoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
         <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>

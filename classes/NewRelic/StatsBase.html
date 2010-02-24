@@ -86,13 +86,13 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000390">begin_time</a>&nbsp;&nbsp;
-      <a href="#M000388">begin_time=</a>&nbsp;&nbsp;
-      <a href="#M000391">end_time</a>&nbsp;&nbsp;
-      <a href="#M000389">end_time=</a>&nbsp;&nbsp;
-      <a href="#M000386">freeze</a>&nbsp;&nbsp;
-      <a href="#M000385">new</a>&nbsp;&nbsp;
-      <a href="#M000387">to_json</a>&nbsp;&nbsp;
+      <a href="#M000391">begin_time</a>&nbsp;&nbsp;
+      <a href="#M000389">begin_time=</a>&nbsp;&nbsp;
+      <a href="#M000392">end_time</a>&nbsp;&nbsp;
+      <a href="#M000390">end_time=</a>&nbsp;&nbsp;
+      <a href="#M000387">freeze</a>&nbsp;&nbsp;
+      <a href="#M000386">new</a>&nbsp;&nbsp;
+      <a href="#M000388">to_json</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -159,19 +159,19 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000385" class="method-detail">
-        <a name="M000385"></a>
+      <div id="method-M000386" class="method-detail">
+        <a name="M000386"></a>
 
         <div class="method-heading">
-          <a href="#M000385" class="method-signature">
+          <a href="#M000386" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000385-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000385-source">
+            onclick="toggleCode('M000386-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000386-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 247</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> 
@@ -184,62 +184,12 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000390" class="method-detail">
-        <a name="M000390"></a>
-
-        <div class="method-heading">
-          <a href="#M000390" class="method-signature">
-          <span class="method-name">begin_time</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000390-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000390-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 274</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">begin_time</span>
-      <span class="ruby-value">0</span><span class="ruby-value">.0</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000388" class="method-detail">
-        <a name="M000388"></a>
-
-        <div class="method-heading">
-          <a href="#M000388" class="method-signature">
-          <span class="method-name">begin_time=</span><span class="method-args">(t)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-In this class, we explicitly don&#8216;t track begin and end time here, to
-save space during cross process serialization via xml. Still the accessor
-methods must be provided for merge to work.
-</p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000388-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000388-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 268</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">begin_time=</span>(<span class="ruby-identifier">t</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000391" class="method-detail">
         <a name="M000391"></a>
 
         <div class="method-heading">
           <a href="#M000391" class="method-signature">
-          <span class="method-name">end_time</span><span class="method-args">()</span>
+          <span class="method-name">begin_time</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -248,8 +198,8 @@ methods must be provided for merge to work.
             onclick="toggleCode('M000391-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000391-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 278</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_time</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 274</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">begin_time</span>
       <span class="ruby-value">0</span><span class="ruby-value">.0</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
@@ -262,41 +212,67 @@ methods must be provided for merge to work.
 
         <div class="method-heading">
           <a href="#M000389" class="method-signature">
-          <span class="method-name">end_time=</span><span class="method-args">(t)</span>
+          <span class="method-name">begin_time=</span><span class="method-args">(t)</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+In this class, we explicitly don&#8216;t track begin and end time here, to
+save space during cross process serialization via xml. Still the accessor
+methods must be provided for merge to work.
+</p>
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000389-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000389-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 271</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_time=</span>(<span class="ruby-identifier">t</span>)
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 268</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">begin_time=</span>(<span class="ruby-identifier">t</span>)
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000386" class="method-detail">
-        <a name="M000386"></a>
+      <div id="method-M000392" class="method-detail">
+        <a name="M000392"></a>
 
         <div class="method-heading">
-          <a href="#M000386" class="method-signature">
-          <span class="method-name">freeze</span><span class="method-args">()</span>
+          <a href="#M000392" class="method-signature">
+          <span class="method-name">end_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000386-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000386-source">
+            onclick="toggleCode('M000392-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000392-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 251</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">freeze</span>
-      <span class="ruby-ivar">@end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      <span class="ruby-keyword kw">super</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 278</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_time</span>
+      <span class="ruby-value">0</span><span class="ruby-value">.0</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000390" class="method-detail">
+        <a name="M000390"></a>
+
+        <div class="method-heading">
+          <a href="#M000390" class="method-signature">
+          <span class="method-name">end_time=</span><span class="method-args">(t)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000390-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000390-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 271</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_time=</span>(<span class="ruby-identifier">t</span>)
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -308,7 +284,7 @@ methods must be provided for merge to work.
 
         <div class="method-heading">
           <a href="#M000387" class="method-signature">
-          <span class="method-name">to_json</span><span class="method-args">(*a)</span>
+          <span class="method-name">freeze</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -316,6 +292,30 @@ methods must be provided for merge to work.
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000387-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000387-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 251</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">freeze</span>
+      <span class="ruby-ivar">@end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+      <span class="ruby-keyword kw">super</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000388" class="method-detail">
+        <a name="M000388"></a>
+
+        <div class="method-heading">
+          <a href="#M000388" class="method-signature">
+          <span class="method-name">to_json</span><span class="method-args">(*a)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000388-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000388-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 256</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)

@@ -55,16 +55,84 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+                <a href="../files/lib/new_relic/agent/agent_rb.html">
+                lib/new_relic/agent/agent.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/busy_calculator_rb.html">
+                lib/new_relic/agent/busy_calculator.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/collection_helper_rb.html">
+                lib/new_relic/agent/collection_helper.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/error_collector_rb.html">
+                lib/new_relic/agent/error_collector.rb
+                </a>
+        <br />
                 <a href="../files/lib/new_relic/agent/instrumentation/active_record_instrumentation_rb.html">
                 lib/new_relic/agent/instrumentation/active_record_instrumentation.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/instrumentation/controller_instrumentation_rb.html">
+                lib/new_relic/agent/instrumentation/controller_instrumentation.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/instrumentation/delayed_job_instrumentation_rb.html">
+                lib/new_relic/agent/instrumentation/delayed_job_instrumentation.rb
                 </a>
         <br />
                 <a href="../files/lib/new_relic/agent/instrumentation/rack_rb.html">
                 lib/new_relic/agent/instrumentation/rack.rb
                 </a>
         <br />
+                <a href="../files/lib/new_relic/agent/instrumentation/sinatra_rb.html">
+                lib/new_relic/agent/instrumentation/sinatra.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/method_tracer_rb.html">
+                lib/new_relic/agent/method_tracer.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/samplers/cpu_sampler_rb.html">
+                lib/new_relic/agent/samplers/cpu_sampler.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/samplers/delayed_job_lock_sampler_rb.html">
+                lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/samplers/memory_sampler_rb.html">
+                lib/new_relic/agent/samplers/memory_sampler.rb
+                </a>
+        <br />
                 <a href="../files/lib/new_relic/agent/samplers/object_sampler_rb.html">
                 lib/new_relic/agent/samplers/object_sampler.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/stats_engine/metric_stats_rb.html">
+                lib/new_relic/agent/stats_engine/metric_stats.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/stats_engine/samplers_rb.html">
+                lib/new_relic/agent/stats_engine/samplers.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/stats_engine/transactions_rb.html">
+                lib/new_relic/agent/stats_engine/transactions.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/stats_engine_rb.html">
+                lib/new_relic/agent/stats_engine.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/transaction_sampler_rb.html">
+                lib/new_relic/agent/transaction_sampler.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/agent/worker_loop_rb.html">
+                lib/new_relic/agent/worker_loop.rb
                 </a>
         <br />
                 <a href="../files/lib/new_relic/agent_rb.html">
@@ -79,6 +147,10 @@
                 lib/new_relic/control.rb
                 </a>
         <br />
+                <a href="../files/lib/new_relic/delayed_job_injection_rb.html">
+                lib/new_relic/delayed_job_injection.rb
+                </a>
+        <br />
                 <a href="../files/lib/new_relic/local_environment_rb.html">
                 lib/new_relic/local_environment.rb
                 </a>
@@ -91,8 +163,20 @@
                 lib/new_relic/metric_parser.rb
                 </a>
         <br />
+                <a href="../files/lib/new_relic/metrics_rb.html">
+                lib/new_relic/metrics.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/rack/metric_app_rb.html">
+                lib/new_relic/rack/metric_app.rb
+                </a>
+        <br />
                 <a href="../files/lib/new_relic/stats_rb.html">
                 lib/new_relic/stats.rb
+                </a>
+        <br />
+                <a href="../files/lib/new_relic/transaction_analysis_rb.html">
+                lib/new_relic/transaction_analysis.rb
                 </a>
         <br />
                 <a href="../files/lib/new_relic/transaction_sample_rb.html">
@@ -121,69 +205,10 @@
   <div id="contextContent">
 
     <div id="description">
-      <h1>New Relic <a href="NewRelic/Agent.html">Agent</a></h1>
-<p>
-New Relic RPM is a performance monitoring application for Ruby applications
-running in production. For more information on RPM please visit <a
-href="http://www.newrelic.com">www.newrelic.com</a>.
-</p>
-<p>
-The New Relic <a href="NewRelic/Agent.html">Agent</a> can be installed in
-Rails applications to gather runtime performance metrics, traces, and
-errors for display in a Developer Mode UI (mapped to /newrelic in your
-application server) or for monitoring and analysis at <a
-href="http://rpm.newrelic.com">rpm.newrelic.com</a> with just about any
-Ruby application.
-</p>
-<p>
-For detailed information on configuring or customizing the RPM <a
-href="NewRelic/Agent.html">Agent</a> please visit our <a
-href="http://support.newrelic.com">support and documentation site</a>.
-</p>
-<h2>Starting the <a href="NewRelic/Agent.html">Agent</a> as a Gem</h2>
-<p>
-For Rails, add:
-</p>
-<pre>
-   config.gem 'newrelic_rpm'
-</pre>
-<p>
-to your initialization sequence.
-</p>
-<p>
-For merb, do
-</p>
-<pre>
-   dependency 'newrelic_rpm'
-</pre>
-<p>
-in the Merb config/init.rb
-</p>
-<p>
-For Sinatra, just require the <tt>newrelic_rpm</tt> gem and it will
-automatically detect Sinatra and instrument all the handlers.
-</p>
-<p>
-For other frameworks, or to manage the agent manually, invoke <a
-href="NewRelic/Agent.html#M000103">NewRelic::Agent#manual_start</a>
-directly.
-</p>
-<h2>Configuring the <a href="NewRelic/Agent.html">Agent</a></h2>
-<p>
-All agent configuration is done in the <tt>newrelic.yml</tt> file. This
-file is by default read from the <tt>config</tt> directory of the
-application root and is subsequently searched for in the application root
-directory, and then in a <tt>~/.newrelic</tt> directory
-</p>
-<h2>Using with <a href="NewRelic/Rack.html">Rack</a>/Metal</h2>
-<p>
-To instrument middlewares, refer to the docs in <a
-href="NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>.
-</p>
-<h2><a href="NewRelic/Agent.html">Agent</a> API</h2>
-<p>
-For details on the <a href="NewRelic/Agent.html">Agent</a> API, refer to <a
-href="NewRelic/Agent.html">NewRelic::Agent</a>.
+      <p>
+Add these methods to <a
+href="NewRelic/TransactionSample.html">TransactionSample</a> that enable
+performance analysis in the user interface.
 </p>
 
     </div>
@@ -205,6 +230,7 @@ href="NewRelic/Agent.html">NewRelic::Agent</a>.
       Module <a href="NewRelic/Agent.html" class="link">NewRelic::Agent</a><br />
 Module <a href="NewRelic/Commands.html" class="link">NewRelic::Commands</a><br />
 Module <a href="NewRelic/Control.html" class="link">NewRelic::Control</a><br />
+Module <a href="NewRelic/DelayedJobInjection.html" class="link">NewRelic::DelayedJobInjection</a><br />
 Module <a href="NewRelic/MetricParser.html" class="link">NewRelic::MetricParser</a><br />
 Module <a href="NewRelic/Metrics.html" class="link">NewRelic::Metrics</a><br />
 Module <a href="NewRelic/Rack.html" class="link">NewRelic::Rack</a><br />

@@ -170,7 +170,7 @@ is a proc or block with a specified call period in seconds.
             onclick="toggleCode('M000248-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000248-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 10</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 11</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDERR</span>))
       <span class="ruby-ivar">@tasks</span> = []
       <span class="ruby-ivar">@log</span> = <span class="ruby-identifier">log</span>
@@ -202,7 +202,7 @@ every call_period seconds. The task is passed as a block
             onclick="toggleCode('M000252-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000252-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 38</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 39</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_task</span>(<span class="ruby-identifier">call_period</span>, <span class="ruby-identifier">desc</span>=<span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">task_proc</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">call_period</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">MIN_CALL_PERIOD</span>
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid Call Period (must be &gt; #{MIN_CALL_PERIOD}): #{call_period}&quot;</span> 
@@ -228,7 +228,7 @@ every call_period seconds. The task is passed as a block
             onclick="toggleCode('M000250-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000250-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 26</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 27</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">keep_running</span>
       <span class="ruby-ivar">@should_run</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-ivar">@pid</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$$</span>)
     <span class="ruby-keyword kw">end</span>
@@ -256,7 +256,7 @@ worker loop
             onclick="toggleCode('M000249-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000249-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 20</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 21</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
       <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">keep_running</span> <span class="ruby-keyword kw">do</span>
         <span class="ruby-identifier">run_next_task</span>
@@ -281,7 +281,7 @@ worker loop
             onclick="toggleCode('M000251-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000251-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 30</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 31</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>
       <span class="ruby-ivar">@should_run</span> = <span class="ruby-keyword kw">false</span>
     <span class="ruby-keyword kw">end</span>

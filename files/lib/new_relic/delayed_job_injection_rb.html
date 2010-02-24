@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Feb 04 15:55:33 -0800 2010</td>
+      <td>Fri Feb 19 15:56:29 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -148,17 +148,19 @@ href="delayed_job_injection_rb.html#M000009">initialize_with_new_relic</a>
             onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000009-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/delayed_job_injection.rb, line 4</span>
+<span class="ruby-comment cmt"># File lib/new_relic/delayed_job_injection.rb, line 11</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_with_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
     <span class="ruby-identifier">initialize_without_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-    <span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-keyword kw">case</span>
+    <span class="ruby-identifier">worker_name</span> = <span class="ruby-keyword kw">case</span>
     <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:name</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span>
     <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:default_name</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_name</span>
-    <span class="ruby-keyword kw">else</span>
-      <span class="ruby-node">&quot;host:#{Socket.gethostname} pid:#{Process.pid}&quot;</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-node">&quot;pid:#{Process.pid}&quot;</span>
     <span class="ruby-keyword kw">end</span>
-    
+    <span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-identifier">worker_name</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;host:#{Socket.gethostname} pid:#{Process.pid}&quot;</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-node">&quot;pid:#{Process.pid}&quot;</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">logger</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;RPM Monitoring DJ worker #{dispatcher_instance_id}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
     <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">manual_start</span> <span class="ruby-identifier">:dispatcher</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:delayed_job</span>, <span class="ruby-identifier">:dispatcher_instance_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dispatcher_instance_id</span>
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">DelayedJobInjection</span>.<span class="ruby-identifier">worker_name</span> = <span class="ruby-identifier">worker_name</span>
   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

@@ -88,13 +88,13 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000133">local_env</a>&nbsp;&nbsp;
-      <a href="#M000135">locked_jobs</a>&nbsp;&nbsp;
-      <a href="#M000131">new</a>&nbsp;&nbsp;
-      <a href="#M000137">poll</a>&nbsp;&nbsp;
-      <a href="#M000132">stats</a>&nbsp;&nbsp;
-      <a href="#M000136">supported_on_this_platform?</a>&nbsp;&nbsp;
-      <a href="#M000134">worker_name</a>&nbsp;&nbsp;
+      <a href="#M000130">local_env</a>&nbsp;&nbsp;
+      <a href="#M000132">locked_jobs</a>&nbsp;&nbsp;
+      <a href="#M000128">new</a>&nbsp;&nbsp;
+      <a href="#M000134">poll</a>&nbsp;&nbsp;
+      <a href="#M000129">stats</a>&nbsp;&nbsp;
+      <a href="#M000133">supported_on_this_platform?</a>&nbsp;&nbsp;
+      <a href="#M000131">worker_name</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -116,44 +116,46 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000131" class="method-detail">
-        <a name="M000131"></a>
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
 
         <div class="method-heading">
-          <a href="#M000131" class="method-signature">
+          <a href="#M000128" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000131-source">
+            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000128-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 3</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 5</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">delayed_job_lock</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Unsupported</span>, <span class="ruby-value str">&quot;DJ instrumentation disabled&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>[<span class="ruby-value str">'disable_dj'</span>] 
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Unsupported</span>, <span class="ruby-value str">&quot;No DJ worker present&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">DelayedJobInjection</span>.<span class="ruby-identifier">worker_name</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000136" class="method-detail">
-        <a name="M000136"></a>
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
 
         <div class="method-heading">
-          <a href="#M000136" class="method-signature">
+          <a href="#M000133" class="method-signature">
           <span class="method-name">supported_on_this_platform?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000136-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000136-source">
+            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000133-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 23</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 27</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
       <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Delayed</span><span class="ruby-operator">::</span><span class="ruby-constant">Job</span>)
     <span class="ruby-keyword kw">end</span>
@@ -164,69 +166,23 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000133" class="method-detail">
-        <a name="M000133"></a>
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
 
         <div class="method-heading">
-          <a href="#M000133" class="method-signature">
+          <a href="#M000130" class="method-signature">
           <span class="method-name">local_env</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000133-source">
+            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000130-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 11</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 15</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">local_env</span>
       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">local_env</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000135" class="method-detail">
-        <a name="M000135"></a>
-
-        <div class="method-heading">
-          <a href="#M000135" class="method-signature">
-          <span class="method-name">locked_jobs</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000135-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000135-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 19</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locked_jobs</span>
-      <span class="ruby-constant">Delayed</span><span class="ruby-operator">::</span><span class="ruby-constant">Job</span>.<span class="ruby-identifier">count</span>(<span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">:locked_by</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">worker_name</span>})
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000137" class="method-detail">
-        <a name="M000137"></a>
-
-        <div class="method-heading">
-          <a href="#M000137" class="method-signature">
-          <span class="method-name">poll</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000137-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000137-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 27</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
-      <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">locked_jobs</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -238,7 +194,7 @@
 
         <div class="method-heading">
           <a href="#M000132" class="method-signature">
-          <span class="method-name">stats</span><span class="method-args">()</span>
+          <span class="method-name">locked_jobs</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -247,9 +203,9 @@
             onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000132-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 7</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
-      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-value str">&quot;DJ/Locked Jobs&quot;</span>, <span class="ruby-keyword kw">false</span>)
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 23</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locked_jobs</span>
+      <span class="ruby-constant">Delayed</span><span class="ruby-operator">::</span><span class="ruby-constant">Job</span>.<span class="ruby-identifier">count</span>(<span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">:locked_by</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">DelayedJobInjection</span>.<span class="ruby-identifier">worker_name</span>})
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -261,7 +217,7 @@
 
         <div class="method-heading">
           <a href="#M000134" class="method-signature">
-          <span class="method-name">worker_name</span><span class="method-args">()</span>
+          <span class="method-name">poll</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -270,7 +226,53 @@
             onclick="toggleCode('M000134-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000134-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 15</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 31</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
+      <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">locked_jobs</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
+
+        <div class="method-heading">
+          <a href="#M000129" class="method-signature">
+          <span class="method-name">stats</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000129-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 11</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
+      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-value str">&quot;Custom/DJ Locked Jobs&quot;</span>, <span class="ruby-keyword kw">false</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
+
+        <div class="method-heading">
+          <a href="#M000131" class="method-signature">
+          <span class="method-name">worker_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000131-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 19</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">worker_name</span>
       <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
     <span class="ruby-keyword kw">end</span>

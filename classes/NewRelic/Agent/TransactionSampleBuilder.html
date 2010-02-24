@@ -297,7 +297,7 @@ by any other thread so no need for synchronization.
             onclick="toggleCode('M000274-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000274-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 310</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 309</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample</span>
       <span class="ruby-ivar">@sample</span>
     <span class="ruby-keyword kw">end</span>
@@ -397,7 +397,7 @@ by any other thread so no need for synchronization.
             onclick="toggleCode('M000273-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000273-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 306</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 305</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_time</span>)
       <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:cpu_time</span>] = <span class="ruby-identifier">cpu_time</span>
     <span class="ruby-keyword kw">end</span>
@@ -411,7 +411,7 @@ by any other thread so no need for synchronization.
 
         <div class="method-heading">
           <a href="#M000272" class="method-signature">
-          <span class="method-name">set_transaction_info</span><span class="method-args">(path, request, params)</span>
+          <span class="method-name">set_transaction_info</span><span class="method-args">(path, uri, params)</span>
           </a>
         </div>
       
@@ -421,7 +421,7 @@ by any other thread so no need for synchronization.
           <div class="method-source-code" id="M000272-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 292</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span>)
       <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:path</span>] = <span class="ruby-identifier">path</span>
       
       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">capture_params</span>
@@ -431,8 +431,7 @@ by any other thread so no need for synchronization.
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:request_params</span>].<span class="ruby-identifier">delete</span> <span class="ruby-identifier">:controller</span>
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:request_params</span>].<span class="ruby-identifier">delete</span> <span class="ruby-identifier">:action</span>
       <span class="ruby-keyword kw">end</span>
-      <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:uri</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">request</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">path</span>)
-      <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:uri</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">uri</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">uri</span>
+      <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:uri</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:uri</span>] 
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
