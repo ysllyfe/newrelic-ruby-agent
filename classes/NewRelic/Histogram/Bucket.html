@@ -95,12 +95,12 @@ for reporting data to RPM. The bucket range is encoded in the metic name
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000510">max_millis</a>&nbsp;&nbsp;
-      <a href="#M000509">min_millis</a>&nbsp;&nbsp;
-      <a href="#M000506">new</a>&nbsp;&nbsp;
-      <a href="#M000508">process</a>&nbsp;&nbsp;
-      <a href="#M000507">stats</a>&nbsp;&nbsp;
-      <a href="#M000511">to_s</a>&nbsp;&nbsp;
+      <a href="#M000522">max_millis</a>&nbsp;&nbsp;
+      <a href="#M000521">min_millis</a>&nbsp;&nbsp;
+      <a href="#M000518">new</a>&nbsp;&nbsp;
+      <a href="#M000520">process</a>&nbsp;&nbsp;
+      <a href="#M000519">stats</a>&nbsp;&nbsp;
+      <a href="#M000523">to_s</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -145,19 +145,19 @@ for reporting data to RPM. The bucket range is encoded in the metic name
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000506" class="method-detail">
-        <a name="M000506"></a>
+      <div id="method-M000518" class="method-detail">
+        <a name="M000518"></a>
 
         <div class="method-heading">
-          <a href="#M000506" class="method-signature">
+          <a href="#M000518" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(min, max = nil)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000506-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000506-source">
+            onclick="toggleCode('M000518-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000518-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 23</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">min</span>, <span class="ruby-identifier">max</span> = <span class="ruby-keyword kw">nil</span>)
@@ -171,19 +171,19 @@ for reporting data to RPM. The bucket range is encoded in the metic name
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000510" class="method-detail">
-        <a name="M000510"></a>
+      <div id="method-M000522" class="method-detail">
+        <a name="M000522"></a>
 
         <div class="method-heading">
-          <a href="#M000510" class="method-signature">
+          <a href="#M000522" class="method-signature">
           <span class="method-name">max_millis</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000510-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000510-source">
+            onclick="toggleCode('M000522-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000522-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 56</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max_millis</span>
@@ -194,19 +194,19 @@ for reporting data to RPM. The bucket range is encoded in the metic name
         </div>
       </div>
 
-      <div id="method-M000509" class="method-detail">
-        <a name="M000509"></a>
+      <div id="method-M000521" class="method-detail">
+        <a name="M000521"></a>
 
         <div class="method-heading">
-          <a href="#M000509" class="method-signature">
+          <a href="#M000521" class="method-signature">
           <span class="method-name">min_millis</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000509-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000509-source">
+            onclick="toggleCode('M000521-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000521-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 52</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min_millis</span>
@@ -217,11 +217,11 @@ for reporting data to RPM. The bucket range is encoded in the metic name
         </div>
       </div>
 
-      <div id="method-M000508" class="method-detail">
-        <a name="M000508"></a>
+      <div id="method-M000520" class="method-detail">
+        <a name="M000520"></a>
 
         <div class="method-heading">
-          <a href="#M000508" class="method-signature">
+          <a href="#M000520" class="method-signature">
           <span class="method-name">process</span><span class="method-args">(value)</span>
           </a>
         </div>
@@ -236,8 +236,8 @@ belongs in a bucket with a higher range. (Hint: it&#8216;s not 0, and
 it&#8216;s not less than zero.)
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000508-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000508-source">
+            onclick="toggleCode('M000520-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000520-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 38</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">value</span>)
@@ -258,19 +258,19 @@ it&#8216;s not less than zero.)
         </div>
       </div>
 
-      <div id="method-M000507" class="method-detail">
-        <a name="M000507"></a>
+      <div id="method-M000519" class="method-detail">
+        <a name="M000519"></a>
 
         <div class="method-heading">
-          <a href="#M000507" class="method-signature">
+          <a href="#M000519" class="method-signature">
           <span class="method-name">stats</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000507-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000507-source">
+            onclick="toggleCode('M000519-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000519-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
@@ -281,19 +281,19 @@ it&#8216;s not less than zero.)
         </div>
       </div>
 
-      <div id="method-M000511" class="method-detail">
-        <a name="M000511"></a>
+      <div id="method-M000523" class="method-detail">
+        <a name="M000523"></a>
 
         <div class="method-heading">
-          <a href="#M000511" class="method-signature">
+          <a href="#M000523" class="method-signature">
           <span class="method-name">to_s</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000511-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000511-source">
+            onclick="toggleCode('M000523-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000523-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 60</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>

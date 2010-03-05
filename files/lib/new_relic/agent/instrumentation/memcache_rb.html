@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Tue Feb 16 09:45:10 -0800 2010</td>
+      <td>Fri Mar 05 15:00:59 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -75,7 +75,7 @@ each with slightly different API&#8216;s and semantics. See:
 </p>
 <pre>
     http://www.deveiate.org/code/Ruby-MemCache/ (Gem: Ruby-MemCache)
-    http://dev.robotcoop.com/Libraries/memcache-client/ (Gem: memcache-client)
+    http://seattlerb.rubyforge.org/memcache-client/ (Gem: memcache-client)
 </pre>
 
     </div>
@@ -83,6 +83,13 @@ each with slightly different API&#8216;s and semantics. See:
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000003">instrument_method</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -99,6 +106,39 @@ each with slightly different API&#8216;s and semantics. See:
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">instrument_method</span><span class="method-args">(the_class, method_name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is in the memcache-client implementation and has never existed in
+Ruby-MemCache
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/memcache.rb, line 9</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instrument_method</span>(<span class="ruby-identifier">the_class</span>, <span class="ruby-identifier">method_name</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">the_class</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-identifier">the_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;def \#{method_name}_with_newrelic_trace(*args)\nmetrics = [\&quot;MemCache/\#{method_name}\&quot;,\n(NewRelic::Agent::Instrumentation::MetricFrame.recording_web_transaction? ? 'MemCache/allWeb' : 'MemCache/allOther')]\nself.class.trace_execution_scoped(metrics) do\n\#{method_name}_without_newrelic_trace(*args)\nend\nend\nalias \#{method_name}_without_newrelic_trace \#{method_name}\nalias \#{method_name} \#{method_name}_with_newrelic_trace\n&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

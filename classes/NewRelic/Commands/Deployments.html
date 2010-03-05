@@ -86,9 +86,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000332">command</a>&nbsp;&nbsp;
-      <a href="#M000333">new</a>&nbsp;&nbsp;
-      <a href="#M000334">run</a>&nbsp;&nbsp;
+      <a href="#M000341">command</a>&nbsp;&nbsp;
+      <a href="#M000342">new</a>&nbsp;&nbsp;
+      <a href="#M000343">run</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -123,19 +123,19 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000332" class="method-detail">
-        <a name="M000332"></a>
+      <div id="method-M000341" class="method-detail">
+        <a name="M000341"></a>
 
         <div class="method-heading">
-          <a href="#M000332" class="method-signature">
+          <a href="#M000341" class="method-signature">
           <span class="method-name">command</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000332-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000332-source">
+            onclick="toggleCode('M000341-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000341-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/commands/deployments.rb, line 30</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">command</span>; <span class="ruby-value str">&quot;deployments&quot;</span>; <span class="ruby-keyword kw">end</span>
@@ -144,11 +144,11 @@
         </div>
       </div>
 
-      <div id="method-M000333" class="method-detail">
-        <a name="M000333"></a>
+      <div id="method-M000342" class="method-detail">
+        <a name="M000342"></a>
 
         <div class="method-heading">
-          <a href="#M000333" class="method-signature">
+          <a href="#M000342" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(command_line_args)</span>
           </a>
         </div>
@@ -156,7 +156,7 @@
         <div class="method-description">
           <p>
 Initialize the deployment uploader with <a
-href="Deployments.html#M000332">command</a> line args. Use -h to see
+href="Deployments.html#M000341">command</a> line args. Use -h to see
 options. When command_line_args is a hash, we are invoking directly and
 it&#8216;s treated as an options with optional sttring values for :user,
 :description, :appname, :revision, :environment, and :changes.
@@ -165,8 +165,8 @@ it&#8216;s treated as an options with optional sttring values for :user,
 Will throw CommandFailed exception if there&#8216;s any error.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000333-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000333-source">
+            onclick="toggleCode('M000342-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000342-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/commands/deployments.rb, line 41</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">command_line_args</span>
@@ -195,11 +195,11 @@ Will throw CommandFailed exception if there&#8216;s any error.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000334" class="method-detail">
-        <a name="M000334"></a>
+      <div id="method-M000343" class="method-detail">
+        <a name="M000343"></a>
 
         <div class="method-heading">
-          <a href="#M000334" class="method-signature">
+          <a href="#M000343" class="method-signature">
           <span class="method-name">run</span><span class="method-args">()</span>
           </a>
         </div>
@@ -210,8 +210,8 @@ Run the Deployment upload in RPM via Active Resource. Will possibly print
 errors and exit the VM
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000334-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000334-source">
+            onclick="toggleCode('M000343-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000343-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/commands/deployments.rb, line 63</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>

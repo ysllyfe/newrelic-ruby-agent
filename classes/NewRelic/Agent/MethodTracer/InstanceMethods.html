@@ -80,9 +80,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000194">trace_execution_scoped</a>&nbsp;&nbsp;
-      <a href="#M000192">trace_execution_unscoped</a>&nbsp;&nbsp;
-      <a href="#M000193">trace_method_execution_no_scope</a>&nbsp;&nbsp;
+      <a href="#M000203">trace_execution_scoped</a>&nbsp;&nbsp;
+      <a href="#M000201">trace_execution_unscoped</a>&nbsp;&nbsp;
+      <a href="#M000202">trace_method_execution_no_scope</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -117,11 +117,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000194" class="method-detail">
-        <a name="M000194"></a>
+      <div id="method-M000203" class="method-detail">
+        <a name="M000203"></a>
 
         <div class="method-heading">
-          <a href="#M000194" class="method-signature">
+          <a href="#M000203" class="method-signature">
           <span class="method-name">trace_execution_scoped</span><span class="method-args">(metric_names, options={}) {|unless NewRelic::Agent.is_execution_traced? || options[:force]| ...}</span>
           </a>
         </div>
@@ -141,8 +141,8 @@ metric under additional categories, but generally this *should never ever
 be done*. Most of the time you can aggregate on the server.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000194-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000194-source">
+            onclick="toggleCode('M000203-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000203-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 106</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
@@ -203,11 +203,11 @@ be done*. Most of the time you can aggregate on the server.
         </div>
       </div>
 
-      <div id="method-M000192" class="method-detail">
-        <a name="M000192"></a>
+      <div id="method-M000201" class="method-detail">
+        <a name="M000201"></a>
 
         <div class="method-heading">
-          <a href="#M000192" class="method-signature">
+          <a href="#M000201" class="method-signature">
           <span class="method-name">trace_execution_unscoped</span><span class="method-args">(metric_names, options={}) {|unless NewRelic::Agent.is_execution_traced?| ...}</span>
           </a>
         </div>
@@ -225,13 +225,13 @@ breakdown chart. This is code is inlined in add_method_tracer.
 </li>
 <li><tt>:force =&gt; true</tt> will force the metric to be captured even when
 tracing is disabled with <a
-href="../../Agent.html#M000110">NewRelic::Agent#disable_all_tracing</a>
+href="../../Agent.html#M000117">NewRelic::Agent#disable_all_tracing</a>
 
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000192-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000192-source">
+            onclick="toggleCode('M000201-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000201-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 68</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_unscoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
@@ -254,8 +254,8 @@ href="../../Agent.html#M000110">NewRelic::Agent#disable_all_tracing</a>
         </div>
       </div>
 
-      <div id="method-M000193" class="method-detail">
-        <a name="M000193"></a>
+      <div id="method-M000202" class="method-detail">
+        <a name="M000202"></a>
 
         <div class="method-heading">
           <span class="method-name">trace_method_execution_no_scope</span><span class="method-args">(metric_names, options={})</span>
@@ -264,7 +264,7 @@ href="../../Agent.html#M000110">NewRelic::Agent#disable_all_tracing</a>
         <div class="method-description">
           <p>
 Alias for <a
-href="InstanceMethods.html#M000192">trace_execution_unscoped</a>
+href="InstanceMethods.html#M000201">trace_execution_unscoped</a>
 </p>
         </div>
       </div>

@@ -80,16 +80,16 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000228">clear_stats</a>&nbsp;&nbsp;
-      <a href="#M000224">get_custom_stats</a>&nbsp;&nbsp;
-      <a href="#M000225">get_stats</a>&nbsp;&nbsp;
-      <a href="#M000223">get_stats_no_scope</a>&nbsp;&nbsp;
-      <a href="#M000227">harvest_timeslice_data</a>&nbsp;&nbsp;
-      <a href="#M000221">lookup_stat</a>&nbsp;&nbsp;
-      <a href="#M000226">lookup_stats</a>&nbsp;&nbsp;
-      <a href="#M000222">metrics</a>&nbsp;&nbsp;
-      <a href="#M000229">reset_stats</a>&nbsp;&nbsp;
-      <a href="#M000230">stats_hash</a>&nbsp;&nbsp;
+      <a href="#M000237">clear_stats</a>&nbsp;&nbsp;
+      <a href="#M000233">get_custom_stats</a>&nbsp;&nbsp;
+      <a href="#M000234">get_stats</a>&nbsp;&nbsp;
+      <a href="#M000232">get_stats_no_scope</a>&nbsp;&nbsp;
+      <a href="#M000236">harvest_timeslice_data</a>&nbsp;&nbsp;
+      <a href="#M000230">lookup_stat</a>&nbsp;&nbsp;
+      <a href="#M000235">lookup_stats</a>&nbsp;&nbsp;
+      <a href="#M000231">metrics</a>&nbsp;&nbsp;
+      <a href="#M000238">reset_stats</a>&nbsp;&nbsp;
+      <a href="#M000239">stats_hash</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,11 +111,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000228" class="method-detail">
-        <a name="M000228"></a>
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
 
         <div class="method-heading">
-          <a href="#M000228" class="method-signature">
+          <a href="#M000237" class="method-signature">
           <span class="method-name">clear_stats</span><span class="method-args">()</span>
           </a>
         </div>
@@ -125,8 +125,8 @@
 Remove all stats. For test code only.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000228-source">
+            onclick="toggleCode('M000237-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000237-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 102</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_stats</span> 
@@ -138,11 +138,11 @@ Remove all stats. For test code only.
         </div>
       </div>
 
-      <div id="method-M000224" class="method-detail">
-        <a name="M000224"></a>
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
 
         <div class="method-heading">
-          <a href="#M000224" class="method-signature">
+          <a href="#M000233" class="method-signature">
           <span class="method-name">get_custom_stats</span><span class="method-args">(metric_name, stat_class)</span>
           </a>
         </div>
@@ -152,8 +152,8 @@ Remove all stats. For test code only.
 This version allows a caller to pass a stat class to use
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000224-source">
+            onclick="toggleCode('M000233-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000233-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 21</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">stat_class</span>)
@@ -164,11 +164,11 @@ This version allows a caller to pass a stat class to use
         </div>
       </div>
 
-      <div id="method-M000225" class="method-detail">
-        <a name="M000225"></a>
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
 
         <div class="method-heading">
-          <a href="#M000225" class="method-signature">
+          <a href="#M000234" class="method-signature">
           <span class="method-name">get_stats</span><span class="method-args">(metric_name, use_scope = true, scoped_metric_only = false)</span>
           </a>
         </div>
@@ -176,14 +176,14 @@ This version allows a caller to pass a stat class to use
         <div class="method-description">
           <p>
 If use_scope is true, two chained <a
-href="MetricStats.html#M000222">metrics</a> are created, one with scope and
+href="MetricStats.html#M000231">metrics</a> are created, one with scope and
 one without If scoped_metric_only is true, only a scoped metric is created
-(used by rendering <a href="MetricStats.html#M000222">metrics</a> which by
+(used by rendering <a href="MetricStats.html#M000231">metrics</a> which by
 definition are per controller only)
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000225-source">
+            onclick="toggleCode('M000234-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000234-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 27</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">use_scope</span> = <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">scoped_metric_only</span> = <span class="ruby-keyword kw">false</span>)
@@ -206,19 +206,19 @@ definition are per controller only)
         </div>
       </div>
 
-      <div id="method-M000223" class="method-detail">
-        <a name="M000223"></a>
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
 
         <div class="method-heading">
-          <a href="#M000223" class="method-signature">
+          <a href="#M000232" class="method-signature">
           <span class="method-name">get_stats_no_scope</span><span class="method-args">(metric_name)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000223-source">
+            onclick="toggleCode('M000232-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000232-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 15</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">metric_name</span>)
@@ -229,11 +229,11 @@ definition are per controller only)
         </div>
       </div>
 
-      <div id="method-M000227" class="method-detail">
-        <a name="M000227"></a>
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
 
         <div class="method-heading">
-          <a href="#M000227" class="method-signature">
+          <a href="#M000236" class="method-signature">
           <span class="method-name">harvest_timeslice_data</span><span class="method-args">(previous_timeslice_data, metric_ids)</span>
           </a>
         </div>
@@ -241,7 +241,7 @@ definition are per controller only)
         <div class="method-description">
           <p>
 Harvest the timeslice data. First recombine current statss with any
-previously unsent <a href="MetricStats.html#M000222">metrics</a>, clear out
+previously unsent <a href="MetricStats.html#M000231">metrics</a>, clear out
 stats cache, and return the current stats.
 </p>
 <hr size="1"></hr><p>
@@ -250,8 +250,8 @@ will revisit later to see if we can make this more robust without
 sacrificing efficiency. +++
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000227-source">
+            onclick="toggleCode('M000236-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000236-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 56</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_timeslice_data</span>(<span class="ruby-identifier">previous_timeslice_data</span>, <span class="ruby-identifier">metric_ids</span>)
@@ -303,11 +303,11 @@ sacrificing efficiency. +++
         </div>
       </div>
 
-      <div id="method-M000221" class="method-detail">
-        <a name="M000221"></a>
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
 
         <div class="method-heading">
-          <a href="#M000221" class="method-signature">
+          <a href="#M000230" class="method-signature">
           <span class="method-name">lookup_stat</span><span class="method-args">(metric_name)</span>
           </a>
         </div>
@@ -318,8 +318,8 @@ The stats hash hashes either a metric name for an unscoped metric, or a
 metric_spec for a scoped metric value.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000221-source">
+            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000230-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 7</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stat</span>(<span class="ruby-identifier">metric_name</span>)
@@ -330,19 +330,19 @@ metric_spec for a scoped metric value.
         </div>
       </div>
 
-      <div id="method-M000226" class="method-detail">
-        <a name="M000226"></a>
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
 
         <div class="method-heading">
-          <a href="#M000226" class="method-signature">
+          <a href="#M000235" class="method-signature">
           <span class="method-name">lookup_stats</span><span class="method-args">(metric_name, scope_name = nil)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000226-source">
+            onclick="toggleCode('M000235-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000235-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 43</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span> = <span class="ruby-keyword kw">nil</span>)
@@ -354,19 +354,19 @@ metric_spec for a scoped metric value.
         </div>
       </div>
 
-      <div id="method-M000222" class="method-detail">
-        <a name="M000222"></a>
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
 
         <div class="method-heading">
-          <a href="#M000222" class="method-signature">
+          <a href="#M000231" class="method-signature">
           <span class="method-name">metrics</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000222-source">
+            onclick="toggleCode('M000231-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000231-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 11</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metrics</span>
@@ -377,11 +377,11 @@ metric_spec for a scoped metric value.
         </div>
       </div>
 
-      <div id="method-M000229" class="method-detail">
-        <a name="M000229"></a>
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
 
         <div class="method-heading">
-          <a href="#M000229" class="method-signature">
+          <a href="#M000238" class="method-signature">
           <span class="method-name">reset_stats</span><span class="method-args">()</span>
           </a>
         </div>
@@ -391,8 +391,8 @@ metric_spec for a scoped metric value.
 Reset each of the stats, such as when a new passenger instance starts up.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000229-source">
+            onclick="toggleCode('M000238-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000238-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 108</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_stats</span> 
@@ -403,19 +403,19 @@ Reset each of the stats, such as when a new passenger instance starts up.
         </div>
       </div>
 
-      <div id="method-M000230" class="method-detail">
-        <a name="M000230"></a>
+      <div id="method-M000239" class="method-detail">
+        <a name="M000239"></a>
 
         <div class="method-heading">
-          <a href="#M000230" class="method-signature">
+          <a href="#M000239" class="method-signature">
           <span class="method-name">stats_hash</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000230-source">
+            onclick="toggleCode('M000239-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000239-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 112</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats_hash</span>

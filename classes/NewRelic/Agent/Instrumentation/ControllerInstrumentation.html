@@ -85,9 +85,9 @@ traced errors.
 </p>
 <p>
 For details on how to instrument background tasks see <a
-href="ControllerInstrumentation/ClassMethods.html#M000166">ClassMethods#add_transaction_tracer</a>
+href="ControllerInstrumentation/ClassMethods.html#M000173">ClassMethods#add_transaction_tracer</a>
 and <a
-href="ControllerInstrumentation.html#M000161">perform_action_with_newrelic_trace</a>
+href="ControllerInstrumentation.html#M000168">perform_action_with_newrelic_trace</a>
 </p>
 
     </div>
@@ -99,9 +99,9 @@ href="ControllerInstrumentation.html#M000161">perform_action_with_newrelic_trace
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000163">newrelic_request_headers</a>&nbsp;&nbsp;
-      <a href="#M000162">newrelic_response_code</a>&nbsp;&nbsp;
-      <a href="#M000161">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
+      <a href="#M000170">newrelic_request_headers</a>&nbsp;&nbsp;
+      <a href="#M000169">newrelic_response_code</a>&nbsp;&nbsp;
+      <a href="#M000168">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -129,11 +129,11 @@ href="ControllerInstrumentation.html#M000161">perform_action_with_newrelic_trace
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000161" class="method-detail">
-        <a name="M000161"></a>
+      <div id="method-M000168" class="method-detail">
+        <a name="M000168"></a>
 
         <div class="method-heading">
-          <a href="#M000161" class="method-signature">
+          <a href="#M000168" class="method-signature">
           <span class="method-name">perform_action_with_newrelic_trace</span><span class="method-args">(*args) {|| ...}</span>
           </a>
         </div>
@@ -147,11 +147,11 @@ methods and background tasks.
 </p>
 <p>
 This is the method invoked by instrumentation added by the <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000166">ClassMethods#add_transaction_tracer</a></tt>.
+href="ControllerInstrumentation/ClassMethods.html#M000173">ClassMethods#add_transaction_tracer</a></tt>.
 </p>
 <p>
 Here&#8216;s a more verbose version of the example shown in <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000166">ClassMethods#add_transaction_tracer</a></tt>
+href="ControllerInstrumentation/ClassMethods.html#M000173">ClassMethods#add_transaction_tracer</a></tt>
 using this method instead of add_transaction_tracer.
 </p>
 <p>
@@ -237,8 +237,8 @@ If a single argument is passed in, it is treated as a metric path. This
 form is deprecated.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000161-source">
+            onclick="toggleCode('M000168-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000168-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 232</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
@@ -287,19 +287,19 @@ form is deprecated.
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000163" class="method-detail">
-        <a name="M000163"></a>
+      <div id="method-M000170" class="method-detail">
+        <a name="M000170"></a>
 
         <div class="method-heading">
-          <a href="#M000163" class="method-signature">
+          <a href="#M000170" class="method-signature">
           <span class="method-name">newrelic_request_headers</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000163-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000163-source">
+            onclick="toggleCode('M000170-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000170-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 276</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_request_headers</span>
@@ -310,11 +310,11 @@ form is deprecated.
         </div>
       </div>
 
-      <div id="method-M000162" class="method-detail">
-        <a name="M000162"></a>
+      <div id="method-M000169" class="method-detail">
+        <a name="M000169"></a>
 
         <div class="method-heading">
-          <a href="#M000162" class="method-signature">
+          <a href="#M000169" class="method-signature">
           <span class="method-name">newrelic_response_code</span><span class="method-args">()</span>
           </a>
         </div>
@@ -324,8 +324,8 @@ form is deprecated.
 Should be implemented in the dispatcher class
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000162-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000162-source">
+            onclick="toggleCode('M000169-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000169-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 274</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_response_code</span>; <span class="ruby-keyword kw">end</span>

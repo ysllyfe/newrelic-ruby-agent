@@ -86,22 +86,22 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000276">current_sample_id</a>&nbsp;&nbsp;
-      <a href="#M000277">disable</a>&nbsp;&nbsp;
-      <a href="#M000289">harvest</a>&nbsp;&nbsp;
-      <a href="#M000285">ignore_transaction</a>&nbsp;&nbsp;
-      <a href="#M000275">new</a>&nbsp;&nbsp;
-      <a href="#M000279">notice_first_scope_push</a>&nbsp;&nbsp;
-      <a href="#M000282">notice_pop_scope</a>&nbsp;&nbsp;
-      <a href="#M000286">notice_profile</a>&nbsp;&nbsp;
-      <a href="#M000280">notice_push_scope</a>&nbsp;&nbsp;
-      <a href="#M000283">notice_scope_empty</a>&nbsp;&nbsp;
-      <a href="#M000288">notice_sql</a>&nbsp;&nbsp;
-      <a href="#M000284">notice_transaction</a>&nbsp;&nbsp;
-      <a href="#M000287">notice_transaction_cpu_time</a>&nbsp;&nbsp;
-      <a href="#M000290">reset!</a>&nbsp;&nbsp;
-      <a href="#M000278">sampling_rate=</a>&nbsp;&nbsp;
-      <a href="#M000281">scope_depth</a>&nbsp;&nbsp;
+      <a href="#M000285">current_sample_id</a>&nbsp;&nbsp;
+      <a href="#M000286">disable</a>&nbsp;&nbsp;
+      <a href="#M000298">harvest</a>&nbsp;&nbsp;
+      <a href="#M000294">ignore_transaction</a>&nbsp;&nbsp;
+      <a href="#M000284">new</a>&nbsp;&nbsp;
+      <a href="#M000288">notice_first_scope_push</a>&nbsp;&nbsp;
+      <a href="#M000291">notice_pop_scope</a>&nbsp;&nbsp;
+      <a href="#M000295">notice_profile</a>&nbsp;&nbsp;
+      <a href="#M000289">notice_push_scope</a>&nbsp;&nbsp;
+      <a href="#M000292">notice_scope_empty</a>&nbsp;&nbsp;
+      <a href="#M000297">notice_sql</a>&nbsp;&nbsp;
+      <a href="#M000293">notice_transaction</a>&nbsp;&nbsp;
+      <a href="#M000296">notice_transaction_cpu_time</a>&nbsp;&nbsp;
+      <a href="#M000299">reset!</a>&nbsp;&nbsp;
+      <a href="#M000287">sampling_rate=</a>&nbsp;&nbsp;
+      <a href="#M000290">scope_depth</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -186,19 +186,19 @@ configuration for the connection
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000275" class="method-detail">
-        <a name="M000275"></a>
+      <div id="method-M000284" class="method-detail">
+        <a name="M000284"></a>
 
         <div class="method-heading">
-          <a href="#M000275" class="method-signature">
+          <a href="#M000284" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000275-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000275-source">
+            onclick="toggleCode('M000284-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000284-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 19</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
@@ -219,19 +219,19 @@ configuration for the connection
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000276" class="method-detail">
-        <a name="M000276"></a>
+      <div id="method-M000285" class="method-detail">
+        <a name="M000285"></a>
 
         <div class="method-heading">
-          <a href="#M000276" class="method-signature">
+          <a href="#M000285" class="method-signature">
           <span class="method-name">current_sample_id</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000276-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000276-source">
+            onclick="toggleCode('M000285-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000285-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 31</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_sample_id</span>
@@ -243,19 +243,19 @@ configuration for the connection
         </div>
       </div>
 
-      <div id="method-M000277" class="method-detail">
-        <a name="M000277"></a>
+      <div id="method-M000286" class="method-detail">
+        <a name="M000286"></a>
 
         <div class="method-heading">
-          <a href="#M000277" class="method-signature">
+          <a href="#M000286" class="method-signature">
           <span class="method-name">disable</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000277-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000277-source">
+            onclick="toggleCode('M000286-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000286-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable</span>
@@ -267,11 +267,11 @@ configuration for the connection
         </div>
       </div>
 
-      <div id="method-M000289" class="method-detail">
-        <a name="M000289"></a>
+      <div id="method-M000298" class="method-detail">
+        <a name="M000298"></a>
 
         <div class="method-heading">
-          <a href="#M000289" class="method-signature">
+          <a href="#M000298" class="method-signature">
           <span class="method-name">harvest</span><span class="method-args">(previous = nil, slow_threshold = 2.0)</span>
           </a>
         </div>
@@ -282,8 +282,8 @@ get the set of collected samples, merging into previous samples, and clear
 the collected sample list.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000289-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000289-source">
+            onclick="toggleCode('M000298-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000298-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 155</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest</span>(<span class="ruby-identifier">previous</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">slow_threshold</span> = <span class="ruby-value">2.0</span>)
@@ -331,19 +331,19 @@ the collected sample list.
         </div>
       </div>
 
-      <div id="method-M000285" class="method-detail">
-        <a name="M000285"></a>
+      <div id="method-M000294" class="method-detail">
+        <a name="M000294"></a>
 
         <div class="method-heading">
-          <a href="#M000285" class="method-signature">
+          <a href="#M000294" class="method-signature">
           <span class="method-name">ignore_transaction</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000285-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000285-source">
+            onclick="toggleCode('M000294-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000294-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 116</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_transaction</span>
@@ -354,19 +354,19 @@ the collected sample list.
         </div>
       </div>
 
-      <div id="method-M000279" class="method-detail">
-        <a name="M000279"></a>
+      <div id="method-M000288" class="method-detail">
+        <a name="M000288"></a>
 
         <div class="method-heading">
-          <a href="#M000279" class="method-signature">
+          <a href="#M000288" class="method-signature">
           <span class="method-name">notice_first_scope_push</span><span class="method-args">(time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000279-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000279-source">
+            onclick="toggleCode('M000288-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000288-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 46</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_first_scope_push</span>(<span class="ruby-identifier">time</span>)
@@ -377,19 +377,19 @@ the collected sample list.
         </div>
       </div>
 
-      <div id="method-M000282" class="method-detail">
-        <a name="M000282"></a>
+      <div id="method-M000291" class="method-detail">
+        <a name="M000291"></a>
 
         <div class="method-heading">
-          <a href="#M000282" class="method-signature">
+          <a href="#M000291" class="method-signature">
           <span class="method-name">notice_pop_scope</span><span class="method-args">(scope, time = Time.now.to_f)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000282-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000282-source">
+            onclick="toggleCode('M000291-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000291-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 80</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_pop_scope</span>(<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
@@ -402,19 +402,19 @@ the collected sample list.
         </div>
       </div>
 
-      <div id="method-M000286" class="method-detail">
-        <a name="M000286"></a>
+      <div id="method-M000295" class="method-detail">
+        <a name="M000295"></a>
 
         <div class="method-heading">
-          <a href="#M000286" class="method-signature">
+          <a href="#M000295" class="method-signature">
           <span class="method-name">notice_profile</span><span class="method-args">(profile)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000286-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000286-source">
+            onclick="toggleCode('M000295-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000295-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 119</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_profile</span>(<span class="ruby-identifier">profile</span>)
@@ -425,19 +425,19 @@ the collected sample list.
         </div>
       </div>
 
-      <div id="method-M000280" class="method-detail">
-        <a name="M000280"></a>
+      <div id="method-M000289" class="method-detail">
+        <a name="M000289"></a>
 
         <div class="method-heading">
-          <a href="#M000280" class="method-signature">
+          <a href="#M000289" class="method-signature">
           <span class="method-name">notice_push_scope</span><span class="method-args">(scope, time=Time.now.to_f)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000280-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000280-source">
+            onclick="toggleCode('M000289-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000289-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 50</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_push_scope</span>(<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
@@ -468,11 +468,11 @@ the collected sample list.
         </div>
       </div>
 
-      <div id="method-M000283" class="method-detail">
-        <a name="M000283"></a>
+      <div id="method-M000292" class="method-detail">
+        <a name="M000292"></a>
 
         <div class="method-heading">
-          <a href="#M000283" class="method-signature">
+          <a href="#M000292" class="method-signature">
           <span class="method-name">notice_scope_empty</span><span class="method-args">(time=Time.now.to_f)</span>
           </a>
         </div>
@@ -483,8 +483,8 @@ This is called when we are done with the transaction. We&#8216;ve unwound
 the stack to the top level.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000283-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000283-source">
+            onclick="toggleCode('M000292-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000292-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 88</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_scope_empty</span>(<span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
@@ -515,19 +515,19 @@ the stack to the top level.
         </div>
       </div>
 
-      <div id="method-M000288" class="method-detail">
-        <a name="M000288"></a>
+      <div id="method-M000297" class="method-detail">
+        <a name="M000297"></a>
 
         <div class="method-heading">
-          <a href="#M000288" class="method-signature">
+          <a href="#M000297" class="method-signature">
           <span class="method-name">notice_sql</span><span class="method-args">(sql, config, duration)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000288-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000288-source">
+            onclick="toggleCode('M000297-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000297-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 132</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">config</span>, <span class="ruby-identifier">duration</span>)
@@ -553,19 +553,19 @@ the stack to the top level.
         </div>
       </div>
 
-      <div id="method-M000284" class="method-detail">
-        <a name="M000284"></a>
+      <div id="method-M000293" class="method-detail">
+        <a name="M000293"></a>
 
         <div class="method-heading">
-          <a href="#M000284" class="method-signature">
+          <a href="#M000293" class="method-signature">
           <span class="method-name">notice_transaction</span><span class="method-args">(path, uri=nil, params={})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000284-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000284-source">
+            onclick="toggleCode('M000293-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000293-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 112</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">params</span>={})
@@ -576,19 +576,19 @@ the stack to the top level.
         </div>
       </div>
 
-      <div id="method-M000287" class="method-detail">
-        <a name="M000287"></a>
+      <div id="method-M000296" class="method-detail">
+        <a name="M000296"></a>
 
         <div class="method-heading">
-          <a href="#M000287" class="method-signature">
+          <a href="#M000296" class="method-signature">
           <span class="method-name">notice_transaction_cpu_time</span><span class="method-args">(cpu_time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000287-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000287-source">
+            onclick="toggleCode('M000296-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000296-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 123</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_time</span>)
@@ -599,11 +599,11 @@ the stack to the top level.
         </div>
       </div>
 
-      <div id="method-M000290" class="method-detail">
-        <a name="M000290"></a>
+      <div id="method-M000299" class="method-detail">
+        <a name="M000299"></a>
 
         <div class="method-heading">
-          <a href="#M000290" class="method-signature">
+          <a href="#M000299" class="method-signature">
           <span class="method-name">reset!</span><span class="method-args">()</span>
           </a>
         </div>
@@ -613,8 +613,8 @@ the stack to the top level.
 reset samples without rebooting the web server
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000290-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000290-source">
+            onclick="toggleCode('M000299-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000299-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 197</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset!</span>
@@ -626,19 +626,19 @@ reset samples without rebooting the web server
         </div>
       </div>
 
-      <div id="method-M000278" class="method-detail">
-        <a name="M000278"></a>
+      <div id="method-M000287" class="method-detail">
+        <a name="M000287"></a>
 
         <div class="method-heading">
-          <a href="#M000278" class="method-signature">
+          <a href="#M000287" class="method-signature">
           <span class="method-name">sampling_rate=</span><span class="method-args">(val)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000278-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000278-source">
+            onclick="toggleCode('M000287-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000287-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 41</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sampling_rate=</span>(<span class="ruby-identifier">val</span>)
@@ -650,19 +650,19 @@ reset samples without rebooting the web server
         </div>
       </div>
 
-      <div id="method-M000281" class="method-detail">
-        <a name="M000281"></a>
+      <div id="method-M000290" class="method-detail">
+        <a name="M000290"></a>
 
         <div class="method-heading">
-          <a href="#M000281" class="method-signature">
+          <a href="#M000290" class="method-signature">
           <span class="method-name">scope_depth</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000281-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000281-source">
+            onclick="toggleCode('M000290-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000290-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 74</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_depth</span>

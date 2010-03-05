@@ -80,33 +80,34 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000011">absent?</a>&nbsp;&nbsp;
-      <a href="#M000037">apdex_score</a>&nbsp;&nbsp;
-      <a href="#M000021">as_percentage</a>&nbsp;&nbsp;
-      <a href="#M000020">as_percentage_of</a>&nbsp;&nbsp;
-      <a href="#M000013">average_call_time</a>&nbsp;&nbsp;
-      <a href="#M000014">average_exclusive_time</a>&nbsp;&nbsp;
-      <a href="#M000029">average_response_time</a>&nbsp;&nbsp;
-      <a href="#M000028">average_value</a>&nbsp;&nbsp;
-      <a href="#M000023">calls_per_minute</a>&nbsp;&nbsp;
-      <a href="#M000022">duration</a>&nbsp;&nbsp;
-      <a href="#M000027">exclusive_time_percentage</a>&nbsp;&nbsp;
-      <a href="#M000034">fraction_of</a>&nbsp;&nbsp;
-      <a href="#M000036">get_apdex</a>&nbsp;&nbsp;
-      <a href="#M000018">is_reset?</a>&nbsp;&nbsp;
-      <a href="#M000016">merge</a>&nbsp;&nbsp;
-      <a href="#M000015">merge!</a>&nbsp;&nbsp;
-      <a href="#M000035">multiply_by</a>&nbsp;&nbsp;
-      <a href="#M000030">requests_per_minute</a>&nbsp;&nbsp;
-      <a href="#M000019">reset</a>&nbsp;&nbsp;
-      <a href="#M000033">round!</a>&nbsp;&nbsp;
-      <a href="#M000017">split</a>&nbsp;&nbsp;
-      <a href="#M000025">standard_deviation</a>&nbsp;&nbsp;
-      <a href="#M000032">summary</a>&nbsp;&nbsp;
-      <a href="#M000026">time_percentage</a>&nbsp;&nbsp;
-      <a href="#M000012">time_str</a>&nbsp;&nbsp;
-      <a href="#M000031">to_s</a>&nbsp;&nbsp;
-      <a href="#M000024">total_call_time_per_minute</a>&nbsp;&nbsp;
+      <a href="#M000012">absent?</a>&nbsp;&nbsp;
+      <a href="#M000039">apdex_score</a>&nbsp;&nbsp;
+      <a href="#M000023">as_percentage</a>&nbsp;&nbsp;
+      <a href="#M000022">as_percentage_of</a>&nbsp;&nbsp;
+      <a href="#M000014">average_call_time</a>&nbsp;&nbsp;
+      <a href="#M000015">average_exclusive_time</a>&nbsp;&nbsp;
+      <a href="#M000031">average_response_time</a>&nbsp;&nbsp;
+      <a href="#M000030">average_value</a>&nbsp;&nbsp;
+      <a href="#M000025">calls_per_minute</a>&nbsp;&nbsp;
+      <a href="#M000024">duration</a>&nbsp;&nbsp;
+      <a href="#M000029">exclusive_time_percentage</a>&nbsp;&nbsp;
+      <a href="#M000036">fraction_of</a>&nbsp;&nbsp;
+      <a href="#M000038">get_apdex</a>&nbsp;&nbsp;
+      <a href="#M000020">is_reset?</a>&nbsp;&nbsp;
+      <a href="#M000018">merge</a>&nbsp;&nbsp;
+      <a href="#M000017">merge!</a>&nbsp;&nbsp;
+      <a href="#M000037">multiply_by</a>&nbsp;&nbsp;
+      <a href="#M000032">requests_per_minute</a>&nbsp;&nbsp;
+      <a href="#M000021">reset</a>&nbsp;&nbsp;
+      <a href="#M000035">round!</a>&nbsp;&nbsp;
+      <a href="#M000019">split</a>&nbsp;&nbsp;
+      <a href="#M000027">standard_deviation</a>&nbsp;&nbsp;
+      <a href="#M000016">sum_merge!</a>&nbsp;&nbsp;
+      <a href="#M000034">summary</a>&nbsp;&nbsp;
+      <a href="#M000028">time_percentage</a>&nbsp;&nbsp;
+      <a href="#M000013">time_str</a>&nbsp;&nbsp;
+      <a href="#M000033">to_s</a>&nbsp;&nbsp;
+      <a href="#M000026">total_call_time_per_minute</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -128,19 +129,19 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000011" class="method-detail">
-        <a name="M000011"></a>
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
 
         <div class="method-heading">
-          <a href="#M000011" class="method-signature">
+          <a href="#M000012" class="method-signature">
           <span class="method-name">absent?</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000011-source">
+            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000012-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 5</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">absent?</span>
@@ -152,21 +153,21 @@
         </div>
       </div>
 
-      <div id="method-M000037" class="method-detail">
-        <a name="M000037"></a>
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
 
         <div class="method-heading">
-          <a href="#M000037" class="method-signature">
+          <a href="#M000039" class="method-signature">
           <span class="method-name">apdex_score</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000037-source">
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 220</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 237</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apdex_score</span>
       <span class="ruby-identifier">s</span>, <span class="ruby-identifier">t</span>, <span class="ruby-identifier">f</span> = <span class="ruby-identifier">get_apdex</span>
       (<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>)) <span class="ruby-operator">/</span> (<span class="ruby-identifier">s</span><span class="ruby-operator">+</span><span class="ruby-identifier">t</span><span class="ruby-operator">+</span><span class="ruby-identifier">f</span>).<span class="ruby-identifier">to_f</span>
@@ -176,11 +177,11 @@
         </div>
       </div>
 
-      <div id="method-M000021" class="method-detail">
-        <a name="M000021"></a>
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
 
         <div class="method-heading">
-          <a href="#M000021" class="method-signature">
+          <a href="#M000023" class="method-signature">
           <span class="method-name">as_percentage</span><span class="method-args">()</span>
           </a>
         </div>
@@ -190,10 +191,10 @@
 the stat total_call_time is a percent
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000021-source">
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 109</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 126</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">as_percentage</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">call_count</span>.<span class="ruby-identifier">zero?</span>
         <span class="ruby-value">0</span>
@@ -206,48 +207,24 @@ the stat total_call_time is a percent
         </div>
       </div>
 
-      <div id="method-M000020" class="method-detail">
-        <a name="M000020"></a>
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
 
         <div class="method-heading">
-          <a href="#M000020" class="method-signature">
+          <a href="#M000022" class="method-signature">
           <span class="method-name">as_percentage_of</span><span class="method-args">(other_stats)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000020-source">
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 103</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 120</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">as_percentage_of</span>(<span class="ruby-identifier">other_stats</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other_stats</span>.<span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
       <span class="ruby-keyword kw">return</span> (<span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">other_stats</span>.<span class="ruby-identifier">total_call_time</span>) <span class="ruby-operator">*</span> <span class="ruby-value">100.0</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000013" class="method-detail">
-        <a name="M000013"></a>
-
-        <div class="method-heading">
-          <a href="#M000013" class="method-signature">
-          <span class="method-name">average_call_time</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000013-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 21</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_call_time</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">call_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
-      <span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">call_count</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -259,7 +236,7 @@ the stat total_call_time is a percent
 
         <div class="method-heading">
           <a href="#M000014" class="method-signature">
-          <span class="method-name">average_exclusive_time</span><span class="method-args">()</span>
+          <span class="method-name">average_call_time</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -267,6 +244,30 @@ the stat total_call_time is a percent
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000014-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_call_time</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">call_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">call_count</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="#M000015" class="method-signature">
+          <span class="method-name">average_exclusive_time</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000015-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 25</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">average_exclusive_time</span>
@@ -278,8 +279,8 @@ the stat total_call_time is a percent
         </div>
       </div>
 
-      <div id="method-M000029" class="method-detail">
-        <a name="M000029"></a>
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
 
         <div class="method-heading">
           <span class="method-name">average_response_time</span><span class="method-args">()</span>
@@ -287,13 +288,13 @@ the stat total_call_time is a percent
       
         <div class="method-description">
           <p>
-Alias for <a href="Stats.html#M000013">average_call_time</a>
+Alias for <a href="Stats.html#M000014">average_call_time</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000028" class="method-detail">
-        <a name="M000028"></a>
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
 
         <div class="method-heading">
           <span class="method-name">average_value</span><span class="method-args">()</span>
@@ -301,26 +302,26 @@ Alias for <a href="Stats.html#M000013">average_call_time</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="Stats.html#M000013">average_call_time</a>
+Alias for <a href="Stats.html#M000014">average_call_time</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000023" class="method-detail">
-        <a name="M000023"></a>
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
 
         <div class="method-heading">
-          <a href="#M000023" class="method-signature">
+          <a href="#M000025" class="method-signature">
           <span class="method-name">calls_per_minute</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000023-source">
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 121</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 138</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">calls_per_minute</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">duration</span>.<span class="ruby-identifier">zero?</span>
         <span class="ruby-value">0</span>
@@ -333,21 +334,21 @@ Alias for <a href="Stats.html#M000013">average_call_time</a>
         </div>
       </div>
 
-      <div id="method-M000022" class="method-detail">
-        <a name="M000022"></a>
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
 
         <div class="method-heading">
-          <a href="#M000022" class="method-signature">
+          <a href="#M000024" class="method-signature">
           <span class="method-name">duration</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000022-source">
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 117</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 134</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">duration</span>
       <span class="ruby-identifier">end_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">begin_time</span>
     <span class="ruby-keyword kw">end</span>
@@ -356,21 +357,21 @@ Alias for <a href="Stats.html#M000013">average_call_time</a>
         </div>
       </div>
 
-      <div id="method-M000027" class="method-detail">
-        <a name="M000027"></a>
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
 
         <div class="method-heading">
-          <a href="#M000027" class="method-signature">
+          <a href="#M000029" class="method-signature">
           <span class="method-name">exclusive_time_percentage</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000027-source">
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 151</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 168</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exclusive_time_percentage</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
       <span class="ruby-identifier">total_exclusive_time</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">duration</span>
@@ -380,11 +381,11 @@ Alias for <a href="Stats.html#M000013">average_call_time</a>
         </div>
       </div>
 
-      <div id="method-M000034" class="method-detail">
-        <a name="M000034"></a>
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
 
         <div class="method-heading">
-          <a href="#M000034" class="method-signature">
+          <a href="#M000036" class="method-signature">
           <span class="method-name">fraction_of</span><span class="method-args">(s)</span>
           </a>
         </div>
@@ -393,13 +394,13 @@ Alias for <a href="Stats.html#M000013">average_call_time</a>
           <p>
 calculate this set of stats to be a percentage fraction of the provided
 stats, which has an overlapping time window. used as a key part of the <a
-href="Stats.html#M000017">split</a> algorithm
+href="Stats.html#M000019">split</a> algorithm
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000034-source">
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 192</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 209</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fraction_of</span>(<span class="ruby-identifier">s</span>)
       <span class="ruby-identifier">min_end</span> = (<span class="ruby-identifier">end_time</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">end_time</span> <span class="ruby-value">? </span><span class="ruby-identifier">end_time</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">end_time</span>)
       <span class="ruby-identifier">max_begin</span> = (<span class="ruby-identifier">begin_time</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">begin_time</span> <span class="ruby-value">? </span><span class="ruby-identifier">begin_time</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">begin_time</span>)
@@ -417,11 +418,11 @@ href="Stats.html#M000017">split</a> algorithm
         </div>
       </div>
 
-      <div id="method-M000036" class="method-detail">
-        <a name="M000036"></a>
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
 
         <div class="method-heading">
-          <a href="#M000036" class="method-signature">
+          <a href="#M000038" class="method-signature">
           <span class="method-name">get_apdex</span><span class="method-args">()</span>
           </a>
         </div>
@@ -431,12 +432,35 @@ href="Stats.html#M000017">split</a> algorithm
 returns s,t,f
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000036-source">
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 216</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 233</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_apdex</span>
       [<span class="ruby-ivar">@call_count</span>, <span class="ruby-ivar">@total_call_time</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-ivar">@total_exclusive_time</span>.<span class="ruby-identifier">to_i</span>]
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">is_reset?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 105</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_reset?</span>
+      <span class="ruby-identifier">call_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">total_exclusive_time</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -448,7 +472,7 @@ returns s,t,f
 
         <div class="method-heading">
           <a href="#M000018" class="method-signature">
-          <span class="method-name">is_reset?</span><span class="method-args">()</span>
+          <span class="method-name">merge</span><span class="method-args">(other_stats)</span>
           </a>
         </div>
       
@@ -457,30 +481,7 @@ returns s,t,f
             onclick="toggleCode('M000018-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000018-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 88</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_reset?</span>
-      <span class="ruby-identifier">call_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">total_exclusive_time</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000016" class="method-detail">
-        <a name="M000016"></a>
-
-        <div class="method-heading">
-          <a href="#M000016" class="method-signature">
-          <span class="method-name">merge</span><span class="method-args">(other_stats)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000016-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 45</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 62</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge</span> (<span class="ruby-identifier">other_stats</span>)
       <span class="ruby-identifier">stats</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clone</span>
       <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">other_stats</span>
@@ -490,21 +491,21 @@ returns s,t,f
         </div>
       </div>
 
-      <div id="method-M000015" class="method-detail">
-        <a name="M000015"></a>
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
 
         <div class="method-heading">
-          <a href="#M000015" class="method-signature">
+          <a href="#M000017" class="method-signature">
           <span class="method-name">merge!</span><span class="method-args">(other_stats)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000015-source">
+            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000017-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 30</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 47</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge!</span> (<span class="ruby-identifier">other_stats</span>)
       <span class="ruby-constant">Array</span>(<span class="ruby-identifier">other_stats</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">total_call_time</span>
@@ -524,11 +525,11 @@ returns s,t,f
         </div>
       </div>
 
-      <div id="method-M000035" class="method-detail">
-        <a name="M000035"></a>
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
 
         <div class="method-heading">
-          <a href="#M000035" class="method-signature">
+          <a href="#M000037" class="method-signature">
           <span class="method-name">multiply_by</span><span class="method-args">(percentage)</span>
           </a>
         </div>
@@ -538,10 +539,10 @@ returns s,t,f
 multiply the total time and rate by the given percentage
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000035-source">
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 206</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 223</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiply_by</span>(<span class="ruby-identifier">percentage</span>)
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_call_time</span> = <span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">percentage</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">call_count</span> = <span class="ruby-identifier">call_count</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">percentage</span>
@@ -554,8 +555,8 @@ multiply the total time and rate by the given percentage
         </div>
       </div>
 
-      <div id="method-M000030" class="method-detail">
-        <a name="M000030"></a>
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
 
         <div class="method-heading">
           <span class="method-name">requests_per_minute</span><span class="method-args">()</span>
@@ -563,26 +564,26 @@ multiply the total time and rate by the given percentage
       
         <div class="method-description">
           <p>
-Alias for <a href="Stats.html#M000023">calls_per_minute</a>
+Alias for <a href="Stats.html#M000025">calls_per_minute</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000019" class="method-detail">
-        <a name="M000019"></a>
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
 
         <div class="method-heading">
-          <a href="#M000019" class="method-signature">
+          <a href="#M000021" class="method-signature">
           <span class="method-name">reset</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000019-source">
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 92</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 109</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">call_count</span> = <span class="ruby-value">0</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_call_time</span> = <span class="ruby-value">0</span><span class="ruby-value">.0</span>
@@ -598,11 +599,11 @@ Alias for <a href="Stats.html#M000023">calls_per_minute</a>
         </div>
       </div>
 
-      <div id="method-M000033" class="method-detail">
-        <a name="M000033"></a>
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
 
         <div class="method-heading">
-          <a href="#M000033" class="method-signature">
+          <a href="#M000035" class="method-signature">
           <span class="method-name">round!</span><span class="method-args">()</span>
           </a>
         </div>
@@ -612,10 +613,10 @@ Alias for <a href="Stats.html#M000023">calls_per_minute</a>
 round all of the values to n decimal points
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000033-source">
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 179</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 196</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">round!</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_call_time</span> = <span class="ruby-identifier">round_to_3</span>(<span class="ruby-identifier">total_call_time</span>)
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_exclusive_time</span> = <span class="ruby-identifier">round_to_3</span>(<span class="ruby-identifier">total_exclusive_time</span>)
@@ -630,30 +631,30 @@ round all of the values to n decimal points
         </div>
       </div>
 
-      <div id="method-M000017" class="method-detail">
-        <a name="M000017"></a>
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
 
         <div class="method-heading">
-          <a href="#M000017" class="method-signature">
+          <a href="#M000019" class="method-signature">
           <span class="method-name">split</span><span class="method-args">(rollup_begin_time, rollup_period) {|current_begin_time, current_end_time| ...}</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-<a href="Stats.html#M000017">split</a> into an array of timeslices whose
+<a href="Stats.html#M000019">split</a> into an array of timeslices whose
 time boundaries start on (begin_time + (n * <a
-href="Stats.html#M000022">duration</a>)) and whose end time ends on
-(begin_time * (n + 1) * <a href="Stats.html#M000022">duration</a>), except
+href="Stats.html#M000024">duration</a>)) and whose end time ends on
+(begin_time * (n + 1) * <a href="Stats.html#M000024">duration</a>), except
 for the first and last elements, whose begin time and end time are the
 begin and end times of this stats instance, respectively. Yield to caller
 for the code that creates the actual stats instance
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000017-source">
+            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000019-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 56</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 73</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">split</span>(<span class="ruby-identifier">rollup_begin_time</span>, <span class="ruby-identifier">rollup_period</span>)
       <span class="ruby-identifier">rollup_begin_time</span> = <span class="ruby-identifier">rollup_begin_time</span>.<span class="ruby-identifier">to_f</span>
       <span class="ruby-identifier">rollup_begin_time</span> <span class="ruby-operator">+=</span> ((<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">begin_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">rollup_begin_time</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">rollup_period</span>).<span class="ruby-identifier">floor</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">rollup_period</span>
@@ -690,21 +691,21 @@ for the code that creates the actual stats instance
         </div>
       </div>
 
-      <div id="method-M000025" class="method-detail">
-        <a name="M000025"></a>
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
 
         <div class="method-heading">
-          <a href="#M000025" class="method-signature">
+          <a href="#M000027" class="method-signature">
           <span class="method-name">standard_deviation</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000025-source">
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 133</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 150</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">standard_deviation</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">call_count</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sum_of_squares</span>.<span class="ruby-identifier">nil?</span>
       
@@ -720,11 +721,53 @@ for the code that creates the actual stats instance
         </div>
       </div>
 
-      <div id="method-M000032" class="method-detail">
-        <a name="M000032"></a>
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
 
         <div class="method-heading">
-          <a href="#M000032" class="method-signature">
+          <a href="#M000016" class="method-signature">
+          <span class="method-name">sum_merge!</span><span class="method-args">(other_stats)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Stats.html#M000018">merge</a> by adding to average response time
+</p>
+<ul>
+<li>used to compose multiple metrics e.g. dispatcher time + mongrel queue time
+
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 32</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sum_merge!</span> (<span class="ruby-identifier">other_stats</span>)
+      <span class="ruby-constant">Array</span>(<span class="ruby-identifier">other_stats</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">total_call_time</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">total_exclusive_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">total_exclusive_time</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">min_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">min_call_time</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">max_call_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">max_call_time</span>
+        <span class="ruby-comment cmt">#self.call_count += s.call_count - do not add call count because we are stacking these times on top of each other</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sum_of_squares</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sum_of_squares</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sum_of_squares</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">begin_time</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">begin_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">begin_time</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">begin_time</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">begin_time</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">end_time</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">end_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">to_f</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="#M000034" class="method-signature">
           <span class="method-name">summary</span><span class="method-args">()</span>
           </a>
         </div>
@@ -734,24 +777,24 @@ for the code that creates the actual stats instance
 Summary string to facilitate testing
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000032-source">
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 173</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 190</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">summary</span>
       <span class="ruby-identifier">format</span> = <span class="ruby-value str">&quot;%m/%d %I:%M%p&quot;</span>
-      <span class="ruby-node">&quot;[#{Time.at(begin_time).strftime(format)}, #{duration}s. #{call_count} calls; #{to_ms(average_call_time)}ms]&quot;</span>
+      <span class="ruby-node">&quot;[#{Time.at(begin_time).strftime(format)}, #{'%2.3fs' % duration}; #{'%4i' % call_count} calls #{'%4i' % to_ms(average_call_time)} ms]&quot;</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000026" class="method-detail">
-        <a name="M000026"></a>
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
 
         <div class="method-heading">
-          <a href="#M000026" class="method-signature">
+          <a href="#M000028" class="method-signature">
           <span class="method-name">time_percentage</span><span class="method-args">()</span>
           </a>
         </div>
@@ -762,10 +805,10 @@ returns the time spent in this component as a percentage of the total time
 window.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000026-source">
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 146</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 163</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">time_percentage</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
       <span class="ruby-identifier">total_call_time</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">duration</span>
@@ -775,19 +818,19 @@ window.
         </div>
       </div>
 
-      <div id="method-M000012" class="method-detail">
-        <a name="M000012"></a>
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
 
         <div class="method-heading">
-          <a href="#M000012" class="method-signature">
+          <a href="#M000013" class="method-signature">
           <span class="method-name">time_str</span><span class="method-args">(value_ms)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000012-source">
+            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000013-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 10</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">time_str</span>(<span class="ruby-identifier">value_ms</span>)
@@ -805,21 +848,21 @@ window.
         </div>
       </div>
 
-      <div id="method-M000031" class="method-detail">
-        <a name="M000031"></a>
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
 
         <div class="method-heading">
-          <a href="#M000031" class="method-signature">
+          <a href="#M000033" class="method-signature">
           <span class="method-name">to_s</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000031-source">
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 160</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 177</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-identifier">s</span> = <span class="ruby-node">&quot;Begin=#{begin_time}, &quot;</span>
       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Duration=#{duration} s, &quot;</span>
@@ -836,21 +879,21 @@ window.
         </div>
       </div>
 
-      <div id="method-M000024" class="method-detail">
-        <a name="M000024"></a>
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
-          <a href="#M000024" class="method-signature">
+          <a href="#M000026" class="method-signature">
           <span class="method-name">total_call_time_per_minute</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000024-source">
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 129</span>
+<span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 146</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">total_call_time_per_minute</span>
       <span class="ruby-value">60.0</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">time_percentage</span>
     <span class="ruby-keyword kw">end</span>

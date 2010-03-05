@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Fri Feb 19 15:59:52 -0800 2010</td>
+      <td>Fri Mar 05 15:00:59 -0800 2010</td>
     </tr>
     </table>
   </div>
@@ -70,17 +70,26 @@
 
     <div id="description">
       <p>
+v2.10.6
+</p>
+<pre>
+  * fix missing URL and referer on some traced errors and transactions
+  * gather traced errors *after* executing the rescue chain in ActionController
+  * always load controller instrumentation
+  * pick up token validation from newrelic.yml
+</pre>
+<p>
 v2.10.5
 </p>
 <pre>
-  * Fix bug in delayed_job instrumentation occurring when there was no DJ log
+  * fix bug in delayed_job instrumentation occurring when there was no DJ log
 </pre>
 <p>
 v2.10.4
 </p>
 <pre>
-  * Fix incompatibility with Capistrano 2.5.16
-  * Strip down URLs reported in transactions and errors to path only
+  * fix incompatibility with Capistrano 2.5.16
+  * strip down URLs reported in transactions and errors to path only
 </pre>
 <p>
 v2.10.3

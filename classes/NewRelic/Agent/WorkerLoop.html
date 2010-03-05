@@ -93,11 +93,11 @@ is a proc or block with a specified call period in seconds.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000252">add_task</a>&nbsp;&nbsp;
-      <a href="#M000250">keep_running</a>&nbsp;&nbsp;
-      <a href="#M000248">new</a>&nbsp;&nbsp;
-      <a href="#M000249">run</a>&nbsp;&nbsp;
-      <a href="#M000251">stop</a>&nbsp;&nbsp;
+      <a href="#M000261">add_task</a>&nbsp;&nbsp;
+      <a href="#M000259">keep_running</a>&nbsp;&nbsp;
+      <a href="#M000257">new</a>&nbsp;&nbsp;
+      <a href="#M000258">run</a>&nbsp;&nbsp;
+      <a href="#M000260">stop</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -156,19 +156,19 @@ is a proc or block with a specified call period in seconds.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000248" class="method-detail">
-        <a name="M000248"></a>
+      <div id="method-M000257" class="method-detail">
+        <a name="M000257"></a>
 
         <div class="method-heading">
-          <a href="#M000248" class="method-signature">
+          <a href="#M000257" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(log = Logger.new(STDERR))</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000248-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000248-source">
+            onclick="toggleCode('M000257-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000257-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 11</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDERR</span>))
@@ -184,11 +184,11 @@ is a proc or block with a specified call period in seconds.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000252" class="method-detail">
-        <a name="M000252"></a>
+      <div id="method-M000261" class="method-detail">
+        <a name="M000261"></a>
 
         <div class="method-heading">
-          <a href="#M000252" class="method-signature">
+          <a href="#M000261" class="method-signature">
           <span class="method-name">add_task</span><span class="method-args">(call_period, desc=&quot;&quot;, &amp;task_proc)</span>
           </a>
         </div>
@@ -199,8 +199,8 @@ add a task to the worker loop. The task will be called approximately once
 every call_period seconds. The task is passed as a block
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000252-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000252-source">
+            onclick="toggleCode('M000261-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000261-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 39</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_task</span>(<span class="ruby-identifier">call_period</span>, <span class="ruby-identifier">desc</span>=<span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">task_proc</span>)
@@ -214,19 +214,19 @@ every call_period seconds. The task is passed as a block
         </div>
       </div>
 
-      <div id="method-M000250" class="method-detail">
-        <a name="M000250"></a>
+      <div id="method-M000259" class="method-detail">
+        <a name="M000259"></a>
 
         <div class="method-heading">
-          <a href="#M000250" class="method-signature">
+          <a href="#M000259" class="method-signature">
           <span class="method-name">keep_running</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000250-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000250-source">
+            onclick="toggleCode('M000259-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000259-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 27</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">keep_running</span>
@@ -237,11 +237,11 @@ every call_period seconds. The task is passed as a block
         </div>
       </div>
 
-      <div id="method-M000249" class="method-detail">
-        <a name="M000249"></a>
+      <div id="method-M000258" class="method-detail">
+        <a name="M000258"></a>
 
         <div class="method-heading">
-          <a href="#M000249" class="method-signature">
+          <a href="#M000258" class="method-signature">
           <span class="method-name">run</span><span class="method-args">()</span>
           </a>
         </div>
@@ -253,8 +253,8 @@ periods. The caller is responsible for creating the thread that runs this
 worker loop
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000249-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000249-source">
+            onclick="toggleCode('M000258-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000258-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 21</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
@@ -267,19 +267,19 @@ worker loop
         </div>
       </div>
 
-      <div id="method-M000251" class="method-detail">
-        <a name="M000251"></a>
+      <div id="method-M000260" class="method-detail">
+        <a name="M000260"></a>
 
         <div class="method-heading">
-          <a href="#M000251" class="method-signature">
+          <a href="#M000260" class="method-signature">
           <span class="method-name">stop</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000251-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000251-source">
+            onclick="toggleCode('M000260-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000260-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 31</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>

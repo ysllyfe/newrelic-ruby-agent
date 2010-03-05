@@ -80,10 +80,10 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000299">breakdown_data</a>&nbsp;&nbsp;
-      <a href="#M000297">database_time</a>&nbsp;&nbsp;
-      <a href="#M000298">render_time</a>&nbsp;&nbsp;
-      <a href="#M000300">sql_segments</a>&nbsp;&nbsp;
+      <a href="#M000308">breakdown_data</a>&nbsp;&nbsp;
+      <a href="#M000306">database_time</a>&nbsp;&nbsp;
+      <a href="#M000307">render_time</a>&nbsp;&nbsp;
+      <a href="#M000309">sql_segments</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,11 +111,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000299" class="method-detail">
-        <a name="M000299"></a>
+      <div id="method-M000308" class="method-detail">
+        <a name="M000308"></a>
 
         <div class="method-heading">
-          <a href="#M000299" class="method-signature">
+          <a href="#M000308" class="method-signature">
           <span class="method-name">breakdown_data</span><span class="method-args">(limit = nil)</span>
           </a>
         </div>
@@ -128,8 +128,8 @@ href="TransactionAnalysis/SegmentSummary.html">SegmentSummary</a> objects.
 If a limit is specified, then limit the data set to the top n
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000299-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000299-source">
+            onclick="toggleCode('M000308-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000308-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 59</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">breakdown_data</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword kw">nil</span>)
@@ -172,19 +172,19 @@ If a limit is specified, then limit the data set to the top n
         </div>
       </div>
 
-      <div id="method-M000297" class="method-detail">
-        <a name="M000297"></a>
+      <div id="method-M000306" class="method-detail">
+        <a name="M000306"></a>
 
         <div class="method-heading">
-          <a href="#M000297" class="method-signature">
+          <a href="#M000306" class="method-signature">
           <span class="method-name">database_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000297-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000297-source">
+            onclick="toggleCode('M000306-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000306-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 4</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">database_time</span>
@@ -195,19 +195,19 @@ If a limit is specified, then limit the data set to the top n
         </div>
       </div>
 
-      <div id="method-M000298" class="method-detail">
-        <a name="M000298"></a>
+      <div id="method-M000307" class="method-detail">
+        <a name="M000307"></a>
 
         <div class="method-heading">
-          <a href="#M000298" class="method-signature">
+          <a href="#M000307" class="method-signature">
           <span class="method-name">render_time</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000298-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000298-source">
+            onclick="toggleCode('M000307-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000307-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 8</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_time</span>
@@ -218,11 +218,11 @@ If a limit is specified, then limit the data set to the top n
         </div>
       </div>
 
-      <div id="method-M000300" class="method-detail">
-        <a name="M000300"></a>
+      <div id="method-M000309" class="method-detail">
+        <a name="M000309"></a>
 
         <div class="method-heading">
-          <a href="#M000300" class="method-signature">
+          <a href="#M000309" class="method-signature">
           <span class="method-name">sql_segments</span><span class="method-args">()</span>
           </a>
         </div>
@@ -233,8 +233,8 @@ return an array of sql statements executed by this transaction each element
 in the array contains [sql, parent_segment_metric_name, duration]
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000300-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000300-source">
+            onclick="toggleCode('M000309-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000309-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 97</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_segments</span>
