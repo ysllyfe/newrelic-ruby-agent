@@ -94,19 +94,19 @@ by any other thread so no need for synchronization.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000277">finish_trace</a>&nbsp;&nbsp;
-      <a href="#M000279">freeze</a>&nbsp;&nbsp;
-      <a href="#M000274">ignore_transaction</a>&nbsp;&nbsp;
-      <a href="#M000273">ignored?</a>&nbsp;&nbsp;
-      <a href="#M000271">new</a>&nbsp;&nbsp;
-      <a href="#M000283">sample</a>&nbsp;&nbsp;
-      <a href="#M000272">sample_id</a>&nbsp;&nbsp;
-      <a href="#M000278">scope_depth</a>&nbsp;&nbsp;
-      <a href="#M000280">set_profile</a>&nbsp;&nbsp;
-      <a href="#M000282">set_transaction_cpu_time</a>&nbsp;&nbsp;
-      <a href="#M000281">set_transaction_info</a>&nbsp;&nbsp;
-      <a href="#M000275">trace_entry</a>&nbsp;&nbsp;
-      <a href="#M000276">trace_exit</a>&nbsp;&nbsp;
+      <a href="#M000282">finish_trace</a>&nbsp;&nbsp;
+      <a href="#M000284">freeze</a>&nbsp;&nbsp;
+      <a href="#M000279">ignore_transaction</a>&nbsp;&nbsp;
+      <a href="#M000278">ignored?</a>&nbsp;&nbsp;
+      <a href="#M000276">new</a>&nbsp;&nbsp;
+      <a href="#M000288">sample</a>&nbsp;&nbsp;
+      <a href="#M000277">sample_id</a>&nbsp;&nbsp;
+      <a href="#M000283">scope_depth</a>&nbsp;&nbsp;
+      <a href="#M000285">set_profile</a>&nbsp;&nbsp;
+      <a href="#M000287">set_transaction_cpu_time</a>&nbsp;&nbsp;
+      <a href="#M000286">set_transaction_info</a>&nbsp;&nbsp;
+      <a href="#M000280">trace_entry</a>&nbsp;&nbsp;
+      <a href="#M000281">trace_exit</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -118,7 +118,7 @@ by any other thread so no need for synchronization.
       <h3 class="section-bar">Included Modules</h3>
 
       <div id="includes-list">
-        <span class="include-name"><a href="CollectionHelper.html">CollectionHelper</a></span>
+        <span class="include-name"><a href="../CollectionHelper.html">NewRelic::CollectionHelper</a></span>
       </div>
     </div>
 
@@ -153,19 +153,19 @@ by any other thread so no need for synchronization.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000271" class="method-detail">
-        <a name="M000271"></a>
+      <div id="method-M000276" class="method-detail">
+        <a name="M000276"></a>
 
         <div class="method-heading">
-          <a href="#M000271" class="method-signature">
+          <a href="#M000276" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(time=nil)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000271-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000271-source">
+            onclick="toggleCode('M000276-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000276-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 228</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">time</span>=<span class="ruby-keyword kw">nil</span>)
@@ -181,19 +181,19 @@ by any other thread so no need for synchronization.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000277" class="method-detail">
-        <a name="M000277"></a>
+      <div id="method-M000282" class="method-detail">
+        <a name="M000282"></a>
 
         <div class="method-heading">
-          <a href="#M000277" class="method-signature">
+          <a href="#M000282" class="method-signature">
           <span class="method-name">finish_trace</span><span class="method-args">(time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000277-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000277-source">
+            onclick="toggleCode('M000282-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000282-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 258</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">finish_trace</span>(<span class="ruby-identifier">time</span>)
@@ -214,19 +214,19 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000279" class="method-detail">
-        <a name="M000279"></a>
+      <div id="method-M000284" class="method-detail">
+        <a name="M000284"></a>
 
         <div class="method-heading">
-          <a href="#M000279" class="method-signature">
+          <a href="#M000284" class="method-signature">
           <span class="method-name">freeze</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000279-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000279-source">
+            onclick="toggleCode('M000284-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000284-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 284</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">freeze</span>
@@ -237,92 +237,23 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000274" class="method-detail">
-        <a name="M000274"></a>
+      <div id="method-M000279" class="method-detail">
+        <a name="M000279"></a>
 
         <div class="method-heading">
-          <a href="#M000274" class="method-signature">
+          <a href="#M000279" class="method-signature">
           <span class="method-name">ignore_transaction</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000274-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000274-source">
+            onclick="toggleCode('M000279-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000279-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 241</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_transaction</span>
       <span class="ruby-ivar">@ignore</span> = <span class="ruby-keyword kw">true</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000273" class="method-detail">
-        <a name="M000273"></a>
-
-        <div class="method-heading">
-          <a href="#M000273" class="method-signature">
-          <span class="method-name">ignored?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000273-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000273-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 238</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignored?</span>
-      <span class="ruby-ivar">@ignore</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:path</span>].<span class="ruby-identifier">nil?</span> 
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000283" class="method-detail">
-        <a name="M000283"></a>
-
-        <div class="method-heading">
-          <a href="#M000283" class="method-signature">
-          <span class="method-name">sample</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000283-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000283-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 309</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample</span>
-      <span class="ruby-ivar">@sample</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000272" class="method-detail">
-        <a name="M000272"></a>
-
-        <div class="method-heading">
-          <a href="#M000272" class="method-signature">
-          <span class="method-name">sample_id</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000272-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000272-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 235</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample_id</span>
-      <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">sample_id</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -334,7 +265,7 @@ by any other thread so no need for synchronization.
 
         <div class="method-heading">
           <a href="#M000278" class="method-signature">
-          <span class="method-name">scope_depth</span><span class="method-args">()</span>
+          <span class="method-name">ignored?</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -342,6 +273,75 @@ by any other thread so no need for synchronization.
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000278-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000278-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 238</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignored?</span>
+      <span class="ruby-ivar">@ignore</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:path</span>].<span class="ruby-identifier">nil?</span> 
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000288" class="method-detail">
+        <a name="M000288"></a>
+
+        <div class="method-heading">
+          <a href="#M000288" class="method-signature">
+          <span class="method-name">sample</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000288-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000288-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 309</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample</span>
+      <span class="ruby-ivar">@sample</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000277" class="method-detail">
+        <a name="M000277"></a>
+
+        <div class="method-heading">
+          <a href="#M000277" class="method-signature">
+          <span class="method-name">sample_id</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000277-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000277-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 235</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample_id</span>
+      <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">sample_id</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000283" class="method-detail">
+        <a name="M000283"></a>
+
+        <div class="method-heading">
+          <a href="#M000283" class="method-signature">
+          <span class="method-name">scope_depth</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000283-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000283-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 272</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_depth</span>
@@ -360,19 +360,19 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000280" class="method-detail">
-        <a name="M000280"></a>
+      <div id="method-M000285" class="method-detail">
+        <a name="M000285"></a>
 
         <div class="method-heading">
-          <a href="#M000280" class="method-signature">
+          <a href="#M000285" class="method-signature">
           <span class="method-name">set_profile</span><span class="method-args">(profile)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000280-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000280-source">
+            onclick="toggleCode('M000285-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000285-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 288</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_profile</span>(<span class="ruby-identifier">profile</span>)
@@ -383,19 +383,19 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000282" class="method-detail">
-        <a name="M000282"></a>
+      <div id="method-M000287" class="method-detail">
+        <a name="M000287"></a>
 
         <div class="method-heading">
-          <a href="#M000282" class="method-signature">
+          <a href="#M000287" class="method-signature">
           <span class="method-name">set_transaction_cpu_time</span><span class="method-args">(cpu_time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000282-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000282-source">
+            onclick="toggleCode('M000287-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000287-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 305</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_time</span>)
@@ -406,19 +406,19 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000281" class="method-detail">
-        <a name="M000281"></a>
+      <div id="method-M000286" class="method-detail">
+        <a name="M000286"></a>
 
         <div class="method-heading">
-          <a href="#M000281" class="method-signature">
+          <a href="#M000286" class="method-signature">
           <span class="method-name">set_transaction_info</span><span class="method-args">(path, uri, params)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000281-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000281-source">
+            onclick="toggleCode('M000286-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000286-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 292</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span>)
@@ -438,19 +438,19 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000275" class="method-detail">
-        <a name="M000275"></a>
+      <div id="method-M000280" class="method-detail">
+        <a name="M000280"></a>
 
         <div class="method-heading">
-          <a href="#M000275" class="method-signature">
+          <a href="#M000280" class="method-signature">
           <span class="method-name">trace_entry</span><span class="method-args">(metric_name, time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000275-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000275-source">
+            onclick="toggleCode('M000280-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000280-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 244</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_entry</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">time</span>)
@@ -463,19 +463,19 @@ by any other thread so no need for synchronization.
         </div>
       </div>
 
-      <div id="method-M000276" class="method-detail">
-        <a name="M000276"></a>
+      <div id="method-M000281" class="method-detail">
+        <a name="M000281"></a>
 
         <div class="method-heading">
-          <a href="#M000276" class="method-signature">
+          <a href="#M000281" class="method-signature">
           <span class="method-name">trace_exit</span><span class="method-args">(metric_name, time)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000276-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000276-source">
+            onclick="toggleCode('M000281-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000281-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 250</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_exit</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">time</span>)

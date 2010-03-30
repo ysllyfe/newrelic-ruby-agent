@@ -75,7 +75,7 @@
     <div id="description">
       <h2><a href="../Instrumentation.html">Instrumentation</a> for <a href="Rack.html">Rack</a></h2>
 <p>
-New Relic will instrument a <a href="Rack.html#M000162">call</a> method as
+New Relic will instrument a <a href="Rack.html#M000165">call</a> method as
 if it were a controller action, collecting transaction traces and errors.
 The middleware will be identified only by it&#8216;s class, so if you want
 to instrument multiple actions in a middleware, you need to use
@@ -166,11 +166,11 @@ Here&#8216;s how that might look:
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000164">call</a>&nbsp;&nbsp;
-      <a href="#M000162">call</a>&nbsp;&nbsp;
-      <a href="#M000161">call_with_newrelic</a>&nbsp;&nbsp;
-      <a href="#M000163">call_without_newrelic</a>&nbsp;&nbsp;
-      <a href="#M000160">newrelic_request_headers</a>&nbsp;&nbsp;
+      <a href="#M000167">call</a>&nbsp;&nbsp;
+      <a href="#M000165">call</a>&nbsp;&nbsp;
+      <a href="#M000164">call_with_newrelic</a>&nbsp;&nbsp;
+      <a href="#M000166">call_without_newrelic</a>&nbsp;&nbsp;
+      <a href="#M000163">newrelic_request_headers</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -212,47 +212,47 @@ Here&#8216;s how that might look:
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
+      <div id="method-M000167" class="method-detail">
+        <a name="M000167"></a>
+
+        <div class="method-heading">
+          <span class="method-name">call</span><span class="method-args">(*args)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Rack.html#M000164">call_with_newrelic</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000165" class="method-detail">
+        <a name="M000165"></a>
+
+        <div class="method-heading">
+          <span class="method-name">call</span><span class="method-args">(*args)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Rack.html#M000164">call_with_newrelic</a>
+</p>
+        </div>
+      </div>
+
       <div id="method-M000164" class="method-detail">
         <a name="M000164"></a>
 
         <div class="method-heading">
-          <span class="method-name">call</span><span class="method-args">(*args)</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Alias for <a href="Rack.html#M000161">call_with_newrelic</a>
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000162" class="method-detail">
-        <a name="M000162"></a>
-
-        <div class="method-heading">
-          <span class="method-name">call</span><span class="method-args">(*args)</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Alias for <a href="Rack.html#M000161">call_with_newrelic</a>
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000161" class="method-detail">
-        <a name="M000161"></a>
-
-        <div class="method-heading">
-          <a href="#M000161" class="method-signature">
+          <a href="#M000164" class="method-signature">
           <span class="method-name">call_with_newrelic</span><span class="method-args">(*args)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000161-source">
+            onclick="toggleCode('M000164-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000164-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 85</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_with_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -269,8 +269,8 @@ Alias for <a href="Rack.html#M000161">call_with_newrelic</a>
         </div>
       </div>
 
-      <div id="method-M000163" class="method-detail">
-        <a name="M000163"></a>
+      <div id="method-M000166" class="method-detail">
+        <a name="M000166"></a>
 
         <div class="method-heading">
           <span class="method-name">call_without_newrelic</span><span class="method-args">(*args)</span>
@@ -278,24 +278,24 @@ Alias for <a href="Rack.html#M000161">call_with_newrelic</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="Rack.html#M000162">call</a>
+Alias for <a href="Rack.html#M000165">call</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000160" class="method-detail">
-        <a name="M000160"></a>
+      <div id="method-M000163" class="method-detail">
+        <a name="M000163"></a>
 
         <div class="method-heading">
-          <a href="#M000160" class="method-signature">
+          <a href="#M000163" class="method-signature">
           <span class="method-name">newrelic_request_headers</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000160-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000160-source">
+            onclick="toggleCode('M000163-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000163-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 82</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_request_headers</span>

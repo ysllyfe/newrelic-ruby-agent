@@ -93,11 +93,13 @@ is a proc or block with a specified call period in seconds.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000261">add_task</a>&nbsp;&nbsp;
-      <a href="#M000259">keep_running</a>&nbsp;&nbsp;
-      <a href="#M000257">new</a>&nbsp;&nbsp;
-      <a href="#M000258">run</a>&nbsp;&nbsp;
-      <a href="#M000260">stop</a>&nbsp;&nbsp;
+      <a href="#M000268">keep_running</a>&nbsp;&nbsp;
+      <a href="#M000265">lock</a>&nbsp;&nbsp;
+      <a href="#M000266">log</a>&nbsp;&nbsp;
+      <a href="#M000264">new</a>&nbsp;&nbsp;
+      <a href="#M000267">run</a>&nbsp;&nbsp;
+      <a href="#M000270">run_task</a>&nbsp;&nbsp;
+      <a href="#M000269">stop</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -108,47 +110,10 @@ is a proc or block with a specified call period in seconds.
 
     <div id="section">
 
-    <div id="class-list">
-      <h3 class="section-bar">Classes and Modules</h3>
-
-      Class <a href="WorkerLoop/LoopTask.html" class="link">NewRelic::Agent::WorkerLoop::LoopTask</a><br />
-
-    </div>
-
-    <div id="constants-list">
-      <h3 class="section-bar">Constants</h3>
-
-      <div class="name-list">
-        <table summary="Constants">
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">MIN_CALL_PERIOD</td>
-          <td>=</td>
-          <td class="context-item-value">0.1</td>
-        </tr>
-        </table>
-      </div>
-    </div>
 
 
 
-    <div id="attribute-list">
-      <h3 class="section-bar">Attributes</h3>
 
-      <div class="name-list">
-        <table>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">log</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
-        </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">pid</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
-        </tr>
-        </table>
-      </div>
-    </div>
       
 
 
@@ -156,27 +121,25 @@ is a proc or block with a specified call period in seconds.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000257" class="method-detail">
-        <a name="M000257"></a>
+      <div id="method-M000264" class="method-detail">
+        <a name="M000264"></a>
 
         <div class="method-heading">
-          <a href="#M000257" class="method-signature">
-          <span class="method-name">new</span><span class="method-args">(log = Logger.new(STDERR))</span>
+          <a href="#M000264" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000257-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000257-source">
+            onclick="toggleCode('M000264-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000264-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 11</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDERR</span>))
-      <span class="ruby-ivar">@tasks</span> = []
-      <span class="ruby-ivar">@log</span> = <span class="ruby-identifier">log</span>
-      <span class="ruby-ivar">@should_run</span> = <span class="ruby-keyword kw">true</span>
-      <span class="ruby-ivar">@pid</span> = <span class="ruby-identifier">$$</span>
-    <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 9</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-ivar">@log</span> = <span class="ruby-identifier">log</span>
+        <span class="ruby-ivar">@should_run</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -184,65 +147,81 @@ is a proc or block with a specified call period in seconds.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000261" class="method-detail">
-        <a name="M000261"></a>
+      <div id="method-M000268" class="method-detail">
+        <a name="M000268"></a>
 
         <div class="method-heading">
-          <a href="#M000261" class="method-signature">
-          <span class="method-name">add_task</span><span class="method-args">(call_period, desc=&quot;&quot;, &amp;task_proc)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-add a task to the worker loop. The task will be called approximately once
-every call_period seconds. The task is passed as a block
-</p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000261-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000261-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 39</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_task</span>(<span class="ruby-identifier">call_period</span>, <span class="ruby-identifier">desc</span>=<span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">task_proc</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">call_period</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">MIN_CALL_PERIOD</span>
-        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid Call Period (must be &gt; #{MIN_CALL_PERIOD}): #{call_period}&quot;</span> 
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-ivar">@tasks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">LoopTask</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">call_period</span>, <span class="ruby-identifier">desc</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">task_proc</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000259" class="method-detail">
-        <a name="M000259"></a>
-
-        <div class="method-heading">
-          <a href="#M000259" class="method-signature">
+          <a href="#M000268" class="method-signature">
           <span class="method-name">keep_running</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000259-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000259-source">
+            onclick="toggleCode('M000268-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000268-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 27</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">keep_running</span>
-      <span class="ruby-ivar">@should_run</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-ivar">@pid</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$$</span>)
-    <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 40</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">keep_running</span>
+        <span class="ruby-ivar">@should_run</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000258" class="method-detail">
-        <a name="M000258"></a>
+      <div id="method-M000265" class="method-detail">
+        <a name="M000265"></a>
 
         <div class="method-heading">
-          <a href="#M000258" class="method-signature">
-          <span class="method-name">run</span><span class="method-args">()</span>
+          <a href="#M000265" class="method-signature">
+          <span class="method-name">lock</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000265-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000265-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 14</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lock</span>
+        <span class="ruby-ivar">@@lock</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000266" class="method-detail">
+        <a name="M000266"></a>
+
+        <div class="method-heading">
+          <a href="#M000266" class="method-signature">
+          <span class="method-name">log</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000266-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000266-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 18</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>
+      <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000267" class="method-detail">
+        <a name="M000267"></a>
+
+        <div class="method-heading">
+          <a href="#M000267" class="method-signature">
+          <span class="method-name">run</span><span class="method-args">(period, &amp;block)</span>
           </a>
         </div>
       
@@ -253,38 +232,98 @@ periods. The caller is responsible for creating the thread that runs this
 worker loop
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000258-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000258-source">
+            onclick="toggleCode('M000267-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000267-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 21</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
-      <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">keep_running</span> <span class="ruby-keyword kw">do</span>
-        <span class="ruby-identifier">run_next_task</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 24</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">period</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+        <span class="ruby-ivar">@period</span> = <span class="ruby-identifier">period</span>
+        <span class="ruby-ivar">@next_invocation_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@period</span>
+        <span class="ruby-ivar">@task</span> = <span class="ruby-identifier">block</span>
+        <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">keep_running</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">now</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@next_invocation_time</span>
+            <span class="ruby-comment cmt"># sleep until this next task's scheduled invocation time</span>
+            <span class="ruby-identifier">sleep_time</span> = <span class="ruby-ivar">@next_invocation_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">now</span>
+            <span class="ruby-identifier">sleep</span> <span class="ruby-identifier">sleep_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sleep_time</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">run_task</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">keep_running</span>
+        <span class="ruby-keyword kw">end</span>
       <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000260" class="method-detail">
-        <a name="M000260"></a>
+      <div id="method-M000270" class="method-detail">
+        <a name="M000270"></a>
 
         <div class="method-heading">
-          <a href="#M000260" class="method-signature">
+          <a href="#M000270" class="method-signature">
+          <span class="method-name">run_task</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000270-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000270-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 48</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run_task</span>
+        <span class="ruby-identifier">lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">call</span> 
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ServerError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Server Error: #{e}&quot;</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ForceRestartException</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ForceDisconnectException</span>
+        <span class="ruby-comment cmt"># blow out the loop</span>
+        <span class="ruby-identifier">raise</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-comment cmt"># This is probably a server error which has been logged in the server along</span>
+        <span class="ruby-comment cmt"># with your account name.  Check and see if the agent listener is in the</span>
+        <span class="ruby-comment cmt"># stack trace and log it quietly if it is.</span>
+        <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;Error running task in worker loop, likely a server error (#{e})&quot;</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp re">/agent_listener/</span>).<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-identifier">message</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">message</span>
+          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ServerConnectionException</span>
+        <span class="ruby-comment cmt"># Want to ignore these because they are handled already</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ScriptError</span>, <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span> 
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Error running task in Agent Worker Loop '#{e}': #{e.backtrace.first}&quot;</span> 
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+      <span class="ruby-keyword kw">ensure</span>
+        <span class="ruby-keyword kw">while</span> <span class="ruby-ivar">@next_invocation_time</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-ivar">@next_invocation_time</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@period</span>
+        <span class="ruby-keyword kw">end</span>        
+      <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000269" class="method-detail">
+        <a name="M000269"></a>
+
+        <div class="method-heading">
+          <a href="#M000269" class="method-signature">
           <span class="method-name">stop</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000260-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000260-source">
+            onclick="toggleCode('M000269-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000269-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 31</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>
-      <span class="ruby-ivar">@should_run</span> = <span class="ruby-keyword kw">false</span>
-    <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/worker_loop.rb, line 44</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>
+        <span class="ruby-ivar">@should_run</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

@@ -80,15 +80,15 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000229">end_transaction</a>&nbsp;&nbsp;
-      <a href="#M000225">peek_scope</a>&nbsp;&nbsp;
-      <a href="#M000224">pop_scope</a>&nbsp;&nbsp;
-      <a href="#M000223">push_scope</a>&nbsp;&nbsp;
-      <a href="#M000222">remove_transaction_sampler</a>&nbsp;&nbsp;
-      <a href="#M000227">scope_name</a>&nbsp;&nbsp;
-      <a href="#M000226">scope_name=</a>&nbsp;&nbsp;
-      <a href="#M000228">start_transaction</a>&nbsp;&nbsp;
-      <a href="#M000221">transaction_sampler=</a>&nbsp;&nbsp;
+      <a href="#M000236">end_transaction</a>&nbsp;&nbsp;
+      <a href="#M000232">peek_scope</a>&nbsp;&nbsp;
+      <a href="#M000231">pop_scope</a>&nbsp;&nbsp;
+      <a href="#M000230">push_scope</a>&nbsp;&nbsp;
+      <a href="#M000229">remove_transaction_sampler</a>&nbsp;&nbsp;
+      <a href="#M000234">scope_name</a>&nbsp;&nbsp;
+      <a href="#M000233">scope_name=</a>&nbsp;&nbsp;
+      <a href="#M000235">start_transaction</a>&nbsp;&nbsp;
+      <a href="#M000228">transaction_sampler=</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -110,11 +110,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000229" class="method-detail">
-        <a name="M000229"></a>
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
 
         <div class="method-heading">
-          <a href="#M000229" class="method-signature">
+          <a href="#M000236" class="method-signature">
           <span class="method-name">end_transaction</span><span class="method-args">()</span>
           </a>
         </div>
@@ -126,8 +126,8 @@ thread locals. If it looks like a transaction is still in progress, then
 maybe this is an inner transaction and is ignored.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000229-source">
+            onclick="toggleCode('M000236-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000236-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 103</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_transaction</span>
@@ -143,19 +143,19 @@ maybe this is an inner transaction and is ignored.
         </div>
       </div>
 
-      <div id="method-M000225" class="method-detail">
-        <a name="M000225"></a>
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
 
         <div class="method-heading">
-          <a href="#M000225" class="method-signature">
+          <a href="#M000232" class="method-signature">
           <span class="method-name">peek_scope</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000225-source">
+            onclick="toggleCode('M000232-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000232-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 73</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">peek_scope</span>
@@ -166,19 +166,19 @@ maybe this is an inner transaction and is ignored.
         </div>
       </div>
 
-      <div id="method-M000224" class="method-detail">
-        <a name="M000224"></a>
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
 
         <div class="method-heading">
-          <a href="#M000224" class="method-signature">
+          <a href="#M000231" class="method-signature">
           <span class="method-name">pop_scope</span><span class="method-args">(expected_scope, duration, time=Time.now.to_f)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000224-source">
+            onclick="toggleCode('M000231-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000231-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 56</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_scope</span>(<span class="ruby-identifier">expected_scope</span>, <span class="ruby-identifier">duration</span>, <span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
@@ -202,19 +202,19 @@ maybe this is an inner transaction and is ignored.
         </div>
       </div>
 
-      <div id="method-M000223" class="method-detail">
-        <a name="M000223"></a>
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
 
         <div class="method-heading">
-          <a href="#M000223" class="method-signature">
+          <a href="#M000230" class="method-signature">
           <span class="method-name">push_scope</span><span class="method-args">(metric, time = Time.now.to_f, deduct_call_time_from_parent = true)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000223-source">
+            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000230-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 38</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push_scope</span>(<span class="ruby-identifier">metric</span>, <span class="ruby-identifier">time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">deduct_call_time_from_parent</span> = <span class="ruby-keyword kw">true</span>)
@@ -239,19 +239,19 @@ maybe this is an inner transaction and is ignored.
         </div>
       </div>
 
-      <div id="method-M000222" class="method-detail">
-        <a name="M000222"></a>
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
 
         <div class="method-heading">
-          <a href="#M000222" class="method-signature">
+          <a href="#M000229" class="method-signature">
           <span class="method-name">remove_transaction_sampler</span><span class="method-args">(l)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000222-source">
+            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000229-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 34</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_transaction_sampler</span>(<span class="ruby-identifier">l</span>)
@@ -262,19 +262,19 @@ maybe this is an inner transaction and is ignored.
         </div>
       </div>
 
-      <div id="method-M000227" class="method-detail">
-        <a name="M000227"></a>
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
 
         <div class="method-heading">
-          <a href="#M000227" class="method-signature">
+          <a href="#M000234" class="method-signature">
           <span class="method-name">scope_name</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000227-source">
+            onclick="toggleCode('M000234-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000234-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 89</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_name</span>
@@ -285,11 +285,11 @@ maybe this is an inner transaction and is ignored.
         </div>
       </div>
 
-      <div id="method-M000226" class="method-detail">
-        <a name="M000226"></a>
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
 
         <div class="method-heading">
-          <a href="#M000226" class="method-signature">
+          <a href="#M000233" class="method-signature">
           <span class="method-name">scope_name=</span><span class="method-args">(transaction)</span>
           </a>
         </div>
@@ -307,8 +307,8 @@ names in the future if the traced application does more than service http
 request via controller actions
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000226-source">
+            onclick="toggleCode('M000233-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000233-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 85</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_name=</span>(<span class="ruby-identifier">transaction</span>)
@@ -319,11 +319,11 @@ request via controller actions
         </div>
       </div>
 
-      <div id="method-M000228" class="method-detail">
-        <a name="M000228"></a>
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
 
         <div class="method-heading">
-          <a href="#M000228" class="method-signature">
+          <a href="#M000235" class="method-signature">
           <span class="method-name">start_transaction</span><span class="method-args">(name = nil)</span>
           </a>
         </div>
@@ -333,8 +333,8 @@ request via controller actions
 Start a new transaction, unless one is already in progress
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000228-source">
+            onclick="toggleCode('M000235-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000235-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 94</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword kw">nil</span>)
@@ -346,19 +346,19 @@ Start a new transaction, unless one is already in progress
         </div>
       </div>
 
-      <div id="method-M000221" class="method-detail">
-        <a name="M000221"></a>
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
 
         <div class="method-heading">
-          <a href="#M000221" class="method-signature">
+          <a href="#M000228" class="method-signature">
           <span class="method-name">transaction_sampler=</span><span class="method-args">(sampler)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000221-source">
+            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000228-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 29</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transaction_sampler=</span> <span class="ruby-identifier">sampler</span>

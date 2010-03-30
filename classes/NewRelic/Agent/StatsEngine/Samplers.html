@@ -80,9 +80,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000220">add_harvest_sampler</a>&nbsp;&nbsp;
-      <a href="#M000219">add_sampler</a>&nbsp;&nbsp;
-      <a href="#M000218">spawn_sampler_thread</a>&nbsp;&nbsp;
+      <a href="#M000227">add_harvest_sampler</a>&nbsp;&nbsp;
+      <a href="#M000226">add_sampler</a>&nbsp;&nbsp;
+      <a href="#M000225">start_sampler_thread</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -124,11 +124,11 @@ POLL_PERIOD seconds on a background thread.
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000220" class="method-detail">
-        <a name="M000220"></a>
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
 
         <div class="method-heading">
-          <a href="#M000220" class="method-signature">
+          <a href="#M000227" class="method-signature">
           <span class="method-name">add_harvest_sampler</span><span class="method-args">(sampler)</span>
           </a>
         </div>
@@ -138,10 +138,10 @@ POLL_PERIOD seconds on a background thread.
 Add a sampler to be invoked just before each harvest.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000220-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000220-source">
+            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000227-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/samplers.rb, line 48</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/samplers.rb, line 47</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_harvest_sampler</span> <span class="ruby-identifier">sampler</span>
         <span class="ruby-identifier">harvest_samplers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sampler</span>
         <span class="ruby-identifier">sampler</span>.<span class="ruby-identifier">stats_engine</span> = <span class="ruby-keyword kw">self</span>
@@ -152,11 +152,11 @@ Add a sampler to be invoked just before each harvest.
         </div>
       </div>
 
-      <div id="method-M000219" class="method-detail">
-        <a name="M000219"></a>
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
 
         <div class="method-heading">
-          <a href="#M000219" class="method-signature">
+          <a href="#M000226" class="method-signature">
           <span class="method-name">add_sampler</span><span class="method-args">(sampler)</span>
           </a>
         </div>
@@ -167,10 +167,10 @@ Add an instance of <a href="../Sampler.html">Sampler</a> to be invoked
 about every 10 seconds on a background thread.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000219-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000219-source">
+            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000226-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/samplers.rb, line 38</span>
+<span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/samplers.rb, line 37</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_sampler</span> <span class="ruby-identifier">sampler</span>
         <span class="ruby-identifier">periodic_samplers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
           <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Sampler #{sampler.id} is already registered.  Don't call add_sampler directly anymore.&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sampler</span>.<span class="ruby-identifier">id</span>
@@ -184,24 +184,24 @@ about every 10 seconds on a background thread.
         </div>
       </div>
 
-      <div id="method-M000218" class="method-detail">
-        <a name="M000218"></a>
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
 
         <div class="method-heading">
-          <a href="#M000218" class="method-signature">
-          <span class="method-name">spawn_sampler_thread</span><span class="method-args">()</span>
+          <a href="#M000225" class="method-signature">
+          <span class="method-name">start_sampler_thread</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000218-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000218-source">
+            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000225-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/samplers.rb, line 17</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">spawn_sampler_thread</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_sampler_thread</span>
         
-        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@sampler_process</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sampler_process</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$$</span> 
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@sampler_thread</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@sampler_thread</span>.<span class="ruby-identifier">alive?</span>
         
         <span class="ruby-comment cmt"># start up a thread that will periodically poll for metric samples</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">periodic_samplers</span>.<span class="ruby-identifier">empty?</span>
@@ -215,7 +215,6 @@ about every 10 seconds on a background thread.
           <span class="ruby-keyword kw">end</span>
         <span class="ruby-keyword kw">end</span>
         <span class="ruby-ivar">@sampler_thread</span>[<span class="ruby-value str">'newrelic_label'</span>] = <span class="ruby-value str">'Sampler Tasks'</span>
-        <span class="ruby-ivar">@sampler_process</span> = <span class="ruby-identifier">$$</span>
       <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
