@@ -1,89 +1,46 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: NewRelic::Agent::Sampler</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-  // <![CDATA[
-
-  function popupCode( url ) {
-    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
-  }
-
-  function toggleCode( id ) {
-    if ( document.getElementById )
-      elem = document.getElementById( id );
-    else if ( document.all )
-      elem = eval( "document.all." + id );
-    else
-      return false;
-
-    elemStyle = elem.style;
-    
-    if ( elemStyle.display != "block" ) {
-      elemStyle.display = "block"
-    } else {
-      elemStyle.display = "none"
-    }
-
-    return true;
-  }
-  
-  // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
-  // ]]>
-  </script>
-
+    <title>NewRelic::Agent::Sampler</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
 
-
-
-    <div id="classHeader">
-        <table class="header-table">
-        <tr class="top-aligned-row">
-          <td><strong>Class</strong></td>
-          <td class="class-name-in-header">NewRelic::Agent::Sampler</td>
-        </tr>
-        <tr class="top-aligned-row">
-            <td><strong>In:</strong></td>
-            <td>
-                <a href="../../../files/lib/new_relic/agent/sampler_rb.html">
-                lib/new_relic/agent/sampler.rb
-                </a>
-        <br />
-            </td>
-        </tr>
-
-        <tr class="top-aligned-row">
-            <td><strong>Parent:</strong></td>
-            <td>
-                Object
-            </td>
-        </tr>
-        </table>
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            NewRelic::Agent::Sampler 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/new_relic/agent/sampler_rb.html">lib/new_relic/agent/sampler.rb</a></li>
+            
+        </ul>
     </div>
-  <!-- banner header -->
-
-  <div id="bodyContent">
-
-
-
-  <div id="contextContent">
-
-    <div id="description">
-      <p>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <p>
 A <a href="Sampler.html">Sampler</a> is used to capture meaningful metrics
 in a background thread periodically. They will either be invoked once a
 minute just before the data is sent to the agent (default) or every 10
-seconds, when use_harvest_sampler? returns false.
+seconds, when <a href="Sampler.html#M000811">use_harvest_sampler?</a>
+returns false.
 </p>
 <p>
 <a href="Samplers.html">Samplers</a> can be added to New Relic by
@@ -93,222 +50,277 @@ registered for instantiation automatically.
 </p>
 
     </div>
+    
 
+    
 
-   </div>
+    
+    
 
-    <div id="method-list">
-      <h3 class="section-bar">Methods</h3>
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000806">inherited</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000813">new</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>P</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000814">poll</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000812">sampler_classes</a>,</li>
+                
+                <li><a href="#M000807">supported_on_this_platform?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>U</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000811">use_harvest_sampler?</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
 
-      <div class="name-list">
-      <a href="#M000305">inherited</a>&nbsp;&nbsp;
-      <a href="#M000309">new</a>&nbsp;&nbsp;
-      <a href="#M000310">poll</a>&nbsp;&nbsp;
-      <a href="#M000308">sampler_classes</a>&nbsp;&nbsp;
-      <a href="#M000306">supported_on_this_platform?</a>&nbsp;&nbsp;
-      <a href="#M000307">use_harvest_sampler?</a>&nbsp;&nbsp;
-      </div>
-    </div>
+    
 
-  </div>
+    
 
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">CLASS</span> <a href="Sampler/Unsupported.html">NewRelic::Agent::Sampler::Unsupported</a></li>
+        
+    </ul>
+    
 
-    <!-- if includes -->
+    
 
-    <div id="section">
-
-    <div id="class-list">
-      <h3 class="section-bar">Classes and Modules</h3>
-
-      Class <a href="Sampler/Unsupported.html" class="link">NewRelic::Agent::Sampler::Unsupported</a><br />
-
-    </div>
-
-
-
-
-    <div id="attribute-list">
-      <h3 class="section-bar">Attributes</h3>
-
-      <div class="name-list">
-        <table>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">id</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>stats_engine</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">stats_engine</td>
-          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>id</td>
+            <td class='attr-desc'></td>
         </tr>
-        </table>
-      </div>
-    </div>
-      
+        
+    </table>
+    
 
-
-    <!-- if method_list -->
-    <div id="methods">
-      <h3 class="section-bar">Public Class methods</h3>
-
-      <div id="method-M000305" class="method-detail">
-        <a name="M000305"></a>
-
-        <div class="method-heading">
-          <a href="#M000305" class="method-signature">
-          <span class="method-name">inherited</span><span class="method-args">(subclass)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000305-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000305-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 18</span>
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000806">
+                    
+                    <a name="M000806"></a><b>inherited</b>(subclass)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000806_source')" id="l_M000806_source">show</a>
+                        
+                    </p>
+                    <div id="M000806_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 18</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">subclass</span>)
     <span class="ruby-ivar">@sampler_classes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subclass</span>
-  <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000309" class="method-detail">
-        <a name="M000309"></a>
-
-        <div class="method-heading">
-          <a href="#M000309" class="method-signature">
-          <span class="method-name">new</span><span class="method-args">(id)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000309-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000309-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 37</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000813">
+                    
+                    <a name="M000813"></a><b>new</b>(id)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000813_source')" id="l_M000813_source">show</a>
+                        
+                    </p>
+                    <div id="M000813_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 37</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">id</span>)
     <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>
-  <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000308" class="method-detail">
-        <a name="M000308"></a>
-
-        <div class="method-heading">
-          <a href="#M000308" class="method-signature">
-          <span class="method-name">sampler_classes</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000308-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000308-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 33</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000812">
+                    
+                    <a name="M000812"></a><b>sampler_classes</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000812_source')" id="l_M000812_source">show</a>
+                        
+                    </p>
+                    <div id="M000812_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 33</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sampler_classes</span>
     <span class="ruby-ivar">@sampler_classes</span>
-  <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000306" class="method-detail">
-        <a name="M000306"></a>
-
-        <div class="method-heading">
-          <a href="#M000306" class="method-signature">
-          <span class="method-name">supported_on_this_platform?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000807">
+                    
+                    <a name="M000807"></a><b>supported_on_this_platform?</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
 Override with check. Called before instantiating.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000306-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000306-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 23</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000807_source')" id="l_M000807_source">show</a>
+                        
+                    </p>
+                    <div id="M000807_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 23</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
     <span class="ruby-keyword kw">true</span>
-  <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000307" class="method-detail">
-        <a name="M000307"></a>
-
-        <div class="method-heading">
-          <a href="#M000307" class="method-signature">
-          <span class="method-name">use_harvest_sampler?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000811">
+                    
+                    <a name="M000811"></a><b>use_harvest_sampler?</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
 Override to use the periodic sampler instead of running the sampler on the
 minute during harvests.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000307-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000307-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 29</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000811_source')" id="l_M000811_source">show</a>
+                        
+                    </p>
+                    <div id="M000811_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 29</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">use_harvest_sampler?</span>
     <span class="ruby-keyword kw">true</span>
-  <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="section-bar">Public Instance methods</h3>
-
-      <div id="method-M000310" class="method-detail">
-        <a name="M000310"></a>
-
-        <div class="method-heading">
-          <a href="#M000310" class="method-signature">
-          <span class="method-name">poll</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000310-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000310-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 41</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000814">
+                    
+                    <a name="M000814"></a><b>poll</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000814_source')" id="l_M000814_source">show</a>
+                        
+                    </p>
+                    <div id="M000814_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/sampler.rb, line 41</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Implement in the subclass&quot;</span>
-  <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-<div id="validator-badges">
-  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
 </div>
-
-</body>
-</html>
+    </div>
+  </body>
+</html>    

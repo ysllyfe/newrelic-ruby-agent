@@ -1,0 +1,1922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>x</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            x
+        </h1>
+        <ul class="files">
+            <li>lib/new_relic/agent/x</li>
+            <li>Last modified: Mon Mar 29 13:44:08 -0700 2010</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <hr size="10"></hr><p>
+r15879 | bkayser | 2010-03-26 17:44:02 -0700 (Fri, 26 Mar 2010) | 1 line
+</p>
+<p>
+improved logging
+</p>
+<hr size="10"></hr><p>
+r15604 | bkayser | 2010-03-21 09:42:56 -0700 (Sun, 21 Mar 2010) | 1 line
+</p>
+<p>
+Hooking up after_fork for unicorn
+</p>
+<hr size="10"></hr><p>
+r15586 | bkayser | 2010-03-19 21:45:08 -0700 (Fri, 19 Mar 2010) | 1 line
+</p>
+<p>
+Remove ensure_worker_thread_started, use an after_fork handler
+</p>
+<hr size="10"></hr><p>
+r15523 | bkayser | 2010-03-17 10:44:35 -0700 (Wed, 17 Mar 2010) | 1 line
+</p>
+<p>
+Fix test
+</p>
+<hr size="10"></hr><p>
+r15522 | bkayser | 2010-03-17 10:05:23 -0700 (Wed, 17 Mar 2010) | 1 line
+</p>
+<p>
+Add <a
+href="../../../../classes/NewRelic/Agent.html#M000942">NewRelic::Agent.logger</a>
+method
+</p>
+<hr size="10"></hr><p>
+r15521 | bkayser | 2010-03-17 10:00:30 -0700 (Wed, 17 Mar 2010) | 3 lines
+</p>
+<p>
+Code to support synchronous connections, wip Keep track of which pid we
+connected from; only send shutdown from the original pid allow connect to
+be called synchronously
+</p>
+<hr size="10"></hr><p>
+r15469 | bkayser | 2010-03-13 09:53:07 -0800 (Sat, 13 Mar 2010) | 1 line
+</p>
+<p>
+Fix bug in spawner
+</p>
+<hr size="10"></hr><p>
+r15465 | bkayser | 2010-03-12 18:02:02 -0800 (Fri, 12 Mar 2010) | 1 line
+</p>
+<p>
+Put in more safeguards to avoid race conditions in restarting the threads;
+detect unicorn master process.
+</p>
+<hr size="10"></hr><p>
+r15381 | bkayser | 2010-03-10 14:21:31 -0800 (Wed, 10 Mar 2010) | 1 line
+</p>
+<p>
+Simplified worker loop to support one task, synchronized the harvest task
+to give better support for synchronous updates.
+</p>
+<hr size="10"></hr><p>
+r15223 | bkayser | 2010-03-05 14:54:52 -0800 (Fri, 05 Mar 2010) | 1 line
+</p>
+<p>
+show validation seed/token in debug output
+</p>
+<hr size="10"></hr><p>
+r15088 | bkayser | 2010-03-02 11:22:54 -0800 (Tue, 02 Mar 2010) | 1 line
+</p>
+<p>
+Get validation info out of newrelic.yml
+</p>
+<hr size="10"></hr><p>
+r14613 | bkayser | 2010-02-11 10:22:49 -0800 (Thu, 11 Feb 2010) | 1 line
+</p>
+<p>
+more helpful error message when the loop blows out.
+</p>
+<hr size="10"></hr><p>
+r14589 | justin | 2010-02-10 13:51:29 -0800 (Wed, 10 Feb 2010) | 1 line
+</p>
+<p>
+fix constant scoping when defining modules
+</p>
+<hr size="10"></hr><p>
+r14521 | bkayser | 2010-02-08 17:27:39 -0800 (Mon, 08 Feb 2010) | 1 line
+</p>
+<p>
+Send data on shutdown.
+</p>
+<hr size="10"></hr><p>
+r14453 | bkayser | 2010-02-04 16:39:56 -0800 (Thu, 04 Feb 2010) | 1 line
+</p>
+<p>
+Improve log output on startup
+</p>
+<hr size="10"></hr><p>
+r14388 | bkayser | 2010-02-02 22:28:39 -0800 (Tue, 02 Feb 2010) | 1 line
+</p>
+<p>
+minor syntactic cleanup
+</p>
+<hr size="10"></hr><p>
+r14379 | ralph | 2010-02-02 16:20:26 -0800 (Tue, 02 Feb 2010) | 2 lines
+</p>
+<p>
+Can&#8217;t call empty? on a symbol
+</p>
+<hr size="10"></hr><p>
+r14373 | bkayser | 2010-02-02 14:04:18 -0800 (Tue, 02 Feb 2010) | 1 line
+</p>
+<p>
+Minor cleanup of log message levels
+</p>
+<hr size="10"></hr><p>
+r14369 | bkayser | 2010-02-02 12:08:34 -0800 (Tue, 02 Feb 2010) | 1 line
+</p>
+<p>
+Fix bug with custom parameters persisting
+</p>
+<hr size="10"></hr><p>
+r14290 | bkayser | 2010-01-29 12:53:52 -0800 (Fri, 29 Jan 2010) | 1 line
+</p>
+<p>
+Remove sync reference
+</p>
+<hr size="10"></hr><p>
+r14262 | bkayser | 2010-01-28 10:38:34 -0800 (Thu, 28 Jan 2010) | 1 line
+</p>
+<p>
+Fixes to apdex and error oddity
+</p>
+<hr size="10"></hr><p>
+r14209 | bkayser | 2010-01-25 14:34:02 -0800 (Mon, 25 Jan 2010) | 1 line
+</p>
+<p>
+Fix bug in processing result of metric_data call.
+</p>
+<hr size="10"></hr><p>
+r14187 | bkayser | 2010-01-22 16:36:58 -0800 (Fri, 22 Jan 2010) | 1 line
+</p>
+<p>
+remove reference to dispatcher instance id and the localhost.
+</p>
+<hr size="10"></hr><p>
+r14105 | justin | 2010-01-20 16:08:31 -0800 (Wed, 20 Jan 2010) | 1 line
+</p>
+<p>
+update protocol version, change metrics from being a hash to an array (but
+convert them back for the agent)
+</p>
+<hr size="10"></hr><p>
+r14042 | bkayser | 2010-01-19 00:17:09 -0800 (Tue, 19 Jan 2010) | 1 line
+</p>
+<p>
+Adjust API for setting model context for AR instrumentation
+</p>
+<hr size="10"></hr><p>
+r14004 | gochee | 2010-01-15 19:08:25 -0800 (Fri, 15 Jan 2010) | 1 line
+</p>
+<p>
+Added a way to set the metric name for direct SQL calls
+</p>
+<hr size="10"></hr><p>
+r13777 | bkayser | 2010-01-08 14:18:24 -0800 (Fri, 08 Jan 2010) | 1 line
+</p>
+<p>
+Remove rescue nil from invoke_remote call
+</p>
+<hr size="10"></hr><p>
+r13573 | bkayser | 2009-12-31 14:59:28 -0800 (Thu, 31 Dec 2009) | 1 line
+</p>
+<p>
+Fold dispatcher instrumentation into controller instrumentation; introduce
+one thread local MetricFrame to keep track of state; handle nested traced
+actions correctly
+</p>
+<hr size="10"></hr><p>
+r13468 | bkayser | 2009-12-24 10:50:55 -0800 (Thu, 24 Dec 2009) | 1 line
+</p>
+<p>
+Take another pass at clearing stats when passenger forks.
+</p>
+<hr size="10"></hr><p>
+r13186 | bkayser | 2009-12-14 10:39:55 -0800 (Mon, 14 Dec 2009) | 1 line
+</p>
+<p>
+Fix agent early exit with Unicorn
+</p>
+<hr size="10"></hr><p>
+r13164 | bkayser | 2009-12-11 17:34:28 -0800 (Fri, 11 Dec 2009) | 1 line
+</p>
+<p>
+Better exception visibility in worker loop, reduce wakeups in thread
+</p>
+<hr size="10"></hr><p>
+r13102 | bkayser | 2009-12-08 17:10:22 -0800 (Tue, 08 Dec 2009) | 1 line
+</p>
+<p>
+Implement transaction trace clamp in agent.
+</p>
+<hr size="10"></hr><p>
+r12943 | bkayser | 2009-12-02 16:32:13 -0800 (Wed, 02 Dec 2009) | 1 line
+</p>
+<p>
+Clear out stats when we start up the worker thread.
+</p>
+<hr size="10"></hr><p>
+r12856 | bkayser | 2009-11-30 15:28:36 -0800 (Mon, 30 Nov 2009) | 1 line
+</p>
+<p>
+Fix unit test failures and re-entrancy problem with controller
+instrumentation
+</p>
+<hr size="10"></hr><p>
+r12068 | george | 2009-10-21 18:18:47 -0700 (Wed, 21 Oct 2009) | 2 lines
+</p>
+<p>
+add validation parameters for launch
+</p>
+<hr size="10"></hr><p>
+r11668 | bkayser | 2009-10-10 23:24:07 -0700 (Sat, 10 Oct 2009) | 1 line
+</p>
+<p>
+Fix some issues wih the controller instrumentation
+</p>
+<hr size="10"></hr><p>
+r11554 | bkayser | 2009-10-07 11:56:00 -0700 (Wed, 07 Oct 2009) | 1 line
+</p>
+<p>
+Special handling of 503s
+</p>
+<hr size="10"></hr><p>
+r11118 | bkayser | 2009-09-22 12:49:00 -0700 (Tue, 22 Sep 2009) | 1 line
+</p>
+<p>
+Restart handling tested
+</p>
+<hr size="10"></hr><p>
+r10685 | bkayser | 2009-09-01 16:25:10 -0700 (Tue, 01 Sep 2009) | 1 line
+</p>
+<p>
+Remove verbose log output
+</p>
+<hr size="10"></hr><p>
+r10552 | bkayser | 2009-08-26 16:10:25 -0700 (Wed, 26 Aug 2009) | 1 line
+</p>
+<p>
+Support suppressing environment info upload
+</p>
+<hr size="10"></hr><p>
+r10379 | bkayser | 2009-08-19 15:58:49 -0700 (Wed, 19 Aug 2009) | 1 line
+</p>
+<p>
+Support ForceRestartException, protocol version 6
+</p>
+<hr size="10"></hr><p>
+r10301 | bkayser | 2009-08-17 16:46:26 -0700 (Mon, 17 Aug 2009) | 1 line
+</p>
+<p>
+Move dhh.rb into the agent as histogram.rb
+</p>
+<hr size="10"></hr><p>
+r10128 | bkayser | 2009-08-10 13:41:39 -0700 (Mon, 10 Aug 2009) | 1 line
+</p>
+<p>
+Fix bug with missing transaction traces
+</p>
+<hr size="10"></hr><p>
+r10120 | bkayser | 2009-08-09 18:29:28 -0700 (Sun, 09 Aug 2009) | 1 line
+</p>
+<p>
+Fix a logical ruby error
+</p>
+<hr size="10"></hr><p>
+r10045 | bkayser | 2009-08-05 10:59:21 -0700 (Wed, 05 Aug 2009) | 1 line
+</p>
+<p>
+move untracing to Agent module
+</p>
+<hr size="10"></hr><p>
+r10037 | bkayser | 2009-08-05 09:53:56 -0700 (Wed, 05 Aug 2009) | 1 line
+</p>
+<p>
+Fix problem omitting metrics for http calls.
+</p>
+<hr size="10"></hr><p>
+r9933 | bkayser | 2009-07-31 17:17:52 -0700 (Fri, 31 Jul 2009) | 1 line
+</p>
+<p>
+Improved handling timeouts in agent
+</p>
+<hr size="10"></hr><p>
+r9551 | bkayser | 2009-07-17 15:48:08 -0700 (Fri, 17 Jul 2009) | 1 line
+</p>
+<p>
+<a
+href="http://www.pivotaltracker.com/story/show/958827">www.pivotaltracker.com/story/show/958827</a>
+</p>
+<hr size="10"></hr><p>
+r9324 | bkayser | 2009-07-08 14:30:02 -0700 (Wed, 08 Jul 2009) | 1 line
+</p>
+<p>
+Correct a debug message.
+</p>
+<hr size="10"></hr><p>
+r9196 | justinnewrelic | 2009-06-30 17:21:24 -0700 (Tue, 30 Jun 2009) | 1
+line
+</p>
+<p>
+invoke remote refactor, add post size too big error
+</p>
+<hr size="10"></hr><p>
+r9195 | justinnewrelic | 2009-06-30 17:21:16 -0700 (Tue, 30 Jun 2009) | 1
+line
+</p>
+<p>
+patch agent to catch PostTooBigException-s and retry
+</p>
+<hr size="10"></hr><p>
+r9194 | justinnewrelic | 2009-06-30 17:20:59 -0700 (Tue, 30 Jun 2009) | 1
+line
+</p>
+<p>
+comment reflow so they dont blow up my diffs man
+</p>
+<hr size="10"></hr><p>
+r9074 | bkayser | 2009-06-23 17:18:39 -0700 (Tue, 23 Jun 2009) | 1 line
+</p>
+<p>
+Fix bugs calculating the transaction trace threshold
+</p>
+<hr size="10"></hr><p>
+r8751 | bkayser | 2009-06-03 20:03:23 -0700 (Wed, 03 Jun 2009) | 1 line
+</p>
+<p>
+Add passenger shutdown hook
+</p>
+<hr size="10"></hr><p>
+r8499 | bkayser | 2009-05-15 17:03:00 -0700 (Fri, 15 May 2009) | 1 line
+</p>
+<p>
+Add thread listing to dev mode.
+</p>
+<hr size="10"></hr><p>
+r8490 | bkayser | 2009-05-15 09:23:48 -0700 (Fri, 15 May 2009) | 1 line
+</p>
+<p>
+Clean up rdocs
+</p>
+<hr size="10"></hr><p>
+r8341 | bkayser | 2009-05-01 10:18:08 -0700 (Fri, 01 May 2009) | 1 line
+</p>
+<p>
+Fix identifier calculation for background jobs
+</p>
+<hr size="10"></hr><p>
+r8283 | bkayser | 2009-04-28 15:19:53 -0700 (Tue, 28 Apr 2009) | 1 line
+</p>
+<p>
+fix a bug in agent listener
+</p>
+<hr size="10"></hr><p>
+r8267 | bkayser | 2009-04-27 16:29:47 -0700 (Mon, 27 Apr 2009) | 1 line
+</p>
+<p>
+Support multi-app mapping in agent run creation (<a
+href="http://www.pivotaltracker.com/story/show/615805">www.pivotaltracker.com/story/show/615805</a>)
+</p>
+<hr size="10"></hr><p>
+r8244 | bkayser | 2009-04-23 17:27:35 -0700 (Thu, 23 Apr 2009) | 1 line
+</p>
+<p>
+Add license key config to mongrel_rpm
+</p>
+<hr size="10"></hr><p>
+r8136 | bkayser | 2009-04-16 17:01:07 -0700 (Thu, 16 Apr 2009) | 1 line
+</p>
+<p>
+Changes to agent to better support EPM agent
+</p>
+<hr size="10"></hr><p>
+r8045 | sdaubin | 2009-04-10 14:41:52 -0700 (Fri, 10 Apr 2009) | 1 line
+</p>
+<p>
+Change the agent so that it doesn&#8217;t compress very small content when
+sending data to the collectors.
+</p>
+<hr size="10"></hr><p>
+r7977 | bkayser | 2009-04-07 16:46:58 -0700 (Tue, 07 Apr 2009) | 1 line
+</p>
+<p>
+Update the agent listener to support new launch parameters
+</p>
+<hr size="10"></hr><p>
+r7933 | thomas | 2009-04-06 10:32:36 -0700 (Mon, 06 Apr 2009) | 2 lines
+</p>
+<p>
+(agent) documentation for transaction_threshold in newrelic.yml;
+transaction_threshold defaults to 2.0 when setting is not present, case
+insensitive comparison, warn when invalid value;
+</p>
+<hr size="10"></hr><p>
+r7900 | thomas | 2009-04-02 16:56:36 -0700 (Thu, 02 Apr 2009) | 1 line
+</p>
+<p>
+(agent) change transaction_threshold API: apdex_f is default and indicates
+threshold is 4 * apdex_t; you can override by specifying a float
+</p>
+<hr size="10"></hr><p>
+r7816 | bkayser | 2009-03-27 13:56:00 -0700 (Fri, 27 Mar 2009) | 1 line
+</p>
+<p>
+Fix tests
+</p>
+<hr size="10"></hr><p>
+r7801 | bkayser | 2009-03-26 15:38:35 -0700 (Thu, 26 Mar 2009) | 1 line
+</p>
+<p>
+<a
+href="https://www.pivotaltracker.com/story/show/521140">www.pivotaltracker.com/story/show/521140</a>
+Fix bug connecting to staging with SSL, possibly fix the firewall problem
+</p>
+<hr size="10"></hr><p>
+r7788 | bkayser | 2009-03-25 16:52:50 -0700 (Wed, 25 Mar 2009) | 1 line
+</p>
+<p>
+Late binding on the mongrel detection
+</p>
+<hr size="10"></hr><p>
+r7736 | bkayser | 2009-03-23 13:58:13 -0700 (Mon, 23 Mar 2009) | 1 line
+</p>
+<p>
+A little more info on startup
+</p>
+<hr size="10"></hr><p>
+r7674 | bkayser | 2009-03-19 16:35:02 -0700 (Thu, 19 Mar 2009) | 1 line
+</p>
+<p>
+Gather gems with environment details; uncouple from railties info to avoid
+side effects; clean up settings a bit; allow for adding custom settings
+</p>
+<hr size="10"></hr><p>
+r7664 | JimGochee | 2009-03-19 14:05:41 -0700 (Thu, 19 Mar 2009) | 1 line
+</p>
+<p>
+Agent - change the way we do http timeouts
+</p>
+<hr size="10"></hr><p>
+r7372 | bkayser | 2009-03-05 15:41:15 -0800 (Thu, 05 Mar 2009) | 1 line
+</p>
+<p>
+Renamed NewRelic::Config to <a
+href="../../../../classes/NewRelic/Control.html">NewRelic::Control</a>
+</p>
+<hr size="10"></hr><p>
+r7318 | bkayser | 2009-03-03 16:53:20 -0800 (Tue, 03 Mar 2009) | 1 line
+</p>
+<p>
+Change timeout to 2 minutes from 15.
+</p>
+<hr size="10"></hr><p>
+r7312 | bkayser | 2009-03-03 15:27:07 -0800 (Tue, 03 Mar 2009) | 1 line
+</p>
+<p>
+Change timeout to 2 minutes from 15.
+</p>
+<hr size="10"></hr><p>
+r7247 | bkayser | 2009-03-01 08:54:52 -0800 (Sun, 01 Mar 2009) | 1 line
+</p>
+<p>
+small fix to samplers for jruby
+</p>
+<hr size="10"></hr><p>
+r7225 | bkayser | 2009-02-27 17:15:43 -0800 (Fri, 27 Feb 2009) | 1 line
+</p>
+<p>
+New Samplers API; preparation for the ability to add and remove samplers
+</p>
+<hr size="10"></hr><p>
+r7178 | bkayser | 2009-02-25 16:41:18 -0800 (Wed, 25 Feb 2009) | 3 lines
+</p>
+<p>
+Refactored agent code: moved agent module methods to agent module file;
+moved many instance flags from the agent class to the config class, taking
+it out as the middle man in initialization; moved instrumentation to config
+class since it could be framework dependent; removed many static references
+to stats engine to decouple the instrumentation from the installed agent
+</p>
+<hr size="10"></hr><p>
+r7146 | bkayser | 2009-02-24 14:49:07 -0800 (Tue, 24 Feb 2009) | 1 line
+</p>
+<p>
+restore lib directory
+</p>
+<hr size="10"></hr><p>
+r6752 | bkayser | 2009-02-06 10:56:36 -0800 (Fri, 06 Feb 2009) | 1 line
+</p>
+<p>
+Remove output from unit tests; fix and refactor classloader patch tests;
+Minor code cleanup
+</p>
+<hr size="10"></hr><p>
+r6723 | bkayser | 2009-02-04 16:34:09 -0800 (Wed, 04 Feb 2009) | 1 line
+</p>
+<p>
+Clean up namespace of the classloading patch
+</p>
+<hr size="10"></hr><p>
+r6711 | JimGochee | 2009-02-04 14:58:09 -0800 (Wed, 04 Feb 2009) | 1 line
+</p>
+<p>
+Add bg sanity check. <a
+href="http://www.pivotaltracker.com/story/show/391972">www.pivotaltracker.com/story/show/391972</a>
+</p>
+<hr size="10"></hr><p>
+r6430 | bkayser | 2009-02-02 13:46:28 -0800 (Mon, 02 Feb 2009) | 1 line
+</p>
+<p>
+Remove log output for migrate and other scripts.
+</p>
+<hr size="10"></hr><p>
+r6154 | JimGochee | 2009-01-21 20:48:43 -0800 (Wed, 21 Jan 2009) | 1 line
+</p>
+<p>
+Agent - on connection, get the shard collector to talk to
+</p>
+<hr size="10"></hr><p>
+r6112 | bkayser | 2009-01-20 15:19:54 -0800 (Tue, 20 Jan 2009) | 1 line
+</p>
+<p>
+WIP: adding generic script launcher to bin dir; converting deployments
+script to not use rails environment; moved some http code into config from
+the agent
+</p>
+<hr size="10"></hr><p>
+r6057 | JimGochee | 2009-01-19 10:40:48 -0800 (Mon, 19 Jan 2009) | 1 line
+</p>
+<p>
+Fix bug with random sampling feature
+</p>
+<hr size="10"></hr><p>
+r6042 | bkayser | 2009-01-18 16:14:55 -0800 (Sun, 18 Jan 2009) | 1 line
+</p>
+<p>
+Fix problem using the data api when no host is set; clean up some
+configurations in agent and config
+</p>
+<hr size="10"></hr><p>
+r6039 | bkayser | 2009-01-18 13:49:01 -0800 (Sun, 18 Jan 2009) | 1 line
+</p>
+<p>
+Fix problem using the data api when no host is set; clean up some
+configurations in agent and config
+</p>
+<hr size="10"></hr><p>
+r5918 | bkayser | 2009-01-12 14:27:07 -0800 (Mon, 12 Jan 2009) | 1 line
+</p>
+<p>
+Fix code for monitoring const_missing, disable the const_missing patch for
+production
+</p>
+<hr size="10"></hr><p>
+r5900 | JimGochee | 2009-01-11 07:01:17 -0800 (Sun, 11 Jan 2009) | 1 line
+</p>
+<p>
+Agent - added experimental option to collect frustrating transactions.
+Also, added skip count to transaction sampler.
+</p>
+<hr size="10"></hr><p>
+r5896 | JimGochee | 2009-01-10 20:20:28 -0800 (Sat, 10 Jan 2009) | 1 line
+</p>
+<p>
+Agent - Added the ability for the agent to collect a random sample as well
+as the slowest sample. This is experimental and is not going to be
+documented to customers.
+</p>
+<hr size="10"></hr><p>
+r5863 | bkayser | 2009-01-08 13:39:47 -0800 (Thu, 08 Jan 2009) | 1 line
+</p>
+<p>
+bug 574: fix error message in worker loop if SocketError is thrown.
+</p>
+<hr size="10"></hr><p>
+r5847 | JimGochee | 2009-01-07 15:30:31 -0800 (Wed, 07 Jan 2009) | 1 line
+</p>
+<p>
+Agent - fix exception typo
+</p>
+<hr size="10"></hr><p>
+r5830 | JimGochee | 2009-01-06 16:06:02 -0800 (Tue, 06 Jan 2009) | 1 line
+</p>
+<p>
+Agent - standardize on &#8216;apdex_t&#8217; for config property
+</p>
+<hr size="10"></hr><p>
+r5682 | bkayser | 2008-12-23 12:53:34 -0800 (Tue, 23 Dec 2008) | 6 lines
+</p>
+<p>
+Hooked up merb instrumentation:
+</p>
+<ul>
+<li>merged merb branch with trunk
+
+</li>
+<li>fixed namespace of the instrumentation modules to possibly fix loading
+problems
+
+</li>
+<li>changed _determine_metric_path to newrelic_metric_path
+
+</li>
+<li>refactored controller instrumentation to support merb controller
+
+</li>
+<li>other misc instrumentation refactoring; added minimal datamapper
+
+</li>
+</ul>
+<hr size="10"></hr><p>
+r5671 | JimGochee | 2008-12-23 08:23:17 -0800 (Tue, 23 Dec 2008) | 1 line
+</p>
+<p>
+fixed typo
+</p>
+<hr size="10"></hr><p>
+r5589 | bkayser | 2008-12-18 17:44:25 -0800 (Thu, 18 Dec 2008) | 1 line
+</p>
+<p>
+Remove duplicate perform_action method in action controller; fix unit
+tests.
+</p>
+<hr size="10"></hr><p>
+r5436 | bkayser | 2008-12-11 14:40:38 -0800 (Thu, 11 Dec 2008) | 1 line
+</p>
+<p>
+Move getting the reporting period inside the retry loop; clean up the
+connect method for clarity
+</p>
+<hr size="10"></hr><p>
+r5434 | JimGochee | 2008-12-11 14:11:03 -0800 (Thu, 11 Dec 2008) | 1 line
+</p>
+<p>
+Agent - send agent apdex to RPM from the agent
+</p>
+<hr size="10"></hr><p>
+r5421 | JimGochee | 2008-12-10 20:48:53 -0800 (Wed, 10 Dec 2008) | 1 line
+</p>
+<p>
+Agent - add apdex to the agent
+</p>
+<hr size="10"></hr><p>
+r5394 | JimGochee | 2008-12-10 09:10:25 -0800 (Wed, 10 Dec 2008) | 1 line
+</p>
+<p>
+Agent - change when we log instrumentation files that we process
+</p>
+<hr size="10"></hr><p>
+r5318 | bkayser | 2008-12-03 15:21:54 -0800 (Wed, 03 Dec 2008) | 1 line
+</p>
+<p>
+Catch the IngoreSilently exceptions when getting the reporting period
+</p>
+<hr size="10"></hr><p>
+r5153 | JimGochee | 2008-11-24 11:19:56 -0800 (Mon, 24 Nov 2008) | 1 line
+</p>
+<p>
+Agent - transfer app_name to RPM in &#8216;launch&#8217; command. <a
+href="http://www.pivotaltracker.com/story/show/286681">www.pivotaltracker.com/story/show/286681</a>
+</p>
+<hr size="10"></hr><p>
+r5148 | bkayser | 2008-11-22 18:54:06 -0800 (Sat, 22 Nov 2008) | 1 line
+</p>
+<p>
+Use Dir.glob without an array param
+</p>
+<hr size="10"></hr><p>
+r5102 | bkayser | 2008-11-20 10:52:41 -0800 (Thu, 20 Nov 2008) | 1 line
+</p>
+<p>
+Fix problem stripping out newrelic stack frames from errors.
+</p>
+<hr size="10"></hr><p>
+r5061 | bkayser | 2008-11-18 17:30:36 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+Code cleanup, commenting
+</p>
+<hr size="10"></hr><p>
+r5049 | JimGochee | 2008-11-18 14:35:15 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+Agent - enable background thread loading check until we ship
+</p>
+<hr size="10"></hr><p>
+r5048 | JimGochee | 2008-11-18 14:26:27 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+Agent - added sanity check for background threads
+</p>
+<hr size="10"></hr><p>
+r5044 | JimGochee | 2008-11-18 14:00:22 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+Fix agent unit test failures
+</p>
+<hr size="10"></hr><p>
+r5041 | JimGochee | 2008-11-18 12:01:05 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+fixed bill&#8217;s oops
+</p>
+<hr size="10"></hr><p>
+r5038 | JimGochee | 2008-11-18 11:38:31 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+Agent - remove all dependency loading from agent classes that could run in
+the background
+</p>
+<hr size="10"></hr><p>
+r5037 | bkayser | 2008-11-18 11:12:41 -0800 (Tue, 18 Nov 2008) | 1 line
+</p>
+<p>
+Fix reference to BusyCalculator
+</p>
+<hr size="10"></hr><p>
+r4989 | bkayser | 2008-11-14 15:25:46 -0800 (Fri, 14 Nov 2008) | 1 line
+</p>
+<p>
+Warn only if you try to start the agent twice.
+</p>
+<hr size="10"></hr><p>
+r4980 | JimGochee | 2008-11-14 13:47:00 -0800 (Fri, 14 Nov 2008) | 1 line
+</p>
+<p>
+Agent - attempt to fix dual harvest threads for litespeed
+</p>
+<hr size="10"></hr><p>
+r4978 | JimGochee | 2008-11-14 13:24:21 -0800 (Fri, 14 Nov 2008) | 1 line
+</p>
+<p>
+Agent - attempt to fix dual harvest threads for litespeed
+</p>
+<hr size="10"></hr><p>
+r4977 | JimGochee | 2008-11-14 13:19:03 -0800 (Fri, 14 Nov 2008) | 1 line
+</p>
+<p>
+Agent - attempt to fix dual harvest threads for litespeed
+</p>
+<hr size="10"></hr><p>
+r4958 | JimGochee | 2008-11-13 13:43:53 -0800 (Thu, 13 Nov 2008) | 1 line
+</p>
+<hr size="10"></hr><p>
+r4905 | bkayser | 2008-11-10 16:03:12 -0800 (Mon, 10 Nov 2008) | 1 line
+</p>
+<p>
+Don&#8217;t log IgnoreSilentlyExceptions
+</p>
+<hr size="10"></hr><p>
+r4836 | bkayser | 2008-11-06 12:55:52 -0800 (Thu, 06 Nov 2008) | 1 line
+</p>
+<p>
+Log server errors at debug level only.
+</p>
+<hr size="10"></hr><p>
+r4791 | bkayser | 2008-11-04 17:02:36 -0800 (Tue, 04 Nov 2008) | 1 line
+</p>
+<p>
+Bug 495: fix timing error when there is no newrelic.yml file.
+</p>
+<hr size="10"></hr><p>
+r4777 | bkayser | 2008-11-04 12:58:40 -0800 (Tue, 04 Nov 2008) | 1 line
+</p>
+<p>
+Bug 446: Do the gather info on the foreground thread to avoid concurrency
+issues. No way to verify this as we were unable to reproduce the bug. Needs
+to be tested in the gem and the plugin.
+</p>
+<hr size="10"></hr><p>
+r4759 | bkayser | 2008-11-03 17:11:30 -0800 (Mon, 03 Nov 2008) | 1 line
+</p>
+<p>
+Added accessor for &#8216;started&#8217;
+</p>
+<hr size="10"></hr><p>
+r4721 | bkayser | 2008-10-31 15:54:07 -0700 (Fri, 31 Oct 2008) | 1 line
+</p>
+<p>
+Improve exception handling.
+</p>
+<hr size="10"></hr><p>
+r4693 | bkayser | 2008-10-30 16:59:05 -0700 (Thu, 30 Oct 2008) | 1 line
+</p>
+<p>
+Work on gem configuration; put back require statements in agent.rb.
+</p>
+<hr size="10"></hr><p>
+r4663 | JimGochee | 2008-10-30 10:34:29 -0700 (Thu, 30 Oct 2008) | 1 line
+</p>
+<p>
+Agent - fix wording in log message
+</p>
+<hr size="10"></hr><p>
+r4635 | JimGochee | 2008-10-29 16:27:07 -0700 (Wed, 29 Oct 2008) | 1 line
+</p>
+<p>
+Agent - clean up agent shutdown
+</p>
+<hr size="10"></hr><p>
+r4627 | JimGochee | 2008-10-29 15:33:34 -0700 (Wed, 29 Oct 2008) | 1 line
+</p>
+<p>
+Agent - clean up agent shutdown
+</p>
+<hr size="10"></hr><p>
+r4610 | JimGochee | 2008-10-29 14:44:10 -0700 (Wed, 29 Oct 2008) | 1 line
+</p>
+<p>
+Agent - recover gracefully from 405 and 503 errors
+</p>
+<hr size="10"></hr><p>
+r4601 | JimGochee | 2008-10-29 14:23:23 -0700 (Wed, 29 Oct 2008) | 1 line
+</p>
+<p>
+Agent - recover gracefully from 405 and 503 errors
+</p>
+<hr size="10"></hr><p>
+r4596 | JimGochee | 2008-10-29 14:03:47 -0700 (Wed, 29 Oct 2008) | 1 line
+</p>
+<p>
+Agent - trying to detect two harvest threads starting
+</p>
+<hr size="10"></hr><p>
+r4564 | bkayser | 2008-10-28 17:50:46 -0700 (Tue, 28 Oct 2008) | 1 line
+</p>
+<p>
+renamed newrelic folder in agent
+</p>
+<hr size="10"></hr><p>
+r4517 | bkayser | 2008-10-27 14:24:06 -0700 (Mon, 27 Oct 2008) | 1 line
+</p>
+<p>
+Remove special method tracer log, use global agent log.
+</p>
+<hr size="10"></hr><p>
+r4506 | bkayser | 2008-10-26 11:17:30 -0700 (Sun, 26 Oct 2008) | 1 line
+</p>
+<p>
+Change initialization sequence for the plugin to support initialization
+from Gem; using a configuration class to capture merb/rails specific
+configuration and behavior; removing most global constants
+</p>
+<hr size="10"></hr><p>
+r4461 | JimGochee | 2008-10-22 16:14:41 -0700 (Wed, 22 Oct 2008) | 1 line
+</p>
+<p>
+Fix test controller
+</p>
+<hr size="10"></hr><p>
+r4458 | JimGochee | 2008-10-22 15:33:44 -0700 (Wed, 22 Oct 2008) | 1 line
+</p>
+<p>
+Fix agent bug in staging
+</p>
+<hr size="10"></hr><p>
+r4453 | JimGochee | 2008-10-22 14:53:57 -0700 (Wed, 22 Oct 2008) | 1 line
+</p>
+<p>
+Agent - add logging to detect duplicate reporters
+</p>
+<hr size="10"></hr><p>
+r4442 | JimGochee | 2008-10-22 09:46:29 -0700 (Wed, 22 Oct 2008) | 1 line
+</p>
+<p>
+Agent - added instance busy calculation on agent. This way, it will
+aggregate over time correctly (the max/min will be accurate)
+</p>
+<hr size="10"></hr><p>
+r4330 | JimGochee | 2008-10-20 11:10:39 -0700 (Mon, 20 Oct 2008) | 1 line
+</p>
+<p>
+AGENT - minor exception cleanup
+</p>
+<hr size="10"></hr><p>
+r4289 | bkayser | 2008-10-17 00:14:43 -0700 (Fri, 17 Oct 2008) | 1 line
+</p>
+<p>
+fix test
+</p>
+<hr size="10"></hr><p>
+r4286 | JimGochee | 2008-10-16 21:34:41 -0700 (Thu, 16 Oct 2008) | 1 line
+</p>
+<p>
+AGENT - adding run_id to the http parameters
+</p>
+<hr size="10"></hr><p>
+r4279 | JimGochee | 2008-10-16 13:13:17 -0700 (Thu, 16 Oct 2008) | 1 line
+</p>
+<p>
+AGENT - clean up thread locals after dispatcher ends. For mongrel, this
+could be important for preventing leaks
+</p>
+<hr size="10"></hr><p>
+r4265 | bkayser | 2008-10-15 16:03:29 -0700 (Wed, 15 Oct 2008) | 1 line
+</p>
+<p>
+Fix Rails Info include.
+</p>
+<hr size="10"></hr><p>
+r4182 | JimGochee | 2008-10-10 11:10:12 -0700 (Fri, 10 Oct 2008) | 5 lines
+</p>
+<p>
+Turn on Error source capture and TT stack trace capture by default.
+</p>
+<p>
+<a
+href="http://www.pivotaltracker.com/story/show/248325">www.pivotaltracker.com/story/show/248325</a>
+</p>
+<p>
+<a
+href="http://www.pivotaltracker.com/story/show/248326">www.pivotaltracker.com/story/show/248326</a>
+</p>
+<hr size="10"></hr><p>
+r4147 | bkayser | 2008-10-08 14:16:24 -0700 (Wed, 08 Oct 2008) | 1 line
+</p>
+<p>
+Agent: Set the path to the log file by using the current logfile location,
+if available.
+</p>
+<hr size="10"></hr><p>
+r4078 | bkayser | 2008-10-03 11:01:04 -0700 (Fri, 03 Oct 2008) | 1 line
+</p>
+<p>
+ATTENTION: Rev agent protocol to skip encoding; reorganize agent listener
+</p>
+<hr size="10"></hr><p>
+r4052 | bkayser | 2008-09-30 12:52:16 -0700 (Tue, 30 Sep 2008) | 1 line
+</p>
+<p>
+Bug 385: the transaction sampler was getting disabled in dev mode
+</p>
+<hr size="10"></hr><p>
+r3958 | JimGochee | 2008-09-26 09:43:05 -0700 (Fri, 26 Sep 2008) | 1 line
+</p>
+<p>
+Agent - log version on startup
+</p>
+<hr size="10"></hr><p>
+r3942 | gfeil | 2008-09-25 14:40:30 -0700 (Thu, 25 Sep 2008) | 1 line
+</p>
+<p>
+reorganizing repository
+</p>
+<hr size="10"></hr><p>
+r3940 | gfeil | 2008-09-25 14:30:41 -0700 (Thu, 25 Sep 2008) | 1 line
+</p>
+<p>
+reorganizing repository
+</p>
+<hr size="10"></hr><p>
+r3916 | kayser | 2008-09-24 14:58:06 -0700 (Wed, 24 Sep 2008) | 1 line
+</p>
+<p>
+ATTENTION AGENT: changed exception handling in initialization, shutdown and
+gather_info so it doesn&#8217;t capture Exception but is more specific;
+added more tests, removed old test code.
+</p>
+<hr size="10"></hr><p>
+r3892 | gochee | 2008-09-23 15:30:09 -0700 (Tue, 23 Sep 2008) | 1 line
+</p>
+<p>
+Agent - handle errors better in worker_loop startup
+</p>
+<hr size="10"></hr><p>
+r3879 | gochee | 2008-09-23 14:24:37 -0700 (Tue, 23 Sep 2008) | 1 line
+</p>
+<p>
+Trying to track down duplicate timeslice error
+</p>
+<hr size="10"></hr><p>
+r3876 | gochee | 2008-09-23 13:57:32 -0700 (Tue, 23 Sep 2008) | 1 line
+</p>
+<p>
+Trying to track down duplicate timeslice error
+</p>
+<hr size="10"></hr><p>
+r3874 | gochee | 2008-09-23 13:28:50 -0700 (Tue, 23 Sep 2008) | 1 line
+</p>
+<p>
+Agent - improve the accuracy of when we report data
+</p>
+<hr size="10"></hr><p>
+r3865 | gochee | 2008-09-23 11:58:27 -0700 (Tue, 23 Sep 2008) | 1 line
+</p>
+<p>
+Agent - improve the accuracy of when we report data
+</p>
+<hr size="10"></hr><p>
+r3855 | gochee | 2008-09-23 09:26:09 -0700 (Tue, 23 Sep 2008) | 1 line
+</p>
+<p>
+Remove unused agent constants
+</p>
+<hr size="10"></hr><p>
+r3775 | gochee | 2008-09-19 15:11:31 -0700 (Fri, 19 Sep 2008) | 1 line
+</p>
+<p>
+Agent - tuning
+</p>
+<hr size="10"></hr><p>
+r3728 | gochee | 2008-09-18 20:44:18 -0700 (Thu, 18 Sep 2008) | 1 line
+</p>
+<p>
+Send LicenseKey exceptions to RPM for tracking. <a
+href="http://www.pivotaltracker.com/story/show/232553">www.pivotaltracker.com/story/show/232553</a>
+</p>
+<hr size="10"></hr><p>
+r3726 | gochee | 2008-09-18 18:59:40 -0700 (Thu, 18 Sep 2008) | 1 line
+</p>
+<p>
+Agent - disable transaction_sampler when agent isn&#8217;t collecting
+samples. <a
+href="http://www.pivotaltracker.com/story/show/232739">www.pivotaltracker.com/story/show/232739</a>
+</p>
+<hr size="10"></hr><p>
+r3718 | gochee | 2008-09-18 14:59:32 -0700 (Thu, 18 Sep 2008) | 1 line
+</p>
+<p>
+Agent - Keep custom params seperate from http params
+</p>
+<hr size="10"></hr><p>
+r3712 | gochee | 2008-09-18 11:16:21 -0700 (Thu, 18 Sep 2008) | 1 line
+</p>
+<p>
+Agent - Adding a few things to Error Collector. <a
+href="http://www.pivotaltracker.com/story/show/233403">www.pivotaltracker.com/story/show/233403</a>
+</p>
+<hr size="10"></hr><p>
+r3554 | gochee | 2008-09-11 10:28:33 -0700 (Thu, 11 Sep 2008) | 1 line
+</p>
+<p>
+Agent - working on stack trace prototype
+</p>
+<hr size="10"></hr><p>
+r3550 | gochee | 2008-09-11 09:57:13 -0700 (Thu, 11 Sep 2008) | 1 line
+</p>
+<p>
+AGENT - working on prototype for capturing stack trace for slow SQL
+</p>
+<hr size="10"></hr><p>
+r3383 | gochee | 2008-09-04 15:29:43 -0700 (Thu, 04 Sep 2008) | 1 line
+</p>
+<p>
+Agent - Added warning message about passenger memory stats in RPM. <a
+href="http://www.pivotaltracker.com/story/show/225429">www.pivotaltracker.com/story/show/225429</a>
+</p>
+<hr size="10"></hr><p>
+r3379 | gochee | 2008-09-04 14:55:20 -0700 (Thu, 04 Sep 2008) | 1 line
+</p>
+<p>
+Agent BugFix 218 - fail silently with the collectors return a 405 error. We
+see these during server restarts.
+</p>
+<hr size="10"></hr><p>
+r3365 | gochee | 2008-09-04 12:09:47 -0700 (Thu, 04 Sep 2008) | 1 line
+</p>
+<p>
+Agent - Error Collector now honors the capture_params config flag. <a
+href="http://www.pivotaltracker.com/story/show/225505">www.pivotaltracker.com/story/show/225505</a>
+</p>
+<hr size="10"></hr><p>
+r3338 | gochee | 2008-09-03 14:27:51 -0700 (Wed, 03 Sep 2008) | 1 line
+</p>
+<p>
+AGENT - BugFix 361 - changed the way we determine which passenger process
+is the &#8220;spawner&#8221;.
+</p>
+<hr size="10"></hr><p>
+r3336 | gochee | 2008-09-03 13:16:09 -0700 (Wed, 03 Sep 2008) | 1 line
+</p>
+<p>
+Added flag in TT config for capturing HTTP params. <a
+href="http://www.pivotaltracker.com/story/show/224637">www.pivotaltracker.com/story/show/224637</a>
+</p>
+<hr size="10"></hr><p>
+r3331 | kayser | 2008-09-03 10:58:11 -0700 (Wed, 03 Sep 2008) | 1 line
+</p>
+<p>
+bug 366: handle missing Info class better.
+</p>
+<hr size="10"></hr><p>
+r3304 | kayser | 2008-08-31 09:08:09 -0700 (Sun, 31 Aug 2008) | 1 line
+</p>
+<p>
+Fix problem that might cause graceful disconnect to run when NR developers
+are running locally. Should not affect customers.
+</p>
+<hr size="10"></hr><p>
+r3287 | kayser | 2008-08-28 18:08:45 -0700 (Thu, 28 Aug 2008) | 3 lines
+</p>
+<p>
+ATTENTION: Agent refactoring to separate environment initialization, add
+more tests; include test_helper so tests can be run standalone from IDEs;
+use real agent initialization especially init.rb; also upload the agent
+version details Support in Agent for uploading environment information
+</p>
+<hr size="10"></hr><p>
+r3275 | kayser | 2008-08-27 17:56:03 -0700 (Wed, 27 Aug 2008) | 1 line
+</p>
+<p>
+now i broke mongrel. sigh.
+</p>
+<hr size="10"></hr><p>
+r3271 | kayser | 2008-08-27 17:05:57 -0700 (Wed, 27 Aug 2008) | 1 line
+</p>
+<p>
+fix regression from my regression fix.
+</p>
+<hr size="10"></hr><p>
+r3270 | kayser | 2008-08-27 17:01:53 -0700 (Wed, 27 Aug 2008) | 1 line
+</p>
+<p>
+fix regression from my regression fix.
+</p>
+<hr size="10"></hr><p>
+r3269 | kayser | 2008-08-27 16:50:59 -0700 (Wed, 27 Aug 2008) | 1 line
+</p>
+<p>
+fix regression from my regression fix.
+</p>
+<hr size="10"></hr><p>
+r3268 | kayser | 2008-08-27 15:58:23 -0700 (Wed, 27 Aug 2008) | 1 line
+</p>
+<p>
+Fix regression for thin support; change port identifier for jruby to
+&#8216;jruby&#8217;
+</p>
+<hr size="10"></hr><p>
+r2999 | gochee | 2008-08-15 14:05:50 -0700 (Fri, 15 Aug 2008) | 1 line
+</p>
+<p>
+Agent - story <a
+href="http://www.pivotaltracker.com/story/show/217840.">www.pivotaltracker.com/story/show/217840.</a>
+Changed the way the ignore_error_filter API works
+</p>
+<hr size="10"></hr><p>
+r2982 | gochee | 2008-08-14 15:50:35 -0700 (Thu, 14 Aug 2008) | 1 line
+</p>
+<p>
+Agent - change graceful disconnect timeout to 5 from 30 seconds.
+</p>
+<hr size="10"></hr><p>
+r2943 | gochee | 2008-08-13 16:17:08 -0700 (Wed, 13 Aug 2008) | 1 line
+</p>
+<p>
+Agent - based on Lew&#8217;s guidance, we are removing most of the TT
+config from the default newrelic.yml file. I also changed the way the
+ignore_errors property works (see the updated default newrelic.yml file).
+</p>
+<hr size="10"></hr><p>
+r2922 | gochee | 2008-08-13 14:31:32 -0700 (Wed, 13 Aug 2008) | 1 line
+</p>
+<p>
+Agent - added programatic control over error filtering for error collector
+</p>
+<hr size="10"></hr><p>
+r2913 | gochee | 2008-08-13 05:24:19 -0700 (Wed, 13 Aug 2008) | 1 line
+</p>
+<p>
+AGENT - added ability to opt-out of certain errors by adding a property to
+the newrelic.yml file
+</p>
+<hr size="10"></hr><p>
+r2827 | gochee | 2008-08-08 16:02:28 -0700 (Fri, 08 Aug 2008) | 1 line
+</p>
+<p>
+Agent fix 253. Better logging when using TT.
+</p>
+<hr size="10"></hr><p>
+r2808 | gochee | 2008-08-08 14:05:26 -0700 (Fri, 08 Aug 2008) | 1 line
+</p>
+<p>
+AGENT - Bugfix 248. Don&#8217;t record TTs in our agent woker_loop code
+</p>
+<hr size="10"></hr><p>
+r2779 | gochee | 2008-08-06 14:52:33 -0700 (Wed, 06 Aug 2008) | 1 line
+</p>
+<p>
+Fix for bug 296
+</p>
+<hr size="10"></hr><p>
+r2654 | kayser | 2008-07-30 11:27:09 -0700 (Wed, 30 Jul 2008) | 1 line
+</p>
+<p>
+ATTENTION: Fix bugs in agent: dev mode didn&#8217;t trigger instrumentation
+when enabled=false; when instrumentation was triggered, agent tries to
+connect to the server even if enabled=false
+</p>
+<hr size="10"></hr><p>
+r2636 | gochee | 2008-07-29 14:26:23 -0700 (Tue, 29 Jul 2008) | 1 line
+</p>
+<p>
+<276> fixed agent shutdown messag - set to debug logging level.
+</p>
+<hr size="10"></hr><p>
+r2635 | gochee | 2008-07-29 14:16:14 -0700 (Tue, 29 Jul 2008) | 1 line
+</p>
+<p>
+Agent - support passenger
+</p>
+<hr size="10"></hr><p>
+r2628 | kayser | 2008-07-29 11:04:33 -0700 (Tue, 29 Jul 2008) | 1 line
+</p>
+<p>
+ATTENTION Agent change: Removed logic that forced an attempted connection
+for any process where the rails env was &#8216;developer&#8217;.
+Development mode should still work. Moved at exit handler to separate
+method for readability.
+</p>
+<hr size="10"></hr><p>
+r2554 | gochee | 2008-07-25 15:16:53 -0700 (Fri, 25 Jul 2008) | 1 line
+</p>
+<p>
+Fix broken unit tests
+</p>
+<hr size="10"></hr><p>
+r2532 | gochee | 2008-07-25 11:24:44 -0700 (Fri, 25 Jul 2008) | 1 line
+</p>
+<p>
+Agent - more fixes for Litespeed. Also moved Error capture into the Agent.
+</p>
+<hr size="10"></hr><p>
+r2525 | gochee | 2008-07-25 06:49:47 -0700 (Fri, 25 Jul 2008) | 1 line
+</p>
+<p>
+Litespeed tweak. Allow more than 1 msg per 60 seconds with litespeed agents
+</p>
+<hr size="10"></hr><p>
+r2524 | gochee | 2008-07-25 06:17:57 -0700 (Fri, 25 Jul 2008) | 1 line
+</p>
+<p>
+Agent - tweaking support for litespeed. It kinda works!
+</p>
+<hr size="10"></hr><p>
+r2298 | kayser | 2008-07-15 15:36:07 -0700 (Tue, 15 Jul 2008) | 1 line
+</p>
+<p>
+Fix minor typos in agent.rb which crept in.
+</p>
+<hr size="10"></hr><p>
+r2295 | kayser | 2008-07-15 15:23:45 -0700 (Tue, 15 Jul 2008) | 1 line
+</p>
+<p>
+bug 251, fix error running rake tasks or other scripts in monitor_daemon
+mode.
+</p>
+<hr size="10"></hr><p>
+r2292 | cirne | 2008-07-15 13:09:55 -0700 (Tue, 15 Jul 2008) | 1 line
+</p>
+<p>
+ATTENTION early development of error tracing and reporting. Instrumentation
+is inside RPM only, until we move it to the Agent. Feature is available
+only to <a href="../../../../classes/NewRelic.html">NewRelic</a> Admin
+Account (for now). The home page will have an Errors Column if you are
+logged in as a <a href="../../../../classes/NewRelic.html">NewRelic</a>
+Admin. ATTENTION migration needed for shards as well as master DB.
+</p>
+<hr size="10"></hr><p>
+r2274 | gochee | 2008-07-11 13:31:43 -0700 (Fri, 11 Jul 2008) | 1 line
+</p>
+<p>
+minor agent bug fix
+</p>
+<hr size="10"></hr><p>
+r2257 | gochee | 2008-07-11 07:04:42 -0700 (Fri, 11 Jul 2008) | 1 line
+</p>
+<p>
+fix minor agent bug
+</p>
+<hr size="10"></hr><p>
+r2139 | gochee | 2008-07-07 14:50:04 -0700 (Mon, 07 Jul 2008) | 1 line
+</p>
+<p>
+<221> don&#8217;t show obfuscated SQL if agent is sending raw or none
+</p>
+<hr size="10"></hr><p>
+r2131 | kayser | 2008-07-03 16:49:24 -0700 (Thu, 03 Jul 2008) | 1 line
+</p>
+<p>
+ATTENTION: proxy server support in the agent. should verify in staging that
+the agent still sends data, but that&#8217;s all we need to verify for now.
+</p>
+<hr size="10"></hr><p>
+r2098 | gochee | 2008-07-03 09:30:59 -0700 (Thu, 03 Jul 2008) | 1 line
+</p>
+<p>
+Added request param capability to Agent API
+</p>
+<hr size="10"></hr><p>
+r2091 | gochee | 2008-07-02 21:32:58 -0700 (Wed, 02 Jul 2008) | 1 line
+</p>
+<p>
+added agent properties for configuring sample and explain threshold
+</p>
+<hr size="10"></hr><p>
+r2088 | gochee | 2008-07-02 19:28:48 -0700 (Wed, 02 Jul 2008) | 1 line
+</p>
+<p>
+make thresholds configurable
+</p>
+<hr size="10"></hr><p>
+r2081 | kayser | 2008-07-02 16:00:01 -0700 (Wed, 02 Jul 2008) | 1 line
+</p>
+<p>
+Add missing require for jruby environment.
+</p>
+<hr size="10"></hr><p>
+r1893 | gochee | 2008-06-26 16:56:29 -0700 (Thu, 26 Jun 2008) | 1 line
+</p>
+<p>
+agent should use transaction_tracer for config
+</p>
+<hr size="10"></hr><p>
+r1818 | gochee | 2008-06-25 13:42:15 -0700 (Wed, 25 Jun 2008) | 1 line
+</p>
+<p>
+fixes for bj
+</p>
+<hr size="10"></hr><p>
+r1796 | gochee | 2008-06-23 21:51:50 -0700 (Mon, 23 Jun 2008) | 1 line
+</p>
+<p>
+don&#8217;t forget to instrument_rails in developer mode
+</p>
+<hr size="10"></hr><p>
+r1786 | gochee | 2008-06-23 15:37:34 -0700 (Mon, 23 Jun 2008) | 1 line
+</p>
+<p>
+Renamed Transaction Sampler to Transaction Tracer. Moved drop-down menu to
+Early Access
+</p>
+<hr size="10"></hr><p>
+r1772 | gochee | 2008-06-20 13:46:31 -0700 (Fri, 20 Jun 2008) | 1 line
+</p>
+<p>
+log if we&#8217;re sending transaction samples
+</p>
+<hr size="10"></hr><p>
+r1754 | gochee | 2008-06-20 09:26:20 -0700 (Fri, 20 Jun 2008) | 1 line
+</p>
+<p>
+ATTENTION: lots of changes to support work on transaction sampler
+</p>
+<hr size="10"></hr><p>
+r1741 | kayser | 2008-06-19 16:52:22 -0700 (Thu, 19 Jun 2008) | 1 line
+</p>
+<p>
+ATTENTION (!!!) Changed the agent initialization so the rails
+instrumentation is only done after successfully connecting.
+</p>
+<hr size="10"></hr><p>
+r1601 | gochee | 2008-06-12 16:13:29 -0700 (Thu, 12 Jun 2008) | 1 line
+</p>
+<p>
+change logging level
+</p>
+<hr size="10"></hr><p>
+r1600 | gochee | 2008-06-12 15:43:19 -0700 (Thu, 12 Jun 2008) | 1 line
+</p>
+<p>
+AGENT - added a env var called NEWRELIC_ENABLE that can be set to false to
+disable agent startup
+</p>
+<hr size="10"></hr><p>
+r1495 | gochee | 2008-06-07 07:26:55 -0700 (Sat, 07 Jun 2008) | 1 line
+</p>
+<p>
+cleaned up exception handling. changed synchronization to stop using Mutex
+and start using thread.critical.
+</p>
+<hr size="10"></hr><p>
+r1445 | gochee | 2008-06-05 15:45:15 -0700 (Thu, 05 Jun 2008) | 2 lines
+</p>
+<p>
+stop catching exceptions and start catching StandardError
+</p>
+<hr size="10"></hr><p>
+r1424 | kayser | 2008-06-04 17:56:21 -0700 (Wed, 04 Jun 2008) | 1 line
+</p>
+<p>
+Improved support for thin domain sockets; support JRuby environments
+</p>
+<hr size="10"></hr><p>
+r1417 | gochee | 2008-06-04 16:53:47 -0700 (Wed, 04 Jun 2008) | 1 line
+</p>
+<p>
+Reset stats stack when dispatcher is called
+</p>
+<hr size="10"></hr><p>
+r1308 | cirne | 2008-05-28 15:27:52 -0700 (Wed, 28 May 2008) | 1 line
+</p>
+<p>
+Remove commented out old code in agent
+</p>
+<hr size="10"></hr><p>
+r1148 | cirne | 2008-05-22 08:27:27 -0700 (Thu, 22 May 2008) | 1 line
+</p>
+<p>
+Agent cannot use Hash#to_query because that api is not present in some
+platforms mei tested.
+</p>
+<hr size="10"></hr><p>
+r1077 | kayser | 2008-05-20 10:56:29 -0700 (Tue, 20 May 2008) | 1 line
+</p>
+<p>
+Removed &#8216;ruby&#8217; from list of $0&#8217;s to ignore, just to be
+safe.
+</p>
+<hr size="10"></hr><p>
+r1069 | kayser | 2008-05-19 17:08:45 -0700 (Mon, 19 May 2008) | 1 line
+</p>
+<p>
+Fix typo
+</p>
+<hr size="10"></hr><p>
+r1042 | cirne | 2008-05-16 15:24:59 -0700 (Fri, 16 May 2008) | 1 line
+</p>
+<p>
+Oops glad this never got published
+</p>
+<hr size="10"></hr><p>
+r1034 | cirne | 2008-05-16 11:42:49 -0700 (Fri, 16 May 2008) | 1 line
+</p>
+<p>
+Clean up agent source for GA publication
+</p>
+<hr size="10"></hr><p>
+r996 | cirne | 2008-05-14 12:00:25 -0700 (Wed, 14 May 2008) | 1 line
+</p>
+<p>
+Fix explain sql threshold
+</p>
+<hr size="10"></hr><p>
+r993 | cirne | 2008-05-14 10:35:23 -0700 (Wed, 14 May 2008) | 1 line
+</p>
+<p>
+Remove mongrel and thin declarations in agent, refer to them only if
+declared elsewhere. (Bug 106)
+</p>
+<hr size="10"></hr><p>
+r944 | cirne | 2008-05-10 16:40:50 -0700 (Sat, 10 May 2008) | 1 line
+</p>
+<p>
+In recent agents view, present time in current time one.
+</p>
+<hr size="10"></hr><p>
+r886 | cirne | 2008-05-08 12:15:53 -0700 (Thu, 08 May 2008) | 1 line
+</p>
+<p>
+Another fix for the time object serialization (Runt) bug. also more
+diagnostics for case when an agent that supposedly went away is still
+reporting in.
+</p>
+<hr size="10"></hr><p>
+r884 | cirne | 2008-05-08 10:13:04 -0700 (Thu, 08 May 2008) | 1 line
+</p>
+<p>
+Fix bug 98 - agent fails on connect with Runt plugin installed in customer
+app.
+</p>
+<hr size="10"></hr><p>
+r848 | cirne | 2008-05-06 13:48:31 -0700 (Tue, 06 May 2008) | 1 line
+</p>
+<p>
+Fix transaction trace bug with explains on databases that are not in the
+default connection (swallow exception) and also trim sql statements to 8K
+when capturing in the transaction trace.
+</p>
+<hr size="10"></hr><p>
+r844 | cirne | 2008-05-05 20:30:18 -0700 (Mon, 05 May 2008) | 1 line
+</p>
+<p>
+tweak log message
+</p>
+<hr size="10"></hr><p>
+r842 | cirne | 2008-05-05 15:15:44 -0700 (Mon, 05 May 2008) | 1 line
+</p>
+<p>
+Slowest sample msg => info so we can debug it better
+</p>
+<hr size="10"></hr><p>
+r841 | cirne | 2008-05-05 15:05:52 -0700 (Mon, 05 May 2008) | 1 line
+</p>
+<p>
+Make some log messages in the agent a little less noisy
+</p>
+<hr size="10"></hr><p>
+r823 | cirne | 2008-05-02 13:42:10 -0700 (Fri, 02 May 2008) | 1 line
+</p>
+<p>
+Don&#8217;t create host agents from ui tier -move that to agent listener
+controller
+</p>
+<hr size="10"></hr><p>
+r806 | kayser | 2008-04-28 15:10:41 -0700 (Mon, 28 Apr 2008) | 1 line
+</p>
+<p>
+Fix nil de-reference
+</p>
+<hr size="10"></hr><p>
+r793 | cirne | 2008-04-25 09:55:55 -0700 (Fri, 25 Apr 2008) | 1 line
+</p>
+<p>
+Initial prototype of scalability analysis.
+</p>
+<hr size="10"></hr><p>
+r783 | cirne | 2008-04-23 12:49:49 -0700 (Wed, 23 Apr 2008) | 1 line
+</p>
+<p>
+fix Desktop edition: it didn&#8217;t work unless the user put a real
+license key in, and we want it to work without a license key.
+</p>
+<hr size="10"></hr><p>
+r762 | cirne | 2008-04-18 11:51:54 -0700 (Fri, 18 Apr 2008) | 1 line
+</p>
+<p>
+Minor tweaks to readme. Also, put more stringent check on license key in
+agent side, so that agents without a license key (ie, plugin installed but
+no account setup) don&#8217;t put load on rpm.
+</p>
+<hr size="10"></hr><p>
+r760 | cirne | 2008-04-18 08:47:40 -0700 (Fri, 18 Apr 2008) | 1 line
+</p>
+<p>
+Lots of minor documentation tweaks; also, add a license file for the Agent.
+This will need to be modified before GA.
+</p>
+<hr size="10"></hr><p>
+r704 | kayser | 2008-04-09 16:52:19 -0700 (Wed, 09 Apr 2008) | 1 line
+</p>
+<p>
+Fix disconnect handling
+</p>
+<hr size="10"></hr><p>
+r682 | cirne | 2008-04-03 16:03:09 -0700 (Thu, 03 Apr 2008) | 1 line
+</p>
+<p>
+Force the agent to disconnect when the agent listener gets a message from
+an agent run that it cannot find by id.
+</p>
+<hr size="10"></hr><p>
+r659 | cirne | 2008-03-31 12:26:53 -0700 (Mon, 31 Mar 2008) | 1 line
+</p>
+<p>
+Fix bug 42: remove time window selection from agents overview page. (User
+can no longer find agents that have not reported data in the last 6 hours,
+but that is not a common use case and the ui for this was very confusing).
+</p>
+<hr size="10"></hr><p>
+r653 | cirne | 2008-03-31 08:22:07 -0700 (Mon, 31 Mar 2008) | 1 line
+</p>
+<p>
+Tweaks to iPhone; turn on threshold setting feature
+</p>
+<hr size="10"></hr><p>
+r642 | cirne | 2008-03-28 15:14:23 -0700 (Fri, 28 Mar 2008) | 1 line
+</p>
+<p>
+Initial prototype of iPhone UI.
+</p>
+<hr size="10"></hr><p>
+r637 | cirne | 2008-03-27 20:11:30 -0700 (Thu, 27 Mar 2008) | 1 line
+</p>
+<p>
+Fix some problems with transaction trace ui navigation. Large
+search-and-replace to switch controller params of :agent_id with the more
+standard :agent.
+</p>
+<hr size="10"></hr><p>
+r626 | cirne | 2008-03-26 16:51:54 -0700 (Wed, 26 Mar 2008) | 1 line
+</p>
+<p>
+More transaction sampling work
+</p>
+<hr size="10"></hr><p>
+r613 | cirne | 2008-03-25 19:54:00 -0700 (Tue, 25 Mar 2008) | 1 line
+</p>
+<p>
+More work to get samples working.
+</p>
+<hr size="10"></hr><p>
+r611 | cirne | 2008-03-25 19:16:18 -0700 (Tue, 25 Mar 2008) | 1 line
+</p>
+<p>
+More work for transaction sampling. Ready to try out on RPM itself (but not
+customer-managed agents!)
+</p>
+<hr size="10"></hr><p>
+r610 | cirne | 2008-03-25 17:50:25 -0700 (Tue, 25 Mar 2008) | 1 line
+</p>
+<p>
+Early development work for production transaction sampling. Not ready for
+prime time.
+</p>
+<hr size="10"></hr><p>
+r556 | cirne | 2008-03-20 08:27:05 -0700 (Thu, 20 Mar 2008) | 1 line
+</p>
+<p>
+Fix bug 27 (dev edition broken). Fix some docs about new_relic.yml (should
+be &#8216;newrelic.yml&#8217;). Add support for thin web server. Remove
+defunct instrument_rails.rb.
+</p>
+<hr size="10"></hr><p>
+r541 | cirne | 2008-03-18 09:47:43 -0700 (Tue, 18 Mar 2008) | 1 line
+</p>
+<p>
+Agent Listener checks for mongrel limit on agent connect and rejects new
+agents when mongrel limit is exceeded. We look back in the last 24 hours
+for the set of connected agents to allow floating licenses.
+</p>
+<hr size="10"></hr><p>
+r534 | cirne | 2008-03-16 20:12:04 -0700 (Sun, 16 Mar 2008) | 1 line
+</p>
+<p>
+Update agent protocol - put version in url (rather than in post data, which
+may change format between versions) and compress message data for 90+%
+bandwidth savings. Remove data points from graphs. Tweaks for dev ui based
+on customer feedback. Remove dead secure ERB prototype code.
+</p>
+<hr size="10"></hr><p>
+r525 | cirne | 2008-03-13 20:28:43 -0700 (Thu, 13 Mar 2008) | 1 line
+</p>
+<p>
+Resume work on Transaction Sampling. Whent the feature is enabled, one
+agent will send the slowest transaction for a reporting period, every
+reporting period (if the transaction exceeds 2 seconds). Also, update
+schema comment headers in model classes. NOTE the transaction tracer
+functionality is not integrated into the GA release of 6/1 - it only works
+in dev mode, and has no UI code yet.
+</p>
+<hr size="10"></hr><p>
+r472 | cirne | 2008-02-22 13:45:23 -0800 (Fri, 22 Feb 2008) | 1 line
+</p>
+<p>
+Agent now defaults to reporting into collector.newrelic.com
+</p>
+<hr size="10"></hr><p>
+r465 | kovacs | 2008-02-20 20:46:10 -0800 (Wed, 20 Feb 2008) | 2 lines
+</p>
+<p>
+fix for ticket 36. Add SSL to agent -> server communication. Enabled with
+ssl: true in newrelic.yml
+</p>
+<hr size="10"></hr><p>
+r439 | cirne | 2008-02-13 14:34:48 -0800 (Wed, 13 Feb 2008) | 1 line
+</p>
+<p>
+Add a msg at agent startup to advertise developer edition. Tweak developer
+ui a bit.
+</p>
+<hr size="10"></hr><p>
+r422 | cirne | 2008-02-07 17:42:33 -0800 (Thu, 07 Feb 2008) | 1 line
+</p>
+<p>
+Comment tweak
+</p>
+<hr size="10"></hr><p>
+r421 | cirne | 2008-02-07 17:27:35 -0800 (Thu, 07 Feb 2008) | 1 line
+</p>
+<p>
+Turn of STDERR logging for agent when not running inside a mongrel process
+</p>
+<hr size="10"></hr><p>
+r420 | cirne | 2008-02-07 17:18:12 -0800 (Thu, 07 Feb 2008) | 1 line
+</p>
+<p>
+Agent changes to take out logging problems when it is disabled;
+significantly changes the bootstrap order
+</p>
+<hr size="10"></hr><p>
+r417 | cirne | 2008-02-06 16:48:31 -0800 (Wed, 06 Feb 2008) | 2 lines
+</p>
+<p>
+Fix agent reconnect bug
+</p>
+<hr size="10"></hr><p>
+r416 | cirne | 2008-02-06 14:23:15 -0800 (Wed, 06 Feb 2008) | 1 line
+</p>
+<p>
+Tweaks to the agent to support daemon mode.
+</p>
+<hr size="10"></hr><p>
+r415 | cirne | 2008-02-05 23:11:30 -0800 (Tue, 05 Feb 2008) | 2 lines
+</p>
+<p>
+Argh - annoying production problem. Typo on agent listener controller hosed
+inbound data since 5:30pm.
+</p>
+<hr size="10"></hr><p>
+r412 | cirne | 2008-02-05 22:11:07 -0800 (Tue, 05 Feb 2008) | 1 line
+</p>
+<p>
+More work on prod bugs
+</p>
+<hr size="10"></hr><p>
+r408 | cirne | 2008-02-05 17:52:23 -0800 (Tue, 05 Feb 2008) | 1 line
+</p>
+<p>
+Fixed big problem with agent reconnect logic saturates CPU when site is
+down.
+</p>
+<hr size="10"></hr><p>
+r405 | cirne | 2008-02-05 17:09:21 -0800 (Tue, 05 Feb 2008) | 1 line
+</p>
+<p>
+Fix bugs in the daemon monitor config stuff
+</p>
+<hr size="10"></hr><p>
+r403 | cirne | 2008-02-05 13:50:05 -0800 (Tue, 05 Feb 2008) | 1 line
+</p>
+<p>
+Begin work on a public part of the app that shows information on the
+aggregate of everything we monitor. (Requires newrelic admin to access for
+now until it&#8217;s ready for prime time.) Also, for Hockey Pool, add back
+in support for monitoring daemon processes, by setting the flag
+&#8216;monitor_daemons&#8217; to true in newrelic.yml
+</p>
+<hr size="10"></hr><p>
+r402 | cirne | 2008-02-05 11:50:41 -0800 (Tue, 05 Feb 2008) | 1 line
+</p>
+<p>
+Work more on optimization for memory-by-host metric value calculation, and
+also remove troublesome puts messages from agent
+</p>
+<hr size="10"></hr><p>
+r393 | cirne | 2008-02-01 15:24:43 -0800 (Fri, 01 Feb 2008) | 1 line
+</p>
+<p>
+Attempt fix at metric explosion for Gaia; additions to pricing estimation
+controller, improvements to developer edition. New Agent packaging.
+</p>
+<hr size="10"></hr><p>
+r367 | cirne | 2008-01-29 09:42:20 -0800 (Tue, 29 Jan 2008) | 1 line
+</p>
+<p>
+In development environment, turn on RPM Agent developer mode, and turn off
+Agent-service communication, so we can roll out evaluation of developer
+tool.
+</p>
+<hr size="10"></hr><p>
+r362 | cirne | 2008-01-28 17:20:54 -0800 (Mon, 28 Jan 2008) | 1 line
+</p>
+<p>
+Refactor agent: move pollers (CPU and memory for now, others in the
+futures) into separate files in the agent subdirectory so we can add more
+in the future.
+</p>
+<hr size="10"></hr><p>
+r342 | cirne | 2008-01-24 14:08:59 -0800 (Thu, 24 Jan 2008) | 1 line
+</p>
+<p>
+Work on memory stats, and aggregating CPU and DB by host. ALSO: disable
+worm cache to see if that heps reduce memory footprint (hopefully not at
+expense of too response time or db consumption). To re-anable, set
+WormCache::DISABLED to false.
+</p>
+<hr size="10"></hr><p>
+r341 | cirne | 2008-01-23 09:44:38 -0800 (Wed, 23 Jan 2008) | 1 line
+</p>
+<p>
+Add Memory metric; conditionally include in the agent overview dashboard.
+Divide resource usage by host in overview page. Begin work on cluster
+breakout views.
+</p>
+<hr size="10"></hr><p>
+r317 | cirne | 2008-01-20 17:12:32 -0800 (Sun, 20 Jan 2008) | 1 line
+</p>
+<p>
+More work to simplify setup. Added help page, and a screencast.
+</p>
+<hr size="10"></hr><p>
+r315 | cirne | 2008-01-19 22:05:50 -0800 (Sat, 19 Jan 2008) | 1 line
+</p>
+<p>
+More tweaks for private beta
+</p>
+<hr size="10"></hr><p>
+r298 | cirne | 2008-01-19 12:16:13 -0800 (Sat, 19 Jan 2008) | 1 line
+</p>
+<p>
+More polish for private beta. Add a view that allows new relic admins to
+see all other accounts (rather than jamming all into one huge home page.)
+Imrpove Agent connect logic and error logging when license problems are
+found.
+</p>
+<hr size="10"></hr><p>
+r297 | cirne | 2008-01-18 17:15:44 -0800 (Fri, 18 Jan 2008) | 1 line
+</p>
+<hr size="10"></hr><p>
+r293 | cirne | 2008-01-18 15:00:38 -0800 (Fri, 18 Jan 2008) | 1 line
+</p>
+<hr size="10"></hr><p>
+r292 | cirne | 2008-01-18 14:58:08 -0800 (Fri, 18 Jan 2008) | 1 line
+</p>
+<hr size="10"></hr><p>
+r291 | cirne | 2008-01-18 14:57:31 -0800 (Fri, 18 Jan 2008) | 1 line
+</p>
+<p>
+Work on home directory improvement. (At EY, a new directory is named for
+each push so we have to specify the parent&#8217;s parent. Make this
+configurable at the agent level)
+</p>
+<hr size="10"></hr><p>
+r287 | cirne | 2008-01-18 13:46:16 -0800 (Fri, 18 Jan 2008) | 1 line
+</p>
+<p>
+Production fixes.
+</p>
+<hr size="10"></hr><p>
+r281 | cirne | 2008-01-17 14:14:59 -0800 (Thu, 17 Jan 2008) | 1 line
+</p>
+<p>
+Step 1 of Agent refactoring to have consistent pie chart with developer
+edition. Track exclusive time as well as total time for traced methods.
+</p>
+<hr size="10"></hr><p>
+r280 | cirne | 2008-01-15 21:38:32 -0800 (Tue, 15 Jan 2008) | 1 line
+</p>
+<p>
+Log some core status messages to stderr
+</p>
+<hr size="10"></hr><p>
+r279 | cirne | 2008-01-14 14:06:06 -0800 (Mon, 14 Jan 2008) | 1 line
+</p>
+<p>
+Make the agent report period server specified (and currently configurable
+via config/config.yml).
+</p>
+<hr size="10"></hr><p>
+r272 | kovacs | 2008-01-10 01:03:30 -0800 (Thu, 10 Jan 2008) | 4 lines
+</p>
+<p>
+refactored user signup to go through accounts controller so that account
+admins can use the users controller for adding new users to the existing
+account add licensing to agent and agentlistener as well as newrelic.yml
+add account status and license key
+</p>
+<hr size="10"></hr><p>
+r264 | cirne | 2008-01-08 17:04:42 -0800 (Tue, 08 Jan 2008) | 1 line
+</p>
+<p>
+Fix some edge bugs in new authentication model.
+</p>
+<hr size="10"></hr><p>
+r256 | cirne | 2008-01-07 12:52:25 -0800 (Mon, 07 Jan 2008) | 1 line
+</p>
+<p>
+Fix bug 14 - agent now notifies server at process exit, so we know when an
+agent goes down. Also tweak some doc files.
+</p>
+<hr size="10"></hr><p>
+r243 | cirne | 2008-01-03 18:12:53 -0800 (Thu, 03 Jan 2008) | 1 line
+</p>
+<p>
+Still working on renaming. SVN is fun.
+</p>
+<hr size="10"></hr>
+    </div>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+    </div>
+  </body>
+</html>

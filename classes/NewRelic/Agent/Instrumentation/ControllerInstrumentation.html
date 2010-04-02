@@ -1,79 +1,35 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Module: NewRelic::Agent::Instrumentation::ControllerInstrumentation</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-  // <![CDATA[
-
-  function popupCode( url ) {
-    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
-  }
-
-  function toggleCode( id ) {
-    if ( document.getElementById )
-      elem = document.getElementById( id );
-    else if ( document.all )
-      elem = eval( "document.all." + id );
-    else
-      return false;
-
-    elemStyle = elem.style;
-    
-    if ( elemStyle.display != "block" ) {
-      elemStyle.display = "block"
-    } else {
-      elemStyle.display = "none"
-    }
-
-    return true;
-  }
-  
-  // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
-  // ]]>
-  </script>
-
+    <title>NewRelic::Agent::Instrumentation::ControllerInstrumentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
 
-
-
-    <div id="classHeader">
-        <table class="header-table">
-        <tr class="top-aligned-row">
-          <td><strong>Module</strong></td>
-          <td class="class-name-in-header">NewRelic::Agent::Instrumentation::ControllerInstrumentation</td>
-        </tr>
-        <tr class="top-aligned-row">
-            <td><strong>In:</strong></td>
-            <td>
-                <a href="../../../../files/lib/new_relic/agent/instrumentation/controller_instrumentation_rb.html">
-                lib/new_relic/agent/instrumentation/controller_instrumentation.rb
-                </a>
-        <br />
-            </td>
-        </tr>
-
-        </table>
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            NewRelic::Agent::Instrumentation::ControllerInstrumentation 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/lib/new_relic/agent/instrumentation/controller_instrumentation_rb.html">lib/new_relic/agent/instrumentation/controller_instrumentation.rb</a></li>
+            
+        </ul>
     </div>
-  <!-- banner header -->
-
-  <div id="bodyContent">
-
-
-
-  <div id="contextContent">
-
-    <div id="description">
-      <h2><a href="../../../NewRelic.html">NewRelic</a> instrumentation for controller actions and tasks</h2>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <h2><a href="../../../NewRelic.html">NewRelic</a> instrumentation for controller actions and tasks</h2>
 <p>
 This instrumentation is applied to the action controller to collect metrics
 for every web request.
@@ -85,61 +41,80 @@ traced errors.
 </p>
 <p>
 For details on how to instrument background tasks see <a
-href="ControllerInstrumentation/ClassMethods.html#M000179">ClassMethods#add_transaction_tracer</a>
+href="ControllerInstrumentation/ClassMethods.html#M000738">ClassMethods#add_transaction_tracer</a>
 and <a
-href="ControllerInstrumentation.html#M000174">perform_action_with_newrelic_trace</a>
+href="ControllerInstrumentation.html#M000741">perform_action_with_newrelic_trace</a>
 </p>
 
     </div>
+    
 
+    
 
-   </div>
+    
+    
 
-    <div id="method-list">
-      <h3 class="section-bar">Methods</h3>
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000743">newrelic_request_headers</a>,</li>
+                
+                <li><a href="#M000742">newrelic_response_code</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>P</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000741">perform_action_with_newrelic_trace</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
 
-      <div class="name-list">
-      <a href="#M000176">newrelic_request_headers</a>&nbsp;&nbsp;
-      <a href="#M000175">newrelic_response_code</a>&nbsp;&nbsp;
-      <a href="#M000174">perform_action_with_newrelic_trace</a>&nbsp;&nbsp;
-      </div>
-    </div>
+    
 
-  </div>
+    
 
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="ControllerInstrumentation/ClassMethods.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a></li>
+        
+        <li><span class="type">MODULE</span> <a href="ControllerInstrumentation/ClassMethodsShim.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethodsShim</a></li>
+        
+        <li><span class="type">MODULE</span> <a href="ControllerInstrumentation/Shim.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::Shim</a></li>
+        
+    </ul>
+    
 
-    <!-- if includes -->
+    
 
-    <div id="section">
+    
 
-    <div id="class-list">
-      <h3 class="section-bar">Classes and Modules</h3>
-
-      Module <a href="ControllerInstrumentation/ClassMethods.html" class="link">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a><br />
-
-    </div>
-
-
-
-
-      
-
-
-    <!-- if method_list -->
-    <div id="methods">
-      <h3 class="section-bar">Public Instance methods</h3>
-
-      <div id="method-M000174" class="method-detail">
-        <a name="M000174"></a>
-
-        <div class="method-heading">
-          <a href="#M000174" class="method-signature">
-          <span class="method-name">perform_action_with_newrelic_trace</span><span class="method-args">(*args) {|| ...}</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000741">
+                    
+                    <a name="M000741"></a><b>perform_action_with_newrelic_trace</b>(*args, &amp;block)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
 Yield to the given block with <a href="../../../NewRelic.html">NewRelic</a>
 tracing. Used by default instrumentation on controller actions in Rails and
 Merb. But it can also be used in custom instrumentation of controller
@@ -147,11 +122,11 @@ methods and background tasks.
 </p>
 <p>
 This is the method invoked by instrumentation added by the <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000179">ClassMethods#add_transaction_tracer</a></tt>.
+href="ControllerInstrumentation/ClassMethods.html#M000738">ClassMethods#add_transaction_tracer</a></tt>.
 </p>
 <p>
-Here&#8216;s a more verbose version of the example shown in <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000179">ClassMethods#add_transaction_tracer</a></tt>
+Here&#8217;s a more verbose version of the example shown in <tt><a
+href="ControllerInstrumentation/ClassMethods.html#M000738">ClassMethods#add_transaction_tracer</a></tt>
 using this method instead of add_transaction_tracer.
 </p>
 <p>
@@ -203,10 +178,10 @@ URI does not have any elements with data in them such as in many REST URIs.
 part of the metric name
 
 </li>
-<li><tt>:params =&gt; {&#8230;}</tt> to provide information about the context
-of the call, used in transaction trace display, for example: <tt>:params
-=&gt; { :account =&gt; @account.name, :file =&gt; file.name }</tt> These
-are treated similarly to request parameters in web transactions.
+<li><tt>:params =&gt; {...}</tt> to provide information about the context of
+the call, used in transaction trace display, for example: <tt>:params =&gt;
+{ :account =&gt; @account.name, :file =&gt; file.name }</tt> These are
+treated similarly to request parameters in web transactions.
 
 </li>
 </ul>
@@ -236,11 +211,19 @@ object that may respond to uri and referer.
 If a single argument is passed in, it is treated as a metric path. This
 form is deprecated.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000174-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000174-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 232</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000741_source')" id="l_M000741_source">show</a>
+                        
+                    </p>
+                    <div id="M000741_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 233</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
       
       <span class="ruby-comment cmt"># Skip instrumentation based on the value of 'do_not_trace' and if </span>
@@ -277,71 +260,70 @@ form is deprecated.
         <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">record_apdex</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">_is_filtered?</span>(<span class="ruby-value str">'ignore_apdex'</span>)
         <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">pop</span>
       <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="section-bar">Protected Instance methods</h3>
-
-      <div id="method-M000176" class="method-detail">
-        <a name="M000176"></a>
-
-        <div class="method-heading">
-          <a href="#M000176" class="method-signature">
-          <span class="method-name">newrelic_request_headers</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000176-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000176-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 274</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Protected methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000743">
+                    
+                    <a name="M000743"></a><b>newrelic_request_headers</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000743_source')" id="l_M000743_source">show</a>
+                        
+                    </p>
+                    <div id="M000743_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 275</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_request_headers</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:request</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:headers</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">headers</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000175" class="method-detail">
-        <a name="M000175"></a>
-
-        <div class="method-heading">
-          <a href="#M000175" class="method-signature">
-          <span class="method-name">newrelic_response_code</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000742">
+                    
+                    <a name="M000742"></a><b>newrelic_response_code</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
 Should be implemented in the dispatcher class
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000175-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000175-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 272</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_response_code</span>; <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
 
-
-    </div>
-
-
-  </div>
-
-
-<div id="validator-badges">
-  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000742_source')" id="l_M000742_source">show</a>
+                        
+                    </p>
+                    <div id="M000742_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 273</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_response_code</span>; <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
 </div>
-
-</body>
-</html>
+    </div>
+  </body>
+</html>    

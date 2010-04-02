@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NewRelic::Command</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+    <script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            NewRelic::Command 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/new_relic/command_rb.html">lib/new_relic/command.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>E</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000964">err</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000963">info</a>,</li>
+                
+                <li><a href="#M000966">inherited</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000965">new</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>R</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000967">run</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">CLASS</span> <a href="Command/CommandFailure.html">NewRelic::Command::CommandFailure</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Command/Deployments.html">NewRelic::Command::Deployments</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Command/Install.html">NewRelic::Command::Install</a></li>
+        
+    </ul>
+    
+
+    
+
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>leftover</td>
+            <td class='attr-desc'></td>
+        </tr>
+        
+    </table>
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000966">
+                    
+                    <a name="M000966"></a><b>inherited</b>(subclass)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000966_source')" id="l_M000966_source">show</a>
+                        
+                    </p>
+                    <div id="M000966_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/command.rb, line 45</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">subclass</span>)
+      <span class="ruby-ivar">@commands</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subclass</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000965">
+                    
+                    <a name="M000965"></a><b>new</b>(command_line_args)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000965_source')" id="l_M000965_source">show</a>
+                        
+                    </p>
+                    <div id="M000965_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/command.rb, line 27</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command_line_args</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">command_line_args</span>
+        <span class="ruby-comment cmt"># command line args is an options hash</span>
+        <span class="ruby-identifier">command_line_args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">|</span>
+          <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># parse command line args.  Throw an exception on a bad arg.</span>
+        <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">opts</span> <span class="ruby-operator">|</span>
+          <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;-h&quot;</span>, <span class="ruby-value str">&quot;Show this help&quot;</span>) {  <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandFailure</span>, <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">to_s</span> }
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-ivar">@leftover</span> = <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">command_line_args</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span> 
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandFailure</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>, <span class="ruby-ivar">@options</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000967">
+                    
+                    <a name="M000967"></a><b>run</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000967_source')" id="l_M000967_source">show</a>
+                        
+                    </p>
+                    <div id="M000967_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/command.rb, line 52</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">run</span>
+      
+      <span class="ruby-ivar">@command_names</span> = <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:command</span>)
+      
+      <span class="ruby-identifier">extra</span> = []
+      <span class="ruby-identifier">options</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">options</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">script_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">$0</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">script_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/newrelic_cmd$/</span>
+          <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;warning: the 'newrelic_cmd' script has been renamed 'newrelic'&quot;</span>
+          <span class="ruby-identifier">script_name</span> = <span class="ruby-value str">'newrelic'</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-node">&quot;Usage: #{script_name} [ #{ @command_names.join(&quot; | &quot;)} ] [options]&quot;</span>
+        <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;use '#{script_name} &lt;command&gt; -h' to see detailed command options&quot;</span>
+        <span class="ruby-identifier">opts</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">extra</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">order!</span>
+      <span class="ruby-identifier">command</span> = <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-comment cmt"># just make it a little easier on them</span>
+      <span class="ruby-identifier">command</span> = <span class="ruby-value str">'deployments'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">command</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/deploy/</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">command</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">options</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@command_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">command</span>)
+        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Unrecognized command: #{command}&quot;</span>
+        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">options</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">command_class</span> = <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">find</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">command</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">command</span>} 
+        <span class="ruby-identifier">command_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">extra</span>).<span class="ruby-identifier">run</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidOption</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandFailure</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000964">
+                    
+                    <a name="M000964"></a><b>err</b>(message)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000964_source')" id="l_M000964_source">show</a>
+                        
+                    </p>
+                    <div id="M000964_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/command.rb, line 23</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">err</span>(<span class="ruby-identifier">message</span>)
+      <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">message</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000963">
+                    
+                    <a name="M000963"></a><b>info</b>(message)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000963_source')" id="l_M000963_source">show</a>
+                        
+                    </p>
+                    <div id="M000963_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/command.rb, line 19</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">info</span>(<span class="ruby-identifier">message</span>)
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">message</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

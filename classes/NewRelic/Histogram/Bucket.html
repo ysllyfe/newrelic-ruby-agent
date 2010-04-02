@@ -1,245 +1,259 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: NewRelic::Histogram::Bucket</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-  // <![CDATA[
-
-  function popupCode( url ) {
-    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
-  }
-
-  function toggleCode( id ) {
-    if ( document.getElementById )
-      elem = document.getElementById( id );
-    else if ( document.all )
-      elem = eval( "document.all." + id );
-    else
-      return false;
-
-    elemStyle = elem.style;
-    
-    if ( elemStyle.display != "block" ) {
-      elemStyle.display = "block"
-    } else {
-      elemStyle.display = "none"
-    }
-
-    return true;
-  }
-  
-  // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
-  // ]]>
-  </script>
-
+    <title>NewRelic::Histogram::Bucket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
 
-
-
-    <div id="classHeader">
-        <table class="header-table">
-        <tr class="top-aligned-row">
-          <td><strong>Class</strong></td>
-          <td class="class-name-in-header">NewRelic::Histogram::Bucket</td>
-        </tr>
-        <tr class="top-aligned-row">
-            <td><strong>In:</strong></td>
-            <td>
-                <a href="../../../files/lib/new_relic/histogram_rb.html">
-                lib/new_relic/histogram.rb
-                </a>
-        <br />
-            </td>
-        </tr>
-
-        <tr class="top-aligned-row">
-            <td><strong>Parent:</strong></td>
-            <td>
-                Object
-            </td>
-        </tr>
-        </table>
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            NewRelic::Histogram::Bucket 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/new_relic/histogram_rb.html">lib/new_relic/histogram.rb</a></li>
+            
+        </ul>
     </div>
-  <!-- banner header -->
-
-  <div id="bodyContent">
-
-
-
-  <div id="contextContent">
-
-    <div id="description">
-      <p>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <p>
 Stores statistics for response times falling in a particular range. A
 bucket has a min and max response time. A response time event falls in a
-bucket if min &lt;= r/t &lt; max. A bucket also has an associated metric
-for reporting data to RPM. The bucket range is encoded in the metic name
+bucket if min <= r/t < max. A bucket also has an associated metric for
+reporting data to RPM. The bucket range is encoded in the metic name
 </p>
 
     </div>
+    
 
+    
 
-   </div>
+    
+    
 
-    <div id="method-list">
-      <h3 class="section-bar">Methods</h3>
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>M</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001030">max_millis</a>,</li>
+                
+                <li><a href="#M001029">min_millis</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001020">new</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>P</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001024">process</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001023">stats</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001031">to_s</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
 
-      <div class="name-list">
-      <a href="#M000538">max_millis</a>&nbsp;&nbsp;
-      <a href="#M000537">min_millis</a>&nbsp;&nbsp;
-      <a href="#M000534">new</a>&nbsp;&nbsp;
-      <a href="#M000536">process</a>&nbsp;&nbsp;
-      <a href="#M000535">stats</a>&nbsp;&nbsp;
-      <a href="#M000539">to_s</a>&nbsp;&nbsp;
-      </div>
-    </div>
+    
 
-  </div>
+    
 
+    
 
-    <!-- if includes -->
+    
 
-    <div id="section">
-
-
-
-
-
-    <div id="attribute-list">
-      <h3 class="section-bar">Attributes</h3>
-
-      <div class="name-list">
-        <table>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">max</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>min</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">min</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>max</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">stats</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>stats</td>
+            <td class='attr-desc'></td>
         </tr>
-        </table>
-      </div>
-    </div>
-      
+        
+    </table>
+    
 
-
-    <!-- if method_list -->
-    <div id="methods">
-      <h3 class="section-bar">Public Class methods</h3>
-
-      <div id="method-M000534" class="method-detail">
-        <a name="M000534"></a>
-
-        <div class="method-heading">
-          <a href="#M000534" class="method-signature">
-          <span class="method-name">new</span><span class="method-args">(min, max = nil)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000534-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000534-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 23</span>
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001020">
+                    
+                    <a name="M001020"></a><b>new</b>(min, max = nil)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001020_source')" id="l_M001020_source">show</a>
+                        
+                    </p>
+                    <div id="M001020_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 23</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">min</span>, <span class="ruby-identifier">max</span> = <span class="ruby-keyword kw">nil</span>)
       <span class="ruby-ivar">@min</span> = <span class="ruby-identifier">min</span>
       <span class="ruby-ivar">@max</span> = <span class="ruby-identifier">max</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="section-bar">Public Instance methods</h3>
-
-      <div id="method-M000538" class="method-detail">
-        <a name="M000538"></a>
-
-        <div class="method-heading">
-          <a href="#M000538" class="method-signature">
-          <span class="method-name">max_millis</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000538-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000538-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 56</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001030">
+                    
+                    <a name="M001030"></a><b>max_millis</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001030_source')" id="l_M001030_source">show</a>
+                        
+                    </p>
+                    <div id="M001030_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 56</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max_millis</span>
       <span class="ruby-identifier">max</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">max</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000537" class="method-detail">
-        <a name="M000537"></a>
-
-        <div class="method-heading">
-          <a href="#M000537" class="method-signature">
-          <span class="method-name">min_millis</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000537-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000537-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 52</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001029">
+                    
+                    <a name="M001029"></a><b>min_millis</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001029_source')" id="l_M001029_source">show</a>
+                        
+                    </p>
+                    <div id="M001029_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 52</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min_millis</span>
       (<span class="ruby-identifier">min</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000536" class="method-detail">
-        <a name="M000536"></a>
-
-        <div class="method-heading">
-          <a href="#M000536" class="method-signature">
-          <span class="method-name">process</span><span class="method-args">(value)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-This has return value like &lt;=&gt; but does something more than simply
-compare. If the value falls within range for the bucket, increment count
-and return 0; otherwise return a value &lt; 0 if the value belongs in a
-bucket with a lower range you can guess what it returns if the value
-belongs in a bucket with a higher range. (Hint: it&#8216;s not 0, and
-it&#8216;s not less than zero.)
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001024">
+                    
+                    <a name="M001024"></a><b>process</b>(value)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+This has return value like <=> but does something more than simply compare.
+If the value falls within range for the bucket, increment count and return
+0; otherwise return a value < 0 if the value belongs in a bucket with a
+lower range you can guess what it returns if the value belongs in a bucket
+with a higher range. (Hint: it&#8217;s not 0, and it&#8217;s not less than
+zero.)
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000536-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000536-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 38</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001024_source')" id="l_M001024_source">show</a>
+                        
+                    </p>
+                    <div id="M001024_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 38</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">value</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-value">-1</span>
@@ -252,68 +266,63 @@ it&#8216;s not less than zero.)
         <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">value</span>)
         <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span>
       <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000535" class="method-detail">
-        <a name="M000535"></a>
-
-        <div class="method-heading">
-          <a href="#M000535" class="method-signature">
-          <span class="method-name">stats</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000535-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000535-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 28</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001023">
+                    
+                    <a name="M001023"></a><b>stats</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001023_source')" id="l_M001023_source">show</a>
+                        
+                    </p>
+                    <div id="M001023_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-node">&quot;Response Times/#{min_millis}/#{max_millis}&quot;</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000539" class="method-detail">
-        <a name="M000539"></a>
-
-        <div class="method-heading">
-          <a href="#M000539" class="method-signature">
-          <span class="method-name">to_s</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000539-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000539-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 60</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001031">
+                    
+                    <a name="M001031"></a><b>to_s</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001031_source')" id="l_M001031_source">show</a>
+                        
+                    </p>
+                    <div id="M001031_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 60</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-node">&quot;#{min_millis} - #{max_millis}: #{stats.call_count}&quot;</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-<div id="validator-badges">
-  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
 </div>
-
-</body>
-</html>
+    </div>
+  </body>
+</html>    

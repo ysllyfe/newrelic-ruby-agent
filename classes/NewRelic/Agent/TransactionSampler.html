@@ -1,206 +1,262 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: NewRelic::Agent::TransactionSampler</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-  // <![CDATA[
-
-  function popupCode( url ) {
-    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
-  }
-
-  function toggleCode( id ) {
-    if ( document.getElementById )
-      elem = document.getElementById( id );
-    else if ( document.all )
-      elem = eval( "document.all." + id );
-    else
-      return false;
-
-    elemStyle = elem.style;
-    
-    if ( elemStyle.display != "block" ) {
-      elemStyle.display = "block"
-    } else {
-      elemStyle.display = "none"
-    }
-
-    return true;
-  }
-  
-  // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
-  // ]]>
-  </script>
-
+    <title>NewRelic::Agent::TransactionSampler</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
 
-
-
-    <div id="classHeader">
-        <table class="header-table">
-        <tr class="top-aligned-row">
-          <td><strong>Class</strong></td>
-          <td class="class-name-in-header">NewRelic::Agent::TransactionSampler</td>
-        </tr>
-        <tr class="top-aligned-row">
-            <td><strong>In:</strong></td>
-            <td>
-                <a href="../../../files/lib/new_relic/agent/transaction_sampler_rb.html">
-                lib/new_relic/agent/transaction_sampler.rb
-                </a>
-        <br />
-            </td>
-        </tr>
-
-        <tr class="top-aligned-row">
-            <td><strong>Parent:</strong></td>
-            <td>
-                Object
-            </td>
-        </tr>
-        </table>
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            NewRelic::Agent::TransactionSampler 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/new_relic/agent/transaction_sampler_rb.html">lib/new_relic/agent/transaction_sampler.rb</a></li>
+            
+        </ul>
     </div>
-  <!-- banner header -->
+    <div id="bodyContent">
+        <div id="content">
+    
 
-  <div id="bodyContent">
+    
 
+    
+    
 
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000897">current_sample_id</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>D</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000898">disable</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>H</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000919">harvest</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000913">ignore_transaction</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000896">new</a>,</li>
+                
+                <li><a href="#M000903">notice_first_scope_push</a>,</li>
+                
+                <li><a href="#M000918">notice_nosql</a>,</li>
+                
+                <li><a href="#M000908">notice_pop_scope</a>,</li>
+                
+                <li><a href="#M000914">notice_profile</a>,</li>
+                
+                <li><a href="#M000904">notice_push_scope</a>,</li>
+                
+                <li><a href="#M000911">notice_scope_empty</a>,</li>
+                
+                <li><a href="#M000917">notice_sql</a>,</li>
+                
+                <li><a href="#M000912">notice_transaction</a>,</li>
+                
+                <li><a href="#M000915">notice_transaction_cpu_time</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>R</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000920">reset!</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000899">sampling_rate=</a>,</li>
+                
+                <li><a href="#M000907">scope_depth</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
 
-  <div id="contextContent">
+    
 
+    
 
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="TransactionSampler/Shim.html">NewRelic::Agent::TransactionSampler::Shim</a></li>
+        
+    </ul>
+    
 
-   </div>
-
-    <div id="method-list">
-      <h3 class="section-bar">Methods</h3>
-
-      <div class="name-list">
-      <a href="#M000290">current_sample_id</a>&nbsp;&nbsp;
-      <a href="#M000291">disable</a>&nbsp;&nbsp;
-      <a href="#M000303">harvest</a>&nbsp;&nbsp;
-      <a href="#M000299">ignore_transaction</a>&nbsp;&nbsp;
-      <a href="#M000289">new</a>&nbsp;&nbsp;
-      <a href="#M000293">notice_first_scope_push</a>&nbsp;&nbsp;
-      <a href="#M000296">notice_pop_scope</a>&nbsp;&nbsp;
-      <a href="#M000300">notice_profile</a>&nbsp;&nbsp;
-      <a href="#M000294">notice_push_scope</a>&nbsp;&nbsp;
-      <a href="#M000297">notice_scope_empty</a>&nbsp;&nbsp;
-      <a href="#M000302">notice_sql</a>&nbsp;&nbsp;
-      <a href="#M000298">notice_transaction</a>&nbsp;&nbsp;
-      <a href="#M000301">notice_transaction_cpu_time</a>&nbsp;&nbsp;
-      <a href="#M000304">reset!</a>&nbsp;&nbsp;
-      <a href="#M000292">sampling_rate=</a>&nbsp;&nbsp;
-      <a href="#M000295">scope_depth</a>&nbsp;&nbsp;
-      </div>
-    </div>
-
-  </div>
-
-
-    <!-- if includes -->
-
-    <div id="section">
-
-
-    <div id="constants-list">
-      <h3 class="section-bar">Constants</h3>
-
-      <div class="name-list">
-        <table summary="Constants">
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">BUILDER_KEY</td>
-          <td>=</td>
-          <td class="context-item-value">:transaction_sample_builder</td>
+    
+    <div class="sectiontitle">Constants</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class="attr-name">BUILDER_KEY</td>
+            <td>=</td>
+            <td class="attr-value">:transaction_sample_builder</td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">MAX_SQL_LENGTH</td>
-          <td>=</td>
-          <td class="context-item-value">16384</td>
-          <td width="3em">&nbsp;</td>
-          <td class="context-item-desc">
+        
+        
+        <tr valign='top'>
+            <td class="attr-name">MAX_DATA_LENGTH</td>
+            <td>=</td>
+            <td class="attr-value">16384</td>
+        </tr>
+        
+        
+        <tr valign='top'>
+            <td class="attr-name">MAX_SQL_LENGTH</td>
+            <td>=</td>
+            <td class="attr-value">16384</td>
+        </tr>
+        
+        <tr valign='top'>
+            <td>&nbsp;</td>
+            <td colspan="2" class="attr-desc"><p>
 some statements (particularly INSERTS with large BLOBS may be very large;
 we should trim them to a maximum usable length config is the driver
 configuration for the connection
-
+</p>
 </td>
         </tr>
-        </table>
-      </div>
-    </div>
+        
+        
+    </table>
+    
 
-
-
-    <div id="attribute-list">
-      <h3 class="section-bar">Attributes</h3>
-
-      <div class="name-list">
-        <table>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">disabled</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>stack_trace_threshold</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">last_sample</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>random_sampling</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">random_sampling</td>
-          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>sampling_rate</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">samples</td>
-          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>samples</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">sampling_rate</td>
-          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>last_sample</td>
+            <td class='attr-desc'></td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">stack_trace_threshold</td>
-          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
-          <td class="context-item-desc"></td>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>disabled</td>
+            <td class='attr-desc'></td>
         </tr>
-        </table>
-      </div>
-    </div>
-      
+        
+    </table>
+    
 
-
-    <!-- if method_list -->
-    <div id="methods">
-      <h3 class="section-bar">Public Class methods</h3>
-
-      <div id="method-M000289" class="method-detail">
-        <a name="M000289"></a>
-
-        <div class="method-heading">
-          <a href="#M000289" class="method-signature">
-          <span class="method-name">new</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000289-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000289-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 19</span>
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000896">
+                    
+                    <a name="M000896"></a><b>new</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000896_source')" id="l_M000896_source">show</a>
+                        
+                    </p>
+                    <div id="M000896_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 19</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-ivar">@samples</span> = []
       <span class="ruby-ivar">@harvest_count</span> = <span class="ruby-value">0</span>
@@ -211,81 +267,91 @@ configuration for the connection
       <span class="ruby-ivar">@segment_limit</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'limit_segments'</span>, <span class="ruby-value">4000</span>)
       <span class="ruby-ivar">@stack_trace_threshold</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'stack_trace_threshold'</span>, <span class="ruby-value">0</span><span class="ruby-value">.500</span>).<span class="ruby-identifier">to_f</span>
       <span class="ruby-ivar">@samples_lock</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="section-bar">Public Instance methods</h3>
-
-      <div id="method-M000290" class="method-detail">
-        <a name="M000290"></a>
-
-        <div class="method-heading">
-          <a href="#M000290" class="method-signature">
-          <span class="method-name">current_sample_id</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000290-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000290-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 31</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000897">
+                    
+                    <a name="M000897"></a><b>current_sample_id</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000897_source')" id="l_M000897_source">show</a>
+                        
+                    </p>
+                    <div id="M000897_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 31</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_sample_id</span>
       <span class="ruby-identifier">b</span>=<span class="ruby-identifier">builder</span>
       <span class="ruby-identifier">b</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">sample_id</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000291" class="method-detail">
-        <a name="M000291"></a>
-
-        <div class="method-heading">
-          <a href="#M000291" class="method-signature">
-          <span class="method-name">disable</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000291-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000291-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 36</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000898">
+                    
+                    <a name="M000898"></a><b>disable</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000898_source')" id="l_M000898_source">show</a>
+                        
+                    </p>
+                    <div id="M000898_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable</span>
       <span class="ruby-ivar">@disabled</span> = <span class="ruby-keyword kw">true</span>
       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">remove_transaction_sampler</span> <span class="ruby-keyword kw">self</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000303" class="method-detail">
-        <a name="M000303"></a>
-
-        <div class="method-heading">
-          <a href="#M000303" class="method-signature">
-          <span class="method-name">harvest</span><span class="method-args">(previous = nil, slow_threshold = 2.0)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000919">
+                    
+                    <a name="M000919"></a><b>harvest</b>(previous = nil, slow_threshold = 2.0)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
 get the set of collected samples, merging into previous samples, and clear
 the collected sample list.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000303-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000303-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 155</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000919_source')" id="l_M000919_source">show</a>
+                        
+                    </p>
+                    <div id="M000919_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 163</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest</span>(<span class="ruby-identifier">previous</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">slow_threshold</span> = <span class="ruby-value">2.0</span>)
       <span class="ruby-keyword kw">return</span> [] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">disabled</span>
       <span class="ruby-identifier">result</span> = []
@@ -325,121 +391,156 @@ the collected sample list.
       <span class="ruby-comment cmt"># This will save us memory and bandwidth.</span>
       <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sample</span>.<span class="ruby-identifier">truncate</span>(<span class="ruby-ivar">@segment_limit</span>) }
       <span class="ruby-identifier">result</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000299" class="method-detail">
-        <a name="M000299"></a>
-
-        <div class="method-heading">
-          <a href="#M000299" class="method-signature">
-          <span class="method-name">ignore_transaction</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000299-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000299-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 116</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000913">
+                    
+                    <a name="M000913"></a><b>ignore_transaction</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000913_source')" id="l_M000913_source">show</a>
+                        
+                    </p>
+                    <div id="M000913_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 116</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_transaction</span>
       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">ignore_transaction</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">builder</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000293" class="method-detail">
-        <a name="M000293"></a>
-
-        <div class="method-heading">
-          <a href="#M000293" class="method-signature">
-          <span class="method-name">notice_first_scope_push</span><span class="method-args">(time)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000293-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000293-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 46</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000903">
+                    
+                    <a name="M000903"></a><b>notice_first_scope_push</b>(time)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000903_source')" id="l_M000903_source">show</a>
+                        
+                    </p>
+                    <div id="M000903_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 46</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_first_scope_push</span>(<span class="ruby-identifier">time</span>)
       <span class="ruby-identifier">start_builder</span>(<span class="ruby-identifier">time</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">disabled</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000296" class="method-detail">
-        <a name="M000296"></a>
-
-        <div class="method-heading">
-          <a href="#M000296" class="method-signature">
-          <span class="method-name">notice_pop_scope</span><span class="method-args">(scope, time = Time.now.to_f)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000296-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000296-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 80</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000918">
+                    
+                    <a name="M000918"></a><b>notice_nosql</b>(key, duration)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000918_source')" id="l_M000918_source">show</a>
+                        
+                    </p>
+                    <div id="M000918_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 156</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_nosql</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">duration</span>)
+      <span class="ruby-identifier">notice_extra_data</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">duration</span>, <span class="ruby-identifier">:key</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000908">
+                    
+                    <a name="M000908"></a><b>notice_pop_scope</b>(scope, time = Time.now.to_f)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000908_source')" id="l_M000908_source">show</a>
+                        
+                    </p>
+                    <div id="M000908_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 80</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_pop_scope</span>(<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">builder</span>
       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;frozen already???&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">sample</span>.<span class="ruby-identifier">frozen?</span>
       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">trace_exit</span>(<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">time</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000300" class="method-detail">
-        <a name="M000300"></a>
-
-        <div class="method-heading">
-          <a href="#M000300" class="method-signature">
-          <span class="method-name">notice_profile</span><span class="method-args">(profile)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000300-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000300-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 119</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000914">
+                    
+                    <a name="M000914"></a><b>notice_profile</b>(profile)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000914_source')" id="l_M000914_source">show</a>
+                        
+                    </p>
+                    <div id="M000914_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 119</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_profile</span>(<span class="ruby-identifier">profile</span>)
       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">set_profile</span>(<span class="ruby-identifier">profile</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">builder</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000294" class="method-detail">
-        <a name="M000294"></a>
-
-        <div class="method-heading">
-          <a href="#M000294" class="method-signature">
-          <span class="method-name">notice_push_scope</span><span class="method-args">(scope, time=Time.now.to_f)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000294-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000294-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 50</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000904">
+                    
+                    <a name="M000904"></a><b>notice_push_scope</b>(scope, time=Time.now.to_f)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000904_source')" id="l_M000904_source">show</a>
+                        
+                    </p>
+                    <div id="M000904_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 50</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_push_scope</span>(<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
       
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">builder</span>
@@ -462,31 +563,37 @@ the collected sample list.
           <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:backtrace</span>] = <span class="ruby-identifier">trace</span>
         <span class="ruby-keyword kw">end</span>
       <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000297" class="method-detail">
-        <a name="M000297"></a>
-
-        <div class="method-heading">
-          <a href="#M000297" class="method-signature">
-          <span class="method-name">notice_scope_empty</span><span class="method-args">(time=Time.now.to_f)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-This is called when we are done with the transaction. We&#8216;ve unwound
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000911">
+                    
+                    <a name="M000911"></a><b>notice_scope_empty</b>(time=Time.now.to_f)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+This is called when we are done with the transaction. We&#8217;ve unwound
 the stack to the top level.
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000297-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000297-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 88</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000911_source')" id="l_M000911_source">show</a>
+                        
+                    </p>
+                    <div id="M000911_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 88</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_scope_empty</span>(<span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
       
       <span class="ruby-identifier">last_builder</span> = <span class="ruby-identifier">builder</span>
@@ -509,182 +616,176 @@ the stack to the top level.
           <span class="ruby-ivar">@slowest_sample</span> = <span class="ruby-ivar">@last_sample</span>
         <span class="ruby-keyword kw">end</span>
       <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000302" class="method-detail">
-        <a name="M000302"></a>
-
-        <div class="method-heading">
-          <a href="#M000302" class="method-signature">
-          <span class="method-name">notice_sql</span><span class="method-args">(sql, config, duration)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000302-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000302-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 132</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000917">
+                    
+                    <a name="M000917"></a><b>notice_sql</b>(sql, config, duration)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000917_source')" id="l_M000917_source">show</a>
+                        
+                    </p>
+                    <div id="M000917_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 150</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">config</span>, <span class="ruby-identifier">duration</span>)
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">builder</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_sql</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">false</span>
-        <span class="ruby-identifier">segment</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">current_segment</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">segment</span>
-          <span class="ruby-identifier">current_sql</span> = <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:sql</span>]
-          <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">current_sql</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sql</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_sql</span>
-
-          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-constant">MAX_SQL_LENGTH</span> <span class="ruby-operator">-</span> <span class="ruby-value">4</span>)
-            <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">sql</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-constant">MAX_SQL_LENGTH</span><span class="ruby-operator">-</span><span class="ruby-value">4</span>] <span class="ruby-operator">+</span> <span class="ruby-value str">'...'</span>
-          <span class="ruby-keyword kw">end</span>
-          
-          <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:sql</span>] = <span class="ruby-identifier">sql</span>
-          <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:connection_config</span>] = <span class="ruby-identifier">config</span>
-          <span class="ruby-identifier">segment</span>[<span class="ruby-identifier">:backtrace</span>] = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@stack_trace_threshold</span> 
-        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">notice_extra_data</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">duration</span>, <span class="ruby-identifier">:sql</span>, <span class="ruby-identifier">config</span>, <span class="ruby-identifier">:connection_config</span>)
       <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000298" class="method-detail">
-        <a name="M000298"></a>
-
-        <div class="method-heading">
-          <a href="#M000298" class="method-signature">
-          <span class="method-name">notice_transaction</span><span class="method-args">(path, uri=nil, params={})</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000298-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000298-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 112</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000912">
+                    
+                    <a name="M000912"></a><b>notice_transaction</b>(path, uri=nil, params={})
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000912_source')" id="l_M000912_source">show</a>
+                        
+                    </p>
+                    <div id="M000912_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 112</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">params</span>={})
       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">disabled</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">builder</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000301" class="method-detail">
-        <a name="M000301"></a>
-
-        <div class="method-heading">
-          <a href="#M000301" class="method-signature">
-          <span class="method-name">notice_transaction_cpu_time</span><span class="method-args">(cpu_time)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000301-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000301-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 123</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000915">
+                    
+                    <a name="M000915"></a><b>notice_transaction_cpu_time</b>(cpu_time)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000915_source')" id="l_M000915_source">show</a>
+                        
+                    </p>
+                    <div id="M000915_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 123</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_time</span>)
       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">set_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_time</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">builder</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000304" class="method-detail">
-        <a name="M000304"></a>
-
-        <div class="method-heading">
-          <a href="#M000304" class="method-signature">
-          <span class="method-name">reset!</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000920">
+                    
+                    <a name="M000920"></a><b>reset!</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
 reset samples without rebooting the web server
 </p>
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000304-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000304-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 197</span>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000920_source')" id="l_M000920_source">show</a>
+                        
+                    </p>
+                    <div id="M000920_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 205</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset!</span>
       <span class="ruby-ivar">@samples</span> = []
       <span class="ruby-ivar">@last_sample</span> = <span class="ruby-keyword kw">nil</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000292" class="method-detail">
-        <a name="M000292"></a>
-
-        <div class="method-heading">
-          <a href="#M000292" class="method-signature">
-          <span class="method-name">sampling_rate=</span><span class="method-args">(val)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000292-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000292-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 41</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000899">
+                    
+                    <a name="M000899"></a><b>sampling_rate=</b>(val)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000899_source')" id="l_M000899_source">show</a>
+                        
+                    </p>
+                    <div id="M000899_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 41</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sampling_rate=</span>(<span class="ruby-identifier">val</span>)
       <span class="ruby-ivar">@sampling_rate</span> = <span class="ruby-identifier">val</span>
       <span class="ruby-ivar">@harvest_count</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-identifier">val</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000295" class="method-detail">
-        <a name="M000295"></a>
-
-        <div class="method-heading">
-          <a href="#M000295" class="method-signature">
-          <span class="method-name">scope_depth</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000295-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000295-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 74</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000907">
+                    
+                    <a name="M000907"></a><b>scope_depth</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000907_source')" id="l_M000907_source">show</a>
+                        
+                    </p>
+                    <div id="M000907_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sampler.rb, line 74</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_depth</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">builder</span>
 
       <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">scope_depth</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-<div id="validator-badges">
-  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
 </div>
-
-</body>
-</html>
+    </div>
+  </body>
+</html>    

@@ -1,79 +1,37 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>File: agent.rb</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-  // <![CDATA[
-
-  function popupCode( url ) {
-    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
-  }
-
-  function toggleCode( id ) {
-    if ( document.getElementById )
-      elem = document.getElementById( id );
-    else if ( document.all )
-      elem = eval( "document.all." + id );
-    else
-      return false;
-
-    elemStyle = elem.style;
-    
-    if ( elemStyle.display != "block" ) {
-      elemStyle.display = "block"
-    } else {
-      elemStyle.display = "none"
-    }
-
-    return true;
-  }
-  
-  // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
-  // ]]>
-  </script>
-
+    <title>agent.rb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
 
+<body>     
+    <div class="banner">
+        <h1>
+            agent.rb
+        </h1>
+        <ul class="files">
+            <li>lib/new_relic/agent.rb</li>
+            <li>Last modified: Wed Mar 31 10:34:29 -0700 2010</li>
+        </ul>
+    </div>
 
-
-  <div id="fileHeader">
-    <h1>agent.rb</h1>
-    <table class="header-table">
-    <tr class="top-aligned-row">
-      <td><strong>Path:</strong></td>
-      <td>lib/new_relic/agent.rb
-      </td>
-    </tr>
-    <tr class="top-aligned-row">
-      <td><strong>Last Update:</strong></td>
-      <td>Tue Mar 30 07:21:32 -0700 2010</td>
-    </tr>
-    </table>
-  </div>
-  <!-- banner header -->
-
-  <div id="bodyContent">
-
-
-
-  <div id="contextContent">
-
-    <div id="description">
-      <h1>New Relic Agent</h1>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <h1>New Relic Agent</h1>
 <p>
 New Relic RPM is a performance monitoring application for Ruby applications
 running in production. For more information on RPM please visit <a
-href="http://www.newrelic.com">www.newrelic.com</a>.
+href="http://www.newrelic.com.">www.newrelic.com.</a>
 </p>
 <p>
 The New Relic Agent can be installed in Rails applications to gather
@@ -111,8 +69,9 @@ For Sinatra, just require the <tt>newrelic_rpm</tt> gem and it will
 automatically detect Sinatra and instrument all the handlers.
 </p>
 <p>
-For other frameworks, or to manage the agent manually, invoke
-NewRelic::Agent#manual_start directly.
+For other frameworks, or to manage the agent manually, invoke <a
+href="../../../classes/NewRelic/Agent.html#M000943">NewRelic::Agent#manual_start</a>
+directly.
 </p>
 <h2>Configuring the Agent</h2>
 <p>
@@ -133,72 +92,106 @@ href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
 </p>
 
     </div>
+    
 
-    <div id="requires-list">
-      <h3 class="section-bar">Required files</h3>
+    
+    <div class="sectiontitle">Required Files</div>
+    <ul>
+        
+        <li>new_relic/version</li>
+        
+        <li>new_relic/local_environment</li>
+        
+        <li>new_relic/stats</li>
+        
+        <li>new_relic/delayed_job_injection</li>
+        
+        <li>new_relic/metrics</li>
+        
+        <li>new_relic/metric_spec</li>
+        
+        <li>new_relic/metric_data</li>
+        
+        <li>new_relic/metric_parser</li>
+        
+        <li>new_relic/collection_helper</li>
+        
+        <li>new_relic/transaction_analysis</li>
+        
+        <li>new_relic/transaction_sample</li>
+        
+        <li>new_relic/noticed_error</li>
+        
+        <li>new_relic/histogram</li>
+        
+        <li>new_relic/agent/chained_call</li>
+        
+        <li>new_relic/agent/agent</li>
+        
+        <li>new_relic/agent/shim_agent</li>
+        
+        <li>new_relic/agent/method_tracer</li>
+        
+        <li>new_relic/agent/worker_loop</li>
+        
+        <li>new_relic/agent/stats_engine</li>
+        
+        <li>new_relic/agent/transaction_sampler</li>
+        
+        <li>new_relic/agent/error_collector</li>
+        
+        <li>new_relic/agent/busy_calculator</li>
+        
+        <li>new_relic/agent/sampler</li>
+        
+        <li>new_relic/agent/instrumentation/controller_instrumentation</li>
+        
+        <li>new_relic/agent/samplers/cpu_sampler</li>
+        
+        <li>new_relic/agent/samplers/memory_sampler</li>
+        
+        <li>new_relic/agent/samplers/object_sampler</li>
+        
+        <li>new_relic/agent/samplers/delayed_job_lock_sampler</li>
+        
+        <li>new_relic/rack/episodes</li>
+        
+        <li>set</li>
+        
+        <li>thread</li>
+        
+        <li>resolv</li>
+        
+        <li>timeout</li>
+        
+    </ul>
+    
 
-      <div class="name-list">
-      new_relic/version&nbsp;&nbsp;
-      new_relic/local_environment&nbsp;&nbsp;
-      new_relic/stats&nbsp;&nbsp;
-      new_relic/delayed_job_injection&nbsp;&nbsp;
-      new_relic/metrics&nbsp;&nbsp;
-      new_relic/metric_spec&nbsp;&nbsp;
-      new_relic/metric_data&nbsp;&nbsp;
-      new_relic/metric_parser&nbsp;&nbsp;
-      new_relic/collection_helper&nbsp;&nbsp;
-      new_relic/transaction_analysis&nbsp;&nbsp;
-      new_relic/transaction_sample&nbsp;&nbsp;
-      new_relic/noticed_error&nbsp;&nbsp;
-      new_relic/histogram&nbsp;&nbsp;
-      new_relic/agent/chained_call&nbsp;&nbsp;
-      new_relic/agent/agent&nbsp;&nbsp;
-      new_relic/agent/shim_agent&nbsp;&nbsp;
-      new_relic/agent/method_tracer&nbsp;&nbsp;
-      new_relic/agent/worker_loop&nbsp;&nbsp;
-      new_relic/agent/stats_engine&nbsp;&nbsp;
-      new_relic/agent/transaction_sampler&nbsp;&nbsp;
-      new_relic/agent/error_collector&nbsp;&nbsp;
-      new_relic/agent/busy_calculator&nbsp;&nbsp;
-      new_relic/agent/sampler&nbsp;&nbsp;
-      new_relic/agent/instrumentation/controller_instrumentation&nbsp;&nbsp;
-      new_relic/agent/samplers/cpu_sampler&nbsp;&nbsp;
-      new_relic/agent/samplers/memory_sampler&nbsp;&nbsp;
-      new_relic/agent/samplers/object_sampler&nbsp;&nbsp;
-      new_relic/agent/samplers/delayed_job_lock_sampler&nbsp;&nbsp;
-      set&nbsp;&nbsp;
-      thread&nbsp;&nbsp;
-      resolv&nbsp;&nbsp;
-      timeout&nbsp;&nbsp;
-      </div>
-    </div>
+    
+    
 
-   </div>
+    
+    
 
+    
 
-  </div>
+    
 
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="../../../classes/NewRelic.html">NewRelic</a></li>
+        
+    </ul>
+    
 
-    <!-- if includes -->
+    
 
-    <div id="section">
+    
 
-
-
-
-
-      
-
-
-    <!-- if method_list -->
-
-
-  </div>
-
-
-<div id="validator-badges">
-  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    
 </div>
-
-</body>
+    </div>
+  </body>
 </html>
