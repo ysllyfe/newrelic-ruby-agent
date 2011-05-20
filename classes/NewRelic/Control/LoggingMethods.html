@@ -43,13 +43,13 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001352">log</a>,</li>
+                <li><a href="#M000555">log</a>,</li>
                 
-                <li><a href="#M001353">log!</a>,</li>
+                <li><a href="#M000556">log!</a>,</li>
                 
-                <li><a href="#M001362">log_file_name</a>,</li>
+                <li><a href="#M000562">log_file_name</a>,</li>
                 
-                <li><a href="#M001361">log_path</a></li>
+                <li><a href="#M000561">log_path</a></li>
                 
             </ul>
         </dd>
@@ -58,9 +58,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001358">setup_log</a>,</li>
+                <li><a href="#M000558">setup_log</a>,</li>
                 
-                <li><a href="#M001354">should_log?</a></li>
+                <li><a href="#M000557">should_log?</a></li>
                 
             </ul>
         </dd>
@@ -69,7 +69,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001360">to_stdout</a></li>
+                <li><a href="#M000560">to_stdout</a></li>
                 
             </ul>
         </dd>
@@ -104,9 +104,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001352">
+                <div class="title" id="M000555">
                     
-                    <a name="M001352"></a><b>log</b>()
+                    <a name="M000555"></a><b>log</b>()
                     
                 </div>
                 
@@ -115,10 +115,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001352_source')" id="l_M001352_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000555_source')" id="l_M000555_source">show</a>
                         
                     </p>
-                    <div id="M001352_source" class="dyn-source">
+                    <div id="M000555_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 8</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
         <span class="ruby-comment cmt"># If we try to get a log before one has been set up, return a stdout log</span>
@@ -135,9 +135,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001353">
+                <div class="title" id="M000556">
                     
-                    <a name="M001353"></a><b>log!</b>(msg, level=:info)
+                    <a name="M000556"></a><b>log!</b>(msg, level=:info)
                     
                 </div>
                 
@@ -145,7 +145,7 @@
                   <p>
 send the given message to STDOUT so that it shows up in the console. This
 should be used for important informational messages at boot. The <a
-href="LoggingMethods.html#M001360">to_stdout</a> may be implemented
+href="LoggingMethods.html#M000560">to_stdout</a> may be implemented
 differently by different config subclasses. This will NOT print anything if
 tracers are not enabled
 </p>
@@ -157,10 +157,10 @@ tracers are not enabled
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001353_source')" id="l_M001353_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000556_source')" id="l_M000556_source">show</a>
                         
                     </p>
-                    <div id="M001353_source" class="dyn-source">
+                    <div id="M000556_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 22</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log!</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">level</span>=<span class="ruby-identifier">:info</span>)
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">should_log?</span>
@@ -173,9 +173,9 @@ tracers are not enabled
             </div>
             
             <div class="method">
-                <div class="title" id="M001362">
+                <div class="title" id="M000562">
                     
-                    <a name="M001362"></a><b>log_file_name</b>()
+                    <a name="M000562"></a><b>log_file_name</b>()
                     
                 </div>
                 
@@ -184,10 +184,10 @@ tracers are not enabled
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001362_source')" id="l_M001362_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000562_source')" id="l_M000562_source">show</a>
                         
                     </p>
-                    <div id="M001362_source" class="dyn-source">
+                    <div id="M000562_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 69</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_file_name</span>
         <span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'log_file_name'</span>, <span class="ruby-value str">'newrelic_agent.log'</span>)
@@ -198,9 +198,9 @@ tracers are not enabled
             </div>
             
             <div class="method">
-                <div class="title" id="M001361">
+                <div class="title" id="M000561">
                     
-                    <a name="M001361"></a><b>log_path</b>()
+                    <a name="M000561"></a><b>log_path</b>()
                     
                 </div>
                 
@@ -209,10 +209,10 @@ tracers are not enabled
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001361_source')" id="l_M001361_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000561_source')" id="l_M000561_source">show</a>
                         
                     </p>
-                    <div id="M001361_source" class="dyn-source">
+                    <div id="M000561_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 60</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_path</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@log_path</span>
@@ -228,9 +228,9 @@ tracers are not enabled
             </div>
             
             <div class="method">
-                <div class="title" id="M001358">
+                <div class="title" id="M000558">
                     
-                    <a name="M001358"></a><b>setup_log</b>()
+                    <a name="M000558"></a><b>setup_log</b>()
                     
                 </div>
                 
@@ -247,10 +247,10 @@ can be called multiple times.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001358_source')" id="l_M001358_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000558_source')" id="l_M000558_source">show</a>
                         
                     </p>
-                    <div id="M001358_source" class="dyn-source">
+                    <div id="M000558_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 33</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup_log</span>
         <span class="ruby-ivar">@log_file</span> = <span class="ruby-node">&quot;#{log_path}/#{log_file_name}&quot;</span>
@@ -280,9 +280,9 @@ can be called multiple times.
             </div>
             
             <div class="method">
-                <div class="title" id="M001354">
+                <div class="title" id="M000557">
                     
-                    <a name="M001354"></a><b>should_log?</b>()
+                    <a name="M000557"></a><b>should_log?</b>()
                     
                 </div>
                 
@@ -291,10 +291,10 @@ can be called multiple times.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001354_source')" id="l_M001354_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000557_source')" id="l_M000557_source">show</a>
                         
                     </p>
-                    <div id="M001354_source" class="dyn-source">
+                    <div id="M000557_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 28</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">should_log?</span>
         <span class="ruby-ivar">@settings</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">agent_enabled?</span>
@@ -305,9 +305,9 @@ can be called multiple times.
             </div>
             
             <div class="method">
-                <div class="title" id="M001360">
+                <div class="title" id="M000560">
                     
-                    <a name="M001360"></a><b>to_stdout</b>(msg)
+                    <a name="M000560"></a><b>to_stdout</b>(msg)
                     
                 </div>
                 
@@ -316,10 +316,10 @@ can be called multiple times.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001360_source')" id="l_M001360_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000560_source')" id="l_M000560_source">show</a>
                         
                     </p>
-                    <div id="M001360_source" class="dyn-source">
+                    <div id="M000560_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/logging_methods.rb, line 56</span>
       <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">to_stdout</span><span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
         <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;** [NewRelic] &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">msg</span>

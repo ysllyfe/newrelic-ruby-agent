@@ -58,7 +58,7 @@ a reset call.
         <dd>
             <ul>
                 
-                <li><a href="#M000851">busy_count</a></li>
+                <li><a href="#M000052">busy_count</a></li>
                 
             </ul>
         </dd>
@@ -67,9 +67,9 @@ a reset call.
         <dd>
             <ul>
                 
-                <li><a href="#M000845">dispatcher_finish</a>,</li>
+                <li><a href="#M000045">dispatcher_finish</a>,</li>
                 
-                <li><a href="#M000844">dispatcher_start</a></li>
+                <li><a href="#M000044">dispatcher_start</a></li>
                 
             </ul>
         </dd>
@@ -78,7 +78,7 @@ a reset call.
         <dd>
             <ul>
                 
-                <li><a href="#M000858">harvest_busy</a></li>
+                <li><a href="#M000059">harvest_busy</a></li>
                 
             </ul>
         </dd>
@@ -87,7 +87,7 @@ a reset call.
         <dd>
             <ul>
                 
-                <li><a href="#M000852">reset</a></li>
+                <li><a href="#M000053">reset</a></li>
                 
             </ul>
         </dd>
@@ -134,9 +134,9 @@ For testability, add accessors:
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000851">
+                <div class="title" id="M000052">
                     
-                    <a name="M000851"></a><b>busy_count</b>()
+                    <a name="M000052"></a><b>busy_count</b>()
                     
                 </div>
                 
@@ -145,10 +145,10 @@ For testability, add accessors:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000851_source')" id="l_M000851_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000052_source')" id="l_M000052_source">show</a>
                         
                     </p>
-                    <div id="M000851_source" class="dyn-source">
+                    <div id="M000052_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 40</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">busy_count</span>
         <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">size</span>
@@ -159,9 +159,9 @@ For testability, add accessors:
             </div>
             
             <div class="method">
-                <div class="title" id="M000845">
+                <div class="title" id="M000045">
                     
-                    <a name="M000845"></a><b>dispatcher_finish</b>(end_time = Time.now)
+                    <a name="M000045"></a><b>dispatcher_finish</b>(end_time = Time.now)
                     
                 </div>
                 
@@ -170,10 +170,10 @@ For testability, add accessors:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000845_source')" id="l_M000845_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000045_source')" id="l_M000045_source">show</a>
                         
                     </p>
-                    <div id="M000845_source" class="dyn-source">
+                    <div id="M000045_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 27</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_finish</span>(<span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
         <span class="ruby-identifier">callers</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
@@ -193,9 +193,9 @@ For testability, add accessors:
             </div>
             
             <div class="method">
-                <div class="title" id="M000844">
+                <div class="title" id="M000044">
                     
-                    <a name="M000844"></a><b>dispatcher_start</b>(time)
+                    <a name="M000044"></a><b>dispatcher_start</b>(time)
                     
                 </div>
                 
@@ -204,10 +204,10 @@ For testability, add accessors:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000844_source')" id="l_M000844_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000044_source')" id="l_M000044_source">show</a>
                         
                     </p>
-                    <div id="M000844_source" class="dyn-source">
+                    <div id="M000044_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 18</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_start</span>(<span class="ruby-identifier">time</span>)
         <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
@@ -223,9 +223,9 @@ For testability, add accessors:
             </div>
             
             <div class="method">
-                <div class="title" id="M000858">
+                <div class="title" id="M000059">
                     
-                    <a name="M000858"></a><b>harvest_busy</b>()
+                    <a name="M000059"></a><b>harvest_busy</b>()
                     
                 </div>
                 
@@ -241,10 +241,10 @@ Called before uploading to to the server to collect current busy stats.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000858_source')" id="l_M000858_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000059_source')" id="l_M000059_source">show</a>
                         
                     </p>
-                    <div id="M000858_source" class="dyn-source">
+                    <div id="M000059_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 57</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_busy</span>
         <span class="ruby-identifier">busy</span> = <span class="ruby-value">0</span>
@@ -278,9 +278,9 @@ Called before uploading to to the server to collect current busy stats.
             </div>
             
             <div class="method">
-                <div class="title" id="M000852">
+                <div class="title" id="M000053">
                     
-                    <a name="M000852"></a><b>reset</b>()
+                    <a name="M000053"></a><b>reset</b>()
                     
                 </div>
                 
@@ -297,10 +297,10 @@ reset the recursion counter for this thread.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000852_source')" id="l_M000852_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000053_source')" id="l_M000053_source">show</a>
                         
                     </p>
-                    <div id="M000852_source" class="dyn-source">
+                    <div id="M000053_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 46</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
         <span class="ruby-ivar">@entrypoint_stack</span> = []

@@ -31,11 +31,11 @@
     <div class="description">
         <h2><a href="../Instrumentation.html">Instrumentation</a> for <a href="Rack.html">Rack</a></h2>
 <p>
-New Relic will instrument a <a href="Rack.html#M001007">call</a> method as
+New Relic will instrument a <a href="Rack.html#M000209">call</a> method as
 if it were a controller action, collecting transaction traces and errors.
 The middleware will be identified only by it&#8217;s class, so if you want
 to instrument multiple actions in a middleware, you need to use <a
-href="ControllerInstrumentation/ClassMethods.html#M000945">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods#add_transaction_tracer</a>
+href="ControllerInstrumentation/ClassMethods.html#M000148">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods#add_transaction_tracer</a>
 </p>
 <p>
 Example:
@@ -114,15 +114,15 @@ href="Rack.html">Rack</a> instrumentation and instead follow this example:
         <dd>
             <ul>
                 
-                <li><a href="#M001011">call</a>,</li>
+                <li><a href="#M000213">call</a>,</li>
                 
-                <li><a href="#M001007">call</a>,</li>
+                <li><a href="#M000209">call</a>,</li>
                 
-                <li><a href="#M001005">call_with_newrelic</a>,</li>
+                <li><a href="#M000205">call_with_newrelic</a>,</li>
                 
-                <li><a href="#M001010">call_without_newrelic</a>,</li>
+                <li><a href="#M000212">call_without_newrelic</a>,</li>
                 
-                <li><a href="#M001008">call_without_newrelic</a></li>
+                <li><a href="#M000210">call_without_newrelic</a></li>
                 
             </ul>
         </dd>
@@ -131,7 +131,7 @@ href="Rack.html">Rack</a> instrumentation and instead follow this example:
         <dd>
             <ul>
                 
-                <li><a href="#M001004">newrelic_request_headers</a></li>
+                <li><a href="#M000204">newrelic_request_headers</a></li>
                 
             </ul>
         </dd>
@@ -165,15 +165,15 @@ href="Rack.html">Rack</a> instrumentation and instead follow this example:
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001011">
+                <div class="title" id="M000213">
                     
-                    <a name="M001011"></a><b>call</b>(*args)
+                    <a name="M000213"></a><b>call</b>(*args)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
+Alias for <a href="Rack.html#M000205">call_with_newrelic</a>
 </p>
 
                 </div>
@@ -183,15 +183,15 @@ Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001007">
+                <div class="title" id="M000209">
                     
-                    <a name="M001007"></a><b>call</b>(*args)
+                    <a name="M000209"></a><b>call</b>(*args)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
+Alias for <a href="Rack.html#M000205">call_with_newrelic</a>
 </p>
 
                 </div>
@@ -200,9 +200,9 @@ Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="Rack.html#M001008">call_without_newrelic</a>
+                    <a href="Rack.html#M000210">call_without_newrelic</a>
                     
-                    <a href="Rack.html#M001010">call_without_newrelic</a>
+                    <a href="Rack.html#M000212">call_without_newrelic</a>
                     
                 </div>
                 
@@ -210,9 +210,9 @@ Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001005">
+                <div class="title" id="M000205">
                     
-                    <a name="M001005"></a><b>call_with_newrelic</b>(*args)
+                    <a name="M000205"></a><b>call_with_newrelic</b>(*args)
                     
                 </div>
                 
@@ -220,9 +220,9 @@ Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="Rack.html#M001007">call</a>
+                    <a href="Rack.html#M000209">call</a>
                     
-                    <a href="Rack.html#M001011">call</a>
+                    <a href="Rack.html#M000213">call</a>
                     
                 </div>
                 
@@ -230,10 +230,10 @@ Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001005_source')" id="l_M001005_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000205_source')" id="l_M000205_source">show</a>
                         
                     </p>
-                    <div id="M001005_source" class="dyn-source">
+                    <div id="M000205_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 71</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_with_newrelic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
           <span class="ruby-ivar">@newrelic_request</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>)
@@ -250,15 +250,15 @@ Alias for <a href="Rack.html#M001005">call_with_newrelic</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001010">
+                <div class="title" id="M000212">
                     
-                    <a name="M001010"></a><b>call_without_newrelic</b>(*args)
+                    <a name="M000212"></a><b>call_without_newrelic</b>(*args)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="Rack.html#M001007">call</a>
+Alias for <a href="Rack.html#M000209">call</a>
 </p>
 
                 </div>
@@ -268,15 +268,15 @@ Alias for <a href="Rack.html#M001007">call</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001008">
+                <div class="title" id="M000210">
                     
-                    <a name="M001008"></a><b>call_without_newrelic</b>(*args)
+                    <a name="M000210"></a><b>call_without_newrelic</b>(*args)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="Rack.html#M001007">call</a>
+Alias for <a href="Rack.html#M000209">call</a>
 </p>
 
                 </div>
@@ -286,9 +286,9 @@ Alias for <a href="Rack.html#M001007">call</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001004">
+                <div class="title" id="M000204">
                     
-                    <a name="M001004"></a><b>newrelic_request_headers</b>()
+                    <a name="M000204"></a><b>newrelic_request_headers</b>()
                     
                 </div>
                 
@@ -297,10 +297,10 @@ Alias for <a href="Rack.html#M001007">call</a>
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001004_source')" id="l_M001004_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000204_source')" id="l_M000204_source">show</a>
                         
                     </p>
-                    <div id="M001004_source" class="dyn-source">
+                    <div id="M000204_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rack.rb, line 68</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_request_headers</span>
           <span class="ruby-ivar">@newrelic_request</span>.<span class="ruby-identifier">env</span>

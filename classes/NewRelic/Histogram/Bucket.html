@@ -59,9 +59,9 @@ reporting data to RPM. The bucket range is encoded in the metic name
         <dd>
             <ul>
                 
-                <li><a href="#M001377">max_millis</a>,</li>
+                <li><a href="#M000580">max_millis</a>,</li>
                 
-                <li><a href="#M001376">min_millis</a></li>
+                <li><a href="#M000579">min_millis</a></li>
                 
             </ul>
         </dd>
@@ -70,7 +70,7 @@ reporting data to RPM. The bucket range is encoded in the metic name
         <dd>
             <ul>
                 
-                <li><a href="#M001373">new</a></li>
+                <li><a href="#M000576">new</a></li>
                 
             </ul>
         </dd>
@@ -79,7 +79,7 @@ reporting data to RPM. The bucket range is encoded in the metic name
         <dd>
             <ul>
                 
-                <li><a href="#M001375">process</a></li>
+                <li><a href="#M000578">process</a></li>
                 
             </ul>
         </dd>
@@ -88,7 +88,7 @@ reporting data to RPM. The bucket range is encoded in the metic name
         <dd>
             <ul>
                 
-                <li><a href="#M001374">stats</a></li>
+                <li><a href="#M000577">stats</a></li>
                 
             </ul>
         </dd>
@@ -97,7 +97,7 @@ reporting data to RPM. The bucket range is encoded in the metic name
         <dd>
             <ul>
                 
-                <li><a href="#M001378">to_s</a></li>
+                <li><a href="#M000581">to_s</a></li>
                 
             </ul>
         </dd>
@@ -148,9 +148,9 @@ reporting data to RPM. The bucket range is encoded in the metic name
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001373">
+                <div class="title" id="M000576">
                     
-                    <a name="M001373"></a><b>new</b>(min, max = nil)
+                    <a name="M000576"></a><b>new</b>(min, max = nil)
                     
                 </div>
                 
@@ -159,10 +159,10 @@ reporting data to RPM. The bucket range is encoded in the metic name
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001373_source')" id="l_M001373_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000576_source')" id="l_M000576_source">show</a>
                         
                     </p>
-                    <div id="M001373_source" class="dyn-source">
+                    <div id="M000576_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 24</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">min</span>, <span class="ruby-identifier">max</span> = <span class="ruby-keyword kw">nil</span>)
         <span class="ruby-ivar">@min</span> = <span class="ruby-identifier">min</span>
@@ -176,9 +176,9 @@ reporting data to RPM. The bucket range is encoded in the metic name
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001377">
+                <div class="title" id="M000580">
                     
-                    <a name="M001377"></a><b>max_millis</b>()
+                    <a name="M000580"></a><b>max_millis</b>()
                     
                 </div>
                 
@@ -187,10 +187,10 @@ reporting data to RPM. The bucket range is encoded in the metic name
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001377_source')" id="l_M001377_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000580_source')" id="l_M000580_source">show</a>
                         
                     </p>
-                    <div id="M001377_source" class="dyn-source">
+                    <div id="M000580_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 57</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max_millis</span>
         <span class="ruby-identifier">max</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">max</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span>
@@ -201,9 +201,9 @@ reporting data to RPM. The bucket range is encoded in the metic name
             </div>
             
             <div class="method">
-                <div class="title" id="M001376">
+                <div class="title" id="M000579">
                     
-                    <a name="M001376"></a><b>min_millis</b>()
+                    <a name="M000579"></a><b>min_millis</b>()
                     
                 </div>
                 
@@ -212,10 +212,10 @@ reporting data to RPM. The bucket range is encoded in the metic name
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001376_source')" id="l_M001376_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000579_source')" id="l_M000579_source">show</a>
                         
                     </p>
-                    <div id="M001376_source" class="dyn-source">
+                    <div id="M000579_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 53</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min_millis</span>
         (<span class="ruby-identifier">min</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>).<span class="ruby-identifier">round</span>
@@ -226,9 +226,9 @@ reporting data to RPM. The bucket range is encoded in the metic name
             </div>
             
             <div class="method">
-                <div class="title" id="M001375">
+                <div class="title" id="M000578">
                     
-                    <a name="M001375"></a><b>process</b>(value)
+                    <a name="M000578"></a><b>process</b>(value)
                     
                 </div>
                 
@@ -249,10 +249,10 @@ zero.)
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001375_source')" id="l_M001375_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000578_source')" id="l_M000578_source">show</a>
                         
                     </p>
-                    <div id="M001375_source" class="dyn-source">
+                    <div id="M000578_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 39</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">value</span>)
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span>
@@ -273,9 +273,9 @@ zero.)
             </div>
             
             <div class="method">
-                <div class="title" id="M001374">
+                <div class="title" id="M000577">
                     
-                    <a name="M001374"></a><b>stats</b>()
+                    <a name="M000577"></a><b>stats</b>()
                     
                 </div>
                 
@@ -284,10 +284,10 @@ zero.)
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001374_source')" id="l_M001374_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000577_source')" id="l_M000577_source">show</a>
                         
                     </p>
-                    <div id="M001374_source" class="dyn-source">
+                    <div id="M000577_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 29</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-node">&quot;Response Times/#{min_millis}/#{max_millis}&quot;</span>)
@@ -298,9 +298,9 @@ zero.)
             </div>
             
             <div class="method">
-                <div class="title" id="M001378">
+                <div class="title" id="M000581">
                     
-                    <a name="M001378"></a><b>to_s</b>()
+                    <a name="M000581"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -309,10 +309,10 @@ zero.)
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001378_source')" id="l_M001378_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000581_source')" id="l_M000581_source">show</a>
                         
                     </p>
-                    <div id="M001378_source" class="dyn-source">
+                    <div id="M000581_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/histogram.rb, line 61</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
         <span class="ruby-node">&quot;#{min_millis} - #{max_millis}: #{stats.call_count}&quot;</span>

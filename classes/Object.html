@@ -47,9 +47,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000960">after_fork</a>,</li>
+                <li><a href="#M000162">after_fork</a>,</li>
                 
-                <li><a href="#M000959">after_fork_with_newrelic</a></li>
+                <li><a href="#M000161">after_fork_with_newrelic</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001371">initialize_with_new_relic</a></li>
+                <li><a href="#M000574">initialize_with_new_relic</a></li>
                 
             </ul>
         </dd>
@@ -67,11 +67,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001034">newrelic_metric_path</a>,</li>
+                <li><a href="#M000237">newrelic_metric_path</a>,</li>
                 
-                <li><a href="#M000965">newrelic_metric_path</a>,</li>
+                <li><a href="#M000168">newrelic_metric_path</a>,</li>
                 
-                <li><a href="#M001037">newrelic_notice_error</a></li>
+                <li><a href="#M000240">newrelic_notice_error</a></li>
                 
             </ul>
         </dd>
@@ -80,9 +80,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000970">request_with_newrelic_trace</a>,</li>
+                <li><a href="#M000180">request_with_newrelic_trace</a>,</li>
                 
-                <li><a href="#M001038">rescue_action_with_newrelic_trace</a></li>
+                <li><a href="#M000241">rescue_action_with_newrelic_trace</a></li>
                 
             </ul>
         </dd>
@@ -104,9 +104,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000960">
+                <div class="title" id="M000162">
                     
-                    <a name="M000960"></a><b>after_fork</b>()
+                    <a name="M000162"></a><b>after_fork</b>()
                     
                 </div>
                 
@@ -115,10 +115,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000960_source')" id="l_M000960_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000162_source')" id="l_M000162_source">show</a>
                         
                     </p>
-                    <div id="M000960_source" class="dyn-source">
+                    <div id="M000162_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/delayed_job_instrumentation.rb, line 35</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork</span>
             <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">:force_reconnect</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
@@ -130,9 +130,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000959">
+                <div class="title" id="M000161">
                     
-                    <a name="M000959"></a><b>after_fork_with_newrelic</b>()
+                    <a name="M000161"></a><b>after_fork_with_newrelic</b>()
                     
                 </div>
                 
@@ -141,10 +141,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000959_source')" id="l_M000959_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000161_source')" id="l_M000161_source">show</a>
                         
                     </p>
-                    <div id="M000959_source" class="dyn-source">
+                    <div id="M000161_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/delayed_job_instrumentation.rb, line 27</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork_with_newrelic</span>
             <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">:force_reconnect</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
@@ -156,9 +156,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001371">
+                <div class="title" id="M000574">
                     
-                    <a name="M001371"></a><b>initialize_with_new_relic</b>(*args)
+                    <a name="M000574"></a><b>initialize_with_new_relic</b>(*args)
                     
                 </div>
                 
@@ -167,10 +167,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001371_source')" id="l_M001371_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000574_source')" id="l_M000574_source">show</a>
                         
                     </p>
-                    <div id="M001371_source" class="dyn-source">
+                    <div id="M000574_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/delayed_job_injection.rb, line 20</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_with_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
         <span class="ruby-identifier">initialize_without_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
@@ -189,9 +189,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001034">
+                <div class="title" id="M000237">
                     
-                    <a name="M001034"></a><b>newrelic_metric_path</b>(action_name_override = nil)
+                    <a name="M000237"></a><b>newrelic_metric_path</b>(action_name_override = nil)
                     
                 </div>
                 
@@ -208,10 +208,10 @@ controller action
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001034_source')" id="l_M001034_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000237_source')" id="l_M000237_source">show</a>
                         
                     </p>
-                    <div id="M001034_source" class="dyn-source">
+                    <div id="M000237_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/action_controller.rb, line 73</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>(<span class="ruby-identifier">action_name_override</span> = <span class="ruby-keyword kw">nil</span>)
         <span class="ruby-identifier">action_part</span> = <span class="ruby-identifier">action_name_override</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">action_name</span>
@@ -227,9 +227,9 @@ controller action
             </div>
             
             <div class="method">
-                <div class="title" id="M000965">
+                <div class="title" id="M000168">
                     
-                    <a name="M000965"></a><b>newrelic_metric_path</b>()
+                    <a name="M000168"></a><b>newrelic_metric_path</b>()
                     
                 </div>
                 
@@ -246,10 +246,10 @@ controller action
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000965_source')" id="l_M000965_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000168_source')" id="l_M000168_source">show</a>
                         
                     </p>
-                    <div id="M000965_source" class="dyn-source">
+                    <div id="M000168_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/merb/controller.rb, line 29</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>
         <span class="ruby-node">&quot;#{controller_name}/#{action_name}&quot;</span>
@@ -260,9 +260,9 @@ controller action
             </div>
             
             <div class="method">
-                <div class="title" id="M001037">
+                <div class="title" id="M000240">
                     
-                    <a name="M001037"></a><b>newrelic_notice_error</b>(exception, custom_params = {})
+                    <a name="M000240"></a><b>newrelic_notice_error</b>(exception, custom_params = {})
                     
                 </div>
                 
@@ -271,7 +271,7 @@ controller action
 Make a note of an exception associated with the currently executing
 controller action. Note that this used to be available on <a
 href="Object.html">Object</a> but we replaced that global method with <a
-href="NewRelic/Agent.html#M001249">NewRelic::Agent#notice_error</a>. Use
+href="NewRelic/Agent.html#M000456">NewRelic::Agent#notice_error</a>. Use
 that one outside of controller actions.
 </p>
 
@@ -282,10 +282,10 @@ that one outside of controller actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001037_source')" id="l_M001037_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000240_source')" id="l_M000240_source">show</a>
                         
                     </p>
-                    <div id="M001037_source" class="dyn-source">
+                    <div id="M000240_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 18</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">custom_params</span> = {})
         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">:custom_params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">custom_params</span>, <span class="ruby-identifier">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>
@@ -296,9 +296,9 @@ that one outside of controller actions.
             </div>
             
             <div class="method">
-                <div class="title" id="M000970">
+                <div class="title" id="M000180">
                     
-                    <a name="M000970"></a><b>request_with_newrelic_trace</b>(*args, &amp;block)
+                    <a name="M000180"></a><b>request_with_newrelic_trace</b>(*args, &amp;block)
                     
                 </div>
                 
@@ -307,10 +307,10 @@ that one outside of controller actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000970_source')" id="l_M000970_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000180_source')" id="l_M000180_source">show</a>
                         
                     </p>
-                    <div id="M000970_source" class="dyn-source">
+                    <div id="M000180_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/net.rb, line 8</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
         <span class="ruby-identifier">metrics</span> = [<span class="ruby-node">&quot;External/#{@address}/Net::HTTP/#{args[0].method}&quot;</span>,<span class="ruby-node">&quot;External/#{@address}/all&quot;</span>]
@@ -329,9 +329,9 @@ that one outside of controller actions.
             </div>
             
             <div class="method">
-                <div class="title" id="M001038">
+                <div class="title" id="M000241">
                     
-                    <a name="M001038"></a><b>rescue_action_with_newrelic_trace</b>(exception)
+                    <a name="M000241"></a><b>rescue_action_with_newrelic_trace</b>(exception)
                     
                 </div>
                 
@@ -340,10 +340,10 @@ that one outside of controller actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001038_source')" id="l_M001038_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000241_source')" id="l_M000241_source">show</a>
                         
                     </p>
-                    <div id="M001038_source" class="dyn-source">
+                    <div id="M000241_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 22</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rescue_action_with_newrelic_trace</span>(<span class="ruby-identifier">exception</span>)
         <span class="ruby-identifier">rescue_action_without_newrelic_trace</span> <span class="ruby-identifier">exception</span>

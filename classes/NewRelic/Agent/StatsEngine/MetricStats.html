@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001156">clear_stats</a></li>
+                <li><a href="#M000359">clear_stats</a></li>
                 
             </ul>
         </dd>
@@ -52,11 +52,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001145">get_custom_stats</a>,</li>
+                <li><a href="#M000353">get_custom_stats</a>,</li>
                 
-                <li><a href="#M001146">get_stats</a>,</li>
+                <li><a href="#M000354">get_stats</a>,</li>
                 
-                <li><a href="#M001144">get_stats_no_scope</a></li>
+                <li><a href="#M000352">get_stats_no_scope</a></li>
                 
             </ul>
         </dd>
@@ -65,7 +65,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001155">harvest_timeslice_data</a></li>
+                <li><a href="#M000358">harvest_timeslice_data</a></li>
                 
             </ul>
         </dd>
@@ -74,9 +74,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001142">lookup_stat</a>,</li>
+                <li><a href="#M000350">lookup_stat</a>,</li>
                 
-                <li><a href="#M001152">lookup_stats</a></li>
+                <li><a href="#M000357">lookup_stats</a></li>
                 
             </ul>
         </dd>
@@ -85,7 +85,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001143">metrics</a></li>
+                <li><a href="#M000351">metrics</a></li>
                 
             </ul>
         </dd>
@@ -94,7 +94,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001157">reset_stats</a></li>
+                <li><a href="#M000360">reset_stats</a></li>
                 
             </ul>
         </dd>
@@ -103,7 +103,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001158">stats_hash</a></li>
+                <li><a href="#M000361">stats_hash</a></li>
                 
             </ul>
         </dd>
@@ -132,9 +132,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001156">
+                <div class="title" id="M000359">
                     
-                    <a name="M001156"></a><b>clear_stats</b>()
+                    <a name="M000359"></a><b>clear_stats</b>()
                     
                 </div>
                 
@@ -150,10 +150,10 @@ Remove all stats. For test code only.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001156_source')" id="l_M001156_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000359_source')" id="l_M000359_source">show</a>
                         
                     </p>
-                    <div id="M001156_source" class="dyn-source">
+                    <div id="M000359_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 137</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_stats</span>
           <span class="ruby-ivar">@stats_hash</span> = <span class="ruby-constant">SynchronizedHash</span>.<span class="ruby-identifier">new</span>
@@ -165,9 +165,9 @@ Remove all stats. For test code only.
             </div>
             
             <div class="method">
-                <div class="title" id="M001145">
+                <div class="title" id="M000353">
                     
-                    <a name="M001145"></a><b>get_custom_stats</b>(metric_name, stat_class)
+                    <a name="M000353"></a><b>get_custom_stats</b>(metric_name, stat_class)
                     
                 </div>
                 
@@ -183,10 +183,10 @@ This version allows a caller to pass a stat class to use
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001145_source')" id="l_M001145_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000353_source')" id="l_M000353_source">show</a>
                         
                     </p>
-                    <div id="M001145_source" class="dyn-source">
+                    <div id="M000353_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 58</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">stat_class</span>)
           <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">stat_class</span>.<span class="ruby-identifier">new</span>
@@ -197,9 +197,9 @@ This version allows a caller to pass a stat class to use
             </div>
             
             <div class="method">
-                <div class="title" id="M001146">
+                <div class="title" id="M000354">
                     
-                    <a name="M001146"></a><b>get_stats</b>(metric_name, use_scope = true, scoped_metric_only = false, scope = nil)
+                    <a name="M000354"></a><b>get_stats</b>(metric_name, use_scope = true, scoped_metric_only = false, scope = nil)
                     
                 </div>
                 
@@ -217,10 +217,10 @@ one without If scoped_metric_only is true, only a scoped metric is created
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001146_source')" id="l_M001146_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000354_source')" id="l_M000354_source">show</a>
                         
                     </p>
-                    <div id="M001146_source" class="dyn-source">
+                    <div id="M000354_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 64</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">use_scope</span> = <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">scoped_metric_only</span> = <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">scope</span> = <span class="ruby-keyword kw">nil</span>)
             <span class="ruby-identifier">scope</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">scope_name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_scope</span>
@@ -242,9 +242,9 @@ one without If scoped_metric_only is true, only a scoped metric is created
             </div>
             
             <div class="method">
-                <div class="title" id="M001144">
+                <div class="title" id="M000352">
                     
-                    <a name="M001144"></a><b>get_stats_no_scope</b>(metric_name)
+                    <a name="M000352"></a><b>get_stats_no_scope</b>(metric_name)
                     
                 </div>
                 
@@ -253,10 +253,10 @@ one without If scoped_metric_only is true, only a scoped metric is created
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001144_source')" id="l_M001144_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000352_source')" id="l_M000352_source">show</a>
                         
                     </p>
-                    <div id="M001144_source" class="dyn-source">
+                    <div id="M000352_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 52</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">metric_name</span>)
           <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTraceStats</span>.<span class="ruby-identifier">new</span>
@@ -267,9 +267,9 @@ one without If scoped_metric_only is true, only a scoped metric is created
             </div>
             
             <div class="method">
-                <div class="title" id="M001155">
+                <div class="title" id="M000358">
                     
-                    <a name="M001155"></a><b>harvest_timeslice_data</b>(previous_timeslice_data, metric_ids)
+                    <a name="M000358"></a><b>harvest_timeslice_data</b>(previous_timeslice_data, metric_ids)
                     
                 </div>
                 
@@ -292,10 +292,10 @@ sacrificing efficiency. +++
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001155_source')" id="l_M001155_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000358_source')" id="l_M000358_source">show</a>
                         
                     </p>
-                    <div id="M001155_source" class="dyn-source">
+                    <div id="M000358_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 92</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_timeslice_data</span>(<span class="ruby-identifier">previous_timeslice_data</span>, <span class="ruby-identifier">metric_ids</span>)
             <span class="ruby-identifier">timeslice_data</span> = {}
@@ -346,9 +346,9 @@ sacrificing efficiency. +++
             </div>
             
             <div class="method">
-                <div class="title" id="M001142">
+                <div class="title" id="M000350">
                     
-                    <a name="M001142"></a><b>lookup_stat</b>(metric_name)
+                    <a name="M000350"></a><b>lookup_stat</b>(metric_name)
                     
                 </div>
                 
@@ -365,10 +365,10 @@ metric_spec for a scoped metric value.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001142_source')" id="l_M001142_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000350_source')" id="l_M000350_source">show</a>
                         
                     </p>
-                    <div id="M001142_source" class="dyn-source">
+                    <div id="M000350_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 44</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stat</span>(<span class="ruby-identifier">metric_name</span>)
           <span class="ruby-identifier">stats_hash</span>[<span class="ruby-identifier">metric_name</span>]
@@ -379,9 +379,9 @@ metric_spec for a scoped metric value.
             </div>
             
             <div class="method">
-                <div class="title" id="M001152">
+                <div class="title" id="M000357">
                     
-                    <a name="M001152"></a><b>lookup_stats</b>(metric_name, scope_name = nil)
+                    <a name="M000357"></a><b>lookup_stats</b>(metric_name, scope_name = nil)
                     
                 </div>
                 
@@ -390,10 +390,10 @@ metric_spec for a scoped metric value.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001152_source')" id="l_M001152_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000357_source')" id="l_M000357_source">show</a>
                         
                     </p>
-                    <div id="M001152_source" class="dyn-source">
+                    <div id="M000357_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 79</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup_stats</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span> = <span class="ruby-keyword kw">nil</span>)
             <span class="ruby-identifier">stats_hash</span>[<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricSpec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">scope_name</span>)] <span class="ruby-operator">||</span>
@@ -405,9 +405,9 @@ metric_spec for a scoped metric value.
             </div>
             
             <div class="method">
-                <div class="title" id="M001143">
+                <div class="title" id="M000351">
                     
-                    <a name="M001143"></a><b>metrics</b>()
+                    <a name="M000351"></a><b>metrics</b>()
                     
                 </div>
                 
@@ -416,10 +416,10 @@ metric_spec for a scoped metric value.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001143_source')" id="l_M001143_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000351_source')" id="l_M000351_source">show</a>
                         
                     </p>
-                    <div id="M001143_source" class="dyn-source">
+                    <div id="M000351_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 48</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metrics</span>
           <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:to_s</span>)
@@ -430,9 +430,9 @@ metric_spec for a scoped metric value.
             </div>
             
             <div class="method">
-                <div class="title" id="M001157">
+                <div class="title" id="M000360">
                     
-                    <a name="M001157"></a><b>reset_stats</b>()
+                    <a name="M000360"></a><b>reset_stats</b>()
                     
                 </div>
                 
@@ -448,10 +448,10 @@ Reset each of the stats, such as when a new passenger instance starts up.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001157_source')" id="l_M001157_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000360_source')" id="l_M000360_source">show</a>
                         
                     </p>
-                    <div id="M001157_source" class="dyn-source">
+                    <div id="M000360_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 143</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_stats</span>
           <span class="ruby-identifier">stats_hash</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">reset</span> }
@@ -462,9 +462,9 @@ Reset each of the stats, such as when a new passenger instance starts up.
             </div>
             
             <div class="method">
-                <div class="title" id="M001158">
+                <div class="title" id="M000361">
                     
-                    <a name="M001158"></a><b>stats_hash</b>()
+                    <a name="M000361"></a><b>stats_hash</b>()
                     
                 </div>
                 
@@ -473,10 +473,10 @@ Reset each of the stats, such as when a new passenger instance starts up.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001158_source')" id="l_M001158_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000361_source')" id="l_M000361_source">show</a>
                         
                     </p>
-                    <div id="M001158_source" class="dyn-source">
+                    <div id="M000361_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/metric_stats.rb, line 147</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats_hash</span>
           <span class="ruby-ivar">@stats_hash</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">SynchronizedHash</span>.<span class="ruby-identifier">new</span>

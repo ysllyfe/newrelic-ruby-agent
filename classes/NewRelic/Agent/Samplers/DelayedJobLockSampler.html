@@ -49,9 +49,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001097">local_env</a>,</li>
+                <li><a href="#M000300">local_env</a>,</li>
                 
-                <li><a href="#M001099">locked_jobs</a></li>
+                <li><a href="#M000304">locked_jobs</a></li>
                 
             </ul>
         </dd>
@@ -60,7 +60,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001095">new</a></li>
+                <li><a href="#M000298">new</a></li>
                 
             </ul>
         </dd>
@@ -69,7 +69,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001102">poll</a></li>
+                <li><a href="#M000306">poll</a></li>
                 
             </ul>
         </dd>
@@ -78,9 +78,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001096">stats</a>,</li>
+                <li><a href="#M000299">stats</a>,</li>
                 
-                <li><a href="#M001100">supported_on_this_platform?</a></li>
+                <li><a href="#M000305">supported_on_this_platform?</a></li>
                 
             </ul>
         </dd>
@@ -89,7 +89,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001098">worker_name</a></li>
+                <li><a href="#M000301">worker_name</a></li>
                 
             </ul>
         </dd>
@@ -111,9 +111,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001095">
+                <div class="title" id="M000298">
                     
-                    <a name="M001095"></a><b>new</b>()
+                    <a name="M000298"></a><b>new</b>()
                     
                 </div>
                 
@@ -122,10 +122,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001095_source')" id="l_M001095_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000298_source')" id="l_M000298_source">show</a>
                         
                     </p>
-                    <div id="M001095_source" class="dyn-source">
+                    <div id="M000298_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 8</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
           <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">delayed_job_lock</span>
@@ -138,9 +138,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001100">
+                <div class="title" id="M000305">
                     
-                    <a name="M001100"></a><b>supported_on_this_platform?</b>()
+                    <a name="M000305"></a><b>supported_on_this_platform?</b>()
                     
                 </div>
                 
@@ -149,10 +149,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001100_source')" id="l_M001100_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000305_source')" id="l_M000305_source">show</a>
                         
                     </p>
-                    <div id="M001100_source" class="dyn-source">
+                    <div id="M000305_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 30</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
           <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Delayed</span><span class="ruby-operator">::</span><span class="ruby-constant">Job</span>)
@@ -165,9 +165,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001097">
+                <div class="title" id="M000300">
                     
-                    <a name="M001097"></a><b>local_env</b>()
+                    <a name="M000300"></a><b>local_env</b>()
                     
                 </div>
                 
@@ -176,10 +176,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001097_source')" id="l_M001097_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000300_source')" id="l_M000300_source">show</a>
                         
                     </p>
-                    <div id="M001097_source" class="dyn-source">
+                    <div id="M000300_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 18</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">local_env</span>
           <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">local_env</span>
@@ -190,9 +190,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001099">
+                <div class="title" id="M000304">
                     
-                    <a name="M001099"></a><b>locked_jobs</b>()
+                    <a name="M000304"></a><b>locked_jobs</b>()
                     
                 </div>
                 
@@ -201,10 +201,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001099_source')" id="l_M001099_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000304_source')" id="l_M000304_source">show</a>
                         
                     </p>
-                    <div id="M001099_source" class="dyn-source">
+                    <div id="M000304_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 26</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locked_jobs</span>
           <span class="ruby-constant">Delayed</span><span class="ruby-operator">::</span><span class="ruby-constant">Job</span>.<span class="ruby-identifier">count</span>(<span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">:locked_by</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">DelayedJobInjection</span>.<span class="ruby-identifier">worker_name</span>})
@@ -215,9 +215,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001102">
+                <div class="title" id="M000306">
                     
-                    <a name="M001102"></a><b>poll</b>()
+                    <a name="M000306"></a><b>poll</b>()
                     
                 </div>
                 
@@ -226,10 +226,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001102_source')" id="l_M001102_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000306_source')" id="l_M000306_source">show</a>
                         
                     </p>
-                    <div id="M001102_source" class="dyn-source">
+                    <div id="M000306_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 34</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
           <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">locked_jobs</span>
@@ -240,9 +240,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001096">
+                <div class="title" id="M000299">
                     
-                    <a name="M001096"></a><b>stats</b>()
+                    <a name="M000299"></a><b>stats</b>()
                     
                 </div>
                 
@@ -251,10 +251,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001096_source')" id="l_M001096_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000299_source')" id="l_M000299_source">show</a>
                         
                     </p>
-                    <div id="M001096_source" class="dyn-source">
+                    <div id="M000299_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 14</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
           <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-value str">&quot;Custom/DJ Locked Jobs&quot;</span>, <span class="ruby-keyword kw">false</span>)
@@ -265,9 +265,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001098">
+                <div class="title" id="M000301">
                     
-                    <a name="M001098"></a><b>worker_name</b>()
+                    <a name="M000301"></a><b>worker_name</b>()
                     
                 </div>
                 
@@ -276,10 +276,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001098_source')" id="l_M001098_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000301_source')" id="l_M000301_source">show</a>
                         
                     </p>
-                    <div id="M001098_source" class="dyn-source">
+                    <div id="M000301_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/delayed_job_lock_sampler.rb, line 22</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">worker_name</span>
           <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>

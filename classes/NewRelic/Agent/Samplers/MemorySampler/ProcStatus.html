@@ -60,7 +60,7 @@ specific to linux
         <dd>
             <ul>
                 
-                <li><a href="#M001123">get_memory</a></li>
+                <li><a href="#M000326">get_memory</a></li>
                 
             </ul>
         </dd>
@@ -69,7 +69,7 @@ specific to linux
         <dd>
             <ul>
                 
-                <li><a href="#M001124">proc_status_file</a></li>
+                <li><a href="#M000331">proc_status_file</a></li>
                 
             </ul>
         </dd>
@@ -78,7 +78,7 @@ specific to linux
         <dd>
             <ul>
                 
-                <li><a href="#M001125">to_s</a></li>
+                <li><a href="#M000332">to_s</a></li>
                 
             </ul>
         </dd>
@@ -100,9 +100,9 @@ specific to linux
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001123">
+                <div class="title" id="M000326">
                     
-                    <a name="M001123"></a><b>get_memory</b>()
+                    <a name="M000326"></a><b>get_memory</b>()
                     
                 </div>
                 
@@ -118,10 +118,10 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001123_source')" id="l_M001123_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000326_source')" id="l_M000326_source">show</a>
                         
                     </p>
-                    <div id="M001123_source" class="dyn-source">
+                    <div id="M000326_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 124</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_memory</span>
             <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">proc_status_file</span>, <span class="ruby-value str">&quot;r&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
@@ -139,9 +139,9 @@ Returns the amount of resident memory this process is using in MB
             </div>
             
             <div class="method">
-                <div class="title" id="M001124">
+                <div class="title" id="M000331">
                     
-                    <a name="M001124"></a><b>proc_status_file</b>()
+                    <a name="M000331"></a><b>proc_status_file</b>()
                     
                 </div>
                 
@@ -150,10 +150,10 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001124_source')" id="l_M001124_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000331_source')" id="l_M000331_source">show</a>
                         
                     </p>
-                    <div id="M001124_source" class="dyn-source">
+                    <div id="M000331_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 134</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proc_status_file</span>
             <span class="ruby-node">&quot;/proc/#{$$}/status&quot;</span>
@@ -164,9 +164,9 @@ Returns the amount of resident memory this process is using in MB
             </div>
             
             <div class="method">
-                <div class="title" id="M001125">
+                <div class="title" id="M000332">
                     
-                    <a name="M001125"></a><b>to_s</b>()
+                    <a name="M000332"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -175,10 +175,10 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001125_source')" id="l_M001125_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000332_source')" id="l_M000332_source">show</a>
                         
                     </p>
-                    <div id="M001125_source" class="dyn-source">
+                    <div id="M000332_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 137</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
             <span class="ruby-node">&quot;proc status file sampler: #{proc_status_file}&quot;</span>

@@ -43,11 +43,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001339">agent_enabled?</a>,</li>
+                <li><a href="#M000546">agent_enabled?</a>,</li>
                 
-                <li><a href="#M001343">app</a>,</li>
+                <li><a href="#M000547">app</a>,</li>
                 
-                <li><a href="#M001346">append_environment_info</a></li>
+                <li><a href="#M000550">append_environment_info</a></li>
                 
             </ul>
         </dd>
@@ -56,7 +56,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001347">bundler_gem_list</a></li>
+                <li><a href="#M000551">bundler_gem_list</a></li>
                 
             </ul>
         </dd>
@@ -65,7 +65,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001349">config_file</a></li>
+                <li><a href="#M000552">config_file</a></li>
                 
             </ul>
         </dd>
@@ -74,7 +74,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001344">framework</a></li>
+                <li><a href="#M000548">framework</a></li>
                 
             </ul>
         </dd>
@@ -83,7 +83,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001335">init_plugin</a></li>
+                <li><a href="#M000538">init_plugin</a></li>
                 
             </ul>
         </dd>
@@ -92,9 +92,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001350">new</a>,</li>
+                <li><a href="#M000553">new</a>,</li>
                 
-                <li><a href="#M001351">newrelic_root</a></li>
+                <li><a href="#M000554">newrelic_root</a></li>
                 
             </ul>
         </dd>
@@ -103,7 +103,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001338">start_agent</a></li>
+                <li><a href="#M000544">start_agent</a></li>
                 
             </ul>
         </dd>
@@ -112,7 +112,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001345">to_s</a></li>
+                <li><a href="#M000549">to_s</a></li>
                 
             </ul>
         </dd>
@@ -138,10 +138,11 @@
             </td>
             <td class='attr-name'>env</td>
             <td class='attr-desc'><p>
-The env is the setting used to identify which section of the newrelic.yml
-to load. This defaults to a framework specific value, such as
+The env is the setting used to identify which section of the <a
+href="../../../files/newrelic_yml.html">newrelic.yml</a> to load. This
+defaults to a framework specific value, such as
 ENV[&#8216;RAILS_ENV&#8217;] but can be overridden as long as you set it
-before calling <a href="InstanceMethods.html#M001335">init_plugin</a>
+before calling <a href="InstanceMethods.html#M000538">init_plugin</a>
 </p></td>
         </tr>
         
@@ -160,9 +161,9 @@ before calling <a href="InstanceMethods.html#M001335">init_plugin</a>
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001350">
+                <div class="title" id="M000553">
                     
-                    <a name="M001350"></a><b>new</b>(local_env, config_file_override=nil)
+                    <a name="M000553"></a><b>new</b>(local_env, config_file_override=nil)
                     
                 </div>
                 
@@ -171,10 +172,10 @@ before calling <a href="InstanceMethods.html#M001335">init_plugin</a>
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001350_source')" id="l_M001350_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000553_source')" id="l_M000553_source">show</a>
                         
                     </p>
-                    <div id="M001350_source" class="dyn-source">
+                    <div id="M000553_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 124</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">local_env</span>, <span class="ruby-identifier">config_file_override</span>=<span class="ruby-keyword kw">nil</span>
         <span class="ruby-ivar">@local_env</span> = <span class="ruby-identifier">local_env</span>
@@ -203,9 +204,9 @@ before calling <a href="InstanceMethods.html#M001335">init_plugin</a>
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001339">
+                <div class="title" id="M000546">
                     
-                    <a name="M001339"></a><b>agent_enabled?</b>()
+                    <a name="M000546"></a><b>agent_enabled?</b>()
                     
                 </div>
                 
@@ -224,10 +225,10 @@ agent_enabled config option when true or false.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001339_source')" id="l_M001339_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000546_source')" id="l_M000546_source">show</a>
                         
                     </p>
-                    <div id="M001339_source" class="dyn-source">
+                    <div id="M000546_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 83</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">agent_enabled?</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developer_mode?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">monitor_mode?</span>
@@ -245,9 +246,9 @@ agent_enabled config option when true or false.
             </div>
             
             <div class="method">
-                <div class="title" id="M001343">
+                <div class="title" id="M000547">
                     
-                    <a name="M001343"></a><b>app</b>()
+                    <a name="M000547"></a><b>app</b>()
                     
                 </div>
                 
@@ -255,7 +256,7 @@ agent_enabled config option when true or false.
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="InstanceMethods.html#M001344">framework</a>
+                    <a href="InstanceMethods.html#M000548">framework</a>
                     
                 </div>
                 
@@ -263,10 +264,10 @@ agent_enabled config option when true or false.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001343_source')" id="l_M001343_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000547_source')" id="l_M000547_source">show</a>
                         
                     </p>
-                    <div id="M001343_source" class="dyn-source">
+                    <div id="M000547_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 94</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">app</span>
         <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span>
@@ -277,15 +278,15 @@ agent_enabled config option when true or false.
             </div>
             
             <div class="method">
-                <div class="title" id="M001344">
+                <div class="title" id="M000548">
                     
-                    <a name="M001344"></a><b>framework</b>()
+                    <a name="M000548"></a><b>framework</b>()
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="InstanceMethods.html#M001343">app</a>
+Alias for <a href="InstanceMethods.html#M000547">app</a>
 </p>
 
                 </div>
@@ -295,9 +296,9 @@ Alias for <a href="InstanceMethods.html#M001343">app</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001335">
+                <div class="title" id="M000538">
                     
-                    <a name="M001335"></a><b>init_plugin</b>(options={})
+                    <a name="M000538"></a><b>init_plugin</b>(options={})
                     
                 </div>
                 
@@ -336,10 +337,10 @@ which is called one or more times.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001335_source')" id="l_M001335_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000538_source')" id="l_M000538_source">show</a>
                         
                     </p>
-                    <div id="M001335_source" class="dyn-source">
+                    <div id="M000538_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 35</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_plugin</span>(<span class="ruby-identifier">options</span>={})
         <span class="ruby-identifier">options</span>[<span class="ruby-value str">'app_name'</span>] = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_APP_NAME'</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_APP_NAME'</span>]
@@ -385,9 +386,9 @@ which is called one or more times.
             </div>
             
             <div class="method">
-                <div class="title" id="M001338">
+                <div class="title" id="M000544">
                     
-                    <a name="M001338"></a><b>start_agent</b>()
+                    <a name="M000544"></a><b>start_agent</b>()
                     
                 </div>
                 
@@ -404,10 +405,10 @@ and issue the start command.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001338_source')" id="l_M001338_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000544_source')" id="l_M000544_source">show</a>
                         
                     </p>
-                    <div id="M001338_source" class="dyn-source">
+                    <div id="M000544_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 75</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_agent</span>
         <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">agent</span>.<span class="ruby-identifier">start</span>
@@ -418,9 +419,9 @@ and issue the start command.
             </div>
             
             <div class="method">
-                <div class="title" id="M001345">
+                <div class="title" id="M000549">
                     
-                    <a name="M001345"></a><b>to_s</b>()
+                    <a name="M000549"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -429,10 +430,10 @@ and issue the start command.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001345_source')" id="l_M001345_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000549_source')" id="l_M000549_source">show</a>
                         
                     </p>
-                    <div id="M001345_source" class="dyn-source">
+                    <div id="M000549_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 99</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
         <span class="ruby-node">&quot;Control[#{self.app}]&quot;</span>
@@ -445,9 +446,9 @@ and issue the start command.
             <div class="sectiontitle">Instance Protected methods</div>
             
             <div class="method">
-                <div class="title" id="M001346">
+                <div class="title" id="M000550">
                     
-                    <a name="M001346"></a><b>append_environment_info</b>()
+                    <a name="M000550"></a><b>append_environment_info</b>()
                     
                 </div>
                 
@@ -464,10 +465,10 @@ server for change detection. Override in subclasses
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001346_source')" id="l_M001346_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000550_source')" id="l_M000550_source">show</a>
                         
                     </p>
-                    <div id="M001346_source" class="dyn-source">
+                    <div id="M000550_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 107</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>; <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -476,9 +477,9 @@ server for change detection. Override in subclasses
             </div>
             
             <div class="method">
-                <div class="title" id="M001347">
+                <div class="title" id="M000551">
                     
-                    <a name="M001347"></a><b>bundler_gem_list</b>()
+                    <a name="M000551"></a><b>bundler_gem_list</b>()
                     
                 </div>
                 
@@ -487,10 +488,10 @@ server for change detection. Override in subclasses
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001347_source')" id="l_M001347_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000551_source')" id="l_M000551_source">show</a>
                         
                     </p>
-                    <div id="M001347_source" class="dyn-source">
+                    <div id="M000551_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 109</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bundler_gem_list</span>
         <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Bundler</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span> <span class="ruby-ivar">@load</span> <span class="ruby-keyword kw">end</span>
@@ -508,9 +509,9 @@ server for change detection. Override in subclasses
             </div>
             
             <div class="method">
-                <div class="title" id="M001349">
+                <div class="title" id="M000552">
                     
-                    <a name="M001349"></a><b>config_file</b>()
+                    <a name="M000552"></a><b>config_file</b>()
                     
                 </div>
                 
@@ -519,10 +520,10 @@ server for change detection. Override in subclasses
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001349_source')" id="l_M001349_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000552_source')" id="l_M000552_source">show</a>
                         
                     </p>
-                    <div id="M001349_source" class="dyn-source">
+                    <div id="M000552_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 120</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
         <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>))
@@ -533,9 +534,9 @@ server for change detection. Override in subclasses
             </div>
             
             <div class="method">
-                <div class="title" id="M001351">
+                <div class="title" id="M000554">
                     
-                    <a name="M001351"></a><b>newrelic_root</b>()
+                    <a name="M000554"></a><b>newrelic_root</b>()
                     
                 </div>
                 
@@ -544,10 +545,10 @@ server for change detection. Override in subclasses
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001351_source')" id="l_M001351_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000554_source')" id="l_M000554_source">show</a>
                         
                     </p>
-                    <div id="M001351_source" class="dyn-source">
+                    <div id="M000554_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 144</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_root</span>
         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">newrelic_root</span>

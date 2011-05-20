@@ -43,11 +43,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001357">profiling=</a>,</li>
+                <li><a href="#M000565">profiling=</a>,</li>
                 
-                <li><a href="#M001355">profiling?</a>,</li>
+                <li><a href="#M000563">profiling?</a>,</li>
                 
-                <li><a href="#M001356">profiling_available?</a></li>
+                <li><a href="#M000564">profiling_available?</a></li>
                 
             </ul>
         </dd>
@@ -69,9 +69,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001357">
+                <div class="title" id="M000565">
                     
-                    <a name="M001357"></a><b>profiling=</b>(val)
+                    <a name="M000565"></a><b>profiling=</b>(val)
                     
                 </div>
                 
@@ -88,10 +88,10 @@ a true value is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001357_source')" id="l_M001357_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000565_source')" id="l_M000565_source">show</a>
                         
                     </p>
-                    <div id="M001357_source" class="dyn-source">
+                    <div id="M000565_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/profiling.rb, line 19</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">profiling=</span>(<span class="ruby-identifier">val</span>)
         <span class="ruby-ivar">@profiling</span> = <span class="ruby-identifier">profiling_available?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">RubyProf</span>)
@@ -102,9 +102,9 @@ a true value is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M001355">
+                <div class="title" id="M000563">
                     
-                    <a name="M001355"></a><b>profiling?</b>()
+                    <a name="M000563"></a><b>profiling?</b>()
                     
                 </div>
                 
@@ -120,10 +120,10 @@ A flag used in dev mode to indicate if profiling is available
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001355_source')" id="l_M001355_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000563_source')" id="l_M000563_source">show</a>
                         
                     </p>
-                    <div id="M001355_source" class="dyn-source">
+                    <div id="M000563_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/profiling.rb, line 6</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">profiling?</span>
         <span class="ruby-ivar">@profiling</span>
@@ -134,9 +134,9 @@ A flag used in dev mode to indicate if profiling is available
             </div>
             
             <div class="method">
-                <div class="title" id="M001356">
+                <div class="title" id="M000564">
                     
-                    <a name="M001356"></a><b>profiling_available?</b>()
+                    <a name="M000564"></a><b>profiling_available?</b>()
                     
                 </div>
                 
@@ -145,10 +145,10 @@ A flag used in dev mode to indicate if profiling is available
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001356_source')" id="l_M001356_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000564_source')" id="l_M000564_source">show</a>
                         
                     </p>
-                    <div id="M001356_source" class="dyn-source">
+                    <div id="M000564_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/profiling.rb, line 10</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">profiling_available?</span>
         <span class="ruby-ivar">@profiling_available</span> <span class="ruby-operator">||=</span>

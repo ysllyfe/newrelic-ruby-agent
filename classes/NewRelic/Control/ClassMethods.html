@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001275">instance</a></li>
+                <li><a href="#M000480">instance</a></li>
                 
             </ul>
         </dd>
@@ -52,9 +52,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001276">new_instance</a>,</li>
+                <li><a href="#M000481">new_instance</a>,</li>
                 
-                <li><a href="#M001277">newrelic_root</a></li>
+                <li><a href="#M000483">newrelic_root</a></li>
                 
             </ul>
         </dd>
@@ -76,9 +76,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001275">
+                <div class="title" id="M000480">
                     
-                    <a name="M001275"></a><b>instance</b>()
+                    <a name="M000480"></a><b>instance</b>()
                     
                 </div>
                 
@@ -95,10 +95,10 @@ initialized
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001275_source')" id="l_M001275_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000480_source')" id="l_M000480_source">show</a>
                         
                     </p>
-                    <div id="M001275_source" class="dyn-source">
+                    <div id="M000480_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/class_methods.rb, line 5</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance</span>
         <span class="ruby-ivar">@instance</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">new_instance</span>
@@ -109,9 +109,9 @@ initialized
             </div>
             
             <div class="method">
-                <div class="title" id="M001276">
+                <div class="title" id="M000481">
                     
-                    <a name="M001276"></a><b>new_instance</b>()
+                    <a name="M000481"></a><b>new_instance</b>()
                     
                 </div>
                 
@@ -127,10 +127,10 @@ Create the concrete class for environment specific behavior:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001276_source')" id="l_M001276_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000481_source')" id="l_M000481_source">show</a>
                         
                     </p>
-                    <div id="M001276_source" class="dyn-source">
+                    <div id="M000481_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/class_methods.rb, line 10</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_instance</span>
         <span class="ruby-ivar">@local_env</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">LocalEnvironment</span>.<span class="ruby-identifier">new</span>
@@ -153,9 +153,9 @@ Create the concrete class for environment specific behavior:
             </div>
             
             <div class="method">
-                <div class="title" id="M001277">
+                <div class="title" id="M000483">
                     
-                    <a name="M001277"></a><b>newrelic_root</b>()
+                    <a name="M000483"></a><b>newrelic_root</b>()
                     
                 </div>
                 
@@ -171,10 +171,10 @@ The root directory for the plugin or gem
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001277_source')" id="l_M001277_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000483_source')" id="l_M000483_source">show</a>
                         
                     </p>
-                    <div id="M001277_source" class="dyn-source">
+                    <div id="M000483_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/class_methods.rb, line 27</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_root</span>
         <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">&quot;../../../..&quot;</span>, <span class="ruby-keyword kw">__FILE__</span>)

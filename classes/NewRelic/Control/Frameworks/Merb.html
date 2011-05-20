@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001303">env</a></li>
+                <li><a href="#M000506">env</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001306">init_config</a></li>
+                <li><a href="#M000509">init_config</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001304">root</a></li>
+                <li><a href="#M000507">root</a></li>
                 
             </ul>
         </dd>
@@ -76,7 +76,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001305">to_stdout</a></li>
+                <li><a href="#M000508">to_stdout</a></li>
                 
             </ul>
         </dd>
@@ -98,9 +98,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001303">
+                <div class="title" id="M000506">
                     
-                    <a name="M001303"></a><b>env</b>()
+                    <a name="M000506"></a><b>env</b>()
                     
                 </div>
                 
@@ -109,10 +109,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001303_source')" id="l_M001303_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000506_source')" id="l_M000506_source">show</a>
                         
                     </p>
-                    <div id="M001303_source" class="dyn-source">
+                    <div id="M000506_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/merb.rb, line 6</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
           <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">::</span><span class="ruby-constant">Merb</span>.<span class="ruby-identifier">env</span>
@@ -123,9 +123,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001306">
+                <div class="title" id="M000509">
                     
-                    <a name="M001306"></a><b>init_config</b>(options={})
+                    <a name="M000509"></a><b>init_config</b>(options={})
                     
                 </div>
                 
@@ -134,10 +134,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001306_source')" id="l_M001306_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000509_source')" id="l_M000509_source">show</a>
                         
                     </p>
-                    <div id="M001306_source" class="dyn-source">
+                    <div id="M000509_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/merb.rb, line 19</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span> <span class="ruby-identifier">options</span>={}
           <span class="ruby-operator">::</span><span class="ruby-constant">Merb</span><span class="ruby-operator">::</span><span class="ruby-constant">Plugins</span>.<span class="ruby-identifier">add_rakefiles</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>,<span class="ruby-value str">&quot;lib/tasks/all.rb&quot;</span>)
@@ -153,9 +153,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001304">
+                <div class="title" id="M000507">
                     
-                    <a name="M001304"></a><b>root</b>()
+                    <a name="M000507"></a><b>root</b>()
                     
                 </div>
                 
@@ -164,10 +164,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001304_source')" id="l_M001304_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000507_source')" id="l_M000507_source">show</a>
                         
                     </p>
-                    <div id="M001304_source" class="dyn-source">
+                    <div id="M000507_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/merb.rb, line 9</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
           <span class="ruby-operator">::</span><span class="ruby-constant">Merb</span>.<span class="ruby-identifier">root</span>
@@ -178,9 +178,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001305">
+                <div class="title" id="M000508">
                     
-                    <a name="M001305"></a><b>to_stdout</b>(msg)
+                    <a name="M000508"></a><b>to_stdout</b>(msg)
                     
                 </div>
                 
@@ -189,10 +189,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001305_source')" id="l_M001305_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000508_source')" id="l_M000508_source">show</a>
                         
                     </p>
-                    <div id="M001305_source" class="dyn-source">
+                    <div id="M000508_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/merb.rb, line 13</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
           <span class="ruby-constant">Merb</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;NewRelic ~ &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">msg</span>)

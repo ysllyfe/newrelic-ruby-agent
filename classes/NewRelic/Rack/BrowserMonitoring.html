@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001442">autoinstrument_source</a></li>
+                <li><a href="#M000646">autoinstrument_source</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001438">call</a></li>
+                <li><a href="#M000641">call</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001437">new</a></li>
+                <li><a href="#M000640">new</a></li>
                 
             </ul>
         </dd>
@@ -76,7 +76,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001441">should_instrument?</a></li>
+                <li><a href="#M000645">should_instrument?</a></li>
                 
             </ul>
         </dd>
@@ -98,9 +98,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001437">
+                <div class="title" id="M000640">
                     
-                    <a name="M001437"></a><b>new</b>(app, options = {})
+                    <a name="M000640"></a><b>new</b>(app, options = {})
                     
                 </div>
                 
@@ -109,10 +109,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001437_source')" id="l_M001437_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000640_source')" id="l_M000640_source">show</a>
                         
                     </p>
-                    <div id="M001437_source" class="dyn-source">
+                    <div id="M000640_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/browser_monitoring.rb, line 6</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">options</span> = {})
       <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span>
@@ -125,9 +125,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001442">
+                <div class="title" id="M000646">
                     
-                    <a name="M001442"></a><b>autoinstrument_source</b>(response, headers)
+                    <a name="M000646"></a><b>autoinstrument_source</b>(response, headers)
                     
                 </div>
                 
@@ -136,10 +136,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001442_source')" id="l_M001442_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000646_source')" id="l_M000646_source">show</a>
                         
                     </p>
-                    <div id="M001442_source" class="dyn-source">
+                    <div id="M000646_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/browser_monitoring.rb, line 37</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">autoinstrument_source</span>(<span class="ruby-identifier">response</span>, <span class="ruby-identifier">headers</span>)
       <span class="ruby-identifier">source</span> = <span class="ruby-keyword kw">nil</span>
@@ -176,9 +176,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001438">
+                <div class="title" id="M000641">
                     
-                    <a name="M001438"></a><b>call</b>(env)
+                    <a name="M000641"></a><b>call</b>(env)
                     
                 </div>
                 
@@ -194,10 +194,10 @@ method required by <a href="../Rack.html">Rack</a> interface
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001438_source')" id="l_M001438_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000641_source')" id="l_M000641_source">show</a>
                         
                     </p>
-                    <div id="M001438_source" class="dyn-source">
+                    <div id="M000641_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/browser_monitoring.rb, line 11</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
       
@@ -226,9 +226,9 @@ method required by <a href="../Rack.html">Rack</a> interface
             </div>
             
             <div class="method">
-                <div class="title" id="M001441">
+                <div class="title" id="M000645">
                     
-                    <a name="M001441"></a><b>should_instrument?</b>(status, headers)
+                    <a name="M000645"></a><b>should_instrument?</b>(status, headers)
                     
                 </div>
                 
@@ -237,10 +237,10 @@ method required by <a href="../Rack.html">Rack</a> interface
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001441_source')" id="l_M001441_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000645_source')" id="l_M000645_source">show</a>
                         
                     </p>
-                    <div id="M001441_source" class="dyn-source">
+                    <div id="M000645_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/browser_monitoring.rb, line 33</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">should_instrument?</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">headers</span>)
       <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">headers</span>[<span class="ruby-value str">&quot;Content-Type&quot;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">headers</span>[<span class="ruby-value str">&quot;Content-Type&quot;</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-value str">&quot;text/html&quot;</span>)

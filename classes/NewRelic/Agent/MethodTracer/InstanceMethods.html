@@ -43,9 +43,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001056">trace_execution_unscoped</a>,</li>
+                <li><a href="#M000259">trace_execution_unscoped</a>,</li>
                 
-                <li><a href="#M001058">trace_method_execution_no_scope</a></li>
+                <li><a href="#M000261">trace_method_execution_no_scope</a></li>
                 
             </ul>
         </dd>
@@ -98,9 +98,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001056">
+                <div class="title" id="M000259">
                     
-                    <a name="M001056"></a><b>trace_execution_unscoped</b>(metric_names, options={})
+                    <a name="M000259"></a><b>trace_execution_unscoped</b>(metric_names, options={})
                     
                 </div>
                 
@@ -117,7 +117,7 @@ breakdown chart. This is code is inlined in add_method_tracer.
 </li>
 <li><tt>:force =&gt; true</tt> will force the metric to be captured even when
 tracing is disabled with <a
-href="../../Agent.html#M001244">NewRelic::Agent#disable_all_tracing</a>
+href="../../Agent.html#M000451">NewRelic::Agent#disable_all_tracing</a>
 
 </li>
 </ul>
@@ -128,7 +128,7 @@ href="../../Agent.html#M001244">NewRelic::Agent#disable_all_tracing</a>
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="InstanceMethods.html#M001058">trace_method_execution_no_scope</a>
+                    <a href="InstanceMethods.html#M000261">trace_method_execution_no_scope</a>
                     
                 </div>
                 
@@ -136,10 +136,10 @@ href="../../Agent.html#M001244">NewRelic::Agent#disable_all_tracing</a>
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001056_source')" id="l_M001056_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000259_source')" id="l_M000259_source">show</a>
                         
                     </p>
-                    <div id="M001056_source" class="dyn-source">
+                    <div id="M000259_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/method_tracer.rb, line 68</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_execution_unscoped</span>(<span class="ruby-identifier">metric_names</span>, <span class="ruby-identifier">options</span>={})
           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
@@ -162,16 +162,16 @@ href="../../Agent.html#M001244">NewRelic::Agent#disable_all_tracing</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M001058">
+                <div class="title" id="M000261">
                     
-                    <a name="M001058"></a><b>trace_method_execution_no_scope</b>(metric_names, options={})
+                    <a name="M000261"></a><b>trace_method_execution_no_scope</b>(metric_names, options={})
                     
                 </div>
                 
                 <div class="description">
                   <p>
 Alias for <a
-href="InstanceMethods.html#M001056">trace_execution_unscoped</a>
+href="InstanceMethods.html#M000259">trace_execution_unscoped</a>
 </p>
 
                 </div>

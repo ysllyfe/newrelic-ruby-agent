@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000902">control</a></li>
+                <li><a href="#M000106">control</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000931">harvest_errors</a></li>
+                <li><a href="#M000137">harvest_errors</a></li>
                 
             </ul>
         </dd>
@@ -67,9 +67,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000904">ignore</a>,</li>
+                <li><a href="#M000108">ignore</a>,</li>
                 
-                <li><a href="#M000903">ignore_error_filter</a></li>
+                <li><a href="#M000107">ignore_error_filter</a></li>
                 
             </ul>
         </dd>
@@ -78,9 +78,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000901">new</a>,</li>
+                <li><a href="#M000104">new</a>,</li>
                 
-                <li><a href="#M000928">notice_error</a></li>
+                <li><a href="#M000133">notice_error</a></li>
                 
             </ul>
         </dd>
@@ -163,9 +163,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000901">
+                <div class="title" id="M000104">
                     
-                    <a name="M000901"></a><b>new</b>()
+                    <a name="M000104"></a><b>new</b>()
                     
                 </div>
                 
@@ -174,10 +174,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000901_source')" id="l_M000901_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000104_source')" id="l_M000104_source">show</a>
                         
                     </p>
-                    <div id="M000901_source" class="dyn-source">
+                    <div id="M000104_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 18</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-ivar">@errors</span> = []
@@ -204,9 +204,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000902">
+                <div class="title" id="M000106">
                     
-                    <a name="M000902"></a><b>control</b>()
+                    <a name="M000106"></a><b>control</b>()
                     
                 </div>
                 
@@ -215,10 +215,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000902_source')" id="l_M000902_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000106_source')" id="l_M000106_source">show</a>
                         
                     </p>
-                    <div id="M000902_source" class="dyn-source">
+                    <div id="M000106_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">control</span>
       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>
@@ -229,9 +229,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000931">
+                <div class="title" id="M000137">
                     
-                    <a name="M000931"></a><b>harvest_errors</b>(unsent_errors)
+                    <a name="M000137"></a><b>harvest_errors</b>(unsent_errors)
                     
                 </div>
                 
@@ -249,10 +249,10 @@ out all unsent errors before sending the newly queued errors.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000931_source')" id="l_M000931_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000137_source')" id="l_M000137_source">show</a>
                         
                     </p>
-                    <div id="M000931_source" class="dyn-source">
+                    <div id="M000137_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 185</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_errors</span>(<span class="ruby-identifier">unsent_errors</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">unsent_errors</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">unsent_errors</span>.<span class="ruby-identifier">empty?</span>
@@ -271,9 +271,9 @@ out all unsent errors before sending the newly queued errors.
             </div>
             
             <div class="method">
-                <div class="title" id="M000904">
+                <div class="title" id="M000108">
                     
-                    <a name="M000904"></a><b>ignore</b>(errors)
+                    <a name="M000108"></a><b>ignore</b>(errors)
                     
                 </div>
                 
@@ -289,10 +289,10 @@ errors is an array of Exception Class Names
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000904_source')" id="l_M000904_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000108_source')" id="l_M000108_source">show</a>
                         
                     </p>
-                    <div id="M000904_source" class="dyn-source">
+                    <div id="M000108_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 50</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore</span>(<span class="ruby-identifier">errors</span>)
       <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@ignore</span>[<span class="ruby-identifier">error</span>] = <span class="ruby-keyword kw">true</span>; <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Ignoring errors of type '#{error}'&quot;</span>) }
@@ -303,9 +303,9 @@ errors is an array of Exception Class Names
             </div>
             
             <div class="method">
-                <div class="title" id="M000903">
+                <div class="title" id="M000107">
                     
-                    <a name="M000903"></a><b>ignore_error_filter</b>(&amp;block)
+                    <a name="M000107"></a><b>ignore_error_filter</b>(&amp;block)
                     
                 </div>
                 
@@ -314,10 +314,10 @@ errors is an array of Exception Class Names
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000903_source')" id="l_M000903_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000107_source')" id="l_M000107_source">show</a>
                         
                     </p>
-                    <div id="M000903_source" class="dyn-source">
+                    <div id="M000107_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 40</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_error_filter</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
@@ -332,9 +332,9 @@ errors is an array of Exception Class Names
             </div>
             
             <div class="method">
-                <div class="title" id="M000928">
+                <div class="title" id="M000133">
                     
-                    <a name="M000928"></a><b>notice_error</b>(exception, options={})
+                    <a name="M000133"></a><b>notice_error</b>(exception, options={})
                     
                 </div>
                 
@@ -373,10 +373,10 @@ nil, the error count is bumped and no traced error is recorded
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000928_source')" id="l_M000928_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000133_source')" id="l_M000133_source">show</a>
                         
                     </p>
-                    <div id="M000928_source" class="dyn-source">
+                    <div id="M000133_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 172</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">options</span>={})
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">should_exit_notice_error?</span>(<span class="ruby-identifier">exception</span>)

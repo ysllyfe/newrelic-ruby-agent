@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001121">get_memory</a></li>
+                <li><a href="#M000324">get_memory</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001120">new</a></li>
+                <li><a href="#M000323">new</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001122">to_s</a></li>
+                <li><a href="#M000325">to_s</a></li>
                 
             </ul>
         </dd>
@@ -89,9 +89,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001120">
+                <div class="title" id="M000323">
                     
-                    <a name="M001120"></a><b>new</b>(command)
+                    <a name="M000323"></a><b>new</b>(command)
                     
                 </div>
                 
@@ -100,10 +100,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001120_source')" id="l_M001120_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000323_source')" id="l_M000323_source">show</a>
                         
                     </p>
-                    <div id="M001120_source" class="dyn-source">
+                    <div id="M000323_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 97</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command</span>)
             <span class="ruby-keyword kw">super</span>()
@@ -117,9 +117,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001121">
+                <div class="title" id="M000324">
                     
-                    <a name="M001121"></a><b>get_memory</b>()
+                    <a name="M000324"></a><b>get_memory</b>()
                     
                 </div>
                 
@@ -135,10 +135,10 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001121_source')" id="l_M001121_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000324_source')" id="l_M000324_source">show</a>
                         
                     </p>
-                    <div id="M001121_source" class="dyn-source">
+                    <div id="M000324_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 103</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_memory</span>
             <span class="ruby-identifier">process</span> = <span class="ruby-identifier">$$</span>
@@ -154,9 +154,9 @@ Returns the amount of resident memory this process is using in MB
             </div>
             
             <div class="method">
-                <div class="title" id="M001122">
+                <div class="title" id="M000325">
                     
-                    <a name="M001122"></a><b>to_s</b>()
+                    <a name="M000325"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -165,10 +165,10 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001122_source')" id="l_M001122_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000325_source')" id="l_M000325_source">show</a>
                         
                     </p>
-                    <div id="M001122_source" class="dyn-source">
+                    <div id="M000325_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 111</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
             <span class="ruby-node">&quot;shell command sampler: #{@command}&quot;</span>

@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001514">breakdown_data</a></li>
+                <li><a href="#M000713">breakdown_data</a></li>
                 
             </ul>
         </dd>
@@ -52,7 +52,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001499">database_time</a></li>
+                <li><a href="#M000694">database_time</a></li>
                 
             </ul>
         </dd>
@@ -61,7 +61,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001500">render_time</a></li>
+                <li><a href="#M000695">render_time</a></li>
                 
             </ul>
         </dd>
@@ -70,7 +70,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001522">sql_segments</a></li>
+                <li><a href="#M000718">sql_segments</a></li>
                 
             </ul>
         </dd>
@@ -99,9 +99,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001514">
+                <div class="title" id="M000713">
                     
-                    <a name="M001514"></a><b>breakdown_data</b>(limit = nil)
+                    <a name="M000713"></a><b>breakdown_data</b>(limit = nil)
                     
                 </div>
                 
@@ -120,10 +120,10 @@ If a limit is specified, then limit the data set to the top n
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001514_source')" id="l_M001514_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000713_source')" id="l_M000713_source">show</a>
                         
                     </p>
-                    <div id="M001514_source" class="dyn-source">
+                    <div id="M000713_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 59</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">breakdown_data</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-keyword kw">nil</span>)
     <span class="ruby-identifier">metric_hash</span> = {}
@@ -166,9 +166,9 @@ If a limit is specified, then limit the data set to the top n
             </div>
             
             <div class="method">
-                <div class="title" id="M001499">
+                <div class="title" id="M000694">
                     
-                    <a name="M001499"></a><b>database_time</b>()
+                    <a name="M000694"></a><b>database_time</b>()
                     
                 </div>
                 
@@ -177,10 +177,10 @@ If a limit is specified, then limit the data set to the top n
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001499_source')" id="l_M001499_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000694_source')" id="l_M000694_source">show</a>
                         
                     </p>
-                    <div id="M001499_source" class="dyn-source">
+                    <div id="M000694_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 4</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">database_time</span>
     <span class="ruby-identifier">time_percentage</span>(<span class="ruby-regexp re">/^Database\/.*/</span>)
@@ -191,9 +191,9 @@ If a limit is specified, then limit the data set to the top n
             </div>
             
             <div class="method">
-                <div class="title" id="M001500">
+                <div class="title" id="M000695">
                     
-                    <a name="M001500"></a><b>render_time</b>()
+                    <a name="M000695"></a><b>render_time</b>()
                     
                 </div>
                 
@@ -202,10 +202,10 @@ If a limit is specified, then limit the data set to the top n
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001500_source')" id="l_M001500_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000695_source')" id="l_M000695_source">show</a>
                         
                     </p>
-                    <div id="M001500_source" class="dyn-source">
+                    <div id="M000695_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 8</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_time</span>
     <span class="ruby-identifier">time_percentage</span>(<span class="ruby-regexp re">/^View\/.*/</span>)
@@ -216,9 +216,9 @@ If a limit is specified, then limit the data set to the top n
             </div>
             
             <div class="method">
-                <div class="title" id="M001522">
+                <div class="title" id="M000718">
                     
-                    <a name="M001522"></a><b>sql_segments</b>(show_non_sql_segments = true)
+                    <a name="M000718"></a><b>sql_segments</b>(show_non_sql_segments = true)
                     
                 </div>
                 
@@ -235,10 +235,10 @@ in the array contains [sql, parent_segment_metric_name, duration]
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001522_source')" id="l_M001522_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000718_source')" id="l_M000718_source">show</a>
                         
                     </p>
-                    <div id="M001522_source" class="dyn-source">
+                    <div id="M000718_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_analysis.rb, line 97</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_segments</span>(<span class="ruby-identifier">show_non_sql_segments</span> = <span class="ruby-keyword kw">true</span>)
     <span class="ruby-identifier">segments</span> = []

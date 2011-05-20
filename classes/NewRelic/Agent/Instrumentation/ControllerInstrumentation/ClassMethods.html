@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000945">add_transaction_tracer</a></li>
+                <li><a href="#M000148">add_transaction_tracer</a></li>
                 
             </ul>
         </dd>
@@ -52,9 +52,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000940">newrelic_ignore</a>,</li>
+                <li><a href="#M000143">newrelic_ignore</a>,</li>
                 
-                <li><a href="#M000941">newrelic_ignore_apdex</a></li>
+                <li><a href="#M000144">newrelic_ignore_apdex</a></li>
                 
             </ul>
         </dd>
@@ -76,9 +76,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000945">
+                <div class="title" id="M000148">
                     
-                    <a name="M000945"></a><b>add_transaction_tracer</b>(method, options={})
+                    <a name="M000148"></a><b>add_transaction_tracer</b>(method, options={})
                     
                 </div>
                 
@@ -140,7 +140,7 @@ transaction so it will appear in transaction traces:
 </pre>
 <p>
 See <a
-href="../ControllerInstrumentation.html#M000949">NewRelic::Agent::Instrumentation::ControllerInstrumentation#perform_action_with_newrelic_trace</a>
+href="../ControllerInstrumentation.html#M000152">NewRelic::Agent::Instrumentation::ControllerInstrumentation#perform_action_with_newrelic_trace</a>
 for the full list of available options.
 </p>
 
@@ -151,10 +151,10 @@ for the full list of available options.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000945_source')" id="l_M000945_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000148_source')" id="l_M000148_source">show</a>
                         
                     </p>
-                    <div id="M000945_source" class="dyn-source">
+                    <div id="M000148_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 125</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_transaction_tracer</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>={})
             <span class="ruby-comment cmt"># The metric path:</span>
@@ -183,9 +183,9 @@ for the full list of available options.
             </div>
             
             <div class="method">
-                <div class="title" id="M000940">
+                <div class="title" id="M000143">
                     
-                    <a name="M000940"></a><b>newrelic_ignore</b>(specifiers={})
+                    <a name="M000143"></a><b>newrelic_ignore</b>(specifiers={})
                     
                 </div>
                 
@@ -203,10 +203,10 @@ actions are ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000940_source')" id="l_M000940_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000143_source')" id="l_M000143_source">show</a>
                         
                     </p>
-                    <div id="M000940_source" class="dyn-source">
+                    <div id="M000143_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 44</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_ignore</span>(<span class="ruby-identifier">specifiers</span>={})
             <span class="ruby-identifier">newrelic_ignore_aspect</span>(<span class="ruby-value str">'do_not_trace'</span>, <span class="ruby-identifier">specifiers</span>)
@@ -217,9 +217,9 @@ actions are ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000941">
+                <div class="title" id="M000144">
                     
-                    <a name="M000941"></a><b>newrelic_ignore_apdex</b>(specifiers={})
+                    <a name="M000144"></a><b>newrelic_ignore_apdex</b>(specifiers={})
                     
                 </div>
                 
@@ -228,7 +228,7 @@ actions are ignored.
 Have NewRelic omit apdex measurements on the given actions. Typically used
 for actions that are not user facing or that skew your overall apdex
 measurement. Accepts :except and :only options, as with <a
-href="ClassMethods.html#M000940">newrelic_ignore</a>.
+href="ClassMethods.html#M000143">newrelic_ignore</a>.
 </p>
 
                 </div>
@@ -238,10 +238,10 @@ href="ClassMethods.html#M000940">newrelic_ignore</a>.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000941_source')" id="l_M000941_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000144_source')" id="l_M000144_source">show</a>
                         
                     </p>
-                    <div id="M000941_source" class="dyn-source">
+                    <div id="M000144_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 50</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_ignore_apdex</span>(<span class="ruby-identifier">specifiers</span>={})
             <span class="ruby-identifier">newrelic_ignore_aspect</span>(<span class="ruby-value str">'ignore_apdex'</span>, <span class="ruby-identifier">specifiers</span>)

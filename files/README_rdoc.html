@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.rdoc</li>
-            <li>Last modified: Fri May 20 15:12:51 -0700 2011</li>
+            <li>Last modified: Fri May 20 15:25:59 -0700 2011</li>
         </ul>
     </div>
 
@@ -99,15 +99,17 @@ There you can sign up for a free Lite account or one of our paid
 subscriptions.
 </p>
 <p>
-Once you receive the welcome e-mail with a license key and
-<tt>newrelic.yml</tt> file, copy the <tt>newrelic.yml</tt> file into your
-app config directory.
+Once you receive the welcome e-mail with a license key and <tt><a
+href="newrelic_yml.html">newrelic.yml</a></tt> file, copy the <tt><a
+href="newrelic_yml.html">newrelic.yml</a></tt> file into your app config
+directory.
 </p>
 <p>
-All agent configuration is done in the <tt>newrelic.yml</tt> file. This
-file is by default read from the <tt>config</tt> directory of the
-application root and is subsequently searched for in the application root
-directory, and then in a <tt>~/.newrelic</tt> directory
+All agent configuration is done in the <tt><a
+href="newrelic_yml.html">newrelic.yml</a></tt> file. This file is by
+default read from the <tt>config</tt> directory of the application root and
+is subsequently searched for in the application root directory, and then in
+a <tt>~/.newrelic</tt> directory
 </p>
 <h3>Rails Installation</h3>
 <p>
@@ -153,8 +155,9 @@ in your Sinatra app, below the Sinatra require directive.
 </p>
 <p>
 Then make sure you set RACK_ENV to the environment corresponding to the
-configuration definitions in the newrelic.yml file; i.e., development,
-staging, production, etc.
+configuration definitions in the <a
+href="newrelic_yml.html">newrelic.yml</a> file; i.e., development, staging,
+production, etc.
 </p>
 <p>
 To use Developer Mode in Sinatra, add <a
@@ -203,8 +206,8 @@ browser:
 </pre>
 <p>
 Developer Mode is only initialized if the <tt>developer_mode</tt> setting
-in the newrelic.yml file is set to true. By default, it is turned off in
-all environments but <tt>development</tt>.
+in the <a href="newrelic_yml.html">newrelic.yml</a> file is set to true. By
+default, it is turned off in all environments but <tt>development</tt>.
 </p>
 <h4>Developer Mode in Rails</h4>
 <p>

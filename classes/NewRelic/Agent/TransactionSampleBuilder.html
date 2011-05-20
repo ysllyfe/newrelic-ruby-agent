@@ -58,9 +58,9 @@ by any other thread so no need for synchronization.
         <dd>
             <ul>
                 
-                <li><a href="#M001182">finish_trace</a>,</li>
+                <li><a href="#M000385">finish_trace</a>,</li>
                 
-                <li><a href="#M001184">freeze</a></li>
+                <li><a href="#M000387">freeze</a></li>
                 
             </ul>
         </dd>
@@ -69,9 +69,9 @@ by any other thread so no need for synchronization.
         <dd>
             <ul>
                 
-                <li><a href="#M001179">ignore_transaction</a>,</li>
+                <li><a href="#M000382">ignore_transaction</a>,</li>
                 
-                <li><a href="#M001178">ignored?</a></li>
+                <li><a href="#M000381">ignored?</a></li>
                 
             </ul>
         </dd>
@@ -80,7 +80,7 @@ by any other thread so no need for synchronization.
         <dd>
             <ul>
                 
-                <li><a href="#M001176">new</a></li>
+                <li><a href="#M000379">new</a></li>
                 
             </ul>
         </dd>
@@ -89,17 +89,17 @@ by any other thread so no need for synchronization.
         <dd>
             <ul>
                 
-                <li><a href="#M001188">sample</a>,</li>
+                <li><a href="#M000391">sample</a>,</li>
                 
-                <li><a href="#M001177">sample_id</a>,</li>
+                <li><a href="#M000380">sample_id</a>,</li>
                 
-                <li><a href="#M001183">scope_depth</a>,</li>
+                <li><a href="#M000386">scope_depth</a>,</li>
                 
-                <li><a href="#M001185">set_profile</a>,</li>
+                <li><a href="#M000388">set_profile</a>,</li>
                 
-                <li><a href="#M001187">set_transaction_cpu_time</a>,</li>
+                <li><a href="#M000390">set_transaction_cpu_time</a>,</li>
                 
-                <li><a href="#M001186">set_transaction_info</a></li>
+                <li><a href="#M000389">set_transaction_info</a></li>
                 
             </ul>
         </dd>
@@ -108,9 +108,9 @@ by any other thread so no need for synchronization.
         <dd>
             <ul>
                 
-                <li><a href="#M001180">trace_entry</a>,</li>
+                <li><a href="#M000383">trace_entry</a>,</li>
                 
-                <li><a href="#M001181">trace_exit</a></li>
+                <li><a href="#M000384">trace_exit</a></li>
                 
             </ul>
         </dd>
@@ -165,9 +165,9 @@ by any other thread so no need for synchronization.
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001176">
+                <div class="title" id="M000379">
                     
-                    <a name="M001176"></a><b>new</b>(time=Time.now)
+                    <a name="M000379"></a><b>new</b>(time=Time.now)
                     
                 </div>
                 
@@ -176,10 +176,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001176_source')" id="l_M001176_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000379_source')" id="l_M000379_source">show</a>
                         
                     </p>
-                    <div id="M001176_source" class="dyn-source">
+                    <div id="M000379_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 15</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
         <span class="ruby-ivar">@sample</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">TransactionSample</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">time</span>.<span class="ruby-identifier">to_f</span>)
@@ -194,9 +194,9 @@ by any other thread so no need for synchronization.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001182">
+                <div class="title" id="M000385">
                     
-                    <a name="M001182"></a><b>finish_trace</b>(time)
+                    <a name="M000385"></a><b>finish_trace</b>(time)
                     
                 </div>
                 
@@ -205,10 +205,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001182_source')" id="l_M001182_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000385_source')" id="l_M000385_source">show</a>
                         
                     </p>
-                    <div id="M001182_source" class="dyn-source">
+                    <div id="M000385_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 44</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">finish_trace</span>(<span class="ruby-identifier">time</span>)
         <span class="ruby-comment cmt"># This should never get called twice, but in a rare case that we can't reproduce in house it does.</span>
@@ -229,9 +229,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001184">
+                <div class="title" id="M000387">
                     
-                    <a name="M001184"></a><b>freeze</b>()
+                    <a name="M000387"></a><b>freeze</b>()
                     
                 </div>
                 
@@ -240,10 +240,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001184_source')" id="l_M001184_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000387_source')" id="l_M000387_source">show</a>
                         
                     </p>
-                    <div id="M001184_source" class="dyn-source">
+                    <div id="M000387_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 70</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">freeze</span>
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">freeze</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">sample</span>.<span class="ruby-identifier">frozen?</span>
@@ -254,9 +254,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001179">
+                <div class="title" id="M000382">
                     
-                    <a name="M001179"></a><b>ignore_transaction</b>()
+                    <a name="M000382"></a><b>ignore_transaction</b>()
                     
                 </div>
                 
@@ -265,10 +265,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001179_source')" id="l_M001179_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000382_source')" id="l_M000382_source">show</a>
                         
                     </p>
-                    <div id="M001179_source" class="dyn-source">
+                    <div id="M000382_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 27</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_transaction</span>
         <span class="ruby-ivar">@ignore</span> = <span class="ruby-keyword kw">true</span>
@@ -279,9 +279,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001178">
+                <div class="title" id="M000381">
                     
-                    <a name="M001178"></a><b>ignored?</b>()
+                    <a name="M000381"></a><b>ignored?</b>()
                     
                 </div>
                 
@@ -290,10 +290,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001178_source')" id="l_M001178_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000381_source')" id="l_M000381_source">show</a>
                         
                     </p>
-                    <div id="M001178_source" class="dyn-source">
+                    <div id="M000381_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 24</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignored?</span>
         <span class="ruby-ivar">@ignore</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:path</span>].<span class="ruby-identifier">nil?</span>
@@ -304,9 +304,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001188">
+                <div class="title" id="M000391">
                     
-                    <a name="M001188"></a><b>sample</b>()
+                    <a name="M000391"></a><b>sample</b>()
                     
                 </div>
                 
@@ -315,10 +315,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001188_source')" id="l_M001188_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000391_source')" id="l_M000391_source">show</a>
                         
                     </p>
-                    <div id="M001188_source" class="dyn-source">
+                    <div id="M000391_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 95</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample</span>
         <span class="ruby-ivar">@sample</span>
@@ -329,9 +329,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001177">
+                <div class="title" id="M000380">
                     
-                    <a name="M001177"></a><b>sample_id</b>()
+                    <a name="M000380"></a><b>sample_id</b>()
                     
                 </div>
                 
@@ -340,10 +340,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001177_source')" id="l_M001177_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000380_source')" id="l_M000380_source">show</a>
                         
                     </p>
-                    <div id="M001177_source" class="dyn-source">
+                    <div id="M000380_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 21</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sample_id</span>
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">sample_id</span>
@@ -354,9 +354,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001183">
+                <div class="title" id="M000386">
                     
-                    <a name="M001183"></a><b>scope_depth</b>()
+                    <a name="M000386"></a><b>scope_depth</b>()
                     
                 </div>
                 
@@ -365,10 +365,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001183_source')" id="l_M001183_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000386_source')" id="l_M000386_source">show</a>
                         
                     </p>
-                    <div id="M001183_source" class="dyn-source">
+                    <div id="M000386_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 58</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_depth</span>
         <span class="ruby-identifier">depth</span> = <span class="ruby-value">-1</span>        <span class="ruby-comment cmt"># have to account for the root</span>
@@ -387,9 +387,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001185">
+                <div class="title" id="M000388">
                     
-                    <a name="M001185"></a><b>set_profile</b>(profile)
+                    <a name="M000388"></a><b>set_profile</b>(profile)
                     
                 </div>
                 
@@ -398,10 +398,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001185_source')" id="l_M001185_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000388_source')" id="l_M000388_source">show</a>
                         
                     </p>
-                    <div id="M001185_source" class="dyn-source">
+                    <div id="M000388_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 74</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_profile</span>(<span class="ruby-identifier">profile</span>)
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">profile</span> = <span class="ruby-identifier">profile</span>
@@ -412,9 +412,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001187">
+                <div class="title" id="M000390">
                     
-                    <a name="M001187"></a><b>set_transaction_cpu_time</b>(cpu_time)
+                    <a name="M000390"></a><b>set_transaction_cpu_time</b>(cpu_time)
                     
                 </div>
                 
@@ -423,10 +423,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001187_source')" id="l_M001187_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000390_source')" id="l_M000390_source">show</a>
                         
                     </p>
-                    <div id="M001187_source" class="dyn-source">
+                    <div id="M000390_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 91</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_time</span>)
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:cpu_time</span>] = <span class="ruby-identifier">cpu_time</span>
@@ -437,9 +437,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001186">
+                <div class="title" id="M000389">
                     
-                    <a name="M001186"></a><b>set_transaction_info</b>(path, uri, params)
+                    <a name="M000389"></a><b>set_transaction_info</b>(path, uri, params)
                     
                 </div>
                 
@@ -448,10 +448,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001186_source')" id="l_M001186_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000389_source')" id="l_M000389_source">show</a>
                         
                     </p>
-                    <div id="M001186_source" class="dyn-source">
+                    <div id="M000389_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 78</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_transaction_info</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span>)
         <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:path</span>] = <span class="ruby-identifier">path</span>
@@ -471,9 +471,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001180">
+                <div class="title" id="M000383">
                     
-                    <a name="M001180"></a><b>trace_entry</b>(metric_name, time)
+                    <a name="M000383"></a><b>trace_entry</b>(metric_name, time)
                     
                 </div>
                 
@@ -482,10 +482,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001180_source')" id="l_M001180_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000383_source')" id="l_M000383_source">show</a>
                         
                     </p>
-                    <div id="M001180_source" class="dyn-source">
+                    <div id="M000383_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 30</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_entry</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">time</span>)
         <span class="ruby-identifier">segment</span> = <span class="ruby-ivar">@sample</span>.<span class="ruby-identifier">create_segment</span>(<span class="ruby-identifier">time</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@sample_start</span>, <span class="ruby-identifier">metric_name</span>)
@@ -498,9 +498,9 @@ by any other thread so no need for synchronization.
             </div>
             
             <div class="method">
-                <div class="title" id="M001181">
+                <div class="title" id="M000384">
                     
-                    <a name="M001181"></a><b>trace_exit</b>(metric_name, time)
+                    <a name="M000384"></a><b>trace_exit</b>(metric_name, time)
                     
                 </div>
                 
@@ -509,10 +509,10 @@ by any other thread so no need for synchronization.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001181_source')" id="l_M001181_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000384_source')" id="l_M000384_source">show</a>
                         
                     </p>
-                    <div id="M001181_source" class="dyn-source">
+                    <div id="M000384_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/transaction_sample_builder.rb, line 36</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_exit</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">time</span>)
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@current_segment</span>.<span class="ruby-identifier">metric_name</span>

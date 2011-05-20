@@ -49,9 +49,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000801">build_browser_timing_header</a>,</li>
+                <li><a href="#M000004">build_browser_timing_header</a>,</li>
                 
-                <li><a href="#M000799">build_load_file_js</a></li>
+                <li><a href="#M000002">build_load_file_js</a></li>
                 
             </ul>
         </dd>
@@ -60,7 +60,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000800">javascript_header</a></li>
+                <li><a href="#M000003">javascript_header</a></li>
                 
             </ul>
         </dd>
@@ -69,7 +69,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000798">license_bytes</a></li>
+                <li><a href="#M000001">license_bytes</a></li>
                 
             </ul>
         </dd>
@@ -78,7 +78,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000797">new</a></li>
+                <li><a href="#M000000">new</a></li>
                 
             </ul>
         </dd>
@@ -173,9 +173,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000797">
+                <div class="title" id="M000000">
                     
-                    <a name="M000797"></a><b>new</b>(connect_data)
+                    <a name="M000000"></a><b>new</b>(connect_data)
                     
                 </div>
                 
@@ -184,10 +184,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000797_source')" id="l_M000797_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000000_source')" id="l_M000000_source">show</a>
                         
                     </p>
-                    <div id="M000797_source" class="dyn-source">
+                    <div id="M000000_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/beacon_configuration.rb, line 14</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">connect_data</span>)
         <span class="ruby-ivar">@browser_monitoring_key</span> = <span class="ruby-identifier">connect_data</span>[<span class="ruby-value str">'browser_key'</span>]
@@ -206,9 +206,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000801">
+                <div class="title" id="M000004">
                     
-                    <a name="M000801"></a><b>build_browser_timing_header</b>()
+                    <a name="M000004"></a><b>build_browser_timing_header</b>()
                     
                 </div>
                 
@@ -217,10 +217,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000801_source')" id="l_M000801_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
                         
                     </p>
-                    <div id="M000801_source" class="dyn-source">
+                    <div id="M000004_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/beacon_configuration.rb, line 43</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_browser_timing_header</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@rum_enabled</span>
@@ -239,9 +239,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000799">
+                <div class="title" id="M000002">
                     
-                    <a name="M000799"></a><b>build_load_file_js</b>(connect_data)
+                    <a name="M000002"></a><b>build_load_file_js</b>(connect_data)
                     
                 </div>
                 
@@ -250,10 +250,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000799_source')" id="l_M000799_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000002_source')" id="l_M000002_source">show</a>
                         
                     </p>
-                    <div id="M000799_source" class="dyn-source">
+                    <div id="M000002_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/beacon_configuration.rb, line 32</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_load_file_js</span>(<span class="ruby-identifier">connect_data</span>)
         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">connect_data</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'rum.load_episodes_file'</span>, <span class="ruby-keyword kw">true</span>)
@@ -267,9 +267,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000800">
+                <div class="title" id="M000003">
                     
-                    <a name="M000800"></a><b>javascript_header</b>()
+                    <a name="M000003"></a><b>javascript_header</b>()
                     
                 </div>
                 
@@ -278,10 +278,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000800_source')" id="l_M000800_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
                         
                     </p>
-                    <div id="M000800_source" class="dyn-source">
+                    <div id="M000003_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/beacon_configuration.rb, line 39</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">javascript_header</span>
         <span class="ruby-constant">JS_HEADER</span>.<span class="ruby-identifier">dup</span>
@@ -292,9 +292,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000798">
+                <div class="title" id="M000001">
                     
-                    <a name="M000798"></a><b>license_bytes</b>()
+                    <a name="M000001"></a><b>license_bytes</b>()
                     
                 </div>
                 
@@ -303,10 +303,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000798_source')" id="l_M000798_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000001_source')" id="l_M000001_source">show</a>
                         
                     </p>
-                    <div id="M000798_source" class="dyn-source">
+                    <div id="M000001_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/beacon_configuration.rb, line 24</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">license_bytes</span>
         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@license_bytes</span>.<span class="ruby-identifier">nil?</span>

@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001443">_call</a></li>
+                <li><a href="#M000644">_call</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001440">call</a></li>
+                <li><a href="#M000643">call</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001439">new</a></li>
+                <li><a href="#M000642">new</a></li>
                 
             </ul>
         </dd>
@@ -120,9 +120,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001439">
+                <div class="title" id="M000642">
                     
-                    <a name="M001439"></a><b>new</b>(app)
+                    <a name="M000642"></a><b>new</b>(app)
                     
                 </div>
                 
@@ -131,10 +131,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001439_source')" id="l_M001439_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000642_source')" id="l_M000642_source">show</a>
                         
                     </p>
-                    <div id="M001439_source" class="dyn-source">
+                    <div id="M000642_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/developer_mode.rb, line 19</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">app</span>)
         <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span>
@@ -147,9 +147,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001440">
+                <div class="title" id="M000643">
                     
-                    <a name="M001440"></a><b>call</b>(env)
+                    <a name="M000643"></a><b>call</b>(env)
                     
                 </div>
                 
@@ -158,10 +158,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001440_source')" id="l_M001440_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000643_source')" id="l_M000643_source">show</a>
                         
                     </p>
-                    <div id="M001440_source" class="dyn-source">
+                    <div id="M000643_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/developer_mode.rb, line 23</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-regexp re">/^\/newrelic/</span> <span class="ruby-operator">=~</span> <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>).<span class="ruby-identifier">path_info</span>
@@ -175,9 +175,9 @@
             <div class="sectiontitle">Instance Protected methods</div>
             
             <div class="method">
-                <div class="title" id="M001443">
+                <div class="title" id="M000644">
                     
-                    <a name="M001443"></a><b>_call</b>(env)
+                    <a name="M000644"></a><b>_call</b>(env)
                     
                 </div>
                 
@@ -186,10 +186,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001443_source')" id="l_M001443_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000644_source')" id="l_M000644_source">show</a>
                         
                     </p>
-                    <div id="M001443_source" class="dyn-source">
+                    <div id="M000644_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/developer_mode.rb, line 30</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_call</span>(<span class="ruby-identifier">env</span>)
         <span class="ruby-ivar">@req</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>)

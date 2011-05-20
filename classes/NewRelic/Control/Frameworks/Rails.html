@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001327">_install_instrumentation</a></li>
+                <li><a href="#M000530">_install_instrumentation</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001325">append_environment_info</a></li>
+                <li><a href="#M000528">append_environment_info</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001312">env</a></li>
+                <li><a href="#M000510">env</a></li>
                 
             </ul>
         </dd>
@@ -76,13 +76,13 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001314">init_config</a>,</li>
+                <li><a href="#M000512">init_config</a>,</li>
                 
-                <li><a href="#M001318">install_browser_monitoring</a>,</li>
+                <li><a href="#M000513">install_browser_monitoring</a>,</li>
                 
-                <li><a href="#M001319">install_developer_mode</a>,</li>
+                <li><a href="#M000514">install_developer_mode</a>,</li>
                 
-                <li><a href="#M001326">install_shim</a></li>
+                <li><a href="#M000529">install_shim</a></li>
                 
             </ul>
         </dd>
@@ -91,7 +91,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001320">log!</a></li>
+                <li><a href="#M000520">log!</a></li>
                 
             </ul>
         </dd>
@@ -100,13 +100,13 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001324">rails_gem_list</a>,</li>
+                <li><a href="#M000527">rails_gem_list</a>,</li>
                 
-                <li><a href="#M001323">rails_vendor_root</a>,</li>
+                <li><a href="#M000526">rails_vendor_root</a>,</li>
                 
-                <li><a href="#M001322">rails_version</a>,</li>
+                <li><a href="#M000522">rails_version</a>,</li>
                 
-                <li><a href="#M001313">root</a></li>
+                <li><a href="#M000511">root</a></li>
                 
             </ul>
         </dd>
@@ -115,7 +115,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001321">to_stdout</a></li>
+                <li><a href="#M000521">to_stdout</a></li>
                 
             </ul>
         </dd>
@@ -149,9 +149,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001312">
+                <div class="title" id="M000510">
                     
-                    <a name="M001312"></a><b>env</b>()
+                    <a name="M000510"></a><b>env</b>()
                     
                 </div>
                 
@@ -160,10 +160,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001312_source')" id="l_M001312_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000510_source')" id="l_M000510_source">show</a>
                         
                     </p>
-                    <div id="M001312_source" class="dyn-source">
+                    <div id="M000510_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 10</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
           <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RAILS_ENV</span>.<span class="ruby-identifier">dup</span>
@@ -174,9 +174,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001314">
+                <div class="title" id="M000512">
                     
-                    <a name="M001314"></a><b>init_config</b>(options={})
+                    <a name="M000512"></a><b>init_config</b>(options={})
                     
                 </div>
                 
@@ -194,10 +194,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001314_source')" id="l_M001314_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000512_source')" id="l_M000512_source">show</a>
                         
                     </p>
-                    <div id="M001314_source" class="dyn-source">
+                    <div id="M000512_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 19</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>={})
           <span class="ruby-identifier">rails_config</span>=<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:config</span>]
@@ -217,9 +217,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001318">
+                <div class="title" id="M000513">
                     
-                    <a name="M001318"></a><b>install_browser_monitoring</b>(config)
+                    <a name="M000513"></a><b>install_browser_monitoring</b>(config)
                     
                 </div>
                 
@@ -228,10 +228,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001318_source')" id="l_M001318_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000513_source')" id="l_M000513_source">show</a>
                         
                     </p>
-                    <div id="M001318_source" class="dyn-source">
+                    <div id="M000513_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 32</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_browser_monitoring</span>(<span class="ruby-identifier">config</span>)
           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@browser_monitoring_installed</span>
@@ -251,9 +251,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001319">
+                <div class="title" id="M000514">
                     
-                    <a name="M001319"></a><b>install_developer_mode</b>(rails_config)
+                    <a name="M000514"></a><b>install_developer_mode</b>(rails_config)
                     
                 </div>
                 
@@ -262,10 +262,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001319_source')" id="l_M001319_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000514_source')" id="l_M000514_source">show</a>
                         
                     </p>
-                    <div id="M001319_source" class="dyn-source">
+                    <div id="M000514_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 45</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_developer_mode</span>(<span class="ruby-identifier">rails_config</span>)
           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@installed</span>
@@ -295,9 +295,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001320">
+                <div class="title" id="M000520">
                     
-                    <a name="M001320"></a><b>log!</b>(msg, level=:info)
+                    <a name="M000520"></a><b>log!</b>(msg, level=:info)
                     
                 </div>
                 
@@ -306,10 +306,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001320_source')" id="l_M001320_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000520_source')" id="l_M000520_source">show</a>
                         
                     </p>
-                    <div id="M001320_source" class="dyn-source">
+                    <div id="M000520_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 68</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log!</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">level</span>=<span class="ruby-identifier">:info</span>)
           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">should_log?</span>
@@ -325,9 +325,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001322">
+                <div class="title" id="M000522">
                     
-                    <a name="M001322"></a><b>rails_version</b>()
+                    <a name="M000522"></a><b>rails_version</b>()
                     
                 </div>
                 
@@ -336,10 +336,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001322_source')" id="l_M001322_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000522_source')" id="l_M000522_source">show</a>
                         
                     </p>
-                    <div id="M001322_source" class="dyn-source">
+                    <div id="M000522_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 83</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_version</span>
           <span class="ruby-ivar">@rails_version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">VersionNumber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING</span>)
@@ -350,9 +350,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001313">
+                <div class="title" id="M000511">
                     
-                    <a name="M001313"></a><b>root</b>()
+                    <a name="M000511"></a><b>root</b>()
                     
                 </div>
                 
@@ -361,10 +361,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001313_source')" id="l_M001313_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000511_source')" id="l_M000511_source">show</a>
                         
                     </p>
-                    <div id="M001313_source" class="dyn-source">
+                    <div id="M000511_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 13</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
           <span class="ruby-constant">RAILS_ROOT</span>
@@ -375,9 +375,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001321">
+                <div class="title" id="M000521">
                     
-                    <a name="M001321"></a><b>to_stdout</b>(message)
+                    <a name="M000521"></a><b>to_stdout</b>(message)
                     
                 </div>
                 
@@ -386,10 +386,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001321_source')" id="l_M001321_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000521_source')" id="l_M000521_source">show</a>
                         
                     </p>
-                    <div id="M001321_source" class="dyn-source">
+                    <div id="M000521_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 77</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">message</span>)
           <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">message</span>)
@@ -404,9 +404,9 @@ there.
             <div class="sectiontitle">Instance Protected methods</div>
             
             <div class="method">
-                <div class="title" id="M001327">
+                <div class="title" id="M000530">
                     
-                    <a name="M001327"></a><b>_install_instrumentation</b>()
+                    <a name="M000530"></a><b>_install_instrumentation</b>()
                     
                 </div>
                 
@@ -415,10 +415,10 @@ there.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001327_source')" id="l_M001327_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000530_source')" id="l_M000530_source">show</a>
                         
                     </p>
-                    <div id="M001327_source" class="dyn-source">
+                    <div id="M000530_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 138</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_install_instrumentation</span>
           <span class="ruby-keyword kw">super</span>
@@ -434,9 +434,9 @@ there.
             </div>
             
             <div class="method">
-                <div class="title" id="M001325">
+                <div class="title" id="M000528">
                     
-                    <a name="M001325"></a><b>append_environment_info</b>()
+                    <a name="M000528"></a><b>append_environment_info</b>()
                     
                 </div>
                 
@@ -453,10 +453,10 @@ plugins
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001325_source')" id="l_M001325_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000528_source')" id="l_M000528_source">show</a>
                         
                     </p>
-                    <div id="M001325_source" class="dyn-source">
+                    <div id="M000528_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 102</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>
           <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Rails version'</span>){ <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING</span> }
@@ -491,9 +491,9 @@ plugins
             </div>
             
             <div class="method">
-                <div class="title" id="M001326">
+                <div class="title" id="M000529">
                     
-                    <a name="M001326"></a><b>install_shim</b>()
+                    <a name="M000529"></a><b>install_shim</b>()
                     
                 </div>
                 
@@ -502,10 +502,10 @@ plugins
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001326_source')" id="l_M001326_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000529_source')" id="l_M000529_source">show</a>
                         
                     </p>
-                    <div id="M001326_source" class="dyn-source">
+                    <div id="M000529_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 130</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_shim</span>
           <span class="ruby-keyword kw">super</span>
@@ -520,9 +520,9 @@ plugins
             </div>
             
             <div class="method">
-                <div class="title" id="M001324">
+                <div class="title" id="M000527">
                     
-                    <a name="M001324"></a><b>rails_gem_list</b>()
+                    <a name="M000527"></a><b>rails_gem_list</b>()
                     
                 </div>
                 
@@ -531,10 +531,10 @@ plugins
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001324_source')" id="l_M001324_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000527_source')" id="l_M000527_source">show</a>
                         
                     </p>
-                    <div id="M001324_source" class="dyn-source">
+                    <div id="M000527_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 93</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_gem_list</span>
           <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">gems</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">gem</span> <span class="ruby-operator">|</span>
@@ -549,9 +549,9 @@ plugins
             </div>
             
             <div class="method">
-                <div class="title" id="M001323">
+                <div class="title" id="M000526">
                     
-                    <a name="M001323"></a><b>rails_vendor_root</b>()
+                    <a name="M000526"></a><b>rails_vendor_root</b>()
                     
                 </div>
                 
@@ -560,10 +560,10 @@ plugins
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001323_source')" id="l_M001323_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000526_source')" id="l_M000526_source">show</a>
                         
                     </p>
-                    <div id="M001323_source" class="dyn-source">
+                    <div id="M000526_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/rails.rb, line 89</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rails_vendor_root</span>
           <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">'vendor'</span>,<span class="ruby-value str">'rails'</span>)

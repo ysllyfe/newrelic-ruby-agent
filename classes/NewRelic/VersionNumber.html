@@ -56,7 +56,7 @@ Helper class for managing version comparisons
         <dd>
             <ul>
                 
-                <li><a href="#M001552"><=></a></li>
+                <li><a href="#M000751"><=></a></li>
                 
             </ul>
         </dd>
@@ -65,7 +65,7 @@ Helper class for managing version comparisons
         <dd>
             <ul>
                 
-                <li><a href="#M001555">eql?</a></li>
+                <li><a href="#M000754">eql?</a></li>
                 
             </ul>
         </dd>
@@ -74,7 +74,7 @@ Helper class for managing version comparisons
         <dd>
             <ul>
                 
-                <li><a href="#M001554">hash</a></li>
+                <li><a href="#M000753">hash</a></li>
                 
             </ul>
         </dd>
@@ -83,9 +83,9 @@ Helper class for managing version comparisons
         <dd>
             <ul>
                 
-                <li><a href="#M001545">major_version</a>,</li>
+                <li><a href="#M000744">major_version</a>,</li>
                 
-                <li><a href="#M001550">minor_version</a></li>
+                <li><a href="#M000745">minor_version</a></li>
                 
             </ul>
         </dd>
@@ -94,7 +94,7 @@ Helper class for managing version comparisons
         <dd>
             <ul>
                 
-                <li><a href="#M001544">new</a></li>
+                <li><a href="#M000743">new</a></li>
                 
             </ul>
         </dd>
@@ -103,9 +103,9 @@ Helper class for managing version comparisons
         <dd>
             <ul>
                 
-                <li><a href="#M001551">tiny_version</a>,</li>
+                <li><a href="#M000750">tiny_version</a>,</li>
                 
-                <li><a href="#M001553">to_s</a></li>
+                <li><a href="#M000752">to_s</a></li>
                 
             </ul>
         </dd>
@@ -152,9 +152,9 @@ Helper class for managing version comparisons
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001544">
+                <div class="title" id="M000743">
                     
-                    <a name="M001544"></a><b>new</b>(version_string)
+                    <a name="M000743"></a><b>new</b>(version_string)
                     
                 </div>
                 
@@ -163,10 +163,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001544_source')" id="l_M001544_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000743_source')" id="l_M000743_source">show</a>
                         
                     </p>
-                    <div id="M001544_source" class="dyn-source">
+                    <div id="M000743_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 15</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">version_string</span>)
       <span class="ruby-identifier">version_string</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'1.0.0'</span>
@@ -180,9 +180,9 @@ Helper class for managing version comparisons
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001552">
+                <div class="title" id="M000751">
                     
-                    <a name="M001552"></a><b>&lt;=&gt;</b>(other)
+                    <a name="M000751"></a><b>&lt;=&gt;</b>(other)
                     
                 </div>
                 
@@ -191,10 +191,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001552_source')" id="l_M001552_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000751_source')" id="l_M000751_source">show</a>
                         
                     </p>
-                    <div id="M001552_source" class="dyn-source">
+                    <div id="M000751_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 23</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
       <span class="ruby-identifier">other</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
@@ -206,9 +206,9 @@ Helper class for managing version comparisons
             </div>
             
             <div class="method">
-                <div class="title" id="M001555">
+                <div class="title" id="M000754">
                     
-                    <a name="M001555"></a><b>eql?</b>(other)
+                    <a name="M000754"></a><b>eql?</b>(other)
                     
                 </div>
                 
@@ -217,10 +217,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001555_source')" id="l_M001555_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000754_source')" id="l_M000754_source">show</a>
                         
                     </p>
-                    <div id="M001555_source" class="dyn-source">
+                    <div id="M000754_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">other</span>
       (<span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
@@ -231,9 +231,9 @@ Helper class for managing version comparisons
             </div>
             
             <div class="method">
-                <div class="title" id="M001554">
+                <div class="title" id="M000753">
                     
-                    <a name="M001554"></a><b>hash</b>()
+                    <a name="M000753"></a><b>hash</b>()
                     
                 </div>
                 
@@ -242,10 +242,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001554_source')" id="l_M001554_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000753_source')" id="l_M000753_source">show</a>
                         
                     </p>
-                    <div id="M001554_source" class="dyn-source">
+                    <div id="M000753_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 32</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash</span>
       <span class="ruby-ivar">@parts</span>.<span class="ruby-identifier">hash</span>
@@ -256,9 +256,9 @@ Helper class for managing version comparisons
             </div>
             
             <div class="method">
-                <div class="title" id="M001545">
+                <div class="title" id="M000744">
                     
-                    <a name="M001545"></a><b>major_version</b>()
+                    <a name="M000744"></a><b>major_version</b>()
                     
                 </div>
                 
@@ -267,10 +267,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001545_source')" id="l_M001545_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000744_source')" id="l_M000744_source">show</a>
                         
                     </p>
-                    <div id="M001545_source" class="dyn-source">
+                    <div id="M000744_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 19</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">major_version</span>; <span class="ruby-ivar">@parts</span>[<span class="ruby-value">0</span>]; <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -279,9 +279,9 @@ Helper class for managing version comparisons
             </div>
             
             <div class="method">
-                <div class="title" id="M001550">
+                <div class="title" id="M000745">
                     
-                    <a name="M001550"></a><b>minor_version</b>()
+                    <a name="M000745"></a><b>minor_version</b>()
                     
                 </div>
                 
@@ -290,10 +290,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001550_source')" id="l_M001550_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000745_source')" id="l_M000745_source">show</a>
                         
                     </p>
-                    <div id="M001550_source" class="dyn-source">
+                    <div id="M000745_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 20</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">minor_version</span>; <span class="ruby-ivar">@parts</span>[<span class="ruby-value">1</span>]; <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -302,9 +302,9 @@ Helper class for managing version comparisons
             </div>
             
             <div class="method">
-                <div class="title" id="M001551">
+                <div class="title" id="M000750">
                     
-                    <a name="M001551"></a><b>tiny_version</b>()
+                    <a name="M000750"></a><b>tiny_version</b>()
                     
                 </div>
                 
@@ -313,10 +313,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001551_source')" id="l_M001551_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000750_source')" id="l_M000750_source">show</a>
                         
                     </p>
-                    <div id="M001551_source" class="dyn-source">
+                    <div id="M000750_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 21</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tiny_version</span>; <span class="ruby-ivar">@parts</span>[<span class="ruby-value">2</span>]; <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -325,9 +325,9 @@ Helper class for managing version comparisons
             </div>
             
             <div class="method">
-                <div class="title" id="M001553">
+                <div class="title" id="M000752">
                     
-                    <a name="M001553"></a><b>to_s</b>()
+                    <a name="M000752"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -336,10 +336,10 @@ Helper class for managing version comparisons
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001553_source')" id="l_M001553_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000752_source')" id="l_M000752_source">show</a>
                         
                     </p>
-                    <div id="M001553_source" class="dyn-source">
+                    <div id="M000752_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/version.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-ivar">@parts</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;.&quot;</span>)
