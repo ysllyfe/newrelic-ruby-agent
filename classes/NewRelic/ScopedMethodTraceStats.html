@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001278">new</a></li>
+                <li><a href="#M001528">new</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001280">record_multiple_data_points</a></li>
+                <li><a href="#M001530">record_multiple_data_points</a></li>
                 
             </ul>
         </dd>
@@ -67,16 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001279">trace_call</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>U</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M001281">unscoped_stats</a></li>
+                <li><a href="#M001529">trace_call</a></li>
                 
             </ul>
         </dd>
@@ -93,14 +84,27 @@
     
 
     
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>unscoped_stats</td>
+            <td class='attr-desc'></td>
+        </tr>
+        
+    </table>
+    
 
     
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001278">
+                <div class="title" id="M001528">
                     
-                    <a name="M001278"></a><b>new</b>(unscoped_stats)
+                    <a name="M001528"></a><b>new</b>(unscoped_stats)
                     
                 </div>
                 
@@ -109,14 +113,14 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001278_source')" id="l_M001278_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001528_source')" id="l_M001528_source">show</a>
                         
                     </p>
-                    <div id="M001278_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 359</span>
+                    <div id="M001528_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 360</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">unscoped_stats</span>)
       <span class="ruby-keyword kw">super</span>()
-      <span class="ruby-ivar">@unscoped_stats</span> = <span class="ruby-identifier">unscoped_stats</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">unscoped_stats</span> = <span class="ruby-identifier">unscoped_stats</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -126,9 +130,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001280">
+                <div class="title" id="M001530">
                     
-                    <a name="M001280"></a><b>record_multiple_data_points</b>(total_value, count=1)
+                    <a name="M001530"></a><b>record_multiple_data_points</b>(total_value, count=1)
                     
                 </div>
                 
@@ -137,13 +141,13 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001280_source')" id="l_M001280_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001530_source')" id="l_M001530_source">show</a>
                         
                     </p>
-                    <div id="M001280_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 367</span>
+                    <div id="M001530_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 368</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
-      <span class="ruby-ivar">@unscoped_stats</span>.<span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>)
+      <span class="ruby-identifier">unscoped_stats</span>.<span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>)
       <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -152,9 +156,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001279">
+                <div class="title" id="M001529">
                     
-                    <a name="M001279"></a><b>trace_call</b>(call_time, exclusive_time = call_time)
+                    <a name="M001529"></a><b>trace_call</b>(call_time, exclusive_time = call_time)
                     
                 </div>
                 
@@ -163,39 +167,14 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001279_source')" id="l_M001279_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001529_source')" id="l_M001529_source">show</a>
                         
                     </p>
-                    <div id="M001279_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 363</span>
+                    <div id="M001529_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 364</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">trace_call</span>(<span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">call_time</span>)
-      <span class="ruby-ivar">@unscoped_stats</span>.<span class="ruby-identifier">trace_call</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
+      <span class="ruby-identifier">unscoped_stats</span>.<span class="ruby-identifier">trace_call</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
       <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">call_time</span>, <span class="ruby-identifier">exclusive_time</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M001281">
-                    
-                    <a name="M001281"></a><b>unscoped_stats</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001281_source')" id="l_M001281_source">show</a>
-                        
-                    </p>
-                    <div id="M001281_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 371</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unscoped_stats</span>
-      <span class="ruby-ivar">@unscoped_stats</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

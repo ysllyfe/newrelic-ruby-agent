@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NewRelic::Control::InstanceMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            NewRelic::Control::InstanceMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/new_relic/control/instance_methods_rb.html">lib/new_relic/control/instance_methods.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>A</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001339">agent_enabled?</a>,</li>
+                
+                <li><a href="#M001343">app</a>,</li>
+                
+                <li><a href="#M001346">append_environment_info</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>B</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001347">bundler_gem_list</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001349">config_file</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>F</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001344">framework</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001335">init_plugin</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001350">new</a>,</li>
+                
+                <li><a href="#M001351">newrelic_root</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001338">start_agent</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001345">to_s</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [W]
+            </td>
+            <td class='attr-name'>env</td>
+            <td class='attr-desc'><p>
+The env is the setting used to identify which section of the newrelic.yml
+to load. This defaults to a framework specific value, such as
+ENV[&#8216;RAILS_ENV&#8217;] but can be overridden as long as you set it
+before calling <a href="InstanceMethods.html#M001335">init_plugin</a>
+</p></td>
+        </tr>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>local_env</td>
+            <td class='attr-desc'></td>
+        </tr>
+        
+    </table>
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001350">
+                    
+                    <a name="M001350"></a><b>new</b>(local_env, config_file_override=nil)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001350_source')" id="l_M001350_source">show</a>
+                        
+                    </p>
+                    <div id="M001350_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 124</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">local_env</span>, <span class="ruby-identifier">config_file_override</span>=<span class="ruby-keyword kw">nil</span>
+        <span class="ruby-ivar">@local_env</span> = <span class="ruby-identifier">local_env</span>
+        <span class="ruby-ivar">@instrumentation_files</span> = []
+        <span class="ruby-identifier">newrelic_file</span> = <span class="ruby-identifier">config_file_override</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">config_file</span>
+        <span class="ruby-comment cmt"># Next two are for populating the newrelic.yml via erb binding, necessary</span>
+        <span class="ruby-comment cmt"># when using the default newrelic.yml file</span>
+        <span class="ruby-identifier">generated_for_user</span> = <span class="ruby-value str">''</span>
+        <span class="ruby-identifier">license_key</span>=<span class="ruby-value str">''</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">newrelic_file</span>)
+          <span class="ruby-identifier">log!</span> <span class="ruby-node">&quot;Cannot find read #{newrelic_file}.&quot;</span>
+          <span class="ruby-ivar">@yaml</span> = {}
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-ivar">@yaml</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">newrelic_file</span>)).<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binding</span>))
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ScriptError</span>, <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Error reading newrelic.yml file: #{e}&quot;</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001339">
+                    
+                    <a name="M001339"></a><b>agent_enabled?</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+True if dev mode or monitor mode are enabled, and we are running inside a
+valid dispatcher like mongrel or passenger. Can be overridden by
+NEWRELIC_ENABLE env variable, monitor_daemons config option when true, or
+agent_enabled config option when true or false.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001339_source')" id="l_M001339_source">show</a>
+                        
+                    </p>
+                    <div id="M001339_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 83</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">agent_enabled?</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developer_mode?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">monitor_mode?</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'agent_enabled'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'auto'</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_ENABLE'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/false|off|no/i</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'monitor_daemons'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_ENABLE'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/true|on|yes/i</span>
+        <span class="ruby-comment cmt"># When in 'auto' mode the agent is enabled if there is a known</span>
+        <span class="ruby-comment cmt"># dispatcher running</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001343">
+                    
+                    <a name="M001343"></a><b>app</b>()
+                    
+                </div>
+                
+                
+                <div class="aka">
+                    This method is also aliased as
+                    
+                    <a href="InstanceMethods.html#M001344">framework</a>
+                    
+                </div>
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001343_source')" id="l_M001343_source">show</a>
+                        
+                    </p>
+                    <div id="M001343_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 94</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">app</span>
+        <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">framework</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001344">
+                    
+                    <a name="M001344"></a><b>framework</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Alias for <a href="InstanceMethods.html#M001343">app</a>
+</p>
+
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001335">
+                    
+                    <a name="M001335"></a><b>init_plugin</b>(options={})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Initialize the plugin/gem and start the agent. This does the necessary
+configuration based on the framework environment and determines whether or
+not to start the agent. If the agent is not going to be started then it
+loads the agent shim which has stubs for all the external api.
+</p>
+<p>
+This may be invoked multiple times, as long as you don&#8217;t attempt to
+uninstall the agent after it has been started.
+</p>
+<p>
+If the plugin is initialized and it determines that the agent is not
+enabled, it will skip starting it and install the shim. But if you later
+call this with <tt>:agent_enabled =&gt; true</tt>, then it will install the
+real agent and start it.
+</p>
+<p>
+What determines whether the agent is launched is the result of calling
+agent_enabled? This will indicate whether the instrumentation should/will
+be installed. If we&#8217;re in a mode where tracers are not installed then
+we should not start the agent.
+</p>
+<p>
+Subclasses are not allowed to override, but must implement init_config({})
+which is called one or more times.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001335_source')" id="l_M001335_source">show</a>
+                        
+                    </p>
+                    <div id="M001335_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 35</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_plugin</span>(<span class="ruby-identifier">options</span>={})
+        <span class="ruby-identifier">options</span>[<span class="ruby-value str">'app_name'</span>] = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_APP_NAME'</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'NEWRELIC_APP_NAME'</span>]
+
+        <span class="ruby-comment cmt"># Merge the stringified options into the config as overrides:</span>
+        <span class="ruby-identifier">logger_override</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:log</span>)
+        <span class="ruby-identifier">environment_name</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:env</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env</span> = <span class="ruby-identifier">environment_name</span>
+        <span class="ruby-identifier">dispatcher</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:dispatcher</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span> = <span class="ruby-identifier">dispatcher</span>
+        <span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:dispatcher_instance_id</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-identifier">dispatcher_instance_id</span>
+
+
+        <span class="ruby-comment cmt"># Clear out the settings, if they've already been loaded.  It may be that</span>
+        <span class="ruby-comment cmt"># between calling init_plugin the first time and the second time, the env</span>
+        <span class="ruby-comment cmt"># has been overridden</span>
+        <span class="ruby-ivar">@settings</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-identifier">settings</span>
+        <span class="ruby-identifier">merge_options</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">logger_override</span>
+          <span class="ruby-ivar">@log</span> = <span class="ruby-identifier">logger_override</span>
+          <span class="ruby-comment cmt"># Try to grab the log filename</span>
+          <span class="ruby-ivar">@log_file</span> = <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">instance_eval</span> { <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">filename</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span> }
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt"># An artifact of earlier implementation, we put both #add_method_tracer and #trace_execution</span>
+        <span class="ruby-comment cmt"># methods in the module methods.</span>
+        <span class="ruby-constant">Module</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:include</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTracer</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassMethods</span>
+        <span class="ruby-constant">Module</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:include</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">MethodTracer</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>
+        <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">agent</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">agent_enabled?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">started?</span>
+          <span class="ruby-identifier">setup_log</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">logger_override</span>
+          <span class="ruby-identifier">start_agent</span>
+          <span class="ruby-identifier">install_instrumentation</span>
+          <span class="ruby-identifier">load_samplers</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'disable_samplers'</span>]
+          <span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">gather_environment_info</span>
+          <span class="ruby-identifier">append_environment_info</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">agent_enabled?</span>
+          <span class="ruby-identifier">install_shim</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001338">
+                    
+                    <a name="M001338"></a><b>start_agent</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Install the real agent into the <a href="../Agent.html">Agent</a> module,
+and issue the start command.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001338_source')" id="l_M001338_source">show</a>
+                        
+                    </p>
+                    <div id="M001338_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 75</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_agent</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">agent</span>.<span class="ruby-identifier">start</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001345">
+                    
+                    <a name="M001345"></a><b>to_s</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001345_source')" id="l_M001345_source">show</a>
+                        
+                    </p>
+                    <div id="M001345_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 99</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+        <span class="ruby-node">&quot;Control[#{self.app}]&quot;</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="sectiontitle">Instance Protected methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001346">
+                    
+                    <a name="M001346"></a><b>append_environment_info</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Append framework specific environment information for uploading to the
+server for change detection. Override in subclasses
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001346_source')" id="l_M001346_source">show</a>
+                        
+                    </p>
+                    <div id="M001346_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 107</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_info</span>; <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001347">
+                    
+                    <a name="M001347"></a><b>bundler_gem_list</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001347_source')" id="l_M001347_source">show</a>
+                        
+                    </p>
+                    <div id="M001347_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 109</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bundler_gem_list</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Bundler</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span> <span class="ruby-ivar">@load</span> <span class="ruby-keyword kw">end</span>
+          <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">load</span>.<span class="ruby-identifier">specs</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">spec</span> <span class="ruby-operator">|</span>
+            <span class="ruby-identifier">version</span> = (<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:version</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>)
+            <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">version</span> <span class="ruby-value">? </span><span class="ruby-node">&quot;(#{version})&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          []
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001349">
+                    
+                    <a name="M001349"></a><b>config_file</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001349_source')" id="l_M001349_source">show</a>
+                        
+                    </p>
+                    <div id="M001349_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 120</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>))
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001351">
+                    
+                    <a name="M001351"></a><b>newrelic_root</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001351_source')" id="l_M001351_source">show</a>
+                        
+                    </p>
+                    <div id="M001351_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/instance_methods.rb, line 144</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_root</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">newrelic_root</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

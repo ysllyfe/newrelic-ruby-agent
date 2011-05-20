@@ -34,15 +34,6 @@
     <div id="bodyContent">
         <div id="content">
     
-    <div class="description">
-        <p>
-This agent is loaded by the plug when the plug-in is disabled It recreates
-just enough of the API to not break any clients that invoke the <a
-href="Agent.html">Agent</a>.
-</p>
-
-    </div>
-    
 
     
 
@@ -58,7 +49,18 @@ href="Agent.html">Agent</a>.
         <dd>
             <ul>
                 
-                <li><a href="#M000856">after_fork</a></li>
+                <li><a href="#M001128">after_fork</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>B</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001134">browser_timing_footer</a>,</li>
+                
+                <li><a href="#M001133">browser_timing_header</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +69,7 @@ href="Agent.html">Agent</a>.
         <dd>
             <ul>
                 
-                <li><a href="#M000851">instance</a></li>
+                <li><a href="#M001126">instance</a></li>
                 
             </ul>
         </dd>
@@ -76,7 +78,7 @@ href="Agent.html">Agent</a>.
         <dd>
             <ul>
                 
-                <li><a href="#M000852">new</a></li>
+                <li><a href="#M001127">new</a></li>
                 
             </ul>
         </dd>
@@ -85,9 +87,9 @@ href="Agent.html">Agent</a>.
         <dd>
             <ul>
                 
-                <li><a href="#M000860">pop_trace_execution_flag</a>,</li>
+                <li><a href="#M001132">pop_trace_execution_flag</a>,</li>
                 
-                <li><a href="#M000859">push_trace_execution_flag</a></li>
+                <li><a href="#M001131">push_trace_execution_flag</a></li>
                 
             </ul>
         </dd>
@@ -96,9 +98,9 @@ href="Agent.html">Agent</a>.
         <dd>
             <ul>
                 
-                <li><a href="#M000858">shutdown</a>,</li>
+                <li><a href="#M001130">shutdown</a>,</li>
                 
-                <li><a href="#M000857">start</a></li>
+                <li><a href="#M001129">start</a></li>
                 
             </ul>
         </dd>
@@ -120,9 +122,9 @@ href="Agent.html">Agent</a>.
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000851">
+                <div class="title" id="M001126">
                     
-                    <a name="M000851"></a><b>instance</b>()
+                    <a name="M001126"></a><b>instance</b>()
                     
                 </div>
                 
@@ -131,23 +133,23 @@ href="Agent.html">Agent</a>.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000851_source')" id="l_M000851_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001126_source')" id="l_M001126_source">show</a>
                         
                     </p>
-                    <div id="M000851_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 5</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance</span>
-    <span class="ruby-ivar">@instance</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>
-  <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001126_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 7</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance</span>
+        <span class="ruby-ivar">@instance</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000852">
+                <div class="title" id="M001127">
                     
-                    <a name="M000852"></a><b>new</b>()
+                    <a name="M001127"></a><b>new</b>()
                     
                 </div>
                 
@@ -156,19 +158,19 @@ href="Agent.html">Agent</a>.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000852_source')" id="l_M000852_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001127_source')" id="l_M001127_source">show</a>
                         
                     </p>
-                    <div id="M000852_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 8</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-    <span class="ruby-keyword kw">super</span>
-    <span class="ruby-ivar">@histogram</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
-    <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">StatsEngine</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
-    <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">StatsEngine</span><span class="ruby-operator">::</span><span class="ruby-constant">Transactions</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
-    <span class="ruby-ivar">@transaction_sampler</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">TransactionSampler</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
-    <span class="ruby-ivar">@error_collector</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ErrorCollector</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
-  <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001127_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 10</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-keyword kw">super</span>
+        <span class="ruby-ivar">@histogram</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
+        <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">StatsEngine</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
+        <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">StatsEngine</span><span class="ruby-operator">::</span><span class="ruby-constant">Transactions</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
+        <span class="ruby-ivar">@transaction_sampler</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">TransactionSampler</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
+        <span class="ruby-ivar">@error_collector</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ErrorCollector</span><span class="ruby-operator">::</span><span class="ruby-constant">Shim</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -177,32 +179,9 @@ href="Agent.html">Agent</a>.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000856">
+                <div class="title" id="M001128">
                     
-                    <a name="M000856"></a><b>after_fork</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000856_source')" id="l_M000856_source">show</a>
-                        
-                    </p>
-                    <div id="M000856_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 16</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork</span>; <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000860">
-                    
-                    <a name="M000860"></a><b>pop_trace_execution_flag</b>(*args)
+                    <a name="M001128"></a><b>after_fork</b>(*args;)
                     
                 </div>
                 
@@ -211,67 +190,21 @@ href="Agent.html">Agent</a>.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000860_source')" id="l_M000860_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001128_source')" id="l_M001128_source">show</a>
                         
                     </p>
-                    <div id="M000860_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 20</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_trace_execution_flag</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>); <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000859">
-                    
-                    <a name="M000859"></a><b>push_trace_execution_flag</b>(*args)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000859_source')" id="l_M000859_source">show</a>
-                        
-                    </p>
-                    <div id="M000859_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 19</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push_trace_execution_flag</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>); <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000858">
-                    
-                    <a name="M000858"></a><b>shutdown</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000858_source')" id="l_M000858_source">show</a>
-                        
-                    </p>
-                    <div id="M000858_source" class="dyn-source">
+                    <div id="M001128_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 18</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shutdown</span>; <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>; <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000857">
+                <div class="title" id="M001134">
                     
-                    <a name="M000857"></a><b>start</b>(*args;)
+                    <a name="M001134"></a><b>browser_timing_footer</b>()
                     
                 </div>
                 
@@ -280,12 +213,127 @@ href="Agent.html">Agent</a>.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000857_source')" id="l_M000857_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001134_source')" id="l_M001134_source">show</a>
                         
                     </p>
-                    <div id="M000857_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 17</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>; <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001134_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 24</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">browser_timing_footer</span>; <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001133">
+                    
+                    <a name="M001133"></a><b>browser_timing_header</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001133_source')" id="l_M001133_source">show</a>
+                        
+                    </p>
+                    <div id="M001133_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 23</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">browser_timing_header</span>; <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001132">
+                    
+                    <a name="M001132"></a><b>pop_trace_execution_flag</b>(*args)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001132_source')" id="l_M001132_source">show</a>
+                        
+                    </p>
+                    <div id="M001132_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 22</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_trace_execution_flag</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>); <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001131">
+                    
+                    <a name="M001131"></a><b>push_trace_execution_flag</b>(*args)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001131_source')" id="l_M001131_source">show</a>
+                        
+                    </p>
+                    <div id="M001131_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 21</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push_trace_execution_flag</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>); <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001130">
+                    
+                    <a name="M001130"></a><b>shutdown</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001130_source')" id="l_M001130_source">show</a>
+                        
+                    </p>
+                    <div id="M001130_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 20</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shutdown</span>; <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001129">
+                    
+                    <a name="M001129"></a><b>start</b>(*args;)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001129_source')" id="l_M001129_source">show</a>
+                        
+                    </p>
+                    <div id="M001129_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/shim_agent.rb, line 19</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>; <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

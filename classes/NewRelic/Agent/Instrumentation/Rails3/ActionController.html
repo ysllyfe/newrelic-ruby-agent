@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000802">newrelic_metric_path</a></li>
+                <li><a href="#M001041">newrelic_metric_path</a></li>
                 
             </ul>
         </dd>
@@ -52,7 +52,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000804">process_action</a></li>
+                <li><a href="#M001044">process_action</a></li>
                 
             </ul>
         </dd>
@@ -74,9 +74,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000802">
+                <div class="title" id="M001041">
                     
-                    <a name="M000802"></a><b>newrelic_metric_path</b>(action_name_override = nil)
+                    <a name="M001041"></a><b>newrelic_metric_path</b>(action_name_override = nil)
                     
                 </div>
                 
@@ -93,10 +93,10 @@ controller action
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000802_source')" id="l_M000802_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001041_source')" id="l_M001041_source">show</a>
                         
                     </p>
-                    <div id="M000802_source" class="dyn-source">
+                    <div id="M001041_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails3/action_controller.rb, line 16</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>(<span class="ruby-identifier">action_name_override</span> = <span class="ruby-keyword kw">nil</span>)
             <span class="ruby-identifier">action_part</span> = <span class="ruby-identifier">action_name_override</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">action_name</span>
@@ -112,9 +112,9 @@ controller action
             </div>
             
             <div class="method">
-                <div class="title" id="M000804">
+                <div class="title" id="M001044">
                     
-                    <a name="M000804"></a><b>process_action</b>(*args)
+                    <a name="M001044"></a><b>process_action</b>(*args)
                     
                 </div>
                 
@@ -123,14 +123,20 @@ controller action
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000804_source')" id="l_M000804_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001044_source')" id="l_M001044_source">show</a>
                         
                     </p>
-                    <div id="M000804_source" class="dyn-source">
+                    <div id="M001044_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails3/action_controller.rb, line 25</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_action</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-            
-            <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:controller</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">action_name</span>, <span class="ruby-identifier">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">filtered_parameters</span>, <span class="ruby-identifier">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>)  <span class="ruby-keyword kw">do</span>
+            <span class="ruby-comment cmt"># skip instrumentation if we are in an ignored action</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_is_filtered?</span>(<span class="ruby-value str">'do_not_trace'</span>)
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> <span class="ruby-keyword kw">do</span>
+                <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">super</span>
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:controller</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">action_name</span>, <span class="ruby-identifier">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">newrelic_metric_path</span>, <span class="ruby-identifier">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">filtered_parameters</span>, <span class="ruby-identifier">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>)  <span class="ruby-keyword kw">do</span>
               <span class="ruby-keyword kw">super</span>
             <span class="ruby-keyword kw">end</span>
           <span class="ruby-keyword kw">end</span></pre>

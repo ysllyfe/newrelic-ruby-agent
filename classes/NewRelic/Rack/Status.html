@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001221">call</a></li>
+                <li><a href="#M001461">call</a></li>
                 
             </ul>
         </dd>
@@ -71,9 +71,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001221">
+                <div class="title" id="M001461">
                     
-                    <a name="M001221"></a><b>call</b>(env)
+                    <a name="M001461"></a><b>call</b>(env)
                     
                 </div>
                 
@@ -82,33 +82,33 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001221_source')" id="l_M001221_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001461_source')" id="l_M001461_source">show</a>
                         
                     </p>
-                    <div id="M001221_source" class="dyn-source">
+                    <div id="M001461_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/rack/metric_app.rb, line 40</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
-      <span class="ruby-identifier">request</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">env</span>
-      <span class="ruby-identifier">data_url</span> = <span class="ruby-node">&quot;http://#{env['HTTP_HOST']}/metrics/path?value=nnn&quot;</span>
-      <span class="ruby-identifier">body</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;html&gt;&lt;body&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;h1&gt;New Relic Actively Monitoring #{NewRelic::Control.instance.app_names.join(' and ')}&lt;/h1&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;p&gt;To submit a metric value, use &lt;a href='#{data_url}'&gt;#{data_url}&lt;/a&gt;&lt;/p&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;h2&gt;Request Details&lt;/h2&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;dl&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;ip&lt;dd&gt;#{request.ip}&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;host&lt;dd&gt;#{request.host}&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;path&lt;dd&gt;#{request.url}&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;query&lt;dd&gt;#{request.query_string}&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;params&lt;dd&gt;#{request.params.inspect}&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;/dl&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;h2&gt;Complete ENV&lt;/h2&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;ul&gt;&quot;</span>
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">env</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;&lt;li&gt;#{k} = #{v}&lt;/li&gt;&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
-      <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>
-      <span class="ruby-identifier">response</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">string</span>
-      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">finish</span>
-    <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+        <span class="ruby-identifier">request</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">env</span>
+        <span class="ruby-identifier">data_url</span> = <span class="ruby-node">&quot;http://#{env['HTTP_HOST']}/metrics/path?value=nnn&quot;</span>
+        <span class="ruby-identifier">body</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;html&gt;&lt;body&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;h1&gt;New Relic Actively Monitoring #{NewRelic::Control.instance.app_names.join(' and ')}&lt;/h1&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;p&gt;To submit a metric value, use &lt;a href='#{data_url}'&gt;#{data_url}&lt;/a&gt;&lt;/p&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;h2&gt;Request Details&lt;/h2&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;dl&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;ip&lt;dd&gt;#{request.ip}&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;host&lt;dd&gt;#{request.host}&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;path&lt;dd&gt;#{request.url}&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;query&lt;dd&gt;#{request.query_string}&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;dt&gt;params&lt;dd&gt;#{request.params.inspect}&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;/dl&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;h2&gt;Complete ENV&lt;/h2&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;ul&gt;&quot;</span>
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">env</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;&lt;li&gt;#{k} = #{v}&lt;/li&gt;&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+        <span class="ruby-identifier">response</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">string</span>
+        <span class="ruby-identifier">response</span>.<span class="ruby-identifier">finish</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

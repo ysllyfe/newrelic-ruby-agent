@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000848">can_run?</a></li>
+                <li><a href="#M001116">can_run?</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000849">get_sample</a></li>
+                <li><a href="#M001117">get_sample</a></li>
                 
             </ul>
         </dd>
@@ -80,9 +80,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000848">
+                <div class="title" id="M001116">
                     
-                    <a name="M000848"></a><b>can_run?</b>()
+                    <a name="M001116"></a><b>can_run?</b>()
                     
                 </div>
                 
@@ -91,25 +91,25 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000848_source')" id="l_M000848_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001116_source')" id="l_M001116_source">show</a>
                         
                     </p>
-                    <div id="M000848_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 59</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">can_run?</span>
-        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@broken</span>
-        <span class="ruby-identifier">m</span> = <span class="ruby-identifier">get_memory</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
-        <span class="ruby-identifier">m</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-      <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001116_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 61</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">can_run?</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@broken</span>
+            <span class="ruby-identifier">m</span> = <span class="ruby-identifier">get_memory</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-identifier">m</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000849">
+                <div class="title" id="M001117">
                     
-                    <a name="M000849"></a><b>get_sample</b>()
+                    <a name="M001117"></a><b>get_sample</b>()
                     
                 </div>
                 
@@ -118,28 +118,28 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000849_source')" id="l_M000849_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001117_source')" id="l_M001117_source">show</a>
                         
                     </p>
-                    <div id="M000849_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 64</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_sample</span>
-        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@broken</span>
-        <span class="ruby-keyword kw">begin</span>
-          <span class="ruby-identifier">m</span> = <span class="ruby-identifier">get_memory</span>
-          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">nil?</span>
-            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Unable to get the resident memory for process #{$$}.  Disabling memory sampler.&quot;</span>
-            <span class="ruby-ivar">@broken</span> = <span class="ruby-keyword kw">true</span>
-          <span class="ruby-keyword kw">end</span>
-          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">m</span>
-        <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Unable to get the resident memory for process #{$$}. (#{e})&quot;</span>
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n  &quot;</span>)
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-value str">&quot;Disabling memory sampler.&quot;</span>
-          <span class="ruby-ivar">@broken</span> = <span class="ruby-keyword kw">true</span>
-          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001117_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 66</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_sample</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@broken</span>
+            <span class="ruby-keyword kw">begin</span>
+              <span class="ruby-identifier">m</span> = <span class="ruby-identifier">get_memory</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Unable to get the resident memory for process #{$$}.  Disabling memory sampler.&quot;</span>
+                <span class="ruby-ivar">@broken</span> = <span class="ruby-keyword kw">true</span>
+              <span class="ruby-keyword kw">end</span>
+              <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">m</span>
+            <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Unable to get the resident memory for process #{$$}. (#{e})&quot;</span>
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n  &quot;</span>)
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-value str">&quot;Disabling memory sampler.&quot;</span>
+              <span class="ruby-ivar">@broken</span> = <span class="ruby-keyword kw">true</span>
+              <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

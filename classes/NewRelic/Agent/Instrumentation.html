@@ -21,17 +21,23 @@
         </h1>
         <ul class="files">
             
-            <li><a href="../../../files/lib/new_relic/agent/instrumentation/active_record_instrumentation_rb.html">lib/new_relic/agent/instrumentation/active_record_instrumentation.rb</a></li>
-            
             <li><a href="../../../files/lib/new_relic/agent/instrumentation/controller_instrumentation_rb.html">lib/new_relic/agent/instrumentation/controller_instrumentation.rb</a></li>
             
-            <li><a href="../../../files/lib/new_relic/agent/instrumentation/delayed_job_instrumentation_rb.html">lib/new_relic/agent/instrumentation/delayed_job_instrumentation.rb</a></li>
+            <li><a href="../../../files/lib/new_relic/agent/instrumentation/data_mapper_rb.html">lib/new_relic/agent/instrumentation/data_mapper.rb</a></li>
+            
+            <li><a href="../../../files/lib/new_relic/agent/instrumentation/memcache_rb.html">lib/new_relic/agent/instrumentation/memcache.rb</a></li>
             
             <li><a href="../../../files/lib/new_relic/agent/instrumentation/metric_frame_rb.html">lib/new_relic/agent/instrumentation/metric_frame.rb</a></li>
             
+            <li><a href="../../../files/lib/new_relic/agent/instrumentation/queue_time_rb.html">lib/new_relic/agent/instrumentation/queue_time.rb</a></li>
+            
             <li><a href="../../../files/lib/new_relic/agent/instrumentation/rack_rb.html">lib/new_relic/agent/instrumentation/rack.rb</a></li>
             
+            <li><a href="../../../files/lib/new_relic/agent/instrumentation/rails/active_record_instrumentation_rb.html">lib/new_relic/agent/instrumentation/rails/active_record_instrumentation.rb</a></li>
+            
             <li><a href="../../../files/lib/new_relic/agent/instrumentation/rails3/action_controller_rb.html">lib/new_relic/agent/instrumentation/rails3/action_controller.rb</a></li>
+            
+            <li><a href="../../../files/lib/new_relic/agent/instrumentation/rails3/active_record_instrumentation_rb.html">lib/new_relic/agent/instrumentation/rails3/active_record_instrumentation.rb</a></li>
             
             <li><a href="../../../files/lib/new_relic/agent/instrumentation/rails3/errors_rb.html">lib/new_relic/agent/instrumentation/rails3/errors.rb</a></li>
             
@@ -42,19 +48,6 @@
     <div id="bodyContent">
         <div id="content">
     
-    <div class="description">
-        <p>
-A struct holding the information required to measure a controller action.
-This is put on the thread local. Handles the issue of re-entrancy, or
-nested action calls.
-</p>
-<p>
-This class is not part of the public API. Avoid making calls on it
-directly.
-</p>
-
-    </div>
-    
 
     
 
@@ -64,25 +57,6 @@ directly.
     
     
 
-    
-    <div class="sectiontitle">Included Modules</div>
-    <ul>
-        
-        <li>
-            
-            <span>::NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</span>
-            
-            START:includes
-        </li>
-        
-        <li>
-            
-            <a href="../DelayedJobInjection.html">NewRelic::DelayedJobInjection</a>
-            
-            START:includes
-        </li>
-        
-    </ul>
     
 
     
@@ -95,7 +69,11 @@ directly.
         
         <li><span class="type">MODULE</span> <a href="Instrumentation/ControllerInstrumentation.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a></li>
         
-        <li><span class="type">MODULE</span> <a href="Instrumentation/DelayedJobInstrumentation.html">NewRelic::Agent::Instrumentation::DelayedJobInstrumentation</a></li>
+        <li><span class="type">MODULE</span> <a href="Instrumentation/DataMapperInstrumentation.html">NewRelic::Agent::Instrumentation::DataMapperInstrumentation</a></li>
+        
+        <li><span class="type">MODULE</span> <a href="Instrumentation/Memcache.html">NewRelic::Agent::Instrumentation::Memcache</a></li>
+        
+        <li><span class="type">MODULE</span> <a href="Instrumentation/QueueTime.html">NewRelic::Agent::Instrumentation::QueueTime</a></li>
         
         <li><span class="type">MODULE</span> <a href="Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a></li>
         

@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000940">normalize_params</a></li>
+                <li><a href="#M001250">normalize_params</a></li>
                 
             </ul>
         </dd>
@@ -52,7 +52,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000944">strip_nr_from_backtrace</a></li>
+                <li><a href="#M001254">strip_nr_from_backtrace</a></li>
                 
             </ul>
         </dd>
@@ -77,6 +77,13 @@
         </tr>
         
         
+        <tr valign='top'>
+            <td class="attr-name">DEFAULT_ARRAY_TRUNCATION_SIZE</td>
+            <td>=</td>
+            <td class="attr-value">1024</td>
+        </tr>
+        
+        
     </table>
     
 
@@ -86,9 +93,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000940">
+                <div class="title" id="M001250">
                     
-                    <a name="M000940"></a><b>normalize_params</b>(params)
+                    <a name="M001250"></a><b>normalize_params</b>(params)
                     
                 </div>
                 
@@ -104,10 +111,10 @@ Transform parameter hash into a hash whose values are strictly strings
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000940_source')" id="l_M000940_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001250_source')" id="l_M001250_source">show</a>
                         
                     </p>
-                    <div id="M000940_source" class="dyn-source">
+                    <div id="M001250_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/collection_helper.rb, line 7</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">params</span>)
     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">params</span>
@@ -124,7 +131,7 @@ Transform parameter hash into a hash whose values are strictly strings
         <span class="ruby-keyword kw">end</span>
         <span class="ruby-identifier">new_params</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
-        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">20</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">item</span>)}
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span>(<span class="ruby-constant">DEFAULT_ARRAY_TRUNCATION_SIZE</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">item</span>)}
     <span class="ruby-keyword kw">else</span>
       <span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">flatten</span>(<span class="ruby-identifier">params</span>))
     <span class="ruby-keyword kw">end</span>
@@ -135,9 +142,9 @@ Transform parameter hash into a hash whose values are strictly strings
             </div>
             
             <div class="method">
-                <div class="title" id="M000944">
+                <div class="title" id="M001254">
                     
-                    <a name="M000944"></a><b>strip_nr_from_backtrace</b>(backtrace)
+                    <a name="M001254"></a><b>strip_nr_from_backtrace</b>(backtrace)
                     
                 </div>
                 
@@ -154,19 +161,20 @@ nil if there is no backtrace
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000944_source')" id="l_M000944_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001254_source')" id="l_M001254_source">show</a>
                         
                     </p>
-                    <div id="M000944_source" class="dyn-source">
+                    <div id="M001254_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/collection_helper.rb, line 31</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">strip_nr_from_backtrace</span>(<span class="ruby-identifier">backtrace</span>)
     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">backtrace</span>
       <span class="ruby-comment cmt"># this is for 1.9.1, where strings no longer have Enumerable</span>
       <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">backtrace</span>
       <span class="ruby-comment cmt"># strip newrelic from the trace</span>
-      <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/new_relic\/agent\//</span> }
+      <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/new_?relic/</span> }
       <span class="ruby-comment cmt"># rename methods back to their original state</span>
-      <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/_without_(newrelic|trace)/</span>, <span class="ruby-value str">&quot;&quot;</span>)}
+      <span class="ruby-comment cmt"># GJV - 4/6/10 - adding .to_s call since we were seeing line as a Fixnum in some cases</span>
+      <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/_without_(newrelic|trace)/</span>, <span class="ruby-value str">&quot;&quot;</span>)}
     <span class="ruby-keyword kw">end</span>
     <span class="ruby-identifier">backtrace</span>
   <span class="ruby-keyword kw">end</span></pre>

@@ -29,7 +29,7 @@
         <div id="content">
     
     <div class="description">
-        <h2><a href="../../../NewRelic.html">NewRelic</a> instrumentation for controller actions and tasks</h2>
+        <h2>NewRelic instrumentation for controller actions and tasks</h2>
 <p>
 This instrumentation is applied to the action controller to collect metrics
 for every web request.
@@ -41,9 +41,9 @@ traced errors.
 </p>
 <p>
 For details on how to instrument background tasks see <a
-href="ControllerInstrumentation/ClassMethods.html#M000738">ClassMethods#add_transaction_tracer</a>
+href="ControllerInstrumentation/ClassMethods.html#M000945">ClassMethods#add_transaction_tracer</a>
 and <a
-href="ControllerInstrumentation.html#M000741">perform_action_with_newrelic_trace</a>
+href="ControllerInstrumentation.html#M000949">perform_action_with_newrelic_trace</a>
 </p>
 
     </div>
@@ -63,9 +63,9 @@ href="ControllerInstrumentation.html#M000741">perform_action_with_newrelic_trace
         <dd>
             <ul>
                 
-                <li><a href="#M000743">newrelic_request_headers</a>,</li>
+                <li><a href="#M000951">newrelic_request_headers</a>,</li>
                 
-                <li><a href="#M000742">newrelic_response_code</a></li>
+                <li><a href="#M000950">newrelic_response_code</a></li>
                 
             </ul>
         </dd>
@@ -74,7 +74,7 @@ href="ControllerInstrumentation.html#M000741">perform_action_with_newrelic_trace
         <dd>
             <ul>
                 
-                <li><a href="#M000741">perform_action_with_newrelic_trace</a></li>
+                <li><a href="#M000949">perform_action_with_newrelic_trace</a></li>
                 
             </ul>
         </dd>
@@ -82,6 +82,18 @@ href="ControllerInstrumentation.html#M000741">perform_action_with_newrelic_trace
     </dl>
     
 
+    
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+        
+        <li>
+            
+            <a href="../../DelayedJobInjection.html">NewRelic::DelayedJobInjection</a>
+            
+            START:includes
+        </li>
+        
+    </ul>
     
 
     
@@ -107,26 +119,25 @@ href="ControllerInstrumentation.html#M000741">perform_action_with_newrelic_trace
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000741">
+                <div class="title" id="M000949">
                     
-                    <a name="M000741"></a><b>perform_action_with_newrelic_trace</b>(*args, &amp;block)
+                    <a name="M000949"></a><b>perform_action_with_newrelic_trace</b>(*args, &amp;block)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Yield to the given block with <a href="../../../NewRelic.html">NewRelic</a>
-tracing. Used by default instrumentation on controller actions in Rails and
-Merb. But it can also be used in custom instrumentation of controller
-methods and background tasks.
+Yield to the given block with NewRelic tracing. Used by default
+instrumentation on controller actions in Rails and Merb. But it can also be
+used in custom instrumentation of controller methods and background tasks.
 </p>
 <p>
 This is the method invoked by instrumentation added by the <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000738">ClassMethods#add_transaction_tracer</a></tt>.
+href="ControllerInstrumentation/ClassMethods.html#M000945">ClassMethods#add_transaction_tracer</a></tt>.
 </p>
 <p>
 Here&#8217;s a more verbose version of the example shown in <tt><a
-href="ControllerInstrumentation/ClassMethods.html#M000738">ClassMethods#add_transaction_tracer</a></tt>
+href="ControllerInstrumentation/ClassMethods.html#M000945">ClassMethods#add_transaction_tracer</a></tt>
 using this method instead of add_transaction_tracer.
 </p>
 <p>
@@ -219,48 +230,49 @@ form is deprecated.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000741_source')" id="l_M000741_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000949_source')" id="l_M000949_source">show</a>
                         
                     </p>
-                    <div id="M000741_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 233</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      
-      <span class="ruby-comment cmt"># Skip instrumentation based on the value of 'do_not_trace' and if </span>
-      <span class="ruby-comment cmt"># we aren't calling directly with a block.</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">_is_filtered?</span>(<span class="ruby-value str">'do_not_trace'</span>)
-        <span class="ruby-comment cmt"># Also ignore all instrumentation in the call sequence</span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">perform_action_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-      
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">perform_action_with_newrelic_profile</span>(<span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">profiling?</span>
-      
-      <span class="ruby-identifier">frame_data</span> = <span class="ruby-identifier">_push_metric_frame</span>(<span class="ruby-identifier">block_given?</span> <span class="ruby-value">? </span><span class="ruby-identifier">args</span> <span class="ruby-operator">:</span> [])
-      <span class="ruby-keyword kw">begin</span>      
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">trace_execution_scoped</span> <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">recorded_metrics</span>, <span class="ruby-identifier">:force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">force_flag</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">start_transaction</span>
-          <span class="ruby-keyword kw">begin</span>
-            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">dispatcher_start</span> <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">start</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-              <span class="ruby-keyword kw">yield</span>
-            <span class="ruby-keyword kw">else</span>
-              <span class="ruby-identifier">perform_action_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+                    <div id="M000949_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 234</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+
+          <span class="ruby-comment cmt"># Skip instrumentation based on the value of 'do_not_trace' and if</span>
+          <span class="ruby-comment cmt"># we aren't calling directly with a block.</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">_is_filtered?</span>(<span class="ruby-value str">'do_not_trace'</span>)
+            <span class="ruby-comment cmt"># Also ignore all instrumentation in the call sequence</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> <span class="ruby-keyword kw">do</span>
+              <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">perform_action_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
             <span class="ruby-keyword kw">end</span>
-          <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-            <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>)
-            <span class="ruby-identifier">raise</span>
           <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">ensure</span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">dispatcher_finish</span>
-        <span class="ruby-comment cmt"># Look for a metric frame in the thread local and process it.</span>
-        <span class="ruby-comment cmt"># Clear the thread local when finished to ensure it only gets called once.</span>
-        <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">record_apdex</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">_is_filtered?</span>(<span class="ruby-value str">'ignore_apdex'</span>)
-        <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">pop</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">perform_action_with_newrelic_profile</span>(<span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">profiling?</span>
+
+          <span class="ruby-identifier">frame_data</span> = <span class="ruby-identifier">_push_metric_frame</span>(<span class="ruby-identifier">block_given?</span> <span class="ruby-value">? </span><span class="ruby-identifier">args</span> <span class="ruby-operator">:</span> [])
+          <span class="ruby-keyword kw">begin</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">trace_execution_scoped</span> <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">recorded_metrics</span>, <span class="ruby-identifier">:force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">force_flag</span> <span class="ruby-keyword kw">do</span>
+              <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">start_transaction</span>
+              <span class="ruby-keyword kw">begin</span>
+                <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">dispatcher_start</span> <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">start</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+                  <span class="ruby-keyword kw">yield</span>
+                <span class="ruby-keyword kw">else</span>
+                  <span class="ruby-identifier">perform_action_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+                <span class="ruby-keyword kw">end</span>
+              <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>)
+                <span class="ruby-identifier">raise</span>
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">ensure</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">BusyCalculator</span>.<span class="ruby-identifier">dispatcher_finish</span>
+            <span class="ruby-comment cmt"># Look for a metric frame in the thread local and process it.</span>
+            <span class="ruby-comment cmt"># Clear the thread local when finished to ensure it only gets called once.</span>
+            <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">record_apdex</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">_is_filtered?</span>(<span class="ruby-value str">'ignore_apdex'</span>)
+
+            <span class="ruby-identifier">frame_data</span>.<span class="ruby-identifier">pop</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -269,9 +281,9 @@ form is deprecated.
             <div class="sectiontitle">Instance Protected methods</div>
             
             <div class="method">
-                <div class="title" id="M000743">
+                <div class="title" id="M000951">
                     
-                    <a name="M000743"></a><b>newrelic_request_headers</b>()
+                    <a name="M000951"></a><b>newrelic_request_headers</b>()
                     
                 </div>
                 
@@ -280,23 +292,23 @@ form is deprecated.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000743_source')" id="l_M000743_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000951_source')" id="l_M000951_source">show</a>
                         
                     </p>
-                    <div id="M000743_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 275</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_request_headers</span>
-      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:request</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:headers</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">headers</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000951_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 277</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_request_headers</span>
+          <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:request</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:headers</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">headers</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000742">
+                <div class="title" id="M000950">
                     
-                    <a name="M000742"></a><b>newrelic_response_code</b>()
+                    <a name="M000950"></a><b>newrelic_response_code</b>()
                     
                 </div>
                 
@@ -312,12 +324,12 @@ Should be implemented in the dispatcher class
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000742_source')" id="l_M000742_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000950_source')" id="l_M000950_source">show</a>
                         
                     </p>
-                    <div id="M000742_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 273</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_response_code</span>; <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000950_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/controller_instrumentation.rb, line 275</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_response_code</span>; <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/tasks/tests.rake</li>
-            <li>Last modified: Thu Jan 21 16:47:13 -0800 2010</li>
+            <li>Last modified: Fri May 20 15:05:18 -0700 2011</li>
         </ul>
     </div>
 
@@ -28,8 +28,13 @@
     
     <div class="description">
         <p>
-# run unit tests for the <a
-href="../../../classes/NewRelic.html">NewRelic</a> Agent
+# run unit tests for the NewRelic Agent begin
+</p>
+<pre>
+  require 'rake/test_task'
+</pre>
+<p>
+rescue LoadError => e end
 </p>
 <p>
 if defined? Rake::TestTask
@@ -44,7 +49,7 @@ if defined? Rake::TestTask
       t.verbose = true
     end
     Rake::Task['test:newrelic'].comment = &quot;Run the unit tests for the Agent&quot;
-    task :default =&gt; :newrelic
+    task :newrelic =&gt; :environment
   end
 </pre>
 <p>

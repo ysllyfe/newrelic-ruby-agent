@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NewRelic::Control::Frameworks::Ruby</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            NewRelic::Control::Frameworks::Ruby 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Control.html">NewRelic::Control</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/lib/new_relic/control/frameworks/ruby_rb.html">lib/new_relic/control/frameworks/ruby.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001330">config_file</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>E</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001328">env</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001332">init_config</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>R</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001329">root</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>T</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001331">to_stdout</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001330">
+                    
+                    <a name="M001330"></a><b>config_file</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Check a sequence of file locations for newrelic.yml
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001330_source')" id="l_M001330_source">show</a>
+                        
+                    </p>
+                    <div id="M001330_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/ruby.rb, line 18</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file</span>
+          <span class="ruby-identifier">files</span> = []
+          <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;config&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+          <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>]
+            <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>], <span class="ruby-value str">&quot;.newrelic&quot;</span>, <span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+            <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;HOME&quot;</span>], <span class="ruby-value str">&quot;newrelic.yml&quot;</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;NRCONFIG&quot;</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;NRCONFIG&quot;</span>]
+          <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">file</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">files</span>.<span class="ruby-identifier">first</span>)
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001328">
+                    
+                    <a name="M001328"></a><b>env</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001328_source')" id="l_M001328_source">show</a>
+                        
+                    </p>
+                    <div id="M001328_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/ruby.rb, line 11</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">env</span>
+          <span class="ruby-ivar">@env</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RUBY_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RAILS_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'RACK_ENV'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'development'</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001332">
+                    
+                    <a name="M001332"></a><b>init_config</b>(options={})
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001332_source')" id="l_M001332_source">show</a>
+                        
+                    </p>
+                    <div id="M001332_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/ruby.rb, line 36</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_config</span>(<span class="ruby-identifier">options</span>={})
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001329">
+                    
+                    <a name="M001329"></a><b>root</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001329_source')" id="l_M001329_source">show</a>
+                        
+                    </p>
+                    <div id="M001329_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/ruby.rb, line 14</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
+          <span class="ruby-ivar">@root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'APP_ROOT'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Dir</span>[<span class="ruby-value str">'.'</span>]
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001331">
+                    
+                    <a name="M001331"></a><b>to_stdout</b>(msg)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001331_source')" id="l_M001331_source">show</a>
+                        
+                    </p>
+                    <div id="M001331_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/frameworks/ruby.rb, line 32</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stdout</span>(<span class="ruby-identifier">msg</span>)
+          <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

@@ -43,33 +43,22 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
     
+        <dt>A</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000960">after_fork</a>,</li>
+                
+                <li><a href="#M000959">after_fork_with_newrelic</a></li>
+                
+            </ul>
+        </dd>
+    
         <dt>I</dt>
         <dd>
             <ul>
                 
-                <li><a href="#M001012">initialize_with_new_relic</a>,</li>
-                
-                <li><a href="#M000748">instrument_method</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>L</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000739">log_with_capture_sql</a>,</li>
-                
-                <li><a href="#M000737">log_with_newrelic_instrumentation</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>M</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000749">memcache_key_snippet</a></li>
+                <li><a href="#M001371">initialize_with_new_relic</a></li>
                 
             </ul>
         </dd>
@@ -78,11 +67,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000755">newrelic_metric_path</a>,</li>
+                <li><a href="#M001034">newrelic_metric_path</a>,</li>
                 
-                <li><a href="#M000797">newrelic_metric_path</a>,</li>
+                <li><a href="#M000965">newrelic_metric_path</a>,</li>
                 
-                <li><a href="#M000798">newrelic_notice_error</a></li>
+                <li><a href="#M001037">newrelic_notice_error</a></li>
                 
             </ul>
         </dd>
@@ -91,9 +80,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000766">request_with_newrelic_trace</a>,</li>
+                <li><a href="#M000970">request_with_newrelic_trace</a>,</li>
                 
-                <li><a href="#M000799">rescue_action_with_newrelic_trace</a></li>
+                <li><a href="#M001038">rescue_action_with_newrelic_trace</a></li>
                 
             </ul>
         </dd>
@@ -112,66 +101,12 @@
     
 
     
-            <div class="sectiontitle">Class Public methods</div>
-            
-            <div class="method">
-                <div class="title" id="M000748">
-                    
-                    <a name="M000748"></a><b>instrument_method</b>(the_class, method_name)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000748_source')" id="l_M000748_source">show</a>
-                        
-                    </p>
-                    <div id="M000748_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/memcache.rb, line 8</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instrument_method</span>(<span class="ruby-identifier">the_class</span>, <span class="ruby-identifier">method_name</span>)
-    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">the_class</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_sym</span>
-    <span class="ruby-identifier">the_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;def \#{method_name}_with_newrelic_trace(*args)\nmetrics = [\&quot;MemCache/\#{method_name}\&quot;,\n(NewRelic::Agent::Instrumentation::MetricFrame.recording_web_transaction? ? 'MemCache/allWeb' : 'MemCache/allOther')]\nself.class.trace_execution_scoped(metrics) do\nt0 = Time.now.to_f\nbegin\n\#{method_name}_without_newrelic_trace(*args)\nensure\n\#{memcache_key_snippet(method_name)}\nend\nend\nend\nalias \#{method_name}_without_newrelic_trace \#{method_name}\nalias \#{method_name} \#{method_name}_with_newrelic_trace\n&quot;</span>
-      <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000749">
-                    
-                    <a name="M000749"></a><b>memcache_key_snippet</b>(method_name)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000749_source')" id="l_M000749_source">show</a>
-                        
-                    </p>
-                    <div id="M000749_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/memcache.rb, line 29</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">memcache_key_snippet</span>(<span class="ruby-identifier">method_name</span>)
-        <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>[<span class="ruby-value str">'capture_memcache_keys'</span>]        
-        <span class="ruby-value str">&quot;NewRelic::Agent.instance.transaction_sampler.notice_nosql(args.first.inspect, Time.now.to_f - t0) rescue nil&quot;</span>
-      <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001012">
+                <div class="title" id="M000960">
                     
-                    <a name="M001012"></a><b>initialize_with_new_relic</b>(*args)
+                    <a name="M000960"></a><b>after_fork</b>()
                     
                 </div>
                 
@@ -180,31 +115,24 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001012_source')" id="l_M001012_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000960_source')" id="l_M000960_source">show</a>
                         
                     </p>
-                    <div id="M001012_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/delayed_job_injection.rb, line 11</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_with_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-    <span class="ruby-identifier">initialize_without_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-    <span class="ruby-identifier">worker_name</span> = <span class="ruby-keyword kw">case</span>
-    <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:name</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span>
-    <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:default_name</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_name</span>
-    <span class="ruby-keyword kw">end</span>
-    <span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-identifier">worker_name</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;host:#{Socket.gethostname} pid:#{Process.pid}&quot;</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-node">&quot;pid:#{Process.pid}&quot;</span>
-    <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;RPM Monitoring DJ worker #{dispatcher_instance_id}&quot;</span>
-    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">manual_start</span> <span class="ruby-identifier">:dispatcher</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:delayed_job</span>, <span class="ruby-identifier">:dispatcher_instance_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dispatcher_instance_id</span>
-    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">DelayedJobInjection</span>.<span class="ruby-identifier">worker_name</span> = <span class="ruby-identifier">worker_name</span>
-  <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000960_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/delayed_job_instrumentation.rb, line 35</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">:force_reconnect</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
+            <span class="ruby-keyword kw">super</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000739">
+                <div class="title" id="M000959">
                     
-                    <a name="M000739"></a><b>log_with_capture_sql</b>(sql, name, &amp;block)
+                    <a name="M000959"></a><b>after_fork_with_newrelic</b>()
                     
                 </div>
                 
@@ -213,36 +141,24 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000739_source')" id="l_M000739_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000959_source')" id="l_M000959_source">show</a>
                         
                     </p>
-                    <div id="M000739_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/data_mapper.rb, line 47</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_with_capture_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@@my_sql_defined</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>)
-        <span class="ruby-identifier">config</span> = <span class="ruby-ivar">@config</span>
-      <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@@postgres_defined</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>)
-        <span class="ruby-identifier">config</span> = <span class="ruby-ivar">@config</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">config</span> = <span class="ruby-keyword kw">nil</span>
-      <span class="ruby-keyword kw">end</span>
-      
-      <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">config</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">t0</span>)
-      
-      <span class="ruby-identifier">result</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000959_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/delayed_job_instrumentation.rb, line 27</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork_with_newrelic</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">:force_reconnect</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
+            <span class="ruby-identifier">after_fork_without_newrelic</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000737">
+                <div class="title" id="M001371">
                     
-                    <a name="M000737"></a><b>log_with_newrelic_instrumentation</b>(sql, name, &amp;block)
+                    <a name="M001371"></a><b>initialize_with_new_relic</b>(*args)
                     
                 </div>
                 
@@ -251,33 +167,69 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000737_source')" id="l_M000737_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001371_source')" id="l_M001371_source">show</a>
                         
                     </p>
-                    <div id="M000737_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/data_mapper.rb, line 33</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_with_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      <span class="ruby-comment cmt"># if we aren't in a blamed context, then add one so that we can see that</span>
-      <span class="ruby-comment cmt"># controllers are calling SQL directly</span>
-      <span class="ruby-comment cmt"># we check scope_depth vs 2 since the controller is 1, and the </span>
-      <span class="ruby-comment cmt">#      </span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">scope_depth</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span>
-        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">trace_method_execution</span> <span class="ruby-value str">&quot;Database/DirectSQL&quot;</span>, <span class="ruby-keyword kw">true</span>, <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-identifier">log_with_capture_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+                    <div id="M001371_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/delayed_job_injection.rb, line 20</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_with_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">initialize_without_new_relic</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">worker_name</span> = <span class="ruby-keyword kw">case</span>
+                      <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:name</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span>
+                      <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:default_name</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_name</span>
+                      <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-identifier">worker_name</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;host:#{Socket.gethostname} pid:#{Process.pid}&quot;</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-node">&quot;pid:#{Process.pid}&quot;</span>
+        <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;RPM Monitoring DJ worker #{dispatcher_instance_id}&quot;</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">DelayedJobInjection</span>.<span class="ruby-identifier">worker_name</span> = <span class="ruby-identifier">worker_name</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">init_plugin</span> <span class="ruby-identifier">:dispatcher</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:delayed_job</span>, <span class="ruby-identifier">:dispatcher_instance_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dispatcher_instance_id</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001034">
+                    
+                    <a name="M001034"></a><b>newrelic_metric_path</b>(action_name_override = nil)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+determine the path that is used in the metric name for the called
+controller action
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001034_source')" id="l_M001034_source">show</a>
+                        
+                    </p>
+                    <div id="M001034_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/action_controller.rb, line 73</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>(<span class="ruby-identifier">action_name_override</span> = <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">action_part</span> = <span class="ruby-identifier">action_name_override</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">action_name</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">action_name_override</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">action_methods</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">action_part</span>)
+          <span class="ruby-node">&quot;#{self.class.controller_path}/#{action_part}&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-node">&quot;#{self.class.controller_path}/(other)&quot;</span>
         <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">log_with_capture_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000755">
+                <div class="title" id="M000965">
                     
-                    <a name="M000755"></a><b>newrelic_metric_path</b>()
+                    <a name="M000965"></a><b>newrelic_metric_path</b>()
                     
                 </div>
                 
@@ -294,61 +246,23 @@ controller action
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000755_source')" id="l_M000755_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000965_source')" id="l_M000965_source">show</a>
                         
                     </p>
-                    <div id="M000755_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/merb/controller.rb, line 21</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>
-    <span class="ruby-node">&quot;#{controller_name}/#{action_name}&quot;</span>
-  <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000965_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/merb/controller.rb, line 29</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>
+        <span class="ruby-node">&quot;#{controller_name}/#{action_name}&quot;</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000797">
+                <div class="title" id="M001037">
                     
-                    <a name="M000797"></a><b>newrelic_metric_path</b>(action_name_override = nil)
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-determine the path that is used in the metric name for the called
-controller action
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000797_source')" id="l_M000797_source">show</a>
-                        
-                    </p>
-                    <div id="M000797_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/action_controller.rb, line 48</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_metric_path</span>(<span class="ruby-identifier">action_name_override</span> = <span class="ruby-keyword kw">nil</span>)
-      <span class="ruby-identifier">action_part</span> = <span class="ruby-identifier">action_name_override</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">action_name</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">action_name_override</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">action_methods</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">action_part</span>)
-        <span class="ruby-node">&quot;#{self.class.controller_path}/#{action_part}&quot;</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-node">&quot;#{self.class.controller_path}/(other)&quot;</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000798">
-                    
-                    <a name="M000798"></a><b>newrelic_notice_error</b>(exception, custom_params = {})
+                    <a name="M001037"></a><b>newrelic_notice_error</b>(exception, custom_params = {})
                     
                 </div>
                 
@@ -357,7 +271,7 @@ controller action
 Make a note of an exception associated with the currently executing
 controller action. Note that this used to be available on <a
 href="Object.html">Object</a> but we replaced that global method with <a
-href="NewRelic/Agent.html#M000958">NewRelic::Agent#notice_error</a>. Use
+href="NewRelic/Agent.html#M001249">NewRelic::Agent#notice_error</a>. Use
 that one outside of controller actions.
 </p>
 
@@ -368,23 +282,23 @@ that one outside of controller actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000798_source')" id="l_M000798_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001037_source')" id="l_M001037_source">show</a>
                         
                     </p>
-                    <div id="M000798_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 8</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">custom_params</span> = {})
-    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">:custom_params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">custom_params</span>, <span class="ruby-identifier">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>
-  <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001037_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 18</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newrelic_notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">custom_params</span> = {})
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">:custom_params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">custom_params</span>, <span class="ruby-identifier">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000766">
+                <div class="title" id="M000970">
                     
-                    <a name="M000766"></a><b>request_with_newrelic_trace</b>(*args, &amp;block)
+                    <a name="M000970"></a><b>request_with_newrelic_trace</b>(*args, &amp;block)
                     
                 </div>
                 
@@ -393,31 +307,31 @@ that one outside of controller actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000766_source')" id="l_M000766_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000970_source')" id="l_M000970_source">show</a>
                         
                     </p>
-                    <div id="M000766_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/net.rb, line 3</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      <span class="ruby-identifier">metrics</span> = [<span class="ruby-node">&quot;External/#{@address}/Net::HTTP/#{args[0].method}&quot;</span>,<span class="ruby-node">&quot;External/#{@address}/all&quot;</span>]
-      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">recording_web_transaction?</span>
-        <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;External/allWeb&quot;</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;External/allOther&quot;</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">trace_execution_scoped</span> <span class="ruby-identifier">metrics</span> <span class="ruby-keyword kw">do</span>
-        <span class="ruby-identifier">request_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000970_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/net.rb, line 8</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request_with_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+        <span class="ruby-identifier">metrics</span> = [<span class="ruby-node">&quot;External/#{@address}/Net::HTTP/#{args[0].method}&quot;</span>,<span class="ruby-node">&quot;External/#{@address}/all&quot;</span>]
+        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">recording_web_transaction?</span>
+          <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;External/allWeb&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;External/allOther&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">trace_execution_scoped</span> <span class="ruby-identifier">metrics</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">request_without_newrelic_trace</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000799">
+                <div class="title" id="M001038">
                     
-                    <a name="M000799"></a><b>rescue_action_with_newrelic_trace</b>(exception)
+                    <a name="M001038"></a><b>rescue_action_with_newrelic_trace</b>(exception)
                     
                 </div>
                 
@@ -426,15 +340,15 @@ that one outside of controller actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000799_source')" id="l_M000799_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001038_source')" id="l_M001038_source">show</a>
                         
                     </p>
-                    <div id="M000799_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 12</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rescue_action_with_newrelic_trace</span>(<span class="ruby-identifier">exception</span>)
-    <span class="ruby-identifier">rescue_action_without_newrelic_trace</span> <span class="ruby-identifier">exception</span>
-    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span> 
-  <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001038_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/errors.rb, line 22</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rescue_action_with_newrelic_trace</span>(<span class="ruby-identifier">exception</span>)
+        <span class="ruby-identifier">rescue_action_without_newrelic_trace</span> <span class="ruby-identifier">exception</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">:request</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

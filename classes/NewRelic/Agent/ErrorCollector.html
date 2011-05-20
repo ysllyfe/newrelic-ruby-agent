@@ -45,11 +45,20 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
     
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000902">control</a></li>
+                
+            </ul>
+        </dd>
+    
         <dt>H</dt>
         <dd>
             <ul>
                 
-                <li><a href="#M000711">harvest_errors</a></li>
+                <li><a href="#M000931">harvest_errors</a></li>
                 
             </ul>
         </dd>
@@ -58,9 +67,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000706">ignore</a>,</li>
+                <li><a href="#M000904">ignore</a>,</li>
                 
-                <li><a href="#M000705">ignore_error_filter</a></li>
+                <li><a href="#M000903">ignore_error_filter</a></li>
                 
             </ul>
         </dd>
@@ -69,9 +78,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000703">new</a>,</li>
+                <li><a href="#M000901">new</a>,</li>
                 
-                <li><a href="#M000707">notice_error</a></li>
+                <li><a href="#M000928">notice_error</a></li>
                 
             </ul>
         </dd>
@@ -90,6 +99,13 @@
             START:includes
         </li>
         
+        <li>
+            
+            <a href="ErrorCollector/NoticeError.html">NewRelic::Agent::ErrorCollector::NoticeError</a>
+            
+            START:includes
+        </li>
+        
     </ul>
     
 
@@ -98,6 +114,8 @@
     
     <div class="sectiontitle">Classes and Modules</div>
     <ul>
+        
+        <li><span class="type">MODULE</span> <a href="ErrorCollector/NoticeError.html">NewRelic::Agent::ErrorCollector::NoticeError</a></li>
         
         <li><span class="type">MODULE</span> <a href="ErrorCollector/Shim.html">NewRelic::Agent::ErrorCollector::Shim</a></li>
         
@@ -130,6 +148,14 @@
             <td class='attr-desc'></td>
         </tr>
         
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>config_enabled</td>
+            <td class='attr-desc'></td>
+        </tr>
+        
     </table>
     
 
@@ -137,9 +163,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000703">
+                <div class="title" id="M000901">
                     
-                    <a name="M000703"></a><b>new</b>()
+                    <a name="M000901"></a><b>new</b>()
                     
                 </div>
                 
@@ -148,11 +174,11 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000703_source')" id="l_M000703_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000901_source')" id="l_M000901_source">show</a>
                         
                     </p>
-                    <div id="M000703_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 17</span>
+                    <div id="M000901_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 18</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-ivar">@errors</span> = []
       <span class="ruby-comment cmt"># lookup of exception class names to ignore.  Hash for fast access</span>
@@ -160,13 +186,13 @@
       <span class="ruby-ivar">@ignore_filter</span> = <span class="ruby-keyword kw">nil</span>
 
       <span class="ruby-identifier">config</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'error_collector'</span>, {})
-      
-      <span class="ruby-ivar">@enabled</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'enabled'</span>, <span class="ruby-keyword kw">true</span>)
+
+      <span class="ruby-ivar">@enabled</span> = <span class="ruby-ivar">@config_enabled</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'enabled'</span>, <span class="ruby-keyword kw">true</span>)
       <span class="ruby-ivar">@capture_source</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'capture_source'</span>, <span class="ruby-keyword kw">true</span>)
-      
+
       <span class="ruby-identifier">ignore_errors</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'ignore_errors'</span>, <span class="ruby-value str">&quot;&quot;</span>)
       <span class="ruby-identifier">ignore_errors</span> = <span class="ruby-identifier">ignore_errors</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ignore_errors</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
-      <span class="ruby-identifier">ignore_errors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">strip!</span> } 
+      <span class="ruby-identifier">ignore_errors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">strip!</span> }
       <span class="ruby-identifier">ignore</span>(<span class="ruby-identifier">ignore_errors</span>)
       <span class="ruby-ivar">@lock</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -178,9 +204,34 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000711">
+                <div class="title" id="M000902">
                     
-                    <a name="M000711"></a><b>harvest_errors</b>(unsent_errors)
+                    <a name="M000902"></a><b>control</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000902_source')" id="l_M000902_source">show</a>
+                        
+                    </p>
+                    <div id="M000902_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 36</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">control</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000931">
+                    
+                    <a name="M000931"></a><b>harvest_errors</b>(unsent_errors)
                     
                 </div>
                 
@@ -198,11 +249,11 @@ out all unsent errors before sending the newly queued errors.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000711_source')" id="l_M000711_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000931_source')" id="l_M000931_source">show</a>
                         
                     </p>
-                    <div id="M000711_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 110</span>
+                    <div id="M000931_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 185</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_errors</span>(<span class="ruby-identifier">unsent_errors</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">unsent_errors</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">unsent_errors</span>.<span class="ruby-identifier">empty?</span>
         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">unsent_errors</span>
@@ -220,9 +271,9 @@ out all unsent errors before sending the newly queued errors.
             </div>
             
             <div class="method">
-                <div class="title" id="M000706">
+                <div class="title" id="M000904">
                     
-                    <a name="M000706"></a><b>ignore</b>(errors)
+                    <a name="M000904"></a><b>ignore</b>(errors)
                     
                 </div>
                 
@@ -238,11 +289,11 @@ errors is an array of Exception Class Names
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000706_source')" id="l_M000706_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000904_source')" id="l_M000904_source">show</a>
                         
                     </p>
-                    <div id="M000706_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 45</span>
+                    <div id="M000904_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 50</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore</span>(<span class="ruby-identifier">errors</span>)
       <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@ignore</span>[<span class="ruby-identifier">error</span>] = <span class="ruby-keyword kw">true</span>; <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Ignoring errors of type '#{error}'&quot;</span>) }
     <span class="ruby-keyword kw">end</span></pre>
@@ -252,9 +303,9 @@ errors is an array of Exception Class Names
             </div>
             
             <div class="method">
-                <div class="title" id="M000705">
+                <div class="title" id="M000903">
                     
-                    <a name="M000705"></a><b>ignore_error_filter</b>(&amp;block)
+                    <a name="M000903"></a><b>ignore_error_filter</b>(&amp;block)
                     
                 </div>
                 
@@ -263,11 +314,11 @@ errors is an array of Exception Class Names
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000705_source')" id="l_M000705_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000903_source')" id="l_M000903_source">show</a>
                         
                     </p>
-                    <div id="M000705_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 35</span>
+                    <div id="M000903_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 40</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ignore_error_filter</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
         <span class="ruby-ivar">@ignore_filter</span> = <span class="ruby-identifier">block</span>
@@ -281,9 +332,9 @@ errors is an array of Exception Class Names
             </div>
             
             <div class="method">
-                <div class="title" id="M000707">
+                <div class="title" id="M000928">
                     
-                    <a name="M000707"></a><b>notice_error</b>(exception, options={})
+                    <a name="M000928"></a><b>notice_error</b>(exception, options={})
                     
                 </div>
                 
@@ -311,7 +362,8 @@ necessary
 </li>
 </ul>
 <p>
-If anything is left over, it&#8217;s added to custom params
+If anything is left over, it&#8217;s added to custom params If exception is
+nil, the error count is bumped and no traced error is recorded
 </p>
 
                 </div>
@@ -321,58 +373,19 @@ If anything is left over, it&#8217;s added to custom params
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000707_source')" id="l_M000707_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000928_source')" id="l_M000928_source">show</a>
                         
                     </p>
-                    <div id="M000707_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 58</span>
+                    <div id="M000928_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 172</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-identifier">options</span>={})
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@enabled</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ignore</span>[<span class="ruby-identifier">exception</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>] 
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ignore_filter</span>
-        <span class="ruby-identifier">exception</span> = <span class="ruby-ivar">@ignore_filter</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">exception</span>)
-        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">nil?</span>
-      <span class="ruby-keyword kw">end</span>
-
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-value str">&quot;Errors/all&quot;</span>).<span class="ruby-identifier">increment_count</span>
-
-      <span class="ruby-identifier">data</span> = {}
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:request_uri</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:uri</span>) <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:request_referer</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:referer</span>) <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>
-
-      <span class="ruby-identifier">action_path</span>     = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:metric</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">scope_name</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>
-      <span class="ruby-identifier">request_params</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:request_params</span>)
-      <span class="ruby-identifier">custom_params</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:custom_params</span>) <span class="ruby-operator">||</span> {}
-      <span class="ruby-comment cmt"># If anything else is left over, treat it like a custom param:</span>
-      <span class="ruby-identifier">custom_params</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">options</span>
-      
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:request_params</span>] = <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">request_params</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">capture_params</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">request_params</span>
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:custom_params</span>] = <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">custom_params</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">custom_params</span>.<span class="ruby-identifier">empty?</span>
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:rails_root</span>] = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">root</span>
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:file_name</span>] = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">file_name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value str">'file_name'</span>)
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:line_number</span>] = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">line_number</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value str">'line_number'</span>)
-      
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@capture_source</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value str">'source_extract'</span>)
-        <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:source</span>] = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">source_extract</span>
-      <span class="ruby-keyword kw">end</span>
-      
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value str">'original_exception'</span>
-        <span class="ruby-identifier">inside_exception</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">original_exception</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">inside_exception</span> = <span class="ruby-identifier">exception</span>
-      <span class="ruby-keyword kw">end</span>
-
-      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">:stack_trace</span>] = <span class="ruby-identifier">inside_exception</span> <span class="ruby-value">? </span><span class="ruby-identifier">inside_exception</span>.<span class="ruby-identifier">backtrace</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'&lt;no stack trace&gt;'</span>
-      
-      <span class="ruby-identifier">noticed_error</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">NoticedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">action_path</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">exception</span>)
-      
-      <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-constant">MAX_ERROR_QUEUE_LENGTH</span>
-          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;The error reporting queue has reached #{MAX_ERROR_QUEUE_LENGTH}. The error detail for this and subsequent errors will not be transmitted to RPM until the queued errors have been sent: #{exception.message}&quot;</span>)
-        <span class="ruby-keyword kw">else</span>
-          <span class="ruby-ivar">@errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">noticed_error</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">should_exit_notice_error?</span>(<span class="ruby-identifier">exception</span>)
+      <span class="ruby-identifier">action_path</span>     = <span class="ruby-identifier">fetch_from_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:metric</span>, (<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">scope_name</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>))
+      <span class="ruby-identifier">exception_options</span> = <span class="ruby-identifier">error_params_from_options</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">exception_info</span>(<span class="ruby-identifier">exception</span>))
+      <span class="ruby-identifier">add_to_error_queue</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">NoticedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">action_path</span>, <span class="ruby-identifier">exception_options</span>, <span class="ruby-identifier">exception</span>), <span class="ruby-identifier">exception</span>)
+      <span class="ruby-identifier">exception</span>
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span>(<span class="ruby-node">&quot;Error capturing an error, yodawg. #{e}&quot;</span>)
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

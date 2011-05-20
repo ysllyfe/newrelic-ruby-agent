@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/new_relic/rack/mongrel_rpm.ru</li>
-            <li>Last modified: Thu Jan 14 11:56:25 -0800 2010</li>
+            <li>Last modified: Fri May 20 15:12:51 -0700 2011</li>
         </ul>
     </div>
 
@@ -45,20 +45,24 @@ optional license key override # :app_name optional name of app # :logging
 optional, false to omit request logging to stdout
 </p>
 <p>
-options ||= {}
+# use Rack::CommonLogger unless options[:logging] == false # use
+Rack::ShowExceptions # use Rack::Reloader if ENV[&#8216;RACK_ENV&#8217;] ==
+&#8216;development&#8217;
 </p>
 <p>
-use Rack::CommonLogger unless options[:logging] == false use
-Rack::ShowExceptions map &#8220;/&#8221; do
-</p>
-<pre>
-  run NewRelic::Rack::Status.new
-</pre>
-<p>
-end map &#8220;/metrics&#8221; do
+map &#8220;/newrelic/record_value&#8220; do
 </p>
 <pre>
   run NewRelic::Rack::MetricApp.new(options)
+</pre>
+<p>
+end
+</p>
+<p>
+map &#8220;/&#8221; do
+</p>
+<pre>
+  run NewRelic::Rack::Status.new
 </pre>
 <p>
 end

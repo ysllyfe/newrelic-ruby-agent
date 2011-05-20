@@ -30,10 +30,10 @@
     
     <div class="description">
         <p>
-<a href="../../../NewRelic.html">NewRelic</a> instrumentation for <a
-href="Sinatra.html">Sinatra</a> applications. <a
-href="Sinatra.html">Sinatra</a> actions will appear in the UI similar to
-controller actions, and have breakdown charts and transaction traces.
+NewRelic instrumentation for <a href="Sinatra.html">Sinatra</a>
+applications. <a href="Sinatra.html">Sinatra</a> actions will appear in the
+UI similar to controller actions, and have breakdown charts and transaction
+traces.
 </p>
 <p>
 The actions in the UI will correspond to the pattern expression used to
@@ -58,7 +58,7 @@ all be tracked as separate actions.
         <dd>
             <ul>
                 
-                <li><a href="#M000805">route_eval_with_newrelic</a></li>
+                <li><a href="#M001046">route_eval_with_newrelic</a></li>
                 
             </ul>
         </dd>
@@ -92,9 +92,9 @@ all be tracked as separate actions.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000805">
+                <div class="title" id="M001046">
                     
-                    <a name="M000805"></a><b>route_eval_with_newrelic</b>(&amp;block_arg)
+                    <a name="M001046"></a><b>route_eval_with_newrelic</b>(&amp;block_arg)
                     
                 </div>
                 
@@ -103,29 +103,30 @@ all be tracked as separate actions.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000805_source')" id="l_M000805_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001046_source')" id="l_M001046_source">show</a>
                         
                     </p>
-                    <div id="M000805_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/sinatra.rb, line 17</span>
-          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">route_eval_with_newrelic</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block_arg</span>)
-            <span class="ruby-identifier">path</span> = <span class="ruby-identifier">unescape</span>(<span class="ruby-ivar">@request</span>.<span class="ruby-identifier">path_info</span>)
-            <span class="ruby-identifier">name</span> = <span class="ruby-identifier">path</span>
-            <span class="ruby-comment cmt"># Go through each route and look for a match</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">routes</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">routes</span>[<span class="ruby-ivar">@request</span>.<span class="ruby-identifier">request_method</span>]
-              <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">detect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">keys</span>, <span class="ruby-identifier">conditions</span>, <span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_arg</span>.<span class="ruby-identifier">equal?</span> <span class="ruby-identifier">block</span>
-                  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">source</span>
-                <span class="ruby-keyword kw">end</span>
+                    <div id="M001046_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/sinatra.rb, line 32</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">route_eval_with_newrelic</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block_arg</span>)
+          <span class="ruby-identifier">path</span> = <span class="ruby-identifier">unescape</span>(<span class="ruby-ivar">@request</span>.<span class="ruby-identifier">path_info</span>)
+          <span class="ruby-identifier">name</span> = <span class="ruby-identifier">path</span>
+          <span class="ruby-comment cmt"># Go through each route and look for a match</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">routes</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">routes</span>[<span class="ruby-ivar">@request</span>.<span class="ruby-identifier">request_method</span>]
+            <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">detect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">keys</span>, <span class="ruby-identifier">conditions</span>, <span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_arg</span>.<span class="ruby-identifier">equal?</span> <span class="ruby-identifier">block</span>
+                <span class="ruby-identifier">name</span> = <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">source</span>
               <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
-            <span class="ruby-comment cmt"># strip of leading ^ and / chars and trailing $ and /</span>
-            <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">%r{^[/^]*(.*?)[/\$]*$}</span>, <span class="ruby-value str">'\1'</span>)
-            <span class="ruby-identifier">name</span> = <span class="ruby-value str">'root'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">empty?</span>
-            <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:sinatra</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">do</span>
-              <span class="ruby-identifier">route_eval_without_newrelic</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block_arg</span>)
-            <span class="ruby-keyword kw">end</span>
-          <span class="ruby-keyword kw">end</span></pre>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-comment cmt"># strip off leading ^ and / chars and trailing $ and /</span>
+          <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">%r{^[/^]*(.*?)[/\$\?]*$}</span>, <span class="ruby-value str">'\1'</span>)
+          <span class="ruby-identifier">name</span> = <span class="ruby-value str">'root'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">name</span> = <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">request_method</span> <span class="ruby-operator">+</span> <span class="ruby-value str">' '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@request</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:request_method</span>)
+          <span class="ruby-identifier">perform_action_with_newrelic_trace</span>(<span class="ruby-identifier">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:sinatra</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">params</span>) <span class="ruby-keyword kw">do</span>
+            <span class="ruby-identifier">route_eval_without_newrelic</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block_arg</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

@@ -49,9 +49,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000972">command</a>,</li>
+                <li><a href="#M001270">command</a>,</li>
                 
-                <li><a href="#M000975">content</a></li>
+                <li><a href="#M001273">content</a></li>
                 
             </ul>
         </dd>
@@ -60,7 +60,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000973">new</a></li>
+                <li><a href="#M001271">new</a></li>
                 
             </ul>
         </dd>
@@ -69,7 +69,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000974">run</a></li>
+                <li><a href="#M001272">run</a></li>
                 
             </ul>
         </dd>
@@ -83,6 +83,18 @@
 
     
 
+    
+    <div class="sectiontitle">Constants</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class="attr-name">NO_LICENSE_KEY</td>
+            <td>=</td>
+            <td class="attr-value">&quot;&lt;PASTE LICENSE KEY HERE&gt;&quot;</td>
+        </tr>
+        
+        
+    </table>
     
 
     
@@ -164,6 +176,21 @@ Will throw CommandFailed exception if there&#8217;s any error.
 </p></td>
         </tr>
         
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [R]
+            </td>
+            <td class='attr-name'>app_name</td>
+            <td class='attr-desc'><p>
+Use -h to see options. When command_line_args is a hash, we are invoking
+directly and it&#8217;s treated as an options with optional string values
+for :user, :description, :appname, :revision, :environment, and :changes.
+</p>
+<p>
+Will throw CommandFailed exception if there&#8217;s any error.
+</p></td>
+        </tr>
+        
     </table>
     
 
@@ -171,9 +198,9 @@ Will throw CommandFailed exception if there&#8217;s any error.
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000972">
+                <div class="title" id="M001270">
                     
-                    <a name="M000972"></a><b>command</b>()
+                    <a name="M001270"></a><b>command</b>()
                     
                 </div>
                 
@@ -182,11 +209,11 @@ Will throw CommandFailed exception if there&#8217;s any error.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000972_source')" id="l_M000972_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001270_source')" id="l_M001270_source">show</a>
                         
                     </p>
-                    <div id="M000972_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 7</span>
+                    <div id="M001270_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 9</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">command</span>; <span class="ruby-value str">&quot;install&quot;</span>; <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -194,9 +221,9 @@ Will throw CommandFailed exception if there&#8217;s any error.
             </div>
             
             <div class="method">
-                <div class="title" id="M000973">
+                <div class="title" id="M001271">
                     
-                    <a name="M000973"></a><b>new</b>(command_line_args={})
+                    <a name="M001271"></a><b>new</b>(command_line_args={})
                     
                 </div>
                 
@@ -205,11 +232,11 @@ Will throw CommandFailed exception if there&#8217;s any error.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000973_source')" id="l_M000973_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001271_source')" id="l_M001271_source">show</a>
                         
                     </p>
-                    <div id="M000973_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 18</span>
+                    <div id="M001271_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 20</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">command_line_args</span>={}
     <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">command_line_args</span>
     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dest_dir</span>
@@ -220,8 +247,10 @@ Will throw CommandFailed exception if there&#8217;s any error.
         <span class="ruby-ivar">@dest_dir</span> = <span class="ruby-value str">&quot;.&quot;</span>
       <span class="ruby-keyword kw">end</span>
     <span class="ruby-keyword kw">end</span>
-    <span class="ruby-ivar">@license_key</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'&lt;PASTE LICENSE KEY HERE&gt;'</span>
-    <span class="ruby-ivar">@generated_for_user</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@user_string</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;Generated on #{Time.now.strftime('%b %d, %Y')} from version #{NewRelic::VERSION::STRING}&quot;</span>
+    <span class="ruby-ivar">@license_key</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">NO_LICENSE_KEY</span>
+    <span class="ruby-ivar">@app_name</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@leftover</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandFailure</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Application name required.&quot;</span>, <span class="ruby-ivar">@options</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@app_name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@app_name</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@generated_for_user</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@user_string</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;&quot;</span>
   <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -231,9 +260,9 @@ Will throw CommandFailed exception if there&#8217;s any error.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000975">
+                <div class="title" id="M001273">
                     
-                    <a name="M000975"></a><b>content</b>()
+                    <a name="M001273"></a><b>content</b>()
                     
                 </div>
                 
@@ -242,13 +271,13 @@ Will throw CommandFailed exception if there&#8217;s any error.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000975_source')" id="l_M000975_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001273_source')" id="l_M001273_source">show</a>
                         
                     </p>
-                    <div id="M000975_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 57</span>
+                    <div id="M001273_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 76</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">content</span>
-    <span class="ruby-ivar">@src_file</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>),<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>)) 
+    <span class="ruby-ivar">@src_file</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>),<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;..&quot;</span>,<span class="ruby-value str">&quot;newrelic.yml&quot;</span>))
     <span class="ruby-identifier">template</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-ivar">@src_file</span>)
     <span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">template</span>).<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binding</span>)
   <span class="ruby-keyword kw">end</span></pre>
@@ -258,9 +287,9 @@ Will throw CommandFailed exception if there&#8217;s any error.
             </div>
             
             <div class="method">
-                <div class="title" id="M000974">
+                <div class="title" id="M001272">
                     
-                    <a name="M000974"></a><b>run</b>()
+                    <a name="M001272"></a><b>run</b>()
                     
                 </div>
                 
@@ -269,20 +298,22 @@ Will throw CommandFailed exception if there&#8217;s any error.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000974_source')" id="l_M000974_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001272_source')" id="l_M001272_source">show</a>
                         
                     </p>
-                    <div id="M000974_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 32</span>
+                    <div id="M001272_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/commands/install.rb, line 36</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>
     <span class="ruby-identifier">dest_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@dest_dir</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/newrelic.yml&quot;</span>)
     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">dest_file</span>)
       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandFailure</span>, <span class="ruby-value str">&quot;newrelic.yml file already exists.  Move it out of the way.&quot;</span>
     <span class="ruby-keyword kw">end</span>
     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">dest_file</span>, <span class="ruby-value str">'w'</span>) { <span class="ruby-operator">|</span> <span class="ruby-identifier">out</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">content</span>) }
-    
-    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\nInstalled a default configuration file at\n\#{dest_file}.\n\nTo monitor your application in production mode, sign up for an account\nat www.newrelic.com, and replace the newrelic.yml file with the one\nyou receive upon registration.\n\nPlease review the README.md file for more information.\n\nE-mail support@newrelic.com with any problems or questions.\n\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet</span>
-    
+
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\nInstalled a default configuration file at\n\#{dest_file}.\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\nTo monitor your application in production mode, sign up for an account\nat www.newrelic.com, and replace the newrelic.yml file with the one\nyou receive upon registration.\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@license_key</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">NO_LICENSE_KEY</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\nE-mail support@newrelic.com with any problems or questions.\n\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">quiet</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;\nInstalling the plugin from Rubyforge is deprecated. This repository will not be updated after January 2011\n\nPlease use one of the following options:\n\nGems: gem install newrelic_rpm\n\nGithub! git clone git://github.com/newrelic/rpm.git vendor/plugins/newrelic_rpm\n\n&quot;</span>
   <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

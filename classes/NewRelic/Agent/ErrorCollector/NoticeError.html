@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NewRelic::Agent::ErrorCollector::NoticeError</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            NewRelic::Agent::ErrorCollector::NoticeError 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/lib/new_relic/agent/error_collector_rb.html">lib/new_relic/agent/error_collector.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>A</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000927">add_to_error_queue</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000915">custom_params_from_opts</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>D</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000906">disabled?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>E</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000909">error_is_ignored?</a>,</li>
+                
+                <li><a href="#M000919">error_params_from_options</a>,</li>
+                
+                <li><a href="#M000925">exception_info</a>,</li>
+                
+                <li><a href="#M000921">extract_source</a>,</li>
+                
+                <li><a href="#M000924">extract_stack_trace</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>F</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000913">fetch_from_options</a>,</li>
+                
+                <li><a href="#M000907">filtered_by_error_filter?</a>,</li>
+                
+                <li><a href="#M000908">filtered_error?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000910">increment_error_count!</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000918">normalized_request_and_custom_params</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>O</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000926">over_queue_limit?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>R</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000917">request_params_from_opts</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000920">sense_method</a>,</li>
+                
+                <li><a href="#M000911">should_exit_notice_error?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>U</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000914">uri_ref_and_root</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000927">
+                    
+                    <a name="M000927"></a><b>add_to_error_queue</b>(noticed_error, exception)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000927_source')" id="l_M000927_source">show</a>
+                        
+                    </p>
+                    <div id="M000927_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 153</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_to_error_queue</span>(<span class="ruby-identifier">noticed_error</span>, <span class="ruby-identifier">exception</span>)
+        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-ivar">@errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">noticed_error</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">over_queue_limit?</span>(<span class="ruby-identifier">exception</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000915">
+                    
+                    <a name="M000915"></a><b>custom_params_from_opts</b>(options)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000915_source')" id="l_M000915_source">show</a>
+                        
+                    </p>
+                    <div id="M000915_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 99</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">custom_params_from_opts</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-comment cmt"># If anything else is left over, treat it like a custom param:</span>
+        <span class="ruby-identifier">fetch_from_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:custom_params</span>, {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000906">
+                    
+                    <a name="M000906"></a><b>disabled?</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000906_source')" id="l_M000906_source">show</a>
+                        
+                    </p>
+                    <div id="M000906_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 55</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disabled?</span>
+        <span class="ruby-operator">!</span><span class="ruby-ivar">@enabled</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000909">
+                    
+                    <a name="M000909"></a><b>error_is_ignored?</b>(error)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000909_source')" id="l_M000909_source">show</a>
+                        
+                    </p>
+                    <div id="M000909_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 68</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_is_ignored?</span>(<span class="ruby-identifier">error</span>)
+        <span class="ruby-identifier">error</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">filtered_error?</span>(<span class="ruby-identifier">error</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000919">
+                    
+                    <a name="M000919"></a><b>error_params_from_options</b>(options)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000919_source')" id="l_M000919_source">show</a>
+                        
+                    </p>
+                    <div id="M000919_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 120</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_params_from_options</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">uri_ref_and_root</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">normalized_request_and_custom_params</span>(<span class="ruby-identifier">options</span>))
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000925">
+                    
+                    <a name="M000925"></a><b>exception_info</b>(exception)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000925_source')" id="l_M000925_source">show</a>
+                        
+                    </p>
+                    <div id="M000925_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 137</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exception_info</span>(<span class="ruby-identifier">exception</span>)
+        {
+          <span class="ruby-identifier">:file_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sense_method</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-value str">'file_name'</span>),
+          <span class="ruby-identifier">:line_number</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sense_method</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-value str">'line_number'</span>),
+          <span class="ruby-identifier">:source</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">extract_source</span>(<span class="ruby-identifier">exception</span>),
+          <span class="ruby-identifier">:stack_trace</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">extract_stack_trace</span>(<span class="ruby-identifier">exception</span>)
+        }
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000921">
+                    
+                    <a name="M000921"></a><b>extract_source</b>(exception)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000921_source')" id="l_M000921_source">show</a>
+                        
+                    </p>
+                    <div id="M000921_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 128</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_source</span>(<span class="ruby-identifier">exception</span>)
+        <span class="ruby-identifier">sense_method</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-value str">'source_extract'</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@capture_source</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000924">
+                    
+                    <a name="M000924"></a><b>extract_stack_trace</b>(exception)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000924_source')" id="l_M000924_source">show</a>
+                        
+                    </p>
+                    <div id="M000924_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 132</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_stack_trace</span>(<span class="ruby-identifier">exception</span>)
+        <span class="ruby-identifier">actual_exception</span> = <span class="ruby-identifier">sense_method</span>(<span class="ruby-identifier">exception</span>, <span class="ruby-value str">'original_exception'</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">exception</span>
+        <span class="ruby-identifier">sense_method</span>(<span class="ruby-identifier">actual_exception</span>, <span class="ruby-value str">'backtrace'</span>) <span class="ruby-operator">||</span> <span class="ruby-value str">'&lt;no stack trace&gt;'</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000913">
+                    
+                    <a name="M000913"></a><b>fetch_from_options</b>(options, key, default=nil)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000913_source')" id="l_M000913_source">show</a>
+                        
+                    </p>
+                    <div id="M000913_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 87</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_from_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">default</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000907">
+                    
+                    <a name="M000907"></a><b>filtered_by_error_filter?</b>(error)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000907_source')" id="l_M000907_source">show</a>
+                        
+                    </p>
+                    <div id="M000907_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 59</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">filtered_by_error_filter?</span>(<span class="ruby-identifier">error</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@ignore_filter</span>
+        <span class="ruby-operator">!</span><span class="ruby-ivar">@ignore_filter</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">error</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000908">
+                    
+                    <a name="M000908"></a><b>filtered_error?</b>(error)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000908_source')" id="l_M000908_source">show</a>
+                        
+                    </p>
+                    <div id="M000908_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 64</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">filtered_error?</span>(<span class="ruby-identifier">error</span>)
+        <span class="ruby-ivar">@ignore</span>[<span class="ruby-identifier">error</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">filtered_by_error_filter?</span>(<span class="ruby-identifier">error</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000910">
+                    
+                    <a name="M000910"></a><b>increment_error_count!</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000910_source')" id="l_M000910_source">show</a>
+                        
+                    </p>
+                    <div id="M000910_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 72</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment_error_count!</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats</span>(<span class="ruby-value str">&quot;Errors/all&quot;</span>).<span class="ruby-identifier">increment_count</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000918">
+                    
+                    <a name="M000918"></a><b>normalized_request_and_custom_params</b>(options)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000918_source')" id="l_M000918_source">show</a>
+                        
+                    </p>
+                    <div id="M000918_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 113</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">normalized_request_and_custom_params</span>(<span class="ruby-identifier">options</span>)
+        {
+          <span class="ruby-identifier">:request_params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">request_params_from_opts</span>(<span class="ruby-identifier">options</span>)),
+          <span class="ruby-identifier">:custom_params</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">normalize_params</span>(<span class="ruby-identifier">custom_params_from_opts</span>(<span class="ruby-identifier">options</span>))
+        }
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000926">
+                    
+                    <a name="M000926"></a><b>over_queue_limit?</b>(exception)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000926_source')" id="l_M000926_source">show</a>
+                        
+                    </p>
+                    <div id="M000926_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 146</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">over_queue_limit?</span>(<span class="ruby-identifier">exception</span>)
+        <span class="ruby-identifier">over_limit</span> = (<span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">MAX_ERROR_QUEUE_LENGTH</span>)
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;The error reporting queue has reached #{MAX_ERROR_QUEUE_LENGTH}. The error detail for this and subsequent errors will not be transmitted to RPM until the queued errors have been sent: #{exception}&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">over_limit</span>
+        <span class="ruby-identifier">over_limit</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000917">
+                    
+                    <a name="M000917"></a><b>request_params_from_opts</b>(options)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000917_source')" id="l_M000917_source">show</a>
+                        
+                    </p>
+                    <div id="M000917_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 104</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request_params_from_opts</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:request_params</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">capture_params</span>
+          <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000920">
+                    
+                    <a name="M000920"></a><b>sense_method</b>(object, method)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000920_source')" id="l_M000920_source">show</a>
+                        
+                    </p>
+                    <div id="M000920_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 124</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sense_method</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>)
+        <span class="ruby-identifier">object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000911">
+                    
+                    <a name="M000911"></a><b>should_exit_notice_error?</b>(exception)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000911_source')" id="l_M000911_source">show</a>
+                        
+                    </p>
+                    <div id="M000911_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 76</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">should_exit_notice_error?</span>(<span class="ruby-identifier">exception</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@enabled</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">error_is_ignored?</span>(<span class="ruby-identifier">exception</span>)
+            <span class="ruby-identifier">increment_error_count!</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">nil?</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt"># disabled or an ignored error, per above</span>
+        <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000914">
+                    
+                    <a name="M000914"></a><b>uri_ref_and_root</b>(options)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000914_source')" id="l_M000914_source">show</a>
+                        
+                    </p>
+                    <div id="M000914_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/error_collector.rb, line 91</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uri_ref_and_root</span>(<span class="ruby-identifier">options</span>)
+        {
+          <span class="ruby-identifier">:request_uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fetch_from_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:uri</span>, <span class="ruby-value str">''</span>),
+          <span class="ruby-identifier">:request_referer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fetch_from_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:referer</span>, <span class="ruby-value str">''</span>),
+          <span class="ruby-identifier">:rails_root</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">root</span>
+        }
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

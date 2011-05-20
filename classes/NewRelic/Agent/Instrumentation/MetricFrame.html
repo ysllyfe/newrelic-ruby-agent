@@ -49,13 +49,13 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000761">abort_transaction!</a>,</li>
+                <li><a href="#M000973">abort_transaction!</a>,</li>
                 
-                <li><a href="#M000764">abort_transaction!</a>,</li>
+                <li><a href="#M000976">abort_transaction!</a>,</li>
                 
-                <li><a href="#M000772">add_custom_parameters</a>,</li>
+                <li><a href="#M000990">add_custom_parameters</a>,</li>
                 
-                <li><a href="#M000779">add_custom_parameters</a></li>
+                <li><a href="#M000983">add_custom_parameters</a></li>
                 
             </ul>
         </dd>
@@ -64,13 +64,15 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000767">category</a>,</li>
+                <li><a href="#M000966">check_server_connection=</a>,</li>
                 
-                <li><a href="#M000756">current</a>,</li>
+                <li><a href="#M000967">current</a>,</li>
                 
-                <li><a href="#M000773">custom_parameters</a>,</li>
+                <li><a href="#M000978">current_metric</a>,</li>
                 
-                <li><a href="#M000778">custom_parameters</a></li>
+                <li><a href="#M000989">custom_parameters</a>,</li>
+                
+                <li><a href="#M000984">custom_parameters</a></li>
                 
             </ul>
         </dd>
@@ -79,7 +81,16 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000757">database_metric_name</a></li>
+                <li><a href="#M000968">database_metric_name</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>I</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000993">is_web_transaction?</a></li>
                 
             </ul>
         </dd>
@@ -88,7 +99,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000775">metric_name</a></li>
+                <li><a href="#M000986">metric_name</a></li>
                 
             </ul>
         </dd>
@@ -97,9 +108,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000759">new</a>,</li>
+                <li><a href="#M000971">new</a>,</li>
                 
-                <li><a href="#M000770">notice_error</a></li>
+                <li><a href="#M000981">notice_error</a></li>
                 
             </ul>
         </dd>
@@ -108,11 +119,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000768">path</a>,</li>
+                <li><a href="#M000979">path</a>,</li>
                 
-                <li><a href="#M000769">pop</a>,</li>
+                <li><a href="#M000980">pop</a>,</li>
                 
-                <li><a href="#M000760">push</a></li>
+                <li><a href="#M000972">push</a></li>
                 
             </ul>
         </dd>
@@ -121,19 +132,21 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000774">record_apdex</a>,</li>
+                <li><a href="#M000996">record_apdex</a>,</li>
                 
-                <li><a href="#M000776">recorded_metrics</a>,</li>
+                <li><a href="#M000985">record_apdex</a>,</li>
                 
-                <li><a href="#M000781">recording_web_transaction?</a>,</li>
+                <li><a href="#M000987">recorded_metrics</a>,</li>
                 
-                <li><a href="#M000780">recording_web_transaction?</a>,</li>
+                <li><a href="#M000991">recording_web_transaction?</a>,</li>
                 
-                <li><a href="#M000763">referer</a>,</li>
+                <li><a href="#M000992">recording_web_transaction?</a>,</li>
                 
-                <li><a href="#M000758">referer</a>,</li>
+                <li><a href="#M000975">referer</a>,</li>
                 
-                <li><a href="#M000782">referer_from_request</a></li>
+                <li><a href="#M000969">referer</a>,</li>
+                
+                <li><a href="#M000994">referer_from_request</a></li>
                 
             </ul>
         </dd>
@@ -142,7 +155,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000765">start_transaction</a></li>
+                <li><a href="#M000977">start_transaction</a></li>
                 
             </ul>
         </dd>
@@ -151,11 +164,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000784">update_apdex</a>,</li>
+                <li><a href="#M000997">update_apdex</a>,</li>
                 
-                <li><a href="#M000762">uri</a>,</li>
+                <li><a href="#M000974">uri</a>,</li>
                 
-                <li><a href="#M000783">uri_from_request</a></li>
+                <li><a href="#M000995">uri_from_request</a></li>
                 
             </ul>
         </dd>
@@ -164,7 +177,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000777">with_database_metric_name</a></li>
+                <li><a href="#M000988">with_database_metric_name</a></li>
                 
             </ul>
         </dd>
@@ -205,7 +218,10 @@
                 [RW]
             </td>
             <td class='attr-name'>exception</td>
-            <td class='attr-desc'></td>
+            <td class='attr-desc'><p>
+might end up being @start, or it might be further upstream if we can find a
+request header for the queue entry time
+</p></td>
         </tr>
         
         <tr valign='top'>
@@ -213,7 +229,10 @@
                 [RW]
             </td>
             <td class='attr-name'>filtered_params</td>
-            <td class='attr-desc'></td>
+            <td class='attr-desc'><p>
+might end up being @start, or it might be further upstream if we can find a
+request header for the queue entry time
+</p></td>
         </tr>
         
         <tr valign='top'>
@@ -221,7 +240,10 @@
                 [RW]
             </td>
             <td class='attr-name'>force_flag</td>
-            <td class='attr-desc'></td>
+            <td class='attr-desc'><p>
+might end up being @start, or it might be further upstream if we can find a
+request header for the queue entry time
+</p></td>
         </tr>
         
         <tr valign='top'>
@@ -229,7 +251,10 @@
                 [RW]
             </td>
             <td class='attr-name'>jruby_cpu_start</td>
-            <td class='attr-desc'></td>
+            <td class='attr-desc'><p>
+might end up being @start, or it might be further upstream if we can find a
+request header for the queue entry time
+</p></td>
         </tr>
         
         <tr valign='top'>
@@ -237,7 +262,10 @@
                 [RW]
             </td>
             <td class='attr-name'>process_cpu_start</td>
-            <td class='attr-desc'></td>
+            <td class='attr-desc'><p>
+might end up being @start, or it might be further upstream if we can find a
+request header for the queue entry time
+</p></td>
         </tr>
         
         <tr valign='top'>
@@ -245,7 +273,10 @@
                 [RW]
             </td>
             <td class='attr-name'>database_metric_name</td>
-            <td class='attr-desc'></td>
+            <td class='attr-desc'><p>
+might end up being @start, or it might be further upstream if we can find a
+request header for the queue entry time
+</p></td>
         </tr>
         
         <tr valign='top'>
@@ -275,9 +306,9 @@ ActionController::AbstractRequest.
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000761">
+                <div class="title" id="M000973">
                     
-                    <a name="M000761"></a><b>abort_transaction!</b>()
+                    <a name="M000973"></a><b>abort_transaction!</b>()
                     
                 </div>
                 
@@ -294,23 +325,23 @@ information
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000761_source')" id="l_M000761_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000973_source')" id="l_M000973_source">show</a>
                         
                     </p>
-                    <div id="M000761_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 66</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">abort_transaction!</span>
-      <span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_transaction!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000973_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 83</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">abort_transaction!</span>
+          <span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_transaction!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000772">
+                <div class="title" id="M000983">
                     
-                    <a name="M000772"></a><b>add_custom_parameters</b>(p)
+                    <a name="M000983"></a><b>add_custom_parameters</b>(p)
                     
                 </div>
                 
@@ -328,23 +359,48 @@ numbers or date/times.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000772_source')" id="l_M000772_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000983_source')" id="l_M000983_source">show</a>
                         
                     </p>
-                    <div id="M000772_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 168</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>)
-      <span class="ruby-identifier">current</span>.<span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000983_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 187</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>)
+          <span class="ruby-identifier">current</span>.<span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000756">
+                <div class="title" id="M000966">
                     
-                    <a name="M000756"></a><b>current</b>(create_if_empty=nil)
+                    <a name="M000966"></a><b>check_server_connection=</b>(value)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000966_source')" id="l_M000966_source">show</a>
+                        
+                    </p>
+                    <div id="M000966_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 26</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">check_server_connection=</span>(<span class="ruby-identifier">value</span>)
+          <span class="ruby-ivar">@@check_server_connection</span> = <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000967">
+                    
+                    <a name="M000967"></a><b>current</b>(create_if_empty=nil)
                     
                 </div>
                 
@@ -361,25 +417,31 @@ to create a new metric frame if one is not already on the thread.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000756_source')" id="l_M000756_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000967_source')" id="l_M000967_source">show</a>
                         
                     </p>
-                    <div id="M000756_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 20</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">current</span>(<span class="ruby-identifier">create_if_empty</span>=<span class="ruby-keyword kw">nil</span>)
-      <span class="ruby-identifier">f</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>]
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">f</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">create_if_empty</span>
-      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>] = <span class="ruby-identifier">new</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000967_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 31</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">current</span>(<span class="ruby-identifier">create_if_empty</span>=<span class="ruby-keyword kw">nil</span>)
+          <span class="ruby-identifier">f</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>]
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">f</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">create_if_empty</span>
+
+          <span class="ruby-comment cmt"># Reconnect to the server if necessary.  This is only done</span>
+          <span class="ruby-comment cmt"># for old versions of passenger that don't implement an explicit after_fork</span>
+          <span class="ruby-comment cmt"># event.</span>
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">:keep_retrying</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@@check_server_connection</span>
+
+          <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>] = <span class="ruby-identifier">new</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000773">
+                <div class="title" id="M000984">
                     
-                    <a name="M000773"></a><b>custom_parameters</b>()
+                    <a name="M000984"></a><b>custom_parameters</b>()
                     
                 </div>
                 
@@ -388,23 +450,23 @@ to create a new metric frame if one is not already on the thread.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000773_source')" id="l_M000773_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000984_source')" id="l_M000984_source">show</a>
                         
                     </p>
-                    <div id="M000773_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 172</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">custom_parameters</span>
-     (<span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">custom_parameters</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">custom_parameters</span> <span class="ruby-operator">:</span> {}
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000984_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 191</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">custom_parameters</span>
+          (<span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">custom_parameters</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">custom_parameters</span> <span class="ruby-operator">:</span> {}
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000757">
+                <div class="title" id="M000968">
                     
-                    <a name="M000757"></a><b>database_metric_name</b>()
+                    <a name="M000968"></a><b>database_metric_name</b>()
                     
                 </div>
                 
@@ -421,23 +483,23 @@ overriding the default.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000757_source')" id="l_M000757_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000968_source')" id="l_M000968_source">show</a>
                         
                     </p>
-                    <div id="M000757_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 28</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">database_metric_name</span>
-      <span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">database_metric_name</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000968_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 45</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">database_metric_name</span>
+          <span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">database_metric_name</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000759">
+                <div class="title" id="M000971">
                     
-                    <a name="M000759"></a><b>new</b>()
+                    <a name="M000971"></a><b>new</b>()
                     
                 </div>
                 
@@ -446,26 +508,26 @@ overriding the default.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000759_source')" id="l_M000759_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000971_source')" id="l_M000971_source">show</a>
                         
                     </p>
-                    <div id="M000759_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 50</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-      <span class="ruby-ivar">@start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
-      <span class="ruby-ivar">@path_stack</span> = [] <span class="ruby-comment cmt"># stack of [controller, path] elements</span>
-      <span class="ruby-ivar">@jruby_cpu_start</span> = <span class="ruby-identifier">jruby_cpu_time</span>
-      <span class="ruby-ivar">@process_cpu_start</span> = <span class="ruby-identifier">process_cpu</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000971_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 67</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+          <span class="ruby-ivar">@start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-ivar">@path_stack</span> = [] <span class="ruby-comment cmt"># stack of [controller, path] elements</span>
+          <span class="ruby-ivar">@jruby_cpu_start</span> = <span class="ruby-identifier">jruby_cpu_time</span>
+          <span class="ruby-ivar">@process_cpu_start</span> = <span class="ruby-identifier">process_cpu</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000770">
+                <div class="title" id="M000981">
                     
-                    <a name="M000770"></a><b>notice_error</b>(e, options={})
+                    <a name="M000981"></a><b>notice_error</b>(e, options={})
                     
                 </div>
                 
@@ -507,31 +569,31 @@ Anything left over is treated as custom params
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000770_source')" id="l_M000770_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000981_source')" id="l_M000981_source">show</a>
                         
                     </p>
-                    <div id="M000770_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 140</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>={})
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:request</span>)
-        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:referer</span>] = <span class="ruby-identifier">referer_from_request</span>(<span class="ruby-identifier">request</span>)
-        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:uri</span>] = <span class="ruby-identifier">uri_from_request</span>(<span class="ruby-identifier">request</span>)
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
-        <span class="ruby-identifier">current</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>)
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">error_collector</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000981_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 159</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>={})
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:request</span>)
+            <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:referer</span>] = <span class="ruby-identifier">referer_from_request</span>(<span class="ruby-identifier">request</span>)
+            <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:uri</span>] = <span class="ruby-identifier">uri_from_request</span>(<span class="ruby-identifier">request</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current</span>
+            <span class="ruby-identifier">current</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">error_collector</span>.<span class="ruby-identifier">notice_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">options</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000780">
+                <div class="title" id="M000996">
                     
-                    <a name="M000780"></a><b>recording_web_transaction?</b>()
+                    <a name="M000996"></a><b>record_apdex</b>(current_metric, action_duration, total_duration, is_error)
                     
                 </div>
                 
@@ -540,25 +602,26 @@ Anything left over is treated as custom params
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000780_source')" id="l_M000780_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000996_source')" id="l_M000996_source">show</a>
                         
                     </p>
-                    <div id="M000780_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 234</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">recording_web_transaction?</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>]
-        <span class="ruby-identifier">c</span>.<span class="ruby-identifier">recording_web_transaction?</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000996_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 278</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">record_apdex</span>(<span class="ruby-identifier">current_metric</span>, <span class="ruby-identifier">action_duration</span>, <span class="ruby-identifier">total_duration</span>, <span class="ruby-identifier">is_error</span>)
+          <span class="ruby-identifier">summary_stat</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-value str">&quot;Apdex&quot;</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ApdexStats</span>)
+          <span class="ruby-identifier">controller_stat</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-identifier">current_metric</span>.<span class="ruby-identifier">apdex_metric_path</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ApdexStats</span>)
+          <span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">summary_stat</span>, <span class="ruby-identifier">total_duration</span>, <span class="ruby-identifier">is_error</span>)
+          <span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">controller_stat</span>, <span class="ruby-identifier">action_duration</span>, <span class="ruby-identifier">is_error</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000758">
+                <div class="title" id="M000991">
                     
-                    <a name="M000758"></a><b>referer</b>()
+                    <a name="M000991"></a><b>recording_web_transaction?</b>()
                     
                 </div>
                 
@@ -567,23 +630,50 @@ Anything left over is treated as custom params
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000758_source')" id="l_M000758_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000991_source')" id="l_M000991_source">show</a>
                         
                     </p>
-                    <div id="M000758_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 32</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">referer</span>
-      <span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">referer</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000991_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 244</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">recording_web_transaction?</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>]
+            <span class="ruby-identifier">c</span>.<span class="ruby-identifier">recording_web_transaction?</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000782">
+                <div class="title" id="M000969">
                     
-                    <a name="M000782"></a><b>referer_from_request</b>(request)
+                    <a name="M000969"></a><b>referer</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000969_source')" id="l_M000969_source">show</a>
+                        
+                    </p>
+                    <div id="M000969_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 49</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">referer</span>
+          <span class="ruby-identifier">current</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current</span>.<span class="ruby-identifier">referer</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000994">
+                    
+                    <a name="M000994"></a><b>referer_from_request</b>(request)
                     
                 </div>
                 
@@ -600,32 +690,32 @@ successful when it&#8217;s a <a href="Rack.html">Rack</a> request.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000782_source')" id="l_M000782_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000994_source')" id="l_M000994_source">show</a>
                         
                     </p>
-                    <div id="M000782_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 246</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">referer_from_request</span>(<span class="ruby-identifier">request</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:referer</span>)
-        <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'?'</span>).<span class="ruby-identifier">first</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000994_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 260</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">referer_from_request</span>(<span class="ruby-identifier">request</span>)
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:referer</span>)
+            <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'?'</span>).<span class="ruby-identifier">first</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000784">
+                <div class="title" id="M000997">
                     
-                    <a name="M000784"></a><b>update_apdex</b>(stat, duration, failed)
+                    <a name="M000997"></a><b>update_apdex</b>(stat, duration, failed)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Record an apdex value for the given stat. non-nil &#8216;failed&#8217; the
-apdex should be recorded as a failure regardless of duration.
+Record an apdex value for the given stat. when `failed` the apdex should be
+recorded as a failure regardless of duration.
 </p>
 
                 </div>
@@ -635,33 +725,34 @@ apdex should be recorded as a failure regardless of duration.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000784_source')" id="l_M000784_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000997_source')" id="l_M000997_source">show</a>
                         
                     </p>
-                    <div id="M000784_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 266</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">stat</span>, <span class="ruby-identifier">duration</span>, <span class="ruby-identifier">failed</span>)
-      <span class="ruby-identifier">apdex_t</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">apdex_t</span>
-      <span class="ruby-keyword kw">case</span>
-      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">failed</span>
-        <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_f</span>
-      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">apdex_t</span>
-        <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_s</span>
-      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">4</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">apdex_t</span>
-        <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_t</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_f</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000997_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 287</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">stat</span>, <span class="ruby-identifier">duration</span>, <span class="ruby-identifier">failed</span>)
+          <span class="ruby-identifier">duration</span> = <span class="ruby-identifier">duration</span>.<span class="ruby-identifier">to_f</span>
+          <span class="ruby-identifier">apdex_t</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">apdex_t</span>
+          <span class="ruby-keyword kw">case</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">failed</span>
+            <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_f</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">apdex_t</span>
+            <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_s</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">duration</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">4</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">apdex_t</span>
+            <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_t</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">record_apdex_f</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000783">
+                <div class="title" id="M000995">
                     
-                    <a name="M000783"></a><b>uri_from_request</b>(request)
+                    <a name="M000995"></a><b>uri_from_request</b>(request)
                     
                 </div>
                 
@@ -677,21 +768,21 @@ Make a safe attempt to get the URI, without the host and query string.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000783_source')" id="l_M000783_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000995_source')" id="l_M000995_source">show</a>
                         
                     </p>
-                    <div id="M000783_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 253</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">uri_from_request</span>(<span class="ruby-identifier">request</span>)
-      <span class="ruby-identifier">approximate_uri</span> = <span class="ruby-keyword kw">case</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:fullpath</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">fullpath</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:path</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">path</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:request_uri</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">request_uri</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:uri</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">uri</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:url</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">url</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">approximate_uri</span>[<span class="ruby-regexp re">%r{^(https?://.*?)?(/[^?]*)}</span>, <span class="ruby-value">2</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'/'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">approximate_uri</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000995_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 267</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">uri_from_request</span>(<span class="ruby-identifier">request</span>)
+          <span class="ruby-identifier">approximate_uri</span> = <span class="ruby-keyword kw">case</span>
+                            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:fullpath</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">fullpath</span>
+                            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:path</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">path</span>
+                            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:request_uri</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">request_uri</span>
+                            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:uri</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">uri</span>
+                            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:url</span>) <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">url</span>
+                            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">approximate_uri</span>[<span class="ruby-regexp re">%r{^(https?://.*?)?(/[^?]*)}</span>, <span class="ruby-value">2</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'/'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">approximate_uri</span> <span class="ruby-comment cmt"># '</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -700,9 +791,9 @@ Make a safe attempt to get the URI, without the host and query string.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000764">
+                <div class="title" id="M000976">
                     
-                    <a name="M000764"></a><b>abort_transaction!</b>()
+                    <a name="M000976"></a><b>abort_transaction!</b>()
                     
                 </div>
                 
@@ -718,149 +809,181 @@ Call this to ensure that the current transaction is not saved
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000764_source')" id="l_M000764_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000976_source')" id="l_M000976_source">show</a>
                         
                     </p>
-                    <div id="M000764_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 81</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">abort_transaction!</span>
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">ignore_transaction</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000779">
-                    
-                    <a name="M000779"></a><b>add_custom_parameters</b>(p)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000779_source')" id="l_M000779_source">show</a>
-                        
-                    </p>
-                    <div id="M000779_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 230</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>)
-      <span class="ruby-identifier">custom_parameters</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">p</span>)
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000767">
-                    
-                    <a name="M000767"></a><b>category</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000767_source')" id="l_M000767_source">show</a>
-                        
-                    </p>
-                    <div id="M000767_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 94</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">category</span>
-      <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span>  
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000778">
-                    
-                    <a name="M000778"></a><b>custom_parameters</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000778_source')" id="l_M000778_source">show</a>
-                        
-                    </p>
-                    <div id="M000778_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 226</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">custom_parameters</span>
-      <span class="ruby-ivar">@custom_parameters</span> <span class="ruby-operator">||=</span> {}
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000775">
-                    
-                    <a name="M000775"></a><b>metric_name</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000775_source')" id="l_M000775_source">show</a>
-                        
-                    </p>
-                    <div id="M000775_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 185</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_name</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">empty?</span>
-      <span class="ruby-identifier">category</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span> 
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000768">
-                    
-                    <a name="M000768"></a><b>path</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000768_source')" id="l_M000768_source">show</a>
-                        
-                    </p>
-                    <div id="M000768_source" class="dyn-source">
+                    <div id="M000976_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 98</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">path</span>
-      <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">last</span>
-    <span class="ruby-keyword kw">end</span></pre>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">abort_transaction!</span>
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">ignore_transaction</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000769">
+                <div class="title" id="M000990">
                     
-                    <a name="M000769"></a><b>pop</b>()
+                    <a name="M000990"></a><b>add_custom_parameters</b>(p)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000990_source')" id="l_M000990_source">show</a>
+                        
+                    </p>
+                    <div id="M000990_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 240</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_custom_parameters</span>(<span class="ruby-identifier">p</span>)
+          <span class="ruby-identifier">custom_parameters</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">p</span>)
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000978">
+                    
+                    <a name="M000978"></a><b>current_metric</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000978_source')" id="l_M000978_source">show</a>
+                        
+                    </p>
+                    <div id="M000978_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 111</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_metric</span>
+          <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">last</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000989">
+                    
+                    <a name="M000989"></a><b>custom_parameters</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000989_source')" id="l_M000989_source">show</a>
+                        
+                    </p>
+                    <div id="M000989_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 236</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">custom_parameters</span>
+          <span class="ruby-ivar">@custom_parameters</span> <span class="ruby-operator">||=</span> {}
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000993">
+                    
+                    <a name="M000993"></a><b>is_web_transaction?</b>(metric)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000993_source')" id="l_M000993_source">show</a>
+                        
+                    </p>
+                    <div id="M000993_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 254</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_web_transaction?</span>(<span class="ruby-identifier">metric</span>)
+          <span class="ruby-value">0</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">index</span>(<span class="ruby-value str">&quot;Controller&quot;</span>)
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000986">
+                    
+                    <a name="M000986"></a><b>metric_name</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000986_source')" id="l_M000986_source">show</a>
+                        
+                    </p>
+                    <div id="M000986_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 201</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_name</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">current_metric</span>.<span class="ruby-identifier">name</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000979">
+                    
+                    <a name="M000979"></a><b>path</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Return the path, the part of the metric after the category
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000979_source')" id="l_M000979_source">show</a>
+                        
+                    </p>
+                    <div id="M000979_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 116</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">path</span>
+          <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">last</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000980">
+                    
+                    <a name="M000980"></a><b>pop</b>()
                     
                 </div>
                 
@@ -877,45 +1000,46 @@ and does the appropriate wrapup of the context.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000769_source')" id="l_M000769_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000980_source')" id="l_M000980_source">show</a>
                         
                     </p>
-                    <div id="M000769_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 104</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop</span>
-      <span class="ruby-identifier">category</span>, <span class="ruby-identifier">path</span> = <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">pop</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">category</span>.<span class="ruby-identifier">nil?</span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Underflow in metric frames: #{caller.join(&quot;\n   &quot;)}&quot;</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">empty?</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
-          <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-keyword kw">nil</span>
-          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@process_cpu_start</span>
-            <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">process_cpu</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@process_cpu_start</span>
-          <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@jruby_cpu_start</span>
-            <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">jruby_cpu_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@jruby_cpu_start</span>
-            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Metrics</span><span class="ruby-operator">::</span><span class="ruby-constant">USER_TIME</span>).<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">cpu_burn</span>)
+                    <div id="M000980_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 122</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop</span>
+          <span class="ruby-identifier">metric</span> = <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">pop</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Underflow in metric frames: #{caller.join(&quot;\n   &quot;)}&quot;</span>
           <span class="ruby-keyword kw">end</span>
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_burn</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cpu_burn</span>
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">histogram</span>.<span class="ruby-identifier">process</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">recording_web_transaction?</span>(<span class="ruby-identifier">category</span>)
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_scope_empty</span>      
-        <span class="ruby-keyword kw">end</span>      
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">end_transaction</span>
-        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>] = <span class="ruby-keyword kw">nil</span>
-      <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># path stack not empty</span>
-        <span class="ruby-comment cmt"># change the transaction name back to whatever was on the stack.  </span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">scope_name</span> = <span class="ruby-identifier">metric_name</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">empty?</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+              <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-keyword kw">nil</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@process_cpu_start</span>
+                <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">process_cpu</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@process_cpu_start</span>
+              <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@jruby_cpu_start</span>
+                <span class="ruby-identifier">cpu_burn</span> = <span class="ruby-identifier">jruby_cpu_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@jruby_cpu_start</span>
+                <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Metrics</span><span class="ruby-operator">::</span><span class="ruby-constant">USER_TIME</span>).<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">cpu_burn</span>)
+              <span class="ruby-keyword kw">end</span>
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction_cpu_time</span>(<span class="ruby-identifier">cpu_burn</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cpu_burn</span>
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">histogram</span>.<span class="ruby-identifier">process</span>((<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>).<span class="ruby-identifier">to_f</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">is_web_transaction?</span>
+              <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_scope_empty</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">end_transaction</span>
+            <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_start_time</span>] = (<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>].<span class="ruby-identifier">start</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>)
+            <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_metric_frame</span>] = <span class="ruby-keyword kw">nil</span>
+          <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># path stack not empty</span>
+            <span class="ruby-comment cmt"># change the transaction name back to whatever was on the stack.</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">scope_name</span> = <span class="ruby-identifier">metric_name</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000760">
+                <div class="title" id="M000972">
                     
-                    <a name="M000760"></a><b>push</b>(category, path)
+                    <a name="M000972"></a><b>push</b>(m)
                     
                 </div>
                 
@@ -932,24 +1056,24 @@ sure you unwind every push with a pop call.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000760_source')" id="l_M000760_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000972_source')" id="l_M000972_source">show</a>
                         
                     </p>
-                    <div id="M000760_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 59</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">category</span>, <span class="ruby-identifier">path</span>)
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_first_scope_push</span>(<span class="ruby-identifier">start</span>)
-      <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">push</span> [<span class="ruby-identifier">category</span>, <span class="ruby-identifier">path</span>]
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000972_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 76</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">m</span>)
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_first_scope_push</span>(<span class="ruby-identifier">start</span>)
+          <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span>.<span class="ruby-identifier">for_metric_named</span>(<span class="ruby-identifier">m</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000774">
+                <div class="title" id="M000985">
                     
-                    <a name="M000774"></a><b>record_apdex</b>()
+                    <a name="M000985"></a><b>record_apdex</b>()
                     
                 </div>
                 
@@ -958,28 +1082,25 @@ sure you unwind every push with a pop call.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000774_source')" id="l_M000774_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000985_source')" id="l_M000985_source">show</a>
                         
                     </p>
-                    <div id="M000774_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 176</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_apdex</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">recording_web_transaction?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
-      <span class="ruby-identifier">ending</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
-      <span class="ruby-identifier">summary_stat</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-value str">&quot;Apdex&quot;</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ApdexStats</span>)
-      <span class="ruby-identifier">controller_stat</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_custom_stats</span>(<span class="ruby-node">&quot;Apdex/#{path}&quot;</span>, <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ApdexStats</span>)
-      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">summary_stat</span>, <span class="ruby-identifier">ending</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">apdex_start</span>, <span class="ruby-identifier">exception</span>)
-      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">update_apdex</span>(<span class="ruby-identifier">controller_stat</span>, <span class="ruby-identifier">ending</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>, <span class="ruby-identifier">exception</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000985_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 195</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_apdex</span>()
+          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">recording_web_transaction?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+          <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">record_apdex</span>(<span class="ruby-identifier">current_metric</span>, <span class="ruby-identifier">t</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>, <span class="ruby-identifier">t</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">apdex_start</span>, <span class="ruby-operator">!</span><span class="ruby-identifier">exception</span>.<span class="ruby-identifier">nil?</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000776">
+                <div class="title" id="M000987">
                     
-                    <a name="M000776"></a><b>recorded_metrics</b>()
+                    <a name="M000987"></a><b>recorded_metrics</b>()
                     
                 </div>
                 
@@ -995,31 +1116,25 @@ Return the array of metrics to record for the current metric frame.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000776_source')" id="l_M000776_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000987_source')" id="l_M000987_source">show</a>
                         
                     </p>
-                    <div id="M000776_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 191</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recorded_metrics</span>
-      <span class="ruby-identifier">metrics</span> = [ <span class="ruby-identifier">metric_name</span> ]
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">recording_web_transaction?</span>
-          <span class="ruby-identifier">metrics</span> <span class="ruby-operator">+=</span> [<span class="ruby-value str">&quot;HttpDispatcher&quot;</span>]
-        <span class="ruby-keyword kw">else</span>
-          <span class="ruby-identifier">metrics</span> <span class="ruby-operator">+=</span> [<span class="ruby-node">&quot;#{category}/all&quot;</span>, <span class="ruby-value str">&quot;OtherTransaction/all&quot;</span>]
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-identifier">metrics</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000987_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 207</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recorded_metrics</span>
+          <span class="ruby-identifier">metrics</span> = [ <span class="ruby-identifier">metric_name</span> ]
+          <span class="ruby-identifier">metrics</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">current_metric</span>.<span class="ruby-identifier">summary_metrics</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">metrics</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000781">
+                <div class="title" id="M000992">
                     
-                    <a name="M000781"></a><b>recording_web_transaction?</b>(cat = category)
+                    <a name="M000992"></a><b>recording_web_transaction?</b>()
                     
                 </div>
                 
@@ -1028,23 +1143,23 @@ Return the array of metrics to record for the current metric frame.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000781_source')" id="l_M000781_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000992_source')" id="l_M000992_source">show</a>
                         
                     </p>
-                    <div id="M000781_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 240</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recording_web_transaction?</span>(<span class="ruby-identifier">cat</span> = <span class="ruby-identifier">category</span>)
-      <span class="ruby-value">0</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">cat</span>.<span class="ruby-identifier">index</span>(<span class="ruby-value str">&quot;Controller&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000992_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 250</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recording_web_transaction?</span>
+          <span class="ruby-identifier">current_metric</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current_metric</span>.<span class="ruby-identifier">is_web_transaction?</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000763">
+                <div class="title" id="M000975">
                     
-                    <a name="M000763"></a><b>referer</b>()
+                    <a name="M000975"></a><b>referer</b>()
                     
                 </div>
                 
@@ -1061,23 +1176,23 @@ string, or nil.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000763_source')" id="l_M000763_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000975_source')" id="l_M000975_source">show</a>
                         
                     </p>
-                    <div id="M000763_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 76</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">referer</span>
-      <span class="ruby-ivar">@referer</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">referer_from_request</span>(<span class="ruby-ivar">@request</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000975_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 93</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">referer</span>
+          <span class="ruby-ivar">@referer</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">referer_from_request</span>(<span class="ruby-ivar">@request</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000765">
+                <div class="title" id="M000977">
                     
-                    <a name="M000765"></a><b>start_transaction</b>()
+                    <a name="M000977"></a><b>start_transaction</b>()
                     
                 </div>
                 
@@ -1085,7 +1200,7 @@ string, or nil.
                   <p>
 This needs to be called after entering the call to trace the controller
 action, otherwise the controller action blames itself. It gets reset in the
-normal <a href="MetricFrame.html#M000769">pop</a> call.
+normal <a href="MetricFrame.html#M000980">pop</a> call.
 </p>
 
                 </div>
@@ -1095,27 +1210,27 @@ normal <a href="MetricFrame.html#M000769">pop</a> call.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000765_source')" id="l_M000765_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000977_source')" id="l_M000977_source">show</a>
                         
                     </p>
-                    <div id="M000765_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 86</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">start_transaction</span> <span class="ruby-identifier">metric_name</span>
-      <span class="ruby-comment cmt"># Only push the transaction context info once, on entry:</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">filtered_params</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000977_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 103</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">start_transaction</span> <span class="ruby-identifier">metric_name</span>
+          <span class="ruby-comment cmt"># Only push the transaction context info once, on entry:</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@path_stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_transaction</span>(<span class="ruby-identifier">metric_name</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">filtered_params</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000762">
+                <div class="title" id="M000974">
                     
-                    <a name="M000762"></a><b>uri</b>()
+                    <a name="M000974"></a><b>uri</b>()
                     
                 </div>
                 
@@ -1132,23 +1247,23 @@ part and query string, or nil.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000762_source')" id="l_M000762_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000974_source')" id="l_M000974_source">show</a>
                         
                     </p>
-                    <div id="M000762_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 71</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uri</span>
-      <span class="ruby-ivar">@uri</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">uri_from_request</span>(<span class="ruby-ivar">@request</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">nil?</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000974_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 88</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uri</span>
+          <span class="ruby-ivar">@uri</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">uri_from_request</span>(<span class="ruby-ivar">@request</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000777">
+                <div class="title" id="M000988">
                     
-                    <a name="M000777"></a><b>with_database_metric_name</b>(model, method)
+                    <a name="M000988"></a><b>with_database_metric_name</b>(model, method)
                     
                 </div>
                 
@@ -1175,26 +1290,26 @@ identify the operation with.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000777_source')" id="l_M000777_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000988_source')" id="l_M000988_source">show</a>
                         
                     </p>
-                    <div id="M000777_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 210</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_database_metric_name</span>(<span class="ruby-identifier">model</span>, <span class="ruby-identifier">method</span>)
-      <span class="ruby-identifier">previous</span> = <span class="ruby-ivar">@database_metric_name</span>
-      <span class="ruby-identifier">model_name</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">model</span>
-      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Class</span>
-        <span class="ruby-identifier">model</span>.<span class="ruby-identifier">name</span>
-      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
-        <span class="ruby-identifier">model</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_s</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-ivar">@database_metric_name</span> = <span class="ruby-node">&quot;ActiveRecord/#{model_name}/#{method}&quot;</span>
-      <span class="ruby-keyword kw">yield</span>
-    <span class="ruby-keyword kw">ensure</span>  
-      <span class="ruby-ivar">@database_metric_name</span>=<span class="ruby-identifier">previous</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M000988_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/metric_frame.rb, line 220</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_database_metric_name</span>(<span class="ruby-identifier">model</span>, <span class="ruby-identifier">method</span>)
+          <span class="ruby-identifier">previous</span> = <span class="ruby-ivar">@database_metric_name</span>
+          <span class="ruby-identifier">model_name</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">model</span>
+                       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Class</span>
+                         <span class="ruby-identifier">model</span>.<span class="ruby-identifier">name</span>
+                       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+                         <span class="ruby-identifier">model</span>
+                       <span class="ruby-keyword kw">else</span>
+                         <span class="ruby-identifier">model</span>.<span class="ruby-identifier">to_s</span>
+                       <span class="ruby-keyword kw">end</span>
+          <span class="ruby-ivar">@database_metric_name</span> = <span class="ruby-node">&quot;ActiveRecord/#{model_name}/#{method}&quot;</span>
+          <span class="ruby-keyword kw">yield</span>
+        <span class="ruby-keyword kw">ensure</span>
+          <span class="ruby-ivar">@database_metric_name</span>=<span class="ruby-identifier">previous</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

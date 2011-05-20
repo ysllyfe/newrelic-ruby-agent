@@ -21,7 +21,9 @@
         </h1>
         <ul class="files">
             
-            <li><a href="../../../../files/lib/new_relic/agent/instrumentation/active_record_instrumentation_rb.html">lib/new_relic/agent/instrumentation/active_record_instrumentation.rb</a></li>
+            <li><a href="../../../../files/lib/new_relic/agent/instrumentation/rails/active_record_instrumentation_rb.html">lib/new_relic/agent/instrumentation/rails/active_record_instrumentation.rb</a></li>
+            
+            <li><a href="../../../../files/lib/new_relic/agent/instrumentation/rails3/active_record_instrumentation_rb.html">lib/new_relic/agent/instrumentation/rails3/active_record_instrumentation.rb</a></li>
             
         </ul>
     </div>
@@ -43,7 +45,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000723">included</a></li>
+                <li><a href="#M001035">included</a>,</li>
+                
+                <li><a href="#M001042">included</a></li>
                 
             </ul>
         </dd>
@@ -52,7 +56,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000724">log_with_newrelic_instrumentation</a></li>
+                <li><a href="#M001036">log_with_newrelic_instrumentation</a>,</li>
+                
+                <li><a href="#M001043">log_with_newrelic_instrumentation</a></li>
                 
             </ul>
         </dd>
@@ -74,9 +80,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000723">
+                <div class="title" id="M001035">
                     
-                    <a name="M000723"></a><b>included</b>(instrumented_class)
+                    <a name="M001035"></a><b>included</b>(instrumented_class)
                     
                 </div>
                 
@@ -85,18 +91,49 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000723_source')" id="l_M000723_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001035_source')" id="l_M001035_source">show</a>
                         
                     </p>
-                    <div id="M000723_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/active_record_instrumentation.rb, line 10</span>
-          <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">instrumented_class</span>)
-            <span class="ruby-identifier">instrumented_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+                    <div id="M001035_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/active_record_instrumentation.rb, line 6</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">instrumented_class</span>)
+          <span class="ruby-identifier">instrumented_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+            <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:log_without_newrelic_instrumentation</span>, <span class="ruby-identifier">:log</span>
+            <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:log</span>, <span class="ruby-identifier">:log_with_newrelic_instrumentation</span>
+            <span class="ruby-identifier">protected</span> <span class="ruby-identifier">:log</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001042">
+                    
+                    <a name="M001042"></a><b>included</b>(instrumented_class)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001042_source')" id="l_M001042_source">show</a>
+                        
+                    </p>
+                    <div id="M001042_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails3/active_record_instrumentation.rb, line 6</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">instrumented_class</span>)
+          <span class="ruby-identifier">instrumented_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+            <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">instrumented_class</span>.<span class="ruby-identifier">method_defined?</span>(<span class="ruby-identifier">:log_without_newrelic_instrumentation</span>)
               <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:log_without_newrelic_instrumentation</span>, <span class="ruby-identifier">:log</span>
               <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:log</span>, <span class="ruby-identifier">:log_with_newrelic_instrumentation</span>
               <span class="ruby-identifier">protected</span> <span class="ruby-identifier">:log</span>
             <span class="ruby-keyword kw">end</span>
-          <span class="ruby-keyword kw">end</span></pre>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -105,9 +142,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000724">
+                <div class="title" id="M001036">
                     
-                    <a name="M000724"></a><b>log_with_newrelic_instrumentation</b>(sql, name, &amp;block)
+                    <a name="M001036"></a><b>log_with_newrelic_instrumentation</b>(sql, name, &amp;block)
                     
                 </div>
                 
@@ -116,65 +153,141 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000724_source')" id="l_M000724_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001036_source')" id="l_M001036_source">show</a>
                         
                     </p>
-                    <div id="M000724_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/active_record_instrumentation.rb, line 18</span>
-          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_with_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-            
-            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
-            
-            <span class="ruby-comment cmt"># Capture db config if we are going to try to get the explain plans</span>
-            <span class="ruby-keyword kw">if</span> (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>)) <span class="ruby-operator">||</span>
-                (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>))
-              <span class="ruby-identifier">supported_config</span> = <span class="ruby-ivar">@config</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">parts</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span> <span class="ruby-value str">&quot; &quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
-              <span class="ruby-identifier">model</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>
-              <span class="ruby-identifier">operation</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">downcase</span>
-              <span class="ruby-identifier">metric_name</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">operation</span>
-                            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'load'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'find'</span>
-                            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'indexes'</span>, <span class="ruby-value str">'columns'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-comment cmt"># fall back to DirectSQL</span>
-                            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'destroy'</span>, <span class="ruby-value str">'find'</span>, <span class="ruby-value str">'save'</span>, <span class="ruby-value str">'create'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">operation</span>
-                            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'update'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'save'</span>
-                            <span class="ruby-keyword kw">else</span>
-                              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">model</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Join'</span>
-                                <span class="ruby-identifier">operation</span>
-                              <span class="ruby-keyword kw">end</span>
+                    <div id="M001036_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails/active_record_instrumentation.rb, line 14</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_with_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+
+          <span class="ruby-comment cmt"># Capture db config if we are going to try to get the explain plans</span>
+          <span class="ruby-keyword kw">if</span> (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>)) <span class="ruby-operator">||</span>
+              (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>))
+            <span class="ruby-identifier">supported_config</span> = <span class="ruby-ivar">@config</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">parts</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span> <span class="ruby-value str">&quot; &quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+            <span class="ruby-identifier">model</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>
+            <span class="ruby-identifier">operation</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">downcase</span>
+            <span class="ruby-identifier">metric_name</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">operation</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'load'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'find'</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'indexes'</span>, <span class="ruby-value str">'columns'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-comment cmt"># fall back to DirectSQL</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'destroy'</span>, <span class="ruby-value str">'find'</span>, <span class="ruby-value str">'save'</span>, <span class="ruby-value str">'create'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">operation</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'update'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'save'</span>
+                          <span class="ruby-keyword kw">else</span>
+                            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">model</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Join'</span>
+                              <span class="ruby-identifier">operation</span>
                             <span class="ruby-keyword kw">end</span>
-              <span class="ruby-identifier">metric</span> = <span class="ruby-node">&quot;ActiveRecord/#{model}/#{metric_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span>
-            <span class="ruby-keyword kw">end</span>
-            
+                          <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">metric</span> = <span class="ruby-node">&quot;ActiveRecord/#{model}/#{metric_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">metric</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">database_metric_name</span>
             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">nil?</span>
-              <span class="ruby-identifier">metric</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">database_metric_name</span>
-              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">nil?</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(select|update|insert|delete|show)/i</span>
-                  <span class="ruby-comment cmt"># Could not determine the model/operation so let's find a better</span>
-                  <span class="ruby-comment cmt"># metric.  If it doesn't match the regex, it's probably a show</span>
-                  <span class="ruby-comment cmt"># command or some DDL which we'll ignore.</span>
-                  <span class="ruby-identifier">metric</span> = <span class="ruby-node">&quot;Database/SQL/#{$1.downcase}&quot;</span>
-                <span class="ruby-keyword kw">else</span>
-                  <span class="ruby-identifier">metric</span> = <span class="ruby-value str">&quot;Database/SQL/other&quot;</span>
-                <span class="ruby-keyword kw">end</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(select|update|insert|delete|show)/i</span>
+                <span class="ruby-comment cmt"># Could not determine the model/operation so let's find a better</span>
+                <span class="ruby-comment cmt"># metric.  If it doesn't match the regex, it's probably a show</span>
+                <span class="ruby-comment cmt"># command or some DDL which we'll ignore.</span>
+                <span class="ruby-identifier">metric</span> = <span class="ruby-node">&quot;Database/SQL/#{$1.downcase}&quot;</span>
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">metric</span> = <span class="ruby-value str">&quot;Database/SQL/other&quot;</span>
               <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">metric</span>
+            <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">metrics</span> = [<span class="ruby-identifier">metric</span>, <span class="ruby-value str">&quot;ActiveRecord/all&quot;</span>]
+            <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;ActiveRecord/#{metric_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span>
+            <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metrics</span>) <span class="ruby-keyword kw">do</span>
+              <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+              <span class="ruby-keyword kw">begin</span>
+                <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+              <span class="ruby-keyword kw">ensure</span>
+                <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">supported_config</span>, (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">t0</span>).<span class="ruby-identifier">to_f</span>)
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
             
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">metric</span>
-              <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-            <span class="ruby-keyword kw">else</span>
-              <span class="ruby-identifier">metrics</span> = [<span class="ruby-identifier">metric</span>, <span class="ruby-value str">&quot;ActiveRecord/all&quot;</span>]
-              <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;ActiveRecord/#{metric_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span>
-              <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metrics</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
-                <span class="ruby-keyword kw">begin</span>
-                  <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) 
-                <span class="ruby-keyword kw">ensure</span>
-                  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">supported_config</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">t0</span>) 
-                <span class="ruby-keyword kw">end</span>
+            <div class="method">
+                <div class="title" id="M001043">
+                    
+                    <a name="M001043"></a><b>log_with_newrelic_instrumentation</b>(sql, name, &amp;block)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001043_source')" id="l_M001043_source">show</a>
+                        
+                    </p>
+                    <div id="M001043_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/instrumentation/rails3/active_record_instrumentation.rb, line 16</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log_with_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">is_execution_traced?</span>
+
+          <span class="ruby-comment cmt"># Capture db config if we are going to try to get the explain plans</span>
+          <span class="ruby-keyword kw">if</span> (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">MysqlAdapter</span>)) <span class="ruby-operator">||</span>
+              (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">PostgreSQLAdapter</span>))
+            <span class="ruby-identifier">supported_config</span> = <span class="ruby-ivar">@config</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">parts</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span> <span class="ruby-value str">&quot; &quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+            <span class="ruby-identifier">model</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>
+            <span class="ruby-identifier">operation</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">downcase</span>
+            <span class="ruby-identifier">metric_name</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">operation</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'load'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'find'</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'indexes'</span>, <span class="ruby-value str">'columns'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-comment cmt"># fall back to DirectSQL</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'destroy'</span>, <span class="ruby-value str">'find'</span>, <span class="ruby-value str">'save'</span>, <span class="ruby-value str">'create'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">operation</span>
+                          <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'update'</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'save'</span>
+                          <span class="ruby-keyword kw">else</span>
+                            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">model</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Join'</span>
+                              <span class="ruby-identifier">operation</span>
+                            <span class="ruby-keyword kw">end</span>
+                          <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">metric</span> = <span class="ruby-node">&quot;ActiveRecord/#{model}/#{metric_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">metric</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">database_metric_name</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">nil?</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(select|update|insert|delete|show)/i</span>
+                <span class="ruby-comment cmt"># Could not determine the model/operation so let's find a better</span>
+                <span class="ruby-comment cmt"># metric.  If it doesn't match the regex, it's probably a show</span>
+                <span class="ruby-comment cmt"># command or some DDL which we'll ignore.</span>
+                <span class="ruby-identifier">metric</span> = <span class="ruby-node">&quot;Database/SQL/#{$1.downcase}&quot;</span>
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">metric</span> = <span class="ruby-value str">&quot;Database/SQL/other&quot;</span>
               <span class="ruby-keyword kw">end</span>
             <span class="ruby-keyword kw">end</span>
-          <span class="ruby-keyword kw">end</span></pre>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">metric</span>
+            <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">metrics</span> = [<span class="ruby-identifier">metric</span>, <span class="ruby-value str">&quot;ActiveRecord/all&quot;</span>]
+            <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;ActiveRecord/#{metric_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_name</span>
+            <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">trace_execution_scoped</span>(<span class="ruby-identifier">metrics</span>) <span class="ruby-keyword kw">do</span>
+              <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+              <span class="ruby-keyword kw">begin</span>
+                <span class="ruby-identifier">log_without_newrelic_instrumentation</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+              <span class="ruby-keyword kw">ensure</span>
+                <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">transaction_sampler</span>.<span class="ruby-identifier">notice_sql</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">supported_config</span>, (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">t0</span>).<span class="ruby-identifier">to_f</span>)
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

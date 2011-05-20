@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000838">new</a></li>
+                <li><a href="#M001106">new</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000841">poll</a></li>
+                <li><a href="#M001109">poll</a></li>
                 
             </ul>
         </dd>
@@ -67,9 +67,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000839">stats</a>,</li>
+                <li><a href="#M001107">stats</a>,</li>
                 
-                <li><a href="#M000840">supported_on_this_platform?</a></li>
+                <li><a href="#M001108">supported_on_this_platform?</a></li>
                 
             </ul>
         </dd>
@@ -91,9 +91,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000838">
+                <div class="title" id="M001106">
                     
-                    <a name="M000838"></a><b>new</b>()
+                    <a name="M001106"></a><b>new</b>()
                     
                 </div>
                 
@@ -102,11 +102,11 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000838_source')" id="l_M000838_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001106_source')" id="l_M001106_source">show</a>
                         
                     </p>
-                    <div id="M000838_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 6</span>
+                    <div id="M001106_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 8</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
           <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">objects</span>
         <span class="ruby-keyword kw">end</span></pre>
@@ -116,9 +116,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000840">
+                <div class="title" id="M001108">
                     
-                    <a name="M000840"></a><b>supported_on_this_platform?</b>()
+                    <a name="M001108"></a><b>supported_on_this_platform?</b>()
                     
                 </div>
                 
@@ -127,11 +127,11 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000840_source')" id="l_M000840_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001108_source')" id="l_M001108_source">show</a>
                         
                     </p>
-                    <div id="M000840_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 14</span>
+                    <div id="M001108_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 16</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
           <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ObjectSpace</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:live_objects</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -143,9 +143,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000841">
+                <div class="title" id="M001109">
                     
-                    <a name="M000841"></a><b>poll</b>()
+                    <a name="M001109"></a><b>poll</b>()
                     
                 </div>
                 
@@ -154,11 +154,11 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000841_source')" id="l_M000841_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001109_source')" id="l_M001109_source">show</a>
                         
                     </p>
-                    <div id="M000841_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 18</span>
+                    <div id="M001109_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 20</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
           <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">live_objects</span>)
         <span class="ruby-keyword kw">end</span></pre>
@@ -168,9 +168,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000839">
+                <div class="title" id="M001107">
                     
-                    <a name="M000839"></a><b>stats</b>()
+                    <a name="M001107"></a><b>stats</b>()
                     
                 </div>
                 
@@ -179,13 +179,13 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000839_source')" id="l_M000839_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001107_source')" id="l_M001107_source">show</a>
                         
                     </p>
-                    <div id="M000839_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 10</span>
+                    <div id="M001107_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/object_sampler.rb, line 12</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stats</span>
-          <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;GC/objects&quot;</span>)          
+          <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;GC/objects&quot;</span>)
         <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

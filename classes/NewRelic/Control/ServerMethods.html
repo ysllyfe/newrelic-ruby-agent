@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NewRelic::Control::ServerMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+    <script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            NewRelic::Control::ServerMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/lib/new_relic/control/server_methods_rb.html">lib/new_relic/control/server_methods.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>A</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001364">api_server</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>C</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001369">cert_file_path</a>,</li>
+                
+                <li><a href="#M001367">convert_to_ip_address</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>H</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001370">http_connection</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>P</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001365">proxy_server</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>R</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001368">resolve_ip_address</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001363">server</a>,</li>
+                
+                <li><a href="#M001366">server_from_host</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M001364">
+                    
+                    <a name="M001364"></a><b>api_server</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001364_source')" id="l_M001364_source">show</a>
+                        
+                    </p>
+                    <div id="M001364_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 17</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_server</span>
+        <span class="ruby-identifier">api_host</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'api_host'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'rpm.newrelic.com'</span>
+        <span class="ruby-ivar">@api_server</span> <span class="ruby-operator">||=</span>
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span> \
+        <span class="ruby-identifier">api_host</span>,
+        (<span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'api_port'</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-value">443</span> <span class="ruby-operator">:</span> <span class="ruby-value">80</span>)).<span class="ruby-identifier">to_i</span>,
+        <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001369">
+                    
+                    <a name="M001369"></a><b>cert_file_path</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001369_source')" id="l_M001369_source">show</a>
+                        
+                    </p>
+                    <div id="M001369_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 70</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cert_file_path</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newrelic_root</span>, <span class="ruby-value str">'cert'</span>, <span class="ruby-value str">'cacert.pem'</span>))
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001367">
+                    
+                    <a name="M001367"></a><b>convert_to_ip_address</b>(host)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Check to see if we need to look up the IP address If it&#8217;s an IP
+address already, we pass it through. If it&#8217;s nil, or localhost, we
+don&#8217;t bother. Otherwise, use `<a
+href="ServerMethods.html#M001368">resolve_ip_address</a>` to find one
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001367_source')" id="l_M001367_source">show</a>
+                        
+                    </p>
+                    <div id="M001367_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 42</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_to_ip_address</span>(<span class="ruby-identifier">host</span>)
+        <span class="ruby-comment cmt"># here we leave it as a host name since the cert verification</span>
+        <span class="ruby-comment cmt"># needs it in host form</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">host</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verify_certificate?</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;localhost&quot;</span>
+        <span class="ruby-identifier">ip</span> = <span class="ruby-identifier">resolve_ip_address</span>(<span class="ruby-identifier">host</span>)
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Resolved #{host} to #{ip}&quot;</span>
+        <span class="ruby-identifier">ip</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001370">
+                    
+                    <a name="M001370"></a><b>http_connection</b>(host = nil)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Return the Net::HTTP with proxy configuration given the
+NewRelic::Control::Server object. Default is the collector but for api
+calls you need to pass <a href="ServerMethods.html#M001364">api_server</a>
+</p>
+<p>
+Experimental support for SSL verification: swap &#8216;VERIFY_NONE&#8217;
+for &#8216;VERIFY_PEER&#8217; line to try it out If verification fails,
+uncomment the &#8216;http.ca_file&#8217; line and it will use the included
+certificate.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001370_source')" id="l_M001370_source">show</a>
+                        
+                    </p>
+                    <div id="M001370_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 81</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">http_connection</span>(<span class="ruby-identifier">host</span> = <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">host</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">server</span>
+        <span class="ruby-comment cmt"># Proxy returns regular HTTP if @proxy_host is nil (the default)</span>
+        <span class="ruby-identifier">http_class</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Proxy</span>(<span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">port</span>,
+                                      <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">user</span>, <span class="ruby-identifier">proxy_server</span>.<span class="ruby-identifier">password</span>)
+        <span class="ruby-identifier">http</span> = <span class="ruby-identifier">http_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>.<span class="ruby-identifier">ip</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">host</span>.<span class="ruby-identifier">port</span>)
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Http Connection opened to #{host.ip||host.name}:#{host.port}&quot;</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_ssl?</span>
+          <span class="ruby-identifier">http</span>.<span class="ruby-identifier">use_ssl</span> = <span class="ruby-keyword kw">true</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verify_certificate?</span>
+            <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_PEER</span>
+            <span class="ruby-identifier">http</span>.<span class="ruby-identifier">ca_file</span> = <span class="ruby-identifier">cert_file_path</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_NONE</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">http</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001365">
+                    
+                    <a name="M001365"></a><b>proxy_server</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001365_source')" id="l_M001365_source">show</a>
+                        
+                    </p>
+                    <div id="M001365_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 26</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proxy_server</span>
+        <span class="ruby-ivar">@proxy_server</span> <span class="ruby-operator">||=</span>
+          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">ProxyServer</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_host'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_port'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_user'</span>], <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'proxy_pass'</span>]
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001368">
+                    
+                    <a name="M001368"></a><b>resolve_ip_address</b>(host)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Look up the ip address of the host using the pure ruby lookup to prevent
+blocking. If that fails, fall back to the regular IPSocket library. Return
+nil if we can&#8217;t find the host ip address and don&#8217;t have a good
+default.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001368_source')" id="l_M001368_source">show</a>
+                        
+                    </p>
+                    <div id="M001368_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 56</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">resolve_ip_address</span>(<span class="ruby-identifier">host</span>)
+        <span class="ruby-constant">Resolv</span>.<span class="ruby-identifier">getaddress</span>(<span class="ruby-identifier">host</span>)
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;DNS Error caching IP address: #{e}&quot;</span>)
+        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n   &quot;</span>))
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;Trying native DNS lookup since Resolv failed&quot;</span>)
+          <span class="ruby-constant">IPSocket</span>.<span class="ruby-identifier">getaddress</span>(<span class="ruby-identifier">host</span>)
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span>(<span class="ruby-node">&quot;Could not look up server address: #{e}&quot;</span>)
+          <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001363">
+                    
+                    <a name="M001363"></a><b>server</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001363_source')" id="l_M001363_source">show</a>
+                        
+                    </p>
+                    <div id="M001363_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 13</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">server</span>
+        <span class="ruby-ivar">@remote_server</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">server_from_host</span>(<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001366">
+                    
+                    <a name="M001366"></a><b>server_from_host</b>(hostname=nil)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001366_source')" id="l_M001366_source">show</a>
+                        
+                    </p>
+                    <div id="M001366_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/control/server_methods.rb, line 31</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">server_from_host</span>(<span class="ruby-identifier">hostname</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">host</span> = <span class="ruby-identifier">hostname</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'host'</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'collector.newrelic.com'</span>
+
+        <span class="ruby-comment cmt"># if the host is not an IP address, turn it into one</span>
+        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">host</span>, (<span class="ruby-keyword kw">self</span>[<span class="ruby-value str">'port'</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">use_ssl?</span> <span class="ruby-value">? </span><span class="ruby-value">443</span> <span class="ruby-operator">:</span> <span class="ruby-value">80</span>)).<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">convert_to_ip_address</span>(<span class="ruby-identifier">host</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

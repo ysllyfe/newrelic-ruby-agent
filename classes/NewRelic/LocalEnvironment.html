@@ -54,13 +54,13 @@ each other
 </ul>
 <p>
 If the environment can&#8217;t be determined, it will be set to nil and <a
-href="LocalEnvironment.html#M001071">dispatcher_instance_id</a> will have
+href="LocalEnvironment.html#M001385">dispatcher_instance_id</a> will have
 nil.
 </p>
 <p>
 <a href="LocalEnvironment.html">NewRelic::LocalEnvironment</a> should be
-accessed through <a href="Control.html#env">NewRelic::Control#env</a> (via
-the <a href="Control.html">NewRelic::Control</a> singleton).
+accessed through NewRelic::Control#env (via the <a
+href="Control.html">NewRelic::Control</a> singleton).
 </p>
 
     </div>
@@ -80,11 +80,11 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001068">append_environment_value</a>,</li>
+                <li><a href="#M001382">append_environment_value</a>,</li>
                 
-                <li><a href="#M001069">append_gem_list</a>,</li>
+                <li><a href="#M001383">append_gem_list</a>,</li>
                 
-                <li><a href="#M001070">append_plugin_list</a></li>
+                <li><a href="#M001384">append_plugin_list</a></li>
                 
             </ul>
         </dd>
@@ -93,9 +93,16 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001085">delayed_worker=</a>,</li>
+                <li><a href="#M001385">dispatcher_instance_id</a></li>
                 
-                <li><a href="#M001071">dispatcher_instance_id</a></li>
+            </ul>
+        </dd>
+    
+        <dt>F</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001407">find_class_in_object_space</a></li>
                 
             </ul>
         </dd>
@@ -104,7 +111,27 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001073">gather_environment_info</a></li>
+                <li><a href="#M001393">gather_ar_adapter_info</a>,</li>
+                
+                <li><a href="#M001389">gather_architecture_info</a>,</li>
+                
+                <li><a href="#M001388">gather_cpu_info</a>,</li>
+                
+                <li><a href="#M001395">gather_db_info</a>,</li>
+                
+                <li><a href="#M001394">gather_dm_adapter_info</a>,</li>
+                
+                <li><a href="#M001401">gather_environment_info</a>,</li>
+                
+                <li><a href="#M001387">gather_jruby_info</a>,</li>
+                
+                <li><a href="#M001390">gather_os_info</a>,</li>
+                
+                <li><a href="#M001392">gather_revision_info</a>,</li>
+                
+                <li><a href="#M001386">gather_ruby_info</a>,</li>
+                
+                <li><a href="#M001391">gather_system_info</a></li>
                 
             </ul>
         </dd>
@@ -113,7 +140,7 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001082">mongrel</a></li>
+                <li><a href="#M001408">mongrel</a></li>
                 
             </ul>
         </dd>
@@ -122,7 +149,7 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001065">new</a></li>
+                <li><a href="#M001381">new</a></li>
                 
             </ul>
         </dd>
@@ -131,7 +158,7 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001080">snapshot</a></li>
+                <li><a href="#M001402">snapshot</a></li>
                 
             </ul>
         </dd>
@@ -140,7 +167,7 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001103">to_s</a></li>
+                <li><a href="#M001435">to_s</a></li>
                 
             </ul>
         </dd>
@@ -149,7 +176,16 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
         <dd>
             <ul>
                 
-                <li><a href="#M001084">unicorn</a></li>
+                <li><a href="#M001409">unicorn</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>W</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M001406">working_jruby?</a></li>
                 
             </ul>
         </dd>
@@ -216,9 +252,9 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001065">
+                <div class="title" id="M001381">
                     
-                    <a name="M001065"></a><b>new</b>()
+                    <a name="M001381"></a><b>new</b>()
                     
                 </div>
                 
@@ -227,19 +263,19 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001065_source')" id="l_M001065_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001381_source')" id="l_M001381_source">show</a>
                         
                     </p>
-                    <div id="M001065_source" class="dyn-source">
+                    <div id="M001381_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 25</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-comment cmt"># Extend self with any any submodules of LocalEnvironment.  These can override</span>
-      <span class="ruby-comment cmt"># the discover methods to discover new framworks and dispatchers.  </span>
+      <span class="ruby-comment cmt"># the discover methods to discover new framworks and dispatchers.</span>
       <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">LocalEnvironment</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">const</span> <span class="ruby-operator">|</span>
         <span class="ruby-identifier">mod</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">LocalEnvironment</span>.<span class="ruby-identifier">const_get</span> <span class="ruby-identifier">const</span>
         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">extend</span> <span class="ruby-identifier">mod</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Module</span>
       <span class="ruby-keyword kw">end</span>
-      
+
       <span class="ruby-identifier">discover_framework</span>
       <span class="ruby-identifier">discover_dispatcher</span>
       <span class="ruby-ivar">@dispatcher</span> = <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dispatcher</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:none</span>
@@ -255,9 +291,9 @@ the <a href="Control.html">NewRelic::Control</a> singleton).
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001068">
+                <div class="title" id="M001382">
                     
-                    <a name="M001068"></a><b>append_environment_value</b>(name, value = nil)
+                    <a name="M001382"></a><b>append_environment_value</b>(name, value = nil)
                     
                 </div>
                 
@@ -275,17 +311,17 @@ errors are silently ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001068_source')" id="l_M001068_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001382_source')" id="l_M001382_source">show</a>
                         
                     </p>
-                    <div id="M001068_source" class="dyn-source">
+                    <div id="M001382_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 45</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_value</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>
-      <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span> 
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
       <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span>
-      <span class="ruby-comment cmt"># puts &quot;#{e}\n  #{e.backtrace.join(&quot;\n  &quot;)}&quot; </span>
-      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span> 
+      <span class="ruby-comment cmt"># puts &quot;#{e}\n  #{e.backtrace.join(&quot;\n  &quot;)}&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -293,9 +329,9 @@ errors are silently ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M001069">
+                <div class="title" id="M001383">
                     
-                    <a name="M001069"></a><b>append_gem_list</b>()
+                    <a name="M001383"></a><b>append_gem_list</b>()
                     
                 </div>
                 
@@ -304,16 +340,16 @@ errors are silently ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001069_source')" id="l_M001069_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001383_source')" id="l_M001383_source">show</a>
                         
                     </p>
-                    <div id="M001069_source" class="dyn-source">
+                    <div id="M001383_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 53</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_gem_list</span>
       <span class="ruby-ivar">@gems</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword kw">yield</span>
     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
       <span class="ruby-comment cmt"># puts &quot;#{e}\n  #{e.backtrace.join(&quot;\n  &quot;)}&quot;</span>
-      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span> 
+      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -321,9 +357,9 @@ errors are silently ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M001070">
+                <div class="title" id="M001384">
                     
-                    <a name="M001070"></a><b>append_plugin_list</b>()
+                    <a name="M001384"></a><b>append_plugin_list</b>()
                     
                 </div>
                 
@@ -332,16 +368,16 @@ errors are silently ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001070_source')" id="l_M001070_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001384_source')" id="l_M001384_source">show</a>
                         
                     </p>
-                    <div id="M001070_source" class="dyn-source">
+                    <div id="M001384_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 60</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append_plugin_list</span>
       <span class="ruby-ivar">@plugins</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword kw">yield</span>
     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span>
-      <span class="ruby-comment cmt"># puts &quot;#{e}\n  #{e.backtrace.join(&quot;\n  &quot;)}&quot; </span>
-      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span> 
+      <span class="ruby-comment cmt"># puts &quot;#{e}\n  #{e.backtrace.join(&quot;\n  &quot;)}&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@framework</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:test</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -349,42 +385,9 @@ errors are silently ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M001085">
+                <div class="title" id="M001385">
                     
-                    <a name="M001085"></a><b>delayed_worker=</b>(worker)
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Obsolete method for DelayedJob instrumentation support, which is now in the
-rpm_contrib gem.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001085_source')" id="l_M001085_source">show</a>
-                        
-                    </p>
-                    <div id="M001085_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 157</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delayed_worker=</span>(<span class="ruby-identifier">worker</span>)
-      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;WARNING: DelayedJob instrumentation has been moved to the rpm_contrib gem.&quot;</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M001071">
-                    
-                    <a name="M001071"></a><b>dispatcher_instance_id</b>()
+                    <a name="M001385"></a><b>dispatcher_instance_id</b>()
                     
                 </div>
                 
@@ -393,10 +396,10 @@ rpm_contrib gem.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001071_source')" id="l_M001071_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001385_source')" id="l_M001385_source">show</a>
                         
                     </p>
-                    <div id="M001071_source" class="dyn-source">
+                    <div id="M001385_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 67</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_instance_id</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dispatcher_instance_id</span>.<span class="ruby-identifier">nil?</span>
@@ -412,9 +415,195 @@ rpm_contrib gem.
             </div>
             
             <div class="method">
-                <div class="title" id="M001073">
+                <div class="title" id="M001407">
                     
-                    <a name="M001073"></a><b>gather_environment_info</b>()
+                    <a name="M001407"></a><b>find_class_in_object_space</b>(klass)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001407_source')" id="l_M001407_source">show</a>
+                        
+                    </p>
+                    <div id="M001407_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 189</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_class_in_object_space</span>(<span class="ruby-identifier">klass</span>)
+      <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-identifier">klass</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">x</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001393">
+                    
+                    <a name="M001393"></a><b>gather_ar_adapter_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001393_source')" id="l_M001393_source">show</a>
+                        
+                    </p>
+                    <div id="M001393_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 128</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_ar_adapter_info</span>
+      <span class="ruby-comment cmt"># The name of the database adapter for the current environment.</span>
+      <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Database adapter'</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>) <span class="ruby-operator">&amp;&amp;</span>
+            <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:configurations</span>)
+          <span class="ruby-identifier">config</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">configurations</span>[<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">env</span>]
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">config</span>
+            <span class="ruby-identifier">config</span>[<span class="ruby-value str">'adapter'</span>]
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Database schema version'</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">current_version</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001389">
+                    
+                    <a name="M001389"></a><b>gather_architecture_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001389_source')" id="l_M001389_source">show</a>
+                        
+                    </p>
+                    <div id="M001389_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 102</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_architecture_info</span>
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Arch'</span>) { <span class="ruby-value">`uname -p`</span> } <span class="ruby-operator">||</span>
+        <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Arch'</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'PROCESSOR_ARCHITECTURE'</span>] }
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001388">
+                    
+                    <a name="M001388"></a><b>gather_cpu_info</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+See what the number of cpus is, works only on linux.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001388_source')" id="l_M001388_source">show</a>
+                        
+                    </p>
+                    <div id="M001388_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 93</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_cpu_info</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span> <span class="ruby-value str">'/proc/cpuinfo'</span>
+      <span class="ruby-ivar">@processors</span> = <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Processors'</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">processors</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-value str">'/proc/cpuinfo'</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^processor\s*:/</span> }.<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Cannot determine the number of processors in /proc/cpuinfo&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">processors</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">processors</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001395">
+                    
+                    <a name="M001395"></a><b>gather_db_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001395_source')" id="l_M001395_source">show</a>
+                        
+                    </p>
+                    <div id="M001395_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 151</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_db_info</span>
+      <span class="ruby-comment cmt"># room here for more database adapters, when.</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecord</span>
+        <span class="ruby-identifier">gather_ar_adapter_info</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">DataMapper</span>
+        <span class="ruby-identifier">gather_dm_adapter_info</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001394">
+                    
+                    <a name="M001394"></a><b>gather_dm_adapter_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001394_source')" id="l_M001394_source">show</a>
+                        
+                    </p>
+                    <div id="M001394_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 144</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_dm_adapter_info</span>
+      <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'DataMapper version'</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">require</span> <span class="ruby-value str">'dm-core/version'</span>
+        <span class="ruby-constant">DataMapper</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001401">
+                    
+                    <a name="M001401"></a><b>gather_environment_info</b>()
                     
                 </div>
                 
@@ -431,60 +620,22 @@ comparison and change detection.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001073_source')" id="l_M001073_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001401_source')" id="l_M001401_source">show</a>
                         
                     </p>
-                    <div id="M001073_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 78</span>
+                    <div id="M001401_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 163</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_environment_info</span>
       <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Framework'</span>, <span class="ruby-ivar">@framework</span>.<span class="ruby-identifier">to_s</span>
       <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Dispatcher'</span>, <span class="ruby-ivar">@dispatcher</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dispatcher</span>
       <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Dispatcher instance id'</span>, <span class="ruby-ivar">@dispatcher_instance_id</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dispatcher_instance_id</span>
-      <span class="ruby-comment cmt"># This just creates a lot of keys</span>
-      <span class="ruby-comment cmt"># append_environment_value('Application root') { File.expand_path(NewRelic::Control.instance.root) }</span>
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby version'</span>){ <span class="ruby-constant">RUBY_VERSION</span> }
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby description'</span>){ <span class="ruby-constant">RUBY_DESCRIPTION</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">RUBY_DESCRIPTION</span>
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby platform'</span>) { <span class="ruby-constant">RUBY_PLATFORM</span> }
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby patchlevel'</span>) { <span class="ruby-constant">RUBY_PATCHLEVEL</span> }
-      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">JRUBY_VERSION</span>
-        <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'JRuby version'</span>) { <span class="ruby-constant">JRUBY_VERSION</span> }
-        <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Java VM version'</span>) { <span class="ruby-constant">ENV_JAVA</span>[<span class="ruby-value str">'java.vm.version'</span>]}
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'OS version'</span>) { <span class="ruby-value">`uname -v`</span> }
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'OS'</span>) { <span class="ruby-value">`uname -s`</span> } <span class="ruby-operator">||</span>
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'OS'</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'OS'</span>] } 
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Arch'</span>) { <span class="ruby-value">`uname -p`</span> } <span class="ruby-operator">||</span>
-      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Arch'</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'PROCESSOR_ARCHITECTURE'</span>] }
-      <span class="ruby-comment cmt"># See what the number of cpus is, works only on linux.</span>
-      <span class="ruby-ivar">@processors</span> = <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Processors'</span>) <span class="ruby-keyword kw">do</span>
-        <span class="ruby-identifier">processors</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-value str">'/proc/cpuinfo'</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^processor\s*:/</span> }.<span class="ruby-identifier">size</span>
-        <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Cannot determine the number of processors in /proc/cpuinfo&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">processors</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-        <span class="ruby-identifier">processors</span>
-      <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span> <span class="ruby-value str">'/proc/cpuinfo'</span>
-      <span class="ruby-comment cmt"># The current Rails environment (development, test, or production).</span>
       <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Environment'</span>) { <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">env</span> }
-      <span class="ruby-comment cmt"># Look for a capistrano file indicating the current revision:</span>
-      <span class="ruby-identifier">rev_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">root</span>, <span class="ruby-value str">&quot;REVISION&quot;</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">rev_file</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">rev_file</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-value">64</span>
-        <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Revision'</span>) <span class="ruby-keyword kw">do</span>
-          <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">rev_file</span>) { <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">readline</span>.<span class="ruby-identifier">strip</span> }
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-comment cmt"># The name of the database adapter for the current environment.</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecord</span>
-        <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Database adapter'</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">configurations</span>[<span class="ruby-constant">RAILS_ENV</span>][<span class="ruby-value str">'adapter'</span>]
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'Database schema version'</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">current_version</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">DataMapper</span>
-        <span class="ruby-identifier">append_environment_value</span> <span class="ruby-value str">'DataMapper version'</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-identifier">require</span> <span class="ruby-value str">'dm-core/version'</span>
-          <span class="ruby-constant">DataMapper</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># miscellaneous other helpful debugging information</span>
+      <span class="ruby-identifier">gather_ruby_info</span>
+      <span class="ruby-identifier">gather_system_info</span>
+      <span class="ruby-identifier">gather_revision_info</span>
+      <span class="ruby-identifier">gather_db_info</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -492,9 +643,9 @@ comparison and change detection.
             </div>
             
             <div class="method">
-                <div class="title" id="M001082">
+                <div class="title" id="M001387">
                     
-                    <a name="M001082"></a><b>mongrel</b>()
+                    <a name="M001387"></a><b>gather_jruby_info</b>()
                     
                 </div>
                 
@@ -503,18 +654,158 @@ comparison and change detection.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001082_source')" id="l_M001082_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001387_source')" id="l_M001387_source">show</a>
                         
                     </p>
-                    <div id="M001082_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 137</span>
+                    <div id="M001387_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 87</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_jruby_info</span>
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'JRuby version'</span>) { <span class="ruby-constant">JRUBY_VERSION</span> }
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Java VM version'</span>) { <span class="ruby-constant">ENV_JAVA</span>[<span class="ruby-value str">'java.vm.version'</span>]}
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001390">
+                    
+                    <a name="M001390"></a><b>gather_os_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001390_source')" id="l_M001390_source">show</a>
+                        
+                    </p>
+                    <div id="M001390_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 107</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_os_info</span>
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'OS version'</span>) { <span class="ruby-value">`uname -v`</span> }
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'OS'</span>) { <span class="ruby-value">`uname -s`</span> } <span class="ruby-operator">||</span>
+        <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'OS'</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'OS'</span>] }
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001392">
+                    
+                    <a name="M001392"></a><b>gather_revision_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001392_source')" id="l_M001392_source">show</a>
+                        
+                    </p>
+                    <div id="M001392_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 118</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_revision_info</span>
+      <span class="ruby-comment cmt"># Look for a capistrano file indicating the current revision:</span>
+      <span class="ruby-identifier">rev_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">root</span>, <span class="ruby-value str">&quot;REVISION&quot;</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">rev_file</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">rev_file</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-value">64</span>
+        <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Revision'</span>) <span class="ruby-keyword kw">do</span>
+          <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">rev_file</span>) { <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">readline</span>.<span class="ruby-identifier">strip</span> }
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001386">
+                    
+                    <a name="M001386"></a><b>gather_ruby_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001386_source')" id="l_M001386_source">show</a>
+                        
+                    </p>
+                    <div id="M001386_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 76</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_ruby_info</span>
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby version'</span>){ <span class="ruby-constant">RUBY_VERSION</span> }
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby description'</span>){ <span class="ruby-constant">RUBY_DESCRIPTION</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">RUBY_DESCRIPTION</span>
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby platform'</span>) { <span class="ruby-constant">RUBY_PLATFORM</span> }
+      <span class="ruby-identifier">append_environment_value</span>(<span class="ruby-value str">'Ruby patchlevel'</span>) { <span class="ruby-constant">RUBY_PATCHLEVEL</span> }
+      <span class="ruby-comment cmt"># room here for other ruby implementations, when.</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-operator">::</span><span class="ruby-constant">JRUBY_VERSION</span>
+        <span class="ruby-identifier">gather_jruby_info</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001391">
+                    
+                    <a name="M001391"></a><b>gather_system_info</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001391_source')" id="l_M001391_source">show</a>
+                        
+                    </p>
+                    <div id="M001391_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 113</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gather_system_info</span>
+      <span class="ruby-identifier">gather_architecture_info</span>
+      <span class="ruby-identifier">gather_cpu_info</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001408">
+                    
+                    <a name="M001408"></a><b>mongrel</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001408_source')" id="l_M001408_source">show</a>
+                        
+                    </p>
+                    <div id="M001408_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 195</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mongrel</span>
-      <span class="ruby-comment cmt"># Note that the odd defined? sequence is necessary to work around a bug in an older version</span>
-      <span class="ruby-comment cmt"># of JRuby.</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@mongrel</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@mongrel</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span> (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Mongrel</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Mongrel</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>)) 
-      <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-constant">Mongrel</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mongrel</span><span class="ruby-operator">|</span>
-        <span class="ruby-ivar">@mongrel</span> = <span class="ruby-identifier">mongrel</span>
-      <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">JRuby</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">JRuby</span>.<span class="ruby-identifier">runtime</span>.<span class="ruby-identifier">is_object_space_enabled</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@mongrel</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@mongrel</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Mongrel</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Mongrel</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">working_jruby?</span>
+        <span class="ruby-ivar">@mongrel</span> = <span class="ruby-identifier">find_class_in_object_space</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Mongrel</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>)
+      <span class="ruby-keyword kw">end</span>
       <span class="ruby-ivar">@mongrel</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -523,9 +814,9 @@ comparison and change detection.
             </div>
             
             <div class="method">
-                <div class="title" id="M001080">
+                <div class="title" id="M001402">
                     
-                    <a name="M001080"></a><b>snapshot</b>()
+                    <a name="M001402"></a><b>snapshot</b>()
                     
                 </div>
                 
@@ -542,14 +833,14 @@ an associative array
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001080_source')" id="l_M001080_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001402_source')" id="l_M001402_source">show</a>
                         
                     </p>
-                    <div id="M001080_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 130</span>
+                    <div id="M001402_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 178</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">snapshot</span>
       <span class="ruby-identifier">i</span> = <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">to_a</span>
-      <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;&lt;</span> [ <span class="ruby-value str">'Plugin List'</span>, <span class="ruby-ivar">@plugins</span>.<span class="ruby-identifier">to_a</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-ivar">@plugins</span>.<span class="ruby-identifier">empty?</span> 
+      <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;&lt;</span> [ <span class="ruby-value str">'Plugin List'</span>, <span class="ruby-ivar">@plugins</span>.<span class="ruby-identifier">to_a</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-ivar">@plugins</span>.<span class="ruby-identifier">empty?</span>
       <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;&lt;</span> [ <span class="ruby-value str">'Gems'</span>, <span class="ruby-ivar">@gems</span>.<span class="ruby-identifier">to_a</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-ivar">@gems</span>.<span class="ruby-identifier">empty?</span>
       <span class="ruby-identifier">i</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -559,9 +850,9 @@ an associative array
             </div>
             
             <div class="method">
-                <div class="title" id="M001103">
+                <div class="title" id="M001435">
                     
-                    <a name="M001103"></a><b>to_s</b>()
+                    <a name="M001435"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -570,11 +861,11 @@ an associative array
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001103_source')" id="l_M001103_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001435_source')" id="l_M001435_source">show</a>
                         
                     </p>
-                    <div id="M001103_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 323</span>
+                    <div id="M001435_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 382</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-identifier">s</span> = <span class="ruby-value str">&quot;LocalEnvironment[&quot;</span>
       <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@framework</span>.<span class="ruby-identifier">to_s</span>
@@ -588,9 +879,9 @@ an associative array
             </div>
             
             <div class="method">
-                <div class="title" id="M001084">
+                <div class="title" id="M001409">
                     
-                    <a name="M001084"></a><b>unicorn</b>()
+                    <a name="M001409"></a><b>unicorn</b>()
                     
                 </div>
                 
@@ -599,17 +890,42 @@ an associative array
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001084_source')" id="l_M001084_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001409_source')" id="l_M001409_source">show</a>
                         
                     </p>
-                    <div id="M001084_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 147</span>
+                    <div id="M001409_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 203</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unicorn</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@unicorn</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@unicorn</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span> (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Unicorn</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Unicorn</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>)) 
-      <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-constant">Unicorn</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">unicorn</span><span class="ruby-operator">|</span>
-        <span class="ruby-ivar">@unicorn</span> = <span class="ruby-identifier">unicorn</span>
-      <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">JRuby</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">JRuby</span>.<span class="ruby-identifier">runtime</span>.<span class="ruby-identifier">is_object_space_enabled</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@unicorn</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@unicorn</span>
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Unicorn</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Unicorn</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">working_jruby?</span>
+        <span class="ruby-ivar">@unicorn</span> = <span class="ruby-identifier">find_class_in_object_space</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Unicorn</span><span class="ruby-operator">::</span><span class="ruby-constant">HttpServer</span>)
+      <span class="ruby-keyword kw">end</span>
       <span class="ruby-ivar">@unicorn</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M001406">
+                    
+                    <a name="M001406"></a><b>working_jruby?</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M001406_source')" id="l_M001406_source">show</a>
+                        
+                    </p>
+                    <div id="M001406_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/local_environment.rb, line 185</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">working_jruby?</span>
+      <span class="ruby-operator">!</span>(<span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">JRuby</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">JRuby</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:runtime</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">JRuby</span>.<span class="ruby-identifier">runtime</span>.<span class="ruby-identifier">is_object_space_enabled</span>)
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

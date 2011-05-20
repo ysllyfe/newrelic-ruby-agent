@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000855">get_memory</a></li>
+                <li><a href="#M001121">get_memory</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000854">new</a></li>
+                <li><a href="#M001120">new</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000861">to_s</a></li>
+                <li><a href="#M001122">to_s</a></li>
                 
             </ul>
         </dd>
@@ -89,9 +89,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000854">
+                <div class="title" id="M001120">
                     
-                    <a name="M000854"></a><b>new</b>(command)
+                    <a name="M001120"></a><b>new</b>(command)
                     
                 </div>
                 
@@ -100,15 +100,15 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000854_source')" id="l_M000854_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001120_source')" id="l_M001120_source">show</a>
                         
                     </p>
-                    <div id="M000854_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 95</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command</span>)
-        <span class="ruby-keyword kw">super</span>()
-        <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">command</span>
-      <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001120_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 97</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command</span>)
+            <span class="ruby-keyword kw">super</span>()
+            <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">command</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -117,9 +117,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000855">
+                <div class="title" id="M001121">
                     
-                    <a name="M000855"></a><b>get_memory</b>()
+                    <a name="M001121"></a><b>get_memory</b>()
                     
                 </div>
                 
@@ -135,28 +135,28 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000855_source')" id="l_M000855_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001121_source')" id="l_M001121_source">show</a>
                         
                     </p>
-                    <div id="M000855_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 101</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_memory</span>
-        <span class="ruby-identifier">process</span> = <span class="ruby-identifier">$$</span>
-        <span class="ruby-identifier">memory</span> = <span class="ruby-node">`#{@command} #{process}`</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">1024.0</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
-        <span class="ruby-comment cmt"># if for some reason the ps command doesn't work on the resident os,</span>
-        <span class="ruby-comment cmt"># then don't execute it any more.</span>
-        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Faulty command: `#{@command} #{process}`&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">memory</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">memory</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
-        <span class="ruby-identifier">memory</span>
-      <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001121_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 103</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_memory</span>
+            <span class="ruby-identifier">process</span> = <span class="ruby-identifier">$$</span>
+            <span class="ruby-identifier">memory</span> = <span class="ruby-node">`#{@command} #{process}`</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">1024.0</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-comment cmt"># if for some reason the ps command doesn't work on the resident os,</span>
+            <span class="ruby-comment cmt"># then don't execute it any more.</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Faulty command: `#{@command} #{process}`&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">memory</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">memory</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">memory</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000861">
+                <div class="title" id="M001122">
                     
-                    <a name="M000861"></a><b>to_s</b>()
+                    <a name="M001122"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -165,14 +165,14 @@ Returns the amount of resident memory this process is using in MB
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000861_source')" id="l_M000861_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001122_source')" id="l_M001122_source">show</a>
                         
                     </p>
-                    <div id="M000861_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 109</span>
-      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-        <span class="ruby-node">&quot;shell command sampler: #{@command}&quot;</span>
-      <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001122_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/memory_sampler.rb, line 111</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+            <span class="ruby-node">&quot;shell command sampler: #{@command}&quot;</span>
+          <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

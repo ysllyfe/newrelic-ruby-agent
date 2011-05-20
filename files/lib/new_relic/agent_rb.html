@@ -19,84 +19,19 @@
         </h1>
         <ul class="files">
             <li>lib/new_relic/agent.rb</li>
-            <li>Last modified: Wed Mar 31 10:34:29 -0700 2010</li>
+            <li>Last modified: Fri May 20 15:12:51 -0700 2011</li>
         </ul>
     </div>
 
     <div id="bodyContent">
         <div id="content">
     
-    <div class="description">
-        <h1>New Relic Agent</h1>
-<p>
-New Relic RPM is a performance monitoring application for Ruby applications
-running in production. For more information on RPM please visit <a
-href="http://www.newrelic.com.">www.newrelic.com.</a>
-</p>
-<p>
-The New Relic Agent can be installed in Rails applications to gather
-runtime performance metrics, traces, and errors for display in a Developer
-Mode UI (mapped to /newrelic in your application server) or for monitoring
-and analysis at <a href="http://rpm.newrelic.com">rpm.newrelic.com</a> with
-just about any Ruby application.
-</p>
-<p>
-For detailed information on configuring or customizing the RPM Agent please
-visit our <a href="http://support.newrelic.com">support and documentation
-site</a>.
-</p>
-<h2>Starting the Agent as a Gem</h2>
-<p>
-For Rails, add:
-</p>
-<pre>
-   config.gem 'newrelic_rpm'
-</pre>
-<p>
-to your initialization sequence.
-</p>
-<p>
-For merb, do
-</p>
-<pre>
-   dependency 'newrelic_rpm'
-</pre>
-<p>
-in the Merb config/init.rb
-</p>
-<p>
-For Sinatra, just require the <tt>newrelic_rpm</tt> gem and it will
-automatically detect Sinatra and instrument all the handlers.
-</p>
-<p>
-For other frameworks, or to manage the agent manually, invoke <a
-href="../../../classes/NewRelic/Agent.html#M000943">NewRelic::Agent#manual_start</a>
-directly.
-</p>
-<h2>Configuring the Agent</h2>
-<p>
-All agent configuration is done in the <tt>newrelic.yml</tt> file. This
-file is by default read from the <tt>config</tt> directory of the
-application root and is subsequently searched for in the application root
-directory, and then in a <tt>~/.newrelic</tt> directory
-</p>
-<h2>Using with Rack/Metal</h2>
-<p>
-To instrument middlewares, refer to the docs in <a
-href="../../../classes/NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>.
-</p>
-<h2>Agent API</h2>
-<p>
-For details on the Agent API, refer to <a
-href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
-</p>
-
-    </div>
-    
 
     
     <div class="sectiontitle">Required Files</div>
     <ul>
+        
+        <li>new_relic/control</li>
         
         <li>new_relic/version</li>
         
@@ -104,15 +39,11 @@ href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
         
         <li>new_relic/stats</li>
         
-        <li>new_relic/delayed_job_injection</li>
-        
         <li>new_relic/metrics</li>
         
         <li>new_relic/metric_spec</li>
         
         <li>new_relic/metric_data</li>
-        
-        <li>new_relic/metric_parser</li>
         
         <li>new_relic/collection_helper</li>
         
@@ -120,11 +51,19 @@ href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
         
         <li>new_relic/transaction_sample</li>
         
+        <li>new_relic/url_rule</li>
+        
         <li>new_relic/noticed_error</li>
         
         <li>new_relic/histogram</li>
         
+        <li>new_relic/timer_lib</li>
+        
+        <li>new_relic/agent</li>
+        
         <li>new_relic/agent/chained_call</li>
+        
+        <li>new_relic/agent/browser_monitoring</li>
         
         <li>new_relic/agent/agent</li>
         
@@ -154,15 +93,11 @@ href="../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
         
         <li>new_relic/agent/samplers/delayed_job_lock_sampler</li>
         
-        <li>new_relic/rack/episodes</li>
-        
         <li>set</li>
         
         <li>thread</li>
         
         <li>resolv</li>
-        
-        <li>timeout</li>
         
     </ul>
     

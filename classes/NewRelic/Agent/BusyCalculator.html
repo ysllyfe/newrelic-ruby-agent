@@ -28,6 +28,21 @@
     <div id="bodyContent">
         <div id="content">
     
+    <div class="description">
+        <p>
+This module supports calculation of actual time spent processing requests
+over the course of one harvest period. It&#8217;s similar to what you would
+get if you just added up all the execution times of controller calls,
+however that will be inaccurate when requests span the minute boundaries.
+This module manages accounting of requests not yet completed.
+</p>
+<p>
+Calls are re-entrant. All start calls must be paired with finish calls, or
+a reset call.
+</p>
+
+    </div>
+    
 
     
 
@@ -43,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000683">busy_count</a></li>
+                <li><a href="#M000851">busy_count</a></li>
                 
             </ul>
         </dd>
@@ -52,9 +67,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000682">dispatcher_finish</a>,</li>
+                <li><a href="#M000845">dispatcher_finish</a>,</li>
                 
-                <li><a href="#M000681">dispatcher_start</a></li>
+                <li><a href="#M000844">dispatcher_start</a></li>
                 
             </ul>
         </dd>
@@ -63,7 +78,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000685">harvest_busy</a></li>
+                <li><a href="#M000858">harvest_busy</a></li>
                 
             </ul>
         </dd>
@@ -72,7 +87,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000684">reset</a></li>
+                <li><a href="#M000852">reset</a></li>
                 
             </ul>
         </dd>
@@ -119,9 +134,9 @@ For testability, add accessors:
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000683">
+                <div class="title" id="M000851">
                     
-                    <a name="M000683"></a><b>busy_count</b>()
+                    <a name="M000851"></a><b>busy_count</b>()
                     
                 </div>
                 
@@ -130,23 +145,23 @@ For testability, add accessors:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000683_source')" id="l_M000683_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000851_source')" id="l_M000851_source">show</a>
                         
                     </p>
-                    <div id="M000683_source" class="dyn-source">
+                    <div id="M000851_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 40</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">busy_count</span>
-    <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">size</span>
-  <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">busy_count</span>
+        <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000682">
+                <div class="title" id="M000845">
                     
-                    <a name="M000682"></a><b>dispatcher_finish</b>(end_time = Time.now.to_f)
+                    <a name="M000845"></a><b>dispatcher_finish</b>(end_time = Time.now)
                     
                 </div>
                 
@@ -155,32 +170,32 @@ For testability, add accessors:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000682_source')" id="l_M000682_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000845_source')" id="l_M000845_source">show</a>
                         
                     </p>
-                    <div id="M000682_source" class="dyn-source">
+                    <div id="M000845_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 27</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_finish</span>(<span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
-    <span class="ruby-identifier">callers</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
-    <span class="ruby-comment cmt"># Ignore nested calls</span>
-    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">callers</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-    <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">empty?</span>
-        <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span>(<span class="ruby-node">&quot;Stack underflow tracking dispatcher entry and exit!\n  #{caller.join(&quot;  \n&quot;)}&quot;</span>) 
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-ivar">@accumulator</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">end_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">pop</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
-  <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_finish</span>(<span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+        <span class="ruby-identifier">callers</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+        <span class="ruby-comment cmt"># Ignore nested calls</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">callers</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">empty?</span>
+            <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span>(<span class="ruby-node">&quot;Stack underflow tracking dispatcher entry and exit!\n  #{caller.join(&quot;  \n&quot;)}&quot;</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@accumulator</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">end_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">pop</span>).<span class="ruby-identifier">to_f</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000681">
+                <div class="title" id="M000844">
                     
-                    <a name="M000681"></a><b>dispatcher_start</b>(time)
+                    <a name="M000844"></a><b>dispatcher_start</b>(time)
                     
                 </div>
                 
@@ -189,28 +204,28 @@ For testability, add accessors:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000681_source')" id="l_M000681_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000844_source')" id="l_M000844_source">show</a>
                         
                     </p>
-                    <div id="M000681_source" class="dyn-source">
+                    <div id="M000844_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 18</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_start</span>(<span class="ruby-identifier">time</span>)
-    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span> 
-    <span class="ruby-identifier">callers</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">callers</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
-    <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
-      <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">time</span>      
-    <span class="ruby-keyword kw">end</span>
-  <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dispatcher_start</span>(<span class="ruby-identifier">time</span>)
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">callers</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">callers</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">time</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000685">
+                <div class="title" id="M000858">
                     
-                    <a name="M000685"></a><b>harvest_busy</b>()
+                    <a name="M000858"></a><b>harvest_busy</b>()
                     
                 </div>
                 
@@ -226,46 +241,46 @@ Called before uploading to to the server to collect current busy stats.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000685_source')" id="l_M000685_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000858_source')" id="l_M000858_source">show</a>
                         
                     </p>
-                    <div id="M000685_source" class="dyn-source">
+                    <div id="M000858_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 57</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_busy</span>
-    <span class="ruby-identifier">busy</span> = <span class="ruby-value">0</span>
-    <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
-    <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
-      <span class="ruby-identifier">busy</span> = <span class="ruby-identifier">accumulator</span>
-      <span class="ruby-ivar">@accumulator</span> = <span class="ruby-value">0</span>
-      
-      <span class="ruby-comment cmt"># Walk through the stack and capture all times up to </span>
-      <span class="ruby-comment cmt"># now for entrypoints</span>
-      <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">frame</span><span class="ruby-operator">|</span> 
-        <span class="ruby-identifier">busy</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">t0</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@entrypoint_stack</span>[<span class="ruby-identifier">frame</span>])
-        <span class="ruby-ivar">@entrypoint_stack</span>[<span class="ruby-identifier">frame</span>] = <span class="ruby-identifier">t0</span>
-      <span class="ruby-keyword kw">end</span>
-      
-    <span class="ruby-keyword kw">end</span>
-    
-    <span class="ruby-identifier">busy</span> = <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">busy</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-comment cmt"># don't go below 0%</span>
-    
-    <span class="ruby-identifier">time_window</span> = (<span class="ruby-identifier">t0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">harvest_start</span>)
-    <span class="ruby-identifier">time_window</span> = <span class="ruby-value">1.0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time_window</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>  <span class="ruby-comment cmt"># protect against divide by zero</span>
-    
-    <span class="ruby-identifier">busy</span> = <span class="ruby-identifier">busy</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">time_window</span>
-    
-    <span class="ruby-identifier">instance_busy_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">busy</span>
-    <span class="ruby-ivar">@harvest_start</span> = <span class="ruby-identifier">t0</span>
-  <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_busy</span>
+        <span class="ruby-identifier">busy</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">busy</span> = <span class="ruby-identifier">accumulator</span>
+          <span class="ruby-ivar">@accumulator</span> = <span class="ruby-value">0</span>
+
+          <span class="ruby-comment cmt"># Walk through the stack and capture all times up to</span>
+          <span class="ruby-comment cmt"># now for entrypoints</span>
+          <span class="ruby-ivar">@entrypoint_stack</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">frame</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">busy</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">t0</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@entrypoint_stack</span>[<span class="ruby-identifier">frame</span>]).<span class="ruby-identifier">to_f</span>
+            <span class="ruby-ivar">@entrypoint_stack</span>[<span class="ruby-identifier">frame</span>] = <span class="ruby-identifier">t0</span>
+          <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">busy</span> = <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">busy</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span> <span class="ruby-comment cmt"># don't go below 0%</span>
+
+        <span class="ruby-identifier">time_window</span> = (<span class="ruby-identifier">t0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">harvest_start</span>).<span class="ruby-identifier">to_f</span>
+        <span class="ruby-identifier">time_window</span> = <span class="ruby-value">1.0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time_window</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>  <span class="ruby-comment cmt"># protect against divide by zero</span>
+
+        <span class="ruby-identifier">busy</span> = <span class="ruby-identifier">busy</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">time_window</span>
+
+        <span class="ruby-identifier">instance_busy_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">busy</span>
+        <span class="ruby-ivar">@harvest_start</span> = <span class="ruby-identifier">t0</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000684">
+                <div class="title" id="M000852">
                     
-                    <a name="M000684"></a><b>reset</b>()
+                    <a name="M000852"></a><b>reset</b>()
                     
                 </div>
                 
@@ -282,18 +297,18 @@ reset the recursion counter for this thread.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000684_source')" id="l_M000684_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000852_source')" id="l_M000852_source">show</a>
                         
                     </p>
-                    <div id="M000684_source" class="dyn-source">
+                    <div id="M000852_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/busy_calculator.rb, line 46</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
-    <span class="ruby-ivar">@entrypoint_stack</span> = []
-    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] = <span class="ruby-value">0</span>
-    <span class="ruby-ivar">@lock</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
-    <span class="ruby-ivar">@accumulator</span> = <span class="ruby-value">0</span>
-    <span class="ruby-ivar">@harvest_start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>
-  <span class="ruby-keyword kw">end</span></pre>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
+        <span class="ruby-ivar">@entrypoint_stack</span> = []
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:busy_entries</span>] = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@lock</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@accumulator</span> = <span class="ruby-value">0</span>
+        <span class="ruby-ivar">@harvest_start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

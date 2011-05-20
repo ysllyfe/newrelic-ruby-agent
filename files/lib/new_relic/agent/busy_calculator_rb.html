@@ -19,104 +19,12 @@
         </h1>
         <ul class="files">
             <li>lib/new_relic/agent/busy_calculator.rb</li>
-            <li>Last modified: Wed Mar 17 10:02:41 -0700 2010</li>
+            <li>Last modified: Fri May 20 15:05:18 -0700 2011</li>
         </ul>
     </div>
 
     <div id="bodyContent">
         <div id="content">
-    
-    <div class="description">
-        <p>
-This module supports calculation of actual time spent processing requests
-over the course of one harvest period. It&#8217;s similar to what you would
-get if you just added up all the execution times of controller calls,
-however that will be inaccurate when requests span the minute boundaries.
-This module manages accounting of requests not yet completed.
-</p>
-<p>
-Calls are re-entrant. All start calls must be paired with finish calls, or
-a reset call.
-</p>
-<hr size="1"></hr><p>
-The <a href="../../../../classes/NewRelic.html">NewRelic</a> Agent collects
-performance data from ruby applications in realtime as the application
-runs, and periodically sends that data to the <a
-href="../../../../classes/NewRelic.html">NewRelic</a> server.
-</p>
-<hr size="1"></hr><h1>New Relic Agent</h1>
-<p>
-New Relic RPM is a performance monitoring application for Ruby applications
-running in production. For more information on RPM please visit <a
-href="http://www.newrelic.com.">www.newrelic.com.</a>
-</p>
-<p>
-The New Relic Agent can be installed in Rails applications to gather
-runtime performance metrics, traces, and errors for display in a Developer
-Mode UI (mapped to /newrelic in your application server) or for monitoring
-and analysis at <a href="http://rpm.newrelic.com">rpm.newrelic.com</a> with
-just about any Ruby application.
-</p>
-<p>
-For detailed information on configuring or customizing the RPM Agent please
-visit our <a href="http://support.newrelic.com">support and documentation
-site</a>.
-</p>
-<h2>Starting the Agent as a Gem</h2>
-<p>
-For Rails, add:
-</p>
-<pre>
-   config.gem 'newrelic_rpm'
-</pre>
-<p>
-to your initialization sequence.
-</p>
-<p>
-For merb, do
-</p>
-<pre>
-   dependency 'newrelic_rpm'
-</pre>
-<p>
-in the Merb config/init.rb
-</p>
-<p>
-For Sinatra, just require the <tt>newrelic_rpm</tt> gem and it will
-automatically detect Sinatra and instrument all the handlers.
-</p>
-<p>
-For other frameworks, or to manage the agent manually, invoke <a
-href="../../../../classes/NewRelic/Agent.html#M000943">NewRelic::Agent#manual_start</a>
-directly.
-</p>
-<h2>Configuring the Agent</h2>
-<p>
-All agent configuration is done in the <tt>newrelic.yml</tt> file. This
-file is by default read from the <tt>config</tt> directory of the
-application root and is subsequently searched for in the application root
-directory, and then in a <tt>~/.newrelic</tt> directory
-</p>
-<h2>Using with Rack/Metal</h2>
-<p>
-To instrument middlewares, refer to the docs in <a
-href="../../../../classes/NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>.
-</p>
-<h2>Agent API</h2>
-<p>
-For details on the Agent API, refer to <a
-href="../../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
-</p>
-<hr size="1"></hr><p>
-This installs some code to manually start the agent when a delayed job
-worker starts.
-</p>
-<hr size="1"></hr><p>
-Add these methods to TransactionSample that enable performance analysis in
-the user interface.
-</p>
-
-    </div>
     
 
     

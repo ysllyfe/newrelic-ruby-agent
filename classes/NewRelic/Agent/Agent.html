@@ -37,7 +37,9 @@
     <div class="description">
         <p>
 The <a href="Agent.html">Agent</a> is a singleton that is instantiated when
-the plugin is activated.
+the plugin is activated. It collects performance data from ruby
+applications in realtime as the application runs, and periodically sends
+that data to the NewRelic server.
 </p>
 
     </div>
@@ -53,97 +55,11 @@ the plugin is activated.
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
     
-        <dt>A</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000689">after_fork</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>E</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000695">end_transaction</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>I</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000687">instance</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>L</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000701">log</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>M</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000688">manual_start</a></li>
-                
-            </ul>
-        </dd>
-    
         <dt>N</dt>
         <dd>
             <ul>
                 
-                <li><a href="#M000712">new</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>P</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000699">pop_trace_execution_flag</a>,</li>
-                
-                <li><a href="#M000698">push_trace_execution_flag</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>R</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000704">reset_stats</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>S</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000696">set_record_sql</a>,</li>
-                
-                <li><a href="#M000697">set_record_tt</a>,</li>
-                
-                <li><a href="#M000700">set_sql_obfuscator</a>,</li>
-                
-                <li><a href="#M000691">shutdown</a>,</li>
-                
-                <li><a href="#M000702">start</a>,</li>
-                
-                <li><a href="#M000694">start_transaction</a>,</li>
-                
-                <li><a href="#M000690">started?</a></li>
+                <li><a href="#M000802">new</a></li>
                 
             </ul>
         </dd>
@@ -152,9 +68,37 @@ the plugin is activated.
     
 
     
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+        
+        <li>
+            
+            <a href="../Control/Frameworks.html">NewRelic::Control::Frameworks</a>
+            
+            START:includes
+        </li>
+        
+        <li>
+            
+            <a href="MethodTracer/InstanceMethods.html">NewRelic::Agent::MethodTracer::InstanceMethods</a>
+            
+            START:includes
+        </li>
+        
+    </ul>
+    
 
     
 
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="Agent/ClassMethods.html">NewRelic::Agent::Agent::ClassMethods</a></li>
+        
+        <li><span class="type">MODULE</span> <a href="Agent/InstanceMethods.html">NewRelic::Agent::Agent::InstanceMethods</a></li>
+        
+    </ul>
     
 
     
@@ -171,7 +115,7 @@ the plugin is activated.
             <td>&nbsp;</td>
             <td colspan="2" class="attr-desc"><p>
 Specifies the version of the agent&#8217;s communication protocol with the
-<a href="../../NewRelic.html">NewRelic</a> hosted site.
+NewRelic hosted site.
 </p>
 </td>
         </tr>
@@ -181,85 +125,22 @@ Specifies the version of the agent&#8217;s communication protocol with the
     
 
     
-    <div class="sectiontitle">Attributes</div>
-    <table border='0' cellpadding='5'>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>obfuscator</td>
-            <td class='attr-desc'><p>
-14105: v8 (tag 2.10.3) (no v7) 10379: v6 (not tagged) 4078: v5 (tag 2.5.4)
-2292: v4 (tag 2.3.6) 1754: v3 (tag 2.3.0) 534: v2 (shows up in 2.1.0, our
-first tag)
-</p></td>
-        </tr>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>stats_engine</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>transaction_sampler</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>error_collector</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>record_sql</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>histogram</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [R]
-            </td>
-            <td class='attr-name'>metric_ids</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-    </table>
-    
 
     
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000687">
+                <div class="title" id="M000802">
                     
-                    <a name="M000687"></a><b>instance</b>()
+                    <a name="M000802"></a><b>new</b>()
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Should only be called by <a href="../Control.html">NewRelic::Control</a>
+14105: v8 (tag 2.10.3) (no v7) 10379: v6 (not tagged) 4078: v5 (tag 2.5.4)
+2292: v4 (tag 2.3.6) 1754: v3 (tag 2.3.0) 534: v2 (shows up in 2.1.0, our
+first tag)
 </p>
 
                 </div>
@@ -269,600 +150,28 @@ Should only be called by <a href="../Control.html">NewRelic::Control</a>
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000687_source')" id="l_M000687_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000802_source')" id="l_M000802_source">show</a>
                         
                     </p>
-                    <div id="M000687_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 40</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance</span>
-      <span class="ruby-ivar">@instance</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000712">
-                    
-                    <a name="M000712"></a><b>new</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000712_source')" id="l_M000712_source">show</a>
-                        
-                    </p>
-                    <div id="M000712_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 307</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-      <span class="ruby-ivar">@launch_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      
-      <span class="ruby-ivar">@metric_ids</span> = {}
-      <span class="ruby-ivar">@histogram</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">apdex_t</span> <span class="ruby-operator">/</span> <span class="ruby-value">10</span>)
-      <span class="ruby-ivar">@stats_engine</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">StatsEngine</span>.<span class="ruby-identifier">new</span>
-      <span class="ruby-ivar">@transaction_sampler</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">TransactionSampler</span>.<span class="ruby-identifier">new</span>
-      <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">transaction_sampler</span> = <span class="ruby-ivar">@transaction_sampler</span>
-      <span class="ruby-ivar">@error_collector</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ErrorCollector</span>.<span class="ruby-identifier">new</span>
-      
-      <span class="ruby-ivar">@request_timeout</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'timeout'</span>, <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span>)
-      
-      <span class="ruby-ivar">@last_harvest_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      <span class="ruby-ivar">@obfuscator</span> = <span class="ruby-identifier">method</span>(<span class="ruby-identifier">:default_sql_obfuscator</span>)
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="sectiontitle">Instance Public methods</div>
-            
-            <div class="method">
-                <div class="title" id="M000689">
-                    
-                    <a name="M000689"></a><b>after_fork</b>(options={})
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-This method should be called in a forked process after a fork. It assumes
-the parent process initialized the agent, but does not assume the agent
-started.
-</p>
-<ul>
-<li>It clears any metrics carried over from the parent process
+                    <div id="M000802_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 30</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
 
-</li>
-<li>Restarts the sampler thread if necessary
+        <span class="ruby-ivar">@launch_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
 
-</li>
-<li>Initiates a new agent run and worker loop unless that was done in the
-parent process and <tt>:force_reconnect</tt> is not true
+        <span class="ruby-ivar">@metric_ids</span> = {}
+        <span class="ruby-ivar">@histogram</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">apdex_t</span> <span class="ruby-operator">/</span> <span class="ruby-value">10</span>)
+        <span class="ruby-ivar">@stats_engine</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">StatsEngine</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@transaction_sampler</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">TransactionSampler</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">transaction_sampler</span> = <span class="ruby-ivar">@transaction_sampler</span>
+        <span class="ruby-ivar">@error_collector</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">ErrorCollector</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@connect_attempts</span> = <span class="ruby-value">0</span>
 
-</li>
-</ul>
+        <span class="ruby-ivar">@request_timeout</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'timeout'</span>, <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span>)
 
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000689_source')" id="l_M000689_source">show</a>
-                        
-                    </p>
-                    <div id="M000689_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 57</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">options</span>={})
-      
-      <span class="ruby-comment cmt"># @connected gets false after we fail to connect or have an error</span>
-      <span class="ruby-comment cmt"># connecting.  @connected has nil if we haven't finished trying to connect.</span>
-      <span class="ruby-comment cmt"># or we didn't attempt a connection because this is the master process</span>
-
-      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Agent received after_fork notice in #$$: [#{control.agent_enabled?}; monitor=#{control.monitor_mode?}; connected: #{@connected.inspect}; thread=#{@worker_thread.inspect}]&quot;</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">control</span>.<span class="ruby-identifier">agent_enabled?</span> <span class="ruby-keyword kw">or</span>
-                <span class="ruby-operator">!</span><span class="ruby-identifier">control</span>.<span class="ruby-identifier">monitor_mode?</span> <span class="ruby-keyword kw">or</span>
-                <span class="ruby-ivar">@connected</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">or</span>
-                <span class="ruby-ivar">@worker_thread</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@worker_thread</span>.<span class="ruby-identifier">alive?</span>
-
-      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;Detected that the worker thread is not running in #$$.  Restarting.&quot;</span>
-
-      <span class="ruby-comment cmt"># Clear out stats that are left over from parent process</span>
-      <span class="ruby-identifier">reset_stats</span>
-      <span class="ruby-identifier">start_worker_thread</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:force_reconnect</span>])
-      <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">start_sampler_thread</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000695">
-                    
-                    <a name="M000695"></a><b>end_transaction</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000695_source')" id="l_M000695_source">show</a>
-                        
-                    </p>
-                    <div id="M000695_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 114</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_transaction</span>
-      <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">end_transaction</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000701">
-                    
-                    <a name="M000701"></a><b>log</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000701_source')" id="l_M000701_source">show</a>
-                        
-                    </p>
-                    <div id="M000701_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 153</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>
-      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">logger</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000688">
-                    
-                    <a name="M000688"></a><b>manual_start</b>(ignored=nil, also_ignored=nil)
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-This method is deprecated. Use <a
-href="../Agent.html#M000943">NewRelic::Agent.manual_start</a>
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000688_source')" id="l_M000688_source">show</a>
-                        
-                    </p>
-                    <div id="M000688_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 44</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">manual_start</span>(<span class="ruby-identifier">ignored</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">also_ignored</span>=<span class="ruby-keyword kw">nil</span>)
-      <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;This method no longer supported.  Instead use the class method NewRelic::Agent.manual_start&quot;</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000699">
-                    
-                    <a name="M000699"></a><b>pop_trace_execution_flag</b>()
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Pop the current trace execution status. Restore trace execution status to
-what it was before we pushed the current flag.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000699_source')" id="l_M000699_source">show</a>
-                        
-                    </p>
-                    <div id="M000699_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 137</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_trace_execution_flag</span>
-      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_untraced</span>].<span class="ruby-identifier">pop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_untraced</span>]
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000698">
-                    
-                    <a name="M000698"></a><b>push_trace_execution_flag</b>(should_trace=false)
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Push flag indicating whether we should be tracing in this thread.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000698_source')" id="l_M000698_source">show</a>
-                        
-                    </p>
-                    <div id="M000698_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 131</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push_trace_execution_flag</span>(<span class="ruby-identifier">should_trace</span>=<span class="ruby-keyword kw">false</span>)
-      (<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_untraced</span>] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">should_trace</span> 
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000704">
-                    
-                    <a name="M000704"></a><b>reset_stats</b>()
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Clear out the metric data, errors, and transaction traces. Reset the
-histogram data.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000704_source')" id="l_M000704_source">show</a>
-                        
-                    </p>
-                    <div id="M000704_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 230</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_stats</span>
-      <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">reset_stats</span>
-      <span class="ruby-ivar">@unsent_errors</span> = []
-      <span class="ruby-ivar">@traces</span> = <span class="ruby-keyword kw">nil</span>
-      <span class="ruby-ivar">@unsent_timeslice_data</span> = {}
-      <span class="ruby-ivar">@last_harvest_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      <span class="ruby-ivar">@launch_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      <span class="ruby-ivar">@histogram</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">apdex_t</span> <span class="ruby-operator">/</span> <span class="ruby-value">10</span>)
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000696">
-                    
-                    <a name="M000696"></a><b>set_record_sql</b>(should_record)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000696_source')" id="l_M000696_source">show</a>
-                        
-                    </p>
-                    <div id="M000696_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 118</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_record_sql</span>(<span class="ruby-identifier">should_record</span>)
-      <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_sql</span>]
-      <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_sql</span>] = <span class="ruby-identifier">should_record</span>
-      <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">prev</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000697">
-                    
-                    <a name="M000697"></a><b>set_record_tt</b>(should_record)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000697_source')" id="l_M000697_source">show</a>
-                        
-                    </p>
-                    <div id="M000697_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 124</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_record_tt</span>(<span class="ruby-identifier">should_record</span>)
-      <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_tt</span>]
-      <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:record_tt</span>] = <span class="ruby-identifier">should_record</span>
-      <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">prev</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000700">
-                    
-                    <a name="M000700"></a><b>set_sql_obfuscator</b>(type, &amp;block)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000700_source')" id="l_M000700_source">show</a>
-                        
-                    </p>
-                    <div id="M000700_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 141</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_sql_obfuscator</span>(<span class="ruby-identifier">type</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:before</span>
-        <span class="ruby-ivar">@obfuscator</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ChainedCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">block</span>, <span class="ruby-ivar">@obfuscator</span>)
-      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:after</span>
-        <span class="ruby-ivar">@obfuscator</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">ChainedCall</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@obfuscator</span>, <span class="ruby-identifier">block</span>)
-      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:replace</span>
-        <span class="ruby-ivar">@obfuscator</span> = <span class="ruby-identifier">block</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;unknown sql_obfuscator type #{type}&quot;</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000691">
-                    
-                    <a name="M000691"></a><b>shutdown</b>()
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Attempt a graceful shutdown of the agent.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000691_source')" id="l_M000691_source">show</a>
-                        
-                    </p>
-                    <div id="M000691_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 83</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shutdown</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">started?</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@worker_loop</span>
-        <span class="ruby-ivar">@worker_loop</span>.<span class="ruby-identifier">stop</span>
-        
-        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;Starting Agent shutdown&quot;</span>
-        
-        <span class="ruby-comment cmt"># if litespeed, then ignore all future SIGUSR1 - it's</span>
-        <span class="ruby-comment cmt"># litespeed trying to shut us down</span>
-        
-        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">dispatcher</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:litespeed</span>
-          <span class="ruby-constant">Signal</span>.<span class="ruby-identifier">trap</span>(<span class="ruby-value str">&quot;SIGUSR1&quot;</span>, <span class="ruby-value str">&quot;IGNORE&quot;</span>)
-          <span class="ruby-constant">Signal</span>.<span class="ruby-identifier">trap</span>(<span class="ruby-value str">&quot;SIGTERM&quot;</span>, <span class="ruby-value str">&quot;IGNORE&quot;</span>)
-        <span class="ruby-keyword kw">end</span>
-        
-        <span class="ruby-keyword kw">begin</span>
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> <span class="ruby-keyword kw">do</span>
-            <span class="ruby-identifier">graceful_disconnect</span>
-          <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-identifier">e</span>
-          <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-ivar">@started</span> = <span class="ruby-keyword kw">nil</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000702">
-                    
-                    <a name="M000702"></a><b>start</b>()
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Start up the agent. This verifies that the agent_enabled? is true and
-initializes the sampler based on the current controluration settings. Then
-it will fire up the background thread for sending data to the server if
-applicable.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000702_source')" id="l_M000702_source">show</a>
-                        
-                    </p>
-                    <div id="M000702_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 161</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">started?</span>
-        <span class="ruby-identifier">control</span>.<span class="ruby-identifier">log!</span> <span class="ruby-value str">&quot;Agent Started Already!&quot;</span>, <span class="ruby-identifier">:error</span>
-        <span class="ruby-keyword kw">return</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">control</span>.<span class="ruby-identifier">agent_enabled?</span> 
-      <span class="ruby-ivar">@started</span> = <span class="ruby-keyword kw">true</span>
-      <span class="ruby-ivar">@local_host</span> = <span class="ruby-identifier">determine_host</span>
-      
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">dispatcher</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">dispatcher</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>
-        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;No dispatcher detected.&quot;</span>
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Dispatcher: #{control.dispatcher.to_s}&quot;</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Application: #{control.app_names.join(&quot;, &quot;)}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">app_names</span>.<span class="ruby-identifier">empty?</span>
-      
-      <span class="ruby-identifier">sampler_config</span> = <span class="ruby-identifier">control</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'transaction_tracer'</span>, {})
-      <span class="ruby-ivar">@should_send_samples</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'enabled'</span>, <span class="ruby-keyword kw">true</span>)
-      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;Transaction tracing not enabled.&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-ivar">@should_send_samples</span>
-      
-      <span class="ruby-ivar">@record_sql</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'record_sql'</span>, <span class="ruby-identifier">:obfuscated</span>).<span class="ruby-identifier">to_sym</span>
-      
-      <span class="ruby-comment cmt"># use transaction_threshold: 4.0 to force the TT collection</span>
-      <span class="ruby-comment cmt"># threshold to 4 seconds</span>
-      <span class="ruby-comment cmt"># use transaction_threshold: apdex_f to use your apdex t value</span>
-      <span class="ruby-comment cmt"># multiplied by 4</span>
-      <span class="ruby-comment cmt"># undefined transaction_threshold defaults to 2.0</span>
-      <span class="ruby-identifier">apdex_f</span> = <span class="ruby-value">4</span> <span class="ruby-operator">*</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">apdex_t</span>
-      <span class="ruby-ivar">@slowest_transaction_threshold</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'transaction_threshold'</span>, <span class="ruby-value">2.0</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@slowest_transaction_threshold</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/apdex_f/i</span>
-        <span class="ruby-ivar">@slowest_transaction_threshold</span> = <span class="ruby-identifier">apdex_f</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-ivar">@slowest_transaction_threshold</span> = <span class="ruby-ivar">@slowest_transaction_threshold</span>.<span class="ruby-identifier">to_f</span>
-      
-      <span class="ruby-ivar">@explain_threshold</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'explain_threshold'</span>, <span class="ruby-value">0</span><span class="ruby-value">.5</span>).<span class="ruby-identifier">to_f</span>
-      <span class="ruby-ivar">@explain_enabled</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'explain_enabled'</span>, <span class="ruby-keyword kw">true</span>)
-      <span class="ruby-ivar">@random_sample</span> = <span class="ruby-identifier">sampler_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value str">'random_sample'</span>, <span class="ruby-keyword kw">false</span>)
-      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;Agent is configured to send raw SQL to RPM service&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@record_sql</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:raw</span>
-      <span class="ruby-comment cmt"># Initialize transaction sampler</span>
-      <span class="ruby-ivar">@transaction_sampler</span>.<span class="ruby-identifier">random_sampling</span> = <span class="ruby-ivar">@random_sample</span>
-
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">monitor_mode?</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">control</span>.<span class="ruby-identifier">license_key</span>
-          <span class="ruby-identifier">control</span>.<span class="ruby-identifier">log!</span> <span class="ruby-value str">&quot;No license key found.  Please edit your newrelic.yml file and insert your license key.&quot;</span>, <span class="ruby-identifier">:error</span>
-        <span class="ruby-keyword kw">elsif</span>  <span class="ruby-identifier">control</span>.<span class="ruby-identifier">license_key</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">40</span>
-          <span class="ruby-identifier">control</span>.<span class="ruby-identifier">log!</span> <span class="ruby-node">&quot;Invalid license key: #{control.license_key}&quot;</span>, <span class="ruby-identifier">:error</span>
-        <span class="ruby-keyword kw">else</span>     
-          <span class="ruby-comment cmt"># Do the connect in the foreground if we are in sync mode</span>
-          <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> { <span class="ruby-identifier">connect</span>(<span class="ruby-keyword kw">false</span>) } <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">sync_startup</span>
-          
-          <span class="ruby-comment cmt"># Start the event loop and initiate connection if necessary</span>
-          <span class="ruby-identifier">start_worker_thread</span>
-
-          <span class="ruby-comment cmt"># Our shutdown handler needs to run after other shutdown handlers</span>
-          <span class="ruby-comment cmt"># that may be doing things like running the app (hello sinatra).  </span>
-          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/rubinius/i</span> 
-            <span class="ruby-identifier">list</span> = <span class="ruby-identifier">at_exit</span> { <span class="ruby-identifier">shutdown</span> }
-            <span class="ruby-comment cmt"># move the shutdown handler to the front of the list, to execute last:</span>
-            <span class="ruby-identifier">list</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">list</span>.<span class="ruby-identifier">pop</span>)
-          <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">JRuby</span>) <span class="ruby-keyword kw">or</span> <span class="ruby-operator">!</span><span class="ruby-identifier">defined</span>(<span class="ruby-constant">Sinatra</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>)
-            <span class="ruby-identifier">at_exit</span> { <span class="ruby-identifier">at_exit</span> { <span class="ruby-identifier">shutdown</span> } } 
-          <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-identifier">control</span>.<span class="ruby-identifier">log!</span> <span class="ruby-node">&quot;New Relic RPM Agent #{NewRelic::VERSION::STRING} Initialized: pid = #$$&quot;</span>
-      <span class="ruby-identifier">control</span>.<span class="ruby-identifier">log!</span> <span class="ruby-node">&quot;Agent Log found in #{NewRelic::Control.instance.log_file}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log_file</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000694">
-                    
-                    <a name="M000694"></a><b>start_transaction</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000694_source')" id="l_M000694_source">show</a>
-                        
-                    </p>
-                    <div id="M000694_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 110</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>
-      <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">start_transaction</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000690">
-                    
-                    <a name="M000690"></a><b>started?</b>()
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-True if we have initialized and completed &#8216;start&#8217;
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000690_source')" id="l_M000690_source">show</a>
-                        
-                    </p>
-                    <div id="M000690_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/agent.rb, line 78</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">started?</span>
-      <span class="ruby-ivar">@started</span>
-    <span class="ruby-keyword kw">end</span></pre>
+        <span class="ruby-ivar">@last_harvest_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+        <span class="ruby-ivar">@obfuscator</span> = <span class="ruby-identifier">method</span>(<span class="ruby-identifier">:default_sql_obfuscator</span>)
+      <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

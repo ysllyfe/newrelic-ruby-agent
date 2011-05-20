@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/new_relic/agent/instrumentation/memcache.rb</li>
-            <li>Last modified: Wed Mar 24 15:48:22 -0700 2010</li>
+            <li>Last modified: Fri May 20 15:05:18 -0700 2011</li>
         </ul>
     </div>
 
@@ -34,7 +34,96 @@ each with slightly different API&#8217;s and semantics. See:
 <pre>
     http://www.deveiate.org/code/Ruby-MemCache/ (Gem: Ruby-MemCache)
     http://seattlerb.rubyforge.org/memcache-client/ (Gem: memcache-client)
+    http://github.com/mperham/dalli (Gem: dalli)
 </pre>
+<hr size="1"></hr><p>
+A struct holding the information required to measure a controller action.
+This is put on the thread local. Handles the issue of re-entrancy, or
+nested action calls.
+</p>
+<p>
+This class is not part of the public API. Avoid making calls on it
+directly.
+</p>
+<hr size="1"></hr><p>
+A Sampler is used to capture meaningful metrics in a background thread
+periodically. They will either be invoked once a minute just before the
+data is sent to the agent (default) or every 10 seconds, when
+use_harvest_sampler? returns false.
+</p>
+<p>
+Samplers can be added to New Relic by subclassing <a
+href="../../../../../classes/NewRelic/Agent/Sampler.html">NewRelic::Agent::Sampler</a>.
+Instances are created when the agent is enabled and installed. Subclasses
+are registered for instantiation automatically.
+</p>
+<hr size="1"></hr><p>
+This agent is loaded by the plug when the plug-in is disabled It recreates
+just enough of the API to not break any clients that invoke the Agent.
+</p>
+<hr size="1"></hr><h1>New Relic RPM Agent</h1>
+<p>
+New Relic RPM is a performance monitoring application for Ruby applications
+running in production. For more information on RPM please visit <a
+href="http://www.newrelic.com.">www.newrelic.com.</a>
+</p>
+<p>
+The New Relic Agent can be installed in Rails applications to gather
+runtime performance metrics, traces, and errors for display in a Developer
+Mode UI (mapped to /newrelic in your application server) or for monitoring
+and analysis at <a href="http://rpm.newrelic.com">rpm.newrelic.com</a> with
+just about any Ruby application.
+</p>
+<h2>Getting Started</h2>
+<p>
+For instructions on installation and setup, see the <a
+href="../../../../README_rdoc.html">README</a> file.
+</p>
+<h2>Using with Rack/Metal</h2>
+<p>
+To instrument Rack middlwares or Metal apps, refer to the docs in <a
+href="../../../../../classes/NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>.
+</p>
+<h2>Agent API</h2>
+<p>
+For details on the Agent API, refer to <a
+href="../../../../../classes/NewRelic/Agent.html">NewRelic::Agent</a>.
+</p>
+<h2>Customizing RPM</h2>
+<p>
+For detailed information on customizing the RPM Agent please visit our <a
+href="http://support.newrelic.com">support and documentation site</a>.
+</p>
+<hr size="1"></hr><p>
+A control used when no framework is detected. Looks for a newrelic.yml file
+in several locations including ./, ./config, $HOME/.newrelic and $HOME/. It
+loads the settings from the newrelic.yml section based on the value of
+RUBY_ENV or RAILS_ENV.
+</p>
+<hr size="1"></hr><p>
+This installs some code to manually start the agent when a delayed job
+worker starts. It&#8217;s not really instrumentation. It&#8217;s more like
+a hook from DJ to RPM so it gets loaded at the time the RPM plugin
+initializes, which must be before the DJ worker initializes. Loaded from
+control.rb
+</p>
+<hr size="1"></hr><p>
+Histogram is used for organizing response times into an &#8216;Exponential
+Histogram&#8217;. Feature based in part on DHH proposal: <a
+href="http://37signals.com/svn/posts/1836-the-problem-with-averages">37signals.com/svn/posts/1836-the-problem-with-averages</a>
+</p>
+<p>
+Histogram builds a set of buckets of geometrically growing size, with the
+assumption that most apps have long-tail response times, and therefore you
+need the most granularity at the lowest r/t level.
+</p>
+<hr size="1"></hr><p>
+Defines the constant TimerLib to the appropriate timeout library
+</p>
+<hr size="1"></hr><p>
+Add these methods to TransactionSample that enable performance analysis in
+the user interface.
+</p>
 
     </div>
     
@@ -51,6 +140,13 @@ each with slightly different API&#8217;s and semantics. See:
 
     
 
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="../../../../../classes/NewRelic.html">NewRelic</a></li>
+        
+    </ul>
     
 
     

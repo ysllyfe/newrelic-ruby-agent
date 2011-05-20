@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001105">eql?</a></li>
+                <li><a href="#M001397">eql?</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001109">hash</a></li>
+                <li><a href="#M001403">hash</a></li>
                 
             </ul>
         </dd>
@@ -67,9 +67,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001107">metric_spec</a>,</li>
+                <li><a href="#M001399">metric_spec</a>,</li>
                 
-                <li><a href="#M001108">metric_spec=</a></li>
+                <li><a href="#M001400">metric_spec=</a></li>
                 
             </ul>
         </dd>
@@ -78,7 +78,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001104">new</a></li>
+                <li><a href="#M001396">new</a></li>
                 
             </ul>
         </dd>
@@ -87,7 +87,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001106">original_spec</a></li>
+                <li><a href="#M001398">original_spec</a></li>
                 
             </ul>
         </dd>
@@ -96,9 +96,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001110">to_json</a>,</li>
+                <li><a href="#M001404">to_json</a>,</li>
                 
-                <li><a href="#M001111">to_s</a></li>
+                <li><a href="#M001405">to_s</a></li>
                 
             </ul>
         </dd>
@@ -149,9 +149,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001104">
+                <div class="title" id="M001396">
                     
-                    <a name="M001104"></a><b>new</b>(metric_spec, stats, metric_id)
+                    <a name="M001396"></a><b>new</b>(metric_spec, stats, metric_id)
                     
                 </div>
                 
@@ -160,10 +160,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001104_source')" id="l_M001104_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001396_source')" id="l_M001396_source">show</a>
                         
                     </p>
-                    <div id="M001104_source" class="dyn-source">
+                    <div id="M001396_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 7</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">metric_spec</span>, <span class="ruby-identifier">stats</span>, <span class="ruby-identifier">metric_id</span>)
       <span class="ruby-ivar">@metric_spec</span> = <span class="ruby-identifier">metric_spec</span>
@@ -178,9 +178,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001105">
+                <div class="title" id="M001397">
                     
-                    <a name="M001105"></a><b>eql?</b>(o)
+                    <a name="M001397"></a><b>eql?</b>(o)
                     
                 </div>
                 
@@ -189,10 +189,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001105_source')" id="l_M001105_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001397_source')" id="l_M001397_source">show</a>
                         
                     </p>
-                    <div id="M001105_source" class="dyn-source">
+                    <div id="M001397_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 13</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
      (<span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">metric_spec</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">stats</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">stats</span>)
@@ -203,9 +203,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001109">
+                <div class="title" id="M001403">
                     
-                    <a name="M001109"></a><b>hash</b>()
+                    <a name="M001403"></a><b>hash</b>()
                     
                 </div>
                 
@@ -214,10 +214,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001109_source')" id="l_M001109_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001403_source')" id="l_M001403_source">show</a>
                         
                     </p>
-                    <div id="M001109_source" class="dyn-source">
+                    <div id="M001403_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash</span>
       <span class="ruby-identifier">metric_spec</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">hash</span>
@@ -228,9 +228,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001107">
+                <div class="title" id="M001399">
                     
-                    <a name="M001107"></a><b>metric_spec</b>()
+                    <a name="M001399"></a><b>metric_spec</b>()
                     
                 </div>
                 
@@ -239,10 +239,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001107_source')" id="l_M001107_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001399_source')" id="l_M001399_source">show</a>
                         
                     </p>
-                    <div id="M001107_source" class="dyn-source">
+                    <div id="M001399_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 20</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_spec</span>
       <span class="ruby-ivar">@metric_spec</span>
@@ -253,9 +253,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001108">
+                <div class="title" id="M001400">
                     
-                    <a name="M001108"></a><b>metric_spec=</b>(new_spec)
+                    <a name="M001400"></a><b>metric_spec=</b>(new_spec)
                     
                 </div>
                 
@@ -264,10 +264,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001108_source')" id="l_M001108_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001400_source')" id="l_M001400_source">show</a>
                         
                     </p>
-                    <div id="M001108_source" class="dyn-source">
+                    <div id="M001400_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 23</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metric_spec=</span> <span class="ruby-identifier">new_spec</span>
       <span class="ruby-ivar">@original_spec</span> = <span class="ruby-ivar">@metric_spec</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@metric_spec</span>
@@ -279,9 +279,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001106">
+                <div class="title" id="M001398">
                     
-                    <a name="M001106"></a><b>original_spec</b>()
+                    <a name="M001398"></a><b>original_spec</b>()
                     
                 </div>
                 
@@ -290,10 +290,10 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001106_source')" id="l_M001106_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001398_source')" id="l_M001398_source">show</a>
                         
                     </p>
-                    <div id="M001106_source" class="dyn-source">
+                    <div id="M001398_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 17</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">original_spec</span>
       <span class="ruby-ivar">@original_spec</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@metric_spec</span>
@@ -304,9 +304,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M001110">
+                <div class="title" id="M001404">
                     
-                    <a name="M001110"></a><b>to_json</b>(*a)
+                    <a name="M001404"></a><b>to_json</b>(*a)
                     
                 </div>
                 
@@ -323,10 +323,10 @@ don&#8217;t send the metric spec
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001110_source')" id="l_M001110_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001404_source')" id="l_M001404_source">show</a>
                         
                     </p>
-                    <div id="M001110_source" class="dyn-source">
+                    <div id="M001404_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 33</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
        <span class="ruby-node">%Q[{&quot;metric_spec&quot;:#{metric_id ? 'null' : metric_spec.to_json},&quot;stats&quot;:{&quot;total_exclusive_time&quot;:#{stats.total_exclusive_time},&quot;min_call_time&quot;:#{stats.min_call_time},&quot;call_count&quot;:#{stats.call_count},&quot;sum_of_squares&quot;:#{stats.sum_of_squares},&quot;total_call_time&quot;:#{stats.total_call_time},&quot;max_call_time&quot;:#{stats.max_call_time}},&quot;metric_id&quot;:#{metric_id ? metric_id : 'null'}}]</span>
@@ -337,9 +337,9 @@ don&#8217;t send the metric spec
             </div>
             
             <div class="method">
-                <div class="title" id="M001111">
+                <div class="title" id="M001405">
                     
-                    <a name="M001111"></a><b>to_s</b>()
+                    <a name="M001405"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -348,10 +348,10 @@ don&#8217;t send the metric spec
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001111_source')" id="l_M001111_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001405_source')" id="l_M001405_source">show</a>
                         
                     </p>
-                    <div id="M001111_source" class="dyn-source">
+                    <div id="M001405_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_data.rb, line 37</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-node">&quot;#{metric_spec.name}(#{metric_spec.scope}): #{stats}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metric_spec</span>

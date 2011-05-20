@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001317">add_segments</a></li>
+                <li><a href="#M001566">add_segments</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M001316">new</a></li>
+                <li><a href="#M001565">new</a></li>
                 
             </ul>
         </dd>
@@ -80,9 +80,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001316">
+                <div class="title" id="M001565">
                     
-                    <a name="M001316"></a><b>new</b>(segment)
+                    <a name="M001565"></a><b>new</b>(segment)
                     
                 </div>
                 
@@ -91,16 +91,16 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001316_source')" id="l_M001316_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001565_source')" id="l_M001565_source">show</a>
                         
                     </p>
-                    <div id="M001316_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 283</span>
+                    <div id="M001565_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 258</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">segment</span>)
         <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">entry_timestamp</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">metric_name</span>, <span class="ruby-keyword kw">nil</span>
-        
+
         <span class="ruby-identifier">add_segments</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">called_segments</span>
-        
+
         <span class="ruby-identifier">end_trace</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">exit_timestamp</span>
       <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -111,9 +111,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001317">
+                <div class="title" id="M001566">
                     
-                    <a name="M001317"></a><b>add_segments</b>(segments)
+                    <a name="M001566"></a><b>add_segments</b>(segments)
                     
                 </div>
                 
@@ -122,11 +122,11 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001317_source')" id="l_M001317_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001566_source')" id="l_M001566_source">show</a>
                         
                     </p>
-                    <div id="M001317_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 291</span>
+                    <div id="M001566_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/transaction_sample.rb, line 266</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_segments</span>(<span class="ruby-identifier">segments</span>)
         <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
           <span class="ruby-constant">SummarySegment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">segment</span>)

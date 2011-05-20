@@ -57,9 +57,9 @@ another metric
         <dd>
             <ul>
                 
-                <li><a href="#M001214"><=></a>,</li>
+                <li><a href="#M001431"><=></a>,</li>
                 
-                <li><a href="#M001205">==</a></li>
+                <li><a href="#M001424">==</a></li>
                 
             </ul>
         </dd>
@@ -68,7 +68,7 @@ another metric
         <dd>
             <ul>
                 
-                <li><a href="#M001206">eql?</a></li>
+                <li><a href="#M001425">eql?</a></li>
                 
             </ul>
         </dd>
@@ -77,7 +77,7 @@ another metric
         <dd>
             <ul>
                 
-                <li><a href="#M001207">hash</a></li>
+                <li><a href="#M001426">hash</a></li>
                 
             </ul>
         </dd>
@@ -86,7 +86,7 @@ another metric
         <dd>
             <ul>
                 
-                <li><a href="#M001192">new</a></li>
+                <li><a href="#M001420">new</a></li>
                 
             </ul>
         </dd>
@@ -95,7 +95,7 @@ another metric
         <dd>
             <ul>
                 
-                <li><a href="#M001211">sub</a></li>
+                <li><a href="#M001427">sub</a></li>
                 
             </ul>
         </dd>
@@ -104,11 +104,11 @@ another metric
         <dd>
             <ul>
                 
-                <li><a href="#M001213">to_json</a>,</li>
+                <li><a href="#M001430">to_json</a>,</li>
                 
-                <li><a href="#M001212">to_s</a>,</li>
+                <li><a href="#M001429">to_s</a>,</li>
                 
-                <li><a href="#M001197">truncate!</a></li>
+                <li><a href="#M001421">truncate!</a></li>
                 
             </ul>
         </dd>
@@ -129,7 +129,7 @@ another metric
         <tr valign='top'>
             <td class="attr-name">MAX_LENGTH</td>
             <td>=</td>
-            <td class="attr-value">100</td>
+            <td class="attr-value">255</td>
         </tr>
         
         
@@ -163,9 +163,9 @@ another metric
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001192">
+                <div class="title" id="M001420">
                     
-                    <a name="M001192"></a><b>new</b>(metric_name = '', metric_scope = '')
+                    <a name="M001420"></a><b>new</b>(metric_name = '', metric_scope = '')
                     
                 </div>
                 
@@ -183,10 +183,10 @@ collector.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001192_source')" id="l_M001192_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001420_source')" id="l_M001420_source">show</a>
                         
                     </p>
-                    <div id="M001192_source" class="dyn-source">
+                    <div id="M001420_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 11</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">metric_name</span> = <span class="ruby-value str">''</span>, <span class="ruby-identifier">metric_scope</span> = <span class="ruby-value str">''</span>)
     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> = (<span class="ruby-identifier">metric_name</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">metric_name</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">MAX_LENGTH</span>]
@@ -200,9 +200,9 @@ collector.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001214">
+                <div class="title" id="M001431">
                     
-                    <a name="M001214"></a><b>&lt;=&gt;</b>(o)
+                    <a name="M001431"></a><b>&lt;=&gt;</b>(o)
                     
                 </div>
                 
@@ -211,10 +211,10 @@ collector.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001214_source')" id="l_M001214_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001431_source')" id="l_M001431_source">show</a>
                         
                     </p>
-                    <div id="M001214_source" class="dyn-source">
+                    <div id="M001431_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 62</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">o</span>)
     <span class="ruby-identifier">namecmp</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span>
@@ -227,9 +227,9 @@ collector.
             </div>
             
             <div class="method">
-                <div class="title" id="M001205">
+                <div class="title" id="M001424">
                     
-                    <a name="M001205"></a><b>==</b>(o)
+                    <a name="M001424"></a><b>==</b>(o)
                     
                 </div>
                 
@@ -238,10 +238,10 @@ collector.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001205_source')" id="l_M001205_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001424_source')" id="l_M001424_source">show</a>
                         
                     </p>
-                    <div id="M001205_source" class="dyn-source">
+                    <div id="M001424_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 21</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">o</span>)
     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
@@ -252,9 +252,9 @@ collector.
             </div>
             
             <div class="method">
-                <div class="title" id="M001206">
+                <div class="title" id="M001425">
                     
-                    <a name="M001206"></a><b>eql?</b>(o)
+                    <a name="M001425"></a><b>eql?</b>(o)
                     
                 </div>
                 
@@ -263,14 +263,14 @@ collector.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001206_source')" id="l_M001206_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001425_source')" id="l_M001425_source">show</a>
                         
                     </p>
-                    <div id="M001206_source" class="dyn-source">
+                    <div id="M001425_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 25</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span> <span class="ruby-identifier">o</span>
     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">&amp;&amp;</span>
-    <span class="ruby-identifier">name</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> 
+    <span class="ruby-identifier">name</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span>
     <span class="ruby-comment cmt"># coerce scope to a string and compare</span>
      (<span class="ruby-identifier">scope</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>) <span class="ruby-operator">==</span> (<span class="ruby-identifier">o</span>.<span class="ruby-identifier">scope</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>)
   <span class="ruby-keyword kw">end</span></pre>
@@ -280,9 +280,9 @@ collector.
             </div>
             
             <div class="method">
-                <div class="title" id="M001207">
+                <div class="title" id="M001426">
                     
-                    <a name="M001207"></a><b>hash</b>()
+                    <a name="M001426"></a><b>hash</b>()
                     
                 </div>
                 
@@ -291,10 +291,10 @@ collector.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001207_source')" id="l_M001207_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001426_source')" id="l_M001426_source">show</a>
                         
                     </p>
-                    <div id="M001207_source" class="dyn-source">
+                    <div id="M001426_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 32</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash</span>
     <span class="ruby-identifier">h</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">hash</span>
@@ -307,9 +307,9 @@ collector.
             </div>
             
             <div class="method">
-                <div class="title" id="M001211">
+                <div class="title" id="M001427">
                     
-                    <a name="M001211"></a><b>sub</b>(pattern, replacement, apply_to_scope = true)
+                    <a name="M001427"></a><b>sub</b>(pattern, replacement, apply_to_scope = true)
                     
                 </div>
                 
@@ -325,22 +325,22 @@ return a new metric spec if the given regex matches the name or scope.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001211_source')" id="l_M001211_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001427_source')" id="l_M001427_source">show</a>
                         
                     </p>
-                    <div id="M001211_source" class="dyn-source">
+                    <div id="M001427_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 39</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>, <span class="ruby-identifier">apply_to_scope</span> = <span class="ruby-keyword kw">true</span>)
-    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">!~</span> <span class="ruby-identifier">pattern</span> <span class="ruby-operator">&amp;&amp;</span> 
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">!~</span> <span class="ruby-identifier">pattern</span> <span class="ruby-operator">&amp;&amp;</span>
      (<span class="ruby-operator">!</span><span class="ruby-identifier">apply_to_scope</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">scope</span> <span class="ruby-operator">!~</span> <span class="ruby-identifier">pattern</span>)
     <span class="ruby-identifier">new_name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>)[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">MAX_LENGTH</span>]
-    
+
     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">apply_to_scope</span>
       <span class="ruby-identifier">new_scope</span> = (<span class="ruby-identifier">scope</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>)[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">MAX_LENGTH</span>])
     <span class="ruby-keyword kw">else</span>
       <span class="ruby-identifier">new_scope</span> = <span class="ruby-identifier">scope</span>
     <span class="ruby-keyword kw">end</span>
-    
+
     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">new_name</span>, <span class="ruby-identifier">new_scope</span>
   <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -349,9 +349,9 @@ return a new metric spec if the given regex matches the name or scope.
             </div>
             
             <div class="method">
-                <div class="title" id="M001213">
+                <div class="title" id="M001430">
                     
-                    <a name="M001213"></a><b>to_json</b>(*a)
+                    <a name="M001430"></a><b>to_json</b>(*a)
                     
                 </div>
                 
@@ -360,13 +360,13 @@ return a new metric spec if the given regex matches the name or scope.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001213_source')" id="l_M001213_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001430_source')" id="l_M001430_source">show</a>
                         
                     </p>
-                    <div id="M001213_source" class="dyn-source">
+                    <div id="M001430_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 57</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
-    {<span class="ruby-value str">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, 
+    {<span class="ruby-value str">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>,
     <span class="ruby-value str">'scope'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">scope</span>}.<span class="ruby-identifier">to_json</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
   <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -375,9 +375,9 @@ return a new metric spec if the given regex matches the name or scope.
             </div>
             
             <div class="method">
-                <div class="title" id="M001212">
+                <div class="title" id="M001429">
                     
-                    <a name="M001212"></a><b>to_s</b>()
+                    <a name="M001429"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -386,10 +386,10 @@ return a new metric spec if the given regex matches the name or scope.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001212_source')" id="l_M001212_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001429_source')" id="l_M001429_source">show</a>
                         
                     </p>
-                    <div id="M001212_source" class="dyn-source">
+                    <div id="M001429_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 53</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
     <span class="ruby-node">&quot;#{name}:#{scope}&quot;</span>
@@ -400,9 +400,9 @@ return a new metric spec if the given regex matches the name or scope.
             </div>
             
             <div class="method">
-                <div class="title" id="M001197">
+                <div class="title" id="M001421">
                     
-                    <a name="M001197"></a><b>truncate!</b>()
+                    <a name="M001421"></a><b>truncate!</b>()
                     
                 </div>
                 
@@ -411,14 +411,14 @@ return a new metric spec if the given regex matches the name or scope.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001197_source')" id="l_M001197_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001421_source')" id="l_M001421_source">show</a>
                         
                     </p>
-                    <div id="M001197_source" class="dyn-source">
+                    <div id="M001421_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/metric_spec.rb, line 16</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">truncate!</span>
-    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">100</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>
-    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">scope</span> = <span class="ruby-identifier">scope</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">100</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scope</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">MAX_LENGTH</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">MAX_LENGTH</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">scope</span> = <span class="ruby-identifier">scope</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">MAX_LENGTH</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scope</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">MAX_LENGTH</span>
   <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

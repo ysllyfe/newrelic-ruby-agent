@@ -49,7 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000819">new</a></li>
+                <li><a href="#M001070">new</a></li>
                 
             </ul>
         </dd>
@@ -58,7 +58,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000825">poll</a></li>
+                <li><a href="#M001076">poll</a></li>
                 
             </ul>
         </dd>
@@ -67,11 +67,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000824">supported_on_this_platform?</a>,</li>
+                <li><a href="#M001075">supported_on_this_platform?</a>,</li>
                 
-                <li><a href="#M000821">system_util_stats</a>,</li>
+                <li><a href="#M001072">system_util_stats</a>,</li>
                 
-                <li><a href="#M000823">systemtime_stats</a></li>
+                <li><a href="#M001074">systemtime_stats</a></li>
                 
             </ul>
         </dd>
@@ -80,9 +80,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000820">user_util_stats</a>,</li>
+                <li><a href="#M001071">user_util_stats</a>,</li>
                 
-                <li><a href="#M000822">usertime_stats</a></li>
+                <li><a href="#M001073">usertime_stats</a></li>
                 
             </ul>
         </dd>
@@ -117,9 +117,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000819">
+                <div class="title" id="M001070">
                     
-                    <a name="M000819"></a><b>new</b>()
+                    <a name="M001070"></a><b>new</b>()
                     
                 </div>
                 
@@ -128,24 +128,24 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000819_source')" id="l_M000819_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001070_source')" id="l_M001070_source">show</a>
                         
                     </p>
-                    <div id="M000819_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 6</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-      <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">cpu</span>
-      <span class="ruby-identifier">poll</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001070_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 8</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+          <span class="ruby-keyword kw">super</span> <span class="ruby-operator">:</span><span class="ruby-identifier">cpu</span>
+          <span class="ruby-identifier">poll</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000824">
+                <div class="title" id="M001075">
                     
-                    <a name="M000824"></a><b>supported_on_this_platform?</b>()
+                    <a name="M001075"></a><b>supported_on_this_platform?</b>()
                     
                 </div>
                 
@@ -154,14 +154,16 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000824_source')" id="l_M000824_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001075_source')" id="l_M001075_source">show</a>
                         
                     </p>
-                    <div id="M000824_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 24</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
-      <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">JRuby</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001075_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 26</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">supported_on_this_platform?</span>
+          <span class="ruby-comment cmt"># Process.times on JRuby reports wall clock elapsed time,</span>
+          <span class="ruby-comment cmt"># not actual cpu time used, so we cannot use this sampler there.</span>
+          <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">JRuby</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
@@ -170,9 +172,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000825">
+                <div class="title" id="M001076">
                     
-                    <a name="M000825"></a><b>poll</b>()
+                    <a name="M001076"></a><b>poll</b>()
                     
                 </div>
                 
@@ -181,42 +183,42 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000825_source')" id="l_M000825_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001076_source')" id="l_M001076_source">show</a>
                         
                     </p>
-                    <div id="M000825_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 28</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
-      <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
-      <span class="ruby-identifier">t</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">times</span>
-      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_time</span>
-        <span class="ruby-identifier">elapsed</span> = <span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_time</span>
-        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">elapsed</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># Causing some kind of math underflow</span>
-        <span class="ruby-identifier">num_processors</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">processors</span> <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
-        <span class="ruby-identifier">usertime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_utime</span>
-        <span class="ruby-identifier">systemtime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_stime</span>
+                    <div id="M001076_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 32</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll</span>
+          <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-identifier">t</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">times</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_time</span>
+            <span class="ruby-identifier">elapsed</span> = <span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_time</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">elapsed</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># Causing some kind of math underflow</span>
+            <span class="ruby-identifier">num_processors</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">local_env</span>.<span class="ruby-identifier">processors</span> <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">usertime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_utime</span>
+            <span class="ruby-identifier">systemtime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_stime</span>
 
-        <span class="ruby-identifier">systemtime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">systemtime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
-        <span class="ruby-identifier">usertime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">usertime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
-        
-        <span class="ruby-comment cmt"># Calculate the true utilization by taking cpu times and dividing by</span>
-        <span class="ruby-comment cmt"># elapsed time X num_processors.</span>
-        <span class="ruby-identifier">user_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
-        <span class="ruby-identifier">system_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-ivar">@last_utime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span>
-      <span class="ruby-ivar">@last_stime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span>
-      <span class="ruby-ivar">@last_time</span> = <span class="ruby-identifier">now</span>
-    <span class="ruby-keyword kw">end</span></pre>
+            <span class="ruby-identifier">systemtime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">systemtime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">usertime_stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">usertime</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+
+            <span class="ruby-comment cmt"># Calculate the true utilization by taking cpu times and dividing by</span>
+            <span class="ruby-comment cmt"># elapsed time X num_processors.</span>
+            <span class="ruby-identifier">user_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">usertime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
+            <span class="ruby-identifier">system_util_stats</span>.<span class="ruby-identifier">record_data_point</span> <span class="ruby-identifier">systemtime</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">elapsed</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">num_processors</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-ivar">@last_utime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span>
+          <span class="ruby-ivar">@last_stime</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span>
+          <span class="ruby-ivar">@last_time</span> = <span class="ruby-identifier">now</span>
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000821">
+                <div class="title" id="M001072">
                     
-                    <a name="M000821"></a><b>system_util_stats</b>()
+                    <a name="M001072"></a><b>system_util_stats</b>()
                     
                 </div>
                 
@@ -225,23 +227,23 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000821_source')" id="l_M000821_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001072_source')" id="l_M001072_source">show</a>
                         
                     </p>
-                    <div id="M000821_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 14</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">system_util_stats</span>
-      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System/Utilization&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001072_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 16</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">system_util_stats</span>
+          <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System/Utilization&quot;</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000823">
+                <div class="title" id="M001074">
                     
-                    <a name="M000823"></a><b>systemtime_stats</b>()
+                    <a name="M001074"></a><b>systemtime_stats</b>()
                     
                 </div>
                 
@@ -250,23 +252,23 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000823_source')" id="l_M000823_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001074_source')" id="l_M001074_source">show</a>
                         
                     </p>
-                    <div id="M000823_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 20</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">systemtime_stats</span>
-      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System Time&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001074_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 22</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">systemtime_stats</span>
+          <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/System Time&quot;</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000820">
+                <div class="title" id="M001071">
                     
-                    <a name="M000820"></a><b>user_util_stats</b>()
+                    <a name="M001071"></a><b>user_util_stats</b>()
                     
                 </div>
                 
@@ -275,23 +277,23 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000820_source')" id="l_M000820_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001071_source')" id="l_M001071_source">show</a>
                         
                     </p>
-                    <div id="M000820_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 11</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_util_stats</span>
-      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User/Utilization&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001071_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 13</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_util_stats</span>
+          <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User/Utilization&quot;</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000822">
+                <div class="title" id="M001073">
                     
-                    <a name="M000822"></a><b>usertime_stats</b>()
+                    <a name="M001073"></a><b>usertime_stats</b>()
                     
                 </div>
                 
@@ -300,14 +302,14 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000822_source')" id="l_M000822_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001073_source')" id="l_M001073_source">show</a>
                         
                     </p>
-                    <div id="M000822_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 17</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">usertime_stats</span>
-      <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User Time&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+                    <div id="M001073_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/samplers/cpu_sampler.rb, line 19</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">usertime_stats</span>
+          <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-value str">&quot;CPU/User Time&quot;</span>)
+        <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 

@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000892">end_transaction</a></li>
+                <li><a href="#M001170">end_transaction</a></li>
                 
             </ul>
         </dd>
@@ -52,11 +52,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000888">peek_scope</a>,</li>
+                <li><a href="#M001166">peek_scope</a>,</li>
                 
-                <li><a href="#M000887">pop_scope</a>,</li>
+                <li><a href="#M001165">pop_scope</a>,</li>
                 
-                <li><a href="#M000884">push_scope</a></li>
+                <li><a href="#M001162">push_scope</a></li>
                 
             </ul>
         </dd>
@@ -65,7 +65,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000883">remove_transaction_sampler</a></li>
+                <li><a href="#M001161">remove_transaction_sampler</a></li>
                 
             </ul>
         </dd>
@@ -74,11 +74,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000890">scope_name</a>,</li>
+                <li><a href="#M001168">scope_name</a>,</li>
                 
-                <li><a href="#M000889">scope_name=</a>,</li>
+                <li><a href="#M001167">scope_name=</a>,</li>
                 
-                <li><a href="#M000891">start_transaction</a></li>
+                <li><a href="#M001169">start_transaction</a></li>
                 
             </ul>
         </dd>
@@ -87,7 +87,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000882">transaction_sampler=</a></li>
+                <li><a href="#M001160">transaction_sampler=</a></li>
                 
             </ul>
         </dd>
@@ -116,9 +116,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000892">
+                <div class="title" id="M001170">
                     
-                    <a name="M000892"></a><b>end_transaction</b>()
+                    <a name="M001170"></a><b>end_transaction</b>()
                     
                 </div>
                 
@@ -136,15 +136,16 @@ maybe this is an inner transaction and is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000892_source')" id="l_M000892_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001170_source')" id="l_M001170_source">show</a>
                         
                     </p>
-                    <div id="M000892_source" class="dyn-source">
+                    <div id="M001170_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 103</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_transaction</span>
         <span class="ruby-identifier">stack</span> = <span class="ruby-identifier">scope_stack</span>
-        
+              
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_most_recent_transaction</span>] = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_name</span>]
           <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_stack</span>] = <span class="ruby-keyword kw">nil</span>
           <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_name</span>] = <span class="ruby-keyword kw">nil</span>
         <span class="ruby-keyword kw">end</span>
@@ -155,9 +156,9 @@ maybe this is an inner transaction and is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000888">
+                <div class="title" id="M001166">
                     
-                    <a name="M000888"></a><b>peek_scope</b>()
+                    <a name="M001166"></a><b>peek_scope</b>()
                     
                 </div>
                 
@@ -166,10 +167,10 @@ maybe this is an inner transaction and is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000888_source')" id="l_M000888_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001166_source')" id="l_M001166_source">show</a>
                         
                     </p>
-                    <div id="M000888_source" class="dyn-source">
+                    <div id="M001166_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 73</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">peek_scope</span>
         <span class="ruby-identifier">scope_stack</span>.<span class="ruby-identifier">last</span>
@@ -180,9 +181,9 @@ maybe this is an inner transaction and is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000887">
+                <div class="title" id="M001165">
                     
-                    <a name="M000887"></a><b>pop_scope</b>(expected_scope, duration, time=Time.now.to_f)
+                    <a name="M001165"></a><b>pop_scope</b>(expected_scope, duration, time=Time.now.to_f)
                     
                 </div>
                 
@@ -191,18 +192,18 @@ maybe this is an inner transaction and is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000887_source')" id="l_M000887_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001165_source')" id="l_M001165_source">show</a>
                         
                     </p>
-                    <div id="M000887_source" class="dyn-source">
+                    <div id="M001165_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 56</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_scope</span>(<span class="ruby-identifier">expected_scope</span>, <span class="ruby-identifier">duration</span>, <span class="ruby-identifier">time</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>)
         <span class="ruby-identifier">capture_gc_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">collecting_gc?</span>
         <span class="ruby-identifier">stack</span> = <span class="ruby-identifier">scope_stack</span>
         <span class="ruby-identifier">scope</span> = <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">pop</span>
         <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;unbalanced pop from blame stack, got #{scope ? scope.name : 'nil'}, expected #{expected_scope ? expected_scope.name : 'nil'}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scope</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">expected_scope</span>
-        
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">stack</span>.<span class="ruby-identifier">empty?</span> 
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">stack</span>.<span class="ruby-identifier">empty?</span>
           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">deduct_call_time_from_parent</span>
             <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">children_time</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">duration</span>
           <span class="ruby-keyword kw">else</span>
@@ -218,9 +219,9 @@ maybe this is an inner transaction and is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000884">
+                <div class="title" id="M001162">
                     
-                    <a name="M000884"></a><b>push_scope</b>(metric, time = Time.now.to_f, deduct_call_time_from_parent = true)
+                    <a name="M001162"></a><b>push_scope</b>(metric, time = Time.now.to_f, deduct_call_time_from_parent = true)
                     
                 </div>
                 
@@ -229,19 +230,19 @@ maybe this is an inner transaction and is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000884_source')" id="l_M000884_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001162_source')" id="l_M001162_source">show</a>
                         
                     </p>
-                    <div id="M000884_source" class="dyn-source">
+                    <div id="M001162_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 38</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push_scope</span>(<span class="ruby-identifier">metric</span>, <span class="ruby-identifier">time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">deduct_call_time_from_parent</span> = <span class="ruby-keyword kw">true</span>)
-        
+
         <span class="ruby-identifier">stack</span> = <span class="ruby-identifier">scope_stack</span>
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">collecting_gc?</span>
           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">empty?</span>
             <span class="ruby-comment cmt"># reset the gc time so we only include gc time spent during this call</span>
-            <span class="ruby-ivar">@last_gc_timestamp</span> = <span class="ruby-constant">GC</span>.<span class="ruby-identifier">time</span>
-            <span class="ruby-ivar">@last_gc_count</span> = <span class="ruby-constant">GC</span>.<span class="ruby-identifier">collections</span>
+            <span class="ruby-ivar">@last_gc_timestamp</span> = <span class="ruby-identifier">gc_time</span>
+            <span class="ruby-ivar">@last_gc_count</span> = <span class="ruby-identifier">gc_collections</span>
           <span class="ruby-keyword kw">else</span>
             <span class="ruby-identifier">capture_gc_time</span>
           <span class="ruby-keyword kw">end</span>
@@ -257,9 +258,9 @@ maybe this is an inner transaction and is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000883">
+                <div class="title" id="M001161">
                     
-                    <a name="M000883"></a><b>remove_transaction_sampler</b>(l)
+                    <a name="M001161"></a><b>remove_transaction_sampler</b>(l)
                     
                 </div>
                 
@@ -268,10 +269,10 @@ maybe this is an inner transaction and is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000883_source')" id="l_M000883_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001161_source')" id="l_M001161_source">show</a>
                         
                     </p>
-                    <div id="M000883_source" class="dyn-source">
+                    <div id="M001161_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 34</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_transaction_sampler</span>(<span class="ruby-identifier">l</span>)
         <span class="ruby-ivar">@transaction_sampler</span> = <span class="ruby-keyword kw">nil</span>
@@ -282,9 +283,9 @@ maybe this is an inner transaction and is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000890">
+                <div class="title" id="M001168">
                     
-                    <a name="M000890"></a><b>scope_name</b>()
+                    <a name="M001168"></a><b>scope_name</b>()
                     
                 </div>
                 
@@ -293,10 +294,10 @@ maybe this is an inner transaction and is ignored.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000890_source')" id="l_M000890_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001168_source')" id="l_M001168_source">show</a>
                         
                     </p>
-                    <div id="M000890_source" class="dyn-source">
+                    <div id="M001168_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 89</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_name</span>
         <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_name</span>]
@@ -307,9 +308,9 @@ maybe this is an inner transaction and is ignored.
             </div>
             
             <div class="method">
-                <div class="title" id="M000889">
+                <div class="title" id="M001167">
                     
-                    <a name="M000889"></a><b>scope_name=</b>(transaction)
+                    <a name="M001167"></a><b>scope_name=</b>(transaction)
                     
                 </div>
                 
@@ -333,10 +334,10 @@ request via controller actions
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000889_source')" id="l_M000889_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001167_source')" id="l_M001167_source">show</a>
                         
                     </p>
-                    <div id="M000889_source" class="dyn-source">
+                    <div id="M001167_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 85</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_name=</span>(<span class="ruby-identifier">transaction</span>)
         <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_name</span>] = <span class="ruby-identifier">transaction</span>
@@ -347,9 +348,9 @@ request via controller actions
             </div>
             
             <div class="method">
-                <div class="title" id="M000891">
+                <div class="title" id="M001169">
                     
-                    <a name="M000891"></a><b>start_transaction</b>(name = nil)
+                    <a name="M001169"></a><b>start_transaction</b>(name = nil)
                     
                 </div>
                 
@@ -365,10 +366,10 @@ Start a new transaction, unless one is already in progress
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000891_source')" id="l_M000891_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001169_source')" id="l_M001169_source">show</a>
                         
                     </p>
-                    <div id="M000891_source" class="dyn-source">
+                    <div id="M001169_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 94</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_transaction</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword kw">nil</span>)
         <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-identifier">:newrelic_scope_stack</span>] <span class="ruby-operator">||=</span> []
@@ -380,9 +381,9 @@ Start a new transaction, unless one is already in progress
             </div>
             
             <div class="method">
-                <div class="title" id="M000882">
+                <div class="title" id="M001160">
                     
-                    <a name="M000882"></a><b>transaction_sampler=</b>(sampler)
+                    <a name="M001160"></a><b>transaction_sampler=</b>(sampler)
                     
                 </div>
                 
@@ -391,10 +392,10 @@ Start a new transaction, unless one is already in progress
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000882_source')" id="l_M000882_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001160_source')" id="l_M001160_source">show</a>
                         
                     </p>
-                    <div id="M000882_source" class="dyn-source">
+                    <div id="M001160_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/agent/stats_engine/transactions.rb, line 29</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transaction_sampler=</span> <span class="ruby-identifier">sampler</span>
         <span class="ruby-identifier">fail</span> <span class="ruby-value str">&quot;Can't add a scope listener midflight in a transaction&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scope_stack</span>.<span class="ruby-identifier">any?</span>

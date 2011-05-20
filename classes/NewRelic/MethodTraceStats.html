@@ -56,7 +56,7 @@ Statistics used to track the performance of traced methods
         <dd>
             <ul>
                 
-                <li><a href="#M001277">increment_count</a></li>
+                <li><a href="#M001527">increment_count</a></li>
                 
             </ul>
         </dd>
@@ -65,9 +65,9 @@ Statistics used to track the performance of traced methods
         <dd>
             <ul>
                 
-                <li><a href="#M001274">record_data_point</a>,</li>
+                <li><a href="#M001523">record_data_point</a>,</li>
                 
-                <li><a href="#M001276">record_multiple_data_points</a></li>
+                <li><a href="#M001525">record_multiple_data_points</a></li>
                 
             </ul>
         </dd>
@@ -76,7 +76,7 @@ Statistics used to track the performance of traced methods
         <dd>
             <ul>
                 
-                <li><a href="#M001275">trace_call</a></li>
+                <li><a href="#M001524">trace_call</a></li>
                 
             </ul>
         </dd>
@@ -98,9 +98,9 @@ Statistics used to track the performance of traced methods
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M001277">
+                <div class="title" id="M001527">
                     
-                    <a name="M001277"></a><b>increment_count</b>(value = 1)
+                    <a name="M001527"></a><b>increment_count</b>(value = 1)
                     
                 </div>
                 
@@ -109,10 +109,10 @@ Statistics used to track the performance of traced methods
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001277_source')" id="l_M001277_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001527_source')" id="l_M001527_source">show</a>
                         
                     </p>
-                    <div id="M001277_source" class="dyn-source">
+                    <div id="M001527_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 352</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment_count</span>(<span class="ruby-identifier">value</span> = <span class="ruby-value">1</span>)
       <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">value</span>
@@ -123,9 +123,9 @@ Statistics used to track the performance of traced methods
             </div>
             
             <div class="method">
-                <div class="title" id="M001274">
+                <div class="title" id="M001523">
                     
-                    <a name="M001274"></a><b>record_data_point</b>(value, exclusive_time = value)
+                    <a name="M001523"></a><b>record_data_point</b>(value, exclusive_time = value)
                     
                 </div>
                 
@@ -133,7 +133,7 @@ Statistics used to track the performance of traced methods
                   <p>
 record a single data point into the statistical gatherer. The gatherer will
 aggregate all data points collected over a specified period and upload its
-data to the <a href="../NewRelic.html">NewRelic</a> server
+data to the NewRelic server
 </p>
 
                 </div>
@@ -142,7 +142,7 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="MethodTraceStats.html#M001275">trace_call</a>
+                    <a href="MethodTraceStats.html#M001524">trace_call</a>
                     
                 </div>
                 
@@ -150,10 +150,10 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001274_source')" id="l_M001274_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001523_source')" id="l_M001523_source">show</a>
                         
                     </p>
-                    <div id="M001274_source" class="dyn-source">
+                    <div id="M001523_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 327</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">exclusive_time</span> = <span class="ruby-identifier">value</span>)
       <span class="ruby-ivar">@call_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
@@ -171,9 +171,9 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
             </div>
             
             <div class="method">
-                <div class="title" id="M001276">
+                <div class="title" id="M001525">
                     
-                    <a name="M001276"></a><b>record_multiple_data_points</b>(total_value, count=1)
+                    <a name="M001525"></a><b>record_multiple_data_points</b>(total_value, count=1)
                     
                 </div>
                 
@@ -182,10 +182,10 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M001276_source')" id="l_M001276_source">show</a>
+                        Source: <a href="javascript:toggleSource('M001525_source')" id="l_M001525_source">show</a>
                         
                     </p>
-                    <div id="M001276_source" class="dyn-source">
+                    <div id="M001525_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/new_relic/stats.rb, line 340</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">record_multiple_data_points</span>(<span class="ruby-identifier">total_value</span>, <span class="ruby-identifier">count</span>=<span class="ruby-value">1</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">total_value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
@@ -204,15 +204,15 @@ data to the <a href="../NewRelic.html">NewRelic</a> server
             </div>
             
             <div class="method">
-                <div class="title" id="M001275">
+                <div class="title" id="M001524">
                     
-                    <a name="M001275"></a><b>trace_call</b>(value, exclusive_time = value)
+                    <a name="M001524"></a><b>trace_call</b>(value, exclusive_time = value)
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="MethodTraceStats.html#M001274">record_data_point</a>
+Alias for <a href="MethodTraceStats.html#M001523">record_data_point</a>
 </p>
 
                 </div>
