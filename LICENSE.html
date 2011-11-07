@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>New Relic Ruby Agent (v3.3.0)</title>
+<title>CHANGELOG</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body>
+<body class="file">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -353,202 +353,68 @@
 
 <div id="documentation" class="description">
   
-<h1 id="label-New+Relic+Ruby+Agent">New Relic Ruby Agent</h1>
+<p>This product includes jquery written by John Resig and distributed under an
+MIT license. See <a
+href="https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt">github.com/jquery/jquery/blob/master/MIT-LICENSE.txt</a></p>
 
-<p>New Relic is a performance management system, developed by New Relic, Inc
-(<a href="http://www.newrelic.com">www.newrelic.com</a>).  It provides you
-with deep information about the performance of your Rails or Ruby
-application as it runs in production. The New Relic Ruby Agent is
-dual-purposed as a either a Rails plugin or a Gem, hosted on <a
-href="http://github.com/newrelic/rpm/tree/master">github</a>.</p>
+<pre>Copyright (c) 2011 John Resig, http://jquery.com/
 
-<p>The New Relic Ruby Agent runs in one of two modes:</p>
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+&quot;Software&quot;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
 
-<h4 id="label-Production+Mode">Production Mode</h4>
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
 
-<p>Low overhead instrumentation that captures detailed information on your
-application running in production and transmits them to newrelic.com where
-you can monitor them in real time.</p>
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
 
-<h4 id="label-Developer+Mode">Developer Mode</h4>
+<p>All other components of this product are Copyright © 2008-2011 New Relic,
+Inc.  All rights reserved.</p>
 
-<p>A Rack middleware that maps /newrelic to an application for showing
-detailed performance metrics on a page by page basis.  Installed
-automatically in Rails applications.</p>
+<p>Certain inventions disclosed in this file may be claimed within patents
+owned or patent applications filed by New Relic, Inc. or third parties.</p>
 
-<h2 id="label-Supported+Environments">Supported Environments</h2>
-<ul><li>
-<p>Ruby 1.8.7, 1.9.1, or 1.9.2, including REE</p>
-</li><li>
-<p>JRuby 1.4 or higher</p>
-</li><li>
-<p>Rails 2.0 or later for Production Mode</p>
-</li><li>
-<p>Rails 2.3 or later for Developer Mode</p>
-</li><li>
-<p>Sinatra</p>
-</li><li>
-<p>Rack</p>
-</li></ul>
+<p>Subject to the terms of this notice, New Relic grants you a nonexclusive,
+nontransferable license, without the right to sublicense, to (a) install
+and execute one copy of these files on any number of workstations owned or
+controlled by you and (b) distribute verbatim copies of these files to
+third parties.  As a condition to the foregoing grant, you must provide
+this notice along with each copy you distribute and you must not remove,
+alter, or obscure this notice. All other use, reproduction, modification,
+distribution, or other exploitation of these files is strictly prohibited,
+except as may be set forth in a separate written license agreement between
+you and New Relic.  The terms of any such license agreement will control
+over this notice.  The license stated above will be automatically
+terminated and revoked if you exceed its scope or violate any of the terms
+of this notice.</p>
 
-<p>Any Rack based framework should work but may not be tested.  Install the
-Ruby Agent as a gem and add the Developer Mode middleware if desired. 
-Report any problems to support@newrelic.com.</p>
+<p>This License does not grant permission to use the trade names, trademarks,
+service marks, or product names of New Relic, except as required for
+reasonable and customary use in describing the origin of this file and
+reproducing the content of this notice.  You may not mark or brand this
+file with any trade name, trademarks, service marks, or product names other
+than the original brand (if any) provided by New Relic.</p>
 
-<p>You can also monitor non-web applications. Refer to the “Other
-Environments” section under “Getting Started”.</p>
-
-<h1 id="label-Getting+Started">Getting Started</h1>
-
-<p>Install the Ruby Agent as a gem.  If you are using Rails you can install
-the gem as a plug-in–details below.</p>
-
-<pre>gem install newrelic_rpm</pre>
-
-<p>To monitor your applications in production, create an account at <a
-href="http://newrelic.com/">newrelic.com/</a> .  There you can sign up for
-a free Lite account or one of our paid subscriptions.</p>
-
-<p>Once you receive the welcome e-mail with a license key and
-<code>newrelic.yml</code> file, copy the <code>newrelic.yml</code> file
-into your app config directory.</p>
-
-<p>All agent configuration is done in the <code>newrelic.yml</code> file. 
-This file is by default read from the <code>config</code> directory of the
-application root and is subsequently searched for in the application root
-directory, and then in a <code>~/.newrelic</code> directory</p>
-
-<h3 id="label-Rails+Installation">Rails Installation</h3>
-
-<p>You can install the agent as a Gem:</p>
-
-<p>For Bundler:</p>
-
-<p>Add the following line to your Gemfile:</p>
-
-<pre>gem 'newrelic_rpm'</pre>
-
-<p>For Rails 2.x without Bundler:</p>
-
-<p>edit <code>environment.rb</code> and add to the initalizer block:</p>
-
-<pre>config.gem &quot;newrelic_rpm&quot;</pre>
-
-<h3 id="label-Merb+Installation">Merb Installation</h3>
-
-<p>To monitor a merb app install the newrelic_rpm gem and add</p>
-
-<pre>dependency 'newrelic_rpm'</pre>
-
-<p>to your init.rb file.</p>
-
-<h3 id="label-Sinatra+Installation+">Sinatra Installation </h3>
-
-<p>To use the Ruby Agent with a Sinatra app, add</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'newrelic_rpm'</span>
-</pre>
-
-<p>in your Sinatra app, below the Sinatra require directive.</p>
-
-<p>Then make sure you set RACK_ENV to the environment corresponding to the
-configuration definitions in the newrelic.yml file; i.e., development,
-staging, production, etc.</p>
-
-<p>To use Developer Mode in Sinatra, add <a
-href="NewRelic/Rack/DeveloperMode.html">NewRelic::Rack::DeveloperMode</a>
-to  the middleware stack.  See the <code>config.ru</code> sample below.</p>
-
-<h3 id="label-Other+Environments">Other Environments</h3>
-
-<p>You can use the Ruby Agent to monitor any Ruby application.  Add</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'newrelic_rpm'</span>
-</pre>
-
-<p>to your startup sequence and then manually start the agent using</p>
-
-<pre>NewRelic::Agent.manual_start</pre>
-
-<p>To instrument Rack based applications, refer to the docs in <a
-href="NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>.</p>
-
-<p>Refer to the docs in New Relic for details on how to monitor other web
-frameworks, background jobs, and daemons.</p>
-
-<p>Also, see if your environment is already supported by the <a
-href="http://newrelic.github.com/rpm_contrib">rpm_contrib</a> gem.</p>
-
-<h2 id="label-Developer+Mode">Developer Mode</h2>
-
-<p>When running the Developer Mode, the Ruby Agent will track the performance
-of every HTTP request serviced by your application, and store in memory
-this information for the last 100 HTTP transactions.</p>
-
-<p>To view this performance information, including detailed SQL statement
-analysis, open <code>/newrelic</code> in your web application.  For
-instance if you are running mongrel or thin on port 3000, enter the
-following into your browser:</p>
-
-<pre>http://localhost:3000/newrelic</pre>
-
-<p>Developer Mode is only initialized if the <code>developer_mode</code>
-setting in the newrelic.yml file is set to true.  By default, it is turned
-off in all environments but <code>development</code>.</p>
-
-<h4 id="label-Developer+Mode+in+Rails">Developer Mode in Rails</h4>
-
-<p>Developer Mode is available automatically in Rails Applications based on
-Rails 2.3 and later.  No additional configuration is required. When your
-application starts and <code>developer_mode</code> is enabled, the Ruby
-Agent injects a middleware into your Rails middleware stack.</p>
-
-<p>For earlier versions of Rails that support Rack, you can use a
-<code>config.ru</code> as below.</p>
-
-<h4 id="label-Developer+Mode+in+Rack+Applications">Developer Mode in Rack Applications</h4>
-
-<p>Developer Mode is available for any Rack based application such as Sinatra
-by installing the <a
-href="NewRelic/Rack/DeveloperMode.html">NewRelic::Rack::DeveloperMode</a>
-middleware. This middleware passes all requests that do not start with
-/newrelic.</p>
-
-<p>Here’s an example entry for Developer Mode in a <code>config.ru</code>
-file:</p>
-
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'new_relic/rack/developer_mode'</span>
-<span class="ruby-identifier">use</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">DeveloperMode</span>
-</pre>
-
-<h2 id="label-Production+Mode">Production Mode</h2>
-
-<p>When your application runs in the production environment, the New Relic
-agent runs in production mode. It connects to the New Relic service and
-sends deep performance data to the UI for your analysis. To view this data,
-log in to <a href="http://rpm.newrelic.com.">rpm.newrelic.com.</a></p>
-
-<p>NOTE: You must have a valid account and license key to view this data
-online.  Refer to instructions in *Getting Started*, below.</p>
-
-<h1 id="label-Support">Support</h1>
-
-<p>Reach out to us–and to fellow users–at <a
-href="http://support.newrelic.com/">support.newrelic.com</a>. There
-you’ll find documentation, FAQs, and forums where you can submit
-suggestions and discuss New Relic with staff and other users.</p>
-
-<p>Also available is community support on IRC: we generally use newrelic on
-irc.freenode.net</p>
-
-<p>Find a bug?  E-mail support@newrelic.com, or post it to <a
-href="http://support.newrelic.com/">support.newrelic.com</a>.</p>
-
-<p>Thank you, and may your application scale to infinity plus one.</p>
-
-<p>Lew Cirne, Founder and CEO&lt;br/&gt; New Relic, Inc.</p>
+<p>Unless otherwise expressly agreed by New Relic in a separate written
+license agreement, these files are provided AS IS, WITHOUT WARRANTY OF ANY
+KIND, including without any implied warranties of MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, or NON-INFRINGEMENT.  As a condition to
+your use of these files, you are solely responsible for such use. New Relic
+will have no liability to you for direct, indirect, consequential,
+incidental, special, or punitive damages or for lost profits or data.</p>
 
 </div>
+
 
 
 <footer id="validator-badges">

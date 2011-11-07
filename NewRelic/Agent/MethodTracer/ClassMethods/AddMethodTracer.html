@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Module: NewRelic::Agent::MethodTracer::ClassMethods::AddMethodTracer</title>
+
+<link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../../index.html">Home</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/new_relic/agent/method_tracer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-any_unrecognized_keys-3F">#any_unrecognized_keys?</a>
+    
+    <li><a href="#method-i-assemble_code_header">#assemble_code_header</a>
+    
+    <li><a href="#method-i-check_for_illegal_keys-21">#check_for_illegal_keys!</a>
+    
+    <li><a href="#method-i-check_for_push_scope_and_metric">#check_for_push_scope_and_metric</a>
+    
+    <li><a href="#method-i-code_to_eval">#code_to_eval</a>
+    
+    <li><a href="#method-i-default_metric_name_code">#default_metric_name_code</a>
+    
+    <li><a href="#method-i-method_with_push_scope">#method_with_push_scope</a>
+    
+    <li><a href="#method-i-method_without_push_scope">#method_without_push_scope</a>
+    
+    <li><a href="#method-i-newrelic_method_exists-3F">#newrelic_method_exists?</a>
+    
+    <li><a href="#method-i-set_deduct_call_time_based_on_metric">#set_deduct_call_time_based_on_metric</a>
+    
+    <li><a href="#method-i-traced_method_exists-3F">#traced_method_exists?</a>
+    
+    <li><a href="#method-i-unrecognized_keys">#unrecognized_keys</a>
+    
+    <li><a href="#method-i-validate_options">#validate_options</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../NewRelic.html">NewRelic</a>
+  
+    <li><a href="../../../../NewRelic/Agent.html">NewRelic::Agent</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Agent.html">NewRelic::Agent::Agent</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Agent/ClassMethods.html">NewRelic::Agent::Agent::ClassMethods</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Agent/InstanceMethods.html">NewRelic::Agent::Agent::InstanceMethods</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Agent/InstanceMethods/Connect.html">NewRelic::Agent::Agent::InstanceMethods::Connect</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Agent/InstanceMethods/Start.html">NewRelic::Agent::Agent::InstanceMethods::Start</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Agent/InstanceMethods/StartWorkerThread.html">NewRelic::Agent::Agent::InstanceMethods::StartWorkerThread</a>
+  
+    <li><a href="../../../../NewRelic/Agent/BackgroundLoadingError.html">NewRelic::Agent::BackgroundLoadingError</a>
+  
+    <li><a href="../../../../NewRelic/Agent/BeaconConfiguration.html">NewRelic::Agent::BeaconConfiguration</a>
+  
+    <li><a href="../../../../NewRelic/Agent/BrowserMonitoring.html">NewRelic::Agent::BrowserMonitoring</a>
+  
+    <li><a href="../../../../NewRelic/Agent/BrowserMonitoring/DummyMetricFrame.html">NewRelic::Agent::BrowserMonitoring::DummyMetricFrame</a>
+  
+    <li><a href="../../../../NewRelic/Agent/BusyCalculator.html">NewRelic::Agent::BusyCalculator</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Database.html">NewRelic::Agent::Database</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Database/ConnectionManager.html">NewRelic::Agent::Database::ConnectionManager</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Database/Obfuscator.html">NewRelic::Agent::Database::Obfuscator</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ErrorCollector.html">NewRelic::Agent::ErrorCollector</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ErrorCollector/NoticeError.html">NewRelic::Agent::ErrorCollector::NoticeError</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ForceDisconnectException.html">NewRelic::Agent::ForceDisconnectException</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ForceRestartException.html">NewRelic::Agent::ForceRestartException</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation.html">NewRelic::Agent::Instrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/ActiveRecordInstrumentation.html">NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/ControllerInstrumentation.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/ControllerInstrumentation/ClassMethods.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/DataMapperInstrumentation.html">NewRelic::Agent::Instrumentation::DataMapperInstrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Memcache.html">NewRelic::Agent::Instrumentation::Memcache</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/MetricFrame.html">NewRelic::Agent::Instrumentation::MetricFrame</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/MetricFrame/Pop.html">NewRelic::Agent::Instrumentation::MetricFrame::Pop</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/QueueTime.html">NewRelic::Agent::Instrumentation::QueueTime</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Rails3.html">NewRelic::Agent::Instrumentation::Rails3</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Rails3/ActionController.html">NewRelic::Agent::Instrumentation::Rails3::ActionController</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Rails3/ActionView.html">NewRelic::Agent::Instrumentation::Rails3::ActionView</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Rails3/ActionView/PartialRenderer.html">NewRelic::Agent::Instrumentation::Rails3::ActionView::PartialRenderer</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Rails3/Errors.html">NewRelic::Agent::Instrumentation::Rails3::Errors</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Instrumentation/Sinatra.html">NewRelic::Agent::Instrumentation::Sinatra</a>
+  
+    <li><a href="../../../../NewRelic/Agent/LicenseException.html">NewRelic::Agent::LicenseException</a>
+  
+    <li><a href="../../../../NewRelic/Agent/MethodTracer.html">NewRelic::Agent::MethodTracer</a>
+  
+    <li><a href="../../../../NewRelic/Agent/MethodTracer/ClassMethods.html">NewRelic::Agent::MethodTracer::ClassMethods</a>
+  
+    <li><a href="../../../../NewRelic/Agent/MethodTracer/ClassMethods/AddMethodTracer.html">NewRelic::Agent::MethodTracer::ClassMethods::AddMethodTracer</a>
+  
+    <li><a href="../../../../NewRelic/Agent/MethodTracer/InstanceMethods.html">NewRelic::Agent::MethodTracer::InstanceMethods</a>
+  
+    <li><a href="../../../../NewRelic/Agent/MethodTracer/InstanceMethods/TraceExecutionScoped.html">NewRelic::Agent::MethodTracer::InstanceMethods::TraceExecutionScoped</a>
+  
+    <li><a href="../../../../NewRelic/Agent/PostTooBigException.html">NewRelic::Agent::PostTooBigException</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Sampler.html">NewRelic::Agent::Sampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Sampler/Unsupported.html">NewRelic::Agent::Sampler::Unsupported</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers.html">NewRelic::Agent::Samplers</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/CpuSampler.html">NewRelic::Agent::Samplers::CpuSampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/DelayedJobLockSampler.html">NewRelic::Agent::Samplers::DelayedJobLockSampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/MemorySampler.html">NewRelic::Agent::Samplers::MemorySampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/MemorySampler/Base.html">NewRelic::Agent::Samplers::MemorySampler::Base</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/MemorySampler/JavaHeapSampler.html">NewRelic::Agent::Samplers::MemorySampler::JavaHeapSampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/MemorySampler/ProcStatus.html">NewRelic::Agent::Samplers::MemorySampler::ProcStatus</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/MemorySampler/ShellPS.html">NewRelic::Agent::Samplers::MemorySampler::ShellPS</a>
+  
+    <li><a href="../../../../NewRelic/Agent/Samplers/ObjectSampler.html">NewRelic::Agent::Samplers::ObjectSampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ServerConnectionException.html">NewRelic::Agent::ServerConnectionException</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ServerError.html">NewRelic::Agent::ServerError</a>
+  
+    <li><a href="../../../../NewRelic/Agent/ShimAgent.html">NewRelic::Agent::ShimAgent</a>
+  
+    <li><a href="../../../../NewRelic/Agent/SlowSql.html">NewRelic::Agent::SlowSql</a>
+  
+    <li><a href="../../../../NewRelic/Agent/SqlSampler.html">NewRelic::Agent::SqlSampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/SqlTrace.html">NewRelic::Agent::SqlTrace</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine.html">NewRelic::Agent::StatsEngine</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/GCProfiler.html">NewRelic::Agent::StatsEngine::GCProfiler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/GCProfiler/Profiler.html">NewRelic::Agent::StatsEngine::GCProfiler::Profiler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/GCProfiler/RailsBench.html">NewRelic::Agent::StatsEngine::GCProfiler::RailsBench</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/GCProfiler/Rubinius.html">NewRelic::Agent::StatsEngine::GCProfiler::Rubinius</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/GCProfiler/Ruby19.html">NewRelic::Agent::StatsEngine::GCProfiler::Ruby19</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/MetricStats.html">NewRelic::Agent::StatsEngine::MetricStats</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/MetricStats/Harvest.html">NewRelic::Agent::StatsEngine::MetricStats::Harvest</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/MetricStats/SynchronizedHash.html">NewRelic::Agent::StatsEngine::MetricStats::SynchronizedHash</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/Samplers.html">NewRelic::Agent::StatsEngine::Samplers</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/ScopeStackElement.html">NewRelic::Agent::StatsEngine::ScopeStackElement</a>
+  
+    <li><a href="../../../../NewRelic/Agent/StatsEngine/Transactions.html">NewRelic::Agent::StatsEngine::Transactions</a>
+  
+    <li><a href="../../../../NewRelic/Agent/TransactionInfo.html">NewRelic::Agent::TransactionInfo</a>
+  
+    <li><a href="../../../../NewRelic/Agent/TransactionSampleBuilder.html">NewRelic::Agent::TransactionSampleBuilder</a>
+  
+    <li><a href="../../../../NewRelic/Agent/TransactionSampler.html">NewRelic::Agent::TransactionSampler</a>
+  
+    <li><a href="../../../../NewRelic/Agent/TransactionSqlData.html">NewRelic::Agent::TransactionSqlData</a>
+  
+    <li><a href="../../../../NewRelic/Agent/WorkerLoop.html">NewRelic::Agent::WorkerLoop</a>
+  
+    <li><a href="../../../../NewRelic/ApdexStats.html">NewRelic::ApdexStats</a>
+  
+    <li><a href="../../../../NewRelic/BasicStats.html">NewRelic::BasicStats</a>
+  
+    <li><a href="../../../../NewRelic/ChainedCall.html">NewRelic::ChainedCall</a>
+  
+    <li><a href="../../../../NewRelic/CollectionHelper.html">NewRelic::CollectionHelper</a>
+  
+    <li><a href="../../../../NewRelic/Command.html">NewRelic::Command</a>
+  
+    <li><a href="../../../../NewRelic/Command/CommandFailure.html">NewRelic::Command::CommandFailure</a>
+  
+    <li><a href="../../../../NewRelic/Command/Deployments.html">NewRelic::Command::Deployments</a>
+  
+    <li><a href="../../../../NewRelic/Command/Install.html">NewRelic::Command::Install</a>
+  
+    <li><a href="../../../../NewRelic/Control.html">NewRelic::Control</a>
+  
+    <li><a href="../../../../NewRelic/Control/ClassMethods.html">NewRelic::Control::ClassMethods</a>
+  
+    <li><a href="../../../../NewRelic/Control/Configuration.html">NewRelic::Control::Configuration</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks.html">NewRelic::Control::Frameworks</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks/External.html">NewRelic::Control::Frameworks::External</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks/Merb.html">NewRelic::Control::Frameworks::Merb</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks/Rails.html">NewRelic::Control::Frameworks::Rails</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks/Rails3.html">NewRelic::Control::Frameworks::Rails3</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks/Ruby.html">NewRelic::Control::Frameworks::Ruby</a>
+  
+    <li><a href="../../../../NewRelic/Control/Frameworks/Sinatra.html">NewRelic::Control::Frameworks::Sinatra</a>
+  
+    <li><a href="../../../../NewRelic/Control/InstanceMethods.html">NewRelic::Control::InstanceMethods</a>
+  
+    <li><a href="../../../../NewRelic/Control/Instrumentation.html">NewRelic::Control::Instrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Control/LoggingMethods.html">NewRelic::Control::LoggingMethods</a>
+  
+    <li><a href="../../../../NewRelic/Control/Profiling.html">NewRelic::Control::Profiling</a>
+  
+    <li><a href="../../../../NewRelic/Control/ServerMethods.html">NewRelic::Control::ServerMethods</a>
+  
+    <li><a href="../../../../NewRelic/DataSerialization.html">NewRelic::DataSerialization</a>
+  
+    <li><a href="../../../../NewRelic/DataSerialization/ClassMethods.html">NewRelic::DataSerialization::ClassMethods</a>
+  
+    <li><a href="../../../../NewRelic/DelayedJobInjection.html">NewRelic::DelayedJobInjection</a>
+  
+    <li><a href="../../../../NewRelic/Instrumentation.html">NewRelic::Instrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Instrumentation/ActsAsSolrInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation</a>
+  
+    <li><a href="../../../../NewRelic/Instrumentation/ActsAsSolrInstrumentation/ParserMethodsInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation::ParserMethodsInstrumentation</a>
+  
+    <li><a href="../../../../NewRelic/LanguageSupport.html">NewRelic::LanguageSupport</a>
+  
+    <li><a href="../../../../NewRelic/LanguageSupport/Control.html">NewRelic::LanguageSupport::Control</a>
+  
+    <li><a href="../../../../NewRelic/LanguageSupport/DataSerialization.html">NewRelic::LanguageSupport::DataSerialization</a>
+  
+    <li><a href="../../../../NewRelic/LanguageSupport/SynchronizedHash.html">NewRelic::LanguageSupport::SynchronizedHash</a>
+  
+    <li><a href="../../../../NewRelic/LocalEnvironment.html">NewRelic::LocalEnvironment</a>
+  
+    <li><a href="../../../../NewRelic/MerbBootLoader.html">NewRelic::MerbBootLoader</a>
+  
+    <li><a href="../../../../NewRelic/MethodTraceStats.html">NewRelic::MethodTraceStats</a>
+  
+    <li><a href="../../../../NewRelic/MetricData.html">NewRelic::MetricData</a>
+  
+    <li><a href="../../../../NewRelic/MetricSpec.html">NewRelic::MetricSpec</a>
+  
+    <li><a href="../../../../NewRelic/Metrics.html">NewRelic::Metrics</a>
+  
+    <li><a href="../../../../NewRelic/NoticedError.html">NewRelic::NoticedError</a>
+  
+    <li><a href="../../../../NewRelic/Rack.html">NewRelic::Rack</a>
+  
+    <li><a href="../../../../NewRelic/Rack/BrowserMonitoring.html">NewRelic::Rack::BrowserMonitoring</a>
+  
+    <li><a href="../../../../NewRelic/Rack/DeveloperMode.html">NewRelic::Rack::DeveloperMode</a>
+  
+    <li><a href="../../../../NewRelic/Railtie.html">NewRelic::Railtie</a>
+  
+    <li><a href="../../../../NewRelic/ScopedMethodTraceStats.html">NewRelic::ScopedMethodTraceStats</a>
+  
+    <li><a href="../../../../NewRelic/Stats.html">NewRelic::Stats</a>
+  
+    <li><a href="../../../../NewRelic/StatsBase.html">NewRelic::StatsBase</a>
+  
+    <li><a href="../../../../NewRelic/TransactionAnalysis.html">NewRelic::TransactionAnalysis</a>
+  
+    <li><a href="../../../../NewRelic/TransactionAnalysis/SegmentSummary.html">NewRelic::TransactionAnalysis::SegmentSummary</a>
+  
+    <li><a href="../../../../NewRelic/TransactionSample.html">NewRelic::TransactionSample</a>
+  
+    <li><a href="../../../../NewRelic/TransactionSample/CompositeSegment.html">NewRelic::TransactionSample::CompositeSegment</a>
+  
+    <li><a href="../../../../NewRelic/TransactionSample/FakeSegment.html">NewRelic::TransactionSample::FakeSegment</a>
+  
+    <li><a href="../../../../NewRelic/TransactionSample/Segment.html">NewRelic::TransactionSample::Segment</a>
+  
+    <li><a href="../../../../NewRelic/TransactionSample/SummarySegment.html">NewRelic::TransactionSample::SummarySegment</a>
+  
+    <li><a href="../../../../NewRelic/UrlRule.html">NewRelic::UrlRule</a>
+  
+    <li><a href="../../../../NewRelic/UrlRule/RuleSet.html">NewRelic::UrlRule::RuleSet</a>
+  
+    <li><a href="../../../../NewRelic/VersionNumber.html">NewRelic::VersionNumber</a>
+  
+    <li><a href="../../../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../../../ActionView/Base.html">ActionView::Base</a>
+  
+    <li><a href="../../../../ActionView/Partials.html">ActionView::Partials</a>
+  
+    <li><a href="../../../../ActionView/Partials/PartialRenderer.html">ActionView::Partials::PartialRenderer</a>
+  
+    <li><a href="../../../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../../../ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="../../../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module NewRelic::Agent::MethodTracer::ClassMethods::AddMethodTracer</h1>
+
+  <div id="description" class="description">
+    
+<p>contains methods refactored out of the add_method_tracer method</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ALLOWED_KEYS">ALLOWED_KEYS
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_SETTINGS">DEFAULT_SETTINGS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-any_unrecognized_keys-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">any_unrecognized_keys?</span><span
+            class="method-args">(expected, given)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>used to verify that the keys passed to <a
+href="../ClassMethods.html#method-i-add_method_tracer">NewRelic::Agent::MethodTracer::ClassMethods#add_method_tracer</a>
+are valid. checks the expected list against the list actually provided</p>
+          
+
+          
+          <div class="method-source-code" id="any_unrecognized_keys-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">any_unrecognized_keys?</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">given</span>)
+  <span class="ruby-identifier">unrecognized_keys</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">given</span>).<span class="ruby-identifier">any?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- any_unrecognized_keys-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- any_unrecognized_keys-3F-method -->
+
+    
+      <div id="method-i-assemble_code_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assemble_code_header</span><span
+            class="method-args">(method_name, metric_name_code, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a code snippet to be eval’d that skips tracing when the agent is
+not tracing execution. turns instrumentation into effectively one method
+call overhead when the agent is disabled</p>
+          
+
+          
+          <div class="method-source-code" id="assemble_code_header-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assemble_code_header</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:force</span>]
+    <span class="ruby-node">&quot;return #{_untraced_method_name(method_name, metric_name_code)}(*args, &amp;block) unless NewRelic::Agent.is_execution_traced?\n&quot;</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:code_header</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assemble_code_header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assemble_code_header-method -->
+
+    
+      <div id="method-i-check_for_illegal_keys-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_for_illegal_keys!</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>raises an error when the <a
+href="../ClassMethods.html#method-i-add_method_tracer">NewRelic::Agent::MethodTracer::ClassMethods#add_method_tracer</a>
+method is called with improper keys. This aids in debugging new
+instrumentation by failing fast</p>
+          
+
+          
+          <div class="method-source-code" id="check_for_illegal_keys-21-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_for_illegal_keys!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">any_unrecognized_keys?</span>(<span class="ruby-constant">ALLOWED_KEYS</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Unrecognized options in add_method_tracer_call: #{unrecognized_keys(ALLOWED_KEYS, options).join(', ')}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_for_illegal_keys-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_for_illegal_keys-21-method -->
+
+    
+      <div id="method-i-check_for_push_scope_and_metric" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_for_push_scope_and_metric</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>validity checking - add_method_tracer must receive either push scope or
+metric, or else it would record no data. Raises an error if this is the
+case</p>
+          
+
+          
+          <div class="method-source-code" id="check_for_push_scope_and_metric-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_for_push_scope_and_metric</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:push_scope</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:metric</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Can't add a tracer where push_scope is false and metric is false&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_for_push_scope_and_metric-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_for_push_scope_and_metric-method -->
+
+    
+      <div id="method-i-code_to_eval" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">code_to_eval</span><span
+            class="method-args">(method_name, metric_name_code, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Decides which code snippet we should be eval’ing in this context, based
+on the options.</p>
+          
+
+          
+          <div class="method-source-code" id="code_to_eval-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">code_to_eval</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:push_scope</span>]
+    <span class="ruby-identifier">method_with_push_scope</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">method_without_push_scope</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- code_to_eval-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- code_to_eval-method -->
+
+    
+      <div id="method-i-default_metric_name_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_metric_name_code</span><span
+            class="method-args">(method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Default to the class where the method is defined.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Foo</span>.<span class="ruby-identifier">default_metric_name_code</span>(<span class="ruby-string">'bar'</span>) <span class="ruby-comment">#=&gt; &quot;Custom/#{Foo.name}/bar&quot;</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="default_metric_name_code-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_metric_name_code</span>(<span class="ruby-identifier">method_name</span>)
+  <span class="ruby-node">&quot;Custom/#{self.name}/#{method_name.to_s}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_metric_name_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_metric_name_code-method -->
+
+    
+      <div id="method-i-method_with_push_scope" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_with_push_scope</span><span
+            class="method-args">(method_name, metric_name_code, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns an eval-able string that contains the tracing code for a fully
+traced metric including scoping</p>
+          
+
+          
+          <div class="method-source-code" id="method_with_push_scope-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 376</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_with_push_scope</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">klass</span> = (<span class="ruby-keyword">self</span> <span class="ruby-operator">===</span> <span class="ruby-constant">Module</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&quot;self&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;self.class&quot;</span>
+
+  <span class="ruby-node">&quot;def #{_traced_method_name(method_name, metric_name_code)}(*args, &amp;block)
+    #{options[:code_header]}
+    result = #{klass}.trace_execution_scoped(\&quot;#{metric_name_code}\&quot;,
+              :metric =&gt; #{options[:metric]},
+              :forced =&gt; #{options[:force]},
+              :deduct_call_time_from_parent =&gt; #{options[:deduct_call_time_from_parent]},
+              :scoped_metric_only =&gt; #{options[:scoped_metric_only]}) do
+      #{_untraced_method_name(method_name, metric_name_code)}(*args, &amp;block)
+    end
+    #{options[:code_footer]}
+    result
+  end&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_with_push_scope-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_with_push_scope-method -->
+
+    
+      <div id="method-i-method_without_push_scope" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_without_push_scope</span><span
+            class="method-args">(method_name, metric_name_code, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns an eval-able string that contains the traced method code used if
+the agent is not creating a scope for use in scoped metrics.</p>
+          
+
+          
+          <div class="method-source-code" id="method_without_push_scope-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_without_push_scope</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-node">&quot;def #{_traced_method_name(method_name, metric_name_code)}(*args, &amp;block)
+    #{assemble_code_header(method_name, metric_name_code, options)}
+    t0 = Time.now
+    stats = NewRelic::Agent.instance.stats_engine.get_stats_no_scope \&quot;#{metric_name_code}\&quot;
+    begin
+      #{&quot;NewRelic::Agent.instance.push_trace_execution_flag(true)\n&quot; if options[:force]}
+      #{_untraced_method_name(method_name, metric_name_code)}(*args, &amp;block)\n
+    ensure
+      #{&quot;NewRelic::Agent.instance.pop_trace_execution_flag\n&quot; if options[:force] }
+      duration = (Time.now - t0).to_f
+      stats.trace_call(duration)
+      #{options[:code_footer]}
+    end
+  end&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_without_push_scope-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_without_push_scope-method -->
+
+    
+      <div id="method-i-newrelic_method_exists-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">newrelic_method_exists?</span><span
+            class="method-args">(method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks to see if the method we are attempting to trace actually exists or
+not. add_method_tracer can’t do anything if the method doesn’t exist.</p>
+          
+
+          
+          <div class="method-source-code" id="newrelic_method_exists-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">newrelic_method_exists?</span>(<span class="ruby-identifier">method_name</span>)
+  <span class="ruby-identifier">exists</span> = <span class="ruby-identifier">method_defined?</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">private_method_defined?</span>(<span class="ruby-identifier">method_name</span>)
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Did not trace #{self.name}##{method_name} because that method does not exist&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exists</span>
+  <span class="ruby-identifier">exists</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- newrelic_method_exists-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- newrelic_method_exists-3F-method -->
+
+    
+      <div id="method-i-set_deduct_call_time_based_on_metric" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_deduct_call_time_based_on_metric</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the options for deducting call time from parents. This defaults to
+true if we are recording a metric, but can be overridden by the user if
+desired.</p>
+
+<p>has the effect of not allowing overlapping times, and should generally be
+true</p>
+          
+
+          
+          <div class="method-source-code" id="set_deduct_call_time_based_on_metric-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_deduct_call_time_based_on_metric</span>(<span class="ruby-identifier">options</span>)
+  {<span class="ruby-value">:deduct_call_time_from_parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">options</span>[<span class="ruby-value">:metric</span>]}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_deduct_call_time_based_on_metric-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_deduct_call_time_based_on_metric-method -->
+
+    
+      <div id="method-i-traced_method_exists-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">traced_method_exists?</span><span
+            class="method-args">(method_name, metric_name_code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks to see if we have already traced a method with a given metric by
+checking to see if the traced method exists. Warns the user if methods are
+being double-traced to help with debugging custom instrumentation.</p>
+          
+
+          
+          <div class="method-source-code" id="traced_method_exists-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">traced_method_exists?</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>)
+  <span class="ruby-identifier">exists</span> = <span class="ruby-identifier">method_defined?</span>(<span class="ruby-identifier">_traced_method_name</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">metric_name_code</span>))
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Attempt to trace a method twice with the same metric: Method = #{method_name}, Metric Name = #{metric_name_code}&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">exists</span>
+  <span class="ruby-identifier">exists</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- traced_method_exists-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- traced_method_exists-3F-method -->
+
+    
+      <div id="method-i-unrecognized_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unrecognized_keys</span><span
+            class="method-args">(expected, given)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>used to verify that the keys passed to <a
+href="../ClassMethods.html#method-i-add_method_tracer">NewRelic::Agent::MethodTracer::ClassMethods#add_method_tracer</a>
+are valid. Returns a list of keys that were unexpected</p>
+          
+
+          
+          <div class="method-source-code" id="unrecognized_keys-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unrecognized_keys</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">given</span>)
+  <span class="ruby-identifier">given</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">expected</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unrecognized_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unrecognized_keys-method -->
+
+    
+      <div id="method-i-validate_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_options</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the provided options to make sure that they make sense. Raises an
+error if the options are incorrect to assist with debugging, so that errors
+occur at class construction time rather than instrumentation run time</p>
+          
+
+          
+          <div class="method-source-code" id="validate_options-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/method_tracer.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;provided options must be a Hash&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-identifier">check_for_illegal_keys!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">set_deduct_call_time_based_on_metric</span>(<span class="ruby-constant">DEFAULT_SETTINGS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>))
+  <span class="ruby-identifier">check_for_push_scope_and_metric</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate_options-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

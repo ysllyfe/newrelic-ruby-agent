@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Class: NewRelic::Agent::BeaconConfiguration</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/new_relic/agent/beacon_configuration.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-build_browser_timing_header">#build_browser_timing_header</a>
+    
+    <li><a href="#method-i-build_load_file_js">#build_load_file_js</a>
+    
+    <li><a href="#method-i-finish_command">#finish_command</a>
+    
+    <li><a href="#method-i-javascript_header">#javascript_header</a>
+    
+    <li><a href="#method-i-license_bytes">#license_bytes</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../NewRelic.html">NewRelic</a>
+  
+    <li><a href="../../NewRelic/Agent.html">NewRelic::Agent</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent.html">NewRelic::Agent::Agent</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/ClassMethods.html">NewRelic::Agent::Agent::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods.html">NewRelic::Agent::Agent::InstanceMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods/Connect.html">NewRelic::Agent::Agent::InstanceMethods::Connect</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods/Start.html">NewRelic::Agent::Agent::InstanceMethods::Start</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods/StartWorkerThread.html">NewRelic::Agent::Agent::InstanceMethods::StartWorkerThread</a>
+  
+    <li><a href="../../NewRelic/Agent/BackgroundLoadingError.html">NewRelic::Agent::BackgroundLoadingError</a>
+  
+    <li><a href="../../NewRelic/Agent/BeaconConfiguration.html">NewRelic::Agent::BeaconConfiguration</a>
+  
+    <li><a href="../../NewRelic/Agent/BrowserMonitoring.html">NewRelic::Agent::BrowserMonitoring</a>
+  
+    <li><a href="../../NewRelic/Agent/BrowserMonitoring/DummyMetricFrame.html">NewRelic::Agent::BrowserMonitoring::DummyMetricFrame</a>
+  
+    <li><a href="../../NewRelic/Agent/BusyCalculator.html">NewRelic::Agent::BusyCalculator</a>
+  
+    <li><a href="../../NewRelic/Agent/Database.html">NewRelic::Agent::Database</a>
+  
+    <li><a href="../../NewRelic/Agent/Database/ConnectionManager.html">NewRelic::Agent::Database::ConnectionManager</a>
+  
+    <li><a href="../../NewRelic/Agent/Database/Obfuscator.html">NewRelic::Agent::Database::Obfuscator</a>
+  
+    <li><a href="../../NewRelic/Agent/ErrorCollector.html">NewRelic::Agent::ErrorCollector</a>
+  
+    <li><a href="../../NewRelic/Agent/ErrorCollector/NoticeError.html">NewRelic::Agent::ErrorCollector::NoticeError</a>
+  
+    <li><a href="../../NewRelic/Agent/ForceDisconnectException.html">NewRelic::Agent::ForceDisconnectException</a>
+  
+    <li><a href="../../NewRelic/Agent/ForceRestartException.html">NewRelic::Agent::ForceRestartException</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation.html">NewRelic::Agent::Instrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/ActiveRecordInstrumentation.html">NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/ControllerInstrumentation.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/ControllerInstrumentation/ClassMethods.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/DataMapperInstrumentation.html">NewRelic::Agent::Instrumentation::DataMapperInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Memcache.html">NewRelic::Agent::Instrumentation::Memcache</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/MetricFrame.html">NewRelic::Agent::Instrumentation::MetricFrame</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/MetricFrame/Pop.html">NewRelic::Agent::Instrumentation::MetricFrame::Pop</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/QueueTime.html">NewRelic::Agent::Instrumentation::QueueTime</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3.html">NewRelic::Agent::Instrumentation::Rails3</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/ActionController.html">NewRelic::Agent::Instrumentation::Rails3::ActionController</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/ActionView.html">NewRelic::Agent::Instrumentation::Rails3::ActionView</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/ActionView/PartialRenderer.html">NewRelic::Agent::Instrumentation::Rails3::ActionView::PartialRenderer</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/Errors.html">NewRelic::Agent::Instrumentation::Rails3::Errors</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Sinatra.html">NewRelic::Agent::Instrumentation::Sinatra</a>
+  
+    <li><a href="../../NewRelic/Agent/LicenseException.html">NewRelic::Agent::LicenseException</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer.html">NewRelic::Agent::MethodTracer</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/ClassMethods.html">NewRelic::Agent::MethodTracer::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/ClassMethods/AddMethodTracer.html">NewRelic::Agent::MethodTracer::ClassMethods::AddMethodTracer</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/InstanceMethods.html">NewRelic::Agent::MethodTracer::InstanceMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/InstanceMethods/TraceExecutionScoped.html">NewRelic::Agent::MethodTracer::InstanceMethods::TraceExecutionScoped</a>
+  
+    <li><a href="../../NewRelic/Agent/PostTooBigException.html">NewRelic::Agent::PostTooBigException</a>
+  
+    <li><a href="../../NewRelic/Agent/Sampler.html">NewRelic::Agent::Sampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Sampler/Unsupported.html">NewRelic::Agent::Sampler::Unsupported</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers.html">NewRelic::Agent::Samplers</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/CpuSampler.html">NewRelic::Agent::Samplers::CpuSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/DelayedJobLockSampler.html">NewRelic::Agent::Samplers::DelayedJobLockSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler.html">NewRelic::Agent::Samplers::MemorySampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/Base.html">NewRelic::Agent::Samplers::MemorySampler::Base</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/JavaHeapSampler.html">NewRelic::Agent::Samplers::MemorySampler::JavaHeapSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/ProcStatus.html">NewRelic::Agent::Samplers::MemorySampler::ProcStatus</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/ShellPS.html">NewRelic::Agent::Samplers::MemorySampler::ShellPS</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/ObjectSampler.html">NewRelic::Agent::Samplers::ObjectSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/ServerConnectionException.html">NewRelic::Agent::ServerConnectionException</a>
+  
+    <li><a href="../../NewRelic/Agent/ServerError.html">NewRelic::Agent::ServerError</a>
+  
+    <li><a href="../../NewRelic/Agent/ShimAgent.html">NewRelic::Agent::ShimAgent</a>
+  
+    <li><a href="../../NewRelic/Agent/SlowSql.html">NewRelic::Agent::SlowSql</a>
+  
+    <li><a href="../../NewRelic/Agent/SqlSampler.html">NewRelic::Agent::SqlSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/SqlTrace.html">NewRelic::Agent::SqlTrace</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine.html">NewRelic::Agent::StatsEngine</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler.html">NewRelic::Agent::StatsEngine::GCProfiler</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/Profiler.html">NewRelic::Agent::StatsEngine::GCProfiler::Profiler</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/RailsBench.html">NewRelic::Agent::StatsEngine::GCProfiler::RailsBench</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/Rubinius.html">NewRelic::Agent::StatsEngine::GCProfiler::Rubinius</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/Ruby19.html">NewRelic::Agent::StatsEngine::GCProfiler::Ruby19</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/MetricStats.html">NewRelic::Agent::StatsEngine::MetricStats</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/MetricStats/Harvest.html">NewRelic::Agent::StatsEngine::MetricStats::Harvest</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/MetricStats/SynchronizedHash.html">NewRelic::Agent::StatsEngine::MetricStats::SynchronizedHash</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/Samplers.html">NewRelic::Agent::StatsEngine::Samplers</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/ScopeStackElement.html">NewRelic::Agent::StatsEngine::ScopeStackElement</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/Transactions.html">NewRelic::Agent::StatsEngine::Transactions</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionInfo.html">NewRelic::Agent::TransactionInfo</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionSampleBuilder.html">NewRelic::Agent::TransactionSampleBuilder</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionSampler.html">NewRelic::Agent::TransactionSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionSqlData.html">NewRelic::Agent::TransactionSqlData</a>
+  
+    <li><a href="../../NewRelic/Agent/WorkerLoop.html">NewRelic::Agent::WorkerLoop</a>
+  
+    <li><a href="../../NewRelic/ApdexStats.html">NewRelic::ApdexStats</a>
+  
+    <li><a href="../../NewRelic/BasicStats.html">NewRelic::BasicStats</a>
+  
+    <li><a href="../../NewRelic/ChainedCall.html">NewRelic::ChainedCall</a>
+  
+    <li><a href="../../NewRelic/CollectionHelper.html">NewRelic::CollectionHelper</a>
+  
+    <li><a href="../../NewRelic/Command.html">NewRelic::Command</a>
+  
+    <li><a href="../../NewRelic/Command/CommandFailure.html">NewRelic::Command::CommandFailure</a>
+  
+    <li><a href="../../NewRelic/Command/Deployments.html">NewRelic::Command::Deployments</a>
+  
+    <li><a href="../../NewRelic/Command/Install.html">NewRelic::Command::Install</a>
+  
+    <li><a href="../../NewRelic/Control.html">NewRelic::Control</a>
+  
+    <li><a href="../../NewRelic/Control/ClassMethods.html">NewRelic::Control::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Control/Configuration.html">NewRelic::Control::Configuration</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks.html">NewRelic::Control::Frameworks</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/External.html">NewRelic::Control::Frameworks::External</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Merb.html">NewRelic::Control::Frameworks::Merb</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Rails.html">NewRelic::Control::Frameworks::Rails</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Rails3.html">NewRelic::Control::Frameworks::Rails3</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Ruby.html">NewRelic::Control::Frameworks::Ruby</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Sinatra.html">NewRelic::Control::Frameworks::Sinatra</a>
+  
+    <li><a href="../../NewRelic/Control/InstanceMethods.html">NewRelic::Control::InstanceMethods</a>
+  
+    <li><a href="../../NewRelic/Control/Instrumentation.html">NewRelic::Control::Instrumentation</a>
+  
+    <li><a href="../../NewRelic/Control/LoggingMethods.html">NewRelic::Control::LoggingMethods</a>
+  
+    <li><a href="../../NewRelic/Control/Profiling.html">NewRelic::Control::Profiling</a>
+  
+    <li><a href="../../NewRelic/Control/ServerMethods.html">NewRelic::Control::ServerMethods</a>
+  
+    <li><a href="../../NewRelic/DataSerialization.html">NewRelic::DataSerialization</a>
+  
+    <li><a href="../../NewRelic/DataSerialization/ClassMethods.html">NewRelic::DataSerialization::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/DelayedJobInjection.html">NewRelic::DelayedJobInjection</a>
+  
+    <li><a href="../../NewRelic/Instrumentation.html">NewRelic::Instrumentation</a>
+  
+    <li><a href="../../NewRelic/Instrumentation/ActsAsSolrInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Instrumentation/ActsAsSolrInstrumentation/ParserMethodsInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation::ParserMethodsInstrumentation</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport.html">NewRelic::LanguageSupport</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport/Control.html">NewRelic::LanguageSupport::Control</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport/DataSerialization.html">NewRelic::LanguageSupport::DataSerialization</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport/SynchronizedHash.html">NewRelic::LanguageSupport::SynchronizedHash</a>
+  
+    <li><a href="../../NewRelic/LocalEnvironment.html">NewRelic::LocalEnvironment</a>
+  
+    <li><a href="../../NewRelic/MerbBootLoader.html">NewRelic::MerbBootLoader</a>
+  
+    <li><a href="../../NewRelic/MethodTraceStats.html">NewRelic::MethodTraceStats</a>
+  
+    <li><a href="../../NewRelic/MetricData.html">NewRelic::MetricData</a>
+  
+    <li><a href="../../NewRelic/MetricSpec.html">NewRelic::MetricSpec</a>
+  
+    <li><a href="../../NewRelic/Metrics.html">NewRelic::Metrics</a>
+  
+    <li><a href="../../NewRelic/NoticedError.html">NewRelic::NoticedError</a>
+  
+    <li><a href="../../NewRelic/Rack.html">NewRelic::Rack</a>
+  
+    <li><a href="../../NewRelic/Rack/BrowserMonitoring.html">NewRelic::Rack::BrowserMonitoring</a>
+  
+    <li><a href="../../NewRelic/Rack/DeveloperMode.html">NewRelic::Rack::DeveloperMode</a>
+  
+    <li><a href="../../NewRelic/Railtie.html">NewRelic::Railtie</a>
+  
+    <li><a href="../../NewRelic/ScopedMethodTraceStats.html">NewRelic::ScopedMethodTraceStats</a>
+  
+    <li><a href="../../NewRelic/Stats.html">NewRelic::Stats</a>
+  
+    <li><a href="../../NewRelic/StatsBase.html">NewRelic::StatsBase</a>
+  
+    <li><a href="../../NewRelic/TransactionAnalysis.html">NewRelic::TransactionAnalysis</a>
+  
+    <li><a href="../../NewRelic/TransactionAnalysis/SegmentSummary.html">NewRelic::TransactionAnalysis::SegmentSummary</a>
+  
+    <li><a href="../../NewRelic/TransactionSample.html">NewRelic::TransactionSample</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/CompositeSegment.html">NewRelic::TransactionSample::CompositeSegment</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/FakeSegment.html">NewRelic::TransactionSample::FakeSegment</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/Segment.html">NewRelic::TransactionSample::Segment</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/SummarySegment.html">NewRelic::TransactionSample::SummarySegment</a>
+  
+    <li><a href="../../NewRelic/UrlRule.html">NewRelic::UrlRule</a>
+  
+    <li><a href="../../NewRelic/UrlRule/RuleSet.html">NewRelic::UrlRule::RuleSet</a>
+  
+    <li><a href="../../NewRelic/VersionNumber.html">NewRelic::VersionNumber</a>
+  
+    <li><a href="../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../ActionView/Base.html">ActionView::Base</a>
+  
+    <li><a href="../../ActionView/Partials.html">ActionView::Partials</a>
+  
+    <li><a href="../../ActionView/Partials/PartialRenderer.html">ActionView::Partials::PartialRenderer</a>
+  
+    <li><a href="../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class NewRelic::Agent::BeaconConfiguration</h1>
+
+  <div id="description" class="description">
+    
+<p>This class contains the configuration data for setting up RUM headers and
+footers - acts as a cache of this data so we don’t need to look it up or
+reconfigure it every request</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="JS_HEADER">JS_HEADER
+        
+        <dd class="description"><p>A static javascript header that is identical for every account and
+application</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-application_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">application_id</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>the application id we include in the javascript - crossreferences with the
+application id on the collectors</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-beacon" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">beacon</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>which beacon we should report to - set by startup of the agent</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-browser_monitoring_key" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">browser_monitoring_key</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>the key used for browser monitoring. This is different from the account key</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-browser_timing_header" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">browser_timing_header</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>the statically generated header - generated when the beacon configuration
+is created - does not vary per page</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-browser_timing_static_footer" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">browser_timing_static_footer</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>the static portion of the RUM footer - this part does not vary by which
+request is in progress</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rum_enabled" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rum_enabled</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>whether RUM is enabled or not - determined based on server and local config</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rum_jsonp" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rum_jsonp</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>whether JSONP is used to communicate with the Beacon or not</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(connect_data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new browser configuration data. Argument is a hash of
+configuration values from the server</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/beacon_configuration.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">connect_data</span>)
+  <span class="ruby-ivar">@browser_monitoring_key</span> = <span class="ruby-identifier">connect_data</span>[<span class="ruby-string">'browser_key'</span>]
+  <span class="ruby-ivar">@application_id</span> = <span class="ruby-identifier">connect_data</span>[<span class="ruby-string">'application_id'</span>]
+  <span class="ruby-ivar">@beacon</span> = <span class="ruby-identifier">connect_data</span>[<span class="ruby-string">'beacon'</span>]
+  <span class="ruby-ivar">@rum_enabled</span> = <span class="ruby-identifier">connect_data</span>[<span class="ruby-string">'rum.enabled'</span>]
+  <span class="ruby-ivar">@rum_enabled</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rum_enabled</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-string">&quot;Real User Monitoring is disabled for this agent. Edit your configuration to change this.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@rum_enabled</span>
+  <span class="ruby-ivar">@browser_timing_header</span> = <span class="ruby-identifier">build_browser_timing_header</span>
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Browser timing header: #{@browser_timing_header.inspect}&quot;</span>)
+  <span class="ruby-ivar">@browser_timing_static_footer</span> = <span class="ruby-identifier">build_load_file_js</span>(<span class="ruby-identifier">connect_data</span>)
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Browser timing static footer: #{@browser_timing_static_footer.inspect}&quot;</span>)
+  <span class="ruby-ivar">@rum_jsonp</span> = <span class="ruby-identifier">connect_data</span>[<span class="ruby-string">'rum.jsonp'</span>]
+  <span class="ruby-ivar">@rum_jsonp</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rum_jsonp</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-string">&quot;Real User Monitoring is using JSONP protocol&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rum_jsonp</span>
+  <span class="ruby-ivar">@finish_command</span> = <span class="ruby-ivar">@rum_jsonp</span> <span class="ruby-operator">?</span>  <span class="ruby-string">'nrfj'</span> <span class="ruby-operator">:</span> <span class="ruby-string">'nrf2'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-build_browser_timing_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_browser_timing_header</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the header string, properly html-safed if needed</p>
+          
+
+          
+          <div class="method-source-code" id="build_browser_timing_header-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/beacon_configuration.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_browser_timing_header</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@rum_enabled</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@browser_monitoring_key</span>.<span class="ruby-identifier">nil?</span>
+  
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">javascript_header</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:html_safe</span>)
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">html_safe</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_browser_timing_header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_browser_timing_header-method -->
+
+    
+      <div id="method-i-build_load_file_js" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_load_file_js</span><span
+            class="method-args">(connect_data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns a snippet of text that does not change per-transaction. Is empty
+when rum is disabled, or we are not including the episodes file dynamically
+(i.e. the user includes it themselves)</p>
+          
+
+          
+          <div class="method-source-code" id="build_load_file_js-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/beacon_configuration.rb, line 82</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">build_load_file_js</span>(<span class="ruby-identifier">connect_data</span>)
+        <span class="ruby-identifier">js</span> = <span class="ruby-string">&quot;if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push([&quot;load&quot;,new Date().getTime()]);
+&quot;</span>
+    
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">connect_data</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">'rum.load_episodes_file'</span>, <span class="ruby-keyword">true</span>)
+          <span class="ruby-identifier">episodes_url</span> = <span class="ruby-identifier">connect_data</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">'episodes_url'</span>, <span class="ruby-string">''</span>)          
+          <span class="ruby-identifier">js</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;var e=document.createElement(\&quot;script\&quot;);
+e.type=\&quot;text/javascript\&quot;;e.async=true;e.src=\&quot;#{episodes_url}\&quot;;
+document.body.appendChild(e);
+&quot;</span>
+        <span class="ruby-keyword">end</span>
+    
+        <span class="ruby-identifier">js</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+&quot;</span>
+        <span class="ruby-identifier">js</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- build_load_file_js-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_load_file_js-method -->
+
+    
+      <div id="method-i-finish_command" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finish_command</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>RUM footer command used for ‘finish’ - based on whether JSONP is being
+used. ‘nrfj’ for JSONP, otherwise ‘nrf2’</p>
+          
+
+          
+          <div class="method-source-code" id="finish_command-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/beacon_configuration.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finish_command</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">'browser_monitoring'</span>, {})              .<span class="ruby-identifier">fetch</span>(<span class="ruby-string">'auto_instrument'</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-ivar">@finish_command</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">'nrf2'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finish_command-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- finish_command-method -->
+
+    
+      <div id="method-i-javascript_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">javascript_header</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns a copy of the static javascript header, in case people are munging
+strings somewhere down the line</p>
+          
+
+          
+          <div class="method-source-code" id="javascript_header-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/beacon_configuration.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">javascript_header</span>
+  <span class="ruby-constant">JS_HEADER</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- javascript_header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- javascript_header-method -->
+
+    
+      <div id="method-i-license_bytes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">license_bytes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns a memoized version of the bytes in the license key for obscuring
+transaction names in the javascript</p>
+          
+
+          
+          <div class="method-source-code" id="license_bytes-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/beacon_configuration.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">license_bytes</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@license_bytes</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@license_bytes</span> = []
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Control</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">license_key</span>.<span class="ruby-identifier">each_byte</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">byte</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@license_bytes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">byte</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@license_bytes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- license_bytes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- license_bytes-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

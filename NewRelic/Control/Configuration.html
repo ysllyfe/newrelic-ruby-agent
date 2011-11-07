@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Module: NewRelic::Control::Configuration</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/new_relic/control/configuration.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-apdex_t">#apdex_t</a>
+    
+    <li><a href="#method-i-app_names">#app_names</a>
+    
+    <li><a href="#method-i-browser_monitoring_auto_instrument-3F">#browser_monitoring_auto_instrument?</a>
+    
+    <li><a href="#method-i-capture_params">#capture_params</a>
+    
+    <li><a href="#method-i-developer_mode-3F">#developer_mode?</a>
+    
+    <li><a href="#method-i-disable_backtrace_cleanup-3F">#disable_backtrace_cleanup?</a>
+    
+    <li><a href="#method-i-disable_serialization-3D">#disable_serialization=</a>
+    
+    <li><a href="#method-i-disable_serialization-3F">#disable_serialization?</a>
+    
+    <li><a href="#method-i-dispatcher">#dispatcher</a>
+    
+    <li><a href="#method-i-dispatcher_instance_id">#dispatcher_instance_id</a>
+    
+    <li><a href="#method-i-fetch">#fetch</a>
+    
+    <li><a href="#method-i-license_key">#license_key</a>
+    
+    <li><a href="#method-i-log_file_path">#log_file_path</a>
+    
+    <li><a href="#method-i-merge_defaults">#merge_defaults</a>
+    
+    <li><a href="#method-i-merge_options">#merge_options</a>
+    
+    <li><a href="#method-i-merge_server_side_config">#merge_server_side_config</a>
+    
+    <li><a href="#method-i-monitor_mode-3F">#monitor_mode?</a>
+    
+    <li><a href="#method-i-multi_threaded-3F">#multi_threaded?</a>
+    
+    <li><a href="#method-i-post_size_limit">#post_size_limit</a>
+    
+    <li><a href="#method-i-remove_server_controlled_configs">#remove_server_controlled_configs</a>
+    
+    <li><a href="#method-i-send_data_on_exit">#send_data_on_exit</a>
+    
+    <li><a href="#method-i-settings">#settings</a>
+    
+    <li><a href="#method-i-sync_startup">#sync_startup</a>
+    
+    <li><a href="#method-i-use_ssl-3F">#use_ssl?</a>
+    
+    <li><a href="#method-i-use_textmate-3F">#use_textmate?</a>
+    
+    <li><a href="#method-i-validate_seed">#validate_seed</a>
+    
+    <li><a href="#method-i-validate_token">#validate_token</a>
+    
+    <li><a href="#method-i-verify_certificate-3F">#verify_certificate?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../NewRelic.html">NewRelic</a>
+  
+    <li><a href="../../NewRelic/Agent.html">NewRelic::Agent</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent.html">NewRelic::Agent::Agent</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/ClassMethods.html">NewRelic::Agent::Agent::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods.html">NewRelic::Agent::Agent::InstanceMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods/Connect.html">NewRelic::Agent::Agent::InstanceMethods::Connect</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods/Start.html">NewRelic::Agent::Agent::InstanceMethods::Start</a>
+  
+    <li><a href="../../NewRelic/Agent/Agent/InstanceMethods/StartWorkerThread.html">NewRelic::Agent::Agent::InstanceMethods::StartWorkerThread</a>
+  
+    <li><a href="../../NewRelic/Agent/BackgroundLoadingError.html">NewRelic::Agent::BackgroundLoadingError</a>
+  
+    <li><a href="../../NewRelic/Agent/BeaconConfiguration.html">NewRelic::Agent::BeaconConfiguration</a>
+  
+    <li><a href="../../NewRelic/Agent/BrowserMonitoring.html">NewRelic::Agent::BrowserMonitoring</a>
+  
+    <li><a href="../../NewRelic/Agent/BrowserMonitoring/DummyMetricFrame.html">NewRelic::Agent::BrowserMonitoring::DummyMetricFrame</a>
+  
+    <li><a href="../../NewRelic/Agent/BusyCalculator.html">NewRelic::Agent::BusyCalculator</a>
+  
+    <li><a href="../../NewRelic/Agent/Database.html">NewRelic::Agent::Database</a>
+  
+    <li><a href="../../NewRelic/Agent/Database/ConnectionManager.html">NewRelic::Agent::Database::ConnectionManager</a>
+  
+    <li><a href="../../NewRelic/Agent/Database/Obfuscator.html">NewRelic::Agent::Database::Obfuscator</a>
+  
+    <li><a href="../../NewRelic/Agent/ErrorCollector.html">NewRelic::Agent::ErrorCollector</a>
+  
+    <li><a href="../../NewRelic/Agent/ErrorCollector/NoticeError.html">NewRelic::Agent::ErrorCollector::NoticeError</a>
+  
+    <li><a href="../../NewRelic/Agent/ForceDisconnectException.html">NewRelic::Agent::ForceDisconnectException</a>
+  
+    <li><a href="../../NewRelic/Agent/ForceRestartException.html">NewRelic::Agent::ForceRestartException</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation.html">NewRelic::Agent::Instrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/ActiveRecordInstrumentation.html">NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/ControllerInstrumentation.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/ControllerInstrumentation/ClassMethods.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/DataMapperInstrumentation.html">NewRelic::Agent::Instrumentation::DataMapperInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Memcache.html">NewRelic::Agent::Instrumentation::Memcache</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/MetricFrame.html">NewRelic::Agent::Instrumentation::MetricFrame</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/MetricFrame/Pop.html">NewRelic::Agent::Instrumentation::MetricFrame::Pop</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/QueueTime.html">NewRelic::Agent::Instrumentation::QueueTime</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3.html">NewRelic::Agent::Instrumentation::Rails3</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/ActionController.html">NewRelic::Agent::Instrumentation::Rails3::ActionController</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/ActionView.html">NewRelic::Agent::Instrumentation::Rails3::ActionView</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/ActionView/PartialRenderer.html">NewRelic::Agent::Instrumentation::Rails3::ActionView::PartialRenderer</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Rails3/Errors.html">NewRelic::Agent::Instrumentation::Rails3::Errors</a>
+  
+    <li><a href="../../NewRelic/Agent/Instrumentation/Sinatra.html">NewRelic::Agent::Instrumentation::Sinatra</a>
+  
+    <li><a href="../../NewRelic/Agent/LicenseException.html">NewRelic::Agent::LicenseException</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer.html">NewRelic::Agent::MethodTracer</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/ClassMethods.html">NewRelic::Agent::MethodTracer::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/ClassMethods/AddMethodTracer.html">NewRelic::Agent::MethodTracer::ClassMethods::AddMethodTracer</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/InstanceMethods.html">NewRelic::Agent::MethodTracer::InstanceMethods</a>
+  
+    <li><a href="../../NewRelic/Agent/MethodTracer/InstanceMethods/TraceExecutionScoped.html">NewRelic::Agent::MethodTracer::InstanceMethods::TraceExecutionScoped</a>
+  
+    <li><a href="../../NewRelic/Agent/PostTooBigException.html">NewRelic::Agent::PostTooBigException</a>
+  
+    <li><a href="../../NewRelic/Agent/Sampler.html">NewRelic::Agent::Sampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Sampler/Unsupported.html">NewRelic::Agent::Sampler::Unsupported</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers.html">NewRelic::Agent::Samplers</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/CpuSampler.html">NewRelic::Agent::Samplers::CpuSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/DelayedJobLockSampler.html">NewRelic::Agent::Samplers::DelayedJobLockSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler.html">NewRelic::Agent::Samplers::MemorySampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/Base.html">NewRelic::Agent::Samplers::MemorySampler::Base</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/JavaHeapSampler.html">NewRelic::Agent::Samplers::MemorySampler::JavaHeapSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/ProcStatus.html">NewRelic::Agent::Samplers::MemorySampler::ProcStatus</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/MemorySampler/ShellPS.html">NewRelic::Agent::Samplers::MemorySampler::ShellPS</a>
+  
+    <li><a href="../../NewRelic/Agent/Samplers/ObjectSampler.html">NewRelic::Agent::Samplers::ObjectSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/ServerConnectionException.html">NewRelic::Agent::ServerConnectionException</a>
+  
+    <li><a href="../../NewRelic/Agent/ServerError.html">NewRelic::Agent::ServerError</a>
+  
+    <li><a href="../../NewRelic/Agent/ShimAgent.html">NewRelic::Agent::ShimAgent</a>
+  
+    <li><a href="../../NewRelic/Agent/SlowSql.html">NewRelic::Agent::SlowSql</a>
+  
+    <li><a href="../../NewRelic/Agent/SqlSampler.html">NewRelic::Agent::SqlSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/SqlTrace.html">NewRelic::Agent::SqlTrace</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine.html">NewRelic::Agent::StatsEngine</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler.html">NewRelic::Agent::StatsEngine::GCProfiler</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/Profiler.html">NewRelic::Agent::StatsEngine::GCProfiler::Profiler</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/RailsBench.html">NewRelic::Agent::StatsEngine::GCProfiler::RailsBench</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/Rubinius.html">NewRelic::Agent::StatsEngine::GCProfiler::Rubinius</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/GCProfiler/Ruby19.html">NewRelic::Agent::StatsEngine::GCProfiler::Ruby19</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/MetricStats.html">NewRelic::Agent::StatsEngine::MetricStats</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/MetricStats/Harvest.html">NewRelic::Agent::StatsEngine::MetricStats::Harvest</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/MetricStats/SynchronizedHash.html">NewRelic::Agent::StatsEngine::MetricStats::SynchronizedHash</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/Samplers.html">NewRelic::Agent::StatsEngine::Samplers</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/ScopeStackElement.html">NewRelic::Agent::StatsEngine::ScopeStackElement</a>
+  
+    <li><a href="../../NewRelic/Agent/StatsEngine/Transactions.html">NewRelic::Agent::StatsEngine::Transactions</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionInfo.html">NewRelic::Agent::TransactionInfo</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionSampleBuilder.html">NewRelic::Agent::TransactionSampleBuilder</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionSampler.html">NewRelic::Agent::TransactionSampler</a>
+  
+    <li><a href="../../NewRelic/Agent/TransactionSqlData.html">NewRelic::Agent::TransactionSqlData</a>
+  
+    <li><a href="../../NewRelic/Agent/WorkerLoop.html">NewRelic::Agent::WorkerLoop</a>
+  
+    <li><a href="../../NewRelic/ApdexStats.html">NewRelic::ApdexStats</a>
+  
+    <li><a href="../../NewRelic/BasicStats.html">NewRelic::BasicStats</a>
+  
+    <li><a href="../../NewRelic/ChainedCall.html">NewRelic::ChainedCall</a>
+  
+    <li><a href="../../NewRelic/CollectionHelper.html">NewRelic::CollectionHelper</a>
+  
+    <li><a href="../../NewRelic/Command.html">NewRelic::Command</a>
+  
+    <li><a href="../../NewRelic/Command/CommandFailure.html">NewRelic::Command::CommandFailure</a>
+  
+    <li><a href="../../NewRelic/Command/Deployments.html">NewRelic::Command::Deployments</a>
+  
+    <li><a href="../../NewRelic/Command/Install.html">NewRelic::Command::Install</a>
+  
+    <li><a href="../../NewRelic/Control.html">NewRelic::Control</a>
+  
+    <li><a href="../../NewRelic/Control/ClassMethods.html">NewRelic::Control::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/Control/Configuration.html">NewRelic::Control::Configuration</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks.html">NewRelic::Control::Frameworks</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/External.html">NewRelic::Control::Frameworks::External</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Merb.html">NewRelic::Control::Frameworks::Merb</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Rails.html">NewRelic::Control::Frameworks::Rails</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Rails3.html">NewRelic::Control::Frameworks::Rails3</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Ruby.html">NewRelic::Control::Frameworks::Ruby</a>
+  
+    <li><a href="../../NewRelic/Control/Frameworks/Sinatra.html">NewRelic::Control::Frameworks::Sinatra</a>
+  
+    <li><a href="../../NewRelic/Control/InstanceMethods.html">NewRelic::Control::InstanceMethods</a>
+  
+    <li><a href="../../NewRelic/Control/Instrumentation.html">NewRelic::Control::Instrumentation</a>
+  
+    <li><a href="../../NewRelic/Control/LoggingMethods.html">NewRelic::Control::LoggingMethods</a>
+  
+    <li><a href="../../NewRelic/Control/Profiling.html">NewRelic::Control::Profiling</a>
+  
+    <li><a href="../../NewRelic/Control/ServerMethods.html">NewRelic::Control::ServerMethods</a>
+  
+    <li><a href="../../NewRelic/DataSerialization.html">NewRelic::DataSerialization</a>
+  
+    <li><a href="../../NewRelic/DataSerialization/ClassMethods.html">NewRelic::DataSerialization::ClassMethods</a>
+  
+    <li><a href="../../NewRelic/DelayedJobInjection.html">NewRelic::DelayedJobInjection</a>
+  
+    <li><a href="../../NewRelic/Instrumentation.html">NewRelic::Instrumentation</a>
+  
+    <li><a href="../../NewRelic/Instrumentation/ActsAsSolrInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation</a>
+  
+    <li><a href="../../NewRelic/Instrumentation/ActsAsSolrInstrumentation/ParserMethodsInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation::ParserMethodsInstrumentation</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport.html">NewRelic::LanguageSupport</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport/Control.html">NewRelic::LanguageSupport::Control</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport/DataSerialization.html">NewRelic::LanguageSupport::DataSerialization</a>
+  
+    <li><a href="../../NewRelic/LanguageSupport/SynchronizedHash.html">NewRelic::LanguageSupport::SynchronizedHash</a>
+  
+    <li><a href="../../NewRelic/LocalEnvironment.html">NewRelic::LocalEnvironment</a>
+  
+    <li><a href="../../NewRelic/MerbBootLoader.html">NewRelic::MerbBootLoader</a>
+  
+    <li><a href="../../NewRelic/MethodTraceStats.html">NewRelic::MethodTraceStats</a>
+  
+    <li><a href="../../NewRelic/MetricData.html">NewRelic::MetricData</a>
+  
+    <li><a href="../../NewRelic/MetricSpec.html">NewRelic::MetricSpec</a>
+  
+    <li><a href="../../NewRelic/Metrics.html">NewRelic::Metrics</a>
+  
+    <li><a href="../../NewRelic/NoticedError.html">NewRelic::NoticedError</a>
+  
+    <li><a href="../../NewRelic/Rack.html">NewRelic::Rack</a>
+  
+    <li><a href="../../NewRelic/Rack/BrowserMonitoring.html">NewRelic::Rack::BrowserMonitoring</a>
+  
+    <li><a href="../../NewRelic/Rack/DeveloperMode.html">NewRelic::Rack::DeveloperMode</a>
+  
+    <li><a href="../../NewRelic/Railtie.html">NewRelic::Railtie</a>
+  
+    <li><a href="../../NewRelic/ScopedMethodTraceStats.html">NewRelic::ScopedMethodTraceStats</a>
+  
+    <li><a href="../../NewRelic/Stats.html">NewRelic::Stats</a>
+  
+    <li><a href="../../NewRelic/StatsBase.html">NewRelic::StatsBase</a>
+  
+    <li><a href="../../NewRelic/TransactionAnalysis.html">NewRelic::TransactionAnalysis</a>
+  
+    <li><a href="../../NewRelic/TransactionAnalysis/SegmentSummary.html">NewRelic::TransactionAnalysis::SegmentSummary</a>
+  
+    <li><a href="../../NewRelic/TransactionSample.html">NewRelic::TransactionSample</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/CompositeSegment.html">NewRelic::TransactionSample::CompositeSegment</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/FakeSegment.html">NewRelic::TransactionSample::FakeSegment</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/Segment.html">NewRelic::TransactionSample::Segment</a>
+  
+    <li><a href="../../NewRelic/TransactionSample/SummarySegment.html">NewRelic::TransactionSample::SummarySegment</a>
+  
+    <li><a href="../../NewRelic/UrlRule.html">NewRelic::UrlRule</a>
+  
+    <li><a href="../../NewRelic/UrlRule/RuleSet.html">NewRelic::UrlRule::RuleSet</a>
+  
+    <li><a href="../../NewRelic/VersionNumber.html">NewRelic::VersionNumber</a>
+  
+    <li><a href="../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../ActionView/Base.html">ActionView::Base</a>
+  
+    <li><a href="../../ActionView/Partials.html">ActionView::Partials</a>
+  
+    <li><a href="../../ActionView/Partials/PartialRenderer.html">ActionView::Partials::PartialRenderer</a>
+  
+    <li><a href="../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module NewRelic::Control::Configuration</h1>
+
+  <div id="description" class="description">
+    
+<p>used to contain methods to look up settings from the configuration located
+in newrelic.yml</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">settings</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-apdex_t" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">apdex_t</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="apdex_t-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apdex_t</span>
+  <span class="ruby-comment"># Always initialized with a default</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'apdex_t'</span>).<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- apdex_t-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- apdex_t-method -->
+
+    
+      <div id="method-i-app_names" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">app_names</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="app_names-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">app_names</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>[<span class="ruby-string">'app_name'</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>[<span class="ruby-string">'app_name'</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>[<span class="ruby-string">'app_name'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">';'</span>)
+  <span class="ruby-keyword">else</span> [ <span class="ruby-identifier">env</span> ]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- app_names-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- app_names-method -->
+
+    
+      <div id="method-i-browser_monitoring_auto_instrument-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">browser_monitoring_auto_instrument?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>whether we should install the <a
+href="../Rack/BrowserMonitoring.html">NewRelic::Rack::BrowserMonitoring</a>
+middleware automatically on Rails applications</p>
+          
+
+          
+          <div class="method-source-code" id="browser_monitoring_auto_instrument-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">browser_monitoring_auto_instrument?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'browser_monitoring'</span>, {}).<span class="ruby-identifier">fetch</span>(<span class="ruby-string">'auto_instrument'</span>, <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- browser_monitoring_auto_instrument-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- browser_monitoring_auto_instrument-3F-method -->
+
+    
+      <div id="method-i-capture_params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">capture_params</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="capture_params-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">capture_params</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'capture_params'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- capture_params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- capture_params-method -->
+
+    
+      <div id="method-i-developer_mode-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">developer_mode?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if we are capturing data and displaying in /newrelic</p>
+          
+
+          
+          <div class="method-source-code" id="developer_mode-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">developer_mode?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'developer_mode'</span>, <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'developer'</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- developer_mode-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- developer_mode-3F-method -->
+
+    
+      <div id="method-i-disable_backtrace_cleanup-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable_backtrace_cleanup?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="disable_backtrace_cleanup-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_backtrace_cleanup?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'disable_backtrace_cleanup'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disable_backtrace_cleanup-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disable_backtrace_cleanup-3F-method -->
+
+    
+      <div id="method-i-disable_serialization-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable_serialization=</span><span
+            class="method-args">(b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="disable_serialization-3D-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_serialization=</span>(<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">self</span>[<span class="ruby-string">'disable_serialization'</span>] = <span class="ruby-identifier">b</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disable_serialization-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disable_serialization-3D-method -->
+
+    
+      <div id="method-i-disable_serialization-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable_serialization?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="disable_serialization-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_serialization?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'disable_serialization'</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disable_serialization-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disable_serialization-3F-method -->
+
+    
+      <div id="method-i-dispatcher" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dispatcher</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dispatcher-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dispatcher</span>
+  (<span class="ruby-keyword">self</span>[<span class="ruby-string">'dispatcher'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>[<span class="ruby-string">'dispatcher'</span>].<span class="ruby-identifier">to_sym</span>) <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dispatcher-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dispatcher-method -->
+
+    
+      <div id="method-i-dispatcher_instance_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dispatcher_instance_id</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dispatcher_instance_id-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dispatcher_instance_id</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-string">'dispatcher_instance_id'</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dispatcher_instance_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dispatcher_instance_id-method -->
+
+    
+      <div id="method-i-fetch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch</span><span
+            class="method-args">(key, default=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">default</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">default</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetch-method -->
+
+    
+      <div id="method-i-license_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">license_key</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="license_key-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">license_key</span>
+  <span class="ruby-identifier">env_setting</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'NEW_RELIC_LICENSE_KEY'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'NEWRELIC_LICENSE_KEY'</span>]
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'license_key'</span>, <span class="ruby-identifier">env_setting</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- license_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- license_key-method -->
+
+    
+      <div id="method-i-log_file_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log_file_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="log_file_path-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log_file_path</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'log_file_path'</span>, <span class="ruby-string">'log/'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log_file_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log_file_path-method -->
+
+    
+      <div id="method-i-merge_defaults" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_defaults</span><span
+            class="method-args">(settings_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_defaults-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge_defaults</span>(<span class="ruby-identifier">settings_hash</span>)
+  <span class="ruby-identifier">s</span> = {
+    <span class="ruby-string">'host'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'collector.newrelic.com'</span>,
+    <span class="ruby-string">'ssl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>,
+    <span class="ruby-string">'log_level'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'info'</span>,
+    <span class="ruby-string">'apdex_t'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0.5</span>
+  }
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">settings_hash</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">settings_hash</span>
+  <span class="ruby-comment"># monitor_daemons replaced with agent_enabled</span>
+  <span class="ruby-identifier">s</span>[<span class="ruby-string">'agent_enabled'</span>] = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'monitor_daemons'</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>[<span class="ruby-string">'agent_enabled'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'monitor_daemons'</span>)
+  <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_defaults-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_defaults-method -->
+
+    
+      <div id="method-i-merge_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_options</span><span
+            class="method-args">(options, hash=self)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Merge the given options into the config options. They might be a nested
+hash</p>
+          
+
+          
+          <div class="method-source-code" id="merge_options-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">hash</span>=<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-value">:config</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+      <span class="ruby-identifier">merge_options</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">||=</span> {})
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_options-method -->
+
+    
+      <div id="method-i-merge_server_side_config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_server_side_config</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_server_side_config-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge_server_side_config</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">remove_server_controlled_configs</span>
+  <span class="ruby-identifier">config</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'.'</span>)
+      <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>)
+      <span class="ruby-identifier">config</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">first</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">config</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">first</span>][<span class="ruby-identifier">key</span>[<span class="ruby-value">1</span>]] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">config</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">merge_options</span>(<span class="ruby-identifier">config</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_server_side_config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_server_side_config-method -->
+
+    
+      <div id="method-i-monitor_mode-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">monitor_mode?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if we are sending data to the server, monitoring production</p>
+          
+
+          
+          <div class="method-source-code" id="monitor_mode-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">monitor_mode?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'monitor_mode'</span>, <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'enabled'</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- monitor_mode-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- monitor_mode-3F-method -->
+
+    
+      <div id="method-i-multi_threaded-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">multi_threaded?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="multi_threaded-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">multi_threaded?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'multi_threaded'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- multi_threaded-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- multi_threaded-3F-method -->
+
+    
+      <div id="method-i-post_size_limit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post_size_limit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>defaults to 2MiB</p>
+          
+
+          
+          <div class="method-source-code" id="post_size_limit-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post_size_limit</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'post_size_limit'</span>, <span class="ruby-value">2</span> * <span class="ruby-value">1024</span> * <span class="ruby-value">1024</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- post_size_limit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- post_size_limit-method -->
+
+    
+      <div id="method-i-remove_server_controlled_configs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_server_controlled_configs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_server_controlled_configs-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_server_controlled_configs</span>
+  <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'transaction_tracer'</span>)
+  <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'slow_sql'</span>)
+  <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'error_collector'</span>)
+  <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'capture_params'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_server_controlled_configs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_server_controlled_configs-method -->
+
+    
+      <div id="method-i-send_data_on_exit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_data_on_exit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Configuration.html">Configuration</a> option of the same name to
+indicate that we should flush data to the server on exiting.  Defaults to
+true.</p>
+          
+
+          
+          <div class="method-source-code" id="send_data_on_exit-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_data_on_exit</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'send_data_on_exit'</span>, <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_data_on_exit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_data_on_exit-method -->
+
+    
+      <div id="method-i-settings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">settings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="settings-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">settings</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@settings</span>
+    <span class="ruby-ivar">@settings</span> = (<span class="ruby-ivar">@yaml</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">merge_defaults</span>(<span class="ruby-ivar">@yaml</span>[<span class="ruby-identifier">env</span>])) <span class="ruby-operator">||</span> {}
+    <span class="ruby-comment"># At the time we bind the settings, we also need to run this little piece</span>
+    <span class="ruby-comment"># of magic which allows someone to augment the id with the app name, necessary</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-string">'multi_homed'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">app_names</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span>
+        <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{app_names.first}&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@local_env</span>.<span class="ruby-identifier">dispatcher_instance_id</span> = <span class="ruby-identifier">app_names</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@settings</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- settings-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- settings-method -->
+
+    
+      <div id="method-i-sync_startup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sync_startup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Configuration.html">Configuration</a> option of the same name to
+indicate that we should connect to New Relic synchronously on startup. 
+This means when the agent is loaded it won’t return without trying to set
+up the server connection at least once which can make startup take longer. 
+Defaults to false.</p>
+          
+
+          
+          <div class="method-source-code" id="sync_startup-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sync_startup</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'sync_startup'</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sync_startup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sync_startup-method -->
+
+    
+      <div id="method-i-use_ssl-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">use_ssl?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="use_ssl-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">use_ssl?</span>
+  <span class="ruby-ivar">@use_ssl</span> = <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'ssl'</span>, <span class="ruby-keyword">false</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@use_ssl</span>
+  <span class="ruby-ivar">@use_ssl</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- use_ssl-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- use_ssl-3F-method -->
+
+    
+      <div id="method-i-use_textmate-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">use_textmate?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if we should view files in textmate</p>
+          
+
+          
+          <div class="method-source-code" id="use_textmate-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">use_textmate?</span>
+  <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'textmate'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- use_textmate-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- use_textmate-3F-method -->
+
+    
+      <div id="method-i-validate_seed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_seed</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate_seed-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_seed</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-string">'validate_seed'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'NR_VALIDATE_SEED'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate_seed-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate_seed-method -->
+
+    
+      <div id="method-i-validate_token" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_token</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate_token-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_token</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-string">'validate_token'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'NR_VALIDATE_TOKEN'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate_token-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate_token-method -->
+
+    
+      <div id="method-i-verify_certificate-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verify_certificate?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>only verify certificates if you’re very sure you want this level of
+security, it includes possibly app-crashing dns lookups every connection to
+the server</p>
+          
+
+          
+          <div class="method-source-code" id="verify_certificate-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/control/configuration.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verify_certificate?</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@verify_certificate</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">use_ssl?</span>
+      <span class="ruby-ivar">@verify_certificate</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@verify_certificate</span> = <span class="ruby-identifier">fetch</span>(<span class="ruby-string">'verify_certificate'</span>, <span class="ruby-keyword">false</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@verify_certificate</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verify_certificate-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verify_certificate-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

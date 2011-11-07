@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Module: NewRelic::Agent::Agent::InstanceMethods</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/new_relic/agent/agent.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="InstanceMethods/Start.html">NewRelic::Agent::Agent::InstanceMethods::Start</a>
+  
+  
+  
+    <li><a class="include" href="InstanceMethods/StartWorkerThread.html">NewRelic::Agent::Agent::InstanceMethods::StartWorkerThread</a>
+  
+  
+  
+    <li><a class="include" href="InstanceMethods/Connect.html">NewRelic::Agent::Agent::InstanceMethods::Connect</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-after_fork">#after_fork</a>
+    
+    <li><a href="#method-i-connected-3F">#connected?</a>
+    
+    <li><a href="#method-i-end_transaction">#end_transaction</a>
+    
+    <li><a href="#method-i-log">#log</a>
+    
+    <li><a href="#method-i-merge_data_from">#merge_data_from</a>
+    
+    <li><a href="#method-i-pop_trace_execution_flag">#pop_trace_execution_flag</a>
+    
+    <li><a href="#method-i-push_trace_execution_flag">#push_trace_execution_flag</a>
+    
+    <li><a href="#method-i-record_transaction">#record_transaction</a>
+    
+    <li><a href="#method-i-reset_stats">#reset_stats</a>
+    
+    <li><a href="#method-i-serialize">#serialize</a>
+    
+    <li><a href="#method-i-set_record_sql">#set_record_sql</a>
+    
+    <li><a href="#method-i-set_record_tt">#set_record_tt</a>
+    
+    <li><a href="#method-i-shutdown">#shutdown</a>
+    
+    <li><a href="#method-i-start">#start</a>
+    
+    <li><a href="#method-i-start_transaction">#start_transaction</a>
+    
+    <li><a href="#method-i-started-3F">#started?</a>
+    
+    <li><a href="#method-i-unsent_errors_size">#unsent_errors_size</a>
+    
+    <li><a href="#method-i-unsent_timeslice_data">#unsent_timeslice_data</a>
+    
+    <li><a href="#method-i-unsent_traces_size">#unsent_traces_size</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../NewRelic.html">NewRelic</a>
+  
+    <li><a href="../../../NewRelic/Agent.html">NewRelic::Agent</a>
+  
+    <li><a href="../../../NewRelic/Agent/Agent.html">NewRelic::Agent::Agent</a>
+  
+    <li><a href="../../../NewRelic/Agent/Agent/ClassMethods.html">NewRelic::Agent::Agent::ClassMethods</a>
+  
+    <li><a href="../../../NewRelic/Agent/Agent/InstanceMethods.html">NewRelic::Agent::Agent::InstanceMethods</a>
+  
+    <li><a href="../../../NewRelic/Agent/Agent/InstanceMethods/Connect.html">NewRelic::Agent::Agent::InstanceMethods::Connect</a>
+  
+    <li><a href="../../../NewRelic/Agent/Agent/InstanceMethods/Start.html">NewRelic::Agent::Agent::InstanceMethods::Start</a>
+  
+    <li><a href="../../../NewRelic/Agent/Agent/InstanceMethods/StartWorkerThread.html">NewRelic::Agent::Agent::InstanceMethods::StartWorkerThread</a>
+  
+    <li><a href="../../../NewRelic/Agent/BackgroundLoadingError.html">NewRelic::Agent::BackgroundLoadingError</a>
+  
+    <li><a href="../../../NewRelic/Agent/BeaconConfiguration.html">NewRelic::Agent::BeaconConfiguration</a>
+  
+    <li><a href="../../../NewRelic/Agent/BrowserMonitoring.html">NewRelic::Agent::BrowserMonitoring</a>
+  
+    <li><a href="../../../NewRelic/Agent/BrowserMonitoring/DummyMetricFrame.html">NewRelic::Agent::BrowserMonitoring::DummyMetricFrame</a>
+  
+    <li><a href="../../../NewRelic/Agent/BusyCalculator.html">NewRelic::Agent::BusyCalculator</a>
+  
+    <li><a href="../../../NewRelic/Agent/Database.html">NewRelic::Agent::Database</a>
+  
+    <li><a href="../../../NewRelic/Agent/Database/ConnectionManager.html">NewRelic::Agent::Database::ConnectionManager</a>
+  
+    <li><a href="../../../NewRelic/Agent/Database/Obfuscator.html">NewRelic::Agent::Database::Obfuscator</a>
+  
+    <li><a href="../../../NewRelic/Agent/ErrorCollector.html">NewRelic::Agent::ErrorCollector</a>
+  
+    <li><a href="../../../NewRelic/Agent/ErrorCollector/NoticeError.html">NewRelic::Agent::ErrorCollector::NoticeError</a>
+  
+    <li><a href="../../../NewRelic/Agent/ForceDisconnectException.html">NewRelic::Agent::ForceDisconnectException</a>
+  
+    <li><a href="../../../NewRelic/Agent/ForceRestartException.html">NewRelic::Agent::ForceRestartException</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation.html">NewRelic::Agent::Instrumentation</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/ActiveRecordInstrumentation.html">NewRelic::Agent::Instrumentation::ActiveRecordInstrumentation</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/ControllerInstrumentation.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/ControllerInstrumentation/ClassMethods.html">NewRelic::Agent::Instrumentation::ControllerInstrumentation::ClassMethods</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/DataMapperInstrumentation.html">NewRelic::Agent::Instrumentation::DataMapperInstrumentation</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Memcache.html">NewRelic::Agent::Instrumentation::Memcache</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/MetricFrame.html">NewRelic::Agent::Instrumentation::MetricFrame</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/MetricFrame/Pop.html">NewRelic::Agent::Instrumentation::MetricFrame::Pop</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/QueueTime.html">NewRelic::Agent::Instrumentation::QueueTime</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Rack.html">NewRelic::Agent::Instrumentation::Rack</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Rails3.html">NewRelic::Agent::Instrumentation::Rails3</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Rails3/ActionController.html">NewRelic::Agent::Instrumentation::Rails3::ActionController</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Rails3/ActionView.html">NewRelic::Agent::Instrumentation::Rails3::ActionView</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Rails3/ActionView/PartialRenderer.html">NewRelic::Agent::Instrumentation::Rails3::ActionView::PartialRenderer</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Rails3/Errors.html">NewRelic::Agent::Instrumentation::Rails3::Errors</a>
+  
+    <li><a href="../../../NewRelic/Agent/Instrumentation/Sinatra.html">NewRelic::Agent::Instrumentation::Sinatra</a>
+  
+    <li><a href="../../../NewRelic/Agent/LicenseException.html">NewRelic::Agent::LicenseException</a>
+  
+    <li><a href="../../../NewRelic/Agent/MethodTracer.html">NewRelic::Agent::MethodTracer</a>
+  
+    <li><a href="../../../NewRelic/Agent/MethodTracer/ClassMethods.html">NewRelic::Agent::MethodTracer::ClassMethods</a>
+  
+    <li><a href="../../../NewRelic/Agent/MethodTracer/ClassMethods/AddMethodTracer.html">NewRelic::Agent::MethodTracer::ClassMethods::AddMethodTracer</a>
+  
+    <li><a href="../../../NewRelic/Agent/MethodTracer/InstanceMethods.html">NewRelic::Agent::MethodTracer::InstanceMethods</a>
+  
+    <li><a href="../../../NewRelic/Agent/MethodTracer/InstanceMethods/TraceExecutionScoped.html">NewRelic::Agent::MethodTracer::InstanceMethods::TraceExecutionScoped</a>
+  
+    <li><a href="../../../NewRelic/Agent/PostTooBigException.html">NewRelic::Agent::PostTooBigException</a>
+  
+    <li><a href="../../../NewRelic/Agent/Sampler.html">NewRelic::Agent::Sampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/Sampler/Unsupported.html">NewRelic::Agent::Sampler::Unsupported</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers.html">NewRelic::Agent::Samplers</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/CpuSampler.html">NewRelic::Agent::Samplers::CpuSampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/DelayedJobLockSampler.html">NewRelic::Agent::Samplers::DelayedJobLockSampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/MemorySampler.html">NewRelic::Agent::Samplers::MemorySampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/MemorySampler/Base.html">NewRelic::Agent::Samplers::MemorySampler::Base</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/MemorySampler/JavaHeapSampler.html">NewRelic::Agent::Samplers::MemorySampler::JavaHeapSampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/MemorySampler/ProcStatus.html">NewRelic::Agent::Samplers::MemorySampler::ProcStatus</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/MemorySampler/ShellPS.html">NewRelic::Agent::Samplers::MemorySampler::ShellPS</a>
+  
+    <li><a href="../../../NewRelic/Agent/Samplers/ObjectSampler.html">NewRelic::Agent::Samplers::ObjectSampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/ServerConnectionException.html">NewRelic::Agent::ServerConnectionException</a>
+  
+    <li><a href="../../../NewRelic/Agent/ServerError.html">NewRelic::Agent::ServerError</a>
+  
+    <li><a href="../../../NewRelic/Agent/ShimAgent.html">NewRelic::Agent::ShimAgent</a>
+  
+    <li><a href="../../../NewRelic/Agent/SlowSql.html">NewRelic::Agent::SlowSql</a>
+  
+    <li><a href="../../../NewRelic/Agent/SqlSampler.html">NewRelic::Agent::SqlSampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/SqlTrace.html">NewRelic::Agent::SqlTrace</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine.html">NewRelic::Agent::StatsEngine</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/GCProfiler.html">NewRelic::Agent::StatsEngine::GCProfiler</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/GCProfiler/Profiler.html">NewRelic::Agent::StatsEngine::GCProfiler::Profiler</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/GCProfiler/RailsBench.html">NewRelic::Agent::StatsEngine::GCProfiler::RailsBench</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/GCProfiler/Rubinius.html">NewRelic::Agent::StatsEngine::GCProfiler::Rubinius</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/GCProfiler/Ruby19.html">NewRelic::Agent::StatsEngine::GCProfiler::Ruby19</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/MetricStats.html">NewRelic::Agent::StatsEngine::MetricStats</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/MetricStats/Harvest.html">NewRelic::Agent::StatsEngine::MetricStats::Harvest</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/MetricStats/SynchronizedHash.html">NewRelic::Agent::StatsEngine::MetricStats::SynchronizedHash</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/Samplers.html">NewRelic::Agent::StatsEngine::Samplers</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/ScopeStackElement.html">NewRelic::Agent::StatsEngine::ScopeStackElement</a>
+  
+    <li><a href="../../../NewRelic/Agent/StatsEngine/Transactions.html">NewRelic::Agent::StatsEngine::Transactions</a>
+  
+    <li><a href="../../../NewRelic/Agent/TransactionInfo.html">NewRelic::Agent::TransactionInfo</a>
+  
+    <li><a href="../../../NewRelic/Agent/TransactionSampleBuilder.html">NewRelic::Agent::TransactionSampleBuilder</a>
+  
+    <li><a href="../../../NewRelic/Agent/TransactionSampler.html">NewRelic::Agent::TransactionSampler</a>
+  
+    <li><a href="../../../NewRelic/Agent/TransactionSqlData.html">NewRelic::Agent::TransactionSqlData</a>
+  
+    <li><a href="../../../NewRelic/Agent/WorkerLoop.html">NewRelic::Agent::WorkerLoop</a>
+  
+    <li><a href="../../../NewRelic/ApdexStats.html">NewRelic::ApdexStats</a>
+  
+    <li><a href="../../../NewRelic/BasicStats.html">NewRelic::BasicStats</a>
+  
+    <li><a href="../../../NewRelic/ChainedCall.html">NewRelic::ChainedCall</a>
+  
+    <li><a href="../../../NewRelic/CollectionHelper.html">NewRelic::CollectionHelper</a>
+  
+    <li><a href="../../../NewRelic/Command.html">NewRelic::Command</a>
+  
+    <li><a href="../../../NewRelic/Command/CommandFailure.html">NewRelic::Command::CommandFailure</a>
+  
+    <li><a href="../../../NewRelic/Command/Deployments.html">NewRelic::Command::Deployments</a>
+  
+    <li><a href="../../../NewRelic/Command/Install.html">NewRelic::Command::Install</a>
+  
+    <li><a href="../../../NewRelic/Control.html">NewRelic::Control</a>
+  
+    <li><a href="../../../NewRelic/Control/ClassMethods.html">NewRelic::Control::ClassMethods</a>
+  
+    <li><a href="../../../NewRelic/Control/Configuration.html">NewRelic::Control::Configuration</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks.html">NewRelic::Control::Frameworks</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks/External.html">NewRelic::Control::Frameworks::External</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks/Merb.html">NewRelic::Control::Frameworks::Merb</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks/Rails.html">NewRelic::Control::Frameworks::Rails</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks/Rails3.html">NewRelic::Control::Frameworks::Rails3</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks/Ruby.html">NewRelic::Control::Frameworks::Ruby</a>
+  
+    <li><a href="../../../NewRelic/Control/Frameworks/Sinatra.html">NewRelic::Control::Frameworks::Sinatra</a>
+  
+    <li><a href="../../../NewRelic/Control/InstanceMethods.html">NewRelic::Control::InstanceMethods</a>
+  
+    <li><a href="../../../NewRelic/Control/Instrumentation.html">NewRelic::Control::Instrumentation</a>
+  
+    <li><a href="../../../NewRelic/Control/LoggingMethods.html">NewRelic::Control::LoggingMethods</a>
+  
+    <li><a href="../../../NewRelic/Control/Profiling.html">NewRelic::Control::Profiling</a>
+  
+    <li><a href="../../../NewRelic/Control/ServerMethods.html">NewRelic::Control::ServerMethods</a>
+  
+    <li><a href="../../../NewRelic/DataSerialization.html">NewRelic::DataSerialization</a>
+  
+    <li><a href="../../../NewRelic/DataSerialization/ClassMethods.html">NewRelic::DataSerialization::ClassMethods</a>
+  
+    <li><a href="../../../NewRelic/DelayedJobInjection.html">NewRelic::DelayedJobInjection</a>
+  
+    <li><a href="../../../NewRelic/Instrumentation.html">NewRelic::Instrumentation</a>
+  
+    <li><a href="../../../NewRelic/Instrumentation/ActsAsSolrInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation</a>
+  
+    <li><a href="../../../NewRelic/Instrumentation/ActsAsSolrInstrumentation/ParserMethodsInstrumentation.html">NewRelic::Instrumentation::ActsAsSolrInstrumentation::ParserMethodsInstrumentation</a>
+  
+    <li><a href="../../../NewRelic/LanguageSupport.html">NewRelic::LanguageSupport</a>
+  
+    <li><a href="../../../NewRelic/LanguageSupport/Control.html">NewRelic::LanguageSupport::Control</a>
+  
+    <li><a href="../../../NewRelic/LanguageSupport/DataSerialization.html">NewRelic::LanguageSupport::DataSerialization</a>
+  
+    <li><a href="../../../NewRelic/LanguageSupport/SynchronizedHash.html">NewRelic::LanguageSupport::SynchronizedHash</a>
+  
+    <li><a href="../../../NewRelic/LocalEnvironment.html">NewRelic::LocalEnvironment</a>
+  
+    <li><a href="../../../NewRelic/MerbBootLoader.html">NewRelic::MerbBootLoader</a>
+  
+    <li><a href="../../../NewRelic/MethodTraceStats.html">NewRelic::MethodTraceStats</a>
+  
+    <li><a href="../../../NewRelic/MetricData.html">NewRelic::MetricData</a>
+  
+    <li><a href="../../../NewRelic/MetricSpec.html">NewRelic::MetricSpec</a>
+  
+    <li><a href="../../../NewRelic/Metrics.html">NewRelic::Metrics</a>
+  
+    <li><a href="../../../NewRelic/NoticedError.html">NewRelic::NoticedError</a>
+  
+    <li><a href="../../../NewRelic/Rack.html">NewRelic::Rack</a>
+  
+    <li><a href="../../../NewRelic/Rack/BrowserMonitoring.html">NewRelic::Rack::BrowserMonitoring</a>
+  
+    <li><a href="../../../NewRelic/Rack/DeveloperMode.html">NewRelic::Rack::DeveloperMode</a>
+  
+    <li><a href="../../../NewRelic/Railtie.html">NewRelic::Railtie</a>
+  
+    <li><a href="../../../NewRelic/ScopedMethodTraceStats.html">NewRelic::ScopedMethodTraceStats</a>
+  
+    <li><a href="../../../NewRelic/Stats.html">NewRelic::Stats</a>
+  
+    <li><a href="../../../NewRelic/StatsBase.html">NewRelic::StatsBase</a>
+  
+    <li><a href="../../../NewRelic/TransactionAnalysis.html">NewRelic::TransactionAnalysis</a>
+  
+    <li><a href="../../../NewRelic/TransactionAnalysis/SegmentSummary.html">NewRelic::TransactionAnalysis::SegmentSummary</a>
+  
+    <li><a href="../../../NewRelic/TransactionSample.html">NewRelic::TransactionSample</a>
+  
+    <li><a href="../../../NewRelic/TransactionSample/CompositeSegment.html">NewRelic::TransactionSample::CompositeSegment</a>
+  
+    <li><a href="../../../NewRelic/TransactionSample/FakeSegment.html">NewRelic::TransactionSample::FakeSegment</a>
+  
+    <li><a href="../../../NewRelic/TransactionSample/Segment.html">NewRelic::TransactionSample::Segment</a>
+  
+    <li><a href="../../../NewRelic/TransactionSample/SummarySegment.html">NewRelic::TransactionSample::SummarySegment</a>
+  
+    <li><a href="../../../NewRelic/UrlRule.html">NewRelic::UrlRule</a>
+  
+    <li><a href="../../../NewRelic/UrlRule/RuleSet.html">NewRelic::UrlRule::RuleSet</a>
+  
+    <li><a href="../../../NewRelic/VersionNumber.html">NewRelic::VersionNumber</a>
+  
+    <li><a href="../../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../../ActionView/Base.html">ActionView::Base</a>
+  
+    <li><a href="../../../ActionView/Partials.html">ActionView::Partials</a>
+  
+    <li><a href="../../../ActionView/Partials/PartialRenderer.html">ActionView::Partials::PartialRenderer</a>
+  
+    <li><a href="../../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../../ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="../../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module NewRelic::Agent::Agent::InstanceMethods</h1>
+
+  <div id="description" class="description">
+    
+<p>Holds all the methods defined on <a
+href="../Agent.html">NewRelic::Agent::Agent</a> instances</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-beacon_configuration" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">beacon_configuration</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>a configuration for the Real User Monitoring system - handles things like
+static setup of the header for inclusion into pages</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-error_collector" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">error_collector</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>error collector is a simple collection of recorded errors</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-metric_ids" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">metric_ids</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>a cached set of <a
+href="InstanceMethods.html#attribute-i-metric_ids">#metric_ids</a> to save
+the collector some time - it returns a metric id for every metric name we
+send it, and in the future we transmit using the metric id only</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-obfuscator" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">obfuscator</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>holds a proc that is used to obfuscate sql statements</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-record_sql" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">record_sql</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>whether we should record raw, obfuscated, or no sql</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-sql_sampler" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sql_sampler</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-stats_engine" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">stats_engine</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>the statistics engine that holds all the timeslice data</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-transaction_sampler" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">transaction_sampler</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>the transaction sampler that handles recording transactions</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-url_rules" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">url_rules</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>in theory a set of rules applied by the agent to the output of its metrics.
+Currently unimplemented</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-after_fork" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_fork</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method should be called in a forked process after a fork. It assumes
+the parent process initialized the agent, but does not assume the agent
+started.</p>
+
+<p>The call is idempotent, but not re-entrant.</p>
+<ul><li>
+<p>It clears any metrics carried over from the parent process</p>
+</li><li>
+<p>Restarts the sampler thread if necessary</p>
+</li><li>
+<p>Initiates a new agent run and worker loop unless that was done in the
+parent process and <code>:force_reconnect</code> is not true</p>
+</li></ul>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:force_reconnect =&gt; true</code> to force the spawned process to
+establish a new connection, such as when forking a long running process.
+The default is false–it will only connect to the server if the parent had
+not connected.</p>
+</li><li>
+<p><code>:keep_retrying =&gt; false</code> if we try to initiate a new
+connection, this tells me to only try it once so this method returns
+quickly if there is some kind of latency with the server.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="after_fork-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_fork</span>(<span class="ruby-identifier">options</span>={})
+
+  <span class="ruby-comment"># @connected gets false after we fail to connect or have an error</span>
+  <span class="ruby-comment"># connecting.  @connected has nil if we haven't finished trying to connect.</span>
+  <span class="ruby-comment"># or we didn't attempt a connection because this is the master process</span>
+
+  <span class="ruby-comment"># log.debug &quot;Agent received after_fork notice in #$$: [#{control.agent_enabled?}; monitor=#{control.monitor_mode?}; connected: #{@connected.inspect}; thread=#{@worker_thread.inspect}]&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">control</span>.<span class="ruby-identifier">agent_enabled?</span> <span class="ruby-keyword">or</span>
+    <span class="ruby-operator">!</span><span class="ruby-identifier">control</span>.<span class="ruby-identifier">monitor_mode?</span> <span class="ruby-keyword">or</span>
+    <span class="ruby-ivar">@connected</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">or</span>
+    <span class="ruby-ivar">@worker_thread</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@worker_thread</span>.<span class="ruby-identifier">alive?</span>
+
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Starting the worker thread in #$$ after forking.&quot;</span>
+
+  <span class="ruby-comment"># Clear out stats that are left over from parent process</span>
+  <span class="ruby-identifier">reset_stats</span>
+
+  <span class="ruby-comment"># Don't ever check to see if this is a spawner.  If we're in a forked process</span>
+  <span class="ruby-comment"># I'm pretty sure we're not also forking new instances.</span>
+  <span class="ruby-identifier">start_worker_thread</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">start_sampler_thread</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_fork-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_fork-method -->
+
+    
+      <div id="method-i-connected-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">connected?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return nil if not yet connected, true if successfully started and false if
+we failed to start.</p>
+          
+
+          
+          <div class="method-source-code" id="connected-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">connected?</span>
+  <span class="ruby-ivar">@connected</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- connected-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- connected-3F-method -->
+
+    
+      <div id="method-i-end_transaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">end_transaction</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tells the statistics engine we are ending a transaction</p>
+          
+
+          
+          <div class="method-source-code" id="end_transaction-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_transaction</span>
+  <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">end_transaction</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- end_transaction-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- end_transaction-method -->
+
+    
+      <div id="method-i-log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Shorthand to the <a
+href="../../Agent.html#method-i-logger">NewRelic::Agent#logger</a> method</p>
+          
+
+          
+          <div class="method-source-code" id="log-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log</span>
+  <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">logger</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log-method -->
+
+    
+      <div id="method-i-merge_data_from" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_data_from</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Accepts data as provided by the serialize method and merges it into our
+current collection of data to send. Can be dangerous if we re-merge the
+same data more than once - it will be sent multiple times.</p>
+          
+
+          
+          <div class="method-source-code" id="merge_data_from-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 909</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge_data_from</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">metrics</span>, <span class="ruby-identifier">transaction_traces</span>, <span class="ruby-identifier">errors</span> = <span class="ruby-identifier">data</span>
+  <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">merge_data</span>(<span class="ruby-identifier">metrics</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">metrics</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">transaction_traces</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@traces</span>
+      <span class="ruby-ivar">@traces</span> = <span class="ruby-ivar">@traces</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">transaction_traces</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@traces</span> = <span class="ruby-identifier">transaction_traces</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">errors</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@unsent_errors</span>
+      <span class="ruby-ivar">@unsent_errors</span> = <span class="ruby-ivar">@unsent_errors</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">errors</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@unsent_errors</span> = <span class="ruby-identifier">errors</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_data_from-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_data_from-method -->
+
+    
+      <div id="method-i-pop_trace_execution_flag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop_trace_execution_flag</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pop the current trace execution status.  Restore trace execution status to
+what it was before we pushed the current flag.</p>
+          
+
+          
+          <div class="method-source-code" id="pop_trace_execution_flag-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 272</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pop_trace_execution_flag</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:newrelic_untraced</span>].<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:newrelic_untraced</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pop_trace_execution_flag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pop_trace_execution_flag-method -->
+
+    
+      <div id="method-i-push_trace_execution_flag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_trace_execution_flag</span><span
+            class="method-args">(should_trace=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Push flag indicating whether we should be tracing in this thread. This uses
+a stack which allows us to disable tracing children of a transaction
+without affecting the tracing of the whole transaction</p>
+          
+
+          
+          <div class="method-source-code" id="push_trace_execution_flag-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push_trace_execution_flag</span>(<span class="ruby-identifier">should_trace</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:newrelic_untraced</span>]
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>)
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:newrelic_untraced</span>] = []
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:newrelic_untraced</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">should_trace</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- push_trace_execution_flag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- push_trace_execution_flag-method -->
+
+    
+      <div id="method-i-record_transaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">record_transaction</span><span
+            class="method-args">(duration_seconds, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>fakes out a transaction that did not happen in this process by creating
+apdex, summary metrics, and recording statistics for the transaction</p>
+
+<p>This method is <strong>deprecated</strong> - it may be removed in future
+versions of the agent</p>
+          
+
+          
+          <div class="method-source-code" id="record_transaction-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">record_transaction</span>(<span class="ruby-identifier">duration_seconds</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">is_error</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">'is_error'</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'error_message'</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'exception'</span>]
+  <span class="ruby-identifier">metric</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">'metric'</span>]
+  <span class="ruby-identifier">metric</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'uri'</span>] <span class="ruby-comment"># normalize this with url rules</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;metric or uri arguments required&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">metric</span>
+  <span class="ruby-identifier">metric_info</span> = <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricParser</span>.<span class="ruby-identifier">for_metric_named</span>(<span class="ruby-identifier">metric</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">metric_info</span>.<span class="ruby-identifier">is_web_transaction?</span>
+    <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span><span class="ruby-operator">::</span><span class="ruby-constant">Instrumentation</span><span class="ruby-operator">::</span><span class="ruby-constant">MetricFrame</span>.<span class="ruby-identifier">record_apdex</span>(<span class="ruby-identifier">metric_info</span>, <span class="ruby-identifier">duration_seconds</span>, <span class="ruby-identifier">duration_seconds</span>, <span class="ruby-identifier">is_error</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">metrics</span> = <span class="ruby-identifier">metric_info</span>.<span class="ruby-identifier">summary_metrics</span>
+
+  <span class="ruby-identifier">metrics</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">metric</span>
+  <span class="ruby-identifier">metrics</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">stats</span> = <span class="ruby-identifier">stats_engine</span>.<span class="ruby-identifier">get_stats_no_scope</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">stats</span>.<span class="ruby-identifier">record_data_point</span>(<span class="ruby-identifier">duration_seconds</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_error</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'exception'</span>]
+      <span class="ruby-identifier">e</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">'exception'</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'error_message'</span>]
+      <span class="ruby-identifier">e</span> = <span class="ruby-constant">Exception</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'error_message'</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">e</span> = <span class="ruby-constant">Exception</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">'Unknown Error'</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">error_collector</span>.<span class="ruby-identifier">notice_error</span> <span class="ruby-identifier">e</span>, <span class="ruby-value">:uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">'uri'</span>], <span class="ruby-value">:metric</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">metric</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># busy time ?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- record_transaction-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- record_transaction-method -->
+
+    
+      <div id="method-i-reset_stats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_stats</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Clear out the metric data, errors, and transaction traces, making sure the
+agent is in a fresh state</p>
+          
+
+          
+          <div class="method-source-code" id="reset_stats-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 439</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_stats</span>
+  <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">reset_stats</span>
+  <span class="ruby-ivar">@unsent_errors</span> = []
+  <span class="ruby-ivar">@traces</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@unsent_timeslice_data</span> = {}
+  <span class="ruby-ivar">@last_harvest_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-ivar">@launch_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset_stats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset_stats-method -->
+
+    
+      <div id="method-i-serialize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">serialize</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Serialize all the important data that the agent might want to send to the
+server. We could be sending this to file ( common in short-running
+background transactions ) or alternately we could serialize via a pipe or
+socket to a local aggregation device</p>
+          
+
+          
+          <div class="method-source-code" id="serialize-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 894</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">serialize</span>
+  <span class="ruby-identifier">accumulator</span> = []
+  <span class="ruby-identifier">accumulator</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">harvest_transaction_traces</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@transaction_sampler</span>
+  <span class="ruby-identifier">accumulator</span>[<span class="ruby-value">2</span>] = <span class="ruby-identifier">harvest_errors</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@error_collector</span>
+  <span class="ruby-identifier">accumulator</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">harvest_timeslice_data</span>
+  <span class="ruby-identifier">reset_stats</span>
+  <span class="ruby-ivar">@metric_ids</span> = {}
+  <span class="ruby-identifier">accumulator</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- serialize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- serialize-method -->
+
+    
+      <div id="method-i-set_record_sql" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_record_sql</span><span
+            class="method-args">(should_record)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets a thread local variable as to whether we should or should not record
+sql in the current thread. Returns the previous value, if there is one</p>
+          
+
+          
+          <div class="method-source-code" id="set_record_sql-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_record_sql</span>(<span class="ruby-identifier">should_record</span>)
+  <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-value">:record_sql</span>]
+  <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-value">:record_sql</span>] = <span class="ruby-identifier">should_record</span>
+  <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">prev</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_record_sql-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_record_sql-method -->
+
+    
+      <div id="method-i-set_record_tt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_record_tt</span><span
+            class="method-args">(should_record)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets a thread local variable as to whether we should or should not record
+transaction traces in the current thread. Returns the previous value, if
+there is one</p>
+          
+
+          
+          <div class="method-source-code" id="set_record_tt-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_record_tt</span>(<span class="ruby-identifier">should_record</span>)
+  <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-value">:record_tt</span>]
+  <span class="ruby-constant">Thread</span><span class="ruby-operator">::</span><span class="ruby-identifier">current</span>[<span class="ruby-value">:record_tt</span>] = <span class="ruby-identifier">should_record</span>
+  <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">prev</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_record_tt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_record_tt-method -->
+
+    
+      <div id="method-i-shutdown" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shutdown</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Attempt a graceful shutdown of the agent, running the worker loop if it
+exists and is running.</p>
+
+<p>Options: :force_send =&gt; (true/false) # force the agent to send data
+before shutting down</p>
+          
+
+          
+          <div class="method-source-code" id="shutdown-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shutdown</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">run_loop_before_exit</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:force_send</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">started?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@worker_loop</span>
+    <span class="ruby-ivar">@worker_loop</span>.<span class="ruby-identifier">run_task</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">run_loop_before_exit</span>
+    <span class="ruby-ivar">@worker_loop</span>.<span class="ruby-identifier">stop</span>
+
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Starting Agent shutdown&quot;</span>
+
+    <span class="ruby-comment"># if litespeed, then ignore all future SIGUSR1 - it's</span>
+    <span class="ruby-comment"># litespeed trying to shut us down</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">dispatcher</span> <span class="ruby-operator">==</span> <span class="ruby-value">:litespeed</span>
+      <span class="ruby-constant">Signal</span>.<span class="ruby-identifier">trap</span>(<span class="ruby-string">&quot;SIGUSR1&quot;</span>, <span class="ruby-string">&quot;IGNORE&quot;</span>)
+      <span class="ruby-constant">Signal</span>.<span class="ruby-identifier">trap</span>(<span class="ruby-string">&quot;SIGTERM&quot;</span>, <span class="ruby-string">&quot;IGNORE&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">NewRelic</span><span class="ruby-operator">::</span><span class="ruby-constant">Agent</span>.<span class="ruby-identifier">disable_all_tracing</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">graceful_disconnect</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">error</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@started</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- shutdown-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- shutdown-method -->
+
+    
+      <div id="method-i-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Logs a bunch of data and starts the agent, if needed</p>
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 425</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">already_started?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">disabled?</span>
+  <span class="ruby-ivar">@started</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@local_host</span> = <span class="ruby-identifier">determine_host</span>
+  <span class="ruby-identifier">log_dispatcher</span>
+  <span class="ruby-identifier">log_app_names</span>
+  <span class="ruby-identifier">config_transaction_tracer</span>
+  <span class="ruby-identifier">check_config_and_start_agent</span>
+  <span class="ruby-identifier">log_version_and_pid</span>
+  <span class="ruby-identifier">notify_log_file_location</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-method -->
+
+    
+      <div id="method-i-start_transaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_transaction</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tells the statistics engine we are starting a new transaction</p>
+          
+
+          
+          <div class="method-source-code" id="start_transaction-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_transaction</span>
+  <span class="ruby-ivar">@stats_engine</span>.<span class="ruby-identifier">start_transaction</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start_transaction-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start_transaction-method -->
+
+    
+      <div id="method-i-started-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">started?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if we have initialized and completed ‘start’</p>
+          
+
+          
+          <div class="method-source-code" id="started-3F-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">started?</span>
+  <span class="ruby-ivar">@started</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- started-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- started-3F-method -->
+
+    
+      <div id="method-i-unsent_errors_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsent_errors_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the length of the unsent errors array, if it exists, otherwise nil</p>
+          
+
+          
+          <div class="method-source-code" id="unsent_errors_size-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unsent_errors_size</span>
+  <span class="ruby-ivar">@unsent_errors</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@unsent_errors</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unsent_errors_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unsent_errors_size-method -->
+
+    
+      <div id="method-i-unsent_timeslice_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsent_timeslice_data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the unsent timeslice data hash, if needed, and returns the
+number of keys it contains</p>
+          
+
+          
+          <div class="method-source-code" id="unsent_timeslice_data-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unsent_timeslice_data</span>
+  <span class="ruby-ivar">@unsent_timeslice_data</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-ivar">@unsent_timeslice_data</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unsent_timeslice_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unsent_timeslice_data-method -->
+
+    
+      <div id="method-i-unsent_traces_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsent_traces_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the length of the traces array, if it exists, otherwise nil</p>
+          
+
+          
+          <div class="method-source-code" id="unsent_traces_size-source">
+            <pre><span class="ruby-comment"># File lib/new_relic/agent/agent.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unsent_traces_size</span>
+  <span class="ruby-ivar">@traces</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@traces</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unsent_traces_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unsent_traces_size-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
