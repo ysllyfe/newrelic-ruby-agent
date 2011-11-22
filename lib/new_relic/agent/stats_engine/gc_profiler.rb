@@ -65,7 +65,7 @@ module NewRelic
           end
           
           def call_time
-            ::GC.time
+            ::GC.time # this should already be microseconds
           end
           
           def call_count
@@ -78,8 +78,10 @@ module NewRelic
             defined?(::GC::Profiler) && ::GC::Profiler.enabled?
           end
           
+          # microseconds spent in GC
+          # 1.9 total_time returns seconds.  Don't trust the docs.  It's seconds.
           def call_time
-            ::GC::Profiler.total_time * 1000.0
+            ::GC::Profiler.total_time * 1_000_000.0 # convert seconds to microseconds
           end
           
           def call_count
