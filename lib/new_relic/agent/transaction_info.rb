@@ -45,11 +45,22 @@ module NewRelic
 
       # clears any existing transaction info object and initializes a new one.
       # This starts the timer for the transaction.
-      def self.reset
+      def self.reset(request=nil)
         clear
-        get
-      end
+        instance = get
 
+        if request
+          agent_flag = request.cookies['NRAGENT']
+          if agent_flag
+            s = agent_flag.split("=")
+            if s.length == 2
+              if s[0] == "tk" && s[1]
+                instance.token = s[1]
+              end
+            end
+          end
+        end
+      end
     end
   end
 end
