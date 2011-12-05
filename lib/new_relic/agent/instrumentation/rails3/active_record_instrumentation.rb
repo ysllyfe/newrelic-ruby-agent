@@ -114,7 +114,11 @@ DependencyDetection.defer do
   executes do
     Rails.configuration.after_initialize do
       ActiveRecord::Base.class_eval do
-        NewRelic::Agent::Database::ConnectionManager.instance.config = connection.instance_eval{ @config }
+        begin
+          NewRelic::Agent::Database::ConnectionManager.instance.config = connection.instance_eval{ @config }
+        rescue
+          NewRelic::Agent.logger.warn("Failed trying to get ActiveRecord::Base connection config")
+        end
         class << self
           add_method_tracer :find_by_sql, 'ActiveRecord/#{self.name}/find_by_sql', :metric => false
           add_method_tracer :transaction, 'ActiveRecord/#{self.name}/transaction', :metric => false
