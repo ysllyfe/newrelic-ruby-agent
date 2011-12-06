@@ -145,11 +145,15 @@ module NewRelic
       end
       
       def file_path
-        "#{NewRelic::Control.instance.log_path}/newrelic_agent_store.db"
+        "#{NewRelic::Control.instance.log_path}/newrelic_agent_store_#{whoami}.db"
       end
 
       def pid_file_path
-        "#{NewRelic::Control.instance.log_path}/newrelic_agent_store.pid"
+        "#{NewRelic::Control.instance.log_path}/newrelic_agent_store_#{whoami}.pid"
+      end
+
+      def whoami
+        @whoami ||= `whoami`.strip
       end
     end
     extend ClassMethods

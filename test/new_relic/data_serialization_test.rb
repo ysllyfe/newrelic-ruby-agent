@@ -7,16 +7,23 @@ class NewRelic::DataSerializationTest < Test::Unit::TestCase
   def setup
     NewRelic::Control.instance['log_file_path'] = './log'
     @path = NewRelic::Control.instance.log_path
-    @file = "#{path}/newrelic_agent_store.db"
+    @file = NewRelic::DataSerialization.send(:file_path)
+    @pid_file = NewRelic::DataSerialization.send(:pid_file_path)
     Dir.mkdir(path) if !File.directory?(path)
     FileUtils.rm_rf(@file)
-    FileUtils.rm_rf("#{@path}/newrelic_agent_store.pid")
+    FileUtils.rm_rf(@pid_file)
   end
   
   def teardown
     # this gets set to true in some tests
     NewRelic::Control.instance['disable_serialization'] = false
     mocha_teardown
+  end
+
+  def test_file_name_includes_user_name_to_avoid_permission_conflicts
+    me = `whoami`.strip
+    assert_equal(File.basename(NewRelic::DataSerialization.send :file_path), "newrelic_agent_store_#{me}.db")
+    assert_equal(File.basename(NewRelic::DataSerialization.send :pid_file_path), "newrelic_agent_store_#{me}.pid")
   end
   
   def test_read_and_write_from_file_read_only
@@ -142,11 +149,11 @@ class NewRelic::DataSerializationTest < Test::Unit::TestCase
   end
   
   def test_pid_age_creates_pid_file_if_none_exists
-    assert(!File.exists?("#{@path}/newrelic_agent_store.pid"),
+    assert(!File.exists?(@pid_file),
            'pid file found, should not be there')
     assert(!NewRelic::DataSerialization.pid_too_old?,
            "new pid should not be too old")
-    assert(File.exists?("#{@path}/newrelic_agent_store.pid"),
+    assert(File.exists?(@pid_file),
            'pid file not found, should be there')
   end
 
