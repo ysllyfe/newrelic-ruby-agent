@@ -301,9 +301,9 @@ class NewRelic::Agent::Instrumentation::QueueTimeTest < Test::Unit::TestCase
   end
 
   def test_record_time_stat_with_end_after_start
-    record_time_stat('WebFrontend/WebServer/foo', 2, 1)
+    record_time_stat('WebFrontend/WebServer/foo', Time.at(2.0003), Time.at(2.0002))
   rescue RuntimeError => e
-    assert_equal("should not provide an end time less than start time: 1 is less than 2", e.message)
+    assert(e.message =~ /^should not provide an end time less than start time/ )
   end
 
   def test_convert_to_microseconds
