@@ -6,18 +6,20 @@ class NewRelic::MetricSpec
   
   # the maximum length of a metric name or metric scope
   MAX_LENGTH = 255
+  # only allocate range once since this can be run many times
+  LENGTH_RANGE=(0...MAX_LENGTH)
   # Need a "zero-arg" constructor so it can be instantiated from java (using
   # jruby) for sending responses to ruby agents from the java collector.
   #
   def initialize(metric_name = '', metric_scope = '')
-    self.name = (metric_name || '') && metric_name[0...MAX_LENGTH]
-    self.scope = metric_scope && metric_scope[0...MAX_LENGTH]
+    self.name = (metric_name || '') && metric_name[LENGTH_RANGE]
+    self.scope = metric_scope && metric_scope[LENGTH_RANGE]
   end
   
   # truncates the name and scope to the MAX_LENGTH
   def truncate!
-    self.name = name[0...MAX_LENGTH] if name && name.size > MAX_LENGTH
-    self.scope = scope[0...MAX_LENGTH] if scope && scope.size > MAX_LENGTH
+    self.name = name[LENGTH_RANGE] if name && name.size > MAX_LENGTH
+    self.scope = scope[LENGTH_RANGE] if scope && scope.size > MAX_LENGTH
   end
   
   def ==(o)
