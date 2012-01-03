@@ -13,8 +13,9 @@ require 'rubygems'
 # will be skipped.
 
 begin
-  #require 'config/environment'
-  require File.join(File.dirname(__FILE__),'..','..','rpm_test_app','config','environment')
+  # allow path to the test app to be overridden by an environment file, for
+  # easier testing in development.
+  require ENV['NR_TEST_APP_ENV_FILE'] || 'config/environment'
   begin
     require 'test_help'
   rescue LoadError
