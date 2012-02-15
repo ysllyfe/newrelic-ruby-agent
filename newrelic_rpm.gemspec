@@ -134,6 +134,7 @@ Gem::Specification.new do |s|
     "test/active_record_fixtures.rb",
     "test/config/newrelic.yml",
     "test/config/test_control.rb",
+    "test/fixtures/proc_cpuinfo.txt",
     "test/new_relic/agent/agent/connect_test.rb",
     "test/new_relic/agent/agent/start_test.rb",
     "test/new_relic/agent/agent/start_worker_thread_test.rb",
