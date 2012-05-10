@@ -256,6 +256,9 @@ module NewRelic
                 else
                   perform_action_without_newrelic_trace(*args)
                 end
+                if request && response
+                  NewRelic::Agent::BrowserMonitoring.insert_mobile_response_header(request, response)
+                end
               rescue => e
                 frame_data.notice_error(e)
                 raise

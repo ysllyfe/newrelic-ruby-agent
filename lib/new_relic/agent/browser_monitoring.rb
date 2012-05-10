@@ -55,6 +55,64 @@ module NewRelic
         generate_footer_js(config)
       end
 
+      module_function
+
+      def obfuscate(config, text)
+        obfuscated = ""
+        key_bytes = config.license_bytes
+        index = 0
+        text.each_byte{|byte|
+          obfuscated.concat((byte ^ key_bytes[index % 13].to_i))
+          index+=1
+        }
+
+        [obfuscated].pack("m0").gsub("\n", '')
+      end
+
+      def browser_monitoring_transaction_name
+        NewRelic::Agent::TransactionInfo.get.transaction_name
+      end
+
+      def browser_monitoring_queue_time
+        clamp_to_positive((current_metric_frame.queue_time.to_f * 1000.0).round)
+      end
+
+      def browser_monitoring_app_time
+        clamp_to_positive(((Time.now - browser_monitoring_start_time).to_f * 1000.0).round)
+      end
+
+      def current_metric_frame
+        Thread.current[:last_metric_frame] || @@dummy_metric_frame
+      end
+
+      def clamp_to_positive(value)
+        return 0.0 if value < 0
+        value
+      end
+
+      def browser_monitoring_start_time
+        NewRelic::Agent::TransactionInfo.get.start_time
+      end
+
+      def insert_mobile_response_header(request, response)
+        if (request.env['HTTP_X_NEWRELIC_MOBILE_TRACE'] == 'true' ||
+            request.env['X_NEWRELIC_MOBILE_TRACE'] == 'true' ) &&
+            NewRelic::Agent.instance.beacon_configuration
+
+          config = NewRelic::Agent.instance.beacon_configuration
+
+          response['X_NEWRELIC_BEACON_URL'] = beacon_url(request)
+
+          payload = %[{"application_id":"#{config.application_id}","transaction_name":"#{obfuscate(config, browser_monitoring_transaction_name)}","queue_time":#{browser_monitoring_queue_time},"app_time":#{browser_monitoring_app_time}}]
+          response['X_NEWRELIC_APP_SERVER_METRICS'] = payload
+        end
+      end
+
+      def beacon_url(request)
+        config = NewRelic::Agent.instance.beacon_configuration
+        "#{request.scheme || 'http'}://#{config.beacon}/mobile/1/#{config.browser_monitoring_key}"
+      end
+
       private
 
       def generate_footer_js(config)
@@ -68,23 +126,11 @@ module NewRelic
           ''
         end
       end
-
-      def browser_monitoring_transaction_name
-        NewRelic::Agent::TransactionInfo.get.transaction_name
-      end
-
-      def browser_monitoring_start_time
-        NewRelic::Agent::TransactionInfo.get.start_time
-      end
             
       def metric_frame_attribute(key)
         current_metric_frame.user_attributes[key] || ""
       end
-      
-      def current_metric_frame
-        Thread.current[:last_metric_frame] || @@dummy_metric_frame      
-      end
-      
+
       def tt_guid
         txn = NewRelic::Agent::TransactionInfo.get
         return txn.guid if txn.include_guid?
@@ -95,19 +141,6 @@ module NewRelic
         return NewRelic::Agent::TransactionInfo.get.token
       end
       
-      def clamp_to_positive(value)
-        return 0.0 if value < 0
-        value
-      end
-
-      def browser_monitoring_app_time
-        clamp_to_positive(((Time.now - browser_monitoring_start_time).to_f * 1000.0).round)
-      end
-
-      def browser_monitoring_queue_time
-        clamp_to_positive((current_metric_frame.queue_time.to_f * 1000.0).round)
-      end
-
       def footer_js_string(config, beacon, license_key, application_id)
         obfuscated_transaction_name = obfuscate(config, browser_monitoring_transaction_name)
         
@@ -124,18 +157,6 @@ module NewRelic
         else
           string
         end
-      end
-
-      def obfuscate(config, text)
-        obfuscated = ""
-        key_bytes = config.license_bytes
-        index = 0
-        text.each_byte{|byte|
-          obfuscated.concat((byte ^ key_bytes[index % 13].to_i))
-          index+=1
-        }
-
-        [obfuscated].pack("m0").gsub("\n", '')
       end
     end
   end
