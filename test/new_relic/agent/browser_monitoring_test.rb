@@ -328,7 +328,7 @@ var e=document.createElement("script");'
     response = Rack::Response.new
     
     NewRelic::Agent::BrowserMonitoring.insert_mobile_response_header(request, response)
-    assert_nil response['X_NEWRELIC_BEACON_URL']
+    assert_nil response['X-NewRelic-Beacon-Url']
   end
 
   def test_no_mobile_response_header_if_mobile_request_header_is_false
@@ -336,13 +336,13 @@ var e=document.createElement("script");'
     response = Rack::Response.new
 
     NewRelic::Agent::BrowserMonitoring.insert_mobile_response_header(request, response)
-    assert_nil response['X_NEWRELIC_BEACON_URL']
+    assert_nil response['X-NewRelic-Beacon-Url']
   end
   
   def test_place_beacon_url_header_when_given_mobile_request_header
     response = mobile_transaction    
     assert_equal('http://beacon/mobile/1/browserKey',
-                 response['X_NEWRELIC_BEACON_URL'])
+                 response['X-NewRelic-Beacon-Url'])
   end
   
   def test_place_beacon_url_header_when_given_mobile_request_header_with_https
@@ -350,7 +350,7 @@ var e=document.createElement("script");'
                                 'rack.url_scheme' => 'https')
     response = mobile_transaction(request)
     assert_equal('https://beacon/mobile/1/browserKey',
-                 response['X_NEWRELIC_BEACON_URL'])
+                 response['X-NewRelic-Beacon-Url'])
   end
 
   def test_place_beacon_payload_head_when_given_mobile_request_header
@@ -364,11 +364,11 @@ var e=document.createElement("script");'
       'app_time' => browser_monitoring_app_time
     }
     assert_equal(expected_payload,
-                 JSON.parse(response['X_NEWRELIC_APP_SERVER_METRICS']))
+                 JSON.parse(response['X-NewRelic-App-Server-Metrics']))
   end
 
   def mobile_transaction(request=nil)
-    request ||= Rack::Request.new('X_NEWRELIC_MOBILE_TRACE' => 'true')
+    request ||= Rack::Request.new('X-NewRelic-Mobile-Trace' => 'true')
     response = Rack::Response.new
     txn_data = OpenStruct.new(:transaction_name => 'a transaction name',
                               :start_time => Time.now)

@@ -95,18 +95,22 @@ module NewRelic
       end
 
       def insert_mobile_response_header(request, response)
-        if (request.env['HTTP_X_NEWRELIC_MOBILE_TRACE'] == 'true' ||
-            request.env['X_NEWRELIC_MOBILE_TRACE'] == 'true' ) &&
+        if mobile_header_found_in?(request) &&
             NewRelic::Agent.instance.beacon_configuration
 
           config = NewRelic::Agent.instance.beacon_configuration
 
           response['X-NewRelic-Beacon-Url'] = beacon_url(request)
 
-          account = obfuscate(config, metric_frame_attribute(:account))
-          payload = %[{"application_id":"#{config.application_id}","transaction_name":"#{obfuscate(config, browser_monitoring_transaction_name)}","queue_time":#{browser_monitoring_queue_time},"app_time":#{browser_monitoring_app_time},"account_id":"#{account}"}]
+          payload = %[{"application_id":"#{config.application_id}","transaction_name":"#{obfuscate(config, browser_monitoring_transaction_name)}","queue_time":#{browser_monitoring_queue_time},"app_time":#{browser_monitoring_app_time}}]
           response['X-NewRelic-App-Server-Metrics'] = payload
         end
+      end
+
+      def mobile_header_found_in?(request)
+        headers = ['HTTP_X_NEWRELIC_MOBILE_TRACE', 'X_NEWRELIC_MOBILE_TRACE',
+                   'X-NewRelic-Mobile-Trace']
+        headers.inject(false){|i,m| i || (request.env[m] == 'true')}
       end
 
       def beacon_url(request)
