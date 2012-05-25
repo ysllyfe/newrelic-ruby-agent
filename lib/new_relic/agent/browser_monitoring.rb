@@ -101,10 +101,11 @@ module NewRelic
 
           config = NewRelic::Agent.instance.beacon_configuration
 
-          response['X_NEWRELIC_BEACON_URL'] = beacon_url(request)
+          response['X-NewRelic-Beacon-Url'] = beacon_url(request)
 
-          payload = %[{"application_id":"#{config.application_id}","transaction_name":"#{obfuscate(config, browser_monitoring_transaction_name)}","queue_time":#{browser_monitoring_queue_time},"app_time":#{browser_monitoring_app_time}}]
-          response['X_NEWRELIC_APP_SERVER_METRICS'] = payload
+          account = obfuscate(config, metric_frame_attribute(:account))
+          payload = %[{"application_id":"#{config.application_id}","transaction_name":"#{obfuscate(config, browser_monitoring_transaction_name)}","queue_time":#{browser_monitoring_queue_time},"app_time":#{browser_monitoring_app_time},"account_id":"#{account}"}]
+          response['X-NewRelic-App-Server-Metrics'] = payload
         end
       end
 
