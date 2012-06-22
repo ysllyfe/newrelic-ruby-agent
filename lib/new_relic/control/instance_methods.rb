@@ -52,7 +52,8 @@ module NewRelic
         environment_name = options.delete(:env) and self.env = environment_name
         dispatcher = options.delete(:dispatcher) and @local_env.dispatcher = dispatcher
         dispatcher_instance_id = options.delete(:dispatcher_instance_id) and @local_env.dispatcher_instance_id = dispatcher_instance_id
-
+        
+        NewRelic::Agent::PipeChannelManager.listener.start if options.delete(:start_channel_listener)
 
         # Clear out the settings, if they've already been loaded.  It may be that
         # between calling init_plugin the first time and the second time, the env
@@ -70,14 +71,16 @@ module NewRelic
         Module.send :include, NewRelic::Agent::MethodTracer::ClassMethods
         Module.send :include, NewRelic::Agent::MethodTracer::InstanceMethods
         init_config(options)
-        NewRelic::Agent.agent = NewRelic::Agent::Agent.instance
-        if agent_enabled? && !NewRelic::Agent.instance.started?
-          setup_log unless logger_override
-          start_agent
-          install_instrumentation
-          load_samplers unless self['disable_samplers']
-          local_env.gather_environment_info
-          append_environment_info
+        if agent_enabled?
+          NewRelic::Agent.agent = NewRelic::Agent::Agent.instance
+          if !NewRelic::Agent.instance.started?
+            setup_log unless logger_override
+            start_agent
+            install_instrumentation
+            load_samplers unless self['disable_samplers']
+            local_env.gather_environment_info
+            append_environment_info
+          end
         elsif !agent_enabled?
           install_shim
         end
