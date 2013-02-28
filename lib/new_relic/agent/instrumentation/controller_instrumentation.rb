@@ -260,6 +260,7 @@ module NewRelic
 
           frame_data = _push_metric_frame(block_given? ? args : [])
           begin
+            NewRelic::Agent.logger.debug("Tracing block execution with metrics: [#{frame_data.recorded_metrics.inspect}]")
             NewRelic::Agent.trace_execution_scoped frame_data.recorded_metrics, :force => frame_data.force_flag do
               frame_data.start_transaction
               begin

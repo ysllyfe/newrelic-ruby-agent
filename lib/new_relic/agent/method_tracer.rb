@@ -235,6 +235,7 @@ module NewRelic
             set_if_nil(options, :metric)
             set_if_nil(options, :deduct_call_time_from_parent)
             first_name, metric_stats = get_metric_stats(metric_names, options)
+            NewRelic::Agent.logger.debug("trace_execution_scoped, first_name = #{first_name}")
             start_time, expected_scope = trace_execution_scoped_header(first_name, options)
             begin
               yield

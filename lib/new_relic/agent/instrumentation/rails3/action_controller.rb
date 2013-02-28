@@ -23,13 +23,16 @@ module NewRelic
           end
 
           def process_action(*args)
+            NewRelic::Agent.logger.debug("Calling instrumented Rails 3 process_action")
             # skip instrumentation if we are in an ignored action
             if _is_filtered?('do_not_trace')
+              NewRelic::Agent.logger.debug("Filtering based on do_not_trace flag")
               NewRelic::Agent.disable_all_tracing do
                 return super
               end
             end
 
+            NewRelic::Agent.logger.debug("perform_action_with_newrelic_trace: name='#{self.action_name}', path='#{newrelic_metric_path}', class_name = '#{self.class.name}'")
             perform_action_with_newrelic_trace(:category => :controller, :name => self.action_name, :path => newrelic_metric_path, :params => request.filtered_parameters, :class_name => self.class.name)  do
               super
             end
@@ -84,6 +87,7 @@ DependencyDetection.defer do
   executes do
     class ActionController::Base
       include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+      NewRelic::Agent.logger.debug("Including Rails 3 ActionController instrumentation module")
       include NewRelic::Agent::Instrumentation::Rails3::ActionController
     end
   end
