@@ -180,6 +180,7 @@ module NewRelic
         #   connection, this tells me to only try it once so this method returns
         #   quickly if there is some kind of latency with the server.
         def after_fork(options={})
+          NewRelic::Agent.logger.debug("in after_fork hook, options=#{options.inspect}")
           @forked = true
           Agent.config.apply_config(NewRelic::Agent::Configuration::ManualSource.new(options), 1)
 

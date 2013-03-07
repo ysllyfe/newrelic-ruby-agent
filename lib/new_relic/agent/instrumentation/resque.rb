@@ -57,20 +57,34 @@ DependencyDetection.defer do
         super(*args).extend NewRelic::Agent::Instrumentation::ResqueInstrumentationInstaller
       end
     end
-    
+
+    class Resque::Worker
+      def run_hook_with_logging(name, *args)
+        ::NewRelic::Agent.logger.debug("Running Resque hook '#{name}' in #{$$}")
+        run_hook_without_logging(name, *args)
+      end
+
+      alias_method :run_hook_without_logging, :run_hook
+      alias_method :run_hook, :run_hook_with_logging
+    end
+
+    NewRelic::Agent.logger.debug("Installing Resque fork hooks, can_fork? = #{NewRelic::LanguageSupport.can_fork?.inspect}")
     if NewRelic::LanguageSupport.can_fork?
       ::Resque.before_first_fork do
+        NewRelic::Agent.logger.debug("In default Resque before_first_fork hook")
         NewRelic::Agent.manual_start(:dispatcher   => :resque,
                                      :sync_startup => true,
                                      :start_channel_listener => true,
                                      :report_instance_busy => false)
       end
-      
+
       ::Resque.before_fork do |job|
+        NewRelic::Agent.logger.debug("In default Resque before_fork hook")
         NewRelic::Agent.register_report_channel(job.object_id)
       end
-      
+
       ::Resque.after_fork do |job|
+        NewRelic::Agent.logger.debug("In default Resque after_fork hook")
         NewRelic::Agent.after_fork(:report_to_channel => job.object_id)
       end
     end

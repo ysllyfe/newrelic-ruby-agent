@@ -11,6 +11,7 @@ module NewRelic
       extend self
 
       def register_report_channel(id)
+        NewRelic::Agent.logger.debug("Registering report channel with id=#{id}, listener started? = #{listener.started?.inspect}")
         listener.register_pipe(id)
       end
 
