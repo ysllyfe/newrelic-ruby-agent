@@ -180,10 +180,20 @@ module NewRelic
         #   connection, this tells me to only try it once so this method returns
         #   quickly if there is some kind of latency with the server.
         def after_fork(options={})
+          NewRelic::Agent.logger.debug("Running after_fork(#{options.inspect}) in #{$$}, dispatcher=#{NewRelic::Agent.config[:dispatcher]}")
+          if Thread.current.respond_to?(:backtrace)
+            bt = Thread.current.backtrace
+            if bt
+              NewRelic::Agent.logger.debug("after_fork called via: #{bt[0..5].join("\n\t")}")
+            else
+              NewRelic::Agent.logger.debug("failed to obtain backtrace for after_fork")
+            end
+          end
           @forked = true
           Agent.config.apply_config(NewRelic::Agent::Configuration::ManualSource.new(options), 1)
 
           if channel_id = options[:report_to_channel]
+            NewRelic::Agent.logger.debug("in after_fork, setting up PipeService channel_id=#{channel_id}, connected=#{connected?.inspect}")
             @service = NewRelic::Agent::PipeService.new(channel_id)
             if connected?
               @connected_pid = $$
@@ -193,6 +203,8 @@ module NewRelic
               @service.shutdown(Time.now)
               disconnect
             end
+          else
+            NewRelic::Agent.logger.debug("in after_fork, report_to_channel was not set")
           end
 
           return if !Agent.config[:agent_enabled] ||
@@ -489,6 +501,7 @@ module NewRelic
 
           @started = true
           @local_host = determine_host
+          ::NewRelic::Agent.logger.debug("Determined hostname as '#{@local_host}'")
           log_startup
           check_config_and_start_agent
           log_version_and_pid
