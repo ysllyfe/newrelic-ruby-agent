@@ -5,11 +5,7 @@ group :development do
   # There's problems with the test task in rake 10
   # https://github.com/jimweirich/rake/issues/144
   gem 'rake', '0.9.6'
-  if RUBY_VERSION > '1.9.0'
-    gem 'mocha', '~>0.13.0', :require => false
-  else
-    gem 'mocha', '~>0.12.0'
-  end
+  gem 'mocha', '~>0.13.0', :require => false
   gem 'shoulda', '~>3.0.1'
   gem 'sdoc-helpers'
   gem 'rdoc', '>= 2.4.2'
