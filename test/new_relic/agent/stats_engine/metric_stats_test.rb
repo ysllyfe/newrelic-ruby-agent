@@ -181,4 +181,23 @@ class NewRelic::Agent::MetricStatsTest < Test::Unit::TestCase
     assert_equal(nthreads * iterations, stats_m1.call_count)
     assert_equal(nthreads * iterations, stats_m2.call_count)
   end
+
+  def test_record_metrics_internal_writes_to_global_stats_hash
+    specs = [
+      NewRelic::MetricSpec.new('foo'),
+      NewRelic::MetricSpec.new('foo', 'scope')
+    ]
+
+    2.times { @engine.record_metrics_internal(specs, 10, 5) }
+
+    stats_foo = @engine.lookup_stats('foo')
+    stats_foo_scoped = @engine.lookup_stats('foo', 'scope')
+
+    assert_equal(2, stats_foo.call_count)
+    assert_equal(2, stats_foo_scoped.call_count)
+    assert_equal(20, stats_foo.total_call_time)
+    assert_equal(20, stats_foo_scoped.total_call_time)
+    assert_equal(10, stats_foo.total_exclusive_time)
+    assert_equal(10, stats_foo_scoped.total_exclusive_time)
+  end
 end
