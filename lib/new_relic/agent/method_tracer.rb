@@ -190,7 +190,7 @@ module NewRelic
             # the start time.
             [t0, scope]
           end
-          
+
           # Handles the end of the #trace_execution_scoped method -
           # calculating the time taken, popping the tracing flag if
           # needed, deducting time taken by children, and tracing the
@@ -207,9 +207,7 @@ module NewRelic
               if expected_scope
                 scope = stat_engine.pop_scope(expected_scope, duration, t1)
                 exclusive = duration - scope.children_time
-                stat_engine.record_metrics(metric_specs) do |stat|
-                  stat.record_data_point(duration, exclusive)
-                end
+                stat_engine.record_metrics_internal(metric_specs, duration, exclusive)
               end
             end
           end
