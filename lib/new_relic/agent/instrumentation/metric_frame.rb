@@ -194,7 +194,7 @@ module NewRelic
         def self.add_custom_parameters(p)
           current.add_custom_parameters(p) if current
         end
-        
+
         def self.custom_parameters
           (current && current.custom_parameters) ? current.custom_parameters : {}
         end
@@ -206,7 +206,7 @@ module NewRelic
         def self.user_attributes
           (current) ? current.user_attributes : {}
         end
-          
+
         def record_apdex()
           return unless recording_web_transaction? && NewRelic::Agent.is_execution_traced?
           t = Time.now
@@ -304,33 +304,28 @@ module NewRelic
         end
 
         def self.record_apdex(current_metric, action_duration, total_duration, is_error)
-          agent.stats_engine.record_metrics('Apdex') do |stat|
-            update_apdex(stat, total_duration, is_error)
-          end
-          agent.stats_engine.record_metrics(current_metric.apdex_metric_path) do |stat|
-            update_apdex(stat, action_duration, is_error)
-          end
+          apdex_t = TransactionInfo.get.apdex_t
+          apdex_bucket_global = apdex_bucket(total_duration, is_error, apdex_t)
+          apdex_bucket_txn    = apdex_bucket(action_duration, is_error, apdex_t)
+
+          @apdex_metric_spec ||= NewRelic::MetricSpec.new('Apdex')
+          txn_apdex_metric = NewRelic::MetricSpec.new(current_metric.apdex_metric_path)
+
+          agent.stats_engine.record_metrics_internal(@apdex_metric_spec, apdex_bucket_global, apdex_t)
+          agent.stats_engine.record_metrics_internal(txn_apdex_metric, apdex_bucket_txn, apdex_t)
         end
 
-        # Record an apdex value for the given stat.  when `failed`
-        # the apdex should be recorded as a failure regardless of duration.
-        def self.update_apdex(stat, duration, failed)
-          apdex_t = TransactionInfo.get.apdex_t
-          duration = duration.to_f
+        def self.apdex_bucket(duration, failed, apdex_t)
           case
           when failed
-            stat.record_apdex_f
+            :apdex_f
           when duration <= apdex_t
-            stat.record_apdex_s
+            :apdex_s
           when duration <= 4 * apdex_t
-            stat.record_apdex_t
+            :apdex_t
           else
-            stat.record_apdex_f
+            :apdex_f
           end
-          # Apdex min and max values should be initialized to the
-          # current apdex_t
-          stat.min_call_time = apdex_t
-          stat.max_call_time = apdex_t
         end
 
         private

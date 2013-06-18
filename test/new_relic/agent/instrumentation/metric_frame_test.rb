@@ -58,47 +58,30 @@ class NewRelic::Agent::Instrumentation::MetricFrameTest < Test::Unit::TestCase
     assert_equal 500, f.queue_time
   end
 
-  def test_update_apdex_records_failed_when_specified
-    stats = NewRelic::Agent::Stats.new
-    NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 0.1, true)
-    assert_equal 0, stats.apdex_s
-    assert_equal 0, stats.apdex_t
-    assert_equal 1, stats.apdex_f
+  def test_apdex_bucket_counts_errors_as_frustrating
+    bucket = NewRelic::Agent::Instrumentation::MetricFrame.apdex_bucket(0.1, true, 2)
+    assert_equal(:apdex_f, bucket)
   end
 
-  def test_update_apdex_records_satisfying
-    stats = NewRelic::Agent::Stats.new
-    with_config(:apdex_t => 1) do
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 0.5, false)
-    end
-    assert_equal 1, stats.apdex_s
-    assert_equal 0, stats.apdex_t
-    assert_equal 0, stats.apdex_f
+  def test_apdex_bucket_counts_values_under_apdex_t_as_satisfying
+    bucket = NewRelic::Agent::Instrumentation::MetricFrame.apdex_bucket(0.5, false, 1)
+    assert_equal(:apdex_s, bucket)
   end
 
-  def test_update_apdex_records_tolerating
-    stats = NewRelic::Agent::Stats.new
-    with_config(:apdex_t => 1) do
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 1.5, false)
-    end
-    assert_equal 0, stats.apdex_s
-    assert_equal 1, stats.apdex_t
-    assert_equal 0, stats.apdex_f
+  def test_apdex_bucket_counts_values_of_1_to_4x_apdex_t_as_tolerating
+    bucket = NewRelic::Agent::Instrumentation::MetricFrame.apdex_bucket(1.01, false, 1)
+    assert_equal(:apdex_t, bucket)
+    bucket = NewRelic::Agent::Instrumentation::MetricFrame.apdex_bucket(3.99, false, 1)
+    assert_equal(:apdex_t, bucket)
   end
 
-  def test_update_apdex_records_failing
-    stats = NewRelic::Agent::Stats.new
-    with_config(:apdex_t => 1) do
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 4.5, false)
-    end
-    assert_equal 0, stats.apdex_s
-    assert_equal 0, stats.apdex_t
-    assert_equal 1, stats.apdex_f
+  def test_apdex_bucket_count_values_over_4x_apdex_t_as_frustrating
+    bucket = NewRelic::Agent::Instrumentation::MetricFrame.apdex_bucket(4.01, false, 1)
+    assert_equal(:apdex_f, bucket)
   end
 
   def test_update_apdex_records_correct_apdex_for_key_transaction
     txn_info = NewRelic::Agent::TransactionInfo.get
-    stats = NewRelic::Agent::Stats.new
     config = {
       :web_transactions_apdex => {
         'Controller/slow/txn' => 4,
@@ -107,35 +90,57 @@ class NewRelic::Agent::Instrumentation::MetricFrameTest < Test::Unit::TestCase
       :apdex => 1
     }
 
+    stats_engine = NewRelic::Agent.instance.stats_engine
+    stats_engine.reset_stats
+    stats = stats_engine.get_stats_no_scope('Apdex')
+
     txn_info.transaction_name = 'Controller/slow/txn'
+    m = NewRelic::MetricParser::MetricParser.for_metric_named(txn_info.transaction_name)
     with_config(config, :do_not_cast => true) do
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 3.5, false)
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 5.5, false)
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 16.5, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 3.5, 3.5, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 5.5, 5.5, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 16.5, 16.5, false)
     end
     assert_equal 1, stats.apdex_s
     assert_equal 1, stats.apdex_t
     assert_equal 1, stats.apdex_f
 
+    stats_txn = stats_engine.get_stats_no_scope('Apdex/slow/txn')
+    assert_equal 1, stats_txn.apdex_s
+    assert_equal 1, stats_txn.apdex_t
+    assert_equal 1, stats_txn.apdex_f
+
     txn_info.transaction_name = 'Controller/fast/txn'
+    m = NewRelic::MetricParser::MetricParser.for_metric_named(txn_info.transaction_name)
     with_config(config, :do_not_cast => true) do
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 0.05, false)
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 0.2, false)
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 0.5, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 0.05, 0.05, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 0.2, 0.2, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 0.5, 0.5, false)
     end
     assert_equal 2, stats.apdex_s
     assert_equal 2, stats.apdex_t
     assert_equal 2, stats.apdex_f
 
+    stats_txn = stats_engine.get_stats_no_scope('Apdex/fast/txn')
+    assert_equal 1, stats_txn.apdex_s
+    assert_equal 1, stats_txn.apdex_t
+    assert_equal 1, stats_txn.apdex_f
+
     txn_info.transaction_name = 'Controller/other/txn'
+    m = NewRelic::MetricParser::MetricParser.for_metric_named(txn_info.transaction_name)
     with_config(config, :do_not_cast => true) do
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 0.5, false)
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 2, false)
-      NewRelic::Agent::Instrumentation::MetricFrame.update_apdex(stats, 5, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 0.5, 0.5, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 2, 2, false)
+      NewRelic::Agent::Instrumentation::MetricFrame.record_apdex(m, 5, 5, false)
     end
     assert_equal 3, stats.apdex_s
     assert_equal 3, stats.apdex_t
     assert_equal 3, stats.apdex_f
+
+    stats_txn = stats_engine.get_stats_no_scope('Apdex/other/txn')
+    assert_equal 1, stats_txn.apdex_s
+    assert_equal 1, stats_txn.apdex_t
+    assert_equal 1, stats_txn.apdex_f
   end
 
   def test_record_apdex_stores_apdex_t_in_min_and_max
