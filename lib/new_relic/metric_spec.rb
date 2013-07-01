@@ -23,6 +23,15 @@ class NewRelic::MetricSpec
     end
   end
   
+  def scope=(s)
+    if s.nil? || s == false
+      NewRelic::Agent.logger.error("Attempted to set scope for #{@name} to #{s.inspect}, ignoring")
+      NewRelic::Agent.logger.error(caller.join("\n"))
+    else
+      @scope = s
+    end
+  end
+
   # truncates the name and scope to the MAX_LENGTH
   def truncate!
     self.name = name[LENGTH_RANGE] if name && name.size > MAX_LENGTH
