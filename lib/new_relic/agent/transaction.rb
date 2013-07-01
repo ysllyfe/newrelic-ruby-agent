@@ -204,6 +204,8 @@ module NewRelic
       def merge_stats_hash
         stats_hash.resolve_scopes!(@name)
         NewRelic::Agent.instance.stats_engine.merge!(stats_hash)
+      rescue => e
+        NewRelic::Agent.logger.error("Caught an error trying to merge stats for transaction '#{@name}': #{e} #{e.backtrace.join("\n")}")
       end
 
       def record_exceptions
