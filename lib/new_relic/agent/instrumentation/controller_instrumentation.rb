@@ -331,22 +331,26 @@ module NewRelic
             end
 
           ensure
-            txn.freeze_name
-            metrics = recorded_metrics(txn)
-            txn_name = metrics.first
+            begin
+              txn.freeze_name
+              metrics = recorded_metrics(txn)
+              txn_name = metrics.first
 
-            metric_names = Array(metrics)
-            first_name = metric_names.shift
-            scope = NewRelic::Agent.instance.stats_engine.scope_name
-            end_time = Time.now
-            NewRelic::Agent::MethodTracer::InstanceMethods::TraceExecutionScoped.trace_execution_scoped_footer(txn.start_time.to_f, first_name, metric_names, expected_scope, scope, options, end_time.to_f)
-            NewRelic::Agent::BusyCalculator.dispatcher_finish
-            # Look for a transaction in the thread local and process it.
-            # Clear the thread local when finished to ensure it only gets called once.
-            txn = Transaction.stop(txn_name, end_time)
-            txn.record_apdex(txn_name) unless ignore_apdex?
+              metric_names = Array(metrics)
+              first_name = metric_names.shift
+              scope = NewRelic::Agent.instance.stats_engine.scope_name
+              end_time = Time.now
+              NewRelic::Agent::MethodTracer::InstanceMethods::TraceExecutionScoped.trace_execution_scoped_footer(txn.start_time.to_f, first_name, metric_names, expected_scope, scope, options, end_time.to_f)
+              NewRelic::Agent::BusyCalculator.dispatcher_finish
+              # Look for a transaction in the thread local and process it.
+              # Clear the thread local when finished to ensure it only gets called once.
+              txn = Transaction.stop(txn_name, end_time)
+              txn.record_apdex(txn_name) unless ignore_apdex?
 
-            NewRelic::Agent::TransactionInfo.get.ignore_end_user = true if ignore_enduser?
+              NewRelic::Agent::TransactionInfo.get.ignore_end_user = true if ignore_enduser?
+            rescue => e
+              NewRelic::Agent.logger.error("Error finishing transaction trace for txn named #{txn.name}: #{e}, backtrace = #{e.backtrace.join("\n")}")
+            end
           end
         end
 
