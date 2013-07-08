@@ -81,7 +81,22 @@ module NewRelic
     def discover_dispatcher
       dispatchers = %w[passenger torquebox trinidad glassfish resque sidekiq thin mongrel litespeed webrick fastcgi rainbows unicorn]
       while dispatchers.any? && @discovered_dispatcher.nil?
-        send 'check_for_'+(dispatchers.shift)
+        d = dispatchers.shift
+        msg = "NRDEBUG: Checking for dispatcher '#{d}'"
+        # Not sure which logging mechanisms will actually be captured in the
+        # target context so try agent log, stdout, and stderr.
+        NewRelic::Agent.logger.warn(msg)
+        $stdout.puts msg
+        $stderr.puts msg
+        send 'check_for_'+(d)
+        if @discovered_dispatcher.nil?
+          msg = "NRDEBUG: check came back negative"
+        else
+          msg = "NRDEBUG: check came back positive"
+        end
+        NewRelic::Agent.logger.warn(msg)
+        $stdout.puts msg
+        $stderr.puts msg
       end
     end
 
