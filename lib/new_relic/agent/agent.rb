@@ -532,6 +532,9 @@ module NewRelic
         # might be holding locks for background thread that aren't there anymore.
         def reset_objects_with_locks
           @stats_engine = NewRelic::Agent::StatsEngine.new
+
+          # Let the harvest lock go if synchronization around for doesn't do it
+          unlock_for_harvest
         end
 
         def add_harvest_sampler(subclass)
@@ -549,6 +552,27 @@ module NewRelic
           def log_worker_loop_start
             ::NewRelic::Agent.logger.debug "Reporting performance data every #{Agent.config[:data_report_period]} seconds."
             ::NewRelic::Agent.logger.debug "Running worker loop"
+          end
+
+          # Synchronize with the harvest loop. This prevents deadlocks when
+          # harvest locks (DNS lookups, etc.) even down in native control at the
+          # same time we fork, hanging the child on that lock
+          def synchronize_with_harvest
+            if @worker_loop.nil? || @worker_loop.lock.nil?
+              yield
+            else
+              @worker_loop.lock.synchronize do
+                yield
+              end
+            end
+          end
+
+          # Some forking cases (like Resque) end up with harvest lock held
+          # across the fork into the child. Let it go before we proceed
+          def unlock_for_harvest
+            return if @worker_loop.nil? || @worker_loop.lock.nil?
+
+            @worker_loop.lock.unlock if @worker_loop.lock.locked?
           end
 
           # Creates the worker loop and loads it with the instructions

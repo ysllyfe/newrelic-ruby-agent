@@ -64,6 +64,22 @@ DependencyDetection.defer do
     end
 
     if NewRelic::LanguageSupport.can_fork?
+      ::Resque::Worker.class_eval do
+        # Looks as though Resque::Worker#fork won't be around in Resque 2.x
+        if instance_methods.include?(:fork) && NewRelic::Agent.config[:resque_uses_harvest_lock]
+          NewRelic::Agent.logger.info("Installing Resque::Worker#fork override to abide by harvest locking")
+
+          def fork_with_newrelic(*args, &block)
+            NewRelic::Agent.instance.synchronize_with_harvest do
+              fork_without_newrelic(*args, &block)
+            end
+          end
+
+          alias_method :fork_without_newrelic, :fork
+          alias_method :fork, :fork_with_newrelic
+        end
+      end
+
       ::Resque.before_first_fork do
         NewRelic::Agent.manual_start(:dispatcher   => :resque,
                                      :sync_startup => true,
