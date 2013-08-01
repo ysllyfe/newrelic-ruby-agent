@@ -3,6 +3,7 @@
 # See https://github.com/newrelic/rpm/blob/master/LICENSE for complete details.
 
 require 'zlib'
+require 'pp'
 require 'new_relic/agent/audit_logger'
 
 module NewRelic
@@ -481,7 +482,7 @@ module NewRelic
         def dump(ruby, opts={})
           JSON.dump(prepare(ruby, opts))
         rescue => e
-          ::NewRelic::Agent.logger.debug "#{e.class.name} : #{e.message} encountered dumping agent data: #{ruby}"
+          ::NewRelic::Agent.logger.debug "#{e.class.name} : #{e.message} encountered dumping agent data: #{PP.pp(ruby, '')}"
           raise JsonError.new(e)
         end
 
