@@ -58,7 +58,7 @@ module NewRelic
       end
 
       def connect(settings={})
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#connect - new_relic_service.rb:61")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#connect - new_relic_service.rb:#{__LINE__}")
         if host = get_redirect_host
           @collector = NewRelic::Control.instance.server_from_host(host)
           ::NewRelic::Agent.logger.debug("JMS: host => #{host}, collector => #{@collector}")
@@ -71,7 +71,7 @@ module NewRelic
       end
 
       def get_redirect_host
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#get_redirect_host - new_relic_service.rb:70")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#get_redirect_host - new_relic_service.rb:#{__LINE__}")
         invoke_remote(:get_redirect_host)
       end
 
@@ -159,7 +159,7 @@ module NewRelic
       # problems with bugs in Ruby in some versions that expose us
       # to a risk of segfaults if we compress aggressively.
       def compress_request_if_needed(data)
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#compress_request_if_needed - new_relic_service.rb:158")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#compress_request_if_needed - new_relic_service.rb:#{__LINE__}")
         ::NewRelic::Agent.logger.debug("JMS: data => #{data}")
         encoding = 'identity'
         if data.size > 64 * 1024
@@ -244,7 +244,7 @@ module NewRelic
 
       # The path on the server that we should post our data to
       def remote_method_uri(method, format='ruby')
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#remote_method_uri - new_relic_service.rb:243")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#remote_method_uri - new_relic_service.rb:#{__LINE__}")
         params = {'run_id' => @agent_id, 'marshal_format' => format}
         uri = "/agent_listener/#{PROTOCOL_VERSION}/#{@license_key}/#{method}"
         uri << '?' + params.map do |k,v|
@@ -260,17 +260,20 @@ module NewRelic
       # enough to be worth compressing, and handles any errors the
       # server may return
       def invoke_remote(method, *args)
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#invoke_remote - new_relic_service.rb:253")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#invoke_remote - new_relic_service.rb:#{__LINE__}")
         now = Time.now
 
         data, size = nil
         begin
-          data = @marshaller.dump(args)
-          ::NewRelic::Agent.logger.debug("JMS: NewRelicService#invoke_remote - new_relic_service.rb:259")
+          ::NewRelic::Agent.logger.debug("JMS: NewRelicService#invoke_remote - new_relic_service.rb:#{__LINE__}")
           ::NewRelic::Agent.logger.debug("JMS: @marshaller.dump(#{args}) => #{data}")
-        rescue JsonError
+          data = @marshaller.dump(args)
+        rescue JsonError => e
+          ::NewRelic::Agent.logger.debug("JMS: NewRelicService#invoke_remote - new_relic_service.rb:#{__LINE__}", e)
           @marshaller = PrubyMarshaller.new
           retry
+        rescue Exception => e
+          ::NewRelic::Agent.logger.debug("JMS: NewRelicService#invoke_remote - new_relic_service.rb:#{__LINE__}", e)
         end
 
         data, encoding = compress_request_if_needed(data)
@@ -293,7 +296,7 @@ module NewRelic
       end
 
       def record_supportability_metrics(method, now, size)
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#record_supportability_metrics - new_relic_service.rb:292")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#record_supportability_metrics - new_relic_service.rb:#{__LINE__}")
         duration = (Time.now - now).to_f
         NewRelic::Agent.record_metric('Supportability/invoke_remote', duration)
         NewRelic::Agent.record_metric('Supportability/invoke_remote/' + method.to_s, duration)
@@ -307,7 +310,7 @@ module NewRelic
       # Raises an UnrecoverableServerException if the post_string is longer
       # than the limit configured in the control object
       def check_post_size(post_string)
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#check_post_size - new_relic_service.rb:302")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#check_post_size - new_relic_service.rb:#{__LINE__}")
         return if post_string.size < Agent.config[:post_size_limit]
         ::NewRelic::Agent.logger.debug "Tried to send too much data: #{post_string.size} bytes"
         raise UnrecoverableServerException.new('413 Request Entity Too Large')
@@ -369,7 +372,7 @@ module NewRelic
       # Decompresses the response from the server, if it is gzip
       # encoded, otherwise returns it verbatim
       def decompress_response(response)
-        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#decompress_response - new_relic_service.rb:366")
+        ::NewRelic::Agent.logger.debug("JMS: NewRelicService#decompress_response - new_relic_service.rb:#{__LINE__}")
         if response['content-encoding'] != 'gzip'
           ::NewRelic::Agent.logger.debug "Uncompressed content returned"
           return response.body
@@ -504,7 +507,7 @@ module NewRelic
 
         def dump(ruby, opts={})
           JSON.dump(prepare(ruby, opts))
-        rescue => e
+        rescue Exception => e
           ::NewRelic::Agent.logger.debug "#{e.class.name} : #{e.message} encountered dumping agent data: #{ruby}"
           raise JsonError.new(e)
         end
