@@ -22,6 +22,7 @@ DependencyDetection.defer do
   end
 
   executes do
+    ::NewRelic::Agent.logger.info "Installing ActiveRecordSubscriber"
     ActiveSupport::Notifications.subscribe('sql.active_record',
       NewRelic::Agent::Instrumentation::ActiveRecordSubscriber.new)
   end

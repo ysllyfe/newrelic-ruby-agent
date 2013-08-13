@@ -20,10 +20,13 @@ module NewRelic
         end
 
         def call(*args)
+          ::NewRelic::Agent.logger.info("ActiveRecordSubscriber#call - traced? = #{NewRelic::Agent.is_execution_traced?.inspect}")
           return unless NewRelic::Agent.is_execution_traced?
 
+          ::NewRelic::Agent.logger.info("Creating event from AR 4 notification")
           event = ActiveSupport::Notifications::Event.new(*args)
           record_metrics(event)
+          ::NewRelic::Agent.logger.info("Noticing SQL for AR 4")
           notice_sql(event)
         end
 
@@ -42,6 +45,7 @@ module NewRelic
           metric = base_metric(event)
 
           # enter transaction trace segment
+          ::NewRelic::Agent.logger.info("Entering TT segment for '#{metric}' at #{event.time}")
           scope = NewRelic::Agent.instance.stats_engine.push_scope(:active_record, event.time)
 
           NewRelic::Agent.instance.transaction_sampler \
@@ -55,16 +59,20 @@ module NewRelic
                         &method(:get_explain_plan))
 
           # exit transaction trace segment
+          ::NewRelic::Agent.logger.info("Exiting TT segment for '#{metric}' at #{event.end}")
           NewRelic::Agent.instance.stats_engine.pop_scope(scope, metric, event.end)
         end
 
         def record_metrics(event)
+          ::NewRelic::Agent.logger.info("Recording metrics for AR 4 event, duration = #{event.duration} ms")
           base = base_metric(event)
+          ::NewRelic::Agent.logger.info("AR 4 event base metric name = #{base}")
           NewRelic::Agent.instance.stats_engine.record_metrics(base,
                               Helper.milliseconds_to_seconds(event.duration),
                               :scoped => true)
 
           other_metrics = ActiveRecordHelper.rollup_metrics_for(base)
+          ::NewRelic::Agent.logger.info("Recording AR 4 rollup metrics: #{other_metrics.inspect}")
           if config = active_record_config_for_event(event)
             other_metrics << ActiveRecordHelper.remote_service_metric(config[:adapter], config[:host])
           end
