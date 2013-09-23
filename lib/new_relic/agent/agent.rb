@@ -182,6 +182,7 @@ module NewRelic
         #   connection, this tells me to only try it once so this method returns
         #   quickly if there is some kind of latency with the server.
         def after_fork(options={})
+          ::NewRelic::Agent.logger.debug("Starting after_fork, Child process: #{$$}, Parent process: #{Process.ppid}")
           Agent.config.apply_config(NewRelic::Agent::Configuration::ManualSource.new(options), 1)
 
           if channel_id = options[:report_to_channel]
@@ -195,6 +196,13 @@ module NewRelic
             end
           end
 
+          ::NewRelic::Agent.logger.debug("Agent.config[:agent_enabled]: #{Agent.config[:agent_enabled]}")
+          ::NewRelic::Agent.logger.debug("Agent.config[:monitor_mode]: #{Agent.config[:monitor_mode]}")
+          ::NewRelic::Agent.logger.debug("disconnected?: #{disconnected?}")
+          ::NewRelic::Agent.logger.debug("@worker_thread: #{@worker_thread}")
+          ::NewRelic::Agent.logger.debug("@worker_thread.alive?: #{@worker_thread.alive? if @worker_thread}")
+
+          ::NewRelic::Agent.logger.debug("Child process #{$$} not reporting to non-connected parent.")
           return if !Agent.config[:agent_enabled] ||
             !Agent.config[:monitor_mode] ||
             disconnected? ||
