@@ -56,6 +56,9 @@ module Agent
       def pop_scope(expected_scope, name, time=Time.now.to_f)
         stack = scope_stack
         scope = stack.pop
+        if scope != expected_scope
+          NewRelic::Agent.logger.debug("JMS-63183\n#{caller.join('\n')}")
+        end
         fail "unbalanced pop from blame stack, got #{scope ? scope.tag : 'nil'}, expected #{expected_scope ? expected_scope.tag : 'nil'}" if scope != expected_scope
 
         if !stack.empty?
