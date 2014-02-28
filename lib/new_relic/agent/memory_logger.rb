@@ -19,26 +19,42 @@ module NewRelic
 
       def fatal(*msgs)
         messages << [:fatal, msgs]
+        dump_messages_to_stderr
       end
 
       def error(*msgs)
         messages << [:error, msgs]
+        dump_messages_to_stderr
       end
 
       def warn(*msgs)
         messages << [:warn, msgs]
+        dump_messages_to_stderr
       end
 
       def info(*msgs)
         messages << [:info, msgs]
+        dump_messages_to_stderr
       end
 
       def debug(*msgs)
         messages << [:debug, msgs]
+        dump_messages_to_stderr
       end
 
       def log_exception(level, e, backtrace_level=level)
         messages << [:log_exception, [level, e, backtrace_level]]
+        dump_messages_to_stderr
+      end
+
+      def dump_messages_to_stderr
+        return unless ENV['DUMP_LOGS_IMMEDIATELY']
+        until messages.empty?
+          (level, msgs) = messages.pop
+          msgs.each do |m|
+            $stdout.puts "#{level}: #{m}"
+          end
+        end
       end
 
       def dump(logger)

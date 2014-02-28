@@ -33,11 +33,14 @@ if defined?(Merb) && defined?(Merb::BootLoader)
     end
   end
 elsif defined? Rails
+  NewRelic::Agent.logger.info("DBG: Rails was defined, checking Rails major version")
   if Rails::VERSION::MAJOR.to_i >= 3
+    NewRelic::Agent.logger.info("DBG: Rails major verison is >= 3")
     module NewRelic
       class Railtie < Rails::Railtie
-
+        NewRelic::Agent.logger.info("DBG: Installing Railtie")
         initializer "newrelic_rpm.start_plugin" do |app|
+          NewRelic::Agent.logger.info("DBG: calling init_plugin from within Railtie")
           NewRelic::Control.instance.init_plugin(:config => app.config)
         end
       end

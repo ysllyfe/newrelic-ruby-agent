@@ -94,6 +94,7 @@ module NewRelic
     def initialize
       @data = self.class.registered_reporters.inject(Hash.new) do |data, (key, logic)|
         begin
+          NewRelic::Agent.logger.info("DBG: collecting environemnt report value for key #{key}")
           value = logic.call
           if value
             data[key] = value

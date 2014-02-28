@@ -52,9 +52,13 @@ module NewRelic
         Agent.logger.info("Starting the New Relic agent in #{env.inspect} environment.")
         Agent.logger.info("To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the #{env.inspect} section of your newrelic.yml.")
 
+        NewRelic::Agent.logger.info("DBG: creating YamlSource from #{@config_file_path}")
         yaml = Agent::Configuration::YamlSource.new(@config_file_path, env)
+
+        NewRelic::Agent.logger.info("DBG: installing YamlSource")
         Agent.config.replace_or_add_config(yaml, 1)
 
+        NewRelic::Agent.logger.info("DBG: installing ManualSource: #{options}")
         Agent.config.replace_or_add_config(Agent::Configuration::ManualSource.new(options), 1)
 
         # Be sure to only create once! RUBY-1020
@@ -63,6 +67,7 @@ module NewRelic
         end
 
         # Merge the stringified options into the config as overrides:
+        NewRelic::Agent.logger.info("DBG: merging in the environment name")
         environment_name = options.delete(:env) and self.env = environment_name
 
         NewRelic::Agent::PipeChannelManager.listener.start if options.delete(:start_channel_listener)
@@ -71,13 +76,23 @@ module NewRelic
         # methods in the module methods.
         Module.send :include, NewRelic::Agent::MethodTracer::ClassMethods
         Module.send :include, NewRelic::Agent::MethodTracer
+
+        NewRelic::Agent.logger.info("DBG: calling init_config with options = #{options}")
         init_config(options)
+
+        NewRelic::Agent.logger.info("DBG: creating the agent instance")
         NewRelic::Agent.agent = NewRelic::Agent::Agent.instance
+
+        NewRelic::Agent.logger.info("DBG: agent_enabled=#{Agent.config[:agent_enabled]}, started=#{NewRelic::Agent.instance.started?}")
         if Agent.config[:agent_enabled] && !NewRelic::Agent.instance.started?
+          NewRelic::Agent.logger.info("DBG: calling start_agent")
           start_agent
+          NewRelic::Agent.logger.info("DBG: installing instrumentation")
           install_instrumentation
+          NewRelic::Agent.logger.info("DBG: loading samplers")
           load_samplers unless Agent.config[:disable_samplers]
         elsif !Agent.config[:agent_enabled]
+          NewRelic::Agent.logger.info("DBG: agent was not enabled, installing shim")
           install_shim
         end
       end

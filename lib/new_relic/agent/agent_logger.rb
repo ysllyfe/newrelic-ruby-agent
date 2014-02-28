@@ -66,6 +66,9 @@ module NewRelic
       # Allows for passing exceptions in explicitly, which format with backtrace
       def format_and_send(level, *msgs)
         msgs.flatten.each do |item|
+          if ENV['DUMP_LOGS_IMMEDIATELY']
+            $stdout.puts "#{level}: #{item}"
+          end
           case item
           when Exception then log_exception(level, item, :debug)
           else @log.send(level, item)

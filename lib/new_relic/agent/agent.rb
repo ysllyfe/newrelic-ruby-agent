@@ -462,11 +462,16 @@ module NewRelic
           # setting up the worker thread and the exit handler to shut
           # down the agent
           def check_config_and_start_agent
+            NewRelic::Agent.logger.info("DBG: monitoring=#{monitoring?}, has_correct_license_key=#{has_correct_license_key?}")
             return unless monitoring? && has_correct_license_key?
+            NewRelic::Agent.logger.info("DBG: using_forking_dispatcher = #{using_forking_dispatcher?}")
             return if using_forking_dispatcher?
+            NewRelic::Agent.logger.info("DBG: calling generate_environment_report")
             generate_environment_report
             connect_in_foreground if Agent.config[:sync_startup]
+            NewRelic::Agent.logger.info("DBG: calling start_worker_thread")
             start_worker_thread
+            NewRelic::Agent.logger.info("DBG: calling install_exit_handler")
             install_exit_handler
           end
         end
@@ -506,12 +511,17 @@ module NewRelic
 
         # Logs a bunch of data and starts the agent, if needed
         def start
+          NewRelic::Agent.logger.info("DBG: checking whether the agent should start via agent_should_start?")
           return unless agent_should_start?
 
           @started = true
+          NewRelic::Agent.logger.info("DBG: determining hostname")
           @local_host = determine_host
+          NewRelic::Agent.logger.info("DBG: logging startup")
           log_startup
+          NewRelic::Agent.logger.info("DBG: calling check_config_and_start_agent")
           check_config_and_start_agent
+          NewRelic::Agent.logger.info("DBG: calling log_version_and_pid")
           log_version_and_pid
         end
 
@@ -669,6 +679,7 @@ module NewRelic
 
           ::NewRelic::Agent.logger.debug "Creating Ruby Agent worker thread."
           @worker_thread = NewRelic::Agent::Threading::AgentThread.new('Worker Loop') do
+            NewRelic::Agent.logger.info("DBG: inside of agent worker thread, calling deferred_work!")
             deferred_work!(connection_options)
           end
         end
