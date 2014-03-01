@@ -58,7 +58,9 @@ module NewRelic
       end
 
       def dump(logger)
+        NewRelic::Agent.logger.info("DBG: dumping from StartupLogger to #{logger}")
         messages.each do |(method, args)|
+          NewRelic::Agent.logger.info("DBG: dumping #{method} with #{args}")
           logger.send(method, *args)
         end
         messages.clear

@@ -60,9 +60,13 @@ module NewRelic
 
         NewRelic::Agent.logger.info("DBG: installing ManualSource: #{options}")
         Agent.config.replace_or_add_config(Agent::Configuration::ManualSource.new(options), 1)
+        NewRelic::Agent.logger.info("DBG: finished installing ManualSource")
 
+        NewRelic::Agent.logger.info("DBG: is_startup_logger? #{NewRelic::Agent.logger.is_startup_logger?}")
         # Be sure to only create once! RUBY-1020
         if ::NewRelic::Agent.logger.is_startup_logger?
+          NewRelic::Agent.logger.info("DBG: root = #{root}")
+          NewRelic::Agent.logger.info("DBG: options = #{options}")
           ::NewRelic::Agent.logger = NewRelic::Agent::AgentLogger.new(root, options.delete(:log))
         end
 

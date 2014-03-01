@@ -111,8 +111,10 @@ module NewRelic
 
         def flattened
           @config_stack.reverse.inject({}) do |flat,layer|
+            NewRelic::Agent.logger.info("DBG: flattening layer #{layer}")
             thawed_layer = layer.to_hash.dup
             thawed_layer.each do |k,v|
+              NewRelic::Agent.logger.info("DBG: evaluating key = #{k}")
               begin
                 thawed_layer[k] = instance_eval(&v) if v.respond_to?(:call)
               rescue => e

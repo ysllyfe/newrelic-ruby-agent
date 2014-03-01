@@ -9,11 +9,19 @@ module NewRelic
     class AgentLogger
 
       def initialize(root = "", override_logger=nil)
+        NewRelic::Agent.logger.info("DBG: creating AgentLogger")
         create_log(root, override_logger)
+        NewRelic::Agent.logger.info("DBG: finished create_log")
+        NewRelic::Agent.logger.info("DBG: calling set_log_level!")
         set_log_level!
+        NewRelic::Agent.logger.info("DBG: finished set_log_level!")
+        NewRelic::Agent.logger.info("DBG: calling set_log_format!")
         set_log_format!
+        NewRelic::Agent.logger.info("DBG: finished set_log_format!")
 
+        NewRelic::Agent.logger.info("DBG: calling gather_startup_logs")
         gather_startup_logs
+        NewRelic::Agent.logger.info("DBG: finished gather_startup_logs")
       end
 
       def fatal(*msgs)
@@ -77,26 +85,39 @@ module NewRelic
       end
 
       def create_log(root, override_logger)
+        NewRelic::Agent.logger.info("DBG: in create_log override_logger = #{override_logger}")
+        NewRelic::Agent.logger.info("DBG: agent_enabled = #{::NewRelic::Agent.config[:agent_enabled]}")
         if !override_logger.nil?
           @log = override_logger
         elsif ::NewRelic::Agent.config[:agent_enabled] == false
+          NewRelic::Agent.logger.info("DBG: creating NullLogger")
           create_null_logger
+          NewRelic::Agent.logger.info("DBG: created NullLogger")
         else
+          NewRelic::Agent.logger.info("DBG: wants_stdout? = #{wants_stdout?}")
           if wants_stdout?
+            NewRelic::Agent.logger.info("DBG: creating Logger")
             @log = ::Logger.new(STDOUT)
+            NewRelic::Agent.logger.info("DBG: created Logger")
           else
+            NewRelic::Agent.logger.info("DBG: calling create_log_to_file")
             create_log_to_file(root)
+            NewRelic::Agent.logger.info("DBG: finished create_log_to_file")
           end
         end
       end
 
       def create_log_to_file(root)
+        NewRelic::Agent.logger.info("DBG: calling find_or_create_file_path(#{::NewRelic::Agent.config[:log_file_path]}, #{root})")
         path = find_or_create_file_path(::NewRelic::Agent.config[:log_file_path], root)
+        NewRelic::Agent.logger.info("DBG: path = #{path}")
         if path.nil?
+          NewRelic::Agent.logger.info("DBG: creating Logger for STDOUT")
           @log = ::Logger.new(STDOUT)
           warn("Error creating log directory #{::NewRelic::Agent.config[:log_file_path]}, using standard out for logging.")
         else
           file_path = "#{path}/#{::NewRelic::Agent.config[:log_file_name]}"
+          NewRelic::Agent.logger.info("DBG: creating Logger for #{file_path}")
           begin
             @log = ::Logger.new(file_path)
           rescue => e
@@ -147,7 +168,9 @@ module NewRelic
 
       def set_log_format!
         @hostname = Socket.gethostname
+        NewRelic::Agent.logger.info("DBG: hostname = #{@hostname}")
         @prefix = wants_stdout? ? '** [NewRelic]' : ''
+        NewRelic::Agent.logger.info("DBG: prefix = #{@prefix}")
         @log.formatter = Proc.new do |severity, timestamp, progname, msg|
           "#{@prefix}[#{timestamp.strftime("%m/%d/%y %H:%M:%S %z")} #{@hostname} (#{$$})] #{severity} : #{msg}\n"
         end
