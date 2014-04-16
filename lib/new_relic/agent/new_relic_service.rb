@@ -389,6 +389,8 @@ module NewRelic
         # connection may be in a bad state, so drop it and re-create if needed.
         close_shared_connection
         raise NewRelic::Agent::ServerConnectionException, "Recoverable error connecting to #{@collector}: #{e}"
+      rescue Exception => e
+        NewRelic::Agent.logger.log_exception(:error, e)
       end
 
 
