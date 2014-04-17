@@ -39,6 +39,8 @@ module NewRelic
         end
 
         def allow_sample?(sample)
+          NewRelic::Agent.logger.debug "JMS: sample: #{sample.inspect}"
+          NewRelic::Agent.logger.debug "JMS: sample.transaction_name: #{sample.transaction_name}, !full?: #{!full?}, !lookup_session_id(sample).nil?: #{!lookup_session_id(sample).nil?}"
           !full? && !lookup_session_id(sample).nil?
         end
 

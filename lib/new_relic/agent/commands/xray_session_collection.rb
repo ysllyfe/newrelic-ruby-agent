@@ -79,47 +79,6 @@ module NewRelic
           end
         end
 
-
-        ### Internals
-
-        def new_relic_service
-          NewRelic::Agent.instance.service
-        end
-          @sessions_lock.synchronize do
-            @sessions.keys.find { |id| @sessions[id].key_transaction_name == name }
-          end
-        end
-
-        NO_PROFILES = [].freeze
-
-        def harvest_thread_profiles
-          NewRelic::Agent.logger.debug "JMS: Started XraySessionCollection#harvest_thread_profiles"
-          return NO_PROFILES unless NewRelic::Agent::Threading::BacktraceService.is_supported?
-          NewRelic::Agent.logger.debug "JMS: BacktraceService.is_supported? returned true"
-
-          profiles = active_thread_profiling_sessions.map do |session|
-            NewRelic::Agent.logger.debug("Harvesting profile for X-Ray session #{session.inspect}")
-            @backtrace_service.harvest(session.key_transaction_name)
-          end
-
-          NewRelic::Agent.logger.debug "JMS: Finished harvesting thread profiles: #{profiles.inspect}"
-          profiles.reject! {|p| p.empty?}
-          NewRelic::Agent.logger.debug "JMS: Rejected empty thread profiles: #{profiles.inspect}"
-          profiles.compact
-        end
-
-        def stop_all_sessions
-          deactivate_for_incoming_sessions([])
-        end
-
-        def cleanup_finished_sessions
-          finished_session_ids.each do |id|
-            NewRelic::Agent.logger.debug("Finished X-Ray session #{id} by duration. Removing it from active sessions.")
-            remove_session_by_id(id)
-          end
-        end
-
-
         ### Internals
 
         def new_relic_service
