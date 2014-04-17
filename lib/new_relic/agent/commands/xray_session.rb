@@ -34,11 +34,13 @@ module NewRelic
         end
 
         def activate
+          NewRelic::Agent.logger.debug "JMS: X-Ray session activated (XraySession#activate)"
           @active = true
           @start_time = Time.now
         end
 
         def deactivate
+          NewRelic::Agent.logger.debug "JMS: X-Ray session deactivated (XraySession#deactivate)"
           @active = false
         end
 

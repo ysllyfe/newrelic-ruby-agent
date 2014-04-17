@@ -28,6 +28,7 @@ module NewRelic
         end
 
         def handle_active_xray_sessions(agent_command)
+          NewRelic::Agent.logger.debug "JMS: Started XraySessionCollection#handle_active_xray_sessions, agent_command: #{agent_command}"
           # If X-Rays are disabled, just be quiet about it and don't start the
           # command. Other hosts might be running the X-Ray, so we don't need
           # to bark on every get_agent_commands.
@@ -37,11 +38,13 @@ module NewRelic
           end
 
           incoming_ids = agent_command.arguments["xray_ids"]
+          NewRelic::Agent.logger.debug "JMS: Gathered incoming ids from agent_command: #{incoming_ids}"
           deactivate_for_incoming_sessions(incoming_ids)
           activate_sessions(incoming_ids)
         end
 
         def session_id_for_transaction_name(name)
+          NewRelic::Agent.logger.debug "JMS: Starting XraySessionCollection#session_id_for_transaction_name, name #{name}"
           @sessions_lock.synchronize do
             @sessions.keys.find { |id| @sessions[id].key_transaction_name == name }
           end
@@ -50,13 +53,58 @@ module NewRelic
         NO_PROFILES = [].freeze
 
         def harvest_thread_profiles
+          NewRelic::Agent.logger.debug "JMS: Started XraySessionCollection#harvest_thread_profiles"
           return NO_PROFILES unless NewRelic::Agent::Threading::BacktraceService.is_supported?
+          NewRelic::Agent.logger.debug "JMS: BacktraceService.is_supported? returned true"
 
           profiles = active_thread_profiling_sessions.map do |session|
             NewRelic::Agent.logger.debug("Harvesting profile for X-Ray session #{session.inspect}")
             @backtrace_service.harvest(session.key_transaction_name)
           end
+
+          NewRelic::Agent.logger.debug "JMS: Finished harvesting thread profiles: #{profiles.inspect}"
           profiles.reject! {|p| p.empty?}
+          NewRelic::Agent.logger.debug "JMS: Rejected empty thread profiles: #{profiles.inspect}"
+          profiles.compact
+        end
+
+        def stop_all_sessions
+          deactivate_for_incoming_sessions([])
+        end
+
+        def cleanup_finished_sessions
+          finished_session_ids.each do |id|
+            NewRelic::Agent.logger.debug("Finished X-Ray session #{id} by duration. Removing it from active sessions.")
+            remove_session_by_id(id)
+          end
+        end
+
+
+        ### Internals
+
+        def new_relic_service
+          NewRelic::Agent.instance.service
+        end
+          @sessions_lock.synchronize do
+            @sessions.keys.find { |id| @sessions[id].key_transaction_name == name }
+          end
+        end
+
+        NO_PROFILES = [].freeze
+
+        def harvest_thread_profiles
+          NewRelic::Agent.logger.debug "JMS: Started XraySessionCollection#harvest_thread_profiles"
+          return NO_PROFILES unless NewRelic::Agent::Threading::BacktraceService.is_supported?
+          NewRelic::Agent.logger.debug "JMS: BacktraceService.is_supported? returned true"
+
+          profiles = active_thread_profiling_sessions.map do |session|
+            NewRelic::Agent.logger.debug("Harvesting profile for X-Ray session #{session.inspect}")
+            @backtrace_service.harvest(session.key_transaction_name)
+          end
+
+          NewRelic::Agent.logger.debug "JMS: Finished harvesting thread profiles: #{profiles.inspect}"
+          profiles.reject! {|p| p.empty?}
+          NewRelic::Agent.logger.debug "JMS: Rejected empty thread profiles: #{profiles.inspect}"
           profiles.compact
         end
 
@@ -90,6 +138,7 @@ module NewRelic
         ### Session activation
 
         def activate_sessions(incoming_ids)
+          NewRelic::Agent.logger.debug("Activating sessions: #{incoming_ids}, (XraySessionCollection#activate_sessions)")
           lookup_metadata_for(ids_to_activate(incoming_ids)).each do |raw|
             add_session(XraySession.new(raw))
           end
@@ -123,7 +172,9 @@ module NewRelic
         ### Session deactivation
 
         def deactivate_for_incoming_sessions(incoming_ids)
+          NewRelic::Agent.logger.debug "JMS: Started XraySessionCollection#deactivate_for_incoming_sessions, incoming_ids: #{incoming_ids}"
           ids_to_remove(incoming_ids).each do |session_id|
+            NewRelic::Agent.logger.debug "JMS: Removing id: #{session_id}"
             remove_session_by_id(session_id)
           end
         end
@@ -140,8 +191,10 @@ module NewRelic
             NewRelic::Agent.increment_metric("Supportability/XraySessions/Stops")
 
             if session.run_profiler?
+              NewRelic::Agent.logger.debug "JMS: XraySessionCollection#remove_session_by_id, unsubscribing from #{session.key_transaction_name}"
               @backtrace_service.unsubscribe(session.key_transaction_name)
             end
+            NewRelic::Agent.logger.debug "JMS: Deactivating session: #{id}"
             session.deactivate
           end
         end

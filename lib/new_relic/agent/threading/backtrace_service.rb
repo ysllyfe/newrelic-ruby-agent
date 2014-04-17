@@ -9,6 +9,7 @@ module NewRelic
         ALL_TRANSACTIONS = "**ALL**".freeze
 
         def self.is_supported?
+          NewRelic::Agent.logger.debug "JMS: BacktraceService.is_supported? RUBY_VERSION: #{RUBY_VERSION}, RUBY_VERSION >= '1.9.2': #{RUBY_VERSION >= '1.9.2'}"
           RUBY_VERSION >= "1.9.2"
         end
 

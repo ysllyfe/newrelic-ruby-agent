@@ -66,10 +66,14 @@ module NewRelic
         end
 
         def harvest!
+          NewRelic::Agent.logger.debug "JMS: Started AgentCommandRouter#harvest!"
           profiles = []
           profiles += harvest_from_xray_session_collection
+          NewRelic::Agent.logger.debug "JMS: Finished harvest_from_xray_session_collection #{profiles.inspect}"
           profiles += harvest_from_thread_profiler_session
+          NewRelic::Agent.logger.debug "JMS: Finished harvest_from_thread_profiler_session #{profiles.inspect}"
           log_profiles(profiles)
+          NewRelic::Agent.logger.debug "JMS: Finished AgentCommandRouter#harvest!, profiles: #{profiles.inspect}"
           profiles
         end
 
