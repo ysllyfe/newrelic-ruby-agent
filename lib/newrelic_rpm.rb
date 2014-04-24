@@ -22,6 +22,9 @@
 # directly.
 #
 
+puts "BMW: required newrelic_rpm in #{$0} process: #{ARGV.join(' ')}"
+puts "BMW: backtrace from require:\n#{caller.join("\n")}"
+
 require 'new_relic/control'
 if defined?(Merb) && defined?(Merb::BootLoader)
   module NewRelic
@@ -36,7 +39,6 @@ elsif defined? Rails
   if Rails::VERSION::MAJOR.to_i >= 3
     module NewRelic
       class Railtie < Rails::Railtie
-
         initializer "newrelic_rpm.start_plugin" do |app|
           NewRelic::Control.instance.init_plugin(:config => app.config)
         end
