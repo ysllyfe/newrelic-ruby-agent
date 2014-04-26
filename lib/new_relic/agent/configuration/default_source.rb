@@ -45,6 +45,7 @@ module NewRelic
 
         def self.framework
           Proc.new {
+            NewRelic::Agent.logger.info("BMW: determining framework. defined?(Rails) = #{defined?(Rails)}, defined?(Sinatra) = #{defined?(Sinatra)}")
             case
             when defined?(::NewRelic::TEST) then :test
             when defined?(::Merb) && defined?(::Merb::Plugins) then :merb
