@@ -282,8 +282,10 @@ module NewRelic
         increment_error_count!(exception, options)
         ::NewRelic::Agent.logger.info("CDP: Attempting to notify :notic_error")
         NewRelic::Agent.instance.events.notify(:notice_error, exception, options)
-        action_path     = fetch_from_options(options, :metric, "")
+        action_path       = fetch_from_options(options, :metric, "")
+        ::NewRelic::Agent.logger.info("CDP: action_path: '#{action_path}'")
         exception_options = error_params_from_options(options).merge(exception_info(exception))
+        ::NewRelic::Agent.logger.info("CDP: exception_options: '#{exception_options}'")
         ::NewRelic::Agent.logger.info("CDP: Adding exception to error queue")
         add_to_error_queue(NewRelic::NoticedError.new(action_path, exception_options, exception))
         exception
@@ -322,6 +324,7 @@ module NewRelic
       end
 
       def merge!(errors)
+        ::NewRelic::Agent.logger.info("CDP: Merging #{@errors.size} errors") if @errors.any?
         errors.each do |error|
           add_to_error_queue(error)
         end
@@ -330,6 +333,7 @@ module NewRelic
       # Get the errors currently queued up.  Unsent errors are left
       # over from a previous unsuccessful attempt to send them to the server.
       def harvest!
+        ::NewRelic::Agent.logger.info("CDP: Harvesting #{@errors.size} errors") if @errors.any?
         @lock.synchronize do
           errors = @errors
           @errors = []

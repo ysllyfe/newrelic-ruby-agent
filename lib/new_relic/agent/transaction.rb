@@ -276,8 +276,10 @@ module NewRelic
         ::NewRelic::Agent.logger.info("CDP: Entering Transaction.notice_error")
         options = extract_request_options(options)
         if current
+          ::NewRelic::Agent.logger.info("CDP: In Transaction.notice_error, current was found")
           current.notice_error(e, options)
         else
+          ::NewRelic::Agent.logger.info("CDP: In Transaction.notice_error, current was not found")
           options = extract_finished_transaction_options(options)
           agent.error_collector.notice_error(e, options)
         end
