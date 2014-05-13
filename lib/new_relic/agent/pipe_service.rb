@@ -42,7 +42,11 @@ module NewRelic
       end
 
       def error_data(errors)
-        write_to_pipe(:error_data, errors) if errors
+        ::NewRelic::Agent.logger.info("CDP: Entering PipeService#error_data")
+        res = nil
+        res = write_to_pipe(:error_data, errors) if errors
+        ::NewRelic::Agent.logger.info("CDP: error_data -> sent errors: #{errors}")
+        res
       end
 
       def sql_trace_data(sql)

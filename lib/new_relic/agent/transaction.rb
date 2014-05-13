@@ -254,8 +254,10 @@ module NewRelic
       end
 
       def record_exceptions
+        ::NewRelic::Agent.logger.info("CDP: recording @exceptions in Transaction")
         @exceptions.each do |exception, options|
           options[:metric] = @name
+          ::NewRelic::Agent.logger.info("CDP: options[:metric] = #{@name}")
           agent.error_collector.notice_error(exception, options)
         end
       end
@@ -271,6 +273,7 @@ module NewRelic
       # Anything left over is treated as custom params
 
       def self.notice_error(e, options={})
+        ::NewRelic::Agent.logger.info("CDP: Entering Transaction.notice_error")
         options = extract_request_options(options)
         if current
           current.notice_error(e, options)
@@ -304,13 +307,20 @@ module NewRelic
 
       # Do not call this.  Invoke the class method instead.
       def notice_error(e, options={}) # :nodoc:
+        ::NewRelic::Agent.logger.info("CDP: Entering Transaction#notice_error")
         options[:referer] = referer if referer
         options[:request_params] = filtered_params if filtered_params
         options[:uri] = uri if uri
         options.merge!(custom_parameters)
+        ::NewRelic::Agent.logger.info("CDP: merged options = #{options}")
+        res = nil
         if !@exceptions.keys.include?(e)
-          @exceptions[e] = options
+          res = @exceptions[e] = options
+          ::NewRelic::Agent.logger.info("CDP: @exceptions now includes e: #{e}")
+        else
+          ::NewRelic::Agent.logger.info("CDP: @exceptions already includes e: #{e}")
         end
+        res
       end
 
       # Add context parameters to the transaction.  This information will be passed in to errors

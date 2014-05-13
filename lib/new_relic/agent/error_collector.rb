@@ -138,8 +138,16 @@ module NewRelic
         def should_exit_notice_error?(exception)
           if enabled?
             if !error_is_ignored?(exception)
-              return exception.nil? # exit early if the exception is nil
+              if !exception.nil? # exit early if the exception is nil
+                return false
+              else
+                ::NewRelic::Agent.logger.info("CDP: should_exit_notice_error? returned true because exception is nil")
+              end
+            else
+              ::NewRelic::Agent.logger.info("CDP: should_exit_notice_error? returned true because error_is_ignored")
             end
+          else
+            ::NewRelic::Agent.logger.info("CDP: should_exit_notice_error? returned true because error collector not enabled")
           end
           # disabled or an ignored error, per above
           true
@@ -241,8 +249,14 @@ module NewRelic
         # floor after logging a warning.
         def add_to_error_queue(noticed_error)
           @lock.synchronize do
-            if !over_queue_limit?(noticed_error.message) && !@errors.include?(noticed_error)
+            over_queue_limit = over_queue_limit?(noticed_error.message)
+            if !over_queue_limit && !@errors.include?(noticed_error)
               @errors << noticed_error
+            else
+              ::NewRelic::Agent.logger.info("CDP: Error not added to error queue")
+              ::NewRelic::Agent.logger.info("CDP: over_queue_limit = #{over_queue_limit}")
+              ::NewRelic::Agent.logger.info("CDP: @errors.include? = #{@errors.include?(noticed_error)}")
+              nil
             end
           end
         end
@@ -262,14 +276,19 @@ module NewRelic
       # If anything is left over, it's added to custom params
       # If exception is nil, the error count is bumped and no traced error is recorded
       def notice_error(exception, options={})
+        ::NewRelic::Agent.logger.info("CDP: Attempting to notice error:")
+        ::NewRelic::Agent.logger.info("CDP: Given exception: '#{exception}'")
         return if should_exit_notice_error?(exception)
         increment_error_count!(exception, options)
+        ::NewRelic::Agent.logger.info("CDP: Attempting to notify :notic_error")
         NewRelic::Agent.instance.events.notify(:notice_error, exception, options)
         action_path     = fetch_from_options(options, :metric, "")
         exception_options = error_params_from_options(options).merge(exception_info(exception))
+        ::NewRelic::Agent.logger.info("CDP: Adding exception to error queue")
         add_to_error_queue(NewRelic::NoticedError.new(action_path, exception_options, exception))
         exception
       rescue => e
+        ::NewRelic::Agent.logger.info("CDP: Failure when capturing error")
         ::NewRelic::Agent.logger.warn("Failure when capturing error '#{exception}':", e)
       end
 

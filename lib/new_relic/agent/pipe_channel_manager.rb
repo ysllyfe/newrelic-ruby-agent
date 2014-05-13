@@ -216,7 +216,10 @@ module NewRelic
               payload = unmarshal(raw_payload)
               if payload
                 endpoint, items = payload
-                NewRelic::Agent.agent.merge_data_for_endpoint(endpoint, items)
+                ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: found payload")
+                res = NewRelic::Agent.agent.merge_data_for_endpoint(endpoint, items)
+                ::NewRelic::Agent.logger.info("CDP: num items = #{items.size}, endpoint = #{endpoint}")
+                res
               end
             end
           end
