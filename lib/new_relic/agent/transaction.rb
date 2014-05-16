@@ -254,7 +254,6 @@ module NewRelic
       end
 
       def record_exceptions
-        ::NewRelic::Agent.logger.info("CDP: recording @exceptions in Transaction")
         @exceptions.each do |exception, options|
           options[:metric] = @name
           ::NewRelic::Agent.logger.info("CDP: options[:metric] = #{@name}")

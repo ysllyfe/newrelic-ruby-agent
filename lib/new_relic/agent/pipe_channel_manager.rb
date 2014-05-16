@@ -152,24 +152,28 @@ module NewRelic
           @thread = NewRelic::Agent::Threading::AgentThread.new('Pipe Channel Manager') do
             now = nil
             loop do
-              clean_up_pipes
-              pipes_to_listen_to = @pipes.values.map{|pipe| pipe.out} + [wake.out]
+              begin
+                clean_up_pipes
+                pipes_to_listen_to = @pipes.values.map{|pipe| pipe.out} + [wake.out]
 
-              NewRelic::Agent.record_metric('Supportability/Listeners',
-                (Time.now - now).to_f) if now
+                NewRelic::Agent.record_metric('Supportability/Listeners',
+                  (Time.now - now).to_f) if now
 
-              if ready = IO.select(pipes_to_listen_to, [], [], @select_timeout)
-                now = Time.now
+                if ready = IO.select(pipes_to_listen_to, [], [], @select_timeout)
+                  now = Time.now
 
-                ready_pipes = ready[0]
-                ready_pipes.each do |pipe|
-                  merge_data_from_pipe(pipe) unless pipe == wake.out
+                  ready_pipes = ready[0]
+                  ready_pipes.each do |pipe|
+                    merge_data_from_pipe(pipe) unless pipe == wake.out
+                  end
+
+                  wake.out.read(1) if ready_pipes.include?(wake.out)
                 end
 
-                wake.out.read(1) if ready_pipes.include?(wake.out)
+                break unless should_keep_listening?
+              rescue => e
+                ::NewRelic::Agent.logger.error("CDP: Error in Pipe Channel Manager ", e)
               end
-
-              break unless should_keep_listening?
             end
           end
           sleep 0.001 # give time for the thread to spawn
