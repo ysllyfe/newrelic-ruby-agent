@@ -150,30 +150,36 @@ module NewRelic
           return if @started == true
           @started = true
           @thread = NewRelic::Agent::Threading::AgentThread.new('Pipe Channel Manager') do
-            now = nil
-            loop do
-              begin
-                clean_up_pipes
-                pipes_to_listen_to = @pipes.values.map{|pipe| pipe.out} + [wake.out]
+            begin
+              now = nil
+              loop do
+                begin
+                  clean_up_pipes
+                  pipes_to_listen_to = @pipes.values.map{|pipe| pipe.out} + [wake.out]
+                  ::NewRelic::Agent.logger.info("CDP: listening on #{pipes_to_listen_to.length} pipes")
 
-                NewRelic::Agent.record_metric('Supportability/Listeners',
-                  (Time.now - now).to_f) if now
 
-                if ready = IO.select(pipes_to_listen_to, [], [], @select_timeout)
-                  now = Time.now
+                  NewRelic::Agent.record_metric('Supportability/Listeners',
+                                                (Time.now - now).to_f) if now
 
-                  ready_pipes = ready[0]
-                  ready_pipes.each do |pipe|
-                    merge_data_from_pipe(pipe) unless pipe == wake.out
+                  if ready = IO.select(pipes_to_listen_to, [], [], @select_timeout)
+                    now = Time.now
+
+                    ready_pipes = ready[0]
+                    ready_pipes.each do |pipe|
+                      merge_data_from_pipe(pipe) unless pipe == wake.out
+                    end
+
+                    wake.out.read(1) if ready_pipes.include?(wake.out)
                   end
 
-                  wake.out.read(1) if ready_pipes.include?(wake.out)
+                  break unless should_keep_listening?
                 end
-
-                break unless should_keep_listening?
-              rescue => e
-                ::NewRelic::Agent.logger.error("CDP: Error in Pipe Channel Manager ", e)
               end
+            rescue Exception => e
+              ::NewRelic::Agent.logger.error("CDP: Error in Pipe Channel Manager ", e)
+            ensure
+              ::NewRelic::Agent.logger.info("CDP: Exiting Pipe Channel Manager Thread @started=#{@started}")
             end
           end
           sleep 0.001 # give time for the thread to spawn
@@ -211,6 +217,8 @@ module NewRelic
         protected
 
         def merge_data_from_pipe(pipe_handle)
+          ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: from handle #{pipe_handle}")
+
           pipe = find_pipe_for_handle(pipe_handle)
           raw_payload = pipe.read
           if raw_payload && !raw_payload.empty?
@@ -220,7 +228,7 @@ module NewRelic
               payload = unmarshal(raw_payload)
               if payload
                 endpoint, items = payload
-                ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: found payload") if endpoint == :error_data
+                ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: found payload for error_data") if endpoint == :error_data
                 res = NewRelic::Agent.agent.merge_data_for_endpoint(endpoint, items)
                 ::NewRelic::Agent.logger.info("CDP: num items = #{items.size}, endpoint = #{endpoint}") if endpoint == :error_data
                 res

@@ -42,7 +42,7 @@ module NewRelic
       end
 
       def error_data(errors)
-        ::NewRelic::Agent.logger.info("CDP: Entering PipeService#error_data")
+        ::NewRelic::Agent.logger.info("CDP: Entering PipeService#error_data with @pipe=#{@pipe}")
         res = nil
         res = write_to_pipe(:error_data, errors) if errors
         ::NewRelic::Agent.logger.info("CDP: error_data -> sent errors: #{errors}")
