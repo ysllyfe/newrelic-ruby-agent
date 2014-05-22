@@ -166,6 +166,7 @@ module NewRelic
                     now = Time.now
 
                     ready_pipes = ready[0]
+                    ::NewRelic::Agent.logger.info("CDP: Pipes ready to be read=#{ready_pipes.count}")
                     ready_pipes.each do |pipe|
                       merge_data_from_pipe(pipe) unless pipe == wake.out
                     end
