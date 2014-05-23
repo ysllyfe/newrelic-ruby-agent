@@ -219,20 +219,24 @@ module NewRelic
 
         def merge_data_from_pipe(pipe_handle)
           ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: from handle #{pipe_handle}")
-
           pipe = find_pipe_for_handle(pipe_handle)
+          ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: found pipe #{pipe}")
           raw_payload = pipe.read
+          ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: raw_payload length = #{raw_payload.size}")
           if raw_payload && !raw_payload.empty?
             if raw_payload == Pipe::READY_MARKER
+              ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: Pipe::READY_MARKER!")
               pipe.after_fork_in_parent
             else
+              ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: has payload")
               payload = unmarshal(raw_payload)
               if payload
+                ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: #{payload}")
                 endpoint, items = payload
-                ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: found payload for error_data") if endpoint == :error_data
-                res = NewRelic::Agent.agent.merge_data_for_endpoint(endpoint, items)
-                ::NewRelic::Agent.logger.info("CDP: num items = #{items.size}, endpoint = #{endpoint}") if endpoint == :error_data
-                res
+                ::NewRelic::Agent.logger.info("CDP: merge_data_from_pipe: items = #{items.size}, endpoint = #{endpoint}")
+                ::NewRelic::Agent.agent.merge_data_for_endpoint(endpoint, items)
+              else
+                ::NewRelic::Agent.logger.info("CDP: unmarshalled payload was nil!")
               end
             end
           end
