@@ -920,6 +920,12 @@ module NewRelic
           end
         rescue StandardError => e
           handle_other_error(e)
+        rescue Exception => e
+          ::NewRelic::Agent.logger.debug "<<<  Unexpected exception of type #{e.class}:"
+          ::NewRelic::Agent.logger.debug "---    #{e.massage}"
+          ::NewRelic::Agent.logger.debug ">>>    #{e.inspect}"
+
+          raise e
         end
 
         # Who am I? Well, this method can tell you your hostname.
