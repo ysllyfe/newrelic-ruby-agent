@@ -290,7 +290,9 @@ module NewRelic
 
         data, size, serialize_finish_ts = nil
         begin
+          NewRelic::Agent.logger.debug("JMS: Starting serialization.")
           data = @marshaller.dump(args)
+          NewRelic::Agent.logger.debug("JMS: Finished serialization.")
         rescue StandardError, SystemStackError => e
           handle_serialization_error(method, e)
         end

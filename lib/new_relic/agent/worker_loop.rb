@@ -91,6 +91,9 @@ module NewRelic
           rescue => e
             # Don't blow out the stack for anything that hasn't already propagated
             ::NewRelic::Agent.logger.error "Error running task in Agent Worker Loop:", e
+          rescue Exception => e
+            NewRelic::Agent.logger.debug "JMS: Exception in WorkerLoop#run_task:", e
+            raise e
           end
         end
       end
