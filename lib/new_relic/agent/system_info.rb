@@ -152,6 +152,34 @@ module NewRelic
         cgroup_ids
       end
 
+      def self.get_rss
+        case ruby_os_identifier
+        when /linux/
+          get_rss_proc_status
+        when /darwin9/ # 10.5
+          get_rss_shell("ps -o rsz")
+        when /darwin1\d+/ # >= 10.6
+          get_rss_shell("ps -o rss")
+        when /freebsd/
+          get_rss_shell("ps -o rss")
+        when /solaris/
+          get_rss_shell("/usr/bin/ps -o rss -p")
+        end
+      end
+
+      def self.get_rss_shell(cmd)
+        rss = `#{cmd} #{$$}`.split("\n")[1].to_f * 1024.0
+        return rss if rss && rss > 0
+      end
+
+      def self.get_rss_proc_status
+        proc_status = proc_try_read("/proc/#{$$}/status")
+        if proc_status =~ /RSS:\s*(\d+) kB/i
+          return $1.to_f * 1024.0
+        end
+        return nil
+      end
+
       # A File.read against /(proc|sysfs)/* can hang with some older Linuxes.
       # See https://bugzilla.redhat.com/show_bug.cgi?id=604887, RUBY-736, and
       # https://github.com/opscode/ohai/commit/518d56a6cb7d021b47ed3d691ecf7fba7f74a6a7

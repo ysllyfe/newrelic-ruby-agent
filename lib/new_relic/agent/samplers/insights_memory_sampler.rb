@@ -15,7 +15,12 @@ module NewRelic
         end
 
         def poll
-          ::NewRelic::Agent.record_custom_event(:RubyGCStat, GC.stat.merge(:pid => $$))
+          event = {
+            :pid => $$,
+            :rss => ::NewRelic::Agent::SystemInfo.get_rss
+          }
+          event.merge!(GC.stat)
+          ::NewRelic::Agent.record_custom_event(:RubyGCStat, event)
         end
       end
     end
