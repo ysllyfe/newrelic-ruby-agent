@@ -171,8 +171,6 @@ module NewRelic
           needs_restart = @harvester.needs_restart?
           @harvester.mark_started
 
-          Agent.config.apply_config(NewRelic::Agent::Configuration::ManualSource.new(options), 1)
-
           return if !needs_restart ||
             !Agent.config[:agent_enabled] ||
             !Agent.config[:monitor_mode] ||
@@ -180,6 +178,7 @@ module NewRelic
             @worker_thread && @worker_thread.alive?
 
           ::NewRelic::Agent.logger.debug "Starting the worker thread in #{$$} after forking."
+          Agent.config.apply_config(NewRelic::Agent::Configuration::ManualSource.new(options), 1)
 
           channel_id = options[:report_to_channel]
           install_pipe_service(channel_id) if channel_id
