@@ -12,9 +12,16 @@ module NewRelic
           wrapped_blk = Proc.new do
             begin
               blk.call
+              ::NewRelic::Agent.logger.debug("BMW: Wrapped blk exiting cleanly.")
             rescue => e
+              ::NewRelic::Agent.logger.debug("BMW: blk caught StandardError")
+              ::NewRelic::Agent.logger.debug("BMW: blk caught StandardError of type #{e.class}")
+              ::NewRelic::Agent.logger.debug("BMW: error backtrace = #{e.backtrace.join("\n")}")
               ::NewRelic::Agent.logger.error("Thread #{label} exited with error", e)
             rescue Exception => e
+              ::NewRelic::Agent.logger.debug("BMW: blk caught Exception")
+              ::NewRelic::Agent.logger.debug("BMW: blk caught Exception of type #{e.class}")
+              ::NewRelic::Agent.logger.debug("BMW: error backtrace = #{e.backtrace.join("\n")}")
               ::NewRelic::Agent.logger.error("Thread #{label} exited with exception. Re-raising in case of interupt.", e)
               raise
             ensure

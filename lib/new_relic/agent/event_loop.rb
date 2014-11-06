@@ -98,24 +98,33 @@ module NewRelic
         while !stopped?
           run_once
         end
+        ::NewRelic::Agent.logger.debug("BMW: exiting cleanly from EventLoop#run, stopped? = #{stopped?}")
       end
 
       def run_once(nonblock=false)
         wait_to_run(nonblock)
 
+        ::NewRelic::Agent.logger.debug("BMW: pruning timers")
         prune_timers
+        ::NewRelic::Agent.logger.debug("BMW: firing timers")
         fire_timers
 
+        ::NewRelic::Agent.logger.debug("BMW: processing event queue")
         until @event_queue.empty?
           evt, args = @event_queue.pop
+          ::NewRelic::Agent.logger.debug("BMW: dispatching event #{evt} from event queue")
           dispatch_event(evt, args)
+          ::NewRelic::Agent.logger.debug("BMW: rescheduling timer for event #{evt}")
           reschedule_timer_for_event(evt)
         end
       end
 
       def wait_to_run(nonblock)
+        ::NewRelic::Agent.logger.debug("BMW: entered wait_to_run")
         timeout = nonblock ? 0 : next_timeout
+        ::NewRelic::Agent.logger.debug("BMW: calling select with timeout of #{timeout} s")
         ready = select([@self_pipe_rd], nil, nil, timeout)
+        ::NewRelic::Agent.logger.debug("BMW: woke from select, ready = #{ready}")
 
         if ready && ready[0] && ready[0][0] && ready[0][0] == @self_pipe_rd
           @self_pipe_rd.read(1)
@@ -124,12 +133,14 @@ module NewRelic
 
       def fire_timers
         @timers.each do |event, timer|
+          ::NewRelic::Agent.logger.debug("BMW: examining timer for event #{event}")
           fire_timer(timer)
         end
       end
 
       def fire_timer(timer)
         if timer.due?
+          ::NewRelic::Agent.logger.debug("BMW: firing timer for event #{timer.event}")
           @event_queue << [timer.event]
           timer.set_fired_time
         end
