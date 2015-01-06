@@ -114,6 +114,8 @@ module NewRelic
     require 'new_relic/agent/samplers/object_sampler'
     require 'new_relic/agent/samplers/delayed_job_sampler'
     require 'new_relic/agent/samplers/vm_sampler'
+    require 'new_relic/agent/samplers/gc_sampler'
+    require 'new_relic/agent/samplers/class_count_sampler'
     require 'set'
     require 'thread'
     require 'resolv'
