@@ -10,6 +10,7 @@ module NewRelic
                     :match_expression, :replacement)
 
         def initialize(options)
+          ::NewRelic::Agent.logger.debug "Entering NewRelic::Agent::RulesEngine::ReplacmentRule.intialize"
           if !options['match_expression']
             raise ArgumentError.new('missing required match_expression')
           end
@@ -24,6 +25,7 @@ module NewRelic
           @replace_all      = options['replace_all'] || false
           @each_segment     = options['each_segment'] || false
           @terminate_chain  = options['terminate_chain'] || false
+          ::NewRelic::Agent.logger.debug "Leaving NewRelic::Agent::RulesEngine::ReplacmentRule.intialize"
         end
 
         def terminal?

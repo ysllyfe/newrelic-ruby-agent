@@ -13,9 +13,11 @@ module NewRelic
         attr_reader :prefix, :terms
 
         def initialize(options)
+          ::NewRelic::Agent.logger.debug "Entering NewRelic::Agent::RulesEngine::SegmentTermsRule.intialize"
           @prefix          = options['prefix']
           @terms           = options['terms']
           @trim_range      = (@prefix.size..-1)
+          ::NewRelic::Agent.logger.debug "Leaving NewRelic::Agent::RulesEngine::SegmentTermsRule.intialize"
         end
 
         def terminal?

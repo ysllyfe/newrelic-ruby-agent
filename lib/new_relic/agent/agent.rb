@@ -620,16 +620,21 @@ module NewRelic
           LOG_ONCE_KEYS_RESET_PERIOD = 60.0
 
           def create_and_run_event_loop
+            ::NewRelic::Agent.logger.debug "Entering NewRelic::Agent.create_and_run_event_loop"
             @event_loop = create_event_loop
+            ::NewRelic::Agent.logger.debug "NewRelic::Agent.create_and_run_event_loop (ln: 625) after create_event_loop"
             @event_loop.on(:report_data) do
               transmit_data
             end
+            ::NewRelic::Agent.logger.debug "NewRelic::Agent.create_and_run_event_loop (ln: 629) after on(:report_data)"
             @event_loop.on(:report_event_data) do
               transmit_event_data
             end
+             ::NewRelic::Agent.logger.debug "NewRelic::Agent.create_and_run_event_loop (ln: 633) after on(:report_event_data)"
             @event_loop.on(:reset_log_once_keys) do
               ::NewRelic::Agent.logger.clear_already_logged
             end
+            ::NewRelic::Agent.logger.debug "NewRelic::Agent.create_and_run_event_loop (ln: 637) after on(:reset_log_once_keys)"
             @event_loop.fire_every(Agent.config[:data_report_period],       :report_data)
             @event_loop.fire_every(report_period_for(:analytic_event_data), :report_event_data)
             @event_loop.fire_every(LOG_ONCE_KEYS_RESET_PERIOD,              :reset_log_once_keys)
@@ -642,7 +647,9 @@ module NewRelic
               @event_loop.fire_every(UTILIZATION_REPORT_PERIOD, :report_utilization_data)
             end
 
-            @event_loop.run
+            @event_loop.run.tap do
+              ::NewRelic::Agent.logger.debug "Leaving NewRelic::Agent.create_and_run_event_loop"
+            end
           end
 
           # Handles the case where the server tells us to restart -
@@ -701,8 +708,11 @@ module NewRelic
             catch_errors do
               NewRelic::Agent.disable_all_tracing do
                 connect(connection_options)
+                ::NewRelic::Agent.logger.debug "NewRelic::Agent.deferred_work (ln: 704) after connect"
                 if connected?
+                  ::NewRelic::Agent.logger.debug "NewRelic::Agent.deferred_work (ln: 706) before create_and_run_event_loop"
                   create_and_run_event_loop
+                  ::NewRelic::Agent.logger.debug "NewRelic::Agent.deferred_work (ln: 708) after create_and_run_event_loop"
                   # never reaches here unless there is a problem or
                   # the agent is exiting
                 else
@@ -877,7 +887,7 @@ module NewRelic
             server_config = NewRelic::Agent::Configuration::ServerSource.new(config_data, Agent.config)
             Agent.config.replace_or_add_config(server_config)
             log_connection!(config_data) if @service
-
+            ::NewRelic::Agent.logger.debug "NewRelic::Agent.finish_setup (ln: 888) after log_connection!"
             @transaction_rules = RulesEngine.create_transaction_rules(config_data)
             @stats_engine.metric_rules = RulesEngine.create_metric_rules(config_data)
 
@@ -952,6 +962,7 @@ module NewRelic
 
           ::NewRelic::Agent.logger.debug "Connecting Process to New Relic: #$0"
           query_server_for_configuration
+          ::NewRelic::Agent.logger.debug "NewRelic::Agent.connect (ln: 955) after query_server_for_configuration"
           @connected_pid = $$
           @connect_state = :connected
         rescue NewRelic::Agent::ForceDisconnectException => e

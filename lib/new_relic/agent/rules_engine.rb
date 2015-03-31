@@ -17,19 +17,25 @@ module NewRelic
       def_delegators :@rules, :size, :inspect, :each, :clear
 
       def self.create_metric_rules(connect_response)
+        ::NewRelic::Agent.logger.debug "Entering NewRelic::Agent::RulesEngine.create_metric_rules"
         specs = connect_response['metric_name_rules'] || []
         rules = specs.map { |spec| ReplacementRule.new(spec) }
-        self.new(rules)
+        self.new(rules).tap do
+          ::NewRelic::Agent.logger.debug "Leaving NewRelic::Agent::RulesEngine.create_metric_rules"
+        end
       end
 
       def self.create_transaction_rules(connect_response)
+        ::NewRelic::Agent.logger.debug "Entering NewRelic::Agent::RulesEngine.create_transaction_rules"
         txn_name_specs     = connect_response['transaction_name_rules']    || []
         segment_rule_specs = connect_response['transaction_segment_terms'] || []
 
         txn_name_rules = txn_name_specs.map     { |s| ReplacementRule.new(s) }
         segment_rules  = segment_rule_specs.map { |s| SegmentTermsRule.new(s) }
 
-        self.new(txn_name_rules, segment_rules)
+        self.new(txn_name_rules, segment_rules).tap do
+          ::NewRelic::Agent.logger.debug "Leaving NewRelic::Agent::RulesEngine.create_transaction_rules"
+        end
       end
 
       def initialize(rules=[], segment_term_rules=[])
