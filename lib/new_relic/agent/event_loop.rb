@@ -195,6 +195,9 @@ module NewRelic
           ::NewRelic::Agent.logger.debug "Failed to wakeup event loop"
         rescue => e
           ::NewRelic::Agent.logger.debug "Unknown failure waking up event loop #{e}"
+        rescue Exception => e
+          ::NewRelic::Agent.logger.debug "Unknown exception waking up event loop #{e}"
+          raise e
         end
       end
     end
