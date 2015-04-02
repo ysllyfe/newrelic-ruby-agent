@@ -182,7 +182,13 @@ module NewRelic
       end
 
       def wakeup
-        @self_pipe_wr << '.'
+        begin
+          @self_pipe_wr.write_nonblock '.'
+        rescue Errno::EAGAIN
+          ::NewRelic::Agent.logger.debug "Failed to wakeup event loop"
+        rescue => e
+          ::NewRelic::Agent.logger.debug "Unknown failure waking up event loop #{e}"
+        end
       end
     end
   end
