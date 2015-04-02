@@ -163,12 +163,17 @@ module NewRelic
       end
 
       def on(event, &blk)
+        ::NewRelic::Agent.logger.debug("Entering EventLoop#on for #{event}")
         fire(:__add_event, event, blk)
+        ::NewRelic::Agent.logger.debug("Exiting EventLoop#on for #{event}")
       end
 
       def fire(event, *args)
+        ::NewRelic::Agent.logger.debug("Exiting EventLoop#fire for #{event}")
         @event_queue << [event, args]
+        ::NewRelic::Agent.logger.debug("In EventLoop#fire for #{event}, queued [event, args]")
         wakeup
+        ::NewRelic::Agent.logger.debug("Exiting EventLoop#fire for #{event}")
       end
 
       def fire_every(interval, event)
@@ -183,7 +188,9 @@ module NewRelic
 
       def wakeup
         begin
+          ::NewRelic::Agent.logger.debug "About to write to self_pipe_wr (#{@self_pipe_wr.inspect} FD #{@self_pipe_wr.to_i})"
           @self_pipe_wr.write_nonblock '.'
+          ::NewRelic::Agent.logger.debug "Wrote to self_pipe_wr (#{@self_pipe_wr.inspect} FD #{@self_pipe_wr.to_i})"
         rescue Errno::EAGAIN
           ::NewRelic::Agent.logger.debug "Failed to wakeup event loop"
         rescue => e
