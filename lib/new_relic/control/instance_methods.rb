@@ -48,6 +48,7 @@ module NewRelic
       # init_config({}) which is called one or more times.
       #
       def init_plugin(options={})
+        puts "NewRelic: entered init_plugin via #{caller.join("|")}"
         env = determine_env(options)
 
         configure_agent(env, options)

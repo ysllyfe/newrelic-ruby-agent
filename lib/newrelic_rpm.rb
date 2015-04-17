@@ -22,6 +22,8 @@
 # directly.
 #
 
+puts "NewRelic: requiring newrelic_rpm via #{caller.join("|")}"
+
 require 'new_relic/control'
 if defined?(Merb) && defined?(Merb::BootLoader)
   module NewRelic
@@ -33,16 +35,19 @@ if defined?(Merb) && defined?(Merb::BootLoader)
     end
   end
 elsif defined?(Rails::VERSION)
+  puts "NewRelic: Rails::VERSION was defined, Rails::VERSION::MAJOR = #{Rails::VERSION::MAJOR}"
   if Rails::VERSION::MAJOR.to_i >= 3
     module NewRelic
       class Railtie < Rails::Railtie
-
+        puts "NewRelic: creating initializer for Rails 3+"
         initializer "newrelic_rpm.start_plugin" do |app|
+          puts "NewRelic: running initializer for Rails 3+"
           NewRelic::Control.instance.init_plugin(:config => app.config)
         end
       end
     end
   else
+    puts "NewRelic: Rails::VERSION::MAJOR was < 3"
     # After version 2.0 of Rails we can access the configuration directly.
     # We need it to add dev mode routes after initialization finished.
     config = nil
@@ -50,5 +55,6 @@ elsif defined?(Rails::VERSION)
     NewRelic::Control.instance.init_plugin :config => config
   end
 else
+  puts "NewRelic: Rails::VERSION was not defined"
   NewRelic::Control.instance.init_plugin
 end
