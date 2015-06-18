@@ -75,7 +75,11 @@ module NewRelic
         if block
           define_method(:ignore_filter_proc, &block)
         elsif method_defined?(:ignore_filter_proc)
-          undef :ignore_filter_proc
+          begin
+            undef :ignore_filter_proc
+          rescue => e
+            NewRelic::Agent.logger.debug("Failed undefining ErrorCollector.ignore_filter_proc", e)
+          end
         end
         @ignore_filter
       end
@@ -96,7 +100,9 @@ module NewRelic
       # Checks the provided error against the error filter, if there
       # is an error filter
       def filtered_by_error_filter?(error)
-        respond_to?(:ignore_filter_proc) && !ignore_filter_proc(error)
+        self.class.ignore_error_filter &&
+          respond_to?(:ignore_filter_proc) &&
+          !ignore_filter_proc(error)
       end
 
       # Checks the array of error names and the error filter against
