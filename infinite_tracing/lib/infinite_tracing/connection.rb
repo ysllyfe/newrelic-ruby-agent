@@ -97,6 +97,12 @@ module NewRelic::Agent
             "license_key" => license_key,
             "agent_run_token" => agent_id
           }
+
+          if request_headers_map = NewRelic::Agent::Agent.instance.service.instance_variable_get(:@request_headers_map)
+            @metadata.merge!(request_headers_map)
+          end
+
+          @metadata
         end
       end
 
